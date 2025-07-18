@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/entityadmin/tennesseegolfcourses.com/
+    - export DEPLOYPATH=$CPANEL_CLONE_TO
     - /bin/cp -R * $DEPLOYPATH
