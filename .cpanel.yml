@@ -1,5 +1,4 @@
----
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/entityadmin/tennesseegolfcourses.com/
+    - export DEPLOYPATH=/home/entityadmin/public_html/tennesseegolfcourses.com/
     - /bin/cp -R * $DEPLOYPATH
