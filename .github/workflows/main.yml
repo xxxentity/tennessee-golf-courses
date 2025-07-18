@@ -19,3 +19,6 @@
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: public_html/
+          port: 21
+          protocol: ftp
+          timeout: 300000
