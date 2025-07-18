@@ -1,0 +1,104 @@
+/* ALTERNATIVE COLOR SCHEME - Tennessee Golf Courses */
+/* Replace these colors in styles.css if you prefer this scheme */
+
+:root {
+    /* OPTION 1: Forest & Gold Theme (Current) */
+    --primary-color: #1e5631;
+    --secondary-color: #2d7a3d;
+    --accent-color: #4a9b5c;
+    --gold-color: #d4af37;
+
+    /* OPTION 2: Blue & Orange (Uncomment to use) */
+    /*
+    --primary-color: #1e3a8a;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --gold-color: #f97316;
+    */
+
+    /* OPTION 3: Deep Green & Copper (Uncomment to use) */
+    /*
+    --primary-color: #064e3b;
+    --secondary-color: #059669;
+    --accent-color: #10b981;
+    --gold-color: #ea580c;
+    */
+
+    /* OPTION 4: Traditional Golf Club Colors (Uncomment to use) */
+    /*
+    --primary-color: #1f2937;
+    --secondary-color: #374151;
+    --accent-color: #6b7280;
+    --gold-color: #fbbf24;
+    */
+
+    /* OPTION 5: Tennessee Flag Colors - Red, White, Blue (Uncomment to use) */
+    /*
+    --primary-color: #c8102e;
+    --secondary-color: #002868;
+    --accent-color: #3c4142;
+    --gold-color: #ffffff;
+    */
+
+    /* OPTION 6: Tennessee Flag Inverted - Blue, Red, White (Uncomment to use) */
+    /*
+    --primary-color: #002868;
+    --secondary-color: #c8102e;
+    --accent-color: #ffffff;
+    --gold-color: #ffd700;
+    */
+}
+
+/* QUICK THEME SWITCHER STYLES */
+.theme-switcher {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    z-index: 10000;
+    font-size: 12px;
+}
+
+.theme-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.theme-option:hover {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+.theme-option.active {
+    border-color: #000;
+    transform: scale(1.2);
+}
+
+/* Theme color previews */
+.theme-forest { background: linear-gradient(45deg, #1e5631, #d4af37); }
+.theme-blue { background: linear-gradient(45deg, #1e3a8a, #f97316); }
+.theme-deep-green { background: linear-gradient(45deg, #064e3b, #ea580c); }
+.theme-traditional { background: linear-gradient(45deg, #1f2937, #fbbf24); }
+.theme-tennessee-flag { background: linear-gradient(45deg, #c8102e, #002868); }
+.theme-tennessee-inverted { background: linear-gradient(45deg, #002868, #c8102e); }
+
+/* Instructions for switching themes */
+/*
+TO SWITCH THEMES:
+1. Choose a color scheme above
+2. Uncomment the desired :root variables
+3. Comment out the current :root variables
+4. Save the file and refresh your browser
+
+Each theme is designed to maintain readability and professionalism
+while giving your site a unique personality.
+*/

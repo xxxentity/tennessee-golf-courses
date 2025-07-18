@@ -1,0 +1,181 @@
+GITHUB + NAMECHEAP AUTOMATED DEPLOYMENT SETUP
+==============================================
+
+OVERVIEW:
+This setup gives you professional version control with GitHub while keeping your Namecheap hosting. Every time you push code to GitHub, it automatically deploys to your Namecheap server.
+
+STEP 1: INSTALL GIT (IF NOT ALREADY INSTALLED)
+===============================================
+1. Open Terminal
+2. Type: git --version
+3. If not installed, download from: https://git-scm.com/
+
+STEP 2: CREATE GITHUB ACCOUNT & REPOSITORY
+===========================================
+1. Go to https://github.com
+2. Sign up for free account (if you don't have one)
+3. Click "New Repository" (green button)
+4. Repository name: "tennessee-golf-courses"
+5. Description: "Tennessee Golf Courses Website"
+6. Set to Public (so you can use free features)
+7. DON'T initialize with README (we'll add our files)
+8. Click "Create Repository"
+
+STEP 3: INITIALIZE GIT IN YOUR PROJECT
+=======================================
+1. Open Terminal
+2. Navigate to your project folder:
+   cd "/Users/entity./TGC LLC"
+3. Initialize git:
+   git init
+4. Add all files:
+   git add .
+5. Make first commit:
+   git commit -m "Initial Tennessee Golf Courses website"
+
+STEP 4: CONNECT TO GITHUB & PUSH
+=================================
+1. In Terminal, add your GitHub repository:
+   git remote add origin https://github.com/YOURUSERNAME/tennessee-golf-courses
+   
+   (Replace YOURUSERNAME with your actual GitHub username)
+
+2. Push to GitHub:
+   git push -u origin main
+
+Your code is now on GitHub! 🎉
+
+STEP 5: GET NAMECHEAP FTP CREDENTIALS
+====================================
+1. Log into Namecheap account
+2. Go to "Hosting List" → "Manage"
+3. Find your FTP details:
+   - FTP Server: (usually ftp.yourdomain.com)
+   - Username: (your hosting username)
+   - Password: (your hosting password)
+   - Port: 21
+
+STEP 6: CREATE GITHUB ACTION FOR AUTO-DEPLOYMENT
+================================================
+1. In your GitHub repository, click "Actions" tab
+2. Click "set up a workflow yourself"
+3. Replace the default content with this:
+
+```yaml
+name: Deploy to Namecheap
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Deploy to Namecheap via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: public_html/
+```
+
+4. Click "Commit new file"
+
+STEP 7: ADD FTP SECRETS TO GITHUB
+==================================
+1. In your GitHub repository, go to "Settings" tab
+2. Click "Secrets and variables" → "Actions"
+3. Click "New repository secret"
+4. Add these three secrets:
+
+   Secret 1:
+   - Name: FTP_SERVER
+   - Value: ftp.tennesseegolfcourses.com (or your FTP server)
+   
+   Secret 2:
+   - Name: FTP_USERNAME
+   - Value: [your Namecheap FTP username]
+   
+   Secret 3:
+   - Name: FTP_PASSWORD
+   - Value: [your Namecheap FTP password]
+
+STEP 8: TEST THE DEPLOYMENT
+===========================
+1. Make a small change to your index.html file locally
+2. In Terminal:
+   git add .
+   git commit -m "Test deployment"
+   git push origin main
+
+3. Go to GitHub → Actions tab
+4. You should see your deployment running
+5. Once complete, check your website!
+
+DAILY WORKFLOW (AFTER SETUP):
+==============================
+1. Make changes to your files locally
+2. Terminal commands:
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+3. GitHub automatically deploys to Namecheap
+4. Your website updates automatically! 🚀
+
+BENEFITS YOU NOW HAVE:
+======================
+✅ Version control - Every change tracked
+✅ Automatic backups - Code safe in GitHub
+✅ Professional workflow - Industry standard
+✅ Automated deployment - No manual FTP
+✅ Rollback capability - Revert bad changes instantly
+✅ Collaboration ready - Easy to work with others
+✅ Change history - See exactly what changed when
+
+TROUBLESHOOTING:
+================
+If deployment fails:
+1. Check GitHub Actions tab for error messages
+2. Verify FTP credentials are correct
+3. Make sure Namecheap server allows FTP connections
+4. Check that public_html folder exists
+
+ADVANCED TIPS:
+==============
+1. Use branches for testing:
+   git checkout -b new-feature
+   git push origin new-feature
+   
+2. Create pull requests for code review
+3. Use GitHub Issues to track todo items
+4. Tag releases: git tag v1.0.0
+
+SECURITY NOTES:
+===============
+1. Never commit passwords to GitHub
+2. Always use GitHub Secrets for sensitive data
+3. Keep your GitHub account secure with 2FA
+4. Regularly update your passwords
+
+NEXT STEPS:
+===========
+1. Complete the setup above
+2. Test with a small change
+3. Once working, you can develop with confidence
+4. Every push = automatic website update
+5. Your site is always backed up and version controlled
+
+MULTIPLE DOMAINS:
+=================
+To deploy to your other domains:
+1. Add additional FTP secrets for each domain
+2. Modify the GitHub Action to deploy to multiple servers
+3. Or set up redirects from other domains to main site
+
+This setup transforms your development workflow from amateur to professional level!

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennessee Golf Courses - Discover Premier Golf in Tennessee</title>
+    <meta name="description" content="Discover the best golf courses in Tennessee. Reviews, course information, tee times, and the latest golf news from across the state.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Weather Bar -->
+    <div class="weather-bar">
+        <div class="weather-container">
+            <div class="weather-info">
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Loading...</span>
+                </div>
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp">Perfect Golf Weather</span>
+                    <span class="weather-location">Nashville, TN</span>
+                </div>
+            </div>
+            <div class="golf-conditions">
+                <div class="condition-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Wind: <span id="wind-speed">5 mph</span></span>
+                </div>
+                <div class="condition-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Visibility: <span id="visibility">10 mi</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-golf-ball"></i>
+                    <span>Tennessee Golf Courses</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#news" class="nav-link">News</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Tennessee's Premier Golf Courses</h1>
+            <p class="hero-subtitle">From the Great Smoky Mountains to the Mississippi River, explore the finest golf destinations in the Volunteer State</p>
+            <div class="hero-search">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search courses by name or city..." class="search-input">
+                    <button class="search-btn">Find Courses</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-golf-ball"></i>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Golf Courses</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Tournaments</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-cloud-sun"></i>
+                    <div class="stat-number">Live</div>
+                    <div class="stat-label">Weather</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="courses" class="featured-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Golf Courses</h2>
+                <p>Explore Tennessee's most popular and highest-rated golf destinations</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3" alt="The Greenbrier Golf Course">
+                        <div class="course-badge">4.8 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Blackberry Farm Golf Course</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Walland, TN</p>
+                        <p class="course-description">Championship 18-hole course nestled in the Great Smoky Mountains</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Mountain Views</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" alt="Golf Course">
+                        <div class="course-badge">4.7 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Gaylord Springs Golf Links</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
+                        <p class="course-description">Award-winning links-style course in Music City</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Links Style</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3" alt="Golf Course">
+                        <div class="course-badge">4.6 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Tennessee National Golf Club</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Loudon, TN</p>
+                        <p class="course-description">Scenic lakeside course with stunning mountain backdrop</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Lakeside</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1596727147479-5d9a17c44626?ixlib=rb-4.0.3" alt="Golf Course">
+                        <div class="course-badge">4.5 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Old Hickory Golf Club</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Old Hickory, TN</p>
+                        <p class="course-description">Historic course with traditional Southern charm</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 70</span>
+                            <span class="feature-tag">Historic</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3" alt="Golf Course">
+                        <div class="course-badge">4.4 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Opryland Golf Course</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
+                        <p class="course-description">Premier resort course in the heart of Nashville</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Resort Style</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1566207474742-de921626ad0a?ixlib=rb-4.0.3" alt="Golf Course">
+                        <div class="course-badge">4.3 ★</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Chattanooga Golf & Country Club</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Chattanooga, TN</p>
+                        <p class="course-description">Exclusive private club with championship layout</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 71</span>
+                            <span class="feature-tag">Private</span>
+                        </div>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer">
+                <button class="btn-secondary">View All Courses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Finder Map -->
+    <section class="course-finder">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Courses Near You</h2>
+                <p>Explore golf courses across Tennessee with our interactive map</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Interactive Tennessee Golf Course Map</p>
+                    <small>Map integration coming soon</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section id="news" class="latest-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Golf News</h2>
+                <p>Stay updated with the latest happenings in Tennessee golf</p>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3" alt="Golf Tournament">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">July 15, 2025</span>
+                            <span class="news-category">Tournament</span>
+                        </div>
+                        <h3>Tennessee Amateur Championship Set for August</h3>
+                        <p>The annual Tennessee Amateur Golf Championship will be held at Blackberry Farm Golf Course this August...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3" alt="Golf Course">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">July 12, 2025</span>
+                            <span class="news-category">Course News</span>
+                        </div>
+                        <h3>New Golf Course Opens in Franklin</h3>
+                        <p>Franklin's newest 18-hole championship course officially opened to the public, featuring state-of-the-art facilities...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3" alt="Golf Equipment">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">July 10, 2025</span>
+                            <span class="news-category">Equipment</span>
+                        </div>
+                        <h3>Best Golf Equipment for Summer 2025</h3>
+                        <p>Our comprehensive review of the latest golf equipment perfect for Tennessee's summer golf season...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="section-footer">
+                <button class="btn-secondary">View All News</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay in the Loop</h2>
+                    <p>Get weekly updates on new courses, exclusive deals, and the latest Tennessee golf news delivered to your inbox.</p>
+                </div>
+                <div class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Tennessee Golf Courses</span>
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#courses">Golf Courses</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="#">Nashville Area</a></li>
+                        <li><a href="#">Chattanooga Area</a></li>
+                        <li><a href="#">Knoxville Area</a></li>
+                        <li><a href="#">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
+                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

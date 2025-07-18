@@ -1,0 +1,46 @@
+AI LOGO GENERATION PROMPT - TENNESSEE GOLF COURSES
+==================================================
+
+MAIN LOGO PROMPT:
+Create a professional, modern logo for "Tennessee Golf Courses" - a premium golf information and review website. The design should feature:
+
+- Clean, sophisticated typography with "Tennessee Golf Courses" or "TGC" 
+- Incorporate subtle Tennessee state outline or silhouette
+- Golf elements: golf ball, tee, flag pin, or golf club silhouette
+- Color scheme: Deep forest green (#064e3b), emerald green (#059669), and copper/orange accent (#ea580c)
+- Modern, minimalist style that works well on both light and dark backgrounds
+- Professional look that appeals to serious golfers and course owners
+- Scalable design that looks good at small sizes (website header) and large sizes (merchandise)
+- Optional: Subtle Great Smoky Mountains outline in background
+- Style: Clean, corporate, trustworthy, premium golf brand aesthetic
+
+Output: High resolution PNG with transparent background, horizontal layout preferred
+
+ALTERNATIVE PROMPTS TO TRY:
+
+PROMPT 2 - Icon Style:
+Create a circular badge-style logo for Tennessee Golf Courses featuring a golf flag pin in the center with Tennessee state outline, surrounded by elegant text. Use deep green and copper colors, professional golf course aesthetic.
+
+PROMPT 3 - Text Focus:
+Design a wordmark logo for "Tennessee Golf Courses" with custom typography, incorporating a small golf ball as the dot over the "i" or replacing the "o". Deep green and copper color scheme, modern serif or clean sans-serif font.
+
+PROMPT 4 - Landscape Style:
+Create a horizontal logo showing a silhouette of Tennessee with a golf course landscape (rolling hills, flag pin) inside the state outline. "Tennessee Golf Courses" text below or beside. Deep green and copper colors.
+
+PROMPT 5 - Monogram Style:
+Design an elegant monogram logo featuring the letters "TGC" with golf elements subtly integrated. Professional, upscale country club aesthetic using deep green and copper colors.
+
+PROMPT 6 - Shield/Crest Style:
+Create a golf club crest-style logo with Tennessee elements, golf imagery, and "Tennessee Golf Courses" banner. Traditional but modern, premium golf brand feel.
+
+ADDITIONAL ELEMENTS TO REQUEST:
+- Favicon version (simple icon, 16x16 pixels)
+- Social media profile version (square format)
+- Letterhead version (grayscale option)
+- Website header version (wide horizontal format)
+
+STYLE KEYWORDS TO USE:
+Professional, premium, golf course, country club, Tennessee, sophisticated, clean, modern, trustworthy, authoritative, upscale, traditional with modern twist, forest green, copper accent
+
+AVOID:
+Cartoon style, overly complex designs, bright neon colors, amateur clip art look, too many golf elements crowded together, hard to read fonts

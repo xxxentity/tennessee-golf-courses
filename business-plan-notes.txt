@@ -1,0 +1,79 @@
+TENNESSEE GOLF COURSES BUSINESS PLAN NOTES
+================================================
+
+DOMAINS ACQUIRED:
+- tennesseegolfcourses.com (main site)
+- chattanoogagolfcourses.com 
+- knoxvillegolfcourses.com
+- nashvillegolfcourses.com
+
+REVENUE STREAMS:
+1. Google AdSense (once traffic grows)
+2. Golf equipment affiliate links (Amazon, Golf Galaxy, Dick's)
+3. Course partnerships (featured listings, premium placements)
+4. Local business ads (golf shops, lessons, equipment)
+5. Subscription newsletter with exclusive deals
+6. Merchandise (branded golf accessories)
+7. Golf travel packages (affiliate with booking sites)
+8. Lesson instructor directory (charge for listings)
+9. Tournament/event promotion (charge courses to promote)
+10. Sponsored content (equipment reviews, course spotlights)
+
+ADDITIONAL OPPORTUNITIES:
+- Sponsor golf events
+- Charity work/tournaments
+- Hotel brochure partnerships
+- Monthly subscription boxes
+- Golf magazine partnerships
+
+WEBSITE FEATURES TO BUILD:
+- Course database with detailed info, photos, ratings
+- Review system
+- News/blog section
+- Search and filtering by location, price, difficulty
+- Mobile-first responsive design
+- Contact forms
+- Newsletter signup
+- Social media integration
+- Course finder map
+- Weather integration
+- Tee time information (linking to course sites)
+
+CONTENT PRIORITIES:
+1. Course information and database
+2. Reviews (for affiliate revenue)
+3. News and updates
+4. Tournament information
+
+TECHNICAL APPROACH:
+- Custom HTML/CSS/JavaScript site
+- File-based content management
+- FTP uploads to Namecheap hosting
+- Full ownership of all code
+- SEO optimized
+- Lightning fast loading
+
+WORK SCHEDULE:
+- 2 hours daily commitment
+- Months of setup expected
+- Focus on quality over speed
+
+HOME PAGE LAYOUT CONCEPT:
+- Hero section with Tennessee golf landscape
+- Course finder with map integration
+- Featured courses grid with photos
+- Latest golf news section
+- Weather widget for golf conditions
+- Newsletter signup
+- Quick stats (number of courses, reviews, etc.)
+
+COURSE DATABASE FEATURES:
+- Photo galleries for each course
+- Detailed course information (holes, par, yardage)
+- Reviews and ratings
+- Contact information and directions
+- Tee times (linking to course booking systems)
+- Upcoming tournaments and events
+- Course news and updates
+- Weather conditions
+- Green fees and pricing
