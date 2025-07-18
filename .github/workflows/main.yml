@@ -1,25 +1,19 @@
-name: Deploy to Namecheap
+  name: Deploy to Namecheap          ← 0 spaces (starts at beginning)
 
-on:
-    push:
-      branches: [ main ]
+  on:                                ← 0 spaces
+    push:                            ← 2 spaces
+      branches: [ main ]             ← 4 spaces
 
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
+  jobs:                              ← 0 spaces
+    deploy:                          ← 2 spaces
+      runs-on: ubuntu-latest         ← 4 spaces
 
-      steps:
-      - uses: actions/checkout@v2
+      steps:                         ← 4 spaces
+      - uses: actions/checkout@v2    ← 4 spaces (dash counts as part of
+  spacing)
 
-      - name: Deploy to Namecheap via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: public_html/
-          port: 21
-          protocol: ftp
-          timeout: 60000
-          log-level: verbose
+      - name: Deploy to Namecheap via FTP   ← 4 spaces
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3   ← 6 spaces
+        with:                        ← 6 spaces
+          server: ${{ secrets.FTP_SERVER }}          ← 8 spaces
+          username: ${{ secrets.FTP_USERNAME }}      ← 8 spaces
