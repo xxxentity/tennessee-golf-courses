@@ -1,0 +1,2 @@
+# This file ensures the .well-known directory is tracked by Git
+# .well-known is used for SSL certificates, security policies, and site verification
