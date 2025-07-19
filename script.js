@@ -205,23 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Course card interactions
-    const courseCards = document.querySelectorAll('.course-card');
-    courseCards.forEach(card => {
-        const viewDetailsBtn = card.querySelector('.btn-primary');
-        
-        viewDetailsBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const courseName = card.querySelector('h3').textContent;
-            showNotification(`Loading details for ${courseName}...`, 'info');
-            
-            // Here you would navigate to the course detail page
-            // For now, we'll just show a notification
-            setTimeout(() => {
-                showNotification('Course detail page coming soon!', 'info');
-            }, 1000);
-        });
-    });
+    // Course card interactions - Allow natural link navigation
+    // Real course pages now exist, so we don't need to prevent default navigation
 
     // News card interactions
     const readMoreLinks = document.querySelectorAll('.read-more');
