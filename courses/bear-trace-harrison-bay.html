@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear Trace at Harrison Bay - Tennessee Golf Courses</title>
+    <meta name="description" content="Bear Trace at Harrison Bay - Jack Nicklaus Signature Design golf course in Harrison, TN. Experience stunning lakefront views and championship golf.">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .course-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .course-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .course-hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .course-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
+            padding: 4rem 0;
+        }
+        
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .course-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-info-card h3 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .course-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            color: #2c5234;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .amenity-item i {
+            color: #4a7c59;
+            font-size: 1.2rem;
+        }
+        
+        .photo-gallery {
+            margin: 4rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .booking-section {
+            background: linear-gradient(135deg, #2c5234, #4a7c59);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .booking-content h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .booking-content p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .booking-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-book {
+            background: #ffd700;
+            color: #2c5234;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-book:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-contact {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-contact:hover {
+            background: white;
+            color: #2c5234;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-golf-ball"></i>
+                    <span>Tennessee Golf Courses</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                    <li><a href="../index.html#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="../index.html#news" class="nav-link">News</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="course-hero-content">
+            <h1>Bear Trace at Harrison Bay</h1>
+            <p>Jack Nicklaus Signature Design • Harrison, Tennessee</p>
+            <div class="course-rating">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-text">4.5 / 5.0</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details -->
+    <section class="course-details">
+        <div class="container">
+            <div class="course-info-grid">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">18</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Par:</span>
+                            <span class="spec-value">72</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">7,012</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Jack Nicklaus</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">2002</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Public</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <p><strong>Address:</strong><br>
+                    10030 Bear Trace Drive<br>
+                    Harrison, TN 37341</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (423) 344-7888</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="#" style="color: #4a7c59;">beartrace.com</a></p>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Weekday:</span>
+                            <span class="spec-value">$65</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekend:</span>
+                            <span class="spec-value">$85</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Twilight:</span>
+                            <span class="spec-value">$45</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Senior (65+):</span>
+                            <span class="spec-value">$55</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                        *Prices subject to change. Cart included in green fees.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Course Description -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Harrison Bay</h3>
+                <p>Bear Trace at Harrison Bay is a stunning Jack Nicklaus Signature Design golf course nestled along the shores of Chickamauga Lake in Harrison, Tennessee. This championship 18-hole course offers golfers an unforgettable experience with its dramatic elevation changes, strategic water features, and breathtaking views of the Tennessee Valley.</p>
+                
+                <p>Opened in 2002, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape. The course features bentgrass greens, Bermuda fairways, and plays to 7,012 yards from the championship tees.</p>
+                
+                <p>What sets Bear Trace apart is its spectacular lakefront setting. Several holes offer stunning views of Chickamauga Lake, while the course's elevation changes provide panoramic vistas of the surrounding Tennessee mountains. The signature hole, a par-3 over water, is consistently ranked among the most beautiful holes in the Southeast.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Driving Range</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Full Restaurant</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>PGA Instruction</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Event Hosting</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-car"></i>
+                        <span>Cart Rentals</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-wifi"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Online Booking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Bear Trace at Harrison Bay</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1596727147479-5d9a17c44626?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1566207474742-de921626ad0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced Bear Trace</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-name">Mike Johnson</div>
+                    <div class="review-date">July 15, 2025</div>
+                </div>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Absolutely stunning course! The views of Chickamauga Lake are breathtaking, especially on holes 15 and 16. Jack Nicklaus really outdid himself with this design. The course is challenging but fair, and the conditions were immaculate. Will definitely be back!"</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-name">Sarah Davis</div>
+                    <div class="review-date">July 8, 2025</div>
+                </div>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"Beautiful course with amazing lake views. The signature par-3 over water is as gorgeous as advertised. Staff was friendly and accommodating. The only minor complaint is that the pace of play was a bit slow, but that's not really the course's fault. Highly recommended!"</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-name">Robert Chen</div>
+                    <div class="review-date">June 28, 2025</div>
+                </div>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"One of the best public courses in Tennessee! The layout is both challenging and scenic. Love the elevation changes and strategic bunkering. The greens were rolling true and fast. Great value for a Nicklaus design. Already booked my next round!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <h2>Ready to Play Bear Trace?</h2>
+                <p>Book your tee time today and experience one of Tennessee's premier golf destinations</p>
+                <div class="booking-buttons">
+                    <a href="#" class="btn-book">Book Tee Time</a>
+                    <a href="#" class="btn-contact">Contact Pro Shop</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Tennessee Golf Courses</span>
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#courses">Golf Courses</a></li>
+                        <li><a href="../index.html#reviews">Reviews</a></li>
+                        <li><a href="../index.html#news">News</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="#">Nashville Area</a></li>
+                        <li><a href="#">Chattanooga Area</a></li>
+                        <li><a href="#">Knoxville Area</a></li>
+                        <li><a href="#">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
+                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
