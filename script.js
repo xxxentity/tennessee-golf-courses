@@ -214,20 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Course card interactions - Allow natural link navigation
     // Real course pages now exist, so we don't need to prevent default navigation
 
-    // News card interactions
-    const readMoreLinks = document.querySelectorAll('.read-more');
-    readMoreLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const newsTitle = this.closest('.news-card').querySelector('h3').textContent;
-            showNotification(`Loading: ${newsTitle}`, 'info');
-            
-            // Here you would navigate to the full article
-            setTimeout(() => {
-                showNotification('Full article page coming soon!', 'info');
-            }, 1000);
-        });
-    });
+    // News card interactions - Allow natural link navigation to real articles
+    // Real news articles now exist, so we don't need to prevent default navigation
 
     // Intersection Observer for animations
     const observerOptions = {
