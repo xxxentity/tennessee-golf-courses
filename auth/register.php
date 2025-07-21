@@ -86,24 +86,24 @@
         
         .form-group {
             margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
         .form-group label {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
             font-weight: 600;
             color: var(--text-dark);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            height: 56px;
-            margin-bottom: 0;
-            white-space: nowrap;
+            min-width: 140px;
+            text-align: right;
+            line-height: 1.2;
         }
         
         .form-group input {
-            width: 100%;
+            width: 300px;
             padding: 18px 16px;
             border: 2px solid var(--border-color);
             border-radius: 8px;
@@ -205,7 +205,13 @@
             transition: color 0.3s ease;
         }
         
+        .form-icon {
+            position: relative;
+            width: 300px;
+        }
+        
         .form-icon input {
+            width: 100%;
             padding-left: 50px;
             padding-right: 16px;
         }
@@ -316,7 +322,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="confirm_password">Confirm&nbsp;Password</label>
+                        <label for="confirm_password">Confirm<br>Password</label>
                         <div class="form-icon">
                             <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Confirm your password">
                             <i class="fas fa-lock"></i>
