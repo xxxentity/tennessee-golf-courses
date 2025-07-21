@@ -89,13 +89,17 @@
         }
         
         .form-group label {
-            display: block;
+            display: flex;
+            align-items: center;
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--text-dark);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            height: 56px;
+            margin-bottom: 0;
+            white-space: nowrap;
         }
         
         .form-group input {
@@ -278,7 +282,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Email</label>
                         <div class="form-icon">
                             <input type="email" id="email" name="email" required maxlength="100" placeholder="your@email.com">
                             <i class="fas fa-envelope"></i>
@@ -287,7 +291,7 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first_name">First Name</label>
+                            <label for="first_name">First&nbsp;Name</label>
                             <div class="form-icon">
                                 <input type="text" id="first_name" name="first_name" required maxlength="50" placeholder="First name">
                                 <i class="fas fa-user"></i>
@@ -295,7 +299,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="last_name">Last Name</label>
+                            <label for="last_name">Last&nbsp;Name</label>
                             <div class="form-icon">
                                 <input type="text" id="last_name" name="last_name" required maxlength="50" placeholder="Last name">
                                 <i class="fas fa-user"></i>
@@ -312,7 +316,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
+                        <label for="confirm_password">Confirm&nbsp;Password</label>
                         <div class="form-icon">
                             <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Confirm your password">
                             <i class="fas fa-lock"></i>
