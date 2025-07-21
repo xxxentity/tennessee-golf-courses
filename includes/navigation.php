@@ -22,20 +22,22 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             <li><a href="#news" class="nav-link">News</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
-            
+        </ul>
+        
+        <div class="nav-auth">
             <?php if ($is_logged_in): ?>
                 <!-- Logged in navigation -->
-                <li><a href="/user/profile.php" class="nav-link">My Profile</a></li>
-                <li><a href="/auth/logout.php" class="nav-link logout-link">Logout</a></li>
-                <li class="user-welcome">
+                <a href="/user/profile.php" class="nav-link">My Profile</a>
+                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
+                <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
-                </li>
+                </div>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <li><a href="/auth/login.php" class="nav-link login-btn">Login</a></li>
-                <li><a href="/auth/register.php" class="nav-link register-btn">Join Free</a></li>
+                <a href="/auth/login.php" class="nav-link login-btn">Login</a>
+                <a href="/auth/register.php" class="nav-link register-btn">Join Free</a>
             <?php endif; ?>
-        </ul>
+        </div>
         
         <div class="nav-toggle" id="nav-toggle">
             <span class="bar"></span>
@@ -47,7 +49,14 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 </header>
 
 <style>
-/* Additional styles for user navigation */
+/* Navigation auth section on the right */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
 .user-welcome {
     display: flex;
     align-items: center;
@@ -104,6 +113,25 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 
 /* Mobile responsiveness for user navigation */
 @media screen and (max-width: 768px) {
+    .nav-auth {
+        position: fixed;
+        left: -100%;
+        top: 110px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow-medium);
+        padding: 20px 0;
+        gap: 20px;
+        z-index: 999;
+    }
+    
+    .nav-menu.active + .nav-auth {
+        left: 0;
+    }
+    
     .user-welcome {
         margin-left: 0;
         margin-top: 12px;
