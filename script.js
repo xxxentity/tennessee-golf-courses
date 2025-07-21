@@ -1,6 +1,18 @@
 // Tennessee Golf Courses - JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Make all external links open in new tabs
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        // Check if it's an external link (starts with http/https but not our domain)
+        if ((href.startsWith('http://') || href.startsWith('https://') || href.startsWith('www.')) 
+            && !href.includes('tennesseegolfcourses.com')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+    
     // Live Time Display
     function updateTime() {
         const now = new Date();

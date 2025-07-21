@@ -37,6 +37,19 @@ body {
     background-color: var(--bg-white);
 }
 
+/* External links styling */
+a[href^="http"]:not([href*="tennesseegolfcourses.com"])::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+a[href^="www."]::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

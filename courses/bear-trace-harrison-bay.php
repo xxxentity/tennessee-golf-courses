@@ -611,7 +611,7 @@ try {
                     (423) 326-0885</p>
                     
                     <p><strong>Website:</strong><br>
-                    <a href="https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/" style="color: #4a7c59;">tnstateparks.com</a></p>
+                    <a href="https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
                 </div>
 
                 <div class="course-info-card">
@@ -674,7 +674,7 @@ try {
                 
                 <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play. Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.</p>
                 
-                <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
+                <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
             </div>
 
             <!-- Amenities -->
@@ -870,10 +870,10 @@ try {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html#courses">Golf Courses</a></li>
-                        <li><a href="../index.html#reviews">Reviews</a></li>
-                        <li><a href="../index.html#news">News</a></li>
-                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.php#courses">Golf Courses</a></li>
+                        <li><a href="../index.php#reviews">Reviews</a></li>
+                        <li><a href="../index.php#news">News</a></li>
+                        <li><a href="../index.php#about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
