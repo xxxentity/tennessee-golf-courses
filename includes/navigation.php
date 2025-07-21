@@ -26,11 +26,11 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         <div class="nav-auth">
             <?php if ($is_logged_in): ?>
                 <!-- Logged in navigation -->
-                <a href="/user/profile.php" class="nav-link">My Profile</a>
-                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
                 <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
                 </div>
+                <a href="/user/profile.php" class="nav-link">My Profile</a>
+                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
             <?php else: ?>
                 <!-- Logged out navigation -->
                 <a href="/auth/login.php" class="nav-link login-btn">Login</a>
@@ -66,27 +66,29 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 /* Navigation auth section on the right */
 .nav-auth {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     margin-left: auto;
     margin-right: 8px;
+    flex-wrap: nowrap;
 }
 
 .user-welcome {
     display: flex;
     align-items: center;
-    margin-left: 16px;
+    margin-left: 0;
 }
 
 .welcome-text {
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 14px;
-    padding: 8px 16px;
+    font-size: 12px;
+    padding: 4px 8px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid rgba(6, 78, 59, 0.2);
+    white-space: nowrap;
 }
 
 .login-btn {

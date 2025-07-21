@@ -1,0 +1,386 @@
+<?php
+session_start();
+require_once '../config/database.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: ../auth/login.php?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+$error = '';
+$success = '';
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $first_name = trim($_POST['first_name']);
+    $last_name = trim($_POST['last_name']);
+    $email = trim($_POST['email']);
+    $current_password = $_POST['current_password'] ?? '';
+    $new_password = $_POST['new_password'] ?? '';
+    $confirm_password = $_POST['confirm_password'] ?? '';
+    
+    // Validation
+    if (empty($first_name) || empty($last_name) || empty($email)) {
+        $error = 'First name, last name, and email are required.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = 'Please enter a valid email address.';
+    } else {
+        try {
+            // Check if email is already taken by another user
+            $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ? AND id != ?");
+            $stmt->execute([$email, $user_id]);
+            if ($stmt->fetch()) {
+                $error = 'This email address is already in use by another account.';
+            } else {
+                // Start building the update query
+                $update_fields = ['first_name = ?', 'last_name = ?', 'email = ?'];
+                $update_values = [$first_name, $last_name, $email];
+                
+                // Handle password change if requested
+                if (!empty($new_password)) {
+                    if (empty($current_password)) {
+                        $error = 'Please enter your current password to change your password.';
+                    } elseif (strlen($new_password) < 6) {
+                        $error = 'New password must be at least 6 characters long.';
+                    } elseif ($new_password !== $confirm_password) {
+                        $error = 'New password and confirmation do not match.';
+                    } else {
+                        // Verify current password
+                        $stmt = $pdo->prepare("SELECT password_hash FROM users WHERE id = ?");
+                        $stmt->execute([$user_id]);
+                        $user = $stmt->fetch();
+                        
+                        if (!password_verify($current_password, $user['password_hash'])) {
+                            $error = 'Current password is incorrect.';
+                        } else {
+                            // Add password to update
+                            $update_fields[] = 'password_hash = ?';
+                            $update_values[] = password_hash($new_password, PASSWORD_DEFAULT);
+                        }
+                    }
+                }
+                
+                // Perform update if no errors
+                if (empty($error)) {
+                    $update_values[] = $user_id;
+                    $sql = "UPDATE users SET " . implode(', ', $update_fields) . " WHERE id = ?";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute($update_values);
+                    
+                    // Update session data
+                    $_SESSION['first_name'] = $first_name;
+                    $_SESSION['last_name'] = $last_name;
+                    $_SESSION['email'] = $email;
+                    
+                    $success = 'Profile updated successfully!';
+                }
+            }
+        } catch (PDOException $e) {
+            $error = 'Update failed. Please try again.';
+        }
+    }
+}
+
+// Get current user data
+try {
+    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name FROM users WHERE id = ?");
+    $stmt->execute([$user_id]);
+    $user = $stmt->fetch();
+    
+    if (!$user) {
+        header('Location: ../auth/logout.php');
+        exit;
+    }
+} catch (PDOException $e) {
+    $error = 'Failed to load user data.';
+    $user = [];
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Tennessee Golf Courses</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            min-height: 100vh;
+        }
+        
+        /* Hide weather bar on user pages */
+        .weather-bar {
+            display: none !important;
+            height: 0 !important;
+        }
+        
+        .header {
+            top: 0 !important;
+            margin-top: 0 !important;
+        }
+        
+        body {
+            padding-top: 0 !important;
+        }
+        
+        .profile-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 40px;
+        }
+        
+        .profile-container {
+            max-width: 600px;
+            width: 100%;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 40px 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-body {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 140px;
+            text-align: right;
+            line-height: 1.2;
+        }
+        
+        .form-group input {
+            width: 300px;
+            padding: 18px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            box-sizing: border-box;
+            height: 56px;
+            line-height: 1.4;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .form-group input:hover {
+            border-color: var(--secondary-color);
+        }
+        
+        .password-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-gray);
+            padding: 16px 32px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            border: 1px solid;
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border-color: rgba(34, 197, 94, 0.2);
+        }
+        
+        .disabled-field {
+            background: var(--bg-light) !important;
+            color: var(--text-gray) !important;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
+
+    <main class="profile-page">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h2>Edit Profile</h2>
+                <p>Update your account information</p>
+            </div>
+            
+            <div class="profile-body">
+                <?php if ($error): ?>
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if ($success): ?>
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
+                <?php endif; ?>
+
+                <form action="edit-profile.php" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" value="<?php echo htmlspecialchars($user['username'] ?? ''); ?>" disabled class="disabled-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email'] ?? ''); ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" value="<?php echo htmlspecialchars($user['first_name'] ?? ''); ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" value="<?php echo htmlspecialchars($user['last_name'] ?? ''); ?>" required>
+                    </div>
+
+                    <div class="password-section">
+                        <div class="section-title">Change Password (Optional)</div>
+                        
+                        <div class="form-group">
+                            <label for="current_password">Current Password</label>
+                            <input type="password" id="current_password" name="current_password" placeholder="Enter current password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="new_password">New Password</label>
+                            <input type="password" id="new_password" name="new_password" placeholder="Enter new password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-secondary" onclick="window.location.href='profile.php'">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        Back to Profile
+                    </button>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save" style="margin-right: 8px;"></i>
+                        Update Profile
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
