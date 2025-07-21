@@ -50,12 +50,22 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 <style>
 /* Logo image styling */
 .logo-image {
-    height: 50px;
+    height: 100px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    max-height: 50px;
+    max-height: 100px;
+}
+
+/* Adjust navbar height for larger logo */
+.nav-container {
+    height: 120px !important;
+}
+
+/* Adjust weather bar positioning for taller navbar */
+.auth-page {
+    padding-top: 160px !important;
 }
 
 .nav-logo:hover .logo-image {
