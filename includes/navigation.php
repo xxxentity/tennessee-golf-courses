@@ -10,7 +10,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 <header class="header">
     <nav class="nav">
         <div class="nav-container">
-        <a href="/index.php" class="nav-logo">
+        <a href="/" class="nav-logo">
             <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
@@ -50,7 +50,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 <style>
 /* Logo image styling */
 .logo-image {
-    height: 45px;
+    height: 60px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
