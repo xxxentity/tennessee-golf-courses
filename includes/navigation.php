@@ -11,7 +11,8 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     <nav class="nav">
         <div class="nav-container">
         <a href="/index.html" class="nav-logo">
-            <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
+            <i class="fas fa-golf-ball"></i>
+            Tennessee Golf Courses
         </a>
         
         <ul class="nav-menu" id="nav-menu">
