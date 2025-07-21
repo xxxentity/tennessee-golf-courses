@@ -16,7 +16,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="/index.html" class="nav-link">Home</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#courses" class="nav-link">Courses</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            <li><a href="#news" class="nav-link">News</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
             
             <?php if ($is_logged_in): ?>
                 <!-- Logged in navigation -->
