@@ -54,8 +54,9 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     margin-left: auto;
+    margin-right: 8px;
 }
 
 .user-welcome {
@@ -76,15 +77,16 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 
 .login-btn {
     background: transparent;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     color: var(--primary-color) !important;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: all 0.3s ease;
-    padding: 6px 16px !important;
-    font-size: 14px;
+    padding: 4px 10px !important;
+    font-size: 12px;
     font-weight: 500;
-    min-width: 80px;
+    min-width: 60px;
     text-align: center;
+    line-height: 1.2;
 }
 
 .login-btn:hover {
@@ -96,14 +98,15 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .register-btn {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light) !important;
-    border-radius: 6px;
+    border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
-    padding: 6px 16px !important;
-    font-size: 14px;
+    padding: 4px 10px !important;
+    font-size: 12px;
     font-weight: 500;
-    min-width: 80px;
+    min-width: 60px;
     text-align: center;
+    line-height: 1.2;
 }
 
 .register-btn:hover {
@@ -115,11 +118,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .logout-link {
     color: var(--gold-color) !important;
     font-weight: 500;
-    padding: 6px 16px !important;
-    font-size: 14px;
-    border-radius: 6px;
-    min-width: 80px;
+    padding: 4px 10px !important;
+    font-size: 12px;
+    border-radius: 4px;
+    min-width: 60px;
     text-align: center;
+    line-height: 1.2;
 }
 
 .logout-link:hover {
@@ -128,11 +132,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 }
 
 .nav-auth .nav-link {
-    padding: 6px 16px !important;
-    font-size: 14px;
-    border-radius: 6px;
-    min-width: 80px;
+    padding: 4px 10px !important;
+    font-size: 12px;
+    border-radius: 4px;
+    min-width: 60px;
     text-align: center;
+    line-height: 1.2;
 }
 
 /* Mobile responsiveness for user navigation */
