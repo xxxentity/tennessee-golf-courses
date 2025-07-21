@@ -52,8 +52,9 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 /* Navigation auth section on the right */
 .nav-auth {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
     margin-left: auto;
 }
 
@@ -77,8 +78,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     background: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color) !important;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
+    padding: 6px 16px !important;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
 }
 
 .login-btn:hover {
@@ -90,9 +96,14 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .register-btn {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light) !important;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
+    padding: 6px 16px !important;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
 }
 
 .register-btn:hover {
@@ -104,11 +115,24 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .logout-link {
     color: var(--gold-color) !important;
     font-weight: 500;
+    padding: 6px 16px !important;
+    font-size: 14px;
+    border-radius: 6px;
+    min-width: 80px;
+    text-align: center;
 }
 
 .logout-link:hover {
     background: rgba(234, 88, 12, 0.1);
     color: var(--gold-color) !important;
+}
+
+.nav-auth .nav-link {
+    padding: 6px 16px !important;
+    font-size: 14px;
+    border-radius: 6px;
+    min-width: 80px;
+    text-align: center;
 }
 
 /* Mobile responsiveness for user navigation */
