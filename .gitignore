@@ -1,1 +1,14 @@
+# Ignore course images (manually uploaded)
 images/courses/
+
+# Security - Never commit database passwords
+config/database.php
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*~
