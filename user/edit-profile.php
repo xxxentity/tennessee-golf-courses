@@ -114,11 +114,7 @@ try {
             min-height: 100vh;
         }
         
-        /* Hide weather bar on user pages */
-        .weather-bar {
-            display: none !important;
-            height: 0 !important;
-        }
+        /* Weather bar should show on user pages */
         
         .header {
             top: 0 !important;
@@ -304,6 +300,33 @@ try {
     </style>
 </head>
 <body>
+    <!-- Weather Bar -->
+    <div class="weather-bar">
+        <div class="weather-container">
+            <div class="weather-info">
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Loading...</span>
+                </div>
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp">Perfect Golf Weather</span>
+                    <span class="weather-location">Nashville, TN</span>
+                </div>
+            </div>
+            <div class="golf-conditions">
+                <div class="condition-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Light Breeze</span>
+                </div>
+                <div class="condition-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Clear</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 

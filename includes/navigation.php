@@ -68,10 +68,11 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     margin-left: auto;
     margin-right: 8px;
     flex-wrap: nowrap;
+    max-width: 400px;
 }
 
 .user-welcome {
@@ -82,13 +83,16 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 
 .welcome-text {
     color: var(--primary-color);
-    font-weight: 600;
-    font-size: 12px;
-    padding: 4px 8px;
+    font-weight: 500;
+    font-size: 11px;
+    padding: 2px 6px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .login-btn {
@@ -97,10 +101,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     color: var(--primary-color) !important;
     border-radius: 4px;
     transition: all 0.3s ease;
-    padding: 4px 12px !important;
-    font-size: 12px;
+    padding: 3px 8px !important;
+    font-size: 11px;
     font-weight: 500;
-    width: 85px;
+    width: 60px;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
@@ -150,10 +154,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 }
 
 .nav-auth .nav-link {
-    padding: 4px 10px !important;
-    font-size: 12px;
+    padding: 3px 8px !important;
+    font-size: 11px;
     border-radius: 4px;
-    min-width: 60px;
+    min-width: 50px;
     text-align: center;
     line-height: 1.2;
 }
