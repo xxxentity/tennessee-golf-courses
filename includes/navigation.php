@@ -84,7 +84,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     padding: 4px 10px !important;
     font-size: 12px;
     font-weight: 500;
-    min-width: 60px;
+    width: 70px;
     text-align: center;
     line-height: 1.2;
 }
@@ -104,7 +104,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     padding: 4px 10px !important;
     font-size: 12px;
     font-weight: 500;
-    min-width: 60px;
+    width: 70px;
     text-align: center;
     line-height: 1.2;
 }
