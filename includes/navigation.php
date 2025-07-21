@@ -6,8 +6,10 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
 $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 ?>
 
-<nav>
-    <div class="nav-container">
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <div class="nav-container">
         <a href="/index.html" class="nav-logo">
             <i class="fas fa-golf-ball"></i>
             Tennessee Golf Courses
@@ -36,7 +38,8 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             <span class="bar"></span>
         </div>
     </div>
-</nav>
+    </nav>
+</header>
 
 <style>
 /* Additional styles for user navigation */
