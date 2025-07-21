@@ -15,7 +15,7 @@
         
         .auth-page .header {
             position: fixed;
-            top: 32px;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 999;
@@ -28,7 +28,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 140px 20px 40px;
+            padding: 100px 20px 40px;
         }
         
         .auth-container {
@@ -212,7 +212,7 @@
         
         @media (max-width: 768px) {
             .auth-page {
-                padding: 100px 16px 20px;
+                padding: 90px 16px 20px;
             }
             
             .auth-header {
