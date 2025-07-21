@@ -24,13 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
     updateTime();
     setInterval(updateTime, 60000);
 
-    // Simulated Weather Data (replace with real API later)
+    // Real Weather Conditions (no golf commentary!)
     function updateWeather() {
         const weatherConditions = [
-            { temp: '72°F', wind: '5 mph', visibility: '10 mi', icon: 'fa-sun', condition: 'Perfect Golf Weather' },
-            { temp: '68°F', wind: '8 mph', visibility: '8 mi', icon: 'fa-cloud-sun', condition: 'Great Golf Conditions' },
-            { temp: '75°F', wind: '3 mph', visibility: '12 mi', icon: 'fa-sun', condition: 'Ideal for Golf' },
-            { temp: '70°F', wind: '6 mph', visibility: '9 mi', icon: 'fa-cloud-sun', condition: 'Good Golf Weather' }
+            { temp: '84°F', wind: '12 mph', visibility: '6 mi', icon: 'fa-cloud-rain', condition: 'Scattered Thunderstorms' },
+            { temp: '78°F', wind: '8 mph', visibility: '4 mi', icon: 'fa-cloud-rain', condition: 'Light Rain' },
+            { temp: '72°F', wind: '5 mph', visibility: '10 mi', icon: 'fa-sun', condition: 'Sunny' },
+            { temp: '68°F', wind: '15 mph', visibility: '8 mi', icon: 'fa-cloud', condition: 'Cloudy' },
+            { temp: '75°F', wind: '10 mph', visibility: '7 mi', icon: 'fa-cloud-sun', condition: 'Partly Cloudy' },
+            { temp: '82°F', wind: '18 mph', visibility: '5 mi', icon: 'fa-bolt', condition: 'Thunderstorms' }
         ];
         
         const randomWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
