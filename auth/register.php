@@ -282,7 +282,7 @@
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div class="form-icon">
-                            <input type="text" id="username" name="username" required maxlength="50" placeholder="Choose your username">
+                            <input type="text" id="username" name="username" required maxlength="50" placeholder="Enter username">
                             <i class="fas fa-user"></i>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="form-icon">
-                            <input type="password" id="password" name="password" required minlength="6" placeholder="Create a secure password">
+                            <input type="password" id="password" name="password" required minlength="6" placeholder="Enter password">
                             <i class="fas fa-lock"></i>
                         </div>
                     </div>
@@ -324,7 +324,7 @@
                     <div class="form-group">
                         <label for="confirm_password">Confirm<br>Password</label>
                         <div class="form-icon">
-                            <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Confirm your password">
+                            <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Re-enter password">
                             <i class="fas fa-lock"></i>
                         </div>
                     </div>
