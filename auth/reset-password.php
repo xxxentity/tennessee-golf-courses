@@ -1,10 +1,65 @@
+<?php
+session_start();
+require_once '../config/database.php';
+
+$token = $_GET['token'] ?? '';
+$user = null;
+$error = '';
+
+if (empty($token)) {
+    $error = 'Invalid or missing reset token';
+} else {
+    try {
+        // Check if token is valid and not expired
+        $stmt = $pdo->prepare("SELECT id, first_name, email FROM users WHERE password_reset_token = ? AND password_reset_expires > NOW()");
+        $stmt->execute([$token]);
+        $user = $stmt->fetch();
+        
+        if (!$user) {
+            $error = 'Invalid or expired reset token';
+        }
+    } catch (PDOException $e) {
+        $error = 'Database error occurred';
+    }
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user) {
+    $new_password = $_POST['new_password'] ?? '';
+    $confirm_password = $_POST['confirm_password'] ?? '';
+    
+    if (empty($new_password) || empty($confirm_password)) {
+        $error = 'Please enter both password fields';
+    } elseif (strlen($new_password) < 6) {
+        $error = 'Password must be at least 6 characters long';
+    } elseif ($new_password !== $confirm_password) {
+        $error = 'Passwords do not match';
+    } else {
+        try {
+            // Update password and clear reset token
+            $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("UPDATE users SET password_hash = ?, password_reset_token = NULL, password_reset_expires = NULL, login_attempts = 0, account_locked_until = NULL WHERE id = ?");
+            $stmt->execute([$password_hash, $user['id']]);
+            
+            header('Location: login.php?success=' . urlencode('Password reset successfully. You can now login with your new password.'));
+            exit;
+            
+        } catch (PDOException $e) {
+            $error = 'Failed to update password. Please try again.';
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Tennessee Golf Courses</title>
+    <title>Reset Password - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
@@ -60,17 +115,6 @@
             padding: 40px 40px 30px;
             text-align: center;
             position: relative;
-        }
-        
-        .auth-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            pointer-events: none;
         }
         
         .auth-header h2 {
@@ -135,6 +179,7 @@
         .form-group input:hover {
             border-color: var(--secondary-color);
         }
+        
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
@@ -197,6 +242,15 @@
         .auth-footer a:hover {
             color: var(--secondary-color);
         }
+        
+        .user-info {
+            background: rgba(6, 78, 59, 0.05);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -205,7 +259,7 @@
             <a href="../index.html" class="logo">Tennessee Golf Courses</a>
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="login.php" class="active">Login</a></li>
+                <li><a href="login.php">Login</a></li>
                 <li><a href="register.php">Register</a></li>
             </ul>
         </div>
@@ -214,38 +268,47 @@
     <main class="auth-page">
         <div class="auth-container">
             <div class="auth-header">
-                <h2>Welcome Back</h2>
-                <p>Sign in to your Tennessee Golf Courses account</p>
+                <h2>Set New Password</h2>
+                <p>Enter your new password below</p>
             </div>
             
             <div class="auth-body">
-                <?php
-                if (isset($_GET['error'])) {
-                    echo '<div class="alert alert-error">' . htmlspecialchars($_GET['error']) . '</div>';
-                }
-                if (isset($_GET['success'])) {
-                    echo '<div class="alert alert-success">' . htmlspecialchars($_GET['success']) . '</div>';
-                }
-                ?>
+                <?php if ($error): ?>
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
 
-                <form action="login-process.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required placeholder="Enter username or email">
+                <?php if ($user): ?>
+                    <div class="user-info">
+                        <i class="fas fa-user" style="margin-right: 8px;"></i>
+                        Resetting password for: <strong><?php echo htmlspecialchars($user['email']); ?></strong>
                     </div>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter password">
-                    </div>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="new_password">New Password</label>
+                            <input type="password" id="new_password" name="new_password" required minlength="6" placeholder="Enter new password">
+                        </div>
 
-                    <button type="submit" class="btn-primary">Sign In</button>
-                </form>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Confirm new password">
+                        </div>
+
+                        <button type="submit" class="btn-primary">Update Password</button>
+                    </form>
+                <?php else: ?>
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
+                        This password reset link is invalid or has expired. Please request a new one.
+                    </div>
+                <?php endif; ?>
             </div>
             
             <div class="auth-footer">
-                <p>Don't have an account? <a href="register.php">Create one here</a></p>
-                <p style="margin-top: 10px;"><a href="forgot-password.php">Forgot your password?</a></p>
+                <p><a href="login.php">Back to Login</a> | <a href="forgot-password.php">Request New Reset Link</a></p>
             </div>
         </div>
     </main>

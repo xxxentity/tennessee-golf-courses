@@ -1,10 +1,16 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Tennessee Golf Courses</title>
+    <title>Forgot Password - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
@@ -60,17 +66,6 @@
             padding: 40px 40px 30px;
             text-align: center;
             position: relative;
-        }
-        
-        .auth-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            pointer-events: none;
         }
         
         .auth-header h2 {
@@ -135,6 +130,7 @@
         .form-group input:hover {
             border-color: var(--secondary-color);
         }
+        
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
@@ -197,6 +193,16 @@
         .auth-footer a:hover {
             color: var(--secondary-color);
         }
+        
+        .info-text {
+            background: rgba(6, 78, 59, 0.05);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            font-size: 14px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -214,8 +220,8 @@
     <main class="auth-page">
         <div class="auth-container">
             <div class="auth-header">
-                <h2>Welcome Back</h2>
-                <p>Sign in to your Tennessee Golf Courses account</p>
+                <h2>Reset Password</h2>
+                <p>Enter your email to reset your password</p>
             </div>
             
             <div class="auth-body">
@@ -228,24 +234,23 @@
                 }
                 ?>
 
-                <form action="login-process.php" method="POST">
+                <div class="info-text">
+                    <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+                    Enter your email address and we'll send you a link to reset your password. This will also unlock your account if it was locked due to failed login attempts.
+                </div>
+
+                <form action="forgot-password-process.php" method="POST">
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required placeholder="Enter username or email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
                     </div>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter password">
-                    </div>
-
-                    <button type="submit" class="btn-primary">Sign In</button>
+                    <button type="submit" class="btn-primary">Send Reset Link</button>
                 </form>
             </div>
             
             <div class="auth-footer">
-                <p>Don't have an account? <a href="register.php">Create one here</a></p>
-                <p style="margin-top: 10px;"><a href="forgot-password.php">Forgot your password?</a></p>
+                <p>Remember your password? <a href="login.php">Sign in here</a></p>
             </div>
         </div>
     </main>
