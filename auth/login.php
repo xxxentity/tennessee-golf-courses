@@ -11,9 +11,19 @@
             min-height: 100vh;
         }
         
-        /* Hide weather bar on auth pages */
+        /* Hide weather bar on auth pages and fix positioning */
         .weather-bar {
-            display: none;
+            display: none !important;
+            height: 0 !important;
+        }
+        
+        .header {
+            top: 0 !important;
+            margin-top: 0 !important;
+        }
+        
+        body {
+            padding-top: 0 !important;
         }
         
         .auth-page .header {
