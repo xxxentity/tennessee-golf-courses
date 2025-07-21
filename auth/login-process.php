@@ -49,7 +49,7 @@ try {
     $_SESSION['logged_in'] = true;
     
     // Redirect to homepage or requested page
-    $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '../index.html';
+    $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '../index.php';
     header('Location: ' . $redirect);
     exit;
     
