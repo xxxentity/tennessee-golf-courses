@@ -297,6 +297,83 @@ try {
             color: var(--text-gray) !important;
             cursor: not-allowed;
         }
+        
+        .profile-picture-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .current-avatar {
+            margin: 20px 0;
+        }
+        
+        .current-profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border-color);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .default-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 4px solid var(--border-color);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .upload-controls {
+            margin-top: 20px;
+        }
+        
+        .btn-upload {
+            background: linear-gradient(135deg, var(--gold-color), #f59e0b);
+            color: var(--text-light);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .btn-upload:hover {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .upload-status {
+            margin-top: 12px;
+            font-size: 14px;
+            min-height: 20px;
+        }
+        
+        .upload-status.success {
+            color: #16a34a;
+        }
+        
+        .upload-status.error {
+            color: #dc2626;
+        }
+        
+        .upload-status.loading {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -352,6 +429,27 @@ try {
                     </div>
                 <?php endif; ?>
 
+                <div class="profile-picture-section">
+                    <div class="section-title">Profile Picture</div>
+                    <div class="current-avatar">
+                        <?php if (!empty($user['profile_picture']) && file_exists('../' . $user['profile_picture'])): ?>
+                            <img src="../<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Current Profile Picture" class="current-profile-picture" id="currentPicture">
+                        <?php else: ?>
+                            <div class="default-avatar" id="currentPicture">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="upload-controls">
+                        <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+                        <button type="button" class="btn-upload" onclick="document.getElementById('profilePictureInput').click()">
+                            <i class="fas fa-camera"></i>
+                            Choose Picture
+                        </button>
+                        <div id="uploadStatus" class="upload-status"></div>
+                    </div>
+                </div>
+
                 <form action="edit-profile.php" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -405,5 +503,64 @@ try {
             </div>
         </div>
     </main>
+    
+    <script>
+        document.getElementById('profilePictureInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const statusDiv = document.getElementById('uploadStatus');
+            const currentPicture = document.getElementById('currentPicture');
+            
+            // Validate file
+            if (!file.type.match(/^image\/(jpeg|jpg|png|gif)$/)) {
+                statusDiv.className = 'upload-status error';
+                statusDiv.textContent = 'Please select a valid image file (JPG, PNG, or GIF)';
+                return;
+            }
+            
+            if (file.size > 5 * 1024 * 1024) {
+                statusDiv.className = 'upload-status error';
+                statusDiv.textContent = 'File size must be less than 5MB';
+                return;
+            }
+            
+            // Show loading
+            statusDiv.className = 'upload-status loading';
+            statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+            
+            // Create form data
+            const formData = new FormData();
+            formData.append('profile_picture', file);
+            
+            // Upload file
+            fetch('upload-profile-picture.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.className = 'upload-status success';
+                    statusDiv.innerHTML = '<i class="fas fa-check"></i> ' + data.message;
+                    
+                    // Update the displayed image
+                    if (currentPicture.tagName === 'IMG') {
+                        currentPicture.src = '../' + data.image_url + '?t=' + Date.now();
+                    } else {
+                        // Replace default avatar with image
+                        currentPicture.outerHTML = '<img src="../' + data.image_url + '" alt="Current Profile Picture" class="current-profile-picture" id="currentPicture">';
+                    }
+                } else {
+                    statusDiv.className = 'upload-status error';
+                    statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + data.error;
+                }
+            })
+            .catch(error => {
+                statusDiv.className = 'upload-status error';
+                statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Upload failed. Please try again.';
+            });
+        });
+    </script>
 </body>
 </html>

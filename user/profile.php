@@ -81,6 +81,15 @@ try {
             font-size: 40px;
             margin: 0 auto 20px;
             border: 4px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
         
         .profile-name {
@@ -273,7 +282,11 @@ try {
     <main class="profile-container">
         <div class="profile-header">
             <div class="profile-avatar">
-                <i class="fas fa-user"></i>
+                <?php if (!empty($user['profile_picture']) && file_exists('../' . $user['profile_picture'])): ?>
+                    <img src="../<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Profile Picture" class="profile-picture">
+                <?php else: ?>
+                    <i class="fas fa-user"></i>
+                <?php endif; ?>
             </div>
             <h1 class="profile-name"><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h1>
             <p class="profile-email"><?php echo htmlspecialchars($user['email']); ?></p>
