@@ -28,7 +28,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 100px 20px 40px;
+            padding: 80px 20px 40px;
         }
         
         .auth-container {
@@ -222,7 +222,7 @@
         
         @media (max-width: 768px) {
             .auth-page {
-                padding: 90px 16px 20px;
+                padding: 80px 16px 20px;
             }
             
             .auth-header {

@@ -26,7 +26,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 100px 20px 40px;
+            padding: 80px 20px 40px;
         }
         
         .auth-container {
