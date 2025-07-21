@@ -11,6 +11,8 @@
         body {
             background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
         
         .auth-page .header {
@@ -21,6 +23,7 @@
             z-index: 999;
             background: var(--bg-white);
             box-shadow: var(--shadow-light);
+            margin: 0;
         }
         
         .auth-page {
