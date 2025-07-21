@@ -114,15 +114,18 @@ try {
             min-height: 100vh;
         }
         
-        /* Weather bar should show on user pages */
-        
+        /* Weather bar should show on user pages - fix positioning */
         .header {
-            top: 0 !important;
+            position: fixed !important;
+            top: 40px !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 999 !important;
             margin-top: 0 !important;
         }
         
         body {
-            padding-top: 0 !important;
+            padding-top: 140px !important;
         }
         
         .profile-page {
@@ -130,7 +133,8 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px 40px;
+            padding: 20px 20px 40px;
+            margin-top: 0;
         }
         
         .profile-container {
