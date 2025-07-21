@@ -1,3 +1,58 @@
+<?php
+session_start();
+require_once '../config/database.php';
+
+$course_slug = 'bear-trace-harrison-bay';
+$course_name = 'Bear Trace at Harrison Bay';
+
+// Check if user is logged in
+$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+
+// Handle comment submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    $rating = (int)$_POST['rating'];
+    $comment_text = trim($_POST['comment_text']);
+    $user_id = $_SESSION['user_id'];
+    
+    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+            $success_message = "Your review has been posted successfully!";
+        } catch (PDOException $e) {
+            $error_message = "Error posting review. Please try again.";
+        }
+    } else {
+        $error_message = "Please provide a valid rating and comment.";
+    }
+}
+
+// Get existing comments
+try {
+    $stmt = $pdo->prepare("
+        SELECT cc.*, u.first_name, u.last_name 
+        FROM course_comments cc 
+        JOIN users u ON cc.user_id = u.id 
+        WHERE cc.course_slug = ? AND cc.is_approved = 1 
+        ORDER BY cc.created_at DESC
+    ");
+    $stmt->execute([$course_slug]);
+    $comments = $stmt->fetchAll();
+    
+    // Calculate average rating
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND is_approved = 1");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : 4.5;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+    
+} catch (PDOException $e) {
+    $comments = [];
+    $avg_rating = 4.5;
+    $total_reviews = 0;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -320,6 +375,138 @@
             background: white;
             color: #2c5234;
         }
+        
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+        
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input[type="radio"]:checked ~ label {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
+        }
+        
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
+        }
+        
+        .login-prompt {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .login-prompt a {
+            color: #2c5234;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -350,30 +537,8 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <i class="fas fa-golf-ball"></i>
-                    <span>Tennessee Golf Courses</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="../index.html#courses" class="nav-link">Courses</a></li>
-                    <li><a href="../index.html#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="../index.html#news" class="nav-link">News</a></li>
-                    <li><a href="../index.html#about" class="nav-link">About</a></li>
-                    <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
@@ -382,13 +547,22 @@
             <p>Jack Nicklaus Signature Design • Harrison, Tennessee</p>
             <div class="course-rating">
                 <div class="rating-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                    <?php 
+                    $full_stars = floor($avg_rating);
+                    $half_star = ($avg_rating - $full_stars) >= 0.5;
+                    
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $full_stars) {
+                            echo '<i class="fas fa-star"></i>';
+                        } elseif ($i == $full_stars + 1 && $half_star) {
+                            echo '<i class="fas fa-star-half-alt"></i>';
+                        } else {
+                            echo '<i class="far fa-star"></i>';
+                        }
+                    }
+                    ?>
                 </div>
-                <span class="rating-text">4.5 / 5.0</span>
+                <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> reviews)</span>
             </div>
         </div>
     </section>
@@ -586,49 +760,78 @@
                 <p>Read reviews from golfers who have experienced Bear Trace</p>
             </div>
             
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-name">Traveling Golfer</div>
-                    <div class="review-date">Recent Review</div>
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
                 </div>
-                <div class="rating-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"I was passing through Nashville headed east and wanted to try a course on the TN Golf Trail so I picked this one. Gotta say I was impressed. The course was in great shape."</p>
-            </div>
+            <?php endif; ?>
             
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-name">Winter Golfer</div>
-                    <div class="review-date">Winter Review</div>
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
                 </div>
-                <div class="rating-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"We played in the winter time and the tee boxes, fairways, and greens were still maintained like summer. It was a busy day and the starter did an excellent job of getting everyone going on time."</p>
-            </div>
+            <?php endif; ?>
             
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-name">Course Enthusiast</div>
-                    <div class="review-date">Golf Review</div>
+            <!-- Comment Form (Only for logged in users) -->
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
+                        <div class="form-group">
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this course..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Post Review</button>
+                    </form>
                 </div>
-                <div class="rating-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <?php else: ?>
+                <div class="login-prompt">
+                    <p><a href="../auth/login.php">Login</a> or <a href="../auth/register.php">Register</a> to share your review</p>
                 </div>
-                <p>"Nicklaus designed course in great shape. Green complexes are classic Jack Nicklaus. Bunkers perfect. On the course you would see a LOT of deer strolling out onto the fairways and tee boxes - they were so used to seeing people that they would not run off when they saw you."</p>
+            <?php endif; ?>
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
+                <?php if (empty($comments)): ?>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['first_name'] . ' ' . substr($comment['last_name'], 0, 1) . '.'); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                            </div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>
