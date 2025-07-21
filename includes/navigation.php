@@ -50,11 +50,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 <style>
 /* Logo image styling */
 .logo-image {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    max-height: 50px;
 }
 
 .nav-logo:hover .logo-image {
