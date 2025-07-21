@@ -58,16 +58,6 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     max-height: 100px;
 }
 
-/* Adjust navbar height for larger logo */
-.nav-container {
-    height: 120px !important;
-}
-
-/* Adjust weather bar positioning for taller navbar */
-.auth-page {
-    padding-top: 160px !important;
-}
-
 .nav-logo:hover .logo-image {
     transform: scale(1.05);
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
