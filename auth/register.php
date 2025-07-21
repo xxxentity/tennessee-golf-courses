@@ -8,22 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+        
         body {
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%) !important;
+            min-height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
         
         .auth-page .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background: var(--bg-white);
-            box-shadow: var(--shadow-light);
-            margin: 0;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 999 !important;
+            background: var(--bg-white) !important;
+            box-shadow: var(--shadow-light) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .auth-page .header .nav-container {
+            margin: 0 !important;
+            padding: 0 20px !important;
         }
         
         .auth-page {
