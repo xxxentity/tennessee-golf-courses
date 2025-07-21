@@ -13,7 +13,7 @@
             min-height: 100vh;
         }
         
-        .header {
+        .auth-page .header {
             position: fixed;
             top: 32px;
             left: 0;

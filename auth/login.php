@@ -6,6 +6,29 @@
     <title>Login - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
+        body {
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            min-height: 100vh;
+        }
+        
+        .auth-page .header {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--bg-white);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 40px;
+        }
+        
         .auth-container {
             max-width: 400px;
             margin: 50px auto;
@@ -70,7 +93,7 @@
         </div>
     </nav>
 
-    <main>
+    <main class="auth-page">
         <div class="auth-container">
             <h2>Welcome Back</h2>
             <p>Sign in to your account</p>
