@@ -81,12 +81,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     color: var(--primary-color) !important;
     border-radius: 4px;
     transition: all 0.3s ease;
-    padding: 4px 10px !important;
+    padding: 4px 12px !important;
     font-size: 12px;
     font-weight: 500;
-    width: 70px;
+    width: 85px;
     text-align: center;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .login-btn:hover {
@@ -101,12 +102,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
-    padding: 4px 10px !important;
+    padding: 4px 12px !important;
     font-size: 12px;
     font-weight: 500;
-    width: 70px;
+    width: 85px;
     text-align: center;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .register-btn:hover {
