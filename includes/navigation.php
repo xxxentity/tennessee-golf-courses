@@ -27,6 +27,9 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
                           strpos($current_path, '/news/') !== false);
             
             $base_url = $is_subpage ? '../' : '/';
+            
+            // Debug: Add HTML comment to see what's happening
+            echo "<!-- DEBUG: current_path=$current_path, is_subpage=" . ($is_subpage ? 'true' : 'false') . ", base_url=$base_url -->";
             ?>
             <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>
