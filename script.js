@@ -119,40 +119,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     console.log('Found nav links:', navLinks.length);
     
+    // Combined navigation event handler
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            console.log('Nav link clicked:', href);
+            
+            // Always close mobile menu when any nav link is clicked
             navMenu.classList.remove('active');
             const bars = navToggle.querySelectorAll('.bar');
             bars.forEach(bar => {
                 bar.style.transform = '';
                 bar.style.opacity = '';
             });
-        });
-    });
-
-    // Smooth scrolling for navigation links (only for same-page links)
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            console.log('Nav link clicked:', href);
             
-            // Only prevent default for anchor links on the same page
-            if (href && href.startsWith('#')) {
+            // Only prevent default and smooth scroll for anchor links that point to sections on the current page
+            if (href && href.startsWith('#') && document.getElementById(href.substring(1))) {
                 e.preventDefault();
                 const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId);
                 
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
-            // For other links (like ../index.php), allow normal navigation
+            // For all other links (pages, external URLs, etc.), allow normal navigation
         });
     });
 
