@@ -900,7 +900,7 @@ a[href^="www."]::after {
 }
 
 .footer-logo-image {
-    height: 60px;
+    height: 200px;
     width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1);

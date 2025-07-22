@@ -114,18 +114,10 @@ try {
             min-height: 100vh;
         }
         
-        /* Weather bar should show on user pages - fix positioning */
-        .header {
-            position: fixed !important;
-            top: 40px !important;
-            left: 0 !important;
-            right: 0 !important;
-            z-index: 999 !important;
-            margin-top: 0 !important;
-        }
+        /* Weather bar and navbar use default positioning from styles.css */
         
         body {
-            padding-top: 140px !important;
+            padding-top: 140px; /* Account for weather bar + header */
         }
         
         .profile-page {

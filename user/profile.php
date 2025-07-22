@@ -52,18 +52,7 @@ try {
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Fix weather bar and navbar positioning */
-        .weather-bar {
-            position: fixed !important;
-            top: 0 !important;
-            z-index: 1001 !important;
-        }
-        
-        .header {
-            position: fixed !important;
-            top: 40px !important;
-            z-index: 999 !important;
-        }
+        /* Weather bar and navbar use default positioning from styles.css */
         
         .profile-container {
             max-width: 1000px;

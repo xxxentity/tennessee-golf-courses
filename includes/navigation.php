@@ -28,7 +28,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             
             $base_url = $is_subpage ? '../' : '/';
             ?>
-            <li><a href="<?php echo $base_url; ?>" class="nav-link">Home</a></li>
+            <li><a href="<?php echo $is_subpage ? '../index.php' : '/'; ?>" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>
             <li><a href="<?php echo $base_url; ?>#reviews" class="nav-link">Reviews</a></li>
             <li><a href="<?php echo $base_url; ?>#news" class="nav-link">News</a></li>
@@ -97,13 +97,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .welcome-text {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 22px;
-    padding: 4px 12px;
+    font-size: 16px;
+    padding: 8px 16px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
     border-radius: 8px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
-    max-width: 240px;
+    max-width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -114,10 +114,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     color: var(--primary-color) !important;
     border-radius: 8px;
     transition: all 0.3s ease;
-    padding: 6px 16px !important;
-    font-size: 22px;
+    padding: 8px 16px !important;
+    font-size: 16px;
     font-weight: 500;
-    width: 120px;
+    width: auto;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
@@ -135,10 +135,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     border-radius: 8px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
-    padding: 8px 24px !important;
-    font-size: 24px;
+    padding: 8px 16px !important;
+    font-size: 16px;
     font-weight: 500;
-    width: 170px;
+    width: auto;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
@@ -153,10 +153,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .logout-link {
     color: var(--gold-color) !important;
     font-weight: 500;
-    padding: 8px 20px !important;
-    font-size: 24px;
+    padding: 8px 16px !important;
+    font-size: 16px;
     border-radius: 8px;
-    min-width: 120px;
+    min-width: auto;
     text-align: center;
     line-height: 1.2;
 }
@@ -167,10 +167,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 }
 
 .nav-auth .nav-link {
-    padding: 6px 16px !important;
-    font-size: 22px;
+    padding: 8px 16px !important;
+    font-size: 16px;
     border-radius: 8px;
-    min-width: 100px;
+    min-width: auto;
     text-align: center;
     line-height: 1.2;
 }
@@ -203,8 +203,8 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     }
     
     .welcome-text {
-        font-size: 26px;
-        padding: 12px 24px;
+        font-size: 16px;
+        padding: 8px 16px;
     }
     
     .nav-menu li {
