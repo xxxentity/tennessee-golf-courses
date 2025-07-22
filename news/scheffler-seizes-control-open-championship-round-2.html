@@ -9,6 +9,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Logo image styling */
+        .logo-image {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            max-height: 100px;
+        }
+
+        .nav-logo:hover .logo-image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        /* Navigation auth section on the right */
+        .nav-auth {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+            margin-right: 8px;
+            flex-wrap: nowrap;
+            max-width: 400px;
+        }
+
+        .login-btn {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color) !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            padding: 8px 16px !important;
+            font-size: 16px;
+            font-weight: 500;
+            width: auto;
+            text-align: center;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .login-btn:hover {
+            background: var(--primary-color);
+            color: var(--text-light) !important;
+            transform: translateY(-1px);
+        }
+
+        .register-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light) !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            padding: 8px 16px !important;
+            font-size: 16px;
+            font-weight: 500;
+            width: auto;
+            text-align: center;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .register-btn:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-medium);
+        }
+
         .article-hero {
             height: 50vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/news/open-championship-round-2/scheffler-64.jpg');
