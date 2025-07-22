@@ -28,8 +28,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             
             $base_url = $is_subpage ? '../' : '/';
             
-            // Debug: Show visible debug info temporarily
-            echo "<div style='position:fixed; top:0; left:0; background:red; color:white; padding:5px; z-index:9999; font-size:12px;'>DEBUG: path=$current_path, subpage=" . ($is_subpage ? 'YES' : 'NO') . ", base=$base_url</div>";
+            // Debug removed - path detection working correctly
             ?>
             <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>

@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const href = this.getAttribute('href');
             
             // Only prevent default for anchor links on the same page
-            if (href.startsWith('#')) {
+            if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId);
@@ -146,7 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             }
-            // For other links (like ../index.html), allow normal navigation
+            // For other links (like ../index.php), allow normal navigation
+            // Added null check for href and updated comment
         });
     });
 
