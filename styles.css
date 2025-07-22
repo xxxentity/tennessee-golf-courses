@@ -900,10 +900,10 @@ a[href^="www."]::after {
 }
 
 .footer-logo-image {
-    height: 220px !important;
-    width: 660px !important;
-    max-width: 660px !important;
-    max-height: 220px !important;
+    height: 140px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 140px !important;
     object-fit: contain;
 }
 
