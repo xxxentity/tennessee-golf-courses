@@ -129,7 +129,7 @@
             <div class="news-grid">
                 <article class="news-card">
                     <div class="news-image">
-                        <img src="images/news/open-championship-final-2025/scheffler-claret-jug.jpg" alt="Scottie Scheffler with Claret Jug">
+                        <img src="images/news/open-championship-final-2025/scheffler-claret-jug.jpg?v=2" alt="Scottie Scheffler with Claret Jug">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">

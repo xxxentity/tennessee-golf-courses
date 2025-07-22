@@ -125,7 +125,7 @@ try {
 
         .article-hero {
             height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/news/open-championship-final-2025/scheffler-claret-jug.jpg?v=1');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/news/open-championship-final-2025/scheffler-claret-jug.jpg?v=2');
             background-size: cover;
             background-position: center;
             display: flex;
