@@ -30,8 +30,8 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         // For subdirectories, use ../ to go back to root, otherwise use root path
         $base_url = $is_in_subdirectory ? '../' : '';
         
-        // Debug info
-        echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
+        // Debug info (temporarily disabled)
+        // echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
         ?>
         <a href="<?php echo $base_url; ?>index.php" class="nav-logo">
             <img src="<?php echo $base_url; ?>images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">

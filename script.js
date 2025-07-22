@@ -115,41 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navigation event handlers
-    const navLinks = document.querySelectorAll('.nav-link');
-    console.log('Found nav links:', navLinks.length);
+    // Navigation event handlers - TEMPORARILY DISABLED FOR DEBUGGING
+    // const navLinks = document.querySelectorAll('.nav-link');
+    // console.log('Found nav links:', navLinks.length);
     
-    // Combined navigation event handler
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            console.log('Nav link clicked:', href);
-            
-            // Always close mobile menu when any nav link is clicked
-            navMenu.classList.remove('active');
-            const bars = navToggle.querySelectorAll('.bar');
-            bars.forEach(bar => {
-                bar.style.transform = '';
-                bar.style.opacity = '';
-            });
-            
-            // Only prevent default and smooth scroll for anchor links that point to sections on the current page
-            if (href && href.startsWith('#') && document.getElementById(href.substring(1))) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-            // For all other links (pages, external URLs, etc.), allow normal navigation
-        });
-    });
+    // DISABLE navigation event handler to test if it's causing issues
+    // Will re-enable once we confirm navigation works without it
 
     // Header scroll effect
     const header = document.querySelector('.header');
