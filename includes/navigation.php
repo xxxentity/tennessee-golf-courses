@@ -30,20 +30,22 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         // For subdirectories, use ../ to go back to root, otherwise use root path
         $base_url = $is_in_subdirectory ? '../' : '';
         
-        // Debug info (temporarily disabled)
-        // echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
+        // Debug info 
+        echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
         ?>
         <a href="<?php echo $base_url; ?>index.php" class="nav-logo">
             <img src="<?php echo $base_url; ?>images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">
+            <!-- DEBUG: Generated links below -->
             <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>courses.php" class="nav-link">Courses</a></li>
             <li><a href="<?php echo $base_url; ?>reviews.php" class="nav-link">Reviews</a></li>
             <li><a href="<?php echo $base_url; ?>news.php" class="nav-link">News</a></li>
             <li><a href="<?php echo $base_url; ?>about.php" class="nav-link">About</a></li>
             <li><a href="<?php echo $base_url; ?>contact.php" class="nav-link">Contact</a></li>
+            <!-- DEBUG: Base URL = '<?php echo $base_url; ?>' -->
         </ul>
         
         <div class="nav-auth">
