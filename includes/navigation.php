@@ -33,19 +33,19 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         // Debug info 
         echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
         ?>
-        <a href="<?php echo $base_url; ?>index.php" class="nav-logo">
-            <img src="<?php echo $base_url; ?>images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
+        <a href="/index.php" class="nav-logo">
+            <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <!-- DEBUG: Generated links below -->
-            <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
-            <li><a href="<?php echo $base_url; ?>courses.php" class="nav-link">Courses</a></li>
-            <li><a href="<?php echo $base_url; ?>reviews.php" class="nav-link">Reviews</a></li>
-            <li><a href="<?php echo $base_url; ?>news.php" class="nav-link">News</a></li>
-            <li><a href="<?php echo $base_url; ?>about.php" class="nav-link">About</a></li>
-            <li><a href="<?php echo $base_url; ?>contact.php" class="nav-link">Contact</a></li>
-            <!-- DEBUG: Base URL = '<?php echo $base_url; ?>' -->
+            <!-- TEMPORARY: Using absolute paths to test navigation -->
+            <li><a href="/index.php" class="nav-link">Home</a></li>
+            <li><a href="/courses.php" class="nav-link">Courses</a></li>
+            <li><a href="/reviews.php" class="nav-link">Reviews</a></li>
+            <li><a href="/news.php" class="nav-link">News</a></li>
+            <li><a href="/about.php" class="nav-link">About</a></li>
+            <li><a href="/contact.php" class="nav-link">Contact</a></li>
+            <!-- DEBUG: Using absolute paths temporarily -->
         </ul>
         
         <div class="nav-auth">
@@ -54,12 +54,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
                 <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
                 </div>
-                <a href="<?php echo $base_url; ?>user/profile.php" class="nav-link">My Profile</a>
-                <a href="<?php echo $base_url; ?>auth/logout.php" class="nav-link logout-link">Logout</a>
+                <a href="/user/profile.php" class="nav-link">My Profile</a>
+                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <a href="<?php echo $base_url; ?>auth/login.php" class="nav-link login-btn">Login</a>
-                <a href="<?php echo $base_url; ?>auth/register.php" class="nav-link register-btn">Join Free</a>
+                <a href="/auth/login.php" class="nav-link login-btn">Login</a>
+                <a href="/auth/register.php" class="nav-link register-btn">Join Free</a>
             <?php endif; ?>
         </div>
         
