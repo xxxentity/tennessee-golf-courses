@@ -129,6 +129,21 @@
             <div class="news-grid">
                 <article class="news-card">
                     <div class="news-image">
+                        <img src="images/news/open-championship-final-2025/scheffler-claret-jug.jpg" alt="Scottie Scheffler with Claret Jug">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">July 21, 2025</span>
+                            <span class="news-category">Major Championship</span>
+                        </div>
+                        <h3>Scheffler Captures First Claret Jug with Dominant Victory</h3>
+                        <p>World No. 1 completes commanding four-shot triumph at Royal Portrush to claim his fourth major championship...</p>
+                        <a href="news/scheffler-wins-2025-british-open-final-round.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
                         <img src="images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler celebrating with family">
                     </div>
                     <div class="news-content">
@@ -154,21 +169,6 @@
                         <h3>Scheffler Seizes Control with Career-Best 64</h3>
                         <p>World No. 1 delivers masterclass performance with 7-under 64 to take Open Championship lead at Royal Portrush...</p>
                         <a href="news/scheffler-seizes-control-open-championship-round-2.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-image">
-                        <img src="images/news/open-championship-2025-round-1/royal-portrush-round1.jpg" alt="Rory McIlroy at Royal Portrush">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date">July 17, 2025</span>
-                            <span class="news-category">Major Championship</span>
-                        </div>
-                        <h3>Five Players Share Lead as Royal Portrush Shows Its Teeth</h3>
-                        <p>Matt Fitzpatrick among five tied for the lead after a challenging first round at the 2025 Open Championship...</p>
-                        <a href="news/open-championship-2025-round-1-royal-portrush.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>

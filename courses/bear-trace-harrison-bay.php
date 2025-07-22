@@ -940,12 +940,11 @@ try {
         }
         
         // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target == modal) {
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
                 closeGallery();
             }
-        }
+        });
         
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {

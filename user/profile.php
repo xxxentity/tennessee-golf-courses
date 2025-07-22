@@ -375,18 +375,10 @@ try {
 
     <script src="../script.js"></script>
     <script>
-        // Add any JavaScript for profile interactions here
+        // Profile page specific functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth hover animations
-            const cards = document.querySelectorAll('.stat-card, .review-item');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
+            // CSS already handles hover animations, no additional JS needed
+            console.log('Profile page loaded successfully');
         });
     </script>
 </body>

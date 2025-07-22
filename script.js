@@ -115,12 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // TEMPORARILY DISABLE ALL NAV LINK EVENT HANDLERS FOR DEBUGGING
+    // Navigation event handlers
     const navLinks = document.querySelectorAll('.nav-link');
-    console.log('Found nav links:', navLinks.length, 'but ALL event handlers disabled for debugging');
+    console.log('Found nav links:', navLinks.length);
     
-    // All navigation event handlers commented out to test if they're causing the issue
-    /*
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -155,10 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             // For other links (like ../index.php), allow normal navigation
-            // Added null check for href and updated comment
         });
     });
-    */
 
     // Header scroll effect
     const header = document.querySelector('.header');
