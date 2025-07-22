@@ -1,5 +1,8 @@
 <?php
-session_start();
+// Only start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
@@ -15,12 +18,22 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/#courses" class="nav-link">Courses</a></li>
-            <li><a href="/#reviews" class="nav-link">Reviews</a></li>
-            <li><a href="/#news" class="nav-link">News</a></li>
-            <li><a href="/#about" class="nav-link">About</a></li>
-            <li><a href="/#contact" class="nav-link">Contact</a></li>
+            <?php
+            // Determine if we're on the main site or a subpage
+            $current_path = $_SERVER['REQUEST_URI'];
+            $is_subpage = (strpos($current_path, '/courses/') !== false || 
+                          strpos($current_path, '/auth/') !== false || 
+                          strpos($current_path, '/user/') !== false ||
+                          strpos($current_path, '/news/') !== false);
+            
+            $base_url = $is_subpage ? '../' : '/';
+            ?>
+            <li><a href="<?php echo $base_url; ?>" class="nav-link">Home</a></li>
+            <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>
+            <li><a href="<?php echo $base_url; ?>#reviews" class="nav-link">Reviews</a></li>
+            <li><a href="<?php echo $base_url; ?>#news" class="nav-link">News</a></li>
+            <li><a href="<?php echo $base_url; ?>#about" class="nav-link">About</a></li>
+            <li><a href="<?php echo $base_url; ?>#contact" class="nav-link">Contact</a></li>
         </ul>
         
         <div class="nav-auth">
@@ -29,12 +42,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
                 <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
                 </div>
-                <a href="/user/profile.php" class="nav-link">My Profile</a>
-                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
+                <a href="<?php echo $base_url; ?>user/profile.php" class="nav-link">My Profile</a>
+                <a href="<?php echo $base_url; ?>auth/logout.php" class="nav-link logout-link">Logout</a>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <a href="/auth/login.php" class="nav-link login-btn">Login</a>
-                <a href="/auth/register.php" class="nav-link register-btn">Join Free</a>
+                <a href="<?php echo $base_url; ?>auth/login.php" class="nav-link login-btn">Login</a>
+                <a href="<?php echo $base_url; ?>auth/register.php" class="nav-link register-btn">Join Free</a>
             <?php endif; ?>
         </div>
         
@@ -84,13 +97,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .welcome-text {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 11px;
-    padding: 2px 6px;
+    font-size: 22px;
+    padding: 4px 12px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
-    max-width: 120px;
+    max-width: 240px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -99,12 +112,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     background: transparent;
     border: 1px solid var(--primary-color);
     color: var(--primary-color) !important;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    padding: 3px 8px !important;
-    font-size: 11px;
+    padding: 6px 16px !important;
+    font-size: 22px;
     font-weight: 500;
-    width: 60px;
+    width: 120px;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
@@ -119,13 +132,13 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .register-btn {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light) !important;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
-    padding: 4px 12px !important;
-    font-size: 12px;
+    padding: 8px 24px !important;
+    font-size: 24px;
     font-weight: 500;
-    width: 85px;
+    width: 170px;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
@@ -140,10 +153,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 .logout-link {
     color: var(--gold-color) !important;
     font-weight: 500;
-    padding: 4px 10px !important;
-    font-size: 12px;
-    border-radius: 4px;
-    min-width: 60px;
+    padding: 8px 20px !important;
+    font-size: 24px;
+    border-radius: 8px;
+    min-width: 120px;
     text-align: center;
     line-height: 1.2;
 }
@@ -154,10 +167,10 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 }
 
 .nav-auth .nav-link {
-    padding: 3px 8px !important;
-    font-size: 11px;
-    border-radius: 4px;
-    min-width: 50px;
+    padding: 6px 16px !important;
+    font-size: 22px;
+    border-radius: 8px;
+    min-width: 100px;
     text-align: center;
     line-height: 1.2;
 }
@@ -190,8 +203,8 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     }
     
     .welcome-text {
-        font-size: 13px;
-        padding: 6px 12px;
+        font-size: 26px;
+        padding: 12px 24px;
     }
     
     .nav-menu li {

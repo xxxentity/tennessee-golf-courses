@@ -107,7 +107,7 @@
                             <span class="feature-tag">Par 72</span>
                             <span class="feature-tag">Nicklaus Design</span>
                         </div>
-                        <a href="courses/bear-trace-harrison-bay.html" class="btn-primary">View Details</a>
+                        <a href="courses/bear-trace-harrison-bay.php" class="btn-primary">View Details</a>
                     </div>
                 </div>
 
@@ -178,8 +178,50 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers across Tennessee's premier courses</p>
+            </div>
+            <div style="text-align: center; padding: 60px 0;">
+                <i class="fas fa-comments" style="font-size: 48px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <p style="font-size: 18px; color: var(--text-gray);">Course reviews coming soon! Sign up to be notified when reviews go live.</p>
+                <a href="#newsletter" class="btn-primary" style="margin-top: 20px;">Get Notified</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" style="padding: 80px 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Tennessee Golf Courses</h2>
+                <p>Your trusted guide to golf in the Volunteer State</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 48px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Comprehensive Directory</h3>
+                    <p>Discover golf courses across all regions of Tennessee, from Nashville to Memphis, Chattanooga to Knoxville.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-star" style="font-size: 48px; color: var(--gold-color); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Verified Reviews</h3>
+                    <p>Read authentic reviews from real golfers to help you choose the perfect course for your game.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-calendar-check" style="font-size: 48px; color: var(--secondary-color); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Easy Booking</h3>
+                    <p>Find tee times, contact information, and book your next round at Tennessee's finest courses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Newsletter -->
-    <section class="newsletter">
+    <section id="newsletter" class="newsletter">
         <div class="container">
             <div class="newsletter-content">
                 <div class="newsletter-text">
@@ -202,8 +244,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Tennessee Golf Courses</span>
+                        <img src="images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">

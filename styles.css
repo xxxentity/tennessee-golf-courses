@@ -155,7 +155,6 @@ a[href^="www."]::after {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 70px;
 }
@@ -193,6 +192,8 @@ a[href^="www."]::after {
     list-style: none;
     gap: 32px;
     align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .nav-link {
@@ -896,6 +897,13 @@ a[href^="www."]::after {
 .footer-logo i {
     font-size: 28px;
     color: var(--gold-color);
+}
+
+.footer-logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .footer-section p {

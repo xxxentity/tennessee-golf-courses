@@ -384,6 +384,7 @@ try {
         </div>
     </main>
 
+    <script src="../script.js"></script>
     <script>
         // Add any JavaScript for profile interactions here
         document.addEventListener('DOMContentLoaded', function() {

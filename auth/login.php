@@ -202,9 +202,9 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="../index.html" class="logo">Tennessee Golf Courses</a>
+            <a href="../index.php" class="logo">Tennessee Golf Courses</a>
             <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="login.php" class="active">Login</a></li>
                 <li><a href="register.php">Register</a></li>
             </ul>
@@ -249,5 +249,7 @@
             </div>
         </div>
     </main>
+
+    <script src="../script.js"></script>
 </body>
 </html>
