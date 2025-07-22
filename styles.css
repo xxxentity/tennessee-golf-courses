@@ -900,13 +900,12 @@ a[href^="www."]::after {
 }
 
 .footer-logo-image {
-    height: 40px !important;
-    width: 120px !important;
-    max-width: 120px !important;
-    max-height: 40px !important;
+    height: 80px !important;
+    width: 240px !important;
+    max-width: 240px !important;
+    max-height: 80px !important;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    transform: scale(0.5);
 }
 
 .footer-section p {
