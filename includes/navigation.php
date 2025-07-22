@@ -14,17 +14,24 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     <nav class="nav">
         <div class="nav-container">
         <?php
-        // Determine if we're on the main site or a subpage
-        $current_path = $_SERVER['REQUEST_URI'];
+        // Determine the correct base URL for navigation
+        $script_name = $_SERVER['SCRIPT_NAME'];
         
-        // Check if we're in a subdirectory (like /courses/, /auth/, /user/, /news/)
-        $is_in_subdirectory = (strpos($current_path, '/courses/') !== false || 
-                              strpos($current_path, '/auth/') !== false || 
-                              strpos($current_path, '/user/') !== false ||
-                              strpos($current_path, '/news/') !== false);
+        // Check if we're in an actual subdirectory (contains folder/file.php pattern)
+        // Root files: /index.php, /courses.php, /news.php, /about.php, etc. -> use ''
+        // Subfolder files: /courses/bear-trace.php, /auth/login.php, /user/profile.php, /news/article.php -> use '../'
+        $is_in_subdirectory = (
+            strpos($script_name, '/courses/') !== false ||
+            strpos($script_name, '/auth/') !== false || 
+            strpos($script_name, '/user/') !== false ||
+            (strpos($script_name, '/news/') !== false && substr_count($script_name, '/') > 1)
+        );
         
         // For subdirectories, use ../ to go back to root, otherwise use root path
         $base_url = $is_in_subdirectory ? '../' : '';
+        
+        // Debug info
+        echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
         ?>
         <a href="<?php echo $base_url; ?>index.php" class="nav-logo">
             <img src="<?php echo $base_url; ?>images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
