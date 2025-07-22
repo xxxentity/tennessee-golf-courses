@@ -138,7 +138,7 @@
                         </div>
                         <h3>Scheffler Captures First Claret Jug with Dominant Victory</h3>
                         <p>World No. 1 completes commanding four-shot triumph at Royal Portrush to claim his fourth major championship...</p>
-                        <a href="news/scheffler-wins-2025-british-open-final-round.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="news/scheffler-wins-2025-british-open-final-round.php" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -153,7 +153,7 @@
                         </div>
                         <h3>Scheffler Extends Lead to Four Shots with Bogey-Free 67</h3>
                         <p>World No. 1 Scottie Scheffler fires a bogey-free 67 in Round 3 at Royal Portrush to extend his lead to four shots...</p>
-                        <a href="news/scheffler-extends-lead-open-championship-round-3.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="news/scheffler-extends-lead-open-championship-round-3.php" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -168,7 +168,7 @@
                         </div>
                         <h3>Scheffler Seizes Control with Career-Best 64</h3>
                         <p>World No. 1 delivers masterclass performance with 7-under 64 to take Open Championship lead at Royal Portrush...</p>
-                        <a href="news/scheffler-seizes-control-open-championship-round-2.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="news/scheffler-seizes-control-open-championship-round-2.php" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>

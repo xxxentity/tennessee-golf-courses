@@ -1,3 +1,48 @@
+<?php
+session_start();
+require_once '../config/database.php';
+
+$article_slug = 'scheffler-seizes-control-open-championship-round-2';
+$article_title = 'Scheffler Seizes Control with Career-Best 64';
+
+// Check if user is logged in
+$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+
+// Handle comment submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    $comment_text = trim($_POST['comment_text']);
+    $user_id = $_SESSION['user_id'];
+    
+    if (!empty($comment_text)) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
+            $success_message = "Your comment has been posted successfully!";
+        } catch (PDOException $e) {
+            $error_message = "Error posting comment. Please try again.";
+        }
+    } else {
+        $error_message = "Please write a comment.";
+    }
+}
+
+// Get existing comments
+try {
+    $stmt = $pdo->prepare("
+        SELECT nc.*, u.first_name, u.last_name 
+        FROM news_comments nc 
+        JOIN users u ON nc.user_id = u.id 
+        WHERE nc.article_slug = ? AND nc.is_approved = TRUE
+        ORDER BY nc.created_at DESC
+    ");
+    $stmt->execute([$article_slug]);
+    $comments = $stmt->fetchAll();
+    
+} catch (PDOException $e) {
+    $comments = [];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,6 +347,8 @@
 
         <p>The world No. 1's round was a thing of beauty, with Scheffler making eight birdies in near-perfect conditions that were a stark contrast to Thursday's challenging weather. What made the performance even more remarkable was the quality of his putting—none of his eight birdies came from closer than seven feet, with five rolling in from the 10-foot range or beyond.</p>
 
+        <br>
+
         <p>Scheffler's 64 not only established him as the man to beat heading into the weekend but also made history. He became the first world No. 1 to lead The Open Championship at the halfway point since Tiger Woods accomplished the feat in 2006, adding another layer of significance to his commanding position.</p>
 
         <div class="quote-box">
@@ -310,7 +357,11 @@
 
         <p>Behind Scheffler, England's Matt Fitzpatrick maintained his strong play from the opening round, adding a solid 66 to sit just one shot back at 9-under. Fitzpatrick ignited the back nine with four consecutive birdies, showcasing the type of momentum that could prove dangerous over the weekend.</p>
 
+        <br>
+
         <p>Brian Harman emerged as a genuine contender with a bogey-free 64 that matched Scheffler's low round of the day. The 2023 Open champion showed he knows how to handle the pressure of major championship golf, moving to 8-under and just two shots off the lead.</p>
+
+        <br>
 
         <p>China's Haotong Li, who shared the first-round lead, remained in contention with a steady 67 to sit at 8-under alongside Harman. Li's consistent play through two rounds has established him as a dark horse candidate for his first major championship.</p>
 
@@ -337,10 +388,72 @@
 
         <p>As Scheffler heads into the weekend with his sights set on a fourth major championship, his recent track record provides confidence. He has converted his last nine 54-hole leads into victories, a streak that includes his Masters and PGA Championship wins this year.</p>
 
-        <p>"I've been in this position before," Scheffler said when asked about leading a major championship. "I know what it takes, and I'll just focus on executing one shot at a time. There's still a lot of golf left, and this course can humble you quickly if you're not careful."</p>
+        <div class="quote-box">
+            "I've been in this position before," Scheffler said when asked about leading a major championship. "I know what it takes, and I'll just focus on executing one shot at a time. There's still a lot of golf left, and this course can humble you quickly if you're not careful."
+        </div>
 
         <p>With Royal Portrush set to test the field once again over the weekend, Saturday's third round will be crucial in determining whether Scheffler can maintain his advantage or if one of the challengers can mount a serious charge for the Claret Jug.</p>
     </div>
+
+    <!-- Comments Section -->
+    <section class="comments-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #2c5234; margin-bottom: 1rem;">Discussion</h2>
+                <p>Share your thoughts on this article</p>
+            </div>
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success" style="background: rgba(34, 197, 94, 0.1); color: #16a34a; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(34, 197, 94, 0.2);">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Leave a Comment</h3>
+                    <form method="POST" class="comment-form">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Comment:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your thoughts on this article..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; font-size: 14px; resize: vertical; min-height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Post Comment</button>
+                    </form>
+                </div>
+            <?php else: ?>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p><a href="../auth/login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="../auth/register.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
+                <?php if (empty($comments)): ?>
+                    <div class="no-comments" style="text-align: center; padding: 3rem; color: #666;">
+                        <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; color: #ddd;"></i>
+                        <p>No comments yet. Be the first to share your thoughts!</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div class="comment-card" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <div class="comment-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div class="commenter-name" style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['first_name'] . ' ' . substr($comment['last_name'], 0, 1) . '.'); ?></div>
+                                <div class="comment-date" style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y • g:i A', strtotime($comment['created_at'])); ?></div>
+                            </div>
+                            <p style="line-height: 1.6; color: #333;"><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
