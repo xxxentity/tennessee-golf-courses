@@ -31,11 +31,11 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             // Debug removed - path detection working correctly
             ?>
             <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
-            <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>
-            <li><a href="<?php echo $base_url; ?>#reviews" class="nav-link">Reviews</a></li>
-            <li><a href="<?php echo $base_url; ?>#news" class="nav-link">News</a></li>
-            <li><a href="<?php echo $base_url; ?>#about" class="nav-link">About</a></li>
-            <li><a href="<?php echo $base_url; ?>#contact" class="nav-link">Contact</a></li>
+            <li><a href="<?php echo $base_url; ?>courses.php" class="nav-link">Courses</a></li>
+            <li><a href="<?php echo $base_url; ?>reviews.php" class="nav-link">Reviews</a></li>
+            <li><a href="<?php echo $base_url; ?>news.php" class="nav-link">News</a></li>
+            <li><a href="<?php echo $base_url; ?>about.php" class="nav-link">About</a></li>
+            <li><a href="<?php echo $base_url; ?>contact.php" class="nav-link">Contact</a></li>
         </ul>
         
         <div class="nav-auth">

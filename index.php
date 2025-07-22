@@ -96,7 +96,6 @@
                 <div class="course-card">
                     <div class="course-image">
                         <img src="images/courses/bear-trace-harrison-bay/1.jpeg" alt="Bear Trace at Harrison Bay">
-                        <div class="course-badge">4.5 ★</div>
                     </div>
                     <div class="course-content">
                         <h3>Bear Trace at Harrison Bay</h3>
