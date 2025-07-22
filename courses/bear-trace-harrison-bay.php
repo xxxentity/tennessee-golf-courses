@@ -671,9 +671,15 @@ try {
                 <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Harrison Bay</h3>
                 <p>Bear Trace at Harrison Bay is a stunning Jack Nicklaus-designed golf course situated on a peninsula along Chickamauga Lake in Harrison, Tennessee. Located just 18 miles from Chattanooga, this championship 18-hole course offers golfers an unforgettable experience with water touching 12 fairways and breathtaking lake views on three sides.</p>
                 
+                <br>
+                
                 <p>Opened in 1999, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape.</p>
                 
+                <br>
+                
                 <p>The course features Champion Bermuda greens, 419 Bermuda fairways lined with soaring pine and hardwood trees, and plays to 7,313 yards from the championship tees.</p>
+                
+                <br>
                 
                 <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.</p>
                 
