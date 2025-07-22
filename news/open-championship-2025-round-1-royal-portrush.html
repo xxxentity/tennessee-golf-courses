@@ -298,8 +298,12 @@
         <br>
 
         <p>Former world No. 1 Jon Rahm also sits at 1-under alongside McIlroy, while defending champion Xander Schauffele faced a tougher day, struggling to find his rhythm in the challenging conditions.</p>
+        
+        <br>
 
         <p>"This course gives you everything," said Fitzpatrick, who leads the field alongside four others. "You've got to be so precise with your iron play, and when the weather changes every hole like it did today, you're constantly adjusting. I'm pleased to be where I am, but there's a long way to go."</p>
+        
+        <br>
 
         <p>The weather forecast suggests more of the same for Friday's second round, with gusty winds and intermittent rain expected to continue testing the 156-player field. With the cut line traditionally falling around even par at The Open, many big names will need to improve significantly to make the weekend.</p>
 
@@ -310,6 +314,8 @@
         <br>
 
         <p>As the 153rd Open Championship heads into its second round, the stage is set for another dramatic day at one of golf's most challenging venues. With the weather continuing to play a major factor and Royal Portrush showing its formidable defenses, Friday promises to be equally demanding for the world's best golfers.</p>
+        
+        <br>
 
         <p>The cut will be made after Friday's second round, with the top 70 players and ties, plus those within 10 shots of the lead, advancing to the weekend. With such tight scoring and challenging conditions, every shot will matter as players battle both the course and the elements in pursuit of golf's oldest major championship.</p>
     </div>
@@ -363,57 +369,6 @@
         </div>
     </footer>
 
-    <script>
-        // Simple news article script - no navigation interference
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('News article loaded');
-            
-            // Live Time Display
-            function updateTime() {
-                const now = new Date();
-                const options = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    timeZone: 'America/Chicago'
-                };
-                const timeString = now.toLocaleDateString('en-US', options);
-                const timeElement = document.getElementById('current-time');
-                if (timeElement) {
-                    timeElement.textContent = timeString;
-                }
-            }
-
-            // Update time immediately and then every minute
-            updateTime();
-            setInterval(updateTime, 60000);
-
-            // Mobile Navigation Toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    
-                    // Animate hamburger menu
-                    const bars = navToggle.querySelectorAll('.bar');
-                    bars.forEach((bar, index) => {
-                        if (navMenu.classList.contains('active')) {
-                            if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                            if (index === 1) bar.style.opacity = '0';
-                            if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                        } else {
-                            bar.style.transform = '';
-                            bar.style.opacity = '';
-                        }
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html>

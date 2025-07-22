@@ -391,57 +391,6 @@
         </div>
     </footer>
 
-    <script>
-        // Simple news article script - no navigation interference
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('News article loaded');
-            
-            // Live Time Display
-            function updateTime() {
-                const now = new Date();
-                const options = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    timeZone: 'America/Chicago'
-                };
-                const timeString = now.toLocaleDateString('en-US', options);
-                const timeElement = document.getElementById('current-time');
-                if (timeElement) {
-                    timeElement.textContent = timeString;
-                }
-            }
-
-            // Update time immediately and then every minute
-            updateTime();
-            setInterval(updateTime, 60000);
-
-            // Mobile Navigation Toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    
-                    // Animate hamburger menu
-                    const bars = navToggle.querySelectorAll('.bar');
-                    bars.forEach((bar, index) => {
-                        if (navMenu.classList.contains('active')) {
-                            if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                            if (index === 1) bar.style.opacity = '0';
-                            if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                        } else {
-                            bar.style.transform = '';
-                            bar.style.opacity = '';
-                        }
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html>

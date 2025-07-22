@@ -351,8 +351,12 @@
         <br>
 
         <p>As the final round approaches, all eyes will be on Scheffler's pursuit of his first Claret Jug. With his recent track record of converting 54-hole leads and his obvious comfort level at Royal Portrush, the 28-year-old appears destined for glory. However, as Saturday's action proved, this championship still has the potential for dramatic twists and turns.</p>
+        
+         <br>       
 
         <p>"Tomorrow is going to be about staying in my process," Scheffler concluded. "I've been in this position before, and I know what it takes. But you still have to go out there and execute. Royal Portrush demands respect, and I'll give it that tomorrow."</p>
+
+        <br>
 
         <p>Sunday's final round promises to be a compelling conclusion to the 153rd Open Championship, with Scheffler seeking to join the pantheon of Open champions while a talented field behind him hopes to produce one final surge along Northern Ireland's spectacular Causeway Coast.</p>
     </div>
@@ -406,57 +410,6 @@
         </div>
     </footer>
 
-    <script>
-        // Simple news article script - no navigation interference
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('News article loaded');
-            
-            // Live Time Display
-            function updateTime() {
-                const now = new Date();
-                const options = {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    timeZone: 'America/Chicago'
-                };
-                const timeString = now.toLocaleDateString('en-US', options);
-                const timeElement = document.getElementById('current-time');
-                if (timeElement) {
-                    timeElement.textContent = timeString;
-                }
-            }
-
-            // Update time immediately and then every minute
-            updateTime();
-            setInterval(updateTime, 60000);
-
-            // Mobile Navigation Toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    
-                    // Animate hamburger menu
-                    const bars = navToggle.querySelectorAll('.bar');
-                    bars.forEach((bar, index) => {
-                        if (navMenu.classList.contains('active')) {
-                            if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                            if (index === 1) bar.style.opacity = '0';
-                            if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                        } else {
-                            bar.style.transform = '';
-                            bar.style.opacity = '';
-                        }
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
