@@ -1,6 +1,9 @@
 // Tennessee Golf Courses - JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Debug: Check if JavaScript is loading
+    console.log('TGC Script loaded, current page:', window.location.pathname);
+    
     // Make all external links open in new tabs
     const links = document.querySelectorAll('a[href]');
     links.forEach(link => {
@@ -112,8 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close mobile menu when clicking on a link
+    // TEMPORARILY DISABLE ALL NAV LINK EVENT HANDLERS FOR DEBUGGING
     const navLinks = document.querySelectorAll('.nav-link');
+    console.log('Found nav links:', navLinks.length, 'but ALL event handlers disabled for debugging');
+    
+    // All navigation event handlers commented out to test if they're causing the issue
+    /*
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -129,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
+            console.log('Nav link clicked:', href);
             
             // Only prevent default for anchor links on the same page
             if (href && href.startsWith('#')) {
@@ -150,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Added null check for href and updated comment
         });
     });
+    */
 
     // Header scroll effect
     const header = document.querySelector('.header');
