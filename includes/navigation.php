@@ -13,23 +13,24 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
 <header class="header">
     <nav class="nav">
         <div class="nav-container">
-        <a href="/" class="nav-logo">
-            <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
+        <?php
+        // Determine if we're on the main site or a subpage
+        $current_path = $_SERVER['REQUEST_URI'];
+        
+        // Check if we're in a subdirectory (like /courses/, /auth/, /user/, /news/)
+        $is_in_subdirectory = (strpos($current_path, '/courses/') !== false || 
+                              strpos($current_path, '/auth/') !== false || 
+                              strpos($current_path, '/user/') !== false ||
+                              strpos($current_path, '/news/') !== false);
+        
+        // For subdirectories, use ../ to go back to root, otherwise use root path
+        $base_url = $is_in_subdirectory ? '../' : '';
+        ?>
+        <a href="<?php echo $base_url; ?>index.php" class="nav-logo">
+            <img src="<?php echo $base_url; ?>images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <?php
-            // Determine if we're on the main site or a subpage
-            $current_path = $_SERVER['REQUEST_URI'];
-            $is_subpage = (strpos($current_path, '/courses/') !== false || 
-                          strpos($current_path, '/auth/') !== false || 
-                          strpos($current_path, '/user/') !== false ||
-                          strpos($current_path, '/news/') !== false);
-            
-            $base_url = $is_subpage ? '../' : '/';
-            
-            // Debug removed - path detection working correctly
-            ?>
             <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>courses.php" class="nav-link">Courses</a></li>
             <li><a href="<?php echo $base_url; ?>reviews.php" class="nav-link">Reviews</a></li>
