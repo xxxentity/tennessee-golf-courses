@@ -671,9 +671,13 @@ try {
                 <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Harrison Bay</h3>
                 <p>Bear Trace at Harrison Bay is a stunning Jack Nicklaus-designed golf course situated on a peninsula along Chickamauga Lake in Harrison, Tennessee. Located just 18 miles from Chattanooga, this championship 18-hole course offers golfers an unforgettable experience with water touching 12 fairways and breathtaking lake views on three sides.</p>
                 
-                <p>Opened in 1999, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape. The course features Champion Bermuda greens, 419 Bermuda fairways lined with soaring pine and hardwood trees, and plays to 7,313 yards from the championship tees.</p>
+                <p>Opened in 1999, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape.</p>
                 
-                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play. Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.</p>
+                <p>The course features Champion Bermuda greens, 419 Bermuda fairways lined with soaring pine and hardwood trees, and plays to 7,313 yards from the championship tees.</p>
+                
+                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.</p>
+                
+                <p>Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.</p>
                 
                 <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
             </div>

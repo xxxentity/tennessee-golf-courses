@@ -28,7 +28,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             
             $base_url = $is_subpage ? '../' : '/';
             ?>
-            <li><a href="<?php echo $is_subpage ? '../index.php' : '/'; ?>" class="nav-link">Home</a></li>
+            <li><a href="<?php echo $base_url; ?>index.php" class="nav-link">Home</a></li>
             <li><a href="<?php echo $base_url; ?>#courses" class="nav-link">Courses</a></li>
             <li><a href="<?php echo $base_url; ?>#reviews" class="nav-link">Reviews</a></li>
             <li><a href="<?php echo $base_url; ?>#news" class="nav-link">News</a></li>
