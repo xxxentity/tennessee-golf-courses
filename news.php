@@ -437,6 +437,33 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
     </style>
 </head>
 <body>
+    <!-- Weather Bar -->
+    <div class="weather-bar">
+        <div class="weather-container">
+            <div class="weather-info">
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Loading...</span>
+                </div>
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp">Perfect Golf Weather</span>
+                    <span class="weather-location">Nashville, TN</span>
+                </div>
+            </div>
+            <div class="golf-conditions">
+                <div class="condition-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Wind: <span id="wind-speed">5 mph</span></span>
+                </div>
+                <div class="condition-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Visibility: <span id="visibility">10 mi</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic Navigation -->
     <?php include 'includes/navigation.php'; ?>
 
@@ -613,7 +640,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
     <script>
         // Carousel functionality
         let currentSlide = 0;

@@ -156,7 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 console.log('Allowing normal navigation to:', href);
-                // Let the browser handle normal page navigation
+                // DO NOT prevent default for regular page navigation - let browser handle it
+                // This ensures navigation works properly
             }
         });
     });
