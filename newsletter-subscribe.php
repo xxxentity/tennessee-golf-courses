@@ -74,7 +74,18 @@ try {
             <p>We're excited to help you discover the best golf experiences Tennessee has to offer!</p>
             
             <div style='text-align: center; margin: 30px 0;'>
-                <a href='https://tennesseegolfcourses.com' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Explore Golf Courses</a>
+                <a href='https://tennesseegolfcourses.com' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>Explore Golf Courses</a>
+                <a href='https://tennesseegolfcourses.com/auth/register' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Create Free Account</a>
+            </div>
+            
+            <div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;'>
+                <h3 style='color: #064E3B; margin-top: 0;'>Why Create an Account?</h3>
+                <ul style='margin: 0; padding-left: 20px;'>
+                    <li>Save your favorite golf courses</li>
+                    <li>Write and read course reviews</li>
+                    <li>Track your golf course visits</li>
+                    <li>Get personalized course recommendations</li>
+                </ul>
             </div>
             
             <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
