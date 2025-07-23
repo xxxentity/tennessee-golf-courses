@@ -88,8 +88,23 @@ try {
     <title>Newsletter Admin - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        body { background: var(--bg-light); min-height: 100vh; padding-top: 180px; }
-        .admin-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        /* Hide weather bar on admin pages */
+        .weather-bar { display: none !important; }
+        
+        /* Make header scroll with page and position normally */
+        .header { 
+            position: relative !important; 
+            top: 0 !important; 
+            margin-top: 0 !important;
+        }
+        
+        body { 
+            background: var(--bg-light); 
+            min-height: 100vh; 
+            padding-top: 0 !important; 
+        }
+        
+        .admin-container { max-width: 1200px; margin: 20px auto; padding: 20px; }
         .admin-header { background: var(--bg-white); padding: 24px; border-radius: 12px; margin-bottom: 24px; box-shadow: var(--shadow-light); }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 24px; }
         .stat-card { background: var(--bg-white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: var(--shadow-light); }
