@@ -24,7 +24,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         
         <ul class="nav-menu" id="nav-menu">
             <!-- TEMPORARY: Using .php extensions until clean URLs fixed -->
-            <li><a href="/index.php" class="nav-link">Home</a></li>
+            <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/courses.php" class="nav-link">Courses</a></li>
             <li><a href="/reviews.php" class="nav-link">Reviews</a></li>
             <li><a href="/news.php" class="nav-link">News</a></li>
