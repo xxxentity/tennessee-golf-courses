@@ -40,7 +40,7 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
             <?php else: ?>
                 <!-- Logged out navigation -->
                 <a href="/auth/login" class="nav-link login-btn">Login</a>
-                <a href="/auth/register" class="nav-link register-btn">Join Free</a>
+                <a href="/auth/register" class="nav-link register-btn">Register</a>
             <?php endif; ?>
         </div>
         
