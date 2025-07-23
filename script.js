@@ -117,6 +117,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navigation links - Let browser handle completely naturally
     console.log('Navigation enabled - pure HTML link behavior');
+    
+    // Newsletter subscription handling
+    const newsletterSubmit = document.getElementById('newsletter-submit');
+    const newsletterEmail = document.getElementById('newsletter-email');
+    const newsletterMessage = document.getElementById('newsletter-message');
+    
+    if (newsletterSubmit && newsletterEmail && newsletterMessage) {
+        newsletterSubmit.addEventListener('click', function() {
+            const email = newsletterEmail.value.trim();
+            
+            if (!email) {
+                showNewsletterMessage('Please enter your email address', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNewsletterMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Disable button and show loading
+            newsletterSubmit.disabled = true;
+            newsletterSubmit.textContent = 'Subscribing...';
+            
+            // Send subscription request
+            fetch('/newsletter-subscribe.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'email=' + encodeURIComponent(email)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNewsletterMessage(data.message, 'success');
+                    newsletterEmail.value = '';
+                } else {
+                    showNewsletterMessage(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                showNewsletterMessage('There was an error. Please try again.', 'error');
+                console.error('Newsletter subscription error:', error);
+            })
+            .finally(() => {
+                // Re-enable button
+                newsletterSubmit.disabled = false;
+                newsletterSubmit.textContent = 'Subscribe';
+            });
+        });
+        
+        // Allow Enter key to submit
+        newsletterEmail.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                newsletterSubmit.click();
+            }
+        });
+    }
+    
+    function showNewsletterMessage(message, type) {
+        newsletterMessage.textContent = message;
+        newsletterMessage.style.display = 'block';
+        newsletterMessage.style.backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+        newsletterMessage.style.color = type === 'success' ? '#155724' : '#721c24';
+        newsletterMessage.style.border = type === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            newsletterMessage.style.display = 'none';
+        }, 5000);
+    }
+    
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 
     // Header scroll effect
     const header = document.querySelector('.header');

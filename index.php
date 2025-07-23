@@ -229,9 +229,10 @@
                 </div>
                 <div class="newsletter-form">
                     <div class="form-group">
-                        <input type="email" placeholder="Enter your email address" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
+                        <input type="email" id="newsletter-email" placeholder="Enter your email address" class="newsletter-input" required>
+                        <button type="button" id="newsletter-submit" class="newsletter-btn">Subscribe</button>
                     </div>
+                    <div id="newsletter-message" style="margin-top: 12px; padding: 8px; border-radius: 4px; display: none;"></div>
                 </div>
             </div>
         </div>
