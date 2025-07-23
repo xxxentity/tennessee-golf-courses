@@ -29,6 +29,8 @@ RewriteRule ^newsletter-unsubscribe/?$ newsletter-unsubscribe.php [L]
 RewriteRule ^newsletter-test/?$ newsletter-test.php [L]
 
 # Handle admin pages
+RewriteRule ^admin/login/?$ admin/login.php [L]
+RewriteRule ^admin/logout/?$ admin/logout.php [L]
 RewriteRule ^admin/newsletter/?$ admin/newsletter-admin.php [L]
 
 # General clean URL rewriting (internal)

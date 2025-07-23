@@ -2,9 +2,9 @@
 session_start();
 require_once '../config/database.php';
 
-// Simple admin check (you can enhance this with proper authentication)
+// Admin authentication check
 if (!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']) {
-    header('Location: /auth/login');
+    header('Location: /admin/login');
     exit;
 }
 
@@ -117,8 +117,20 @@ try {
     
     <div class="admin-container">
         <div class="admin-header">
-            <h1>Newsletter Administration</h1>
-            <p>Manage your newsletter subscribers and send campaigns</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>Newsletter Administration</h1>
+                    <p>Manage your newsletter subscribers and send campaigns</p>
+                </div>
+                <div>
+                    <span style="color: var(--text-gray); margin-right: 16px;">
+                        Welcome, <?php echo htmlspecialchars($_SESSION['first_name'] ?? 'Admin'); ?>
+                    </span>
+                    <a href="/admin/logout" style="background: #dc2626; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px;">
+                        Logout
+                    </a>
+                </div>
+            </div>
         </div>
         
         <?php if (isset($success_message)): ?>
