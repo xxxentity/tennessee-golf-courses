@@ -15,9 +15,12 @@ RewriteRule ^reviews/?$ reviews.php [L]
 # Handle auth pages (in subdirectory)
 RewriteRule ^auth/login/?$ auth/login.php [L]
 RewriteRule ^auth/register/?$ auth/register.php [L]
+RewriteRule ^auth/register-process/?$ auth/register-process.php [L]
+RewriteRule ^auth/login-process/?$ auth/login-process.php [L]
 RewriteRule ^auth/logout/?$ auth/logout.php [L]
 RewriteRule ^auth/forgot-password/?$ auth/forgot-password.php [L]
 RewriteRule ^auth/reset-password/?$ auth/reset-password.php [L]
+RewriteRule ^auth/verify-email/?$ auth/verify-email.php [L]
 
 # Handle user pages (in subdirectory)
 RewriteRule ^user/profile/?$ user/profile.php [L]

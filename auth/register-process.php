@@ -1,5 +1,14 @@
 <?php
 require_once '../config/database.php';
+require_once '../includes/rate-limiter.php';
+
+// Rate limiting check
+$rateLimiter = new RateLimiter($pdo);
+if (!$rateLimiter->isAllowed('registration', 3, 1)) {
+    $remaining = $rateLimiter->getRemainingAttempts('registration', 3, 1);
+    header('Location: register.php?error=' . urlencode('Too many registration attempts. Please try again later.'));
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: register.php');
@@ -62,8 +71,11 @@ if (!empty($errors)) {
 try {
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     
-    $stmt = $pdo->prepare("INSERT INTO users (username, email, first_name, last_name, password_hash) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$username, $email, $first_name, $last_name, $password_hash]);
+    // Generate email verification token
+    $email_verification_token = bin2hex(random_bytes(32));
+    
+    $stmt = $pdo->prepare("INSERT INTO users (username, email, first_name, last_name, password_hash, email_verification_token, email_verified) VALUES (?, ?, ?, ?, ?, ?, 0)");
+    $stmt->execute([$username, $email, $first_name, $last_name, $password_hash, $email_verification_token]);
     $user_id = $pdo->lastInsertId();
     
     // Auto-subscribe to newsletter
@@ -88,18 +100,34 @@ try {
             
             $stmt->execute([$email, $first_name, $newsletter_token, $ip_address, $user_agent]);
             
-            // Send combined welcome email
-            $subject = "Welcome to Tennessee Golf Courses - Account Created!";
+            // Send email verification email
+            $subject = "Verify Your Email - Tennessee Golf Courses";
             $message = "
             <html>
-            <head><title>Welcome to Tennessee Golf Courses</title></head>
+            <head><title>Verify Your Email - Tennessee Golf Courses</title></head>
             <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'>
                 <div style='max-width: 600px; margin: 0 auto; padding: 20px;'>
                     <div style='text-align: center; margin-bottom: 30px;'>
                         <h1 style='color: #064E3B;'>Welcome to Tennessee Golf Courses, " . htmlspecialchars($first_name) . "!</h1>
                     </div>
                     
-                    <p>Congratulations! Your account has been created and you're now part of the Tennessee golf community.</p>
+                    <p>Thank you for creating an account! Please verify your email address to complete your registration and access all features.</p>
+                    
+                    <div style='text-align: center; margin: 30px 0; padding: 20px; background: #f0f9ff; border-radius: 8px;'>
+                        <a href='https://tennesseegolfcourses.com/auth/verify-email?token=" . $email_verification_token . "' style='background: #064E3B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600;'>
+                            Verify My Email Address
+                        </a>
+                    </div>
+                    
+                    <p><strong>Important:</strong> You must verify your email to:</p>
+                    <ul>
+                        <li>Login to your account</li>
+                        <li>Post comments and reviews</li>
+                        <li>Save favorite golf courses</li>
+                        <li>Access all website features</li>
+                    </ul>
+                    
+                    <p>Your account has been created with these benefits:</p>
                     
                     <div style='background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #064E3B;'>
                         <h3 style='color: #064E3B; margin-top: 0;'>✅ Your Account Benefits:</h3>
@@ -149,8 +177,8 @@ try {
         error_log("Auto newsletter subscription failed for $email: " . $e->getMessage());
     }
     
-    // Success - redirect to login with success message
-    header('Location: login.php?success=' . urlencode('Account created successfully! Please log in.'));
+    // Success - redirect to login with verification message
+    header('Location: login.php?success=' . urlencode('Account created! Please check your email to verify your account before logging in.'));
     exit;
     
 } catch (PDOException $e) {
