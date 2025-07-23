@@ -76,7 +76,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf News - Tennessee Golf Courses</title>
     <meta name="description" content="Stay updated with the latest golf news, tournament coverage, and insights from around the world of golf.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>

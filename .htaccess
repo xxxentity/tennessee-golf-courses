@@ -5,8 +5,9 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Specific rule for courses to handle directory conflict - MUST come first
+# Specific rules for pages with directory conflicts - MUST come first
 RewriteRule ^courses/?$ courses.php [L]
+RewriteRule ^news/?$ news.php [L]
 
 # Add .php extension internally - FIXED to prioritize files over directories
 RewriteCond %{REQUEST_FILENAME} !-f

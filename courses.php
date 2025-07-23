@@ -42,7 +42,7 @@ $featured_courses = array_slice($courses, 0, 3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf Courses in Tennessee - Find Your Perfect Course</title>
     <meta name="description" content="Discover the best golf courses in Tennessee. Browse by location, price, difficulty and amenities. Read reviews and book tee times.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
