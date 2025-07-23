@@ -5,11 +5,12 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Add .php extension internally
+# Add .php extension internally - FIXED to prioritize files over directories
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.+)$ $1.php [L]
+
+# This rule should come AFTER the .php rewrite to avoid conflicts
 
 # Force HTTPS (uncomment when ready)
 # RewriteCond %{HTTPS} off
