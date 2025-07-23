@@ -115,52 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navigation event handlers - RE-ENABLED WITH DEBUG
-    const navLinks = document.querySelectorAll('.nav-link');
-    console.log('Found nav links:', navLinks.length);
-    
-    // Add debug navigation handler
-    navLinks.forEach((link, index) => {
-        console.log(`Nav link ${index}:`, link.href);
-        
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            console.log('Nav link clicked:', href);
-            console.log('Event:', e);
-            console.log('Current URL:', window.location.href);
-            
-            // Always close mobile menu when any nav link is clicked
-            if (navMenu) {
-                navMenu.classList.remove('active');
-            }
-            if (navToggle) {
-                const bars = navToggle.querySelectorAll('.bar');
-                bars.forEach(bar => {
-                    bar.style.transform = '';
-                    bar.style.opacity = '';
-                });
-            }
-            
-            // Only prevent default for anchor links to sections on current page
-            if (href && href.startsWith('#') && document.getElementById(href.substring(1))) {
-                console.log('Preventing default for anchor link');
-                e.preventDefault();
-                const targetSection = document.getElementById(href.substring(1));
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            } else {
-                console.log('Allowing normal navigation to:', href);
-                // DO NOT prevent default for regular page navigation - let browser handle it
-                // This ensures navigation works properly
-            }
-        });
-    });
+    // Navigation event handlers - DISABLED TO FIX NAVIGATION ISSUE
+    // Let browser handle all navigation naturally without JavaScript interference
+    console.log('Navigation JavaScript disabled - using natural browser navigation');
 
     // Header scroll effect
     const header = document.querySelector('.header');
