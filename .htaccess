@@ -36,6 +36,7 @@ RewriteRule ^admin/create-admin/?$ admin/create-admin.php [L]
 RewriteRule ^admin/change-password/?$ admin/change-password.php [L]
 RewriteRule ^admin/debug-password/?$ admin/debug-password.php [L]
 RewriteRule ^admin/set-new-password/?$ admin/set-new-password.php [L]
+RewriteRule ^admin/fix-login/?$ admin/fix-login.php [L]
 
 # General clean URL rewriting (internal)
 RewriteCond %{REQUEST_FILENAME} !-f
