@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newsletterSubmit.textContent = 'Subscribing...';
             
             // Send subscription request
-            fetch('/newsletter-subscribe.php', {
+            fetch('/newsletter-subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

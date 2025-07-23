@@ -26,6 +26,7 @@ RewriteRule ^user/edit-profile/?$ user/edit-profile.php [L]
 # Handle newsletter pages
 RewriteRule ^newsletter-subscribe/?$ newsletter-subscribe.php [L]
 RewriteRule ^newsletter-unsubscribe/?$ newsletter-unsubscribe.php [L]
+RewriteRule ^newsletter-test/?$ newsletter-test.php [L]
 
 # Handle admin pages
 RewriteRule ^admin/newsletter/?$ admin/newsletter-admin.php [L]
