@@ -1,11 +1,22 @@
-# EMERGENCY: Disable clean URLs temporarily - use .php extensions
-RewriteEngine Off
+# Tennessee Golf Courses - Professional Clean URLs
+RewriteEngine On
 
-# This rule should come AFTER the .php rewrite to avoid conflicts
+# Remove .php extension from URLs (external redirect)
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
 
-# Force HTTPS (uncomment when ready)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Handle specific pages that conflict with directories
+RewriteRule ^courses/?$ courses.php [L]
+RewriteRule ^news/?$ news.php [L]
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^contact/?$ contact.php [L]
+RewriteRule ^reviews/?$ reviews.php [L]
+
+# General clean URL rewriting (internal)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
 
 # Security headers
 <IfModule mod_headers.c>
@@ -26,7 +37,3 @@ RewriteEngine Off
     ExpiresByType text/javascript "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
-
-# Custom error pages (optional)
-# ErrorDocument 404 /404.php
-# ErrorDocument 500 /500.php

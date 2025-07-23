@@ -14,23 +14,19 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
     <nav class="nav">
         <div class="nav-container">
         <?php
-        // With clean URLs, always use absolute paths for navigation
-        // This ensures navbar works from any page location
-        echo "<!-- Clean URLs enabled: Using absolute paths for all navigation -->";
+        echo "<!-- Professional Clean URLs Implementation -->";
         ?>
         <a href="/" class="nav-logo">
             <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <!-- TEMPORARY: Using .php extensions until clean URLs fixed -->
             <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/courses.php" class="nav-link">Courses</a></li>
-            <li><a href="/reviews.php" class="nav-link">Reviews</a></li>
-            <li><a href="/news.php" class="nav-link">News</a></li>
-            <li><a href="/about.php" class="nav-link">About</a></li>
-            <li><a href="/contact.php" class="nav-link">Contact</a></li>
-            <!-- Will restore clean URLs once working -->
+            <li><a href="/courses" class="nav-link">Courses</a></li>
+            <li><a href="/reviews" class="nav-link">Reviews</a></li>
+            <li><a href="/news" class="nav-link">News</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
         
         <div class="nav-auth">
@@ -39,12 +35,12 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
                 <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
                 </div>
-                <a href="/user/profile.php" class="nav-link">My Profile</a>
-                <a href="/auth/logout.php" class="nav-link logout-link">Logout</a>
+                <a href="/user/profile" class="nav-link">My Profile</a>
+                <a href="/auth/logout" class="nav-link logout-link">Logout</a>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <a href="/auth/login.php" class="nav-link login-btn">Login</a>
-                <a href="/auth/register.php" class="nav-link register-btn">Join Free</a>
+                <a href="/auth/login" class="nav-link login-btn">Login</a>
+                <a href="/auth/register" class="nav-link register-btn">Join Free</a>
             <?php endif; ?>
         </div>
         
