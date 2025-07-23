@@ -64,6 +64,90 @@ try {
     
     $stmt = $pdo->prepare("INSERT INTO users (username, email, first_name, last_name, password_hash) VALUES (?, ?, ?, ?, ?)");
     $stmt->execute([$username, $email, $first_name, $last_name, $password_hash]);
+    $user_id = $pdo->lastInsertId();
+    
+    // Auto-subscribe to newsletter
+    try {
+        // Generate unsubscribe token for newsletter
+        $newsletter_token = bin2hex(random_bytes(32));
+        
+        // Check if already subscribed to newsletter
+        $stmt = $pdo->prepare("SELECT id FROM newsletter_subscribers WHERE email = ?");
+        $stmt->execute([$email]);
+        $existing_newsletter = $stmt->fetch();
+        
+        if (!$existing_newsletter) {
+            // Subscribe to newsletter automatically
+            $stmt = $pdo->prepare("
+                INSERT INTO newsletter_subscribers (email, first_name, unsubscribe_token, ip_address, user_agent, confirmed) 
+                VALUES (?, ?, ?, ?, ?, 1)
+            ");
+            
+            $ip_address = $_SERVER['REMOTE_ADDR'] ?? '';
+            $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+            
+            $stmt->execute([$email, $first_name, $newsletter_token, $ip_address, $user_agent]);
+            
+            // Send combined welcome email
+            $subject = "Welcome to Tennessee Golf Courses - Account Created!";
+            $message = "
+            <html>
+            <head><title>Welcome to Tennessee Golf Courses</title></head>
+            <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'>
+                <div style='max-width: 600px; margin: 0 auto; padding: 20px;'>
+                    <div style='text-align: center; margin-bottom: 30px;'>
+                        <h1 style='color: #064E3B;'>Welcome to Tennessee Golf Courses, " . htmlspecialchars($first_name) . "!</h1>
+                    </div>
+                    
+                    <p>Congratulations! Your account has been created and you're now part of the Tennessee golf community.</p>
+                    
+                    <div style='background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #064E3B;'>
+                        <h3 style='color: #064E3B; margin-top: 0;'>✅ Your Account Benefits:</h3>
+                        <ul style='margin: 0; padding-left: 20px;'>
+                            <li><strong>Save Favorites:</strong> Bookmark your favorite golf courses</li>
+                            <li><strong>Write Reviews:</strong> Share your course experiences</li>
+                            <li><strong>Track Visits:</strong> Keep a record of courses you've played</li>
+                            <li><strong>Personalized Recommendations:</strong> Get course suggestions based on your preferences</li>
+                            <li><strong>Newsletter Updates:</strong> Weekly golf news and course spotlights</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Plus, we've automatically subscribed you to our newsletter</strong> so you'll receive:</p>
+                    <ul>
+                        <li>Weekly updates on new golf courses</li>
+                        <li>Exclusive deals and discounts</li>
+                        <li>Tournament news and results</li>
+                        <li>Tips from Tennessee golf pros</li>
+                    </ul>
+                    
+                    <div style='text-align: center; margin: 30px 0;'>
+                        <a href='https://tennesseegolfcourses.com/user/profile' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>View My Profile</a>
+                        <a href='https://tennesseegolfcourses.com/courses' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Explore Courses</a>
+                    </div>
+                    
+                    <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
+                    <p style='font-size: 12px; color: #666;'>
+                        You can manage your newsletter subscription in your <a href='https://tennesseegolfcourses.com/user/profile'>profile settings</a> or 
+                        <a href='https://tennesseegolfcourses.com/newsletter-unsubscribe?token=" . $newsletter_token . "'>unsubscribe here</a>.
+                    </p>
+                </div>
+            </body>
+            </html>
+            ";
+            
+            // Email headers
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= "From: Tennessee Golf Courses <newsletter@tennesseegolfcourses.com>" . "\r\n";
+            $headers .= "Reply-To: info@tennesseegolfcourses.com" . "\r\n";
+            
+            // Send welcome email
+            mail($email, $subject, $message, $headers);
+        }
+    } catch (Exception $e) {
+        // Log newsletter subscription error but don't fail registration
+        error_log("Auto newsletter subscription failed for $email: " . $e->getMessage());
+    }
     
     // Success - redirect to login with success message
     header('Location: login.php?success=' . urlencode('Account created successfully! Please log in.'));
