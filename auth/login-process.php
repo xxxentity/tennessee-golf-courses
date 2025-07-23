@@ -19,7 +19,7 @@ if (empty($username) || empty($password)) {
 
 try {
     // Check if user exists (username or email)
-    $stmt = $pdo->prepare("SELECT id, username, email, first_name, last_name, password_hash, is_active, login_attempts, account_locked_until FROM users WHERE username = ? OR email = ?");
+    $stmt = $pdo->prepare("SELECT id, username, email, first_name, last_name, password_hash, is_active, login_attempts, account_locked_until, email_verified FROM users WHERE username = ? OR email = ?");
     $stmt->execute([$username, $username]);
     $user = $stmt->fetch();
     
@@ -39,6 +39,12 @@ try {
     // Check if account is active
     if (!$user['is_active']) {
         header('Location: login.php?error=' . urlencode('Your account has been deactivated'));
+        exit;
+    }
+    
+    // Check if email is verified
+    if (!$user['email_verified']) {
+        header('Location: login.php?error=' . urlencode('Please verify your email address before logging in. Check your inbox for the verification email.'));
         exit;
     }
     

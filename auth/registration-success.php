@@ -199,14 +199,14 @@
     <main class="success-page">
         <div class="success-container">
             <div class="success-icon">
-                🎉
+                ✅
             </div>
             
             <h1 class="success-title">Welcome to Tennessee Golf Courses!</h1>
             <p class="success-subtitle">Your account has been created successfully</p>
             
             <div class="success-message">
-                <h3>📧 Check Your Email to Get Started</h3>
+                <h3>Check Your Email to Get Started</h3>
                 <p><strong>We've sent a verification email to your inbox.</strong> Please check your email and click the verification link to activate your account.</p>
                 
                 <ul class="checklist">

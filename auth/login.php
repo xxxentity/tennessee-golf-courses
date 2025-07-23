@@ -219,7 +219,7 @@
                 }
                 ?>
 
-                <form action="login-process.php" method="POST">
+                <form action="login-process" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" required placeholder="Enter username or email">

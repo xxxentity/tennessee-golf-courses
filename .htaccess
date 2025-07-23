@@ -23,6 +23,7 @@ RewriteRule ^auth/forgot-password/?$ auth/forgot-password.php [L]
 RewriteRule ^auth/reset-password/?$ auth/reset-password.php [L]
 RewriteRule ^auth/verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^auth/debug-register/?$ auth/debug-register.php [L]
+RewriteRule ^auth/debug-login/?$ auth/debug-login.php [L]
 
 # Handle user pages (in subdirectory)
 RewriteRule ^user/profile/?$ user/profile.php [L]
