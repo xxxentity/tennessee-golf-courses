@@ -200,16 +200,7 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="../index.php" class="logo">Tennessee Golf Courses</a>
-            <ul class="nav-menu">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="login.php" class="active">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include '../includes/navigation.php'; ?>
 
     <main class="auth-page">
         <div class="auth-container">
