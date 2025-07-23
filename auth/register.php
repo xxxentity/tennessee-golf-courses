@@ -293,7 +293,7 @@
                 }
                 ?>
 
-                <form action="register-process.php" method="POST">
+                <form action="register-process" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div class="form-icon">

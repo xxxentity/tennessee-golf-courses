@@ -177,8 +177,8 @@ try {
         error_log("Auto newsletter subscription failed for $email: " . $e->getMessage());
     }
     
-    // Success - redirect to login with verification message
-    header('Location: login.php?success=' . urlencode('Account created! Please check your email to verify your account before logging in.'));
+    // Success - redirect to registration success page
+    header('Location: registration-success');
     exit;
     
 } catch (PDOException $e) {
