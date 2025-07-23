@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <strong>Default Login:</strong><br>
             Username: <code>admin</code><br>
             Password: <code>admin123</code><br>
-            <small>Change this after first login!</small>
+            <small>If login fails, <a href="/admin/create-admin">create admin user</a></small>
         </div>
         
         <?php if ($error_message): ?>
