@@ -33,19 +33,19 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         // Debug info 
         echo "<!-- DEBUG: Script name = " . $script_name . ", Is subdirectory: " . ($is_in_subdirectory ? 'true' : 'false') . ", Base URL: '" . $base_url . "' -->";
         ?>
-        <a href="/index.php" class="nav-logo">
+        <a href="/" class="nav-logo">
             <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <!-- TEMPORARY: Using absolute paths to test navigation -->
-            <li><a href="/index.php" class="nav-link">Home</a></li>
-            <li><a href="/courses.php" class="nav-link">Courses</a></li>
-            <li><a href="/reviews.php" class="nav-link">Reviews</a></li>
-            <li><a href="/news.php" class="nav-link">News</a></li>
-            <li><a href="/about.php" class="nav-link">About</a></li>
-            <li><a href="/contact.php" class="nav-link">Contact</a></li>
-            <!-- DEBUG: Using absolute paths temporarily -->
+            <!-- Clean URLs without .php extensions -->
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/courses" class="nav-link">Courses</a></li>
+            <li><a href="/reviews" class="nav-link">Reviews</a></li>
+            <li><a href="/news" class="nav-link">News</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+            <!-- Using professional clean URLs -->
         </ul>
         
         <div class="nav-auth">

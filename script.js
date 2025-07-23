@@ -115,12 +115,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navigation event handlers - TEMPORARILY DISABLED FOR DEBUGGING
-    // const navLinks = document.querySelectorAll('.nav-link');
-    // console.log('Found nav links:', navLinks.length);
+    // Navigation event handlers - RE-ENABLED WITH DEBUG
+    const navLinks = document.querySelectorAll('.nav-link');
+    console.log('Found nav links:', navLinks.length);
     
-    // DISABLE navigation event handler to test if it's causing issues
-    // Will re-enable once we confirm navigation works without it
+    // Add debug navigation handler
+    navLinks.forEach((link, index) => {
+        console.log(`Nav link ${index}:`, link.href);
+        
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            console.log('Nav link clicked:', href);
+            console.log('Event:', e);
+            console.log('Current URL:', window.location.href);
+            
+            // Always close mobile menu when any nav link is clicked
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (navToggle) {
+                const bars = navToggle.querySelectorAll('.bar');
+                bars.forEach(bar => {
+                    bar.style.transform = '';
+                    bar.style.opacity = '';
+                });
+            }
+            
+            // Only prevent default for anchor links to sections on current page
+            if (href && href.startsWith('#') && document.getElementById(href.substring(1))) {
+                console.log('Preventing default for anchor link');
+                e.preventDefault();
+                const targetSection = document.getElementById(href.substring(1));
+                if (targetSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                console.log('Allowing normal navigation to:', href);
+                // Let the browser handle normal page navigation
+            }
+        });
+    });
 
     // Header scroll effect
     const header = document.querySelector('.header');
