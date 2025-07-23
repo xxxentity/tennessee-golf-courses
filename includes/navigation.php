@@ -23,14 +23,14 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         </a>
         
         <ul class="nav-menu" id="nav-menu">
-            <!-- Clean URLs without .php extensions -->
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/courses" class="nav-link">Courses</a></li>
-            <li><a href="/reviews" class="nav-link">Reviews</a></li>
-            <li><a href="/news" class="nav-link">News</a></li>
-            <li><a href="/about" class="nav-link">About</a></li>
-            <li><a href="/contact" class="nav-link">Contact</a></li>
-            <!-- Using professional clean URLs -->
+            <!-- TEMPORARY: Using .php extensions until clean URLs fixed -->
+            <li><a href="/index.php" class="nav-link">Home</a></li>
+            <li><a href="/courses.php" class="nav-link">Courses</a></li>
+            <li><a href="/reviews.php" class="nav-link">Reviews</a></li>
+            <li><a href="/news.php" class="nav-link">News</a></li>
+            <li><a href="/about.php" class="nav-link">About</a></li>
+            <li><a href="/contact.php" class="nav-link">Contact</a></li>
+            <!-- Will restore clean URLs once working -->
         </ul>
         
         <div class="nav-auth">

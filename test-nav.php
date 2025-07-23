@@ -20,12 +20,12 @@
 <body>
     <div class="test-nav">
         <h2>Simple Navigation Test</h2>
-        <a href="/">Home</a>
-        <a href="/courses">Courses</a>
-        <a href="/news">News</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/reviews">Reviews</a>
+        <a href="/index.php">Home</a>
+        <a href="/courses.php">Courses</a>
+        <a href="/news.php">News</a>
+        <a href="/about.php">About</a>
+        <a href="/contact.php">Contact</a>
+        <a href="/reviews.php">Reviews</a>
     </div>
     
     <h1>Current Page: <?php echo $_SERVER['REQUEST_URI']; ?></h1>

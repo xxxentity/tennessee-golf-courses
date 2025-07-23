@@ -1,19 +1,5 @@
-# Tennessee Golf Courses - Clean URLs (SIMPLIFIED)
-RewriteEngine On
-
-# Specific page rules first (handle directory conflicts)
-RewriteRule ^courses/?$ courses.php [L]
-RewriteRule ^news/?$ news.php [L]
-RewriteRule ^about/?$ about.php [L]
-RewriteRule ^contact/?$ contact.php [L]
-RewriteRule ^reviews/?$ reviews.php [L]
-RewriteRule ^test-nav/?$ test-nav.php [L]
-
-# General rule for other .php files
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^/]+)/?$ $1.php [L]
+# EMERGENCY: Disable clean URLs temporarily - use .php extensions
+RewriteEngine Off
 
 # This rule should come AFTER the .php rewrite to avoid conflicts
 
