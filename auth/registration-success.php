@@ -77,15 +77,6 @@
             position: relative;
         }
         
-        .success-message::before {
-            content: '📧';
-            position: absolute;
-            top: -15px;
-            left: 24px;
-            background: white;
-            padding: 0 8px;
-            font-size: 24px;
-        }
         
         .success-message h3 {
             color: var(--primary-color);
@@ -198,9 +189,6 @@
 
     <main class="success-page">
         <div class="success-container">
-            <div class="success-icon">
-                ✅
-            </div>
             
             <h1 class="success-title">Welcome to Tennessee Golf Courses!</h1>
             <p class="success-subtitle">Your account has been created successfully</p>
