@@ -115,26 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navigation - Let browser handle naturally, only handle mobile menu
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (navToggle && navMenu) {
-        // Only handle mobile menu toggle, don't interfere with navigation
-        document.addEventListener('click', function(e) {
-            if (e.target.closest('.nav-link') && navMenu.classList.contains('active')) {
-                // Close mobile menu when nav link is clicked
-                navMenu.classList.remove('active');
-                const bars = navToggle.querySelectorAll('.bar');
-                bars.forEach(bar => {
-                    bar.style.transform = '';
-                    bar.style.opacity = '';
-                });
-            }
-        });
-    }
-    
-    console.log('Clean navigation enabled - no interference with page links');
+    // Navigation links - Let browser handle completely naturally
+    console.log('Navigation enabled - pure HTML link behavior');
 
     // Header scroll effect
     const header = document.querySelector('.header');

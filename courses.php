@@ -614,7 +614,7 @@ $featured_courses = array_slice($courses, 0, 3);
         </div>
     </footer>
 
-    <script src="/script.js"></script>
+    <script src="/script.js?v=4"></script>
     <script>
         // Auto-submit form when filters change
         document.addEventListener('DOMContentLoaded', function() {

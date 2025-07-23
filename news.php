@@ -640,7 +640,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
         </div>
     </footer>
 
-    <script src="/script.js"></script>
+    <script src="/script.js?v=4"></script>
     <script>
         // Carousel functionality
         let currentSlide = 0;
