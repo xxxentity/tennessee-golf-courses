@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Change Admin Password - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        body { background: var(--bg-light); min-height: 100vh; }
-        .admin-container { max-width: 600px; margin: 100px auto; padding: 20px; }
+        body { background: var(--bg-light); min-height: 100vh; padding-top: 180px; }
+        .admin-container { max-width: 600px; margin: 40px auto; padding: 20px; }
         .admin-section { background: var(--bg-white); padding: 32px; border-radius: 12px; box-shadow: var(--shadow-light); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
