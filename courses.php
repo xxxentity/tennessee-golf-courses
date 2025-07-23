@@ -18,7 +18,7 @@ $courses = [
         'location' => 'Harrison, TN',
         'region' => 'Chattanooga Area',
         'description' => 'Jack Nicklaus Signature Design with stunning lakefront views',
-        'image' => 'images/courses/bear-trace-harrison-bay/1.jpeg',
+        'image' => '/images/courses/bear-trace-harrison-bay/1.jpeg',
         'price_range' => '$50-75',
         'difficulty' => 'Intermediate',
         'holes' => 18,
@@ -544,7 +544,7 @@ $featured_courses = array_slice($courses, 0, 3);
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">

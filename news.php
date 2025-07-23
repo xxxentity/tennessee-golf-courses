@@ -10,7 +10,7 @@ $articles = [
         'time' => '8:30 PM',
         'category' => 'Major Championship',
         'excerpt' => 'World No. 1 completes commanding four-shot triumph at Royal Portrush to claim his fourth major championship...',
-        'image' => 'images/news/open-championship-final-2025/scottie-final-round.png',
+        'image' => '/images/news/open-championship-final-2025/scottie-final-round.png',
         'featured' => true
     ],
     [
@@ -20,7 +20,7 @@ $articles = [
         'time' => '6:45 PM',
         'category' => 'Major Championship',
         'excerpt' => 'World No. 1 Scottie Scheffler fires a bogey-free 67 in Round 3 at Royal Portrush to extend his lead to four shots...',
-        'image' => 'images/news/open-championship-round-3/scheffler-family.jpg',
+        'image' => '/images/news/open-championship-round-3/scheffler-family.jpg',
         'featured' => true
     ],
     [
@@ -30,7 +30,7 @@ $articles = [
         'time' => '7:20 PM',
         'category' => 'Major Championship',
         'excerpt' => 'World No. 1 delivers masterclass performance with 7-under 64 to take Open Championship lead at Royal Portrush...',
-        'image' => 'images/news/open-championship-round-2/scheffler-64.jpg',
+        'image' => '/images/news/open-championship-round-2/scheffler-64.jpg',
         'featured' => true
     ],
     [
@@ -40,7 +40,7 @@ $articles = [
         'time' => '8:15 PM',
         'category' => 'Major Championship',
         'excerpt' => 'Challenging conditions and ever-changing weather define opening day at the 153rd Open Championship...',
-        'image' => 'images/news/open-championship-2025-round-1/royal-portrush-round1.jpg',
+        'image' => '/images/news/open-championship-2025-round-1/royal-portrush-round1.jpg',
         'featured' => false
     ]
 ];
@@ -570,7 +570,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">

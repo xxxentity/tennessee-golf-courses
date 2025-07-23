@@ -95,7 +95,7 @@
             <div class="courses-grid">
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="images/courses/bear-trace-harrison-bay/1.jpeg" alt="Bear Trace at Harrison Bay">
+                        <img src="/images/courses/bear-trace-harrison-bay/1.jpeg" alt="Bear Trace at Harrison Bay">
                     </div>
                     <div class="course-content">
                         <h3>Bear Trace at Harrison Bay</h3>
@@ -128,7 +128,7 @@
             <div class="news-grid">
                 <article class="news-card">
                     <div class="news-image">
-                        <img src="images/news/open-championship-final-2025/scottie-final-round.png" alt="Scottie Scheffler with Claret Jug">
+                        <img src="/images/news/open-championship-final-2025/scottie-final-round.png" alt="Scottie Scheffler with Claret Jug">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
@@ -143,7 +143,7 @@
 
                 <article class="news-card">
                     <div class="news-image">
-                        <img src="images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler celebrating with family">
+                        <img src="/images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler celebrating with family">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
@@ -158,7 +158,7 @@
 
                 <article class="news-card">
                     <div class="news-image">
-                        <img src="images/news/open-championship-round-2/scheffler-64.jpg" alt="Scottie Scheffler during second round">
+                        <img src="/images/news/open-championship-round-2/scheffler-64.jpg" alt="Scottie Scheffler during second round">
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
@@ -243,7 +243,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">
