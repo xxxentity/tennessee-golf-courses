@@ -352,7 +352,7 @@
             </div>
             
             <div class="auth-footer">
-                <p>Already have an account? <a href="login.php">Sign in here</a></p>
+                <p>Already have an account? <a href="login">Sign in here</a></p>
             </div>
         </div>
     </main>

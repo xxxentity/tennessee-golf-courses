@@ -235,8 +235,8 @@
             </div>
             
             <div class="auth-footer">
-                <p>Don't have an account? <a href="register.php">Create one here</a></p>
-                <p style="margin-top: 10px;"><a href="forgot-password.php">Forgot your password?</a></p>
+                <p>Don't have an account? <a href="register">Create one here</a></p>
+                <p style="margin-top: 10px;"><a href="forgot-password">Forgot your password?</a></p>
             </div>
         </div>
     </main>

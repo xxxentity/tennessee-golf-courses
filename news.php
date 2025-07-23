@@ -563,7 +563,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                                     </div>
                                     <h3 class="news-title"><?php echo htmlspecialchars($article['title']); ?></h3>
                                     <p class="news-excerpt"><?php echo htmlspecialchars($article['excerpt']); ?></p>
-                                    <a href="news/<?php echo htmlspecialchars($article['slug']); ?>.php" class="read-more">
+                                    <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -610,19 +610,19 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="courses.php">Golf Courses</a></li>
-                        <li><a href="reviews.php">Reviews</a></li>
-                        <li><a href="news.php">News</a></li>
-                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="courses">Golf Courses</a></li>
+                        <li><a href="reviews">Reviews</a></li>
+                        <li><a href="news">News</a></li>
+                        <li><a href="about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="courses.php?region=Memphis Area">Memphis Area</a></li>
+                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

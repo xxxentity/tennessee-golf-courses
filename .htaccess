@@ -12,6 +12,15 @@ RewriteRule ^about/?$ about.php [L]
 RewriteRule ^contact/?$ contact.php [L]
 RewriteRule ^reviews/?$ reviews.php [L]
 
+# Handle course pages (in subdirectory)
+RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
+
+# Handle news article pages (in subdirectory)
+RewriteRule ^news/open-championship-2025-round-1-royal-portrush/?$ news/open-championship-2025-round-1-royal-portrush.php [L]
+RewriteRule ^news/scheffler-extends-lead-open-championship-round-3/?$ news/scheffler-extends-lead-open-championship-round-3.php [L]
+RewriteRule ^news/scheffler-seizes-control-open-championship-round-2/?$ news/scheffler-seizes-control-open-championship-round-2.php [L]
+RewriteRule ^news/scheffler-wins-2025-british-open-final-round/?$ news/scheffler-wins-2025-british-open-final-round.php [L]
+
 # Handle auth pages (in subdirectory)
 RewriteRule ^auth/login/?$ auth/login.php [L]
 RewriteRule ^auth/register/?$ auth/register.php [L]
@@ -20,6 +29,7 @@ RewriteRule ^auth/registration-success/?$ auth/registration-success.php [L]
 RewriteRule ^auth/login-process/?$ auth/login-process.php [L]
 RewriteRule ^auth/logout/?$ auth/logout.php [L]
 RewriteRule ^auth/forgot-password/?$ auth/forgot-password.php [L]
+RewriteRule ^auth/forgot-password-process/?$ auth/forgot-password-process.php [L]
 RewriteRule ^auth/reset-password/?$ auth/reset-password.php [L]
 RewriteRule ^auth/verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^auth/debug-register/?$ auth/debug-register.php [L]

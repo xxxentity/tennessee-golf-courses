@@ -6,12 +6,12 @@ require_once '../includes/rate-limiter.php';
 $rateLimiter = new RateLimiter($pdo);
 if (!$rateLimiter->isAllowed('registration', 3, 1)) {
     $remaining = $rateLimiter->getRemainingAttempts('registration', 3, 1);
-    header('Location: register.php?error=' . urlencode('Too many registration attempts. Please try again later.'));
+    header('Location: register?error=' . urlencode('Too many registration attempts. Please try again later.'));
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: register.php');
+    header('Location: register');
     exit;
 }
 
@@ -63,7 +63,7 @@ if (empty($errors)) {
 // If there are errors, redirect back with error message
 if (!empty($errors)) {
     $error_message = implode(". ", $errors);
-    header('Location: register.php?error=' . urlencode($error_message));
+    header('Location: register?error=' . urlencode($error_message));
     exit;
 }
 
@@ -182,7 +182,7 @@ try {
     exit;
     
 } catch (PDOException $e) {
-    header('Location: register.php?error=' . urlencode('Registration failed. Please try again.'));
+    header('Location: register?error=' . urlencode('Registration failed. Please try again.'));
     exit;
 }
 ?>

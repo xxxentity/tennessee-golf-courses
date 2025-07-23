@@ -208,11 +208,11 @@ session_start();
 <body>
     <nav>
         <div class="nav-container">
-            <a href="../index.php" class="logo">Tennessee Golf Courses</a>
+            <a href="/" class="logo">Tennessee Golf Courses</a>
             <ul class="nav-menu">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="login.php" class="active">Login</a></li>
-                <li><a href="register.php">Register</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="login" class="active">Login</a></li>
+                <li><a href="register">Register</a></li>
             </ul>
         </div>
     </nav>
@@ -239,7 +239,7 @@ session_start();
                     Enter your email address and we'll send you a link to reset your password. This will also unlock your account if it was locked due to failed login attempts.
                 </div>
 
-                <form action="forgot-password-process.php" method="POST">
+                <form action="forgot-password-process" method="POST">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required placeholder="Enter your email address">
@@ -250,7 +250,7 @@ session_start();
             </div>
             
             <div class="auth-footer">
-                <p>Remember your password? <a href="login.php">Sign in here</a></p>
+                <p>Remember your password? <a href="login">Sign in here</a></p>
             </div>
         </div>
     </main>

@@ -261,22 +261,22 @@ try {
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
-                <a href="../index.php" class="nav-logo">
+                <a href="/" class="nav-logo">
                     <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
                 </a>
                 
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="../index.php" class="nav-link">Home</a></li>
-                    <li><a href="../index.php#courses" class="nav-link">Courses</a></li>
-                    <li><a href="../index.php#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="../index.php#news" class="nav-link">News</a></li>
-                    <li><a href="../index.php#about" class="nav-link">About</a></li>
-                    <li><a href="../index.php#contact" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#courses" class="nav-link">Courses</a></li>
+                    <li><a href="/#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="/#news" class="nav-link">News</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#contact" class="nav-link">Contact</a></li>
                 </ul>
                 
                 <div class="nav-auth">
-                    <a href="../auth/login.php" class="nav-link login-btn">Login</a>
-                    <a href="../auth/register.php" class="nav-link register-btn">Join Free</a>
+                    <a href="/auth/login" class="nav-link login-btn">Login</a>
+                    <a href="/auth/register" class="nav-link register-btn">Join Free</a>
                 </div>
                 
                 <div class="nav-toggle" id="nav-toggle">
@@ -429,7 +429,7 @@ try {
                 </div>
             <?php else: ?>
                 <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p><a href="../auth/login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="../auth/register.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
+                    <p><a href="/auth/login" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="/auth/register" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
                 </div>
             <?php endif; ?>
             
@@ -474,10 +474,10 @@ try {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.php#courses">Golf Courses</a></li>
-                        <li><a href="../index.php#reviews">Reviews</a></li>
-                        <li><a href="../index.php#news">News</a></li>
-                        <li><a href="../index.php#about">About Us</a></li>
+                        <li><a href="/#courses">Golf Courses</a></li>
+                        <li><a href="/#reviews">Reviews</a></li>
+                        <li><a href="/#news">News</a></li>
+                        <li><a href="/#about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

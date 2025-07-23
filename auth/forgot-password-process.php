@@ -3,14 +3,14 @@ session_start();
 require_once '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: forgot-password.php');
+    header('Location: forgot-password');
     exit;
 }
 
 $email = trim($_POST['email']);
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header('Location: forgot-password.php?error=' . urlencode('Please enter a valid email address'));
+    header('Location: forgot-password?error=' . urlencode('Please enter a valid email address'));
     exit;
 }
 
@@ -30,7 +30,7 @@ try {
         $stmt->execute([$token, $expires, $user['id']]);
         
         // Create reset link
-        $resetLink = "https://tennesseegolfcourses.com/auth/reset-password.php?token=" . urlencode($token);
+        $resetLink = "https://tennesseegolfcourses.com/auth/reset-password?token=" . urlencode($token);
         
         // Email content
         $subject = "Password Reset - Tennessee Golf Courses";
@@ -48,17 +48,17 @@ try {
         
         // Send email
         if (mail($email, $subject, $message, $headers)) {
-            header('Location: forgot-password.php?success=' . urlencode('Password reset link sent to your email address. Please check your inbox.'));
+            header('Location: forgot-password?success=' . urlencode('Password reset link sent to your email address. Please check your inbox.'));
         } else {
-            header('Location: forgot-password.php?error=' . urlencode('Failed to send email. Please try again later.'));
+            header('Location: forgot-password?error=' . urlencode('Failed to send email. Please try again later.'));
         }
     } else {
         // Always show success message for security (don't reveal if email exists)
-        header('Location: forgot-password.php?success=' . urlencode('If that email address is in our system, you will receive a password reset link.'));
+        header('Location: forgot-password?success=' . urlencode('If that email address is in our system, you will receive a password reset link.'));
     }
     
 } catch (PDOException $e) {
-    header('Location: forgot-password.php?error=' . urlencode('An error occurred. Please try again.'));
+    header('Location: forgot-password?error=' . urlencode('An error occurred. Please try again.'));
 }
 
 exit;

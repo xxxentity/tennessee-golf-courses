@@ -144,7 +144,7 @@ session_start();
                 </ul>
             </div>
             
-            <a href="index.php" class="back-home-btn">
+            <a href="/" class="back-home-btn">
                 <i class="fas fa-home"></i> Back to Home
             </a>
         </div>
@@ -169,19 +169,19 @@ session_start();
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="courses.php">Golf Courses</a></li>
-                        <li><a href="reviews.php">Reviews</a></li>
-                        <li><a href="news.php">News</a></li>
-                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="courses">Golf Courses</a></li>
+                        <li><a href="reviews">Reviews</a></li>
+                        <li><a href="news">News</a></li>
+                        <li><a href="about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="courses.php?region=Memphis Area">Memphis Area</a></li>
+                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

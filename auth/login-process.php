@@ -3,7 +3,7 @@ session_start();
 require_once '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: login.php');
+    header('Location: login');
     exit;
 }
 
@@ -13,7 +13,7 @@ $password = $_POST['password'];
 
 // Validation
 if (empty($username) || empty($password)) {
-    header('Location: login.php?error=' . urlencode('Please enter both username and password'));
+    header('Location: login?error=' . urlencode('Please enter both username and password'));
     exit;
 }
 
@@ -24,7 +24,7 @@ try {
     $user = $stmt->fetch();
     
     if (!$user) {
-        header('Location: login.php?error=' . urlencode('Invalid username or password'));
+        header('Location: login?error=' . urlencode('Invalid username or password'));
         exit;
     }
     
@@ -32,19 +32,19 @@ try {
     if ($user['account_locked_until'] && new DateTime() < new DateTime($user['account_locked_until'])) {
         $lockExpiry = new DateTime($user['account_locked_until']);
         $timeLeft = $lockExpiry->diff(new DateTime())->format('%h hours %i minutes');
-        header('Location: login.php?error=' . urlencode('Account is locked due to too many failed login attempts. Try again in ' . $timeLeft . ' or reset your password.'));
+        header('Location: login?error=' . urlencode('Account is locked due to too many failed login attempts. Try again in ' . $timeLeft . ' or reset your password.'));
         exit;
     }
     
     // Check if account is active
     if (!$user['is_active']) {
-        header('Location: login.php?error=' . urlencode('Your account has been deactivated'));
+        header('Location: login?error=' . urlencode('Your account has been deactivated'));
         exit;
     }
     
     // Check if email is verified
     if (!$user['email_verified']) {
-        header('Location: login.php?error=' . urlencode('Please verify your email address before logging in. Check your inbox for the verification email.'));
+        header('Location: login?error=' . urlencode('Please verify your email address before logging in. Check your inbox for the verification email.'));
         exit;
     }
     
@@ -58,12 +58,12 @@ try {
             $lockUntil = (new DateTime())->add(new DateInterval('PT1H'))->format('Y-m-d H:i:s');
             $stmt = $pdo->prepare("UPDATE users SET login_attempts = ?, account_locked_until = ? WHERE id = ?");
             $stmt->execute([5, $lockUntil, $user['id']]);
-            header('Location: login.php?error=' . urlencode('Account locked due to 5 failed login attempts. Please reset your password or try again in 1 hour.'));
+            header('Location: login?error=' . urlencode('Account locked due to 5 failed login attempts. Please reset your password or try again in 1 hour.'));
         } else {
             $stmt = $pdo->prepare("UPDATE users SET login_attempts = ? WHERE id = ?");
             $stmt->execute([$newAttempts, $user['id']]);
             $remaining = 5 - $newAttempts;
-            header('Location: login.php?error=' . urlencode('Invalid username or password. ' . $remaining . ' attempts remaining before account lock.'));
+            header('Location: login?error=' . urlencode('Invalid username or password. ' . $remaining . ' attempts remaining before account lock.'));
         }
         exit;
     }
@@ -80,12 +80,12 @@ try {
     $_SESSION['logged_in'] = true;
     
     // Redirect to homepage or requested page
-    $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '../index.php';
+    $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '/';
     header('Location: ' . $redirect);
     exit;
     
 } catch (PDOException $e) {
-    header('Location: login.php?error=' . urlencode('Login failed. Please try again.'));
+    header('Location: login?error=' . urlencode('Login failed. Please try again.'));
     exit;
 }
 ?>

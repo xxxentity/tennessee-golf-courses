@@ -4,7 +4,7 @@ require_once '../config/database.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: ../auth/login.php?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    header('Location: /auth/login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
 
