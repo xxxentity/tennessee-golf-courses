@@ -12,6 +12,17 @@ RewriteRule ^about/?$ about.php [L]
 RewriteRule ^contact/?$ contact.php [L]
 RewriteRule ^reviews/?$ reviews.php [L]
 
+# Handle auth pages (in subdirectory)
+RewriteRule ^auth/login/?$ auth/login.php [L]
+RewriteRule ^auth/register/?$ auth/register.php [L]
+RewriteRule ^auth/logout/?$ auth/logout.php [L]
+RewriteRule ^auth/forgot-password/?$ auth/forgot-password.php [L]
+RewriteRule ^auth/reset-password/?$ auth/reset-password.php [L]
+
+# Handle user pages (in subdirectory)
+RewriteRule ^user/profile/?$ user/profile.php [L]
+RewriteRule ^user/edit-profile/?$ user/edit-profile.php [L]
+
 # General clean URL rewriting (internal)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
