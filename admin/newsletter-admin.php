@@ -126,6 +126,9 @@ try {
                     <span style="color: var(--text-gray); margin-right: 16px;">
                         Welcome, <?php echo htmlspecialchars($_SESSION['first_name'] ?? 'Admin'); ?>
                     </span>
+                    <a href="/admin/change-password" style="background: #059669; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; margin-right: 8px;">
+                        Change Password
+                    </a>
                     <a href="/admin/logout" style="background: #dc2626; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px;">
                         Logout
                     </a>
