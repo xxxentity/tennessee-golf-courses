@@ -352,7 +352,8 @@ a[href^="www."]::after {
     align-items: center;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    gap: 8px;
 }
 
 .search-container::before {
@@ -386,10 +387,11 @@ a[href^="www."]::after {
     border: none;
     outline: none;
     font-size: 16px;
-    padding: 12px 0;
+    padding: 12px 8px;
     color: var(--text-dark);
     z-index: 3;
     position: relative;
+    margin-right: 8px;
 }
 
 .search-input::placeholder {
@@ -403,7 +405,7 @@ a[href^="www."]::after {
     padding: 14px 28px;
     border-radius: 12px;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -465,12 +467,12 @@ a[href^="www."]::after {
 }
 
 .stat-item i {
-    font-size: 32px;
+    font-size: 20px;
     color: var(--gold-color);
 }
 
 .stat-number {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1;
 }
@@ -854,6 +856,7 @@ a[href^="www."]::after {
     border-radius: 8px;
     z-index: 3;
     position: relative;
+    margin-right: 8px;
 }
 
 .newsletter-input::placeholder {
@@ -867,7 +870,7 @@ a[href^="www."]::after {
     padding: 16px 32px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 20px;
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
