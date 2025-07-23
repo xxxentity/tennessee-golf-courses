@@ -388,6 +388,8 @@ a[href^="www."]::after {
     font-size: 16px;
     padding: 12px 0;
     color: var(--text-dark);
+    z-index: 3;
+    position: relative;
 }
 
 .search-input::placeholder {
@@ -401,11 +403,13 @@ a[href^="www."]::after {
     padding: 14px 28px;
     border-radius: 12px;
     font-weight: 600;
+    font-size: 32px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(6, 78, 59, 0.3);
+    z-index: 2;
 }
 
 .search-btn::before {
@@ -848,6 +852,8 @@ a[href^="www."]::after {
     font-size: 16px;
     color: var(--text-dark);
     border-radius: 8px;
+    z-index: 3;
+    position: relative;
 }
 
 .newsletter-input::placeholder {
@@ -861,9 +867,12 @@ a[href^="www."]::after {
     padding: 16px 32px;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 32px;
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    z-index: 2;
+    position: relative;
 }
 
 .newsletter-btn:hover {
