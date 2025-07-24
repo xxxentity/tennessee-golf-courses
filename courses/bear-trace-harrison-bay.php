@@ -967,65 +967,7 @@ try {
         </div>
     </footer>
 
-    <script src="../script.js?v=5"></script>
-    <script>
-        console.log('Bear Trace: Script block started');
-        
-        // Simple immediate test
-        const timeElement = document.getElementById('current-time');
-        console.log('Bear Trace: Time element found immediately:', !!timeElement);
-        
-        if (timeElement) {
-            timeElement.textContent = 'Script is working!';
-            console.log('Bear Trace: Set time text to test message');
-        }
-        
-        // DOM ready test
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Bear Trace: DOM Content Loaded fired');
-            
-            const timeElement = document.getElementById('current-time');
-            const weatherBar = document.querySelector('.weather-bar');
-            
-            console.log('Bear Trace: Time element in DOM ready:', !!timeElement);
-            console.log('Bear Trace: Weather bar in DOM ready:', !!weatherBar);
-            
-            if (timeElement) {
-                const now = new Date();
-                const timeString = now.toLocaleString('en-US', {
-                    weekday: 'long',
-                    year: 'numeric', 
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    timeZone: 'America/Chicago'
-                });
-                timeElement.textContent = timeString;
-                console.log('Bear Trace: Time updated to:', timeString);
-            }
-            
-            if (weatherBar) {
-                let isHidden = false;
-                window.addEventListener('scroll', function() {
-                    const scrollTop = window.scrollY;
-                    console.log('Bear Trace: Scroll detected:', scrollTop);
-                    
-                    if (scrollTop > 100 && !isHidden) {
-                        weatherBar.style.transform = 'translateY(-100%)';
-                        isHidden = true;
-                        console.log('Bear Trace: Weather bar hidden');
-                    } else if (scrollTop <= 100 && isHidden) {
-                        weatherBar.style.transform = 'translateY(0)';
-                        isHidden = false;
-                        console.log('Bear Trace: Weather bar shown');
-                    }
-                });
-            }
-        });
-        
-        console.log('Bear Trace: Script block completed');
-    </script>
+    <script src="/script.js?v=5"></script>
     <script>
         // Gallery Modal Functions
         function openGallery() {
