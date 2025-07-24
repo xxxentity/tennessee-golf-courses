@@ -211,6 +211,59 @@
             color: var(--primary-color);
         }
         
+        .checkbox-group {
+            margin-bottom: 32px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .checkbox-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checkbox-item label {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-gray);
+            cursor: pointer;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: auto;
+            text-align: left;
+            margin: 0;
+        }
+        
+        .checkbox-item label a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .checkbox-item label a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .auth-page {
                 padding: 80px 16px 20px;
@@ -317,6 +370,21 @@
                         <div class="form-icon">
                             <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Re-enter password">
                             <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="agree_terms" name="agree_terms" required>
+                            <label for="agree_terms">
+                                I agree to the <a href="/terms-of-service" target="_blank">Terms of Service</a> and <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="newsletter_subscribe" name="newsletter_subscribe" checked>
+                            <label for="newsletter_subscribe">
+                                Subscribe to our newsletter for course updates and golf news
+                            </label>
                         </div>
                     </div>
 

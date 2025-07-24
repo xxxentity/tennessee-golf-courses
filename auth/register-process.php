@@ -22,6 +22,8 @@ $first_name = trim($_POST['first_name']);
 $last_name = trim($_POST['last_name']);
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
+$agree_terms = isset($_POST['agree_terms']) ? $_POST['agree_terms'] : false;
+$newsletter_subscribe = isset($_POST['newsletter_subscribe']) ? $_POST['newsletter_subscribe'] : false;
 
 // Validation
 $errors = [];
@@ -44,6 +46,10 @@ if (strlen($password) < 6) {
 
 if ($password !== $confirm_password) {
     $errors[] = "Passwords do not match";
+}
+
+if (!$agree_terms) {
+    $errors[] = "You must agree to the Terms of Service and Privacy Policy";
 }
 
 // Check if username or email already exists
@@ -78,17 +84,18 @@ try {
     $stmt->execute([$username, $email, $first_name, $last_name, $password_hash, $email_verification_token]);
     $user_id = $pdo->lastInsertId();
     
-    // Auto-subscribe to newsletter
-    try {
-        // Generate unsubscribe token for newsletter
-        $newsletter_token = bin2hex(random_bytes(32));
-        
-        // Check if already subscribed to newsletter
-        $stmt = $pdo->prepare("SELECT id FROM newsletter_subscribers WHERE email = ?");
-        $stmt->execute([$email]);
-        $existing_newsletter = $stmt->fetch();
-        
-        if (!$existing_newsletter) {
+    // Subscribe to newsletter if checkbox is checked
+    if ($newsletter_subscribe) {
+        try {
+            // Generate unsubscribe token for newsletter
+            $newsletter_token = bin2hex(random_bytes(32));
+            
+            // Check if already subscribed to newsletter
+            $stmt = $pdo->prepare("SELECT id FROM newsletter_subscribers WHERE email = ?");
+            $stmt->execute([$email]);
+            $existing_newsletter = $stmt->fetch();
+            
+            if (!$existing_newsletter) {
             // Subscribe to newsletter automatically
             $stmt = $pdo->prepare("
                 INSERT INTO newsletter_subscribers (email, first_name, unsubscribe_token, ip_address, user_agent, confirmed) 
@@ -169,12 +176,13 @@ try {
             $headers .= "From: Tennessee Golf Courses <newsletter@tennesseegolfcourses.com>" . "\r\n";
             $headers .= "Reply-To: info@tennesseegolfcourses.com" . "\r\n";
             
-            // Send welcome email
-            mail($email, $subject, $message, $headers);
+                // Send welcome email
+                mail($email, $subject, $message, $headers);
+            }
+        } catch (Exception $e) {
+            // Log newsletter subscription error but don't fail registration
+            error_log("Newsletter subscription failed for $email: " . $e->getMessage());
         }
-    } catch (Exception $e) {
-        // Log newsletter subscription error but don't fail registration
-        error_log("Auto newsletter subscription failed for $email: " . $e->getMessage());
     }
     
     // Success - redirect to registration success page
