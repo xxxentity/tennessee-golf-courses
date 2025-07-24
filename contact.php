@@ -63,6 +63,8 @@ Time: " . date('Y-m-d H:i:s');
         
         if (mail($to, $email_subject, $email_message, $headers)) {
             $success_message = "Thank you for your message! We'll get back to you within 24 hours.";
+            // Clear form data after successful submission
+            $_POST = array();
         } else {
             $error_message = "Sorry, there was an error sending your message. Please try again.";
         }
