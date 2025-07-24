@@ -969,6 +969,26 @@ try {
 
     <script src="../script.js?v=5"></script>
     <script>
+        // Bear Trace specific debugging
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Bear Trace Debug: Page loaded');
+            const weatherBar = document.querySelector('.weather-bar');
+            console.log('Bear Trace Debug: Weather bar found:', !!weatherBar);
+            if (weatherBar) {
+                console.log('Bear Trace Debug: Weather bar style:', weatherBar.style.cssText);
+                console.log('Bear Trace Debug: Weather bar position:', weatherBar.getBoundingClientRect());
+            }
+            
+            // Force weather bar to hide after 3 seconds for testing
+            setTimeout(() => {
+                if (weatherBar) {
+                    console.log('Bear Trace Debug: Force hiding weather bar');
+                    weatherBar.style.transform = 'translateY(-100%)';
+                }
+            }, 3000);
+        });
+    </script>
+    <script>
         // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
