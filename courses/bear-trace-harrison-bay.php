@@ -991,22 +991,51 @@ try {
             
             // Check weather bar and scroll
             const weatherBar = document.querySelector('.weather-bar');
+            const header = document.querySelector('.header');
             if (weatherBar) {
                 console.log('Bear Trace: Weather bar found, adding scroll listener');
+                console.log('Bear Trace: Header found:', !!header);
                 let isHidden = false;
                 
-                window.addEventListener('scroll', function() {
-                    const scrollTop = window.scrollY;
-                    if (scrollTop > 200 && !isHidden) {
+                // Ensure proper CSS transition
+                weatherBar.style.transition = 'transform 0.3s ease';
+                if (header) header.style.transition = 'top 0.3s ease';
+                
+                function handleScroll() {
+                    const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+                    console.log('Bear Trace: Scroll detected, position:', scrollTop);
+                    
+                    if (scrollTop > 100 && !isHidden) {
                         weatherBar.style.transform = 'translateY(-100%)';
+                        if (header) header.style.top = '0';
                         isHidden = true;
                         console.log('Bear Trace: Weather bar hidden at scroll:', scrollTop);
-                    } else if (scrollTop <= 200 && isHidden) {
+                    } else if (scrollTop <= 100 && isHidden) {
                         weatherBar.style.transform = 'translateY(0)';
+                        if (header) header.style.top = '40px';
                         isHidden = false;
                         console.log('Bear Trace: Weather bar shown at scroll:', scrollTop);
                     }
-                });
+                }
+                
+                // Add multiple scroll event listeners to ensure it works
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                document.addEventListener('scroll', handleScroll, { passive: true });
+                
+                // Test scroll immediately
+                console.log('Bear Trace: Testing scroll functionality in 3 seconds...');
+                setTimeout(() => {
+                    console.log('Bear Trace: Force hiding weather bar for test');
+                    weatherBar.style.transform = 'translateY(-100%)';
+                    if (header) header.style.top = '0';
+                    
+                    setTimeout(() => {
+                        console.log('Bear Trace: Force showing weather bar for test');
+                        weatherBar.style.transform = 'translateY(0)';
+                        if (header) header.style.top = '40px';
+                    }, 2000);
+                }, 3000);
+                
             } else {
                 console.log('Bear Trace: Weather bar NOT found');
             }
