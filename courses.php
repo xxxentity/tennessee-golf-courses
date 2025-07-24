@@ -600,11 +600,11 @@ $featured_courses = array_slice($courses, 0, 3);
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
