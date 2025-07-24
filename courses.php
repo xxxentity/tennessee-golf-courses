@@ -28,6 +28,23 @@ $courses = [
         'avg_rating' => 4.2,
         'review_count' => 127,
         'slug' => 'bear-trace-harrison-bay'
+    ],
+    [
+        'id' => 2,
+        'name' => 'TPC Southwind',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Championship PGA Tour venue with challenging water hazards',
+        'image' => '/images/courses/tpc-southwind/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Ron Prichard',
+        'amenities' => ['Pro Shop', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Fitness Center'],
+        'avg_rating' => 4.8,
+        'review_count' => 85,
+        'slug' => 'tpc-southwind'
     ]
 ];
 

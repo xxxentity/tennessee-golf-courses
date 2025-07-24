@@ -16,6 +16,7 @@ RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 
 # Handle course pages (in subdirectory)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
+RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/open-championship-2025-round-1-royal-portrush/?$ news/open-championship-2025-round-1-royal-portrush.php [L]

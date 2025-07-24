@@ -72,8 +72,8 @@
     <section id="courses" class="featured-courses">
         <div class="container">
             <div class="section-header">
-                <h2>Featured Golf Course</h2>
-                <p>Discover premium golf in Tennessee - more courses coming soon</p>
+                <h2>Featured Golf Courses</h2>
+                <p>Discover premium golf destinations across Tennessee</p>
             </div>
             <div class="courses-grid">
                 <div class="course-card">
@@ -93,9 +93,26 @@
                     </div>
                 </div>
 
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/images/courses/tpc-southwind/1.jpeg" alt="TPC Southwind">
+                    </div>
+                    <div class="course-content">
+                        <h3>TPC Southwind</h3>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Memphis, TN</p>
+                        <p class="course-description">Championship PGA Tour venue with challenging water hazards</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 70</span>
+                            <span class="feature-tag">PGA Tour Host</span>
+                        </div>
+                        <a href="courses/tpc-southwind" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+
             </div>
             <div class="section-footer">
-                <button class="btn-secondary">More Courses Coming Soon</button>
+                <a href="courses" class="btn-secondary">View All Courses</a>
             </div>
         </div>
     </section>
