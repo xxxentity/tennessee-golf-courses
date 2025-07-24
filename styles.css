@@ -878,10 +878,7 @@ a[href^="www."]::after {
     position: relative;
 }
 
-.newsletter-btn:hover {
-    background: #c49c2f;
-    transform: translateY(-1px);
-}
+/* Removed hover effect - keeping consistent styling */
 
 /* Footer */
 .footer {
@@ -939,6 +936,18 @@ a[href^="www."]::after {
 
 .footer-section ul li {
     margin-bottom: 12px;
+}
+
+/* Contact section items with icons */
+.footer-section ul li i {
+    margin-right: 8px;
+    color: var(--gold-color);
+    width: 16px;
+}
+
+.footer-section ul li {
+    display: flex;
+    align-items: center;
 }
 
 .footer-section ul li a {
