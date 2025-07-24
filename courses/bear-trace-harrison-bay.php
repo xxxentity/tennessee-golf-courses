@@ -969,23 +969,42 @@ try {
 
     <script src="../script.js?v=5"></script>
     <script>
-        // Bear Trace specific debugging
+        // Bear Trace specific weather bar scroll fix
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Bear Trace Debug: Page loaded');
+            console.log('Bear Trace Debug: Setting up scroll listener');
             const weatherBar = document.querySelector('.weather-bar');
-            console.log('Bear Trace Debug: Weather bar found:', !!weatherBar);
-            if (weatherBar) {
-                console.log('Bear Trace Debug: Weather bar style:', weatherBar.style.cssText);
-                console.log('Bear Trace Debug: Weather bar position:', weatherBar.getBoundingClientRect());
-            }
+            const header = document.querySelector('.header');
+            let weatherBarVisible = true;
             
-            // Force weather bar to hide after 3 seconds for testing
-            setTimeout(() => {
-                if (weatherBar) {
-                    console.log('Bear Trace Debug: Force hiding weather bar');
-                    weatherBar.style.transform = 'translateY(-100%)';
+            if (weatherBar) {
+                console.log('Bear Trace Debug: Weather bar found, adding scroll listener');
+                
+                function handleScroll() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    console.log('Bear Trace Debug: Scroll position:', scrollTop);
+                    
+                    if (scrollTop > 200 && weatherBarVisible) {
+                        console.log('Bear Trace Debug: Hiding weather bar');
+                        weatherBar.style.transform = 'translateY(-100%)';
+                        weatherBarVisible = false;
+                        if (header) {
+                            header.style.top = '0';
+                        }
+                    } else if (scrollTop <= 200 && !weatherBarVisible) {
+                        console.log('Bear Trace Debug: Showing weather bar');
+                        weatherBar.style.transform = 'translateY(0)';
+                        weatherBarVisible = true;
+                        if (header) {
+                            header.style.top = '40px';
+                        }
+                    }
                 }
-            }, 3000);
+                
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                console.log('Bear Trace Debug: Scroll listener added');
+            } else {
+                console.log('Bear Trace Debug: Weather bar NOT found');
+            }
         });
     </script>
     <script>
