@@ -43,12 +43,12 @@ try {
     $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : 4.5;
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
     
 } catch (PDOException $e) {
     $comments = [];
-    $avg_rating = 4.5;
+    $avg_rating = null;
     $total_reviews = 0;
 }
 ?>
@@ -547,23 +547,30 @@ try {
             <h1>Bear Trace at Harrison Bay</h1>
             <p>Jack Nicklaus Signature Design • Harrison, Tennessee</p>
             <div class="course-rating">
-                <div class="rating-stars">
-                    <?php 
-                    $full_stars = floor($avg_rating);
-                    $half_star = ($avg_rating - $full_stars) >= 0.5;
-                    
-                    for ($i = 1; $i <= 5; $i++) {
-                        if ($i <= $full_stars) {
-                            echo '<i class="fas fa-star"></i>';
-                        } elseif ($i == $full_stars + 1 && $half_star) {
-                            echo '<i class="fas fa-star-half-alt"></i>';
-                        } else {
-                            echo '<i class="far fa-star"></i>';
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
                         }
-                    }
-                    ?>
-                </div>
-                <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> reviews)</span>
+                        ?>
+                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
