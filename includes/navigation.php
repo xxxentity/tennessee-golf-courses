@@ -22,7 +22,7 @@ $is_main_page = (
 
 <?php if ($is_main_page): ?>
 <!-- Weather Bar (only on main site pages) -->
-<div class="weather-bar">
+<div class="weather-bar" style="transition: transform 0.3s ease;">
     <div class="weather-container">
         <div class="weather-info">
             <div class="current-time">
@@ -257,6 +257,7 @@ $is_main_page = (
     z-index: 1000;
     background: var(--bg-white);
     box-shadow: var(--shadow-light);
+    transition: top 0.3s ease;
 }
 
 /* Body padding adjustment */
