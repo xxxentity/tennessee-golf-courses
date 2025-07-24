@@ -70,6 +70,7 @@ a[href^="www."]::after {
     box-shadow: var(--shadow-light);
     margin: 0;
     border: 0;
+    transition: transform 0.3s ease;
 }
 
 .weather-container {

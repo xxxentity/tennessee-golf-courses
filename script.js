@@ -77,23 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateWeather();
     setInterval(updateWeather, 600000);
 
-    // Weather bar scroll effect
+    // Initialize weather bar elements and visibility state
     const weatherBar = document.querySelector('.weather-bar');
+    const header = document.querySelector('.header');
     let weatherBarVisible = true;
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 200 && weatherBarVisible) {
-            weatherBar.style.transform = 'translateY(-100%)';
-            weatherBarVisible = false;
-            document.querySelector('.header').style.top = '0';
-        } else if (scrollTop <= 200 && !weatherBarVisible) {
-            weatherBar.style.transform = 'translateY(0)';
-            weatherBarVisible = true;
-            document.querySelector('.header').style.top = '40px';
-        }
-    });
     // Mobile Navigation Toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -195,19 +182,34 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
 
-    // Header scroll effect
-    const header = document.querySelector('.header');
+    // Combined scroll effects - weather bar and header
     let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'var(--bg-white)';
-            header.style.backdropFilter = 'none';
+        // Weather bar scroll effect (only if weather bar exists)
+        if (weatherBar && header) {
+            if (scrollTop > 200 && weatherBarVisible) {
+                weatherBar.style.transform = 'translateY(-100%)';
+                weatherBarVisible = false;
+                header.style.top = '0';
+            } else if (scrollTop <= 200 && !weatherBarVisible) {
+                weatherBar.style.transform = 'translateY(0)';
+                weatherBarVisible = true;
+                header.style.top = '40px';
+            }
+        }
+        
+        // Header background effect
+        if (header) {
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--bg-white)';
+                header.style.backdropFilter = 'none';
+            }
         }
         
         lastScrollTop = scrollTop;
