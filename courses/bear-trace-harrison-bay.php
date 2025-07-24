@@ -969,6 +969,50 @@ try {
 
     <script src="/script.js?v=5"></script>
     <script>
+        // Simple test to see if script loads and debug URL detection
+        console.log('Bear Trace: Script loaded successfully!');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update time immediately
+            const timeElement = document.getElementById('current-time');
+            if (timeElement) {
+                const now = new Date();
+                timeElement.textContent = now.toLocaleString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric', 
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZone: 'America/Chicago'
+                });
+                console.log('Bear Trace: Time updated successfully');
+            }
+            
+            // Check weather bar and scroll
+            const weatherBar = document.querySelector('.weather-bar');
+            if (weatherBar) {
+                console.log('Bear Trace: Weather bar found, adding scroll listener');
+                let isHidden = false;
+                
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.scrollY;
+                    if (scrollTop > 200 && !isHidden) {
+                        weatherBar.style.transform = 'translateY(-100%)';
+                        isHidden = true;
+                        console.log('Bear Trace: Weather bar hidden at scroll:', scrollTop);
+                    } else if (scrollTop <= 200 && isHidden) {
+                        weatherBar.style.transform = 'translateY(0)';
+                        isHidden = false;
+                        console.log('Bear Trace: Weather bar shown at scroll:', scrollTop);
+                    }
+                });
+            } else {
+                console.log('Bear Trace: Weather bar NOT found');
+            }
+        });
+    </script>
+    <script>
         // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
