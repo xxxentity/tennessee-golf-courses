@@ -299,6 +299,53 @@ session_start();
             line-height: 1.6;
         }
         
+        .title-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        
+        .title-section {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(6, 78, 59, 0.1);
+        }
+        
+        .title-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .title-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .title-header h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .title-section p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
         @media (max-width: 768px) {
             .about-section,
             .features-grid,
@@ -411,24 +458,24 @@ session_start();
                     <p><strong>Golfer-First Approach:</strong> We're not trying to sell you anything - we're here to help you find great golf. No booking fees, no hidden agendas, just good information from golfers who care.</p>
                 </div>
                 <div class="about-visual">
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="value-content">
+                    <div class="title-sections">
+                        <div class="title-section">
+                            <div class="title-header">
+                                <div class="title-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
                                 <h3>Passion</h3>
-                                <p>Built by golfers who understand the joy of discovering a new favorite course. We know the excitement of finding that perfect track where every hole challenges and delights you.</p>
                             </div>
+                            <p>Built by golfers who understand the joy of discovering a new favorite course. We know the excitement of finding that perfect track where every hole challenges and delights you.</p>
                         </div>
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="value-content">
+                        <div class="title-section">
+                            <div class="title-header">
+                                <div class="title-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
                                 <h3>Trust</h3>
-                                <p>Honest reviews and recommendations you can count on. Every review comes from real golfers sharing genuine experiences to help you make the best choice for your next round.</p>
                             </div>
+                            <p>Honest reviews and recommendations you can count on. Every review comes from real golfers sharing genuine experiences to help you make the best choice for your next round.</p>
                         </div>
                     </div>
                 </div>
