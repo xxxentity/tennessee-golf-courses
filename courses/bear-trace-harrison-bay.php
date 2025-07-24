@@ -738,9 +738,9 @@ try {
                 
                 <br>
                 
-                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.</p>
+                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.<br><br></p>
                 
-                <p>Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.</p>
+                <p>Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.<br><br></p>
                 
                 <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
             </div>
