@@ -643,40 +643,6 @@ try {
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    8919 Harrison Bay Road<br>
-                    Harrison, TN 37341</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (423) 326-0885</p>
-                    
-                    <p><strong>Website:</strong><br>
-                    <a href="https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=8919+Harrison+Bay+Road,+Harrison,+TN+37341&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Bear Trace at Harrison Bay Golf Course Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=8919+Harrison+Bay+Road,+Harrison,+TN+37341" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
                         <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Mar 22 - Nov 24)</h4>
@@ -718,6 +684,40 @@ try {
                                 <span class="spec-label">Junior (Walk):</span>
                                 <span class="spec-value">$20</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <p><strong>Address:</strong><br>
+                    8919 Harrison Bay Road<br>
+                    Harrison, TN 37341</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (423) 326-0885</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=8919+Harrison+Bay+Road,+Harrison,+TN+37341&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Bear Trace at Harrison Bay Golf Course Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=8919+Harrison+Bay+Road,+Harrison,+TN+37341" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>

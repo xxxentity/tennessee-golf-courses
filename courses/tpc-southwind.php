@@ -557,24 +557,36 @@ try {
                             <span class="spec-value">1988</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Grass Type:</span>
-                            <span class="spec-value">Zoysia fairways, Bermuda greens</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Private</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-star"></i> Course Features</h3>
-                    <ul class="amenities-list">
-                        <li><i class="fas fa-water"></i> 10 Water hazards</li>
-                        <li><i class="fas fa-mountain"></i> 94 Bunkers</li>
-                        <li><i class="fas fa-trophy"></i> PGA Tour host venue</li>
-                        <li><i class="fas fa-golf-ball"></i> Championship layout</li>
-                        <li><i class="fas fa-tree"></i> Mature landscaping</li>
-                        <li><i class="fas fa-flag"></i> Island green (11th hole)</li>
-                        <li><i class="fas fa-building"></i> Historic grain silos</li>
-                        <li><i class="fas fa-certificate"></i> Audubon Certified</li>
-                    </ul>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Course Type:</span>
+                            <span class="spec-value">Private Club</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Members:</span>
+                            <span class="spec-value">Included in membership</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Guest Rates:</span>
+                            <span class="spec-value">Contact club directly</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Reservations:</span>
+                            <span class="spec-value">Members and guests only</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Contact:</span>
+                            <span class="spec-value">(901) 748-0330</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="course-info-card">
@@ -587,7 +599,6 @@ try {
                             <p><i class="fas fa-map-marker-alt"></i> 3325 Club at Southwind, Memphis, TN 38125</p>
                             <p><i class="fas fa-phone"></i> (901) 748-0330</p>
                             <p><i class="fas fa-globe"></i> <a href="https://tpc.com/southwind" target="_blank">tpc.com/southwind</a></p>
-                            <p><i class="fas fa-dollar-sign"></i> Private Club - Contact for Guest Rates</p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125" target="_blank">Get Directions</a></p>
                         </div>
                     </div>
