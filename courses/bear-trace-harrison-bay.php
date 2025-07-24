@@ -969,102 +969,62 @@ try {
 
     <script src="../script.js?v=5"></script>
     <script>
-        // Comprehensive Bear Trace debugging and fixes
+        console.log('Bear Trace: Script block started');
+        
+        // Simple immediate test
+        const timeElement = document.getElementById('current-time');
+        console.log('Bear Trace: Time element found immediately:', !!timeElement);
+        
+        if (timeElement) {
+            timeElement.textContent = 'Script is working!';
+            console.log('Bear Trace: Set time text to test message');
+        }
+        
+        // DOM ready test
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Bear Trace Debug: Page loaded, checking elements...');
+            console.log('Bear Trace: DOM Content Loaded fired');
             
-            // Check all elements
-            const weatherBar = document.querySelector('.weather-bar');
-            const header = document.querySelector('.header');
             const timeElement = document.getElementById('current-time');
-            const weatherTemp = document.getElementById('weather-temp');
+            const weatherBar = document.querySelector('.weather-bar');
             
-            console.log('Bear Trace Debug: Weather bar found:', !!weatherBar);
-            console.log('Bear Trace Debug: Header found:', !!header);
-            console.log('Bear Trace Debug: Time element found:', !!timeElement);
-            console.log('Bear Trace Debug: Weather temp found:', !!weatherTemp);
+            console.log('Bear Trace: Time element in DOM ready:', !!timeElement);
+            console.log('Bear Trace: Weather bar in DOM ready:', !!weatherBar);
             
-            // Fix time display immediately
             if (timeElement) {
-                console.log('Bear Trace Debug: Updating time manually');
-                function updateTime() {
-                    const now = new Date();
-                    const options = {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        timeZone: 'America/Chicago'
-                    };
-                    const timeString = now.toLocaleDateString('en-US', options);
-                    timeElement.textContent = timeString;
-                    console.log('Bear Trace Debug: Time updated to:', timeString);
-                }
-                updateTime();
-                setInterval(updateTime, 60000);
+                const now = new Date();
+                const timeString = now.toLocaleString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric', 
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZone: 'America/Chicago'
+                });
+                timeElement.textContent = timeString;
+                console.log('Bear Trace: Time updated to:', timeString);
             }
             
-            // Fix weather display
-            if (weatherTemp) {
-                const weatherConditions = [
-                    { temp: '84°F', condition: 'Scattered Thunderstorms' },
-                    { temp: '78°F', condition: 'Light Rain' },
-                    { temp: '72°F', condition: 'Sunny' },
-                    { temp: '68°F', condition: 'Cloudy' },
-                    { temp: '75°F', condition: 'Partly Cloudy' }
-                ];
-                const randomWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
-                weatherTemp.textContent = `${randomWeather.temp} - ${randomWeather.condition}`;
-                console.log('Bear Trace Debug: Weather updated');
-            }
-            
-            // Fix weather bar scroll behavior
             if (weatherBar) {
-                console.log('Bear Trace Debug: Setting up weather bar scroll');
-                let weatherBarVisible = true;
-                
-                function handleScroll() {
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                let isHidden = false;
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.scrollY;
+                    console.log('Bear Trace: Scroll detected:', scrollTop);
                     
-                    if (scrollTop > 200 && weatherBarVisible) {
-                        console.log('Bear Trace Debug: Hiding weather bar at scroll:', scrollTop);
+                    if (scrollTop > 100 && !isHidden) {
                         weatherBar.style.transform = 'translateY(-100%)';
-                        weatherBar.style.transition = 'transform 0.3s ease';
-                        weatherBarVisible = false;
-                        if (header) {
-                            header.style.top = '0';
-                            header.style.transition = 'top 0.3s ease';
-                        }
-                    } else if (scrollTop <= 200 && !weatherBarVisible) {
-                        console.log('Bear Trace Debug: Showing weather bar at scroll:', scrollTop);
+                        isHidden = true;
+                        console.log('Bear Trace: Weather bar hidden');
+                    } else if (scrollTop <= 100 && isHidden) {
                         weatherBar.style.transform = 'translateY(0)';
-                        weatherBarVisible = true;
-                        if (header) {
-                            header.style.top = '40px';
-                        }
+                        isHidden = false;
+                        console.log('Bear Trace: Weather bar shown');
                     }
-                }
-                
-                window.addEventListener('scroll', handleScroll, { passive: true });
-                console.log('Bear Trace Debug: Scroll listener attached');
-                
-                // Test scroll functionality after 2 seconds
-                setTimeout(() => {
-                    console.log('Bear Trace Debug: Testing scroll - hiding weather bar');
-                    handleScroll = () => {}; // Remove scroll handler temporarily
-                    weatherBar.style.transform = 'translateY(-100%)';
-                    if (header) header.style.top = '0';
-                    
-                    setTimeout(() => {
-                        console.log('Bear Trace Debug: Testing scroll - showing weather bar');
-                        weatherBar.style.transform = 'translateY(0)';
-                        if (header) header.style.top = '40px';
-                    }, 2000);
-                }, 2000);
+                });
             }
         });
+        
+        console.log('Bear Trace: Script block completed');
     </script>
     <script>
         // Gallery Modal Functions
