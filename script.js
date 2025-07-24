@@ -77,10 +77,50 @@ document.addEventListener('DOMContentLoaded', function() {
     updateWeather();
     setInterval(updateWeather, 600000);
 
-    // Initialize weather bar elements and visibility state
+    // Weather bar scroll functionality with debugging
     const weatherBar = document.querySelector('.weather-bar');
     const header = document.querySelector('.header');
     let weatherBarVisible = true;
+    
+    console.log('Weather bar element found:', !!weatherBar);
+    console.log('Header element found:', !!header);
+    
+    if (weatherBar) {
+        console.log('Setting up weather bar scroll listener');
+        let ticking = false;
+        
+        function updateWeatherBarOnScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            console.log('Scroll position:', scrollTop);
+            
+            if (scrollTop > 200 && weatherBarVisible) {
+                console.log('Hiding weather bar');
+                weatherBar.style.transform = 'translateY(-100%)';
+                weatherBarVisible = false;
+                if (header) {
+                    header.style.top = '0';
+                }
+            } else if (scrollTop <= 200 && !weatherBarVisible) {
+                console.log('Showing weather bar');
+                weatherBar.style.transform = 'translateY(0)';
+                weatherBarVisible = true;
+                if (header) {
+                    header.style.top = '40px';
+                }
+            }
+            
+            ticking = false;
+        }
+        
+        function requestScrollUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateWeatherBarOnScroll);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+    }
     // Mobile Navigation Toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -182,27 +222,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
 
-    // Combined scroll effects - weather bar and header
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Header background effect only
+    if (header) {
+        let lastScrollTop = 0;
+        let headerTicking = false;
         
-        // Weather bar scroll effect (only if weather bar exists)
-        if (weatherBar && header) {
-            if (scrollTop > 200 && weatherBarVisible) {
-                weatherBar.style.transform = 'translateY(-100%)';
-                weatherBarVisible = false;
-                header.style.top = '0';
-            } else if (scrollTop <= 200 && !weatherBarVisible) {
-                weatherBar.style.transform = 'translateY(0)';
-                weatherBarVisible = true;
-                header.style.top = '40px';
-            }
-        }
-        
-        // Header background effect
-        if (header) {
+        function updateHeaderOnScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
             if (scrollTop > 100) {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
@@ -210,10 +237,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.style.background = 'var(--bg-white)';
                 header.style.backdropFilter = 'none';
             }
+            
+            lastScrollTop = scrollTop;
+            headerTicking = false;
         }
         
-        lastScrollTop = scrollTop;
-    });
+        function requestHeaderUpdate() {
+            if (!headerTicking) {
+                requestAnimationFrame(updateHeaderOnScroll);
+                headerTicking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestHeaderUpdate, { passive: true });
+    }
 
     // Search functionality
     const searchInput = document.querySelector('.search-input');
