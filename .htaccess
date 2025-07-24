@@ -21,23 +21,23 @@ RewriteRule ^news/scheffler-extends-lead-open-championship-round-3/?$ news/schef
 RewriteRule ^news/scheffler-seizes-control-open-championship-round-2/?$ news/scheffler-seizes-control-open-championship-round-2.php [L]
 RewriteRule ^news/scheffler-wins-2025-british-open-final-round/?$ news/scheffler-wins-2025-british-open-final-round.php [L]
 
-# Handle auth pages (in subdirectory)
-RewriteRule ^auth/login/?$ auth/login.php [L]
-RewriteRule ^auth/register/?$ auth/register.php [L]
-RewriteRule ^auth/register-process/?$ auth/register-process.php [L]
-RewriteRule ^auth/registration-success/?$ auth/registration-success.php [L]
-RewriteRule ^auth/login-process/?$ auth/login-process.php [L]
-RewriteRule ^auth/logout/?$ auth/logout.php [L]
-RewriteRule ^auth/forgot-password/?$ auth/forgot-password.php [L]
-RewriteRule ^auth/forgot-password-process/?$ auth/forgot-password-process.php [L]
-RewriteRule ^auth/reset-password/?$ auth/reset-password.php [L]
-RewriteRule ^auth/verify-email/?$ auth/verify-email.php [L]
-RewriteRule ^auth/debug-register/?$ auth/debug-register.php [L]
-RewriteRule ^auth/debug-login/?$ auth/debug-login.php [L]
+# Handle auth pages (clean URLs without /auth/ prefix)
+RewriteRule ^login/?$ auth/login.php [L]
+RewriteRule ^register/?$ auth/register.php [L]
+RewriteRule ^register-process/?$ auth/register-process.php [L]
+RewriteRule ^registration-success/?$ auth/registration-success.php [L]
+RewriteRule ^login-process/?$ auth/login-process.php [L]
+RewriteRule ^logout/?$ auth/logout.php [L]
+RewriteRule ^forgot-password/?$ auth/forgot-password.php [L]
+RewriteRule ^forgot-password-process/?$ auth/forgot-password-process.php [L]
+RewriteRule ^reset-password/?$ auth/reset-password.php [L]
+RewriteRule ^verify-email/?$ auth/verify-email.php [L]
+RewriteRule ^debug-register/?$ auth/debug-register.php [L]
+RewriteRule ^debug-login/?$ auth/debug-login.php [L]
 
-# Handle user pages (in subdirectory)
-RewriteRule ^user/profile/?$ user/profile.php [L]
-RewriteRule ^user/edit-profile/?$ user/edit-profile.php [L]
+# Handle user pages (clean URLs without /user/ prefix)
+RewriteRule ^profile/?$ user/profile.php [L]
+RewriteRule ^edit-profile/?$ user/edit-profile.php [L]
 
 # Handle newsletter pages
 RewriteRule ^newsletter-subscribe/?$ newsletter-subscribe.php [L]

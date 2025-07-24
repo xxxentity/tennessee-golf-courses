@@ -812,7 +812,7 @@ try {
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="../auth/login.php">Login</a> or <a href="../auth/register.php">Register</a> to share your review</p>
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
                 </div>
             <?php endif; ?>
             

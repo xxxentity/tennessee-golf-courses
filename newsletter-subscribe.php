@@ -75,7 +75,7 @@ try {
             
             <div style='text-align: center; margin: 30px 0;'>
                 <a href='https://tennesseegolfcourses.com' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>Explore Golf Courses</a>
-                <a href='https://tennesseegolfcourses.com/auth/register' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Create Free Account</a>
+                <a href='https://tennesseegolfcourses.com/register' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Create Free Account</a>
             </div>
             
             <div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;'>

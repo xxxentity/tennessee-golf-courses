@@ -79,12 +79,12 @@ $is_main_page = (
                 <div class="user-welcome">
                     <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
                 </div>
-                <a href="/user/profile" class="nav-link">My Profile</a>
-                <a href="/auth/logout" class="nav-link logout-link">Logout</a>
+                <a href="/profile" class="nav-link">My Profile</a>
+                <a href="/logout" class="nav-link logout-link">Logout</a>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <a href="/auth/login" class="nav-link login-btn">Login</a>
-                <a href="/auth/register" class="nav-link register-btn">Register</a>
+                <a href="/login" class="nav-link login-btn">Login</a>
+                <a href="/register" class="nav-link register-btn">Register</a>
             <?php endif; ?>
         </div>
         

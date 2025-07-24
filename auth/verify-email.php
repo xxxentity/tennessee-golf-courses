@@ -120,11 +120,11 @@ if ($token) {
         
         <div class="action-buttons">
             <?php if ($success): ?>
-                <a href="/user/profile" class="btn">View My Profile</a>
+                <a href="/profile" class="btn">View My Profile</a>
                 <a href="/courses" class="btn-secondary btn">Explore Courses</a>
             <?php else: ?>
-                <a href="/auth/login" class="btn">Try Login</a>
-                <a href="/auth/register" class="btn-secondary btn">Register Again</a>
+                <a href="/login" class="btn">Try Login</a>
+                <a href="/register" class="btn-secondary btn">Register Again</a>
             <?php endif; ?>
         </div>
     </div>

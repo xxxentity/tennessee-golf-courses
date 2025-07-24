@@ -6,12 +6,12 @@ require_once '../includes/rate-limiter.php';
 $rateLimiter = new RateLimiter($pdo);
 if (!$rateLimiter->isAllowed('registration', 3, 1)) {
     $remaining = $rateLimiter->getRemainingAttempts('registration', 3, 1);
-    header('Location: register?error=' . urlencode('Too many registration attempts. Please try again later.'));
+    header('Location: /register?error=' . urlencode('Too many registration attempts. Please try again later.'));
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: register');
+    header('Location: /register');
     exit;
 }
 
@@ -63,7 +63,7 @@ if (empty($errors)) {
 // If there are errors, redirect back with error message
 if (!empty($errors)) {
     $error_message = implode(". ", $errors);
-    header('Location: register?error=' . urlencode($error_message));
+    header('Location: /register?error=' . urlencode($error_message));
     exit;
 }
 
@@ -114,7 +114,7 @@ try {
                     <p>Thank you for creating an account! Please verify your email address to complete your registration and access all features.</p>
                     
                     <div style='text-align: center; margin: 30px 0; padding: 20px; background: #f0f9ff; border-radius: 8px;'>
-                        <a href='https://tennesseegolfcourses.com/auth/verify-email?token=" . $email_verification_token . "' style='background: #064E3B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600;'>
+                        <a href='https://tennesseegolfcourses.com/verify-email?token=" . $email_verification_token . "' style='background: #064E3B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600;'>
                             Verify My Email Address
                         </a>
                     </div>
@@ -149,13 +149,13 @@ try {
                     </ul>
                     
                     <div style='text-align: center; margin: 30px 0;'>
-                        <a href='https://tennesseegolfcourses.com/user/profile' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>View My Profile</a>
+                        <a href='https://tennesseegolfcourses.com/profile' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>View My Profile</a>
                         <a href='https://tennesseegolfcourses.com/courses' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Explore Courses</a>
                     </div>
                     
                     <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
                     <p style='font-size: 12px; color: #666;'>
-                        You can manage your newsletter subscription in your <a href='https://tennesseegolfcourses.com/user/profile'>profile settings</a> or 
+                        You can manage your newsletter subscription in your <a href='https://tennesseegolfcourses.com/profile'>profile settings</a> or 
                         <a href='https://tennesseegolfcourses.com/newsletter-unsubscribe?token=" . $newsletter_token . "'>unsubscribe here</a>.
                     </p>
                 </div>
@@ -178,11 +178,11 @@ try {
     }
     
     // Success - redirect to registration success page
-    header('Location: registration-success');
+    header('Location: /registration-success');
     exit;
     
 } catch (PDOException $e) {
-    header('Location: register?error=' . urlencode('Registration failed. Please try again.'));
+    header('Location: /register?error=' . urlencode('Registration failed. Please try again.'));
     exit;
 }
 ?>

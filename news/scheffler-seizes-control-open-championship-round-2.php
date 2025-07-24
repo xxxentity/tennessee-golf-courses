@@ -275,8 +275,8 @@ try {
                 </ul>
                 
                 <div class="nav-auth">
-                    <a href="/auth/login" class="nav-link login-btn">Login</a>
-                    <a href="/auth/register" class="nav-link register-btn">Join Free</a>
+                    <a href="/login" class="nav-link login-btn">Login</a>
+                    <a href="/register" class="nav-link register-btn">Join Free</a>
                 </div>
                 
                 <div class="nav-toggle" id="nav-toggle">
@@ -429,7 +429,7 @@ try {
                 </div>
             <?php else: ?>
                 <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p><a href="/auth/login" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="/auth/register" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
+                    <p><a href="/login" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="/register" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
                 </div>
             <?php endif; ?>
             

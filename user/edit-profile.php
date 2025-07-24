@@ -4,7 +4,7 @@ require_once '../config/database.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: /auth/login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
 
@@ -90,7 +90,7 @@ try {
     $user = $stmt->fetch();
     
     if (!$user) {
-        header('Location: /auth/logout');
+        header('Location: /logout');
         exit;
     }
 } catch (PDOException $e) {
@@ -486,7 +486,7 @@ try {
                         </div>
                     </div>
 
-                    <button type="button" class="btn-secondary" onclick="window.location.href='profile'">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='/profile'">
                         <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
                         Back to Profile
                     </button>
