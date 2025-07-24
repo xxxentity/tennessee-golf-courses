@@ -123,7 +123,7 @@ try {
         
         .course-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-bottom: 4rem;
         }
@@ -518,6 +518,29 @@ try {
             color: #dc2626;
             border: 1px solid rgba(239, 68, 68, 0.2);
         }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .course-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .course-details {
+                padding: 2rem 0;
+            }
+            
+            .course-info-card {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -676,10 +699,6 @@ try {
                             </div>
                         </div>
                     </div>
-                    <p style="font-size: 0.9rem; color: #666; text-align: center;">
-                        *All prices plus tax. Senior rates for 62+, Junior for 18 & under.<br>
-                        Walking rates available. Call (423) 326-0885 for tee times.
-                    </p>
                 </div>
             </div>
 
