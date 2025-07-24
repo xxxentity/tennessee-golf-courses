@@ -19,10 +19,6 @@ $is_main_page = (
     strpos($current_page, '/contact') === 0
 );
 
-// Debug output for Bear Trace page
-if (strpos($current_page, 'bear-trace') !== false) {
-    echo "<!-- DEBUG: Current page: $current_page, Is main page: " . ($is_main_page ? 'true' : 'false') . " -->";
-}
 
 ?>
 
