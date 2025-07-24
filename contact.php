@@ -95,6 +95,8 @@ Time: " . date('Y-m-d H:i:s');
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
             margin-bottom: 80px;
+            margin-top: -140px;
+            padding-top: 200px;
         }
         
         .contact-hero h1 {
