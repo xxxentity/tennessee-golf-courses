@@ -969,38 +969,6 @@ try {
 
     <script src="../script.js?v=5"></script>
     <script>
-        // Quick test - force weather bar hide function
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Bear Trace page script loaded');
-            const weatherBar = document.querySelector('.weather-bar');
-            const header = document.querySelector('.header');
-            
-            if (weatherBar) {
-                console.log('Weather bar found, setting up scroll');
-                let isHidden = false;
-                
-                window.addEventListener('scroll', function() {
-                    const scrollTop = window.scrollY;
-                    console.log('Scrolled to:', scrollTop);
-                    
-                    if (scrollTop > 200 && !isHidden) {
-                        console.log('Hiding weather bar');
-                        weatherBar.style.transform = 'translateY(-100%)';
-                        isHidden = true;
-                        if (header) header.style.top = '0';
-                    } else if (scrollTop <= 200 && isHidden) {
-                        console.log('Showing weather bar');
-                        weatherBar.style.transform = 'translateY(0)';
-                        isHidden = false;
-                        if (header) header.style.top = '40px';
-                    }
-                });
-            } else {
-                console.log('Weather bar NOT found');
-            }
-        });
-    </script>
-    <script>
         // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');

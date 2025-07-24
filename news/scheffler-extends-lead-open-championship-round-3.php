@@ -252,63 +252,7 @@ try {
     </style>
 </head>
 <body>
-    <!-- Weather Bar -->
-    <div class="weather-bar">
-        <div class="weather-container">
-            <div class="weather-info">
-                <div class="current-time">
-                    <i class="fas fa-clock"></i>
-                    <span id="current-time">Loading...</span>
-                </div>
-                <div class="weather-widget">
-                    <i class="fas fa-cloud-sun"></i>
-                    <span id="weather-temp">Perfect Golf Weather</span>
-                    <span class="weather-location">Nashville, TN</span>
-                </div>
-            </div>
-            <div class="golf-conditions">
-                <div class="condition-item">
-                    <i class="fas fa-wind"></i>
-                    <span>Wind: <span id="wind-speed">5 mph</span></span>
-                </div>
-                <div class="condition-item">
-                    <i class="fas fa-eye"></i>
-                    <span>Visibility: <span id="visibility">10 mi</span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="/" class="nav-logo">
-                    <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
-                </a>
-                
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="/" class="nav-link">Home</a></li>
-                    <li><a href="/#courses" class="nav-link">Courses</a></li>
-                    <li><a href="/#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="/#news" class="nav-link">News</a></li>
-                    <li><a href="/#about" class="nav-link">About</a></li>
-                    <li><a href="/#contact" class="nav-link">Contact</a></li>
-                </ul>
-                
-                <div class="nav-auth">
-                    <a href="/login" class="nav-link login-btn">Login</a>
-                    <a href="/register" class="nav-link register-btn">Join Free</a>
-                </div>
-                
-                <div class="nav-toggle" id="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php include '../includes/navigation.php'; ?>
 
     <!-- Article Hero -->
     <section class="article-hero">
