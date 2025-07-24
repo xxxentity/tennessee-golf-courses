@@ -11,6 +11,8 @@ RewriteRule ^news/?$ news.php [L]
 RewriteRule ^about/?$ about.php [L]
 RewriteRule ^contact/?$ contact.php [L]
 RewriteRule ^reviews/?$ reviews.php [L]
+RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
+RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 
 # Handle course pages (in subdirectory)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
