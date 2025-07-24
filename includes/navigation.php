@@ -7,7 +7,51 @@ if (session_status() === PHP_SESSION_NONE) {
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
+
+// Determine if this is a main site page (should show weather bar)
+$current_page = $_SERVER['REQUEST_URI'];
+$is_main_page = (
+    $current_page === '/' ||
+    strpos($current_page, '/courses') === 0 ||
+    strpos($current_page, '/reviews') === 0 ||
+    strpos($current_page, '/news') === 0 ||
+    strpos($current_page, '/about') === 0 ||
+    strpos($current_page, '/contact') === 0
+);
 ?>
+
+<?php if ($is_main_page): ?>
+<!-- Weather Bar (only on main site pages) -->
+<div class="weather-bar">
+    <div class="weather-container">
+        <div class="weather-info">
+            <div class="current-time">
+                <i class="fas fa-clock"></i>
+                <span id="current-time">Loading...</span>
+            </div>
+            <div class="weather-widget">
+                <i class="fas fa-cloud-sun"></i>
+                <span id="weather-temp">Perfect Golf Weather</span>
+                <span class="weather-location">Nashville, TN</span>
+            </div>
+        </div>
+        <div class="golf-conditions">
+            <div class="condition-item">
+                <i class="fas fa-wind"></i>
+                <span>Light Breeze</span>
+            </div>
+            <div class="condition-item">
+                <i class="fas fa-eye"></i>
+                <span>Clear Visibility</span>
+            </div>
+            <div class="condition-item">
+                <i class="fas fa-golf-ball"></i>
+                <span>Great Conditions</span>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 
 <!-- Header -->
 <header class="header">
@@ -204,4 +248,42 @@ $first_name = $is_logged_in ? $_SESSION['first_name'] : '';
         margin: 8px 0;
     }
 }
+/* Conditional header positioning */
+.header {
+    position: fixed;
+    top: <?php echo $is_main_page ? '40px' : '0' ?>; /* Adjust based on weather bar presence */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-light);
+}
+
+/* Body padding adjustment */
+body {
+    padding-top: <?php echo $is_main_page ? '140px' : '100px' ?>; /* Adjust based on weather bar presence */
+}
+
+/* Auth page specific overrides */
+<?php if (!$is_main_page): ?>
+.auth-page .header {
+    position: fixed;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-light);
+}
+
+.auth-page {
+    padding-top: 80px !important;
+}
+
+/* Hide weather bar on non-main pages */
+.weather-bar {
+    display: none !important;
+    height: 0 !important;
+}
+<?php endif; ?>
 </style>

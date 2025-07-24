@@ -13,9 +13,6 @@
             min-height: 100vh;
         }
         
-        .weather-bar {
-            display: none !important;
-        }
         
         .success-page {
             min-height: 100vh;
