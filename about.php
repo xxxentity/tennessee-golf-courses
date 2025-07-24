@@ -249,13 +249,61 @@ session_start();
         
         .value-content p {
             color: var(--text-gray);
+            line-height: 1.4;
+            font-size: 0.95rem;
+        }
+        
+        .diff-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .diff-feature-item {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(6, 78, 59, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .diff-feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .diff-feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--text-light);
+            font-size: 2rem;
+        }
+        
+        .diff-feature-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .diff-feature-item p {
+            color: var(--text-gray);
             line-height: 1.6;
         }
         
         @media (max-width: 768px) {
             .about-section,
             .features-grid,
-            .values-grid {
+            .values-grid,
+            .diff-features-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -370,7 +418,7 @@ session_start();
                             </div>
                             <div class="value-content">
                                 <h3>Passion</h3>
-                                <p>Built by golfers who understand the joy of discovering a new favorite course</p>
+                                <p>Built by golfers who understand the joy of discovering a new favorite course. We know the excitement of finding that perfect track where every hole challenges and delights you.</p>
                             </div>
                         </div>
                         <div class="value-item">
@@ -379,7 +427,7 @@ session_start();
                             </div>
                             <div class="value-content">
                                 <h3>Trust</h3>
-                                <p>Honest reviews and recommendations you can count on</p>
+                                <p>Honest reviews and recommendations you can count on. Every review comes from real golfers sharing genuine experiences to help you make the best choice for your next round.</p>
                             </div>
                         </div>
                     </div>
