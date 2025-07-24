@@ -84,7 +84,7 @@ Time: " . date('Y-m-d H:i:s');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .contact-page {
-            padding-top: 0;
+            padding-top: 140px;
             min-height: 100vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
         }
@@ -95,7 +95,7 @@ Time: " . date('Y-m-d H:i:s');
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-light);
             margin-bottom: 80px;
-            margin-top: 140px;
+            margin-top: -140px;
         }
         
         .contact-hero h1 {
