@@ -43,6 +43,36 @@ $courses_static = [
     ],
     [
         'id' => 3,
+        'name' => 'Greystone Golf Course',
+        'location' => 'Dickson, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Mark McCumber championship design, 10-time Tennessee State Open host',
+        'image' => '/images/courses/greystone-golf-course/1.jpeg',
+        'price_range' => '$35-65',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Mark McCumber',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Practice Facilities', 'Tournament Hosting', 'Golf Instruction'],
+        'slug' => 'greystone-golf-course'
+    ],
+    [
+        'id' => 4,
+        'name' => 'Harpeth Hills Golf Course',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Premier municipal golf course through scenic Percy Warner Park',
+        'image' => '/images/courses/harpeth-hills-golf-course/1.jpeg',
+        'price_range' => '$25-45',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Municipal Design',
+        'amenities' => ['Pro Shop', 'Snack Bar', 'Driving Range', 'Practice Green', 'Golf Instruction', 'Cart Rental'],
+        'slug' => 'harpeth-hills-golf-course'
+    ],
+    [
+        'id' => 5,
         'name' => 'Hermitage Golf Course',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
@@ -57,7 +87,7 @@ $courses_static = [
         'slug' => 'hermitage-golf-course'
     ],
     [
-        'id' => 4,
+        'id' => 6,
         'name' => 'Holston Hills Country Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
@@ -72,7 +102,7 @@ $courses_static = [
         'slug' => 'holston-hills-country-club'
     ],
     [
-        'id' => 5,
+        'id' => 7,
         'name' => 'Island Pointe Golf Club',
         'location' => 'Kodak, TN',
         'region' => 'Knoxville Area',
@@ -87,7 +117,37 @@ $courses_static = [
         'slug' => 'island-pointe-golf-club'
     ],
     [
-        'id' => 6,
+        'id' => 8,
+        'name' => 'Nashville Golf & Athletic Club',
+        'location' => 'Belle Meade, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic private club since 1901 with Donald Ross design heritage',
+        'image' => '/images/courses/nashville-golf-athletic-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Championship Golf', 'Tennis Courts', 'Swimming Pool', 'Fine Dining', 'Fitness Center', 'Member Events'],
+        'slug' => 'nashville-golf-athletic-club'
+    ],
+    [
+        'id' => 9,
+        'name' => 'The Golf Club of Tennessee',
+        'location' => 'Kingston Springs, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Tom Fazio masterpiece, Golf Digest\'s #2 ranked course in Tennessee',
+        'image' => '/images/courses/the-golf-club-of-tennessee/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Tom Fazio',
+        'amenities' => ['Championship Golf', 'Luxury Clubhouse', 'Fine Dining', 'Practice Facilities', 'Tournament Hosting', 'Guest Accommodations'],
+        'slug' => 'the-golf-club-of-tennessee'
+    ],
+    [
+        'id' => 10,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -102,7 +162,7 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 7,
+        'id' => 11,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
