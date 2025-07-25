@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
 // Get existing comments
 try {
     $stmt = $pdo->prepare("
-        SELECT cc.*, u.first_name, u.last_name 
+        SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
         WHERE cc.course_slug = ? 
@@ -747,7 +747,7 @@ try {
                     <?php foreach ($comments as $comment): ?>
                         <div class="comment-card">
                             <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['first_name'] . ' ' . $comment['last_name']); ?></div>
+                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
                                 <div class="comment-rating">
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
                                         <?php if ($i <= $comment['rating']): ?>

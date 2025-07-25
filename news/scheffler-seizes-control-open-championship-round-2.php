@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
 // Get existing comments
 try {
     $stmt = $pdo->prepare("
-        SELECT nc.*, u.first_name, u.last_name 
+        SELECT nc.*, u.username 
         FROM news_comments nc 
         JOIN users u ON nc.user_id = u.id 
         WHERE nc.article_slug = ? AND nc.is_approved = TRUE
@@ -396,7 +396,7 @@ try {
                     <?php foreach ($comments as $comment): ?>
                         <div class="comment-card" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                             <div class="comment-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                <div class="commenter-name" style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['first_name'] . ' ' . substr($comment['last_name'], 0, 1) . '.'); ?></div>
+                                <div class="commenter-name" style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
                                 <div class="comment-date" style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y • g:i A', strtotime($comment['created_at'])); ?></div>
                             </div>
                             <p style="line-height: 1.6; color: #333;"><?php echo htmlspecialchars($comment['comment_text']); ?></p>
