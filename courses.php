@@ -40,6 +40,36 @@ $courses_static = [
         'designer' => 'Ron Prichard',
         'amenities' => ['Pro Shop', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Fitness Center'],
         'slug' => 'tpc-southwind'
+    ],
+    [
+        'id' => 3,
+        'name' => 'Hermitage Golf Course',
+        'location' => 'Old Hickory, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Two championship courses including Golf Digest Top 10 President\'s Reserve',
+        'image' => '/images/courses/hermitage-golf-course/1.jpeg',
+        'price_range' => '$38-59',
+        'difficulty' => 'Intermediate',
+        'holes' => 36,
+        'par' => 72,
+        'designer' => 'Denis Griffiths & Gary Roger Baird',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Golf Instruction', 'Driving Range', 'Practice Greens', 'Cottages', 'Event Venue'],
+        'slug' => 'hermitage-golf-course'
+    ],
+    [
+        'id' => 4,
+        'name' => 'Gaylord Springs Golf Links',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Scottish links-style course by Larry Nelson at Gaylord Opryland Resort',
+        'image' => '/images/courses/gaylord-springs-golf-links/1.jpeg',
+        'price_range' => 'Dynamic Pricing',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Larry Nelson',
+        'amenities' => ['43,000 sq ft Clubhouse', 'Pro Shop', 'Restaurant', 'Golf Institute', 'Driving Range', 'Practice Facilities', 'Event Space'],
+        'slug' => 'gaylord-springs-golf-links'
     ]
 ];
 
