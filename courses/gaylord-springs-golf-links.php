@@ -458,6 +458,137 @@ try {
             border: 1px solid #f5c6cb;
         }
         
+        .photo-gallery {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .lightbox-prev {
+            left: -60px;
+        }
+        
+        .lightbox-next {
+            right: -60px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+        }
+        
         @media (max-width: 1024px) {
             .course-layout {
                 grid-template-columns: 1fr;
@@ -672,6 +803,41 @@ try {
         </div>
     </section>
 
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Photo Gallery</h2>
+                <p>Experience the Scottish links beauty through stunning photography</p>
+            </div>
+            <div class="gallery-grid">
+                <?php for ($i = 2; $i <= 26; $i++): ?>
+                    <div class="gallery-item" onclick="openLightbox(<?php echo $i; ?>)">
+                        <img src="../images/courses/gaylord-springs-golf-links/<?php echo $i; ?>.jpeg" alt="Gaylord Springs Golf Links - Image <?php echo $i; ?>" loading="lazy">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" src="" alt="Gaylord Springs Golf Links Gallery">
+            <div class="lightbox-navigation">
+                <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</button>
+                <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)">&#10095;</button>
+            </div>
+            <div class="lightbox-counter">
+                <span id="lightbox-counter"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
@@ -856,6 +1022,62 @@ try {
                         star.classList.remove('active');
                     });
                 }
+            }
+        });
+
+        // Photo Gallery Lightbox Functionality
+        let currentImageIndex = 2;
+        const totalImages = 26;
+
+        function openLightbox(imageIndex) {
+            currentImageIndex = imageIndex;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            lightboxImage.src = `../images/courses/gaylord-springs-golf-links/${imageIndex}.jpeg`;
+            lightboxCounter.textContent = `${imageIndex - 1} / ${totalImages - 1}`;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightboxImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 2) {
+                currentImageIndex = totalImages;
+            } else if (currentImageIndex > totalImages) {
+                currentImageIndex = 2;
+            }
+            
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            lightboxImage.src = `../images/courses/gaylord-springs-golf-links/${currentImageIndex}.jpeg`;
+            lightboxCounter.textContent = `${currentImageIndex - 1} / ${totalImages - 1}`;
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                changeLightboxImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeLightboxImage(1);
+            }
+        });
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeLightbox();
             }
         });
     </script>
