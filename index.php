@@ -110,39 +110,6 @@
                     </div>
                 </div>
 
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="/images/courses/hermitage-golf-course/1.jpeg" alt="Hermitage Golf Course">
-                    </div>
-                    <div class="course-content">
-                        <h3>Hermitage Golf Course</h3>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Old Hickory, TN</p>
-                        <p class="course-description">Two championship courses including Golf Digest Top 10 President's Reserve</p>
-                        <div class="course-features">
-                            <span class="feature-tag">36 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">LPGA Host</span>
-                        </div>
-                        <a href="courses/hermitage-golf-course" class="btn-primary">View Details</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="/images/courses/gaylord-springs-golf-links/1.jpeg" alt="Gaylord Springs Golf Links">
-                    </div>
-                    <div class="course-content">
-                        <h3>Gaylord Springs Golf Links</h3>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
-                        <p class="course-description">Scottish links-style course by Larry Nelson at Gaylord Opryland Resort</p>
-                        <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Scottish Links</span>
-                        </div>
-                        <a href="courses/gaylord-springs-golf-links" class="btn-primary">View Details</a>
-                    </div>
-                </div>
 
             </div>
             <div class="section-footer">

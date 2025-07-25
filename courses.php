@@ -92,8 +92,8 @@ foreach ($courses_static as $course) {
     $courses[] = $course;
 }
 
-// Get top 3 rated courses (currently just showing our one course as featured)
-$featured_courses = array_slice($courses, 0, 3);
+// Get top 2 rated courses
+$featured_courses = array_slice($courses, 0, 2);
 ?>
 
 <!DOCTYPE html>
