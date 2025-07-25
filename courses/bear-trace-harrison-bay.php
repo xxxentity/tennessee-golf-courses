@@ -414,8 +414,7 @@ try {
         
         .star-rating {
             display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
+            justify-content: flex-start;
             gap: 5px;
         }
         
@@ -430,9 +429,11 @@ try {
             transition: color 0.3s ease;
         }
         
-        .star-rating label:hover,
-        .star-rating label:hover ~ label,
-        .star-rating input[type="radio"]:checked ~ label {
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
             color: #ffd700;
         }
         
@@ -847,17 +848,17 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating">
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                            <div class="star-rating" id="bear-rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1007,6 +1008,65 @@ try {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeGallery();
+            }
+        });
+    </script>
+    <script>
+        // Interactive star rating functionality for Bear Trace
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingContainer = document.getElementById('bear-rating-stars');
+            if (ratingContainer) {
+                const stars = ratingContainer.querySelectorAll('label');
+                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+                
+                // Handle star hover
+                stars.forEach((star, index) => {
+                    star.addEventListener('mouseenter', function() {
+                        highlightStars(index + 1);
+                    });
+                    
+                    star.addEventListener('click', function() {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        radioInputs[rating - 1].checked = true;
+                        setActiveStars(rating);
+                    });
+                });
+                
+                // Handle container mouse leave
+                ratingContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
+                    if (checkedInput) {
+                        setActiveStars(parseInt(checkedInput.value));
+                    } else {
+                        clearStars();
+                    }
+                });
+                
+                function highlightStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function setActiveStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function clearStars() {
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                }
             }
         });
     </script>

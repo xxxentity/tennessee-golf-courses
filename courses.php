@@ -9,9 +9,8 @@ $difficulty_filter = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
 $amenities_filter = isset($_GET['amenities']) ? $_GET['amenities'] : '';
 $sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'rating';
 
-// For now, we'll use static data since we only have one course
-// In the future, this would pull from a courses database table
-$courses = [
+// Static course data with real ratings from database
+$courses_static = [
     [
         'id' => 1,
         'name' => 'Bear Trace at Harrison Bay',
@@ -25,8 +24,6 @@ $courses = [
         'par' => 72,
         'designer' => 'Jack Nicklaus',
         'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Putting Green'],
-        'avg_rating' => 4.2,
-        'review_count' => 127,
         'slug' => 'bear-trace-harrison-bay'
     ],
     [
@@ -42,11 +39,28 @@ $courses = [
         'par' => 70,
         'designer' => 'Ron Prichard',
         'amenities' => ['Pro Shop', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Fitness Center'],
-        'avg_rating' => 4.8,
-        'review_count' => 85,
         'slug' => 'tpc-southwind'
     ]
 ];
+
+// Get real ratings from database for each course
+$courses = [];
+foreach ($courses_static as $course) {
+    try {
+        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+        $stmt->execute([$course['slug']]);
+        $rating_data = $stmt->fetch();
+        
+        $course['avg_rating'] = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+        $course['review_count'] = $rating_data['total_reviews'] ?: 0;
+        
+    } catch (PDOException $e) {
+        $course['avg_rating'] = null;
+        $course['review_count'] = 0;
+    }
+    
+    $courses[] = $course;
+}
 
 // Get top 3 rated courses (currently just showing our one course as featured)
 $featured_courses = array_slice($courses, 0, 3);
@@ -481,9 +495,14 @@ $featured_courses = array_slice($courses, 0, 3);
                                 <div class="course-image">
                                     <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
                                     <div class="course-rating">
-                                        <i class="fas fa-star"></i>
-                                        <?php echo number_format($course['avg_rating'], 1); ?>
-                                        <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
+                                        <?php if ($course['avg_rating'] !== null): ?>
+                                            <i class="fas fa-star"></i>
+                                            <?php echo number_format($course['avg_rating'], 1); ?>
+                                            <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
+                                        <?php else: ?>
+                                            <i class="fas fa-star" style="color: #ddd;"></i>
+                                            <span style="color: #666;">No ratings yet</span>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="course-content">

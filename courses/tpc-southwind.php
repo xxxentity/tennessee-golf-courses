@@ -352,9 +352,11 @@ try {
             transition: color 0.2s;
         }
         
-        .rating-input input[type="radio"]:checked ~ label,
-        .rating-input label:hover,
-        .rating-input label:hover ~ label {
+        .rating-input label:hover {
+            color: #ffd700;
+        }
+        
+        .rating-input label.active {
             color: #ffd700;
         }
         
@@ -710,17 +712,17 @@ try {
                     <form method="POST">
                         <div class="form-group">
                             <label>Rating</label>
-                            <div class="rating-input">
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5">★</label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4">★</label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3">★</label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2">★</label>
+                            <div class="rating-input" id="rating-stars">
                                 <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1">★</label>
+                                <label for="star1" data-rating="1">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2" data-rating="2">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3" data-rating="3">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4" data-rating="4">★</label>
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5" data-rating="5">★</label>
                             </div>
                         </div>
                         
@@ -817,5 +819,64 @@ try {
     </footer>
 
     <script src="/script.js?v=5"></script>
+    <script>
+        // Interactive star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingContainer = document.getElementById('rating-stars');
+            if (ratingContainer) {
+                const stars = ratingContainer.querySelectorAll('label');
+                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+                
+                // Handle star hover
+                stars.forEach((star, index) => {
+                    star.addEventListener('mouseenter', function() {
+                        highlightStars(index + 1);
+                    });
+                    
+                    star.addEventListener('click', function() {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        radioInputs[rating - 1].checked = true;
+                        setActiveStars(rating);
+                    });
+                });
+                
+                // Handle container mouse leave
+                ratingContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
+                    if (checkedInput) {
+                        setActiveStars(parseInt(checkedInput.value));
+                    } else {
+                        clearStars();
+                    }
+                });
+                
+                function highlightStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function setActiveStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function clearStars() {
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
