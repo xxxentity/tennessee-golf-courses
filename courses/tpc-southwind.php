@@ -592,15 +592,15 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <div class="location-info">
-                        <iframe src="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px;">
-                        </iframe>
                         <div class="location-details">
                             <p><i class="fas fa-map-marker-alt"></i> 3325 Club at Southwind, Memphis, TN 38125</p>
                             <p><i class="fas fa-phone"></i> (901) 748-0330</p>
                             <p><i class="fas fa-globe"></i> <a href="https://tpc.com/southwind" target="_blank">tpc.com/southwind</a></p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125" target="_blank">Get Directions</a></p>
                         </div>
+                        <iframe src="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                        </iframe>
                     </div>
                 </div>
             </div>
