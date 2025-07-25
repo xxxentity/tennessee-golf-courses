@@ -452,22 +452,20 @@ try {
         }
         
         .photo-gallery {
-            padding: 4rem 0;
-            background: #f8f9fa;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
         }
         
         .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 8px;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -476,110 +474,93 @@ try {
             transform: scale(1.05);
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease;
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
         }
         
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-overlay i {
+        .btn-gallery {
+            background: #4a7c59;
             color: white;
-            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .lightbox {
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
+        .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0,0,0,0.9);
         }
         
-        .lightbox-content {
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            margin: auto;
-            top: 50%;
-            transform: translateY(-50%);
         }
         
-        .lightbox-content img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
             color: white;
-            font-size: 35px;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
             font-weight: bold;
             cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .lightbox-close:hover {
-            opacity: 0.7;
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
+            background: none;
             border: none;
-            font-size: 2rem;
-            padding: 1rem;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
-        .lightbox-nav:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        
-        .lightbox-prev {
-            left: -60px;
-        }
-        
-        .lightbox-next {
-            right: -60px;
-        }
-        
-        .lightbox-counter {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 1rem;
+        .full-gallery-item:hover {
+            transform: scale(1.05);
         }
         
         @media (max-width: 1024px) {
@@ -786,33 +767,32 @@ try {
     <section class="photo-gallery">
         <div class="container">
             <div class="section-header">
-                <h2>Course Photo Gallery</h2>
-                <p>Explore both championship courses through stunning photography</p>
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Hermitage Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <?php for ($i = 2; $i <= 28; $i++): ?>
-                    <div class="gallery-item" onclick="openLightbox(<?php echo $i; ?>)">
-                        <img src="../images/courses/hermitage-golf-course/<?php echo $i; ?>.jpeg" alt="Hermitage Golf Course - Image <?php echo $i; ?>" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
-                <?php endfor; ?>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/7.jpeg');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (27+)</button>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-image" src="" alt="Hermitage Golf Course Gallery">
-            <div class="lightbox-navigation">
-                <button class="lightbox-nav lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</button>
-                <button class="lightbox-nav lightbox-next" onclick="changeLightboxImage(1)">&#10095;</button>
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Hermitage Golf Course - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="lightbox-counter">
-                <span id="lightbox-counter"></span>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
             </div>
         </div>
     </div>
@@ -1004,59 +984,44 @@ try {
             }
         });
 
-        // Photo Gallery Lightbox Functionality
-        let currentImageIndex = 2;
-        const totalImages = 28;
-
-        function openLightbox(imageIndex) {
-            currentImageIndex = imageIndex;
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCounter = document.getElementById('lightbox-counter');
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
             
-            lightboxImage.src = `../images/courses/hermitage-golf-course/${imageIndex}.jpeg`;
-            lightboxCounter.textContent = `${imageIndex - 1} / ${totalImages - 1}`;
-            lightbox.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeLightboxImage(direction) {
-            currentImageIndex += direction;
+            // Clear existing content
+            galleryGrid.innerHTML = '';
             
-            if (currentImageIndex < 2) {
-                currentImageIndex = totalImages;
-            } else if (currentImageIndex > totalImages) {
-                currentImageIndex = 2;
+            // Generate all 28 images (starting from 2.jpeg to 28.jpeg = 27 images)
+            for (let i = 2; i <= 28; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/hermitage-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/hermitage-golf-course/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
             }
             
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCounter = document.getElementById('lightbox-counter');
-            
-            lightboxImage.src = `../images/courses/hermitage-golf-course/${currentImageIndex}.jpeg`;
-            lightboxCounter.textContent = `${currentImageIndex - 1} / ${totalImages - 1}`;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeLightbox();
-            } else if (event.key === 'ArrowLeft') {
-                changeLightboxImage(-1);
-            } else if (event.key === 'ArrowRight') {
-                changeLightboxImage(1);
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
             }
         });
-
-        // Close lightbox when clicking outside the image
-        document.getElementById('lightbox').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeLightbox();
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
             }
         });
     </script>
