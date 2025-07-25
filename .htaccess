@@ -14,11 +14,14 @@ RewriteRule ^reviews/?$ reviews.php [L]
 RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 
-# Handle course pages (in subdirectory)
+# Handle course pages (in subdirectory - alphabetical order)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
-RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
-RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php [L]
 RewriteRule ^courses/gaylord-springs-golf-links/?$ courses/gaylord-springs-golf-links.php [L]
+RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php [L]
+RewriteRule ^courses/holston-hills-country-club/?$ courses/holston-hills-country-club.php [L]
+RewriteRule ^courses/island-pointe-golf-club/?$ courses/island-pointe-golf-club.php [L]
+RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
+RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/open-championship-2025-round-1-royal-portrush/?$ news/open-championship-2025-round-1-royal-portrush.php [L]

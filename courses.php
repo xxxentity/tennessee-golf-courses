@@ -9,7 +9,7 @@ $difficulty_filter = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
 $amenities_filter = isset($_GET['amenities']) ? $_GET['amenities'] : '';
 $sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'rating';
 
-// Static course data with real ratings from database
+// Static course data with real ratings from database (alphabetical order)
 $courses_static = [
     [
         'id' => 1,
@@ -28,18 +28,18 @@ $courses_static = [
     ],
     [
         'id' => 2,
-        'name' => 'TPC Southwind',
-        'location' => 'Memphis, TN',
-        'region' => 'Memphis Area',
-        'description' => 'Championship PGA Tour venue with challenging water hazards',
-        'image' => '/images/courses/tpc-southwind/1.jpeg',
-        'price_range' => 'Private Club',
-        'difficulty' => 'Advanced',
+        'name' => 'Gaylord Springs Golf Links',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Scottish links-style course by Larry Nelson at Gaylord Opryland Resort',
+        'image' => '/images/courses/gaylord-springs-golf-links/1.jpeg',
+        'price_range' => 'Dynamic Pricing',
+        'difficulty' => 'Intermediate',
         'holes' => 18,
-        'par' => 70,
-        'designer' => 'Ron Prichard',
-        'amenities' => ['Pro Shop', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Fitness Center'],
-        'slug' => 'tpc-southwind'
+        'par' => 72,
+        'designer' => 'Larry Nelson',
+        'amenities' => ['43,000 sq ft Clubhouse', 'Pro Shop', 'Restaurant', 'Golf Institute', 'Driving Range', 'Practice Facilities', 'Event Space'],
+        'slug' => 'gaylord-springs-golf-links'
     ],
     [
         'id' => 3,
@@ -58,18 +58,63 @@ $courses_static = [
     ],
     [
         'id' => 4,
-        'name' => 'Gaylord Springs Golf Links',
-        'location' => 'Nashville, TN',
-        'region' => 'Nashville Area',
-        'description' => 'Scottish links-style course by Larry Nelson at Gaylord Opryland Resort',
-        'image' => '/images/courses/gaylord-springs-golf-links/1.jpeg',
-        'price_range' => 'Dynamic Pricing',
+        'name' => 'Holston Hills Country Club',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Historic 1927 Donald Ross design, one of America\'s purest Ross courses',
+        'image' => '/images/courses/holston-hills-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Championship Golf', 'Fine Dining', 'Member Events', 'Tournament Hosting', 'Walking Friendly'],
+        'slug' => 'holston-hills-country-club'
+    ],
+    [
+        'id' => 5,
+        'name' => 'Island Pointe Golf Club',
+        'location' => 'Kodak, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Arthur Hills masterpiece with 3 island holes on the French Broad River',
+        'image' => '/images/courses/island-pointe-golf-club/1.jpeg',
+        'price_range' => 'Under $50',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 'Championship',
+        'designer' => 'Arthur Hills',
+        'amenities' => ['Championship Course', 'Practice Facilities', 'PGA Instruction', 'Bar & Grill', 'River Views'],
+        'slug' => 'island-pointe-golf-club'
+    ],
+    [
+        'id' => 6,
+        'name' => 'TPC Southwind',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Championship PGA Tour venue with challenging water hazards',
+        'image' => '/images/courses/tpc-southwind/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Ron Prichard',
+        'amenities' => ['Pro Shop', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Fitness Center'],
+        'slug' => 'tpc-southwind'
+    ],
+    [
+        'id' => 7,
+        'name' => 'Willow Creek Golf Club',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Best public course in Knoxville with upscale country club experience',
+        'image' => '/images/courses/willow-creek-golf-club/1.jpeg',
+        'price_range' => 'Public',
         'difficulty' => 'Intermediate',
         'holes' => 18,
         'par' => 72,
-        'designer' => 'Larry Nelson',
-        'amenities' => ['43,000 sq ft Clubhouse', 'Pro Shop', 'Restaurant', 'Golf Institute', 'Driving Range', 'Practice Facilities', 'Event Space'],
-        'slug' => 'gaylord-springs-golf-links'
+        'designer' => 'Bill Oliphant',
+        'amenities' => ['Pro Shop', 'Bar & Grill', 'Golf Lessons', 'Tournament Hosting', 'Club Repair'],
+        'slug' => 'willow-creek-golf-club'
     ]
 ];
 
