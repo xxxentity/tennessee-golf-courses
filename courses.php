@@ -43,6 +43,21 @@ $courses_static = [
     ],
     [
         'id' => 3,
+        'name' => 'Forrest Crossing Golf Course',
+        'location' => 'Franklin, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Gary Roger Baird championship design featuring Harpeth River and island green',
+        'image' => '/images/courses/forrest-crossing-golf-course/1.jpeg',
+        'price_range' => 'Moderate',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Gary Roger Baird',
+        'amenities' => ['Pro Shop', 'Grill Room', '8-Acre Driving Range', 'Putting Greens', 'Practice Bunker', 'Tournament Hosting', 'Wedding Venue'],
+        'slug' => 'forrest-crossing-golf-course'
+    ],
+    [
+        'id' => 4,
         'name' => 'Greystone Golf Course',
         'location' => 'Dickson, TN',
         'region' => 'Nashville Area',
@@ -57,7 +72,7 @@ $courses_static = [
         'slug' => 'greystone-golf-course'
     ],
     [
-        'id' => 4,
+        'id' => 5,
         'name' => 'Harpeth Hills Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -72,7 +87,7 @@ $courses_static = [
         'slug' => 'harpeth-hills-golf-course'
     ],
     [
-        'id' => 5,
+        'id' => 6,
         'name' => 'Hermitage Golf Course',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
@@ -87,8 +102,8 @@ $courses_static = [
         'slug' => 'hermitage-golf-course'
     ],
     [
-        'id' => 6,
-        'name' => 'Holston Hills Country Club',
+        'id' => 7,
+        'name' => 'Holston Hills Country Club'
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
         'description' => 'Historic 1927 Donald Ross design, one of America\'s purest Ross courses',
@@ -102,8 +117,8 @@ $courses_static = [
         'slug' => 'holston-hills-country-club'
     ],
     [
-        'id' => 7,
-        'name' => 'Island Pointe Golf Club',
+        'id' => 8,
+        'name' => 'Island Pointe Golf Club'
         'location' => 'Kodak, TN',
         'region' => 'Knoxville Area',
         'description' => 'Arthur Hills masterpiece with 3 island holes on the French Broad River',
@@ -117,8 +132,8 @@ $courses_static = [
         'slug' => 'island-pointe-golf-club'
     ],
     [
-        'id' => 8,
-        'name' => 'McCabe Golf Course',
+        'id' => 9,
+        'name' => 'McCabe Golf Course'
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
         'description' => 'Nashville\'s premier municipal course since 1942, voted "best place to play"',
@@ -132,8 +147,8 @@ $courses_static = [
         'slug' => 'mccabe-golf-course'
     ],
     [
-        'id' => 9,
-        'name' => 'Nashville National Golf Links',
+        'id' => 10,
+        'name' => 'Nashville National Golf Links'
         'location' => 'Joelton, TN',
         'region' => 'Nashville Area',
         'description' => 'Family-owned course featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty',
@@ -147,8 +162,8 @@ $courses_static = [
         'slug' => 'nashville-national-golf-links'
     ],
     [
-        'id' => 10,
-        'name' => 'Nashville Golf & Athletic Club',
+        'id' => 11,
+        'name' => 'Nashville Golf & Athletic Club'
         'location' => 'Belle Meade, TN',
         'region' => 'Nashville Area',
         'description' => 'Historic private club since 1901 with Donald Ross design heritage',
@@ -162,8 +177,8 @@ $courses_static = [
         'slug' => 'nashville-golf-athletic-club'
     ],
     [
-        'id' => 11,
-        'name' => 'Old Hickory Country Club',
+        'id' => 12,
+        'name' => 'Old Hickory Country Club'
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
         'description' => 'Historic 1926 private club originally built by DuPont for employees',
@@ -177,8 +192,8 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
-        'id' => 12,
-        'name' => 'The Golf Club of Tennessee',
+        'id' => 13,
+        'name' => 'The Golf Club of Tennessee'
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
         'description' => 'Tom Fazio masterpiece, Golf Digest\'s #2 ranked course in Tennessee',
@@ -192,8 +207,8 @@ $courses_static = [
         'slug' => 'the-golf-club-of-tennessee'
     ],
     [
-        'id' => 13,
-        'name' => 'Temple Hills Country Club',
+        'id' => 14,
+        'name' => 'Temple Hills Country Club'
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
         'description' => 'Prestigious private club with 27 holes designed by Leon Howard since 1972',
@@ -207,8 +222,8 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
-        'id' => 14,
-        'name' => 'TPC Southwind',
+        'id' => 15,
+        'name' => 'TPC Southwind'
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
         'description' => 'Championship PGA Tour venue with challenging water hazards',
@@ -222,8 +237,8 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 15,
-        'name' => 'Two Rivers Golf Course',
+        'id' => 16,
+        'name' => 'Two Rivers Golf Course'
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
         'description' => 'Municipal golf course at the confluence of Cumberland and Stones Rivers since 1973',
@@ -237,7 +252,22 @@ $courses_static = [
         'slug' => 'two-rivers-golf-course'
     ],
     [
-        'id' => 16,
+        'id' => 17,
+        'name' => 'Vanderbilt Legends Club',
+        'location' => 'Franklin, TN',
+        'region' => 'Nashville Area',
+        'description' => '36-hole championship facility by Tom Kite & Bob Cupp, home to Vanderbilt golf teams',
+        'image' => '/images/courses/vanderbilt-legends-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 36,
+        'par' => 72,
+        'designer' => 'Tom Kite & Bob Cupp',
+        'amenities' => ['36-Hole Golf', '19-Acre Practice Facility', 'Fine Dining', 'University Teams', 'Tournament Venue', 'Korn Ferry Tour Host'],
+        'slug' => 'vanderbilt-legends-club'
+    ],
+    [
+        'id' => 18,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',

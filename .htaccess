@@ -17,6 +17,7 @@ RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 # Handle course pages (in subdirectory - alphabetical order)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
 RewriteRule ^courses/gaylord-springs-golf-links/?$ courses/gaylord-springs-golf-links.php [L]
+RewriteRule ^courses/forrest-crossing-golf-course/?$ courses/forrest-crossing-golf-course.php [L]
 RewriteRule ^courses/greystone-golf-course/?$ courses/greystone-golf-course.php [L]
 RewriteRule ^courses/harpeth-hills-golf-course/?$ courses/harpeth-hills-golf-course.php [L]
 RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php [L]
@@ -30,6 +31,7 @@ RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-c
 RewriteRule ^courses/the-golf-club-of-tennessee/?$ courses/the-golf-club-of-tennessee.php [L]
 RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
 RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.php [L]
+RewriteRule ^courses/vanderbilt-legends-club/?$ courses/vanderbilt-legends-club.php [L]
 RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
 
 # Handle news article pages (in subdirectory)
