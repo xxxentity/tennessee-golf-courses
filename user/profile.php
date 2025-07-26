@@ -51,6 +51,9 @@ try {
     <title>My Profile - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png">
     <style>
         /* Weather bar and navbar use default positioning from styles.css */
         
