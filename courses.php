@@ -118,6 +118,21 @@ $courses_static = [
     ],
     [
         'id' => 8,
+        'name' => 'McCabe Golf Course',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Nashville\'s premier municipal course since 1942, voted "best place to play"',
+        'image' => '/images/courses/mccabe-golf-course/1.jpeg',
+        'price_range' => '$17-44',
+        'difficulty' => 'Beginner-Friendly',
+        'holes' => 27,
+        'par' => 70,
+        'designer' => 'Gary Roger Baird (South)',
+        'amenities' => ['27-Hole Golf', 'Driving Range', 'PGA Instruction', 'Pro Shop', 'Practice Facilities', 'Golf Associations'],
+        'slug' => 'mccabe-golf-course'
+    ],
+    [
+        'id' => 9,
         'name' => 'Nashville Golf & Athletic Club',
         'location' => 'Belle Meade, TN',
         'region' => 'Nashville Area',
@@ -132,7 +147,22 @@ $courses_static = [
         'slug' => 'nashville-golf-athletic-club'
     ],
     [
-        'id' => 9,
+        'id' => 10,
+        'name' => 'Old Hickory Country Club',
+        'location' => 'Old Hickory, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic 1926 private club originally built by DuPont for employees',
+        'image' => '/images/courses/old-hickory-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'George Livingstone',
+        'amenities' => ['Championship Golf', 'Olympic Pool', 'Pickleball Courts', 'Fitness Center', '1926 Bar & Grill', 'Banquet Facilities'],
+        'slug' => 'old-hickory-country-club'
+    ],
+    [
+        'id' => 11,
         'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
@@ -147,7 +177,22 @@ $courses_static = [
         'slug' => 'the-golf-club-of-tennessee'
     ],
     [
-        'id' => 10,
+        'id' => 12,
+        'name' => 'Temple Hills Country Club',
+        'location' => 'Franklin, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Prestigious private club with 27 holes designed by Leon Howard since 1972',
+        'image' => '/images/courses/temple-hills-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 27,
+        'par' => 72,
+        'designer' => 'Leon Howard',
+        'amenities' => ['27-Hole Golf', 'Junior Olympic Pool', 'Tennis Complex', 'Pickleball Courts', 'Fine Dining', 'Event Facilities'],
+        'slug' => 'temple-hills-country-club'
+    ],
+    [
+        'id' => 13,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -162,7 +207,7 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 11,
+        'id' => 14,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
