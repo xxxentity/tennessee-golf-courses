@@ -23,11 +23,13 @@ RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php 
 RewriteRule ^courses/holston-hills-country-club/?$ courses/holston-hills-country-club.php [L]
 RewriteRule ^courses/island-pointe-golf-club/?$ courses/island-pointe-golf-club.php [L]
 RewriteRule ^courses/mccabe-golf-course/?$ courses/mccabe-golf-course.php [L]
+RewriteRule ^courses/nashville-national-golf-links/?$ courses/nashville-national-golf-links.php [L]
 RewriteRule ^courses/nashville-golf-athletic-club/?$ courses/nashville-golf-athletic-club.php [L]
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]
 RewriteRule ^courses/the-golf-club-of-tennessee/?$ courses/the-golf-club-of-tennessee.php [L]
 RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
+RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.php [L]
 RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
 
 # Handle news article pages (in subdirectory)

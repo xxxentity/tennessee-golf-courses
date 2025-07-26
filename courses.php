@@ -133,6 +133,21 @@ $courses_static = [
     ],
     [
         'id' => 9,
+        'name' => 'Nashville National Golf Links',
+        'location' => 'Joelton, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Family-owned course featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty',
+        'image' => '/images/courses/nashville-national-golf-links/1.jpeg',
+        'price_range' => 'Moderate',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Unknown',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Covered Driving Range', 'Practice Green', 'Natural Setting', 'Family Owned'],
+        'slug' => 'nashville-national-golf-links'
+    ],
+    [
+        'id' => 10,
         'name' => 'Nashville Golf & Athletic Club',
         'location' => 'Belle Meade, TN',
         'region' => 'Nashville Area',
@@ -147,7 +162,7 @@ $courses_static = [
         'slug' => 'nashville-golf-athletic-club'
     ],
     [
-        'id' => 10,
+        'id' => 11,
         'name' => 'Old Hickory Country Club',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
@@ -162,7 +177,7 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
-        'id' => 11,
+        'id' => 12,
         'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
@@ -177,7 +192,7 @@ $courses_static = [
         'slug' => 'the-golf-club-of-tennessee'
     ],
     [
-        'id' => 12,
+        'id' => 13,
         'name' => 'Temple Hills Country Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -192,7 +207,7 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
-        'id' => 13,
+        'id' => 14,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -207,7 +222,22 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 14,
+        'id' => 15,
+        'name' => 'Two Rivers Golf Course',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Municipal golf course at the confluence of Cumberland and Stones Rivers since 1973',
+        'image' => '/images/courses/two-rivers-golf-course/1.jpeg',
+        'price_range' => 'Municipal Rates',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Leon Howard (1991 Redesign)',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Putting Green', 'Skyline Views', 'Municipal Pricing'],
+        'slug' => 'two-rivers-golf-course'
+    ],
+    [
+        'id' => 16,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
