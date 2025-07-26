@@ -53,7 +53,8 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png">
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
     <style>
         /* Weather bar and navbar use default positioning from styles.css */
         

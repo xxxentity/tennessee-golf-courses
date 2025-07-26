@@ -14,7 +14,8 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/logos/tab-logo.png">
+    <link rel="icon" type="image/png" href="/images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.png?v=2">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
