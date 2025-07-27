@@ -28,6 +28,36 @@ $courses_static = [
     ],
     [
         'id' => 2,
+        'name' => 'Belle Meade Country Club',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic Donald Ross design since 1921 in exclusive Belle Meade neighborhood',
+        'image' => '/images/courses/belle-meade-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Championship Golf', 'Historic Clubhouse', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'USGA Championships'],
+        'slug' => 'belle-meade-country-club'
+    ],
+    [
+        'id' => 3,
+        'name' => 'Cedar Crest Golf Club',
+        'location' => 'Murfreesboro, TN',
+        'region' => 'Nashville Area',
+        'description' => 'John Floyd designed public course on rolling farmland, Golf Advisor Most Improved 2016',
+        'image' => '/images/courses/cedar-crest-golf-club/1.jpeg',
+        'price_range' => '$28-32',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'John Floyd',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Putting Green', 'Tournament Hosting', 'Online Tee Times'],
+        'slug' => 'cedar-crest-golf-club'
+    ],
+    [
+        'id' => 4,
         'name' => 'Gaylord Springs Golf Links',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -147,8 +177,8 @@ $courses_static = [
         'slug' => 'mccabe-golf-course'
     ],
     [
-        'id' => 10,
-        'name' => 'Nashville National Golf Links'
+        'id' => 12,
+        'name' => 'Nashville National Golf Links',
         'location' => 'Joelton, TN',
         'region' => 'Nashville Area',
         'description' => 'Family-owned course featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty',
@@ -162,8 +192,8 @@ $courses_static = [
         'slug' => 'nashville-national-golf-links'
     ],
     [
-        'id' => 11,
-        'name' => 'Nashville Golf & Athletic Club'
+        'id' => 13,
+        'name' => 'Nashville Golf & Athletic Club',
         'location' => 'Belle Meade, TN',
         'region' => 'Nashville Area',
         'description' => 'Historic private club since 1901 with Donald Ross design heritage',
@@ -177,7 +207,7 @@ $courses_static = [
         'slug' => 'nashville-golf-athletic-club'
     ],
     [
-        'id' => 12,
+        'id' => 14,
         'name' => 'Stones River Country Club',
         'location' => 'Murfreesboro, TN',
         'region' => 'Nashville Area',
@@ -192,7 +222,7 @@ $courses_static = [
         'slug' => 'stones-river-country-club'
     ],
     [
-        'id' => 13,
+        'id' => 15,
         'name' => 'Old Hickory Country Club',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
@@ -207,7 +237,7 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
-        'id' => 14,
+        'id' => 16,
         'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
@@ -222,7 +252,7 @@ $courses_static = [
         'slug' => 'the-golf-club-of-tennessee'
     ],
     [
-        'id' => 15,
+        'id' => 17,
         'name' => 'Temple Hills Country Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -237,7 +267,7 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
-        'id' => 16,
+        'id' => 18,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
         'region' => 'Nashville Area',
@@ -252,7 +282,7 @@ $courses_static = [
         'slug' => 'the-legacy-golf-course'
     ],
     [
-        'id' => 17,
+        'id' => 19,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -267,7 +297,7 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 18,
+        'id' => 20,
         'name' => 'Two Rivers Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -282,7 +312,7 @@ $courses_static = [
         'slug' => 'two-rivers-golf-course'
     ],
     [
-        'id' => 19,
+        'id' => 21,
         'name' => 'Vanderbilt Legends Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -297,7 +327,7 @@ $courses_static = [
         'slug' => 'vanderbilt-legends-club'
     ],
     [
-        'id' => 20,
+        'id' => 22,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
