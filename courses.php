@@ -103,7 +103,7 @@ $courses_static = [
     ],
     [
         'id' => 7,
-        'name' => 'Holston Hills Country Club'
+        'name' => 'Holston Hills Country Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
         'description' => 'Historic 1927 Donald Ross design, one of America\'s purest Ross courses',
@@ -118,7 +118,7 @@ $courses_static = [
     ],
     [
         'id' => 8,
-        'name' => 'Island Pointe Golf Club'
+        'name' => 'Island Pointe Golf Club',
         'location' => 'Kodak, TN',
         'region' => 'Knoxville Area',
         'description' => 'Arthur Hills masterpiece with 3 island holes on the French Broad River',
@@ -133,7 +133,7 @@ $courses_static = [
     ],
     [
         'id' => 9,
-        'name' => 'McCabe Golf Course'
+        'name' => 'McCabe Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
         'description' => 'Nashville\'s premier municipal course since 1942, voted "best place to play"',
@@ -178,7 +178,22 @@ $courses_static = [
     ],
     [
         'id' => 12,
-        'name' => 'Old Hickory Country Club'
+        'name' => 'Stones River Country Club',
+        'location' => 'Murfreesboro, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Premier private country club since 1949 along historic Stones River',
+        'image' => '/images/courses/stones-river-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Bob Renaud',
+        'amenities' => ['Championship Golf', 'Tennis Courts', 'Swimming Pool', 'Fine Dining', 'Fitness Center', 'Event Hosting'],
+        'slug' => 'stones-river-country-club'
+    ],
+    [
+        'id' => 13,
+        'name' => 'Old Hickory Country Club',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
         'description' => 'Historic 1926 private club originally built by DuPont for employees',
@@ -192,8 +207,8 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
-        'id' => 13,
-        'name' => 'The Golf Club of Tennessee'
+        'id' => 14,
+        'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
         'description' => 'Tom Fazio masterpiece, Golf Digest\'s #2 ranked course in Tennessee',
@@ -207,8 +222,8 @@ $courses_static = [
         'slug' => 'the-golf-club-of-tennessee'
     ],
     [
-        'id' => 14,
-        'name' => 'Temple Hills Country Club'
+        'id' => 15,
+        'name' => 'Temple Hills Country Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
         'description' => 'Prestigious private club with 27 holes designed by Leon Howard since 1972',
@@ -222,8 +237,23 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
-        'id' => 15,
-        'name' => 'TPC Southwind'
+        'id' => 16,
+        'name' => 'The Legacy Golf Course',
+        'location' => 'Springfield, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Raymond Floyd championship design ranked #2 public course in Tennessee',
+        'image' => '/images/courses/the-legacy-golf-course/1.jpeg',
+        'price_range' => '$33-73',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Raymond Floyd',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Four-Level Putting Green', 'Short Game Complex', 'PGA Instruction'],
+        'slug' => 'the-legacy-golf-course'
+    ],
+    [
+        'id' => 17,
+        'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
         'description' => 'Championship PGA Tour venue with challenging water hazards',
@@ -237,8 +267,8 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 16,
-        'name' => 'Two Rivers Golf Course'
+        'id' => 18,
+        'name' => 'Two Rivers Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
         'description' => 'Municipal golf course at the confluence of Cumberland and Stones Rivers since 1973',
@@ -252,7 +282,7 @@ $courses_static = [
         'slug' => 'two-rivers-golf-course'
     ],
     [
-        'id' => 17,
+        'id' => 19,
         'name' => 'Vanderbilt Legends Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -267,7 +297,7 @@ $courses_static = [
         'slug' => 'vanderbilt-legends-club'
     ],
     [
-        'id' => 18,
+        'id' => 20,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
