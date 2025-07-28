@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaylord Springs Golf Links - Tennessee Golf Courses</title>
-    <meta name="description" content="Gaylord Springs Golf Links - Larry Nelson designed Scottish links-style championship course in Nashville. Located at Gaylord Opryland Resort with award-winning facilities.">
+    <meta name="description" content="Gaylord Springs Golf Links - Larry Nelson championship design in Nashville, TN. 7,069 yards of Scottish links-style golf with dramatic elevation changes.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -125,37 +125,11 @@ try {
             padding: 4rem 0;
         }
         
-        .course-layout {
+        .course-info-grid {
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-bottom: 4rem;
-        }
-        
-        .course-description {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-description h2 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .course-description p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .course-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
         }
         
         .course-info-card {
@@ -168,16 +142,17 @@ try {
         .course-info-card h3 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .course-specs.single-column {
             grid-template-columns: 1fr;
-            gap: 0.75rem;
         }
         
         .spec-item {
@@ -214,6 +189,18 @@ try {
             width: 20px;
         }
         
+        .location-info {
+            margin-bottom: 2rem;
+        }
+        
+        .location-info iframe {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
         .location-details p {
             margin-bottom: 0.5rem;
             display: flex;
@@ -226,9 +213,32 @@ try {
             width: 20px;
         }
         
+        .course-description {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
+            color: #2c5234;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
         .signature-holes {
             padding: 4rem 0;
-            background: #f8f9fa;
         }
         
         .holes-grid {
@@ -291,6 +301,7 @@ try {
         
         .reviews-section {
             padding: 4rem 0;
+            background: #f8f9fa;
         }
         
         .reviews-header {
@@ -304,18 +315,17 @@ try {
             font-size: 2.5rem;
         }
         
-        .comment-form-container {
+        .review-form {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 3rem;
         }
         
-        .comment-form-container h3 {
+        .review-form h3 {
             color: #2c5234;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
         }
         
         .form-group {
@@ -329,69 +339,67 @@ try {
             color: #333;
         }
         
-        .star-rating {
+        .rating-input {
             display: flex;
-            justify-content: flex-start;
-            gap: 5px;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
         
-        .star-rating input[type="radio"] {
+        .rating-input input[type="radio"] {
             display: none;
         }
         
-        .star-rating label {
-            color: #ddd;
+        .rating-input label {
             font-size: 1.5rem;
+            color: #ddd;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
         
-        .star-rating label:hover {
+        .rating-input label:hover {
             color: #ffd700;
         }
         
-        .star-rating label.active {
+        .rating-input label.active {
             color: #ffd700;
         }
         
-        .comment-form textarea {
+        .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #e5e7eb;
+            border: 2px solid #ddd;
             border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
+            font-family: inherit;
         }
         
-        .comment-form textarea:focus {
-            outline: none;
+        .form-group textarea:focus {
             border-color: #2c5234;
+            outline: none;
         }
         
-        .btn-submit {
+        .submit-btn {
             background: #2c5234;
             color: white;
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s;
         }
         
-        .btn-submit:hover {
+        .submit-btn:hover {
             background: #1a3020;
         }
         
         .login-prompt {
             text-align: center;
-            padding: 2.5rem;
-            background: white;
+            padding: 2rem;
+            background: #e3f2fd;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 3rem;
         }
         
@@ -401,45 +409,40 @@ try {
             font-weight: 600;
         }
         
-        .comments-container {
+        .comments-list {
+            space-y: 2rem;
+        }
+        
+        .comment-card {
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .review-card {
             padding: 2rem;
-            border-bottom: 1px solid #eee;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
         
-        .review-card:last-child {
-            border-bottom: none;
-        }
-        
-        .review-header {
+        .comment-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
         
-        .reviewer-name {
+        .comment-author {
             font-weight: 600;
             color: #2c5234;
         }
         
-        .review-date {
+        .comment-rating {
+            color: #ffd700;
+        }
+        
+        .comment-date {
             color: #666;
             font-size: 0.9rem;
         }
         
-        .rating-stars {
-            color: #ffd700;
-            margin-bottom: 1rem;
-        }
-        
-        .review-text {
+        .comment-text {
             color: #555;
             line-height: 1.6;
         }
@@ -574,20 +577,22 @@ try {
             transform: scale(1.05);
         }
         
-        @media (max-width: 1024px) {
-            .course-layout {
+        @media (max-width: 768px) {
+            .course-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .course-info-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .holes-grid {
+            .course-specs {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
+            
+            .holes-grid {
+                grid-template-columns: 1fr;
             }
             
             .hole-stats {
@@ -604,7 +609,7 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Gaylord Springs Golf Links</h1>
-            <p>Larry Nelson Design • Scottish Links Style • Nashville, Tennessee</p>
+            <p>Larry Nelson Design • Nashville, Tennessee</p>
             <div class="course-rating">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
@@ -637,104 +642,116 @@ try {
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <div class="course-layout">
-                <div class="course-description">
-                    <h2>Scottish Links Golf in the Heart of Nashville</h2>
-                    <p>Gaylord Springs Golf Links stands as one of Tennessee's most distinctive and celebrated golf courses, carved from the scenic banks of the Cumberland River. This Scottish links-style masterpiece, designed by former U.S. Open and PGA Champion Larry Nelson in 1991, offers an authentic links experience unlike any other in the Southeast.</p>
-                    
-                    <p>The course's unique design features limestone bluffs, federally protected wetlands, and rolling grass mounds that create a challenging yet fair test of golf. Nelson's vision was to bring the spirit of Scottish golf to Nashville, incorporating deep bunkers, water hazards, and undulating MiniVerde Bermuda grass greens that demand both creativity and precision.</p>
-                    
-                    <p>Located just minutes from Nashville International Airport and adjacent to the iconic Gaylord Opryland Resort, this championship layout has earned recognition from both <strong>Golf Digest</strong> and <strong>GolfWeek</strong> as one of the "Best Courses You Can Play." The course offers five sets of tees ranging from 5,179 to 6,842 yards, ensuring an enjoyable experience for golfers of all skill levels.</p>
-                    
-                    <p>The 43,000-square-foot antebellum-style clubhouse houses one of America's top golf shops and features a restaurant with spectacular course views. Combined with the extensive practice facilities and The Golf Institute's cutting-edge instruction technology, Gaylord Springs provides a complete world-class golf experience in Music City.</p>
-                </div>
-                
-                <div class="course-sidebar">
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Holes:</span>
-                                <span class="spec-value">18</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Par:</span>
-                                <span class="spec-value">72</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Yardage:</span>
-                                <span class="spec-value">6,842 yards</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Course Rating:</span>
-                                <span class="spec-value">73.1</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Slope Rating:</span>
-                                <span class="spec-value">133</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Designer:</span>
-                                <span class="spec-value">Larry Nelson</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Opened:</span>
-                                <span class="spec-value">1991</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Style:</span>
-                                <span class="spec-value">Scottish Links</span>
-                            </div>
+            <div class="course-info-grid">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">18</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Par:</span>
+                            <span class="spec-value">72</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">7,069 yards</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating:</span>
+                            <span class="spec-value">73.8</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">137</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Larry Nelson</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1990</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Public</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-star"></i> Amenities</h3>
-                        <ul class="amenities-list">
-                            <li><i class="fas fa-building"></i> 43,000 sq ft Clubhouse</li>
-                            <li><i class="fas fa-store"></i> Award-Winning Pro Shop</li>
-                            <li><i class="fas fa-utensils"></i> Full-Service Restaurant</li>
-                            <li><i class="fas fa-graduation-cap"></i> The Golf Institute</li>
-                            <li><i class="fas fa-golf-ball"></i> 350-Yard Driving Range</li>
-                            <li><i class="fas fa-flag"></i> Two Putting Greens</li>
-                            <li><i class="fas fa-bullseye"></i> Two Chipping Greens</li>
-                            <li><i class="fas fa-tools"></i> Club Fitting & Repair</li>
-                            <li><i class="fas fa-camera"></i> SwingLab Technology</li>
-                            <li><i class="fas fa-chart-line"></i> FlightScope Launch Monitor</li>
-                            <li><i class="fas fa-users"></i> Event & Conference Space</li>
-                            <li><i class="fas fa-bath"></i> State-of-the-Art Locker Room</li>
-                        </ul>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Course Type:</span>
+                            <span class="spec-value">Public Resort Course</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekday Rate:</span>
+                            <span class="spec-value">$85-$125</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekend Rate:</span>
+                            <span class="spec-value">$95-$145</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Resort Guests:</span>
+                            <span class="spec-value">Preferred pricing</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tee Times:</span>
+                            <span class="spec-value">Online booking available</span>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="location-info">
                         <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 18 Springhouse Lane, Nashville, TN 37214</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 18 Springs Blvd, Nashville, TN 37214</p>
                             <p><i class="fas fa-phone"></i> (615) 458-1730</p>
                             <p><i class="fas fa-globe"></i> <a href="https://www.gaylordsprings.com" target="_blank">gaylordsprings.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=18+Springhouse+Lane,+Nashville,+TN+37214" target="_blank">Get Directions</a></p>
-                            <p><i class="fas fa-clock"></i> Daily 6:30 AM - 6:30 PM</p>
-                            <p><i class="fas fa-credit-card"></i> Cashless Facility</p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=18+Springs+Blvd,+Nashville,+TN+37214" target="_blank">Get Directions</a></p>
                         </div>
+                        <iframe src="https://maps.google.com/maps?q=18+Springs+Blvd,+Nashville,+TN+37214&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Signature Holes Section -->
+    <!-- Course Description -->
+    <section class="course-description">
+        <div class="container">
+            <div class="description-content">
+                <h2>Scottish Links-Style Championship Golf</h2>
+                <p>Gaylord Springs Golf Links stands as Nashville's premier resort golf destination, masterfully designed by PGA Tour legend Larry Nelson to capture the essence of Scottish links golf. This championship 7,069-yard layout features dramatic elevation changes, strategic bunkering, and the natural beauty of the Cumberland River landscape.</p>
+                
+                <p>Opened in 1990 as part of the Gaylord Opryland Resort, the course has hosted numerous professional tournaments and remains one of Tennessee's most challenging and scenic golf experiences. The links-style design features wide fairways, deep bunkers, and undulating greens that reward strategic thinking and precise shot-making.</p>
+                
+                <p>What sets Gaylord Springs apart is its unique combination of resort amenities and championship golf. The course features dramatic elevation changes throughout, with several holes offering spectacular views of the Cumberland River and Nashville skyline, creating an unforgettable golf experience in the heart of Music City.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Holes -->
     <section class="signature-holes">
         <div class="container">
             <div class="section-header">
                 <h2>Signature Holes</h2>
-                <p>Experience the most memorable holes on this Scottish links masterpiece</p>
+                <p>Discover the holes that define Gaylord Springs' championship character</p>
             </div>
             
             <div class="holes-grid">
                 <div class="hole-card">
                     <div class="hole-number">4</div>
                     <div class="hole-details">
-                        <h4>The Springhouse</h4>
+                        <h4>River Valley Challenge</h4>
                         <div class="hole-stats">
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Par</div>
@@ -742,46 +759,46 @@ try {
                             </div>
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">400</div>
+                                <div class="hole-stat-value">435</div>
                             </div>
                         </div>
-                        <p>The signature hole features a century-old springhouse from which the club derived its name. This strategic par-4 works around a picturesque lake, demanding precise placement off the tee and a carefully crafted approach to a well-protected green.</p>
+                        <p>A dramatic dogleg right that plays down into a valley with the Cumberland River running alongside. Strategic bunkering guards the landing area, demanding precise placement off the tee.</p>
                     </div>
                 </div>
                 
                 <div class="hole-card">
-                    <div class="hole-number">5</div>
+                    <div class="hole-number">12</div>
                     <div class="hole-details">
-                        <h4>The Challenge</h4>
+                        <h4>Links Challenge</h4>
                         <div class="hole-stats">
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
+                                <div class="hole-stat-value">3</div>
                             </div>
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">454</div>
+                                <div class="hole-stat-value">195</div>
                             </div>
                         </div>
-                        <p>One of the course's most demanding holes, requiring a precise carry over a large lake off the tee, followed by a long approach shot into a heavily bunkered green. Strategic thinking and execution are essential for success.</p>
+                        <p>A classic links-style par-3 with deep bunkers and an elevated green complex. Wind direction and pin position make club selection crucial on this challenging one-shotter.</p>
                     </div>
                 </div>
                 
                 <div class="hole-card">
                     <div class="hole-number">18</div>
                     <div class="hole-details">
-                        <h4>Cumberland Finale</h4>
+                        <h4>Championship Finish</h4>
                         <div class="hole-stats">
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
+                                <div class="hole-stat-value">5</div>
                             </div>
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">453</div>
+                                <div class="hole-stat-value">570</div>
                             </div>
                         </div>
-                        <p>A dramatic finishing hole with the Cumberland River as backdrop. Water runs the entire right side, creating tension and excitement as players navigate this challenging closer with the magnificent clubhouse in view.</p>
+                        <p>A spectacular finishing hole that climbs uphill to an elevated green with panoramic views of the Cumberland River and Nashville. A worthy conclusion to this championship test.</p>
                     </div>
                 </div>
             </div>
@@ -804,7 +821,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -830,39 +847,41 @@ try {
                 <p>Share your experience at Gaylord Springs Golf Links</p>
             </div>
 
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success"><?php echo $success_message; ?></div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error"><?php echo $error_message; ?></div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <form method="POST" class="comment-form">
+                <div class="review-form">
+                    <h3>Write a Review</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div class="alert alert-success"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div class="alert alert-error"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST">
                         <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="gaylord-rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
+                            <label>Rating</label>
+                            <div class="rating-input" id="rating-stars">
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1" data-rating="1">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2" data-rating="2">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3" data-rating="3">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4" data-rating="4">★</label>
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5" data-rating="5">★</label>
                             </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing at Gaylord Springs Golf Links..." required></textarea>
+                            <label for="comment_text">Your Review</label>
+                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Gaylord Springs Golf Links..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
+                        
+                        <button type="submit" class="submit-btn">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
@@ -871,28 +890,28 @@ try {
                 </div>
             <?php endif; ?>
 
-            <div class="comments-container">
+            <div class="comments-list">
                 <?php if (empty($comments)): ?>
-                    <div class="review-card">
+                    <div class="comment-card">
                         <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="comment-rating">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <?php if ($i <= $comment['rating']): ?>
+                                            <i class="fas fa-star"></i>
+                                        <?php else: ?>
+                                            <i class="far fa-star"></i>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
+                                </div>
                             </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="review-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
+                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -951,9 +970,9 @@ try {
 
     <script src="/script.js?v=5"></script>
     <script>
-        // Interactive star rating functionality for Gaylord Springs
+        // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('gaylord-rating-stars');
+            const ratingContainer = document.getElementById('rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
@@ -1017,8 +1036,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 26 images (starting from 2.jpeg to 26.jpeg = 25 images)
-            for (let i = 2; i <= 26; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/gaylord-springs-golf-links/${i}.jpeg')`;

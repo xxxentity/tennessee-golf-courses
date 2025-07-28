@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cedar Crest Golf Club - Quality Public Golf in Murfreesboro | Tennessee Golf Courses</title>
-    <meta name="description" content="Cedar Crest Golf Club - John Floyd designed public course in Murfreesboro since 1999. 6,828 yards of challenging golf on rolling farmland with bentgrass greens.">
+    <title>Cedar Crest Golf Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Cedar Crest Golf Club - Quality public golf course in Murfreesboro, TN. 6,828 yards of challenging golf on rolling farmland with bentgrass greens since 1999.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -76,90 +76,565 @@ try {
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
+    
+    <style>
+        .course-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/cedar-crest-golf-club/1.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 120px;
+        }
+        
+        .course-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .course-hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .course-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
+            padding: 4rem 0;
+        }
+        
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .course-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-info-card h3 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .course-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .spec-value {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .amenities-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .amenities-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .amenities-list i {
+            color: #2c5234;
+            width: 20px;
+        }
+        
+        .location-info {
+            margin-bottom: 2rem;
+        }
+        
+        .location-info iframe {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .location-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .location-details i {
+            color: #2c5234;
+            width: 20px;
+        }
+        
+        .course-description {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+        
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
+            color: #2c5234;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .signature-holes {
+            padding: 4rem 0;
+        }
+        
+        .holes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .hole-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .hole-number {
+            background: #2c5234;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .hole-details h4 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .hole-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hole-stat {
+            text-align: center;
+        }
+        
+        .hole-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hole-stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c5234;
+        }
+        
+        .reviews-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .reviews-header h2 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .review-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .review-form h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .rating-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-input input[type="radio"] {
+            display: none;
+        }
+        
+        .rating-input label {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .rating-input label:hover {
+            color: #ffd700;
+        }
+        
+        .rating-input label.active {
+            color: #ffd700;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea:focus {
+            border-color: #2c5234;
+            outline: none;
+        }
+        
+        .submit-btn {
+            background: #2c5234;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #1a3020;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            padding: 2rem;
+            background: #e3f2fd;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+        
+        .login-prompt a {
+            color: #2c5234;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .comments-list {
+            space-y: 2rem;
+        }
+        
+        .comment-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .comment-rating {
+            color: #ffd700;
+        }
+        
+        .comment-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .comment-text {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .photo-gallery {
+            margin: 4rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .course-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .course-info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .course-specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .holes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hole-stats {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Header -->
-    <section class="course-header">
-        <div class="course-hero">
-            <div class="course-hero-content">
-                <div class="course-hero-text">
-                    <div class="course-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Murfreesboro, Tennessee</span>
-                    </div>
-                    <h1 class="course-title">Cedar Crest Golf Club</h1>
-                    <p class="course-subtitle">Quality Public Golf Since 1999</p>
-                    
-                    <div class="course-meta">
-                        <div class="course-rating">
-                            <?php if ($avg_rating): ?>
-                                <div class="stars">
-                                    <?php
-                                    $full_stars = floor($avg_rating);
-                                    $half_star = ($avg_rating - $full_stars) >= 0.5;
-                                    
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $full_stars) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i == $full_stars + 1 && $half_star) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span class="rating-text"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                            <?php else: ?>
-                                <div class="stars">
-                                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                </div>
-                                <span class="rating-text">Be the first to review</span>
-                            <?php endif; ?>
-                        </div>
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="course-hero-content">
+            <h1>Cedar Crest Golf Club</h1>
+            <p>John Floyd Design • Murfreesboro, Tennessee</p>
+            <div class="course-rating">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
                         
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-flag"></i>
-                                <span>18 Holes</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Par 72</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler"></i>
-                                <span>6,828 Yards</span>
-                            </div>
-                        </div>
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
                     </div>
-                    
-                    <div class="course-actions">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
-                            Contact Course
-                        </a>
-                        <a href="#photos" class="btn btn-secondary">
-                            <i class="fas fa-camera"></i>
-                            View Photos
-                        </a>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
-                </div>
-                
-                <div class="course-hero-image">
-                    <div class="hero-image-container">
-                        <img src="/images/courses/cedar-crest-golf-club/1.jpeg" alt="Cedar Crest Golf Club" class="hero-image">
-                        <div class="image-overlay">
-                            <div class="price-badge">
-                                <span class="price-label">Most Improved</span>
-                                <span class="price-amount">2016 Award</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -167,251 +642,163 @@ try {
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <div class="details-grid">
-                <!-- About Section -->
-                <div class="details-main">
-                    <div class="detail-section">
-                        <h2>About Cedar Crest Golf Club</h2>
-                        <p>Cedar Crest Golf Club represents the finest in public golf accessibility and quality, serving the Murfreesboro community since 1999. Designed by John Floyd and built on 175 acres of rolling former farmland, this championship course offers golfers an exceptional experience that combines challenging play with stunning natural beauty.</p>
-                        
-                        <p>The course gained national recognition in 2016 when Golf Advisor named Cedar Crest #18 on their Top 25 Most Improved U.S. Golf Courses, acknowledging the continuous improvements and commitment to excellence that define this facility. The 6,828-yard layout features pristine bentgrass greens and tree-lined fairways that showcase the natural Tennessee countryside.</p>
-                        
-                        <p>What sets Cedar Crest apart is its player-friendly design philosophy combined with strategic challenges. The front nine offers generous fairways with wide landing areas, while the back nine narrows down with tree-lined corridors that demand more precision. This thoughtful progression makes the course enjoyable for beginners while providing ample challenge for experienced golfers.</p>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Course Development & Recognition</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-year">1999</div>
-                                <div class="timeline-content">
-                                    <h4>Course Opening</h4>
-                                    <p>Cedar Crest Golf Club opens as John Floyd design on former farmland</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2012</div>
-                                <div class="timeline-content">
-                                    <h4>BBB Accreditation</h4>
-                                    <p>Achieves Better Business Bureau accreditation for service excellence</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2016</div>
-                                <div class="timeline-content">
-                                    <h4>National Recognition</h4>
-                                    <p>Golf Advisor ranks Cedar Crest #18 Top 25 Most Improved U.S. Golf Courses</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">Present</div>
-                                <div class="timeline-content">
-                                    <h4>Continued Excellence</h4>
-                                    <p>Maintains 3.9/5 star rating with 85.1% golfer recommendation rate</p>
-                                </div>
-                            </div>
+            <div class="course-info-grid">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">18</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>John Floyd Design Philosophy</h3>
-                        <div class="layout-grid">
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-seedling"></i>
-                                </div>
-                                <h4>Natural Integration</h4>
-                                <p>Course built to work with existing farmland topography and mature trees</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h4>Progressive Challenge</h4>
-                                <p>Front nine offers forgiveness, back nine demands precision and strategy</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-bullseye"></i>
-                                </div>
-                                <h4>Strategic Bunkering</h4>
-                                <p>Minimal but well-placed sand traps emphasize course management</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <h4>Bentgrass Greens</h4>
-                                <p>Fast, true putting surfaces that reward precise approach shots</p>
-                            </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Par:</span>
+                            <span class="spec-value">72</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Signature Holes & Layout</h3>
-                        <div class="holes-showcase">
-                            <div class="hole-highlight">
-                                <h4>18th Hole - "Championship Finish"</h4>
-                                <p><strong>Par 5, 580 yards</strong> | The course's longest and most demanding hole provides a dramatic finish. This challenging par-5 requires strategic positioning and precise execution to navigate successfully.</p>
-                            </div>
-                            <div class="hole-highlight">
-                                <h4>9th Hole - "The Test"</h4>
-                                <p><strong>Par 4, 445 yards (#1 Handicap)</strong> | The course's most challenging hole demands both distance and accuracy. Strategic bunkering and tree placement make this a true test of championship golf.</p>
-                            </div>
-                            <div class="hole-highlight">
-                                <h4>3rd Hole - "Short Game Precision"</h4>
-                                <p><strong>Par 3, 150 yards</strong> | The shortest hole on the course emphasizes accuracy and green-reading skills, featuring one of the course's most challenging putting surfaces.</p>
-                            </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">6,828 yards</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Course Recognition & Reviews</h3>
-                        <p>Cedar Crest Golf Club has earned recognition both nationally and locally for its commitment to providing quality public golf. The course maintains an impressive 3.9 out of 5-star rating based on over 500 golfer reviews, with 85.1% of players recommending the course to others.</p>
-                        
-                        <p>Golfers consistently praise the course for its excellent layout design (4.3/5 stars) and exceptional friendliness of staff (4.2/5 stars). The course's player-friendly design makes it accessible to golfers of all skill levels, while the strategic elements and course conditions provide ample challenge for more experienced players.</p>
-                        
-                        <p>As one of Murfreesboro's premier public golf facilities, Cedar Crest stands out for its combination of scenic beauty, strategic design, and value proposition, making it a must-play destination for golfers throughout Middle Tennessee.</p>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating:</span>
+                            <span class="spec-value">71.6</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">124</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">John Floyd</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1999</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Public</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="details-sidebar">
-                    <div class="info-card">
-                        <h3>Course Information</h3>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <strong>Architect:</strong>
-                                <span>John Floyd</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Opened:</strong>
-                                <span>1999</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Type:</strong>
-                                <span>Public</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Total Acreage:</strong>
-                                <span>175 acres</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Holes:</strong>
-                                <span>18</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Par:</strong>
-                                <span>72</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Blue Tees:</strong>
-                                <span>6,828 yards (Rating 72.7, Slope 131)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>White Tees:</strong>
-                                <span>6,407 yards (Rating 70.5, Slope 129)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Gold Tees:</strong>
-                                <span>5,869 yards (Rating 68.1, Slope 121)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Ladies Tees:</strong>
-                                <span>5,317 yards (Rating 66.4, Slope 118)</span>
-                            </div>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Course Type:</span>
+                            <span class="spec-value">Public Golf Course</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekday Rate:</span>
+                            <span class="spec-value">Call for pricing</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekend Rate:</span>
+                            <span class="spec-value">Call for pricing</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Cart Rental:</span>
+                            <span class="spec-value">Included in fees</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tee Times:</span>
+                            <span class="spec-value">Online booking available</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="amenities-card">
-                        <h3>Amenities & Services</h3>
-                        <div class="amenities-list">
-                            <div class="amenity-item">
-                                <i class="fas fa-home"></i>
-                                <span>Log Cabin Clubhouse</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Restaurant & Bar</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-store"></i>
-                                <span>Pro Shop & Equipment</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Full Driving Range</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Two-Tiered Putting Green</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-hand-paper"></i>
-                                <span>Chipping & Short Game Area</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Professional Instruction</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-car"></i>
-                                <span>Golf Cart Rental</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>Tournament Hosting</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-users"></i>
-                                <span>Banquet Facilities</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-laptop"></i>
-                                <span>Online Tee Times</span>
-                            </div>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="location-info">
+                        <div class="location-details">
+                            <p><i class="fas fa-map-marker-alt"></i> 7972 Mona Rd, Murfreesboro, TN 37129</p>
+                            <p><i class="fas fa-phone"></i> (615) 849-7837</p>
+                            <p><i class="fas fa-globe"></i> <a href="https://www.cedarcrestgolfclub.com" target="_blank">cedarcrestgolfclub.com</a></p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129" target="_blank">Get Directions</a></p>
                         </div>
+                        <iframe src="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                        </iframe>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="contact-card" id="contact">
-                        <h3>Contact Information</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Address:</strong>
-                                    <span>7972 Mona Road<br>Murfreesboro, TN 37129</span>
-                                </div>
+    <!-- Course Description -->
+    <section class="course-description">
+        <div class="container">
+            <div class="description-content">
+                <h2>Quality Public Golf Since 1999</h2>
+                <p>Cedar Crest Golf Club represents the finest in public golf accessibility and quality, serving the Murfreesboro community since 1999. Designed by John Floyd and built on 175 acres of rolling former farmland, this championship course offers golfers an exceptional experience that combines challenging play with stunning natural beauty.</p>
+                
+                <p>The course gained national recognition in 2016 when Golf Advisor named Cedar Crest #18 on their Top 25 Most Improved U.S. Golf Courses, acknowledging the continuous improvements and commitment to excellence that define this facility. The 6,828-yard layout features pristine bentgrass greens and tree-lined fairways that showcase the natural Tennessee countryside.</p>
+                
+                <p>What sets Cedar Crest apart is its player-friendly design philosophy combined with strategic challenges. The front nine offers generous fairways with wide landing areas, while the back nine narrows down with tree-lined corridors that demand more precision. This thoughtful progression makes the course enjoyable for beginners while providing ample challenge for experienced golfers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Holes -->
+    <section class="signature-holes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Signature Holes</h2>
+                <p>Discover the holes that define Cedar Crest's championship character</p>
+            </div>
+            
+            <div class="holes-grid">
+                <div class="hole-card">
+                    <div class="hole-number">9</div>
+                    <div class="hole-details">
+                        <h4>The Test</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">4</div>
                             </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone:</strong>
-                                    <span>(615) 849-7837</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <div>
-                                    <strong>Website:</strong>
-                                    <a href="https://www.cedarcrestgolfclub.com" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email:</strong>
-                                    <span>info@cedarcrestgolfclub.com</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-dollar-sign"></i>
-                                <div>
-                                    <strong>Green Fees:</strong>
-                                    <span>Weekday $28, Weekend $32</span>
-                                </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">445</div>
                             </div>
                         </div>
+                        <p>The course's most challenging hole (#1 handicap) demands both distance and accuracy. Strategic bunkering and tree placement make this a true test of championship golf.</p>
+                    </div>
+                </div>
+                
+                <div class="hole-card">
+                    <div class="hole-number">18</div>
+                    <div class="hole-details">
+                        <h4>Championship Finish</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">5</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">580</div>
+                            </div>
+                        </div>
+                        <p>The course's longest and most demanding hole provides a dramatic finish. This challenging par-5 requires strategic positioning and precise execution to navigate successfully.</p>
+                    </div>
+                </div>
+                
+                <div class="hole-card">
+                    <div class="hole-number">3</div>
+                    <div class="hole-details">
+                        <h4>Short Game Precision</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">3</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">150</div>
+                            </div>
+                        </div>
+                        <p>The shortest hole on the course emphasizes accuracy and green-reading skills, featuring one of the course's most challenging putting surfaces.</p>
                     </div>
                 </div>
             </div>
@@ -419,126 +806,112 @@ try {
     </section>
 
     <!-- Photo Gallery -->
-    <section class="photo-gallery" id="photos">
+    <section class="photo-gallery">
         <div class="container">
-            <h2>Course Photos</h2>
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Cedar Crest Golf Club</p>
+            </div>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/1.jpeg', 'Cedar Crest Golf Club Clubhouse')">
-                    <img src="/images/courses/cedar-crest-golf-club/1.jpeg" alt="Cedar Crest Golf Club Clubhouse">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/2.jpeg', 'John Floyd Championship Design')">
-                    <img src="/images/courses/cedar-crest-golf-club/2.jpeg" alt="John Floyd Championship Design">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/3.jpeg', 'Rolling Farmland Layout')">
-                    <img src="/images/courses/cedar-crest-golf-club/3.jpeg" alt="Rolling Farmland Layout">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/4.jpeg', 'Bentgrass Greens')">
-                    <img src="/images/courses/cedar-crest-golf-club/4.jpeg" alt="Bentgrass Greens">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/5.jpeg', 'Practice Facilities')">
-                    <img src="/images/courses/cedar-crest-golf-club/5.jpeg" alt="Practice Facilities">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/cedar-crest-golf-club/6.jpeg', 'Tree-Lined Back Nine')">
-                    <img src="/images/courses/cedar-crest-golf-club/6.jpeg" alt="Tree-Lined Back Nine">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/7.jpeg');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
 
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cedar Crest Golf Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <h2>Course Reviews</h2>
-            
+            <div class="reviews-header">
+                <h2>Player Reviews</h2>
+                <p>Share your experience at Cedar Crest Golf Club</p>
+            </div>
+
             <?php if ($is_logged_in): ?>
-                <!-- Review Form -->
-                <div class="review-form-container">
-                    <h3>Share Your Experience</h3>
+                <div class="review-form">
+                    <h3>Write a Review</h3>
+                    
                     <?php if (isset($success_message)): ?>
                         <div class="alert alert-success"><?php echo $success_message; ?></div>
                     <?php endif; ?>
+                    
                     <?php if (isset($error_message)): ?>
                         <div class="alert alert-error"><?php echo $error_message; ?></div>
                     <?php endif; ?>
                     
-                    <form method="POST" class="review-form">
-                        <div class="rating-input">
-                            <label>Your Rating:</label>
-                            <div class="star-rating">
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2"><i class="fas fa-star"></i></label>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <div class="rating-input" id="rating-stars">
                                 <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1"><i class="fas fa-star"></i></label>
+                                <label for="star1" data-rating="1">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2" data-rating="2">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3" data-rating="3">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4" data-rating="4">★</label>
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5" data-rating="5">★</label>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" placeholder="Share your experience playing Cedar Crest Golf Club..."></textarea>
+                            <label for="comment_text">Your Review</label>
+                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Cedar Crest Golf Club..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Review
-                        </button>
+                        <button type="submit" class="submit-btn">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="../auth/login.php">Login</a> to write a review</p>
+                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
                 </div>
             <?php endif; ?>
-            
-            <!-- Display Reviews -->
-            <div class="reviews-list">
+
+            <div class="comments-list">
                 <?php if (empty($comments)): ?>
-                    <div class="no-reviews">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
+                    <div class="comment-card">
+                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <strong class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></strong>
-                                    <div class="review-rating">
-                                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                            <i class="fas fa-star <?php echo $i <= $comment['rating'] ? 'filled' : 'empty'; ?>"></i>
-                                        <?php endfor; ?>
-                                    </div>
-                                </div>
-                                <div class="review-date">
-                                    <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="comment-rating">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <?php if ($i <= $comment['rating']): ?>
+                                            <i class="fas fa-star"></i>
+                                        <?php else: ?>
+                                            <i class="far fa-star"></i>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                            </div>
+                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
+                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -546,28 +919,13 @@ try {
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-nav">
-            <button class="modal-nav-btn" id="prevBtn" onclick="changeImage(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav-btn" id="nextBtn" onclick="changeImage(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">
@@ -580,27 +938,27 @@ try {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
+                        <li><a href="/courses">Golf Courses</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
+                        <li><a href="#">Nashville Area</a></li>
+                        <li><a href="#">Chattanooga Area</a></li>
+                        <li><a href="#">Knoxville Area</a></li>
+                        <li><a href="#">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
+                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
+                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
                     </ul>
                 </div>
             </div>
@@ -610,6 +968,106 @@ try {
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="/script.js?v=5"></script>
+    <script>
+        // Interactive star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingContainer = document.getElementById('rating-stars');
+            if (ratingContainer) {
+                const stars = ratingContainer.querySelectorAll('label');
+                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+                
+                // Handle star hover
+                stars.forEach((star, index) => {
+                    star.addEventListener('mouseenter', function() {
+                        highlightStars(index + 1);
+                    });
+                    
+                    star.addEventListener('click', function() {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        radioInputs[rating - 1].checked = true;
+                        setActiveStars(rating);
+                    });
+                });
+                
+                // Handle container mouse leave
+                ratingContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
+                    if (checkedInput) {
+                        setActiveStars(parseInt(checkedInput.value));
+                    } else {
+                        clearStars();
+                    }
+                });
+                
+                function highlightStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function setActiveStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function clearStars() {
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/cedar-crest-golf-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -58,19 +58,23 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greystone Golf Course - Mark McCumber Design | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Greystone Golf Course, a Mark McCumber masterpiece in Dickson. Championship golf with 10-time Tennessee State Open hosting, 7,046 yards of challenge.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/greystone-golf-course">
+    <title>Greystone Golf Course - Tennessee Golf Courses</title>
+    <meta name="description" content="Greystone Golf Course - Mark McCumber championship design in Dickson, TN. 7,046 yards of challenging golf with tournament history and stunning native stone formations.">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Analytics -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7VPNPCDTBP');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
     </script>
     
     <style>
@@ -82,61 +86,47 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            position: relative;
+            color: white;
+            margin-top: 120px;
         }
         
         .course-hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
         
-        .course-info {
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .course-info-section {
             padding: 4rem 0;
             background: #f8f9fa;
-        }
-        
-        .course-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .course-details h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-        }
-        
-        .course-details p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .course-sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
         }
         
         .course-info-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
@@ -144,7 +134,6 @@ try {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
         }
         
         .course-info-card h3 {
@@ -152,13 +141,16 @@ try {
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .course-info-card h3 i {
+            color: #4a7c59;
         }
         
         .course-specs {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
         
@@ -169,6 +161,10 @@ try {
             border-bottom: 1px solid #eee;
         }
         
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
         .spec-label {
             font-weight: 600;
             color: #2c5234;
@@ -176,10 +172,7 @@ try {
         
         .spec-value {
             color: #666;
-        }
-        
-        .single-column {
-            grid-template-columns: 1fr;
+            font-weight: 500;
         }
         
         .location-info {
@@ -207,51 +200,69 @@ try {
             text-decoration: underline;
         }
         
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0.8rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.1rem;
-        }
-        
-        .signature-holes {
+        .course-description {
             padding: 4rem 0;
             background: white;
         }
         
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
+            color: #2c5234;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .signature-holes {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
         .holes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .hole-card {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden;
         }
         
         .hole-number {
             position: absolute;
-            top: -10px;
-            right: -10px;
+            top: -15px;
+            right: -15px;
             background: #4a7c59;
             color: white;
             width: 60px;
@@ -260,20 +271,21 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            border: 4px solid white;
         }
         
         .hole-details h4 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .hole-stats {
             display: flex;
             gap: 2rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .hole-stat {
@@ -283,7 +295,7 @@ try {
         .hole-stat-label {
             font-size: 0.9rem;
             color: #666;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
         
         .hole-stat-value {
@@ -295,17 +307,18 @@ try {
         .hole-details p {
             color: #555;
             line-height: 1.6;
-            margin-top: 1rem;
         }
         
         .photo-gallery {
-            margin: 4rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -314,16 +327,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .gallery-button {
             text-align: center;
-            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -332,15 +345,18 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -383,6 +399,8 @@ try {
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0;
+            line-height: 1;
         }
         
         .close:hover {
@@ -501,10 +519,6 @@ try {
             font-weight: 600;
         }
         
-        .comments-list {
-            space-y: 2rem;
-        }
-        
         .comment-card {
             background: white;
             padding: 2rem;
@@ -562,11 +576,6 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .course-info-cards {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -579,6 +588,14 @@ try {
             .hole-stats {
                 gap: 1rem;
             }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -590,116 +607,86 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Greystone Golf Course</h1>
-            <p>Mark McCumber Championship Design in Historic Dickson</p>
-            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+            <p>Mark McCumber Championship Design in Dickson</p>
+            <div class="hero-stats">
                 <?php if ($avg_rating): ?>
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
-                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
-                        <span>(<?php echo $total_reviews; ?> reviews)</span>
+                    <div class="hero-stat">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
-                <div style="display: flex; align-items: center; gap: 5px;">
+                <div class="hero-stat">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Dickson, TN</span>
+                </div>
+                <div class="hero-stat">
+                    <i class="fas fa-ruler"></i>
+                    <span>7,046 yards</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information -->
-    <section class="course-info">
+    <!-- Course Information Cards -->
+    <section class="course-info-section">
         <div class="container">
-            <div class="course-layout">
-                <div class="course-details">
-                    <h2>10-Time PGA Tour Winner's Masterpiece</h2>
-                    <p>Greystone Golf Course in historic Dickson, Tennessee, represents the design mastery of Mark McCumber, a 10-time PGA Tour winner who has created a championship layout that challenges and inspires golfers of all skill levels. Located less than 40 miles west of Nashville, this daily-fee facility offers an exceptional golf experience within easy reach of Middle Tennessee.</p>
-                    
-                    <p>The course features stunning elevation changes and plays among numerous mounds that create uneven lies and strategic challenges throughout the round. Greystone's terrific layout showcases many scenic views and interesting native stone formations that give the course its distinctive character and natural beauty.</p>
-                    
-                    <p>As a 10-time host of the Tennessee State Open and venue for the upcoming 2025 Tennessee State Junior Amateur, Greystone has established itself as a premier tournament destination. The course has also hosted PGA Tour Q-school and numerous Tennessee State Opens, cementing its reputation as a championship-caliber facility that maintains tournament-quality conditions year-round.</p>
-                </div>
-                
-                <div class="course-sidebar">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; text-align: center;">Course Overview</h3>
+            <div class="course-info-cards">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
                     <div class="course-specs">
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">Mark McCumber</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">PGA Tour Wins:</span>
-                            <span class="spec-value">10-Time Winner</span>
+                            <span class="spec-label">Year Opened:</span>
+                            <span class="spec-value">1996</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Par:</span>
-                            <span class="spec-value">Championship</span>
+                            <span class="spec-value">72</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-label">Length:</span>
                             <span class="spec-value">7,046 yards</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Par 3 Average:</span>
-                            <span class="spec-value">196 yards</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Public</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Daily Fee</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Fairways:</span>
-                            <span class="spec-value">Zoysia</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Terrain:</span>
-                            <span class="spec-value">Elevation & Mounds</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="course-info-cards">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-trophy"></i> Tournament History</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">TN State Open:</span>
-                            <span class="spec-value">10-Time Host</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">2025 Host:</span>
-                            <span class="spec-value">TN State Junior Amateur</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">PGA Tour:</span>
-                            <span class="spec-value">Q-School Host</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">OVC Championship:</span>
-                            <span class="spec-value">2010-13 Host</span>
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">135</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Course Access</h3>
-                    <div class="course-specs single-column">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs">
                         <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Daily Fee Public</span>
+                            <span class="spec-label">Weekday:</span>
+                            <span class="spec-value">$65-85</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Distance from Nashville:</span>
-                            <span class="spec-value">Less than 40 miles</span>
+                            <span class="spec-label">Weekend:</span>
+                            <span class="spec-value">$75-95</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Condition:</span>
-                            <span class="spec-value">Tournament Quality</span>
+                            <span class="spec-label">Twilight:</span>
+                            <span class="spec-value">$45-55</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Accessibility:</span>
-                            <span class="spec-value">All Middle Tennessee</span>
+                            <span class="spec-label">Cart:</span>
+                            <span class="spec-value">Included</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Seasonal:</span>
+                            <span class="spec-value">Rates Vary</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Booking:</span>
+                            <span class="spec-value">(615) 441-8888</span>
                         </div>
                     </div>
                 </div>
@@ -708,11 +695,12 @@ try {
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <div class="location-info">
                         <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Historic Dickson, TN</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 1 Greystone Dr, Dickson, TN 37055</p>
+                            <p><i class="fas fa-phone"></i> (615) 441-8888</p>
                             <p><i class="fas fa-globe"></i> <a href="https://www.greystonegc.com" target="_blank">greystonegc.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Greystone+Golf+Club+Dickson+TN" target="_blank">Get Directions</a></p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Greystone+Golf+Course+Dickson+TN" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=Greystone+Golf+Club+Dickson+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        <iframe src="https://maps.google.com/maps?q=Greystone+Golf+Course+Dickson+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>
@@ -725,103 +713,67 @@ try {
     <section class="course-description">
         <div class="container">
             <div class="description-content">
-                <h2>Championship Design with Natural Beauty</h2>
-                <p>Greystone Golf Course combines Mark McCumber's championship design expertise with the natural beauty of Tennessee's rolling landscape. The course features plenty of elevation changes that create dramatic golf experiences while showcasing the scenic vistas that make this region so special.</p>
+                <h2>Championship Golf by a PGA Tour Winner</h2>
+                <p>Greystone Golf Course in Dickson, Tennessee, represents the design mastery of Mark McCumber, a 10-time PGA Tour winner who created a championship layout that challenges golfers of all skill levels. This daily-fee facility offers an exceptional golf experience just 40 miles from Nashville.</p>
                 
-                <p>The layout plays among numerous mounds that often leave players with uneven lies, demanding creativity and skill from golfers at every level. <br>The course features beautiful Zoysia fairway grass that provides excellent playing conditions throughout the season. <br>Native stone formations add character and challenge while creating one of the most visually striking golf experiences in Middle Tennessee.</p>
+                <p>The course features dramatic elevation changes and native stone formations that create both strategic challenges and scenic beauty throughout the round. Greystone's 7,046-yard layout showcases rolling terrain with numerous mounds that demand creativity and course management skills from every golfer.</p>
                 
-                <p>With its combination of championship design, tournament pedigree, and exceptional conditioning, Greystone offers golfers the opportunity to play where Tennessee's best amateur and professional golfers have competed. The course's reputation for hosting major state tournaments while maintaining its accessibility to daily-fee players makes it a true gem in the Tennessee golf landscape.</p>
+                <p>As a 10-time host of the Tennessee State Open and venue for major tournaments including PGA Tour Q-School, Greystone has established itself as a premier tournament destination while maintaining its accessibility to public play. The course continues to challenge Tennessee's best golfers while providing an unforgettable experience for players of all abilities.</p>
             </div>
         </div>
     </section>
 
-    <!-- Signature Features -->
+    <!-- Signature Holes -->
     <section class="signature-holes">
         <div class="container">
             <div class="section-header">
-                <h2>Championship Features</h2>
-                <p>Experience the design elements that make Greystone special</p>
+                <h2>Signature Holes</h2>
+                <p>Discover the holes that define the Greystone experience</p>
             </div>
             
             <div class="holes-grid">
                 <div class="hole-card">
-                    <div class="hole-number">Design</div>
+                    <div class="hole-number">12</div>
                     <div class="hole-details">
-                        <h4>Elevation & Mounds</h4>
+                        <h4>The Quarry</h4>
                         <div class="hole-stats">
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Total</div>
-                                <div class="hole-stat-value">7,046</div>
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">420</div>
                             </div>
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">Par 3</div>
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">4</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">3</div>
                             </div>
                         </div>
-                        <p>The course features numerous mounds and elevation changes that create uneven lies and strategic challenges. Par 3 holes average 196 yards, demanding precision and course management skills.</p>
+                        <p>A demanding par-4 that showcases the course's signature stone formations. The elevated tee shot must navigate around the natural quarry, requiring both distance and accuracy to set up an approach to the well-guarded green.</p>
                     </div>
                 </div>
                 
                 <div class="hole-card">
-                    <div class="hole-number">Stone</div>
+                    <div class="hole-number">15</div>
                     <div class="hole-details">
-                        <h4>Native Formations</h4>
+                        <h4>Island Challenge</h4>
                         <div class="hole-stats">
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Natural</div>
-                                <div class="hole-stat-value">Stone</div>
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">185</div>
                             </div>
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Features</div>
-                                <div class="hole-stat-value">Views</div>
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">3</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">7</div>
                             </div>
                         </div>
-                        <p>Interesting native stone formations throughout the course create both strategic challenges and scenic beauty, showcasing the natural landscape of historic Dickson, Tennessee.</p>
+                        <p>McCumber's signature par-3 features an island green surrounded by water and native stone. This memorable hole demands precise club selection and confident execution, serving as one of Tennessee's most photographed golf holes.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Amenities -->
-    <section style="padding: 4rem 0; background: #f8f9fa;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Amenities</h2>
-                <p>Championship facilities with complete services</p>
-            </div>
-            <div class="amenities-grid">
-                <div class="amenity-item">
-                    <i class="fas fa-golf-ball"></i>
-                    <span>Championship Golf Course</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-trophy"></i>
-                    <span>Tournament Hosting</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Professional Instruction</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-tools"></i>
-                    <span>Expert Course Maintenance</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-mountain"></i>
-                    <span>Scenic Mountain Views</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-leaf"></i>
-                    <span>Zoysia Fairways</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>Event Facilities</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-car"></i>
-                    <span>Convenient Access</span>
                 </div>
             </div>
         </div>
@@ -843,7 +795,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/greystone-golf-course/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -888,7 +840,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="greystone-rating-stars">
+                            <div class="star-rating" id="rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -944,61 +896,8 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../about">About Us</a></li>
-                        <li><a href="../contact">Contact</a></li>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Golf Courses</h4>
-                    <ul>
-                        <li><a href="../courses/bear-trace-harrison-bay">Bear Trace</a></li>
-                        <li><a href="../courses/gaylord-springs-golf-links">Gaylord Springs</a></li>
-                        <li><a href="../courses/greystone-golf-course">Greystone</a></li>
-                        <li><a href="../courses/harpeth-hills-golf-course">Harpeth Hills</a></li>
-                        <li><a href="../courses/hermitage-golf-course">Hermitage</a></li>
-                        <li><a href="../courses/holston-hills-country-club">Holston Hills</a></li>
-                        <li><a href="../courses/island-pointe-golf-club">Island Pointe</a></li>
-                        <li><a href="../courses/tpc-southwind">TPC Southwind</a></li>
-                        <li><a href="../courses/willow-creek-golf-club">Willow Creek</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">    
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js?v=5"></script>
     <script>
         // Gallery Modal Functions
         function openGallery() {
@@ -1008,8 +907,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images (starting from 2.jpeg to 25.jpeg = 24 images)
-            for (let i = 2; i <= 25; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/greystone-golf-course/${i}.jpeg')`;
@@ -1018,13 +917,13 @@ try {
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         function closeGallery() {
             const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
         
         // Close modal when clicking outside of it
@@ -1040,11 +939,10 @@ try {
                 closeGallery();
             }
         });
-    </script>
-    <script>
-        // Interactive star rating functionality for Greystone
+        
+        // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('greystone-rating-stars');
+            const ratingContainer = document.getElementById('rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
