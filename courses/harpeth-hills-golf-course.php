@@ -58,19 +58,23 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harpeth Hills Golf Course - Nashville Municipal Golf | Tennessee Golf Courses</title>
-    <meta name="description" content="Play Harpeth Hills Golf Course, Nashville's premier municipal golf course. Par 72, 6,899 yards through Percy Warner Park with TifEagle Bermuda greens.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/harpeth-hills-golf-course">
+    <title>Harpeth Hills Golf Course - Tennessee Golf Courses</title>
+    <meta name="description" content="Harpeth Hills Golf Course - Nashville's premier municipal golf course in Percy Warner Park. 6,899 yards, par 72 championship design with TifEagle greens.">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Analytics -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7VPNPCDTBP');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
     </script>
     
     <style>
@@ -82,61 +86,47 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            position: relative;
+            color: white;
+            margin-top: 120px;
         }
         
         .course-hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
         
-        .course-info {
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .course-info-section {
             padding: 4rem 0;
             background: #f8f9fa;
-        }
-        
-        .course-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .course-details h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-        }
-        
-        .course-details p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .course-sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
         }
         
         .course-info-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
@@ -144,7 +134,6 @@ try {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
         }
         
         .course-info-card h3 {
@@ -152,13 +141,16 @@ try {
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .course-info-card h3 i {
+            color: #4a7c59;
         }
         
         .course-specs {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
         
@@ -169,6 +161,10 @@ try {
             border-bottom: 1px solid #eee;
         }
         
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
         .spec-label {
             font-weight: 600;
             color: #2c5234;
@@ -176,10 +172,7 @@ try {
         
         .spec-value {
             color: #666;
-        }
-        
-        .single-column {
-            grid-template-columns: 1fr;
+            font-weight: 500;
         }
         
         .location-info {
@@ -207,51 +200,69 @@ try {
             text-decoration: underline;
         }
         
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0.8rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.1rem;
-        }
-        
-        .signature-holes {
+        .course-description {
             padding: 4rem 0;
             background: white;
         }
         
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
+            color: #2c5234;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .signature-holes {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
         .holes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .hole-card {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden;
         }
         
         .hole-number {
             position: absolute;
-            top: -10px;
-            right: -10px;
+            top: -15px;
+            right: -15px;
             background: #4a7c59;
             color: white;
             width: 60px;
@@ -260,20 +271,21 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            border: 4px solid white;
         }
         
         .hole-details h4 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .hole-stats {
             display: flex;
             gap: 2rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .hole-stat {
@@ -283,7 +295,7 @@ try {
         .hole-stat-label {
             font-size: 0.9rem;
             color: #666;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
         
         .hole-stat-value {
@@ -295,17 +307,18 @@ try {
         .hole-details p {
             color: #555;
             line-height: 1.6;
-            margin-top: 1rem;
         }
         
         .photo-gallery {
-            margin: 4rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -314,16 +327,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .gallery-button {
             text-align: center;
-            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -332,15 +345,18 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -383,6 +399,8 @@ try {
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0;
+            line-height: 1;
         }
         
         .close:hover {
@@ -501,10 +519,6 @@ try {
             font-weight: 600;
         }
         
-        .comments-list {
-            space-y: 2rem;
-        }
-        
         .comment-card {
             background: white;
             padding: 2rem;
@@ -562,11 +576,6 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .course-info-cards {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -579,6 +588,14 @@ try {
             .hole-stats {
                 gap: 1rem;
             }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -590,38 +607,32 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Harpeth Hills Golf Course</h1>
-            <p>Nashville's Premier Municipal Golf Experience</p>
-            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+            <p>Nashville's Premier Municipal Golf Course</p>
+            <div class="hero-stats">
                 <?php if ($avg_rating): ?>
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
-                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
-                        <span>(<?php echo $total_reviews; ?> reviews)</span>
+                    <div class="hero-stat">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
-                <div style="display: flex; align-items: center; gap: 5px;">
+                <div class="hero-stat">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Nashville, TN</span>
+                </div>
+                <div class="hero-stat">
+                    <i class="fas fa-ruler"></i>
+                    <span>6,899 yards</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information -->
-    <section class="course-info">
+    <!-- Course Information Cards -->
+    <section class="course-info-section">
         <div class="container">
-            <div class="course-layout">
-                <div class="course-details">
-                    <h2>Championship Golf Through Percy Warner Park</h2>
-                    <p>Harpeth Hills Golf Course, blanketing the rolling hills of Percy Warner Park, is widely respected as one of Tennessee's top public golf facilities. Originally designed in 1965 and rebuilt in 1991 by Allen Brown & Herschel Eaton, this Par 72 championship layout offers a challenging yet rewarding experience for golfers of all skill levels.</p>
-                    
-                    <p>The course features spectacular elevation changes with very little water, creating a unique challenge that emphasizes strategy and shot placement over forced carries. The natural wildlife habitat surrounding the course provides a serene and picturesque setting that showcases some of the most scenic views in Nashville.</p>
-                    
-                    <p>In 2017, Harpeth Hills underwent a significant enhancement with the installation of new greens complexes featuring TifEagle ultra-dwarf Bermuda grass, providing outstanding putting surfaces that complement the course's championship design. As a 1991 regional qualifying site for the USGA Public Links Championship, Harpeth Hills maintains tournament-quality conditions while remaining accessible to the public.</p>
-                </div>
-                
-                <div class="course-sidebar">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; text-align: center;">Course Overview</h3>
+            <div class="course-info-cards">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
                     <div class="course-specs">
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
@@ -636,62 +647,38 @@ try {
                             <span class="spec-value">72</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-label">Length:</span>
                             <span class="spec-value">6,899 yards</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">73.3</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">126</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Municipal Public</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Greens:</span>
                             <span class="spec-value">TifEagle Bermuda</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Fairways:</span>
-                            <span class="spec-value">Bermuda</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="course-info-cards">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-trophy"></i> Recognition</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">USGA Recognition:</span>
-                            <span class="spec-value">Public Links Qualifier</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Ranking:</span>
-                            <span class="spec-value">Top TN Public Course</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Setting:</span>
-                            <span class="spec-value">Percy Warner Park</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Terrain:</span>
-                            <span class="spec-value">Rolling Hills</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees & Booking</h3>
-                    <div class="course-specs single-column">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs">
                         <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Municipal Public</span>
+                            <span class="spec-label">Weekday:</span>
+                            <span class="spec-value">$29-34</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weekend:</span>
+                            <span class="spec-value">$34-39</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Cart Rental:</span>
-                            <span class="spec-value">$8/9 holes per player</span>
+                            <span class="spec-value">$8 per 9 holes</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Senior Rates:</span>
+                            <span class="spec-value">Available</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Reservations:</span>
@@ -711,9 +698,9 @@ try {
                             <p><i class="fas fa-map-marker-alt"></i> 2424 Old Hickory Blvd, Nashville, TN 37221</p>
                             <p><i class="fas fa-phone"></i> (615) 862-8493</p>
                             <p><i class="fas fa-globe"></i> <a href="https://www.nashville.gov/departments/parks/golf-courses/harpeth-hills-golf-course" target="_blank">nashville.gov</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=2424+Old+Hickory+Blvd,+Nashville,+TN+37221" target="_blank">Get Directions</a></p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Harpeth+Hills+Golf+Course+Nashville+TN" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=2424+Old+Hickory+Blvd,+Nashville,+TN+37221&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        <iframe src="https://maps.google.com/maps?q=Harpeth+Hills+Golf+Course+Nashville+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>
@@ -726,55 +713,67 @@ try {
     <section class="course-description">
         <div class="container">
             <div class="description-content">
-                <h2>Natural Beauty Meets Championship Golf</h2>
-                <p>Harpeth Hills Golf Course offers a unique golfing experience that combines challenging championship golf with the natural beauty of Percy Warner Park. The course's design takes full advantage of the rolling Tennessee landscape, creating dramatic elevation changes that provide both scenic vistas and strategic challenges.</p>
+                <h2>Championship Golf Through Percy Warner Park</h2>
+                <p>Harpeth Hills Golf Course, nestled within the scenic Percy Warner Park, stands as Nashville's premier municipal golf facility. Originally designed in 1965 and expertly redesigned in 1991 by Allen Brown & Herschel Eaton, this championship layout offers 6,899 yards of challenging golf through rolling Tennessee hills.</p>
                 
-                <p>The layout features well-protected greens and minimal water hazards, allowing golfers to focus on course management and shot placement rather than forced carries. <br>The recent installation of TifEagle ultra-dwarf Bermuda greens has elevated the putting experience to championship standards. <br>The natural wildlife habitat surrounding each hole creates an immersive experience where golfers can enjoy both the challenge of the game and the tranquility of nature.</p>
+                <p>The course features dramatic elevation changes with minimal water hazards, emphasizing strategic shot placement and course management over forced carries. The natural wildlife habitat surrounding each hole creates a serene, park-like setting that showcases some of Nashville's most beautiful scenery.</p>
                 
-                <p>Located just minutes from downtown Nashville, Harpeth Hills provides an exceptional value for golfers seeking a championship-quality experience at municipal rates. The course's reputation as one of Tennessee's finest public facilities is well-deserved, offering conditions and challenges typically found at much more expensive private clubs.</p>
+                <p>In 2017, Harpeth Hills elevated its championship credentials with the installation of new TifEagle ultra-dwarf Bermuda greens, providing putting surfaces that rival any private club. As a former USGA Public Links Championship qualifying site, the course maintains tournament-quality conditions while remaining accessible to the public at exceptional municipal rates.</p>
             </div>
         </div>
     </section>
 
-    <!-- Amenities -->
-    <section style="padding: 4rem 0; background: #f8f9fa;">
+    <!-- Signature Holes -->
+    <section class="signature-holes">
         <div class="container">
             <div class="section-header">
-                <h2>Course Amenities</h2>
-                <p>Complete municipal golf facility with exceptional services</p>
+                <h2>Signature Holes</h2>
+                <p>Discover the holes that define the Harpeth Hills experience</p>
             </div>
-            <div class="amenities-grid">
-                <div class="amenity-item">
-                    <i class="fas fa-golf-ball"></i>
-                    <span>Championship Golf Course</span>
+            
+            <div class="holes-grid">
+                <div class="hole-card">
+                    <div class="hole-number">9</div>
+                    <div class="hole-details">
+                        <h4>The Amphitheater</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">445</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">4</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">1</div>
+                            </div>
+                        </div>
+                        <p>A spectacular finishing hole for the front nine with an elevated tee shot to a fairway that slopes toward the clubhouse. The approach shot plays to a well-guarded green with the clubhouse and Percy Warner Park serving as a dramatic backdrop.</p>
+                    </div>
                 </div>
-                <div class="amenity-item">
-                    <i class="fas fa-home"></i>
-                    <span>Scenic Clubhouse</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-utensils"></i>
-                    <span>Food Bar & Grille</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-tv"></i>
-                    <span>Big Screen TV</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-car"></i>
-                    <span>Golf Cart Rentals</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-tree"></i>
-                    <span>Natural Wildlife Habitat</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-mountain"></i>
-                    <span>Percy Warner Park Setting</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-parking"></i>
-                    <span>Ample Parking</span>
+                
+                <div class="hole-card">
+                    <div class="hole-number">18</div>
+                    <div class="hole-details">
+                        <h4>Home Sweet Home</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">415</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">4</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">5</div>
+                            </div>
+                        </div>
+                        <p>The signature finishing hole features a dramatic uphill approach to an elevated green with the historic clubhouse as a backdrop. This challenging par-4 demands both distance and accuracy, providing a memorable conclusion to your round.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -796,7 +795,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/harpeth-hills-golf-course/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -841,7 +840,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="harpeth-rating-stars">
+                            <div class="star-rating" id="rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -897,61 +896,8 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../about">About Us</a></li>
-                        <li><a href="../contact">Contact</a></li>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Golf Courses</h4>
-                    <ul>
-                        <li><a href="../courses/bear-trace-harrison-bay">Bear Trace</a></li>
-                        <li><a href="../courses/gaylord-springs-golf-links">Gaylord Springs</a></li>
-                        <li><a href="../courses/greystone-golf-course">Greystone</a></li>
-                        <li><a href="../courses/harpeth-hills-golf-course">Harpeth Hills</a></li>
-                        <li><a href="../courses/hermitage-golf-course">Hermitage</a></li>
-                        <li><a href="../courses/holston-hills-country-club">Holston Hills</a></li>
-                        <li><a href="../courses/island-pointe-golf-club">Island Pointe</a></li>
-                        <li><a href="../courses/tpc-southwind">TPC Southwind</a></li>
-                        <li><a href="../courses/willow-creek-golf-club">Willow Creek</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">    
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js?v=5"></script>
     <script>
         // Gallery Modal Functions
         function openGallery() {
@@ -961,8 +907,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images (starting from 2.jpeg to 25.jpeg = 24 images)
-            for (let i = 2; i <= 25; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/harpeth-hills-golf-course/${i}.jpeg')`;
@@ -971,13 +917,13 @@ try {
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         function closeGallery() {
             const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
         
         // Close modal when clicking outside of it
@@ -993,11 +939,10 @@ try {
                 closeGallery();
             }
         });
-    </script>
-    <script>
-        // Interactive star rating functionality for Harpeth Hills
+        
+        // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('harpeth-rating-stars');
+            const ratingContainer = document.getElementById('rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
