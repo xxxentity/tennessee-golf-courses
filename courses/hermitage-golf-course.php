@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hermitage Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Hermitage Golf Course - Nashville's premier public golf destination featuring two championship courses: President's Reserve and General's Retreat. Home to former LPGA tour events.">
+    <meta name="description" content="Hermitage Golf Course - Nashville's premier public golf destination featuring two championship courses: President's Reserve and General's Retreat. Former LPGA tournament host.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -100,96 +100,74 @@ try {
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
         }
         
-        .course-rating {
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-layout {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-description {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-description h2 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .course-description p {
+            gap: 8px;
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
         }
         
-        .course-sidebar {
-            display: flex;
-            flex-direction: column;
+        .course-info-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .course-info-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .course-info-card h3 i {
+            color: #4a7c59;
         }
         
         .course-specs {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
+            gap: 1rem;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 0.8rem 0;
             border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #333;
+            color: #2c5234;
         }
         
         .spec-value {
@@ -197,33 +175,53 @@ try {
             font-weight: 500;
         }
         
-        .amenities-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .amenities-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .amenities-list i {
-            color: #2c5234;
-            width: 20px;
+        .location-info {
+            text-align: left;
         }
         
         .location-details p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
         }
         
         .location-details i {
+            color: #4a7c59;
+            width: 16px;
+        }
+        
+        .location-details a {
+            color: #4a7c59;
+            text-decoration: none;
+        }
+        
+        .location-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .course-description {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
             color: #2c5234;
-            width: 20px;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #555;
         }
         
         .dual-courses {
@@ -231,18 +229,33 @@ try {
             background: #f8f9fa;
         }
         
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
         }
         
         .course-card {
             background: white;
-            border-radius: 15px;
             padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .course-card h3 {
@@ -251,7 +264,7 @@ try {
             font-size: 1.8rem;
         }
         
-        .course-card .course-stats {
+        .course-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
@@ -280,189 +293,87 @@ try {
         .course-card p {
             line-height: 1.6;
             color: #555;
+            margin-bottom: 1rem;
         }
         
-        .reviews-section {
+        .signature-holes {
             padding: 4rem 0;
-        }
-        
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .comment-form-container {
             background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
         }
         
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .holes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #ddd;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .btn-submit:hover {
-            background: #1a3020;
-        }
-        
-        .login-prompt {
-            text-align: center;
-            padding: 2.5rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .comments-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .review-card {
+        .hole-card {
+            background: #f8f9fa;
             padding: 2rem;
-            border-bottom: 1px solid #eee;
+            border-radius: 15px;
+            position: relative;
         }
         
-        .review-card:last-child {
-            border-bottom: none;
-        }
-        
-        .review-header {
+        .hole-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #4a7c59;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 4px solid white;
         }
         
-        .reviewer-name {
-            font-weight: 600;
+        .hole-details h4 {
             color: #2c5234;
-        }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
             margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
         
-        .review-text {
+        .hole-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .hole-stat {
+            text-align: center;
+        }
+        
+        .hole-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hole-stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a7c59;
+        }
+        
+        .hole-details p {
             color: #555;
             line-height: 1.6;
         }
         
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
         .photo-gallery {
-            margin: 4rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -471,16 +382,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .gallery-button {
             text-align: center;
-            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -489,15 +400,18 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -540,6 +454,8 @@ try {
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0;
+            line-height: 1;
         }
         
         .close:hover {
@@ -567,12 +483,150 @@ try {
             transform: scale(1.05);
         }
         
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn-submit {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #2c5234;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .login-prompt a {
+            color: #2c5234;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .comment-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .comment-rating {
+            color: #ffd700;
+        }
+        
+        .comment-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .comment-text {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
         @media (max-width: 1024px) {
-            .course-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .courses-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -584,123 +638,149 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-card .course-stats {
+            .course-info-cards {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .course-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .holes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Hermitage Golf Course</h1>
-            <p>Nashville's Premier Public Golf Destination • Old Hickory, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+            <p>Nashville's Premier Public Golf Destination</p>
+            <div class="hero-stats">
+                <?php if ($avg_rating): ?>
+                    <div class="hero-stat">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
+                <div class="hero-stat">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Old Hickory, TN</span>
+                </div>
+                <div class="hero-stat">
+                    <i class="fas fa-golf-ball"></i>
+                    <span>Two 18-hole courses</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Details -->
-    <section class="course-details">
+    <!-- Course Information Cards -->
+    <section class="course-info-section">
         <div class="container">
-            <div class="course-layout">
-                <div class="course-description">
-                    <h2>Two Championship Courses, One Premier Destination</h2>
-                    <p>Hermitage Golf Course stands as Nashville's premier public golf facility, featuring two distinctly different championship courses that have earned recognition throughout Tennessee and beyond. Located just 30 minutes from downtown Nashville along the scenic Cumberland River, this award-winning facility offers golfers an unparalleled experience in Middle Tennessee.</p>
-                    
-                    <p>The flagship <strong>President's Reserve</strong>, designed by Denis Griffiths in 2000, has been recognized by Golf Digest as one of the "Top 10 in Tennessee." This challenging 7,200-yard layout winds through 300 acres of natural Tennessee wetlands along the Cumberland River, featuring bentgrass greens and zoysia fairways that provide exceptional playing conditions year-round.</p>
-                    
-                    <p>The historic <strong>General's Retreat</strong>, designed by Gary Roger Baird in 1986, earned its reputation as the "Best Golf Course in Nashville" while hosting the LPGA Sara Lee Classic from 1988 to 1999. World Golf Hall of Fame members Nancy Lopez, Meg Mallon, and Laura Davies all claimed victories on this 6,773-yard championship layout.</p>
-                    
-                    <p>Both courses offer stunning views of the Cumberland River and provide challenges suitable for golfers of all skill levels, with multiple tee options ensuring an enjoyable experience whether you're a scratch golfer or weekend warrior. The facility's commitment to excellence extends beyond the courses to include top-tier amenities, professional instruction, and exceptional hospitality.</p>
-                </div>
-                
-                <div class="course-sidebar">
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Courses:</span>
-                                <span class="spec-value">2 Championship 18-hole</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Type:</span>
-                                <span class="spec-value">Public</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Opened:</span>
-                                <span class="spec-value">1986 & 2000</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Awards:</span>
-                                <span class="spec-value">Golf Digest Top 10 TN</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Tournament Host:</span>
-                                <span class="spec-value">LPGA Sara Lee Classic</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Setting:</span>
-                                <span class="spec-value">Cumberland River</span>
-                            </div>
+            <div class="course-info-cards">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Courses:</span>
+                            <span class="spec-value">2 Championship 18-hole</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Public</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1986 & 2000</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Awards:</span>
+                            <span class="spec-value">Golf Digest Top 10 TN</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tournament Host:</span>
+                            <span class="spec-value">LPGA Sara Lee Classic</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Setting:</span>
+                            <span class="spec-value">Cumberland River</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-star"></i> Amenities</h3>
-                        <ul class="amenities-list">
-                            <li><i class="fas fa-store"></i> Full-Service Pro Shop</li>
-                            <li><i class="fas fa-utensils"></i> On-Site Restaurant & Grill</li>
-                            <li><i class="fas fa-graduation-cap"></i> Golf Instruction Center</li>
-                            <li><i class="fas fa-golf-ball"></i> Driving Range</li>
-                            <li><i class="fas fa-flag"></i> Practice Putting Green</li>
-                            <li><i class="fas fa-home"></i> 8 On-Site Cottages</li>
-                            <li><i class="fas fa-heart"></i> Wedding/Event Venue</li>
-                            <li><i class="fas fa-mobile-alt"></i> Mobile App</li>
-                            <li><i class="fas fa-child"></i> Junior Golf Programs</li>
-                            <li><i class="fas fa-gift"></i> Gift Cards Available</li>
-                        </ul>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">President's Reserve:</span>
+                            <span class="spec-value">$85-105</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">General's Retreat:</span>
+                            <span class="spec-value">$65-85</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Cart:</span>
+                            <span class="spec-value">Included</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Twilight Rates:</span>
+                            <span class="spec-value">Available</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Reservations:</span>
+                            <span class="spec-value">(615) 847-4001</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Online Booking:</span>
+                            <span class="spec-value">Available</span>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="course-info-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="location-info">
                         <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 3939 Old Hickory Boulevard, Old Hickory, TN 37138</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 3939 Old Hickory Blvd, Old Hickory, TN 37138</p>
                             <p><i class="fas fa-phone"></i> (615) 847-4001</p>
                             <p><i class="fas fa-globe"></i> <a href="https://www.hermitagegolf.com" target="_blank">hermitagegolf.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=3939+Old+Hickory+Boulevard,+Old+Hickory,+TN+37138" target="_blank">Get Directions</a></p>
-                            <p><i class="fas fa-clock"></i> Daily 7:00 AM - 8:00 PM</p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Hermitage+Golf+Course+Old+Hickory+TN" target="_blank">Get Directions</a></p>
                         </div>
+                        <iframe src="https://maps.google.com/maps?q=Hermitage+Golf+Course+Old+Hickory+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                        </iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Description -->
+    <section class="course-description">
+        <div class="container">
+            <div class="description-content">
+                <h2>Two Championship Courses, One Premier Destination</h2>
+                <p>Hermitage Golf Course stands as Nashville's premier public golf facility, featuring two distinctly different championship courses that have earned recognition throughout Tennessee and beyond. Located just 30 minutes from downtown Nashville along the scenic Cumberland River, this award-winning facility offers golfers an unparalleled experience in Middle Tennessee.</p>
+                
+                <p>The flagship President's Reserve, designed by Denis Griffiths in 2000, has been recognized by Golf Digest as one of the "Top 10 in Tennessee." This challenging 7,200-yard layout winds through 300 acres of natural Tennessee wetlands along the Cumberland River, featuring bentgrass greens and zoysia fairways that provide exceptional playing conditions year-round.</p>
+                
+                <p>The historic General's Retreat, designed by Gary Roger Baird in 1986, earned its reputation as the "Best Golf Course in Nashville" while hosting the LPGA Sara Lee Classic from 1988 to 1999. World Golf Hall of Fame members Nancy Lopez, Meg Mallon, and Laura Davies all claimed victories on this 6,773-yard championship layout.</p>
             </div>
         </div>
     </section>
@@ -736,7 +816,7 @@ try {
                     </div>
                     <p><strong>Designer:</strong> Denis Griffiths (2000)</p>
                     <p><strong>Recognition:</strong> Golf Digest "Top 10 in Tennessee"</p>
-                    <p>The crown jewel of Hermitage Golf Course, President's Reserve winds through 300 acres of pristine Tennessee wetlands along the Cumberland River. This championship layout features bentgrass greens and zoysia fairways, offering exceptional playing conditions and breathtaking natural beauty. The course demands strategic thinking and precise shot-making while rewarding golfers with stunning river views and wildlife encounters.</p>
+                    <p>The crown jewel of Hermitage Golf Course, President's Reserve winds through 300 acres of pristine Tennessee wetlands along the Cumberland River. This championship layout features bentgrass greens and zoysia fairways, offering exceptional playing conditions and breathtaking natural beauty.</p>
                 </div>
                 
                 <div class="course-card">
@@ -761,7 +841,63 @@ try {
                     </div>
                     <p><strong>Designer:</strong> Gary Roger Baird (1986)</p>
                     <p><strong>Tournament History:</strong> LPGA Sara Lee Classic (1988-1999)</p>
-                    <p>Voted "Best Golf Course in Nashville," General's Retreat boasts an impressive tournament pedigree as the former host of the LPGA Sara Lee Classic. This historic layout features four challenging par 5s, with three offering exciting risk-reward opportunities over water. The course balances generous fairways with strategic challenges, making it enjoyable for all skill levels while maintaining championship standards.</p>
+                    <p>Voted "Best Golf Course in Nashville," General's Retreat boasts an impressive tournament pedigree as the former host of the LPGA Sara Lee Classic. This historic layout features four challenging par 5s, with three offering exciting risk-reward opportunities over water.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Holes -->
+    <section class="signature-holes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Signature Holes</h2>
+                <p>Discover the holes that define the Hermitage experience</p>
+            </div>
+            
+            <div class="holes-grid">
+                <div class="hole-card">
+                    <div class="hole-number">15</div>
+                    <div class="hole-details">
+                        <h4>Island Paradise (President's Reserve)</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">155</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">3</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">17</div>
+                            </div>
+                        </div>
+                        <p>The signature hole at President's Reserve features a stunning island green surrounded by Cumberland River wetlands. This scenic par-3 demands precision and confidence, with the natural beauty creating one of Tennessee's most memorable golf experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="hole-card">
+                    <div class="hole-number">18</div>
+                    <div class="hole-details">
+                        <h4>Champion's Finish (General's Retreat)</h4>
+                        <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">540</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Par</div>
+                                <div class="hole-stat-value">5</div>
+                            </div>
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">1</div>
+                            </div>
+                        </div>
+                        <p>The closing hole where LPGA champions were crowned, this challenging par-5 offers risk-reward opportunities with water guarding the green. The same finishing hole that challenged Nancy Lopez and Laura Davies provides a dramatic conclusion to your round.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -783,7 +919,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/hermitage-golf-course/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (27+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -804,17 +940,21 @@ try {
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-header">
-                <h2>Player Reviews</h2>
-                <p>Share your experience at Hermitage Golf Course</p>
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced Hermitage</p>
             </div>
-
+            
             <?php if (isset($success_message)): ?>
-                <div class="alert alert-success"><?php echo $success_message; ?></div>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
             <?php endif; ?>
             
             <?php if (isset($error_message)): ?>
-                <div class="alert alert-error"><?php echo $error_message; ?></div>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
             <?php endif; ?>
             
             <!-- Comment Form (Only for logged in users) -->
@@ -824,7 +964,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="hermitage-rating-stars">
+                            <div class="star-rating" id="rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -846,32 +986,33 @@ try {
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
                 </div>
             <?php endif; ?>
-
+            
+            <!-- Display Comments -->
             <div class="comments-container">
                 <?php if (empty($comments)): ?>
-                    <div class="review-card">
+                    <div class="comment-card">
                         <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="comment-rating">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <?php if ($i <= $comment['rating']): ?>
+                                            <i class="fas fa-star"></i>
+                                        <?php else: ?>
+                                            <i class="far fa-star"></i>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
+                                </div>
                             </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="review-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
+                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -879,60 +1020,53 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/courses">Golf Courses</a></li>
-                        <li><a href="/reviews">Reviews</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="/script.js?v=5"></script>
     <script>
-        // Interactive star rating functionality for Hermitage
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/hermitage-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/hermitage-golf-course/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+        
+        // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('hermitage-rating-stars');
+            const ratingContainer = document.getElementById('rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
@@ -985,47 +1119,6 @@ try {
                         star.classList.remove('active');
                     });
                 }
-            }
-        });
-
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 28 images (starting from 2.jpeg to 28.jpeg = 27 images)
-            for (let i = 2; i <= 28; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/hermitage-golf-course/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/hermitage-golf-course/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
             }
         });
     </script>
