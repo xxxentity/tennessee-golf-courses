@@ -630,7 +630,6 @@ try {
     </style>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
