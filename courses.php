@@ -133,6 +133,21 @@ $courses_static = [
     ],
     [
         'id' => 9,
+        'name' => 'Hillwood Country Club',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Elite private club since 1957 with Dick Wilson design, ranked 14th in Tennessee',
+        'image' => '/images/courses/hillwood-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Dick Wilson',
+        'amenities' => ['Championship Golf', 'Historic Clubhouse', 'Fine Dining', 'Tennis Courts', 'Swimming Pool', 'Elite Greens'],
+        'slug' => 'hillwood-country-club'
+    ],
+    [
+        'id' => 10,
         'name' => 'Holston Hills Country Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
@@ -147,7 +162,7 @@ $courses_static = [
         'slug' => 'holston-hills-country-club'
     ],
     [
-        'id' => 10,
+        'id' => 11,
         'name' => 'Island Pointe Golf Club',
         'location' => 'Kodak, TN',
         'region' => 'Knoxville Area',
@@ -162,7 +177,7 @@ $courses_static = [
         'slug' => 'island-pointe-golf-club'
     ],
     [
-        'id' => 11,
+        'id' => 12,
         'name' => 'McCabe Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -177,7 +192,7 @@ $courses_static = [
         'slug' => 'mccabe-golf-course'
     ],
     [
-        'id' => 12,
+        'id' => 13,
         'name' => 'Nashville National Golf Links',
         'location' => 'Joelton, TN',
         'region' => 'Nashville Area',
@@ -192,7 +207,7 @@ $courses_static = [
         'slug' => 'nashville-national-golf-links'
     ],
     [
-        'id' => 13,
+        'id' => 14,
         'name' => 'Nashville Golf & Athletic Club',
         'location' => 'Belle Meade, TN',
         'region' => 'Nashville Area',
@@ -207,7 +222,7 @@ $courses_static = [
         'slug' => 'nashville-golf-athletic-club'
     ],
     [
-        'id' => 14,
+        'id' => 15,
         'name' => 'Richland Country Club',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -222,7 +237,7 @@ $courses_static = [
         'slug' => 'richland-country-club'
     ],
     [
-        'id' => 15,
+        'id' => 16,
         'name' => 'Stones River Country Club',
         'location' => 'Murfreesboro, TN',
         'region' => 'Nashville Area',
@@ -237,7 +252,7 @@ $courses_static = [
         'slug' => 'stones-river-country-club'
     ],
     [
-        'id' => 16,
+        'id' => 17,
         'name' => 'Old Hickory Country Club',
         'location' => 'Old Hickory, TN',
         'region' => 'Nashville Area',
@@ -252,7 +267,7 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
-        'id' => 17,
+        'id' => 18,
         'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
         'region' => 'Nashville Area',
@@ -268,6 +283,21 @@ $courses_static = [
     ],
     [
         'id' => 18,
+        'name' => 'The Grove',
+        'location' => 'College Grove, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Greg Norman Signature Design hosting Korn Ferry Tour and LIV Golf on 7,438 championship yards',
+        'image' => '/images/courses/the-grove/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Greg Norman',
+        'amenities' => ['Tournament Golf', 'Korn Ferry Tour Host', 'LIV Golf Venue', 'Championship Conditioning', 'Luxury Community', 'Tour Facilities'],
+        'slug' => 'the-grove'
+    ],
+    [
+        'id' => 20,
         'name' => 'The Governors Club',
         'location' => 'Brentwood, TN',
         'region' => 'Nashville Area',
@@ -282,7 +312,7 @@ $courses_static = [
         'slug' => 'the-governors-club'
     ],
     [
-        'id' => 19,
+        'id' => 21,
         'name' => 'Temple Hills Country Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -297,7 +327,7 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
-        'id' => 20,
+        'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
         'region' => 'Nashville Area',
@@ -312,7 +342,7 @@ $courses_static = [
         'slug' => 'the-legacy-golf-course'
     ],
     [
-        'id' => 21,
+        'id' => 23,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -327,7 +357,7 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
-        'id' => 22,
+        'id' => 24,
         'name' => 'Two Rivers Golf Course',
         'location' => 'Nashville, TN',
         'region' => 'Nashville Area',
@@ -342,7 +372,7 @@ $courses_static = [
         'slug' => 'two-rivers-golf-course'
     ],
     [
-        'id' => 23,
+        'id' => 25,
         'name' => 'Vanderbilt Legends Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
@@ -357,7 +387,7 @@ $courses_static = [
         'slug' => 'vanderbilt-legends-club'
     ],
     [
-        'id' => 24,
+        'id' => 26,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
         'region' => 'Knoxville Area',
