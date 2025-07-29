@@ -400,6 +400,21 @@ $courses_static = [
         'designer' => 'Bill Oliphant',
         'amenities' => ['Pro Shop', 'Bar & Grill', 'Golf Lessons', 'Tournament Hosting', 'Club Repair'],
         'slug' => 'willow-creek-golf-club'
+    ],
+    [
+        'id' => 29,
+        'name' => 'Cheekwood Golf Club',
+        'location' => 'Franklin, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Executive 9-hole course nestled within Franklin\'s beautifully wooded residential landscape. Features a challenging yet accessible par-33 composition with four par-4s, four par-3s, and one strategic par-5.',
+        'image' => 'images/courses/cheekwood-golf-club/1.jpeg',
+        'price_range' => '$20-25',
+        'difficulty' => 'Beginner to Intermediate',
+        'holes' => 9,
+        'par' => 33,
+        'designer' => 'Unknown',
+        'amenities' => ['Pro Shop', 'Practice Area', 'Putting Green', 'Food & Beverages'],
+        'slug' => 'cheekwood-golf-club'
     ]
 ];
 
