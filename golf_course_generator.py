@@ -943,24 +943,66 @@ class GolfCourseGenerator:
         except FileNotFoundError:
             raise Exception(f"Template file not found: {template_path}")
             
-        # Replace template variables
-        course_name = self.course_data['course_name']
-        course_slug = self.course_data['course_slug']
+        # Get form data
+        course_name = self.course_data['course_name'] or 'Golf Course'
+        course_slug = self.course_data['course_slug'] or 'golf-course'
+        designer = self.course_data['designer'] or 'Unknown'
+        year_opened = self.course_data['year_opened'] or 'Unknown'
+        par = self.course_data['par'] or '72'
+        yardage = self.course_data['yardage'] or '6,500'
+        course_type = self.course_data['course_type'] or 'Public'
+        city = self.course_data['location_city'] or 'Tennessee'
+        address = self.course_data['address'] or ''
+        phone = self.course_data['phone'] or ''
+        website = self.course_data['website'] or ''
+        description = self.course_data['description'] or f'{course_name} offers a challenging golf experience.'
         
-        # Basic replacements
+        # Comprehensive replacements
         replacements = {
+            # Basic identifiers
             'bear-trace-harrison-bay': course_slug,
             'Bear Trace at Harrison Bay': course_name,
-            'Harrison, TN': f"{self.course_data['location_city']}, {self.course_data['location_state']}",
+            'Harrison, TN': f"{city}, TN",
+            'Harrison': city,
+            
+            # Course specifications  
+            'Jack Nicklaus': designer,
+            '1999': year_opened,
+            '72': par,
+            '7,313': yardage.replace(',', ''),
+            
+            # Contact info
+            '(423) 326-0885': phone,
+            'https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/': website,
+            
+            # Course type and descriptions
+            'Public': course_type,
+            'Jack Nicklaus Signature Design': f'{designer} Design' if designer != 'Unknown' else 'Championship Course',
+            
+            # Address
+            '2650 Bear Trace Blvd, Harrison, TN 37341': address,
+            
+            # Google Maps query
+            'Bear+Trace+at+Harrison+Bay+Harrison+TN': self.course_data.get('maps_query', f'{course_name}+{city}+TN').replace(' ', '+'),
         }
         
         content = template_content
         for old, new in replacements.items():
-            content = content.replace(old, new)
+            if new:  # Only replace if we have a value
+                content = content.replace(old, str(new))
             
-        # Replace course information in the template structure
-        # This is a simplified version - you'd need to parse and replace specific sections
-        
+        # Replace course description sections
+        if description:
+            # Find and replace the main course description paragraph
+            desc_pattern = r'<p>Bear Trace.*?championship course\.</p>'
+            new_desc = f'<p>{description}</p>'
+            content = re.sub(desc_pattern, new_desc, content, flags=re.DOTALL)
+            
+        # Add pricing information if available
+        if self.course_data['weekday_fees']:
+            # Replace pricing sections with actual data
+            content = content.replace('$45-$75', self.course_data['weekday_fees'])
+            
         return content
 
 def main():
