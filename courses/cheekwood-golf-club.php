@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheekwood Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Cheekwood Golf Club - Jack Nicklaus Signature Design golf course in Franklin, TN. Experience stunning lakefront views and championship golf.">
+    <meta name="description" content="Cheekwood Golf Club - Executive 9-hole golf course in Franklin, TN. Par 33 layout with 4 par-4s, 4 par-3s, and 1 par-5 in beautifully wooded setting.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -583,7 +583,7 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Cheekwood Golf Club</h1>
-            <p>Jack Nicklaus Signature Design • Harrison, Tennessee</p>
+            <p>Executive 9-Hole Course • Franklin, Tennessee</p>
             <div class="course-rating">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
@@ -626,19 +626,19 @@ try {
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                            <span class="spec-value">33</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,313</span>
+                            <span class="spec-value">2,400</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Jack Nicklaus</span>
+                            <span class="spec-value">Unknown</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1999</span>
+                            <span class="spec-value">Unknown</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
@@ -731,23 +731,23 @@ try {
             <!-- Course Description -->
             <div class="course-info-card">
                 <h3><i class="fas fa-golf-ball"></i> About Cheekwood Golf Club</h3>
-                <p>Cheekwood Golf Club is a stunning Jack Nicklaus-designed golf course situated on a peninsula along Chickamauga Lake in Harrison, Tennessee. Located just 18 miles from Chattanooga, this championship 18-hole course offers golfers an unforgettable experience with water touching 12 fairways and breathtaking lake views on three sides.</p>
+                <p>Cheekwood Golf Club offers an intimate executive golf experience nestled within Franklin's beautifully wooded residential landscape. This thoughtfully designed 9-hole layout features a challenging yet accessible par-33 composition with four par-4s, four par-3s, and one strategic par-5, creating the perfect environment for golfers seeking quality golf in a condensed format.</p>
                 
                 <br>
                 
-                <p>Opened in 1999, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape.</p>
+                <p>Located at 285 Spencer Creek Road, this executive course emphasizes precision and course management over distance, making it an ideal venue for sharpening your short game and developing strategic thinking.</p>
                 
                 <br>
                 
-                <p>The course features Champion Bermuda greens, 419 Bermuda fairways lined with soaring pine and hardwood trees, and plays to 7,313 yards from the championship tees.</p>
+                <p>The wooded setting provides natural beauty and challenge, with mature trees framing each hole and creating defined playing corridors that reward accuracy over distance.</p>
                 
                 <br>
                 
-                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.<br><br></p>
+                <p>What sets Cheekwood Golf Club apart is its unique approach to practice, featuring a compact short-game area with a 100-yard target green and an expansive putting surface adjacent to the clubhouse, allowing golfers to fine-tune their skills before tackling the course.<br><br></p>
                 
-                <p>Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.<br><br></p>
+                <p>The facility's commitment to accessibility and player development makes it a valuable addition to Middle Tennessee's diverse golf offerings, providing an excellent venue for both seasoned players and newcomers building confidence.<br><br></p>
                 
-                <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
+                <p>Located in Franklin's beautifully wooded residential area, Cheekwood Golf Club provides a serene, park-like setting that showcases Middle Tennessee's natural beauty while offering an enjoyable and approachable golf experience for players of all skill levels.</p>
             </div>
 
             <!-- Amenities -->
