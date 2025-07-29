@@ -903,7 +903,7 @@ $featured_courses = array_slice($courses, 0, 2);
                                     </div>
                                     <div class="course-footer">
                                         <span class="course-price"><?php echo htmlspecialchars($course['price_range']); ?></span>
-                                        <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>.php" class="view-course-btn">View Details</a>
+                                        <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="view-course-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -945,7 +945,7 @@ $featured_courses = array_slice($courses, 0, 2);
                                         </div>
                                         <div class="course-footer">
                                             <span class="course-price"><?php echo htmlspecialchars($course['price_range']); ?></span>
-                                            <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>.php" class="view-course-btn">View Details</a>
+                                            <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="view-course-btn">View Details</a>
                                         </div>
                                     </div>
                                 </div>
