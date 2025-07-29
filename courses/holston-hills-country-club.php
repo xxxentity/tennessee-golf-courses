@@ -58,19 +58,23 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holston Hills Country Club - Donald Ross Design | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Holston Hills Country Club, a pristine 1927 Donald Ross design in Knoxville. Par 72, 6,932 yards of championship golf at Tennessee's premier private club.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/holston-hills-country-club">
+    <title>Holston Hills Country Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Holston Hills Country Club - Donald Ross's 1927 masterpiece in Knoxville, TN. 6,932 yards of pristine championship golf at Tennessee's premier private club.">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Analytics -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7VPNPCDTBP');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
     </script>
     
     <style>
@@ -82,61 +86,47 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            position: relative;
+            color: white;
+            margin-top: 120px;
         }
         
         .course-hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
         }
         
-        .course-info {
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .course-info-section {
             padding: 4rem 0;
             background: #f8f9fa;
-        }
-        
-        .course-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .course-details h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.2rem;
-        }
-        
-        .course-details p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .course-sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
         }
         
         .course-info-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
@@ -144,7 +134,6 @@ try {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
         }
         
         .course-info-card h3 {
@@ -152,13 +141,16 @@ try {
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .course-info-card h3 i {
+            color: #4a7c59;
         }
         
         .course-specs {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
         
@@ -169,6 +161,10 @@ try {
             border-bottom: 1px solid #eee;
         }
         
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
         .spec-label {
             font-weight: 600;
             color: #2c5234;
@@ -176,10 +172,7 @@ try {
         
         .spec-value {
             color: #666;
-        }
-        
-        .single-column {
-            grid-template-columns: 1fr;
+            font-weight: 500;
         }
         
         .location-info {
@@ -207,51 +200,69 @@ try {
             text-decoration: underline;
         }
         
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0.8rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.1rem;
-        }
-        
-        .signature-holes {
+        .course-description {
             padding: 4rem 0;
             background: white;
         }
         
+        .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .description-content h2 {
+            color: #2c5234;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .description-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        
+        .signature-holes {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
         .holes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .hole-card {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             position: relative;
-            overflow: hidden;
         }
         
         .hole-number {
             position: absolute;
-            top: -10px;
-            right: -10px;
+            top: -15px;
+            right: -15px;
             background: #4a7c59;
             color: white;
             width: 60px;
@@ -260,20 +271,21 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            border: 4px solid white;
         }
         
         .hole-details h4 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .hole-stats {
             display: flex;
             gap: 2rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .hole-stat {
@@ -283,7 +295,7 @@ try {
         .hole-stat-label {
             font-size: 0.9rem;
             color: #666;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
         
         .hole-stat-value {
@@ -295,17 +307,18 @@ try {
         .hole-details p {
             color: #555;
             line-height: 1.6;
-            margin-top: 1rem;
         }
         
         .photo-gallery {
-            margin: 4rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -314,16 +327,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .gallery-button {
             text-align: center;
-            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -332,15 +345,18 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -383,6 +399,8 @@ try {
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0;
+            line-height: 1;
         }
         
         .close:hover {
@@ -501,10 +519,6 @@ try {
             font-weight: 600;
         }
         
-        .comments-list {
-            space-y: 2rem;
-        }
-        
         .comment-card {
             background: white;
             padding: 2rem;
@@ -562,11 +576,6 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .course-info-cards {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -579,6 +588,14 @@ try {
             .hole-stats {
                 gap: 1rem;
             }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -590,45 +607,39 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Holston Hills Country Club</h1>
-            <p>Pristine Donald Ross Design Since 1927</p>
-            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+            <p>Donald Ross's 1927 Masterpiece</p>
+            <div class="hero-stats">
                 <?php if ($avg_rating): ?>
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
-                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
-                        <span>(<?php echo $total_reviews; ?> reviews)</span>
+                    <div class="hero-stat">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
-                <div style="display: flex; align-items: center; gap: 5px;">
+                <div class="hero-stat">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Knoxville, TN</span>
+                </div>
+                <div class="hero-stat">
+                    <i class="fas fa-ruler"></i>
+                    <span>6,932 yards</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information -->
-    <section class="course-info">
+    <!-- Course Information Cards -->
+    <section class="course-info-section">
         <div class="container">
-            <div class="course-layout">
-                <div class="course-details">
-                    <h2>Historic Donald Ross Masterpiece</h2>
-                    <p>Holston Hills Country Club stands as one of Tennessee's most prestigious golf destinations, featuring a virtually untouched Donald Ross design from 1927. Recognized as one of the purest Donald Ross courses in America, this championship layout has maintained its original character while hosting some of the region's most important golf events.</p>
-                    
-                    <p>Built on the former MacDonald Farm, Holston Hills has been a cornerstone of East Knoxville's golf community for nearly 100 years. The course gained national recognition early, being hailed as the finest course in Tennessee upon completion and earning its place among America's elite golf destinations.</p>
-                    
-                    <p>The Donald Ross design showcases his trademark green complexes with multiple pin positions and strategic bunkering. The course features gentle elevation changes that create natural stadium seating while maintaining excellent walkability throughout the 18-hole championship layout.</p>
-                </div>
-                
-                <div class="course-sidebar">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; text-align: center;">Course Overview</h3>
+            <div class="course-info-cards">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
                     <div class="course-specs">
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">Donald Ross</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Year Built:</span>
+                            <span class="spec-label">Year Opened:</span>
                             <span class="spec-value">1927</span>
                         </div>
                         <div class="spec-item">
@@ -636,70 +647,46 @@ try {
                             <span class="spec-value">72</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-label">Length:</span>
                             <span class="spec-value">6,932 yards</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">73.6</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Private</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Slope Rating:</span>
                             <span class="spec-value">134</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Grass Type:</span>
-                            <span class="spec-value">Bermuda</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Private Club</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="course-info-cards">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-trophy"></i> Accolades</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Golfweek Ranking:</span>
-                            <span class="spec-value">#52 Classic Courses (2010)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">State Ranking:</span>
-                            <span class="spec-value">Top 5 (1979-2003)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Current Ranking:</span>
-                            <span class="spec-value">5th in Tennessee</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Tournament History:</span>
-                            <span class="spec-value">Rebel Yell Open (1968)</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Membership</h3>
-                    <div class="course-specs single-column">
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="course-specs">
                         <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
+                            <span class="spec-label">Membership:</span>
                             <span class="spec-value">Private Club</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Management:</span>
-                            <span class="spec-value">McConnell Golf</span>
+                            <span class="spec-label">Guest Policy:</span>
+                            <span class="spec-value">Members Only</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Members:</span>
-                            <span class="spec-value">Membership required</span>
+                            <span class="spec-label">Caddies:</span>
+                            <span class="spec-value">Available</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Guest Play:</span>
-                            <span class="spec-value">Member accompanied only</span>
+                            <span class="spec-label">Cart Fee:</span>
+                            <span class="spec-value">Included</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Dress Code:</span>
+                            <span class="spec-value">Strict</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Reservations:</span>
+                            <span class="spec-value">(865) 584-6230</span>
                         </div>
                     </div>
                 </div>
@@ -710,13 +697,28 @@ try {
                         <div class="location-details">
                             <p><i class="fas fa-map-marker-alt"></i> 5801 Lyons View Pike, Knoxville, TN 37919</p>
                             <p><i class="fas fa-phone"></i> (865) 584-6230</p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=5801+Lyons+View+Pike,+Knoxville,+TN+37919" target="_blank">Get Directions</a></p>
+                            <p><i class="fas fa-globe"></i> <a href="https://www.holstonhills.com" target="_blank">holstonhills.com</a></p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Holston+Hills+Country+Club+Knoxville+TN" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=5801+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        <iframe src="https://maps.google.com/maps?q=Holston+Hills+Country+Club+Knoxville+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Description -->
+    <section class="course-description">
+        <div class="container">
+            <div class="description-content">
+                <h2>America's Purest Donald Ross Design</h2>
+                <p>Holston Hills Country Club stands as one of Tennessee's most revered golf destinations, featuring a virtually untouched Donald Ross masterpiece from 1927. This championship layout has been recognized as one of the purest Donald Ross courses in America, maintaining its original character while hosting some of the region's most prestigious golf events.</p>
+                
+                <p>Built on the historic MacDonald Farm in East Knoxville, Holston Hills showcases Ross's legendary design philosophy with trademark crowned greens, strategic bunkering, and natural elevation changes. The course gained national recognition immediately upon completion, being hailed as the finest course in Tennessee and earning its place among America's elite golf destinations.</p>
+                
+                <p>The 6,932-yard layout features Ross's signature green complexes with multiple pin positions and gentle undulations that create natural spectator areas. This pristine private club has preserved Ross's original intent while maintaining championship conditions that continue to challenge Tennessee's finest golfers nearly a century after its opening.</p>
             </div>
         </div>
     </section>
@@ -726,88 +728,52 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>Signature Holes</h2>
-                <p>Experience the strategic brilliance of Donald Ross design</p>
+                <p>Discover the strategic brilliance of Donald Ross design</p>
             </div>
             
             <div class="holes-grid">
                 <div class="hole-card">
                     <div class="hole-number">7</div>
                     <div class="hole-details">
-                        <h4>Split Fairway Challenge</h4>
+                        <h4>Ross's Split Fairway</h4>
                         <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">517</div>
+                            </div>
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Par</div>
                                 <div class="hole-stat-value">5</div>
                             </div>
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">517</div>
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">3</div>
                             </div>
                         </div>
-                        <p>One of Ross' more unique offerings, the 7th plays to a split fairway divided by a ridge with strategic bunkering. This par-5 demands careful course management and rewards strategic thinking over pure distance.</p>
+                        <p>One of Ross's most unique designs, the 7th features a split fairway divided by a natural ridge with strategic bunkering. This par-5 demands careful course management and rewards strategic thinking over pure distance.</p>
                     </div>
                 </div>
                 
                 <div class="hole-card">
                     <div class="hole-number">16</div>
                     <div class="hole-details">
-                        <h4>Risk-Reward Masterpiece</h4>
+                        <h4>Driveable Risk-Reward</h4>
                         <div class="hole-stats">
+                            <div class="hole-stat">
+                                <div class="hole-stat-label">Yards</div>
+                                <div class="hole-stat-value">304</div>
+                            </div>
                             <div class="hole-stat">
                                 <div class="hole-stat-label">Par</div>
                                 <div class="hole-stat-value">4</div>
                             </div>
                             <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">304</div>
+                                <div class="hole-stat-label">Handicap</div>
+                                <div class="hole-stat-value">11</div>
                             </div>
                         </div>
-                        <p>A perfect risk/reward driveable par-4 that plays to a volcano green. Players must decide between playing conservatively to the fairway or attempting to drive the elevated green complex.</p>
+                        <p>A perfect Ross risk-reward par-4 featuring a driveable elevated green complex. Players must choose between a conservative layup or attempting to drive the challenging crowned green surrounded by deep bunkers.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Amenities -->
-    <section style="padding: 4rem 0; background: #f8f9fa;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Club Amenities</h2>
-                <p>Experience the complete country club lifestyle</p>
-            </div>
-            <div class="amenities-grid">
-                <div class="amenity-item">
-                    <i class="fas fa-golf-ball"></i>
-                    <span>Championship Golf Course</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-utensils"></i>
-                    <span>Fine Dining</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-car"></i>
-                    <span>Golf Carts Available</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-walking"></i>
-                    <span>Walking Friendly</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>Event Hosting</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-glass-cheers"></i>
-                    <span>Full Bar</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-users"></i>
-                    <span>Member Events</span>
-                </div>
-                <div class="amenity-item">
-                    <i class="fas fa-trophy"></i>
-                    <span>Tournament Hosting</span>
                 </div>
             </div>
         </div>
@@ -829,7 +795,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/holston-hills-country-club/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -874,7 +840,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="holston-rating-stars">
+                            <div class="star-rating" id="rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -930,59 +896,8 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../about">About Us</a></li>
-                        <li><a href="../contact">Contact</a></li>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Golf Courses</h4>
-                    <ul>
-                        <li><a href="../courses/bear-trace-harrison-bay">Bear Trace</a></li>
-                        <li><a href="../courses/gaylord-springs-golf-links">Gaylord Springs</a></li>
-                        <li><a href="../courses/hermitage-golf-course">Hermitage</a></li>
-                        <li><a href="../courses/holston-hills-country-club">Holston Hills</a></li>
-                        <li><a href="../courses/island-pointe-golf-club">Island Pointe</a></li>
-                        <li><a href="../courses/tpc-southwind">TPC Southwind</a></li>
-                        <li><a href="../courses/willow-creek-golf-club">Willow Creek</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">    
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js?v=5"></script>
     <script>
         // Gallery Modal Functions
         function openGallery() {
@@ -992,8 +907,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images (starting from 2.jpeg to 25.jpeg = 24 images)
-            for (let i = 2; i <= 25; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/holston-hills-country-club/${i}.jpeg')`;
@@ -1002,13 +917,13 @@ try {
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         function closeGallery() {
             const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
         
         // Close modal when clicking outside of it
@@ -1024,11 +939,10 @@ try {
                 closeGallery();
             }
         });
-    </script>
-    <script>
-        // Interactive star rating functionality for Holston Hills
+        
+        // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('holston-rating-stars');
+            const ratingContainer = document.getElementById('rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
