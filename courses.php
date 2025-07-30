@@ -447,6 +447,21 @@ $courses_static = [
         'slug' => 'the-legacy-golf-course'
     ],
     [
+        'id' => 36,
+        'name' => 'Three Ridges Golf Course',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Golf Digest Best Places To Play. Municipal course designed by Ault, Clark & Associates in the shadows of the Great Smoky Mountains with 63 strategically placed bunkers.',
+        'image' => '/images/courses/three-ridges-golf-course/1.jpeg',
+        'price_range' => '$30-55',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Ault, Clark & Associates',
+        'amenities' => ['Municipal Course', 'Bentgrass Greens', 'Bermuda Fairways', '63 Bunkers', 'Tournament Host', 'Corporate Events', 'Knox County Amateur Championship'],
+        'slug' => 'three-ridges-golf-course'
+    ],
+    [
         'id' => 23,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
