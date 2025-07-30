@@ -38,6 +38,7 @@ RewriteRule ^courses/springhouse-golf-club/?$ courses/springhouse-golf-club.php 
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]
+RewriteRule ^courses/ted-rhodes-golf-course/?$ courses/ted-rhodes-golf-course.php [L]
 RewriteRule ^courses/the-golf-club-of-tennessee/?$ courses/the-golf-club-of-tennessee.php [L]
 RewriteRule ^courses/the-grove/?$ courses/the-grove.php [L]
 RewriteRule ^courses/the-governors-club/?$ courses/the-governors-club.php [L]

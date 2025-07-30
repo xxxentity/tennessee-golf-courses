@@ -372,6 +372,21 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
+        'id' => 31,
+        'name' => 'Ted Rhodes Golf Course',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic 1953 municipal course honoring golf pioneer Ted Rhodes. Links-style 18-hole layout on Cumberland River with challenging play for all skill levels.',
+        'image' => '/images/courses/ted-rhodes-golf-course/1.jpeg',
+        'price_range' => '$17-44',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Municipal Design',
+        'amenities' => ['Municipal Course', 'Links-style', 'Driving Range', 'Practice Facilities', 'Walking Friendly', 'Club Rental', 'Multiple Tees'],
+        'slug' => 'ted-rhodes-golf-course'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
