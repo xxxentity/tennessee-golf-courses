@@ -823,7 +823,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (100+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (6+)</button>
             </div>
         </div>
     </section>
