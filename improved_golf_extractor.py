@@ -85,8 +85,16 @@ class IntelligentGolfExtractor:
         extracted_data['address'] = address_data['address']
         extracted_data['location_city'] = address_data['city']
         
+        # If no city found in address, try other methods
+        if not extracted_data['location_city']:
+            extracted_data['location_city'] = self._extract_city_alternative(all_text)
+        
         # Extract contact info
         extracted_data['phone'] = self._extract_smart_phone(all_text)
+        
+        # Extract ratings (slope and course rating)
+        extracted_data['slope_rating'] = self._extract_slope_rating(all_text)
+        extracted_data['course_rating'] = self._extract_course_rating(all_text)
         
         # Extract pricing with context
         pricing_data = self._extract_smart_pricing(all_text)
@@ -216,11 +224,16 @@ class IntelligentGolfExtractor:
             r'par\s*(?:of\s*)?(\d{2})',
             r'(\d{2})\s*par\s*course',
             r'(?:18|27|36)\s*holes?\s*[,.]?\s*par\s*(\d{2})',
-            r'par\s*:?\s*(\d{2})'
+            r'par\s*:?\s*(\d{2})',
+            r'Par:\s*(\d{2})',  # USGA format
+            r'course\s*par\s*(\d{2})',
+            # Look for "18-hole" followed by par somewhere nearby
+            r'18[- ]hole.*?par[:\s]*(\d{2})',
+            r'par[:\s]*(\d{2}).*?18[- ]hole'
         ]
         
         for pattern in par_patterns:
-            matches = re.finditer(pattern, text, re.I)
+            matches = re.finditer(pattern, text, re.I | re.DOTALL)
             for match in matches:
                 par_val = int(match.group(1))
                 # Validate par range
@@ -235,13 +248,25 @@ class IntelligentGolfExtractor:
             r'(\d{4,5})\s*(?:yards?|yds?)',
             r'(?:yardage|length)\s*:?\s*(\d{4,5})',
             r'(\d{4,5})\s*yard\s*course',
-            r'plays\s*(?:to\s*)?(\d{4,5})\s*yards?'
+            r'plays\s*(?:to\s*)?(\d{4,5})\s*yards?',
+            r'Length:\s*(\d{4,5})\s*yards?',  # USGA format
+            r'(\d{4,5})\s*total\s*yards?',
+            # Look for championship tees context
+            r'championship.*?(\d{4,5})\s*(?:yards?|yds?)',
+            r'tips.*?(\d{4,5})\s*(?:yards?|yds?)',
+            # USGA course database format
+            r'(\d{1})[,](\d{3})\s*yards?'  # Handle comma-separated numbers like "7,157"
         ]
         
         for pattern in yardage_patterns:
             matches = re.finditer(pattern, text, re.I)
             for match in matches:
-                yardage = int(match.group(1))
+                if len(match.groups()) == 2:  # Handle comma format
+                    yardage_str = match.group(1) + match.group(2)
+                    yardage = int(yardage_str)
+                else:
+                    yardage = int(match.group(1))
+                    
                 # Validate yardage range (reasonable for golf courses)
                 if 2000 <= yardage <= 8000:
                     return str(yardage)
@@ -265,6 +290,40 @@ class IntelligentGolfExtractor:
                 if 1890 <= year <= 2025:
                     return str(year)
         
+        return ""
+    
+    def _extract_slope_rating(self, text):
+        """Extract slope rating"""
+        slope_patterns = [
+            r'slope\s*rating[:\s]*(\d{2,3})',
+            r'slope[:\s]*(\d{2,3})',
+            r'Slope Rating:\s*(\d{2,3})'
+        ]
+        
+        for pattern in slope_patterns:
+            match = re.search(pattern, text, re.I)
+            if match:
+                slope = int(match.group(1))
+                # Validate slope range (55-155 is standard)
+                if 55 <= slope <= 155:
+                    return str(slope)
+        return ""
+    
+    def _extract_course_rating(self, text):
+        """Extract course rating"""
+        rating_patterns = [
+            r'course\s*rating[:\s]*(\d{2}\.\d)',
+            r'rating[:\s]*(\d{2}\.\d)',
+            r'Course Rating:\s*(\d{2}\.\d)'
+        ]
+        
+        for pattern in rating_patterns:
+            match = re.search(pattern, text, re.I)
+            if match:
+                rating = float(match.group(1))
+                # Validate course rating range (typically 60-80)
+                if 60.0 <= rating <= 80.0:
+                    return str(rating)
         return ""
     
     def _extract_smart_address(self, text):
@@ -291,6 +350,28 @@ class IntelligentGolfExtractor:
                 return {'address': address, 'city': city}
         
         return {'address': "", 'city': ""}
+    
+    def _extract_city_alternative(self, text):
+        """Alternative city extraction methods"""
+        # Look for "City, TN" patterns
+        city_patterns = [
+            r'([A-Z][a-zA-Z\s]+),\s*TN',
+            r'([A-Z][a-zA-Z\s]+),\s*Tennessee',
+            r'located\s+in\s+([A-Z][a-zA-Z\s]+),?\s*TN',
+            r'([A-Z][a-zA-Z\s]{3,20}),\s*TN\s*\d{5}?'
+        ]
+        
+        for pattern in city_patterns:
+            match = re.search(pattern, text)
+            if match:
+                city = match.group(1).strip()
+                # Filter out common false positives
+                if (len(city) < 30 and 
+                    not any(word in city.lower() for word in 
+                           ['united states', 'tennessee', 'golf', 'club', 'course', 'the'])):
+                    return city
+        
+        return ""
     
     def _extract_smart_phone(self, text):
         """Extract phone number with formatting"""
