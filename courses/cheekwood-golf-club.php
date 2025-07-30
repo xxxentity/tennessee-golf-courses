@@ -712,18 +712,18 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    8919 Harrison Bay Road<br>
-                    Franklin, TN 37341</p>
+                    285 Spencer Creek Rd<br>
+                    Franklin, TN 37069</p>
                     
                     <p><strong>Phone:</strong><br>
-                    (423) 326-0885</p>
+                    (615) 794-8223</p>
                     
                     <p><strong>Website:</strong><br>
-                    <a href="https://tnstateparks.com/golf/course/bear-trace-at-harrison-bay/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
+                    <a href="https://cheekwoodgolfclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">cheekwoodgolfclub.com</a></p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=8919+Harrison+Bay+Road,+Harrison,+TN+37341&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=285+Spencer+Creek+Rd+Franklin+TN+37069&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
