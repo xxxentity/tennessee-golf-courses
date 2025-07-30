@@ -492,6 +492,21 @@ $courses_static = [
         'slug' => 'willow-creek-golf-club'
     ],
     [
+        'id' => 33,
+        'name' => 'Whittle Springs Golf Course',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Knoxville\'s first public golf course since 1932. Historic municipal course by Morton & Sweetser with unique bunker-free design and small, fast greens.',
+        'image' => '/images/courses/whittle-springs-golf-course/1.jpeg',
+        'price_range' => 'Public',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Morton & Sweetser',
+        'amenities' => ['Municipal Course', 'Historic 1932', 'No Sand Bunkers', 'Mobile App', 'City Amateur Host', 'Memberships Available'],
+        'slug' => 'whittle-springs-golf-course'
+    ],
+    [
         'id' => 29,
         'name' => 'Cheekwood Golf Club',
         'location' => 'Franklin, TN',
