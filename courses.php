@@ -267,6 +267,21 @@ $courses_static = [
         'slug' => 'stones-river-country-club'
     ],
     [
+        'id' => 30,
+        'name' => 'Springhouse Golf Club',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Former Nashville public golf course permanently closed. Located at 18 Springhouse Lane. PERMANENTLY CLOSED - preserved for historical reference.',
+        'image' => '/images/courses/springhouse-golf-club/1.jpeg',
+        'price_range' => 'CLOSED',
+        'difficulty' => 'Unknown',
+        'holes' => 18,
+        'par' => 'Unknown',
+        'designer' => 'Unknown',
+        'amenities' => ['Historical Reference', 'Formerly Public', 'Nashville Golf History'],
+        'slug' => 'springhouse-golf-club'
+    ],
+    [
         'id' => 17,
         'name' => 'Old Hickory Country Club',
         'location' => 'Old Hickory, TN',

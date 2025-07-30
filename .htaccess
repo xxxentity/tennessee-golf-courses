@@ -34,6 +34,7 @@ RewriteRule ^courses/nashville-national-golf-links/?$ courses/nashville-national
 RewriteRule ^courses/nashville-golf-athletic-club/?$ courses/nashville-golf-athletic-club.php [L]
 RewriteRule ^courses/richland-country-club/?$ courses/richland-country-club.php [L]
 RewriteRule ^courses/stones-river-country-club/?$ courses/stones-river-country-club.php [L]
+RewriteRule ^courses/springhouse-golf-club/?$ courses/springhouse-golf-club.php [L]
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]
