@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troubadour Golf & Field Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Troubadour Golf & Field Club - Tom Fazio masterpiece in College Grove, TN. Private club with championship course design and luxury amenities opened in 2016.">
+    <meta name="description" content="Troubadour Golf & Field Club - Tom Fazio masterpiece in College Grove, TN. Private club with championship course design and luxury amenities.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -100,35 +100,32 @@ try {
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
         }
         
-        .course-rating {
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 8px;
+            font-size: 1.1rem;
         }
         
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
+        .course-info-section {
             padding: 4rem 0;
+            background: #f8f9fa;
         }
         
-        .course-info-grid {
+        .course-info-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            gap: 2rem;
             margin-bottom: 4rem;
         }
         
@@ -136,35 +133,41 @@ try {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .course-info-card h3 i {
+            color: #4a7c59;
         }
         
         .course-specs {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 0.8rem 0;
             border-bottom: 1px solid #eee;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #333;
+            color: #2c5234;
         }
         
         .spec-value {
@@ -172,50 +175,34 @@ try {
             font-weight: 500;
         }
         
-        .amenities-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .amenities-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .amenities-list i {
-            color: #2c5234;
-            width: 20px;
-        }
-        
         .location-info {
-            margin-bottom: 2rem;
-        }
-        
-        .location-info iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            text-align: left;
         }
         
         .location-details p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
         }
         
         .location-details i {
-            color: #2c5234;
-            width: 20px;
+            color: #4a7c59;
+            width: 16px;
+        }
+        
+        .location-details a {
+            color: #4a7c59;
+            text-decoration: none;
+        }
+        
+        .location-details a:hover {
+            text-decoration: underline;
         }
         
         .course-description {
-            background: #f8f9fa;
-            padding: 3rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .description-content {
@@ -233,31 +220,50 @@ try {
         .description-content p {
             font-size: 1.1rem;
             line-height: 1.8;
+            margin-bottom: 2rem;
             color: #555;
-            margin-bottom: 1.5rem;
         }
         
         .signature-holes {
             padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
         }
         
         .holes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .hole-card {
             background: white;
-            border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
         }
         
         .hole-number {
-            background: #2c5234;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #4a7c59;
             color: white;
             width: 60px;
             height: 60px;
@@ -265,22 +271,21 @@ try {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            margin: 0 auto 1rem;
+            border: 4px solid white;
         }
         
         .hole-details h4 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .hole-stats {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin-bottom: 1rem;
+            margin: 1.5rem 0;
         }
         
         .hole-stat {
@@ -290,23 +295,30 @@ try {
         .hole-stat-label {
             font-size: 0.9rem;
             color: #666;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
         
         .hole-stat-value {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: #2c5234;
+            color: #4a7c59;
+        }
+        
+        .hole-details p {
+            color: #555;
+            line-height: 1.6;
         }
         
         .photo-gallery {
-            margin: 4rem 0;
+            padding: 4rem 0;
+            background: white;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -315,16 +327,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
         .gallery-button {
             text-align: center;
-            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -333,15 +345,18 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -384,6 +399,8 @@ try {
             cursor: pointer;
             background: none;
             border: none;
+            padding: 0;
+            line-height: 1;
         }
         
         .close:hover {
@@ -412,30 +429,19 @@ try {
         }
         
         .reviews-section {
-            padding: 4rem 0;
             background: #f8f9fa;
+            padding: 4rem 0;
         }
         
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .review-form {
+        .comment-form-container {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 3rem;
         }
         
-        .review-form h3 {
+        .comment-form-container h3 {
             color: #2c5234;
             margin-bottom: 1.5rem;
         }
@@ -448,63 +454,54 @@ try {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #333;
+            color: #2c5234;
         }
         
-        .rating-input {
+        .star-rating {
             display: flex;
-            gap: 0.5rem;
+            gap: 5px;
             margin-bottom: 1rem;
         }
         
-        .rating-input input[type="radio"] {
+        .star-rating input[type="radio"] {
             display: none;
         }
         
-        .rating-input label {
+        .star-rating label {
+            cursor: pointer;
             font-size: 1.5rem;
             color: #ddd;
-            cursor: pointer;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
         
-        .rating-input label:hover {
-            color: #ffd700;
-        }
-        
-        .rating-input label.active {
+        .star-rating label:hover,
+        .star-rating label.active {
             color: #ffd700;
         }
         
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #ddd;
+            border: 1px solid #ddd;
             border-radius: 8px;
+            font-family: inherit;
             resize: vertical;
             min-height: 120px;
-            font-family: inherit;
         }
         
-        .form-group textarea:focus {
-            border-color: #2c5234;
-            outline: none;
-        }
-        
-        .submit-btn {
-            background: #2c5234;
+        .btn-submit {
+            background: #4a7c59;
             color: white;
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease;
         }
         
-        .submit-btn:hover {
-            background: #1a3020;
+        .btn-submit:hover {
+            background: #2c5234;
         }
         
         .login-prompt {
@@ -512,29 +509,22 @@ try {
             padding: 2rem;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
         }
         
         .login-prompt a {
             color: #2c5234;
-            font-weight: 600;
             text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .comments-list {
-            display: grid;
-            gap: 2rem;
+            font-weight: 600;
         }
         
         .comment-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
         
         .comment-header {
@@ -542,17 +532,9 @@ try {
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
         }
         
         .comment-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-name {
             font-weight: 600;
             color: #2c5234;
         }
@@ -566,57 +548,37 @@ try {
             font-size: 0.9rem;
         }
         
-        .comment-content {
-            line-height: 1.6;
+        .comment-text {
             color: #555;
+            line-height: 1.6;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
             margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
         }
         
         .alert-success {
             background: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
         }
         
         .alert-error {
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
         }
         
         @media (max-width: 768px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .course-hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .course-hero-content p {
-                font-size: 1.1rem;
+            .course-info-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .holes-grid {
@@ -626,9 +588,18 @@ try {
             .hole-stats {
                 gap: 1rem;
             }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .hero-stat {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
@@ -638,111 +609,89 @@ try {
         <div class="course-hero-content">
             <h1>Troubadour Golf & Field Club</h1>
             <p>Tom Fazio Masterpiece • College Grove, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+            <div class="hero-stats">
+                <?php if ($avg_rating): ?>
+                    <div class="hero-stat">
+                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
+                <div class="hero-stat">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>College Grove, TN</span>
+                </div>
+                <div class="hero-stat">
+                    <i class="fas fa-ruler"></i>
+                    <span>7,157 yards</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Details -->
-    <section class="course-details">
+    <!-- Course Information Cards -->
+    <section class="course-info-section">
         <div class="container">
-            <div class="course-info-grid">
+            <div class="course-info-cards">
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,285 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">75.8</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">142</span>
-                        </div>
+                    <div class="course-specs">
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">Tom Fazio</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
+                            <span class="spec-label">Year Opened:</span>
                             <span class="spec-value">2016</span>
                         </div>
                         <div class="spec-item">
+                            <span class="spec-label">Par:</span>
+                            <span class="spec-value">71</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Length:</span>
+                            <span class="spec-value">7,157 yards</span>
+                        </div>
+                        <div class="spec-item">
                             <span class="spec-label">Type:</span>
-                            <span class="spec-value">Private Club</span>
+                            <span class="spec-value">Private</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">135</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating:</span>
+                            <span class="spec-value">74.4</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs single-column">
+                    <h3><i class="fas fa-dollar-sign"></i> Membership</h3>
+                    <div class="course-specs">
                         <div class="spec-item">
                             <span class="spec-label">Membership:</span>
                             <span class="spec-value">Private Club</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Fazio Design:</span>
-                            <span class="spec-value">Championship masterpiece</span>
+                            <span class="spec-label">Guest Policy:</span>
+                            <span class="spec-value">Members Only</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">2016</span>
+                            <span class="spec-label">Community:</span>
+                            <span class="spec-value">Residential</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Challenge Level:</span>
-                            <span class="spec-value">142 slope rating</span>
+                            <span class="spec-label">Dress Code:</span>
+                            <span class="spec-value">Relaxed</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Field Club:</span>
-                            <span class="spec-value">Multi-sport facility</span>
+                            <span class="spec-label">Tee Times:</span>
+                            <span class="spec-value">Not Required</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Clubhouse:</span>
-                            <span class="spec-value">Modern luxury</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Practice:</span>
-                            <span class="spec-value">World-class facilities</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Contact:</span>
-                            <span class="spec-value">(615) 595-0099</span>
+                            <span class="spec-label">Reservations:</span>
+                            <span class="spec-value">(615) 436-6850</span>
                         </div>
                     </div>
                 </div>
@@ -751,12 +700,12 @@ try {
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <div class="location-info">
                         <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 4889 Murfreesboro Road, College Grove, TN 37046</p>
-                            <p><i class="fas fa-phone"></i> (615) 595-0099</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.troubadourgolf.com" target="_blank">troubadourgolf.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=4889+Murfreesboro+Road,+College+Grove,+TN+37046" target="_blank">Get Directions</a></p>
+                            <p><i class="fas fa-map-marker-alt"></i> 7230 Harlow Dr, College Grove, TN 37046</p>
+                            <p><i class="fas fa-phone"></i> (615) 436-6850</p>
+                            <p><i class="fas fa-globe"></i> <a href="https://thetroubadourclub.com" target="_blank">thetroubadourclub.com</a></p>
+                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=7230+Harlow+Dr+College+Grove+TN+37046" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=4889+Murfreesboro+Road,+College+Grove,+TN+37046&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        <iframe src="https://maps.google.com/maps?q=7230+Harlow+Dr+College+Grove+TN+37046&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>
@@ -769,81 +718,16 @@ try {
     <section class="course-description">
         <div class="container">
             <div class="description-content">
-                <h2>Championship Golf at Troubadour Golf & Field Club</h2>
-                <p>Troubadour Golf & Field Club represents the pinnacle of modern golf course architecture, showcasing Tom Fazio's legendary design expertise across 7,285 yards of championship golf in College Grove, Tennessee. Since opening in 2016, this remarkable layout has established itself as one of the most challenging and beautiful courses in the Nashville area, with a formidable 142 slope rating that tests even the most accomplished players.</p>
+                <h2>Tom Fazio's Modern Masterpiece</h2>
+                <p>Troubadour Golf & Field Club represents a new era of golf course design, where Tom Fazio's legendary craftsmanship meets a relaxed, member-focused philosophy. This championship 18-hole course is thoughtfully crafted for both leisure and challenge, seamlessly blending into the natural landscape of College Grove.</p>
                 
-                <p>Fazio's masterful design philosophy shines throughout every hole at Troubadour, where strategic shot-making and precision are rewarded while wayward shots face severe consequences. The course seamlessly integrates with the natural Tennessee landscape, featuring dramatic elevation changes, strategically placed hazards, and immaculate conditioning that maintains championship standards year-round. Each hole presents unique challenges that demand both power and finesse.</p>
+                <p>The course features lush, meticulously maintained greens and offers long-range views that showcase the beauty of Tennessee's rolling countryside. Fazio's design philosophy shines through in every hole, creating strategic options for players of all skill levels while maintaining the integrity of championship golf.</p>
                 
-                <p>As a modern field club, Troubadour offers more than just exceptional golf, providing members with a comprehensive luxury experience that includes world-class practice facilities, fine dining, and elegant clubhouse amenities. The club's commitment to excellence in every detail makes it a premier destination for discerning golfers who appreciate both challenging championship golf and refined hospitality.</p>
+                <p>As part of an exclusive residential community, Troubadour redefines traditional golf club culture with a laid-back environment that encourages friendly competition over strict protocols. The club welcomes players of all abilities and fosters a social atmosphere where making new friends is as important as lowering your handicap.</p>
             </div>
         </div>
     </section>
 
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the holes that define Troubadour's championship character</p>
-            </div>
-            
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">8</div>
-                    <div class="hole-details">
-                        <h4>Fazio's Strategic Par-4</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">445</div>
-                            </div>
-                        </div>
-                        <p>A quintessential Tom Fazio design featuring dramatic elevation changes and strategic bunkering. Multiple tee options create different angles of attack while maintaining the hole's challenging character for players of all skill levels.</p>
-                    </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">13</div>
-                    <div class="hole-details">
-                        <h4>Championship Par-3</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">195</div>
-                            </div>
-                        </div>
-                        <p>A stunning downhill par-3 that exemplifies Fazio's mastery of natural terrain. The green complex features multiple pin positions and challenging contours that demand precise distance control and club selection.</p>
-                    </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">18</div>
-                    <div class="hole-details">
-                        <h4>Masterpiece Finish</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">475</div>
-                            </div>
-                        </div>
-                        <p>A magnificent closing hole that embodies Tom Fazio's architectural brilliance. The challenging approach shot to an elevated green with the clubhouse backdrop creates a memorable conclusion worthy of this championship venue.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Photo Gallery -->
     <section class="photo-gallery">
@@ -861,7 +745,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (20+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -882,55 +766,58 @@ try {
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-header">
-                <h2>Player Reviews</h2>
-                <p>Share your experience at Troubadour Golf & Field Club</p>
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced Troubadour</p>
             </div>
-
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST">
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
                         <div class="form-group">
-                            <label>Rating</label>
-                            <div class="rating-input" id="rating-stars">
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1" data-rating="1">★</label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2" data-rating="2">★</label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3" data-rating="3">★</label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4" data-rating="4">★</label>
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5" data-rating="5">★</label>
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating" id="rating-stars">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Troubadour Golf & Field Club..." required></textarea>
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing at Troubadour Golf & Field Club..." required></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
+                        <button type="submit" class="btn-submit">Post Review</button>
                     </form>
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
                 </div>
             <?php endif; ?>
-
-            <div class="comments-list">
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
                 <?php if (empty($comments)): ?>
                     <div class="comment-card">
                         <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
@@ -959,57 +846,50 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js"></script>
     <script>
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/troubadour-golf-field-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/troubadour-golf-field-club/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+        
         // Interactive star rating functionality
         document.addEventListener('DOMContentLoaded', function() {
             const ratingContainer = document.getElementById('rating-stars');
@@ -1061,50 +941,12 @@ try {
                 }
                 
                 function clearStars() {
-                    stars.forEach(star => star.classList.remove('active'));
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
                 }
             }
         });
-
-        // Gallery functionality
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const grid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            grid.innerHTML = '';
-            
-            // Add photos dynamically
-            const photos = [
-                '../images/courses/troubadour-golf-field-club/1.jpeg',
-                '../images/courses/troubadour-golf-field-club/2.jpeg',
-                '../images/courses/troubadour-golf-field-club/3.jpeg',
-                '../images/courses/troubadour-golf-field-club/4.jpeg',
-                '../images/courses/troubadour-golf-field-club/5.jpeg',
-                '../images/courses/troubadour-golf-field-club/6.jpeg'
-            ];
-            
-            photos.forEach(photo => {
-                const item = document.createElement('div');
-                item.className = 'full-gallery-item';
-                item.style.backgroundImage = `url('${photo}')`;
-                grid.appendChild(item);
-            });
-            
-            modal.style.display = 'block';
-        }
-
-        function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
     </script>
 </body>
 </html>

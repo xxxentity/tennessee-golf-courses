@@ -357,6 +357,21 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
+        'id' => 27,
+        'name' => 'Troubadour Golf & Field Club',
+        'location' => 'College Grove, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Tom Fazio masterpiece featuring championship 18-hole design thoughtfully crafted for leisure and challenge. Private residential community with relaxed atmosphere and no tee times required.',
+        'image' => '/images/courses/troubadour-golf-field-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Tom Fazio',
+        'amenities' => ['Practice Facility', 'TrackMan Range', 'Private Lessons', 'Residential Community', 'Relaxed Dress Code'],
+        'slug' => 'troubadour-golf-field-club'
+    ],
+    [
         'id' => 24,
         'name' => 'Two Rivers Golf Course',
         'location' => 'Nashville, TN',
