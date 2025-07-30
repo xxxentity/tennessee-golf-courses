@@ -1,0 +1,67 @@
+WEATHER BAR FIX - DUPLICATE WEATHER BAR ISSUE
+==============================================
+
+PROBLEM:
+- Course pages showing "Loading..." in weather bar
+- Weather bar not disappearing/reappearing properly on scroll
+- Weather bar functionality broken
+
+CAUSE:
+- Duplicate weather bars on course pages
+- Course file contains its own weather bar AND includes navigation.php (which also has weather bar)
+- The duplicate weather bar in course file conflicts with proper navigation.php weather bar
+
+SOLUTION:
+Remove the duplicate weather bar section from individual course files.
+
+WHAT TO REMOVE:
+Look for this code block in course PHP files (usually around lines 552-577):
+
+    <!-- Weather Bar -->
+    <div class="weather-bar">
+        <div class="weather-container">
+            <div class="weather-info">
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Loading...</span>
+                </div>
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp">Perfect Golf Weather</span>
+                    <span class="weather-location">Nashville, TN</span>
+                </div>
+            </div>
+            <div class="golf-conditions">
+                <div class="condition-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Wind: <span id="wind-speed">5 mph</span></span>
+                </div>
+                <div class="condition-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Visibility: <span id="visibility">10 mi</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Navigation -->
+
+REPLACE WITH:
+    <!-- Dynamic Navigation -->
+
+KEEP:
+- The navigation.php include: <?php include '../includes/navigation.php'; ?>
+- This provides the proper weather bar with correct scroll behavior
+
+COURSES FIXED:
+- cheekwood-golf-club.php (2025-07-30)
+- bear-trace-harrison-bay.php (2025-07-30)
+
+HOW TO IDENTIFY THE ISSUE:
+1. Weather bar shows "Loading..." text
+2. Weather bar doesn't hide when scrolling down
+3. Weather bar doesn't reappear when scrolling back to top
+4. Check if course file has duplicate weather bar before navigation.php include
+
+QUICK FIX COMMAND:
+Edit the course file and remove the duplicate weather bar section, keeping only the navigation.php include.
