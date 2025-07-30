@@ -282,6 +282,21 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
+        'id' => 29,
+        'name' => 'Percy Warner Golf Course',
+        'location' => 'Nashville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic 1937 municipal course nestled in scenic Percy Warner Park. 9-hole layout through tree-lined fairways and small undulating greens.',
+        'image' => '/images/courses/percy-warner-golf-course/1.jpeg',
+        'price_range' => '$17-30',
+        'difficulty' => 'Beginner-Friendly',
+        'holes' => 9,
+        'par' => 34,
+        'designer' => 'Municipal Design',
+        'amenities' => ['Municipal Course', 'Park Setting', 'Cart Rental', 'Club Rental', 'Walking Friendly', 'Senior Rates'],
+        'slug' => 'percy-warner-golf-course'
+    ],
+    [
         'id' => 18,
         'name' => 'The Golf Club of Tennessee',
         'location' => 'Kingston Springs, TN',
