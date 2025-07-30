@@ -14,6 +14,7 @@ from urllib.parse import urljoin, urlparse
 import threading
 import time
 import os
+from improved_golf_extractor import IntelligentGolfExtractor
 
 class GolfCourseGenerator:
     def __init__(self, root):
@@ -47,6 +48,9 @@ class GolfCourseGenerator:
             'course_rating': '',
             'greens_type': ''
         }
+        
+        # Initialize intelligent extractor
+        self.intelligent_extractor = IntelligentGolfExtractor()
         
         self.create_widgets()
         
@@ -330,7 +334,7 @@ class GolfCourseGenerator:
         relevant_urls = []
         base_domain = urlparse(base_url).netloc
         
-        # Keywords that indicate relevant pages
+        # Keywords that indicate relevant pages (enhanced)
         relevant_keywords = [
             # About/Info pages
             ('about', 'About'),
@@ -339,6 +343,11 @@ class GolfCourseGenerator:
             ('course-information', 'Course Info'),
             ('the-course', 'Course Info'),
             ('golf-course', 'Course Info'),
+            ('course', 'Course Info'),
+            ('overview', 'About'),
+            ('golf', 'Course Info'),
+            ('experience', 'Course Info'),
+            ('signature', 'Course Info'),
             
             # Pricing pages
             ('rates', 'Rates'),
@@ -346,6 +355,9 @@ class GolfCourseGenerator:
             ('fees', 'Fees'),
             ('green-fees', 'Green Fees'),
             ('membership', 'Membership'),
+            ('play', 'Rates'),
+            ('tee-times', 'Rates'),
+            ('book', 'Rates'),
             
             # Contact pages
             ('contact', 'Contact'),
@@ -404,100 +416,33 @@ class GolfCourseGenerator:
         return relevant_urls
             
     def _extract_course_data_multi(self, all_soups):
-        """Extract course data from multiple pages"""
+        """Extract course data from multiple pages using intelligent extractor"""
         
-        # Reset course data
-        for key in self.course_data:
-            if key not in ['location_state']:  # Keep TN as default
-                self.course_data[key] = ''
+        self.log_status("Starting intelligent data extraction...")
+        
+        # Use the intelligent extractor
+        extracted_data = self.intelligent_extractor.extract_intelligent_data(all_soups)
+        
+        # Update course data with extracted information
+        for key, value in extracted_data.items():
+            if key in self.course_data:
+                if value:  # Only update if we found something
+                    self.course_data[key] = value
+                    self.log_status(f"✓ Found {key}: {value}")
+                else:
+                    self.log_status(f"✗ Could not find {key}")
+        
+        # Generate slug from course name if found
+        if self.course_data['course_name']:
+            slug = re.sub(r'[^a-zA-Z0-9\s]', '', self.course_data['course_name'].lower())
+            slug = re.sub(r'\s+', '-', slug.strip())
+            self.course_data['course_slug'] = slug
+            self.log_status(f"✓ Generated slug: {slug}")
+        
+        # Ensure location_state is TN
         self.course_data['location_state'] = 'TN'
         
-        # Extract data from each page, with page type priority
-        for page_type, soup, url in all_soups:
-            self.log_status(f"Extracting data from {page_type}...")
-            
-            page_text = soup.get_text()
-            
-            # Course name - prioritize homepage
-            if not self.course_data['course_name'] and page_type == 'Homepage':
-                course_name = self._extract_course_name(soup)
-                if course_name:
-                    self.course_data['course_name'] = course_name
-                    self.log_status(f"Found course name: {course_name}")
-                    
-                    # Generate slug
-                    slug = re.sub(r'[^a-zA-Z0-9\s]', '', course_name.lower())
-                    slug = re.sub(r'\s+', '-', slug.strip())
-                    self.course_data['course_slug'] = slug
-            
-            # Phone number - any page
-            if not self.course_data['phone']:
-                phone = self._extract_phone(page_text)
-                if phone:
-                    self.course_data['phone'] = phone
-                    self.log_status(f"Found phone: {phone}")
-            
-            # Address - prioritize contact page, then homepage
-            if not self.course_data['address'] or page_type in ['Contact/Location', 'Homepage']:
-                address = self._extract_address(page_text)
-                if address:
-                    self.course_data['address'] = address
-                    self.log_status(f"Found address: {address}")
-                    
-                    # Extract city from address
-                    city_match = re.search(r',\s*([^,]+),\s*[A-Z]{2}', address)
-                    if city_match and not self.course_data['location_city']:
-                        self.course_data['location_city'] = city_match.group(1).strip()
-                        self.log_status(f"Found city: {city_match.group(1).strip()}")
-            
-            # Pricing - prioritize rates page
-            if page_type == 'Rates/Pricing' or not self.course_data['weekday_fees']:
-                pricing = self._extract_pricing(page_text)
-                if pricing['weekday']:
-                    self.course_data['weekday_fees'] = pricing['weekday']
-                    self.log_status(f"Found weekday fees: {pricing['weekday']}")
-                if pricing['weekend']:
-                    self.course_data['weekend_fees'] = pricing['weekend']
-                    self.log_status(f"Found weekend fees: {pricing['weekend']}")
-                if pricing['cart']:
-                    self.course_data['cart_fee'] = pricing['cart']
-                    self.log_status(f"Found cart fee: {pricing['cart']}")
-            
-            # Course specs - any page
-            if not self.course_data['yardage']:
-                yardage = self._extract_yardage(page_text)
-                if yardage:
-                    self.course_data['yardage'] = yardage
-                    self.log_status(f"Found yardage: {yardage}")
-                    
-            if not self.course_data['par']:
-                par = self._extract_par(page_text)
-                if par:
-                    self.course_data['par'] = par
-                    self.log_status(f"Found par: {par}")
-            
-            # Designer and year - prioritize about page
-            if page_type == 'About/Course Info' or not self.course_data['designer']:
-                designer = self._extract_designer(page_text)
-                if designer:
-                    self.course_data['designer'] = designer
-                    self.log_status(f"Found designer: {designer}")
-                    
-            if page_type == 'About/Course Info' or not self.course_data['year_opened']:
-                year = self._extract_year(page_text)
-                if year:
-                    self.course_data['year_opened'] = year
-                    self.log_status(f"Found year opened: {year}")
-            
-            # Set website to homepage URL
-            if page_type == 'Homepage':
-                self.course_data['website'] = url
-            
-            # Course type
-            if not self.course_data['course_type'] or self.course_data['course_type'] == 'Public':
-                course_type = self._extract_course_type(page_text)
-                self.course_data['course_type'] = course_type
-                self.log_status(f"Set course type: {course_type}")
+        self.log_status("✓ Intelligent extraction complete!")
     
     def _extract_course_data(self, soup, url):
         """Extract golf course data from the webpage"""
