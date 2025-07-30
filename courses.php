@@ -552,6 +552,21 @@ $courses_static = [
         'slug' => 'whittle-springs-golf-course'
     ],
     [
+        'id' => 37,
+        'name' => 'White Plains Golf Course',
+        'location' => 'Cookeville, TN',
+        'region' => 'Cookeville Area',
+        'description' => 'Daily-fee golf course open year-round. 18-hole par 72 layout with four tee options and comprehensive amenities including driving range, lessons, and tournament hosting.',
+        'image' => '/images/courses/white-plains-golf-course/1.jpeg',
+        'price_range' => '$35-55',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Traditional Design',
+        'amenities' => ['Daily-Fee Course', 'Driving Range', 'Golf Lessons', 'Dining Options', 'Golf Shop', 'Tournament Hosting', 'Beverage Cart', 'Year-Round Play'],
+        'slug' => 'white-plains-golf-course'
+    ],
+    [
         'id' => 29,
         'name' => 'Cheekwood Golf Club',
         'location' => 'Franklin, TN',

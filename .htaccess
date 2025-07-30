@@ -53,6 +53,7 @@ RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.ph
 RewriteRule ^courses/vanderbilt-legends-club/?$ courses/vanderbilt-legends-club.php [L]
 RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
 RewriteRule ^courses/whittle-springs-golf-course/?$ courses/whittle-springs-golf-course.php [L]
+RewriteRule ^courses/white-plains-golf-course/?$ courses/white-plains-golf-course.php [L]
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/open-championship-2025-round-1-royal-portrush/?$ news/open-championship-2025-round-1-royal-portrush.php [L]
