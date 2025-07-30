@@ -622,23 +622,23 @@ try {
                     <div class="course-specs single-column">
                         <div class="spec-item">
                             <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+                            <span class="spec-value">9 (18)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Par:</span>
-                            <span class="spec-value">33</span>
+                            <span class="spec-value">33 (66)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">2,400</span>
+                            <span class="spec-value">2,623</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Unknown</span>
+                            <span class="spec-value">Bobby Greenwood</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Opened:</span>
-                            <span class="spec-value">Unknown</span>
+                            <span class="spec-value">2015</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
@@ -650,44 +650,60 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Mar 22 - Nov 24)</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">9 - Holes</h4>
                         <div class="course-specs">
                             <div class="spec-item">
                                 <span class="spec-label">Weekday (Cart):</span>
-                                <span class="spec-value">$66</span>
+                                <span class="spec-value">$30</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Weekend (Cart):</span>
-                                <span class="spec-value">$76</span>
+                                <span class="spec-value">$33.25</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Senior (Cart):</span>
-                                <span class="spec-value">$56</span>
+                                <span class="spec-label">Weekday Senior (Cart):</span>
+                                <span class="spec-value">$27</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Twilight (Cart):</span>
-                                <span class="spec-value">$56</span>
+                                <span class="spec-label">Weekend Senior (Cart):</span>
+                                <span class="spec-value">$27</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekday Junior (Cart):</span>
+                                <span class="spec-value">$20</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend Junior (Cart):</span>
+                                <span class="spec-value">$25</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Out of Season (Nov 25 - Mar 21)</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">18 - Holes</h4>
                         <div class="course-specs">
                             <div class="spec-item">
                                 <span class="spec-label">Weekday (Cart):</span>
-                                <span class="spec-value">$41</span>
+                                <span class="spec-value">$47</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Weekend (Cart):</span>
-                                <span class="spec-value">$48</span>
+                                <span class="spec-value">$54.15</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Senior (Cart):</span>
-                                <span class="spec-value">$34</span>
+                                <span class="spec-label">Weekday Senior (Cart):</span>
+                                <span class="spec-value">$43</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Junior (Walk):</span>
-                                <span class="spec-value">$20</span>
+                                <span class="spec-label">Weekend Senior (Cart):</span>
+                                <span class="spec-value">$43</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekday Junior (Cart):</span>
+                                <span class="spec-value">$35</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend Junior (Cart):</span>
+                                <span class="spec-value">$45</span>
                             </div>
                         </div>
                     </div>
