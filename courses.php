@@ -72,6 +72,21 @@ $courses_static = [
         'slug' => 'cedar-crest-golf-club'
     ],
     [
+        'id' => 32,
+        'name' => 'Cherokee Country Club',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Historic 1907 private club featuring Donald Ross classic links-style design. Founded to promote and elevate golf with century-old tradition.',
+        'image' => '/images/courses/cherokee-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Private Club', 'Donald Ross Design', 'Links-style Course', 'Family Club', 'Historic 1907 Foundation', 'Member Events'],
+        'slug' => 'cherokee-country-club'
+    ],
+    [
         'id' => 4,
         'name' => 'Gaylord Springs Golf Links',
         'location' => 'Nashville, TN',
