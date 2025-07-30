@@ -17,6 +17,7 @@ RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 # Handle course pages (in subdirectory - alphabetical order)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
 RewriteRule ^courses/belle-meade-country-club/?$ courses/belle-meade-country-club.php [L]
+RewriteRule ^courses/big-creek-golf-club/?$ courses/big-creek-golf-club.php [L]
 RewriteRule ^courses/cedar-crest-golf-club/?$ courses/cedar-crest-golf-club.php [L]
 RewriteRule ^courses/cheekwood-golf-club/?$ courses/cheekwood-golf-club.php [L]
 RewriteRule ^courses/cheekwood-golf-club-test/?$ courses/cheekwood-golf-club-test.php [L]

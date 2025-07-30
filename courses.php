@@ -42,6 +42,21 @@ $courses_static = [
         'slug' => 'belle-meade-country-club'
     ],
     [
+        'id' => 28,
+        'name' => 'Big Creek Golf Club',
+        'location' => 'Millington, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Historic B.G. Mitchell design from 1976. Semi-private course that challenged golfers with strategic bunkering and water hazards. PERMANENTLY CLOSED - preserved for historical reference.',
+        'image' => '/images/courses/big-creek-golf-club/1.jpeg',
+        'price_range' => 'CLOSED',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 'Unknown',
+        'designer' => 'B.G. Mitchell',
+        'amenities' => ['Historical Reference', 'Formerly Semi-Private', 'Had Pro Shop', 'Had Putting Green', 'Walking Allowed'],
+        'slug' => 'big-creek-golf-club'
+    ],
+    [
         'id' => 3,
         'name' => 'Cedar Crest Golf Club',
         'location' => 'Murfreesboro, TN',
