@@ -402,6 +402,21 @@ $courses_static = [
         'slug' => 'ted-rhodes-golf-course'
     ],
     [
+        'id' => 34,
+        'name' => 'The Club at Gettysvue',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Premier private club in the foothills of the Great Smoky Mountains. Bland Pittman championship design with comprehensive amenities and multiple membership categories.',
+        'image' => '/images/courses/the-club-at-gettysvue/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bland Pittman',
+        'amenities' => ['Private Club', 'Championship Golf', 'Practice Facilities', 'Clubhouse Dining', 'Aquatic Center', 'Fitness Center', 'Racquet Sports', 'Golf Shop'],
+        'slug' => 'the-club-at-gettysvue'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
