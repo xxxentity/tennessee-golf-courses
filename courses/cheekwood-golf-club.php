@@ -771,36 +771,36 @@ try {
                 <h3><i class="fas fa-star"></i> Course Amenities</h3>
                 <div class="amenities-grid">
                     <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Full Restaurant</span>
-                    </div>
-                    <div class="amenity-item">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Event Hosting</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-car"></i>
                         <span>Cart Rentals</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-wifi"></i>
-                        <span>Free WiFi</span>
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Short Practice Area</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Online Booking</span>
+                        <i class="fas fa-flag"></i>
+                        <span>Putting Green</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Food & Beverages</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-club"></i>
+                        <span>Club Rentals</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Operation 36 Coaching</span>
                     </div>
                 </div>
             </div>
