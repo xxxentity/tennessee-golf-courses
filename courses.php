@@ -117,6 +117,21 @@ $courses_static = [
         'slug' => 'forrest-crossing-golf-course'
     ],
     [
+        'id' => 35,
+        'name' => 'Fox Den Country Club',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Premier private golf club with championship 18-hole layout. Seven tee options ranging from 4,718 to 7,110 yards accommodate all skill levels.',
+        'image' => '/images/courses/fox-den-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Championship Design',
+        'amenities' => ['Private Club', 'Championship Golf', 'Practice Facilities', 'Clubhouse Dining', 'Member Events', 'Professional Staff', 'Multiple Tees'],
+        'slug' => 'fox-den-country-club'
+    ],
+    [
         'id' => 6,
         'name' => 'Greystone Golf Course',
         'location' => 'Dickson, TN',
