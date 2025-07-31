@@ -193,26 +193,24 @@ try {
                         </div>
                     </div>
                     
-                    <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                        <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                            <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                            <span>Golf</span>
-                        </div>
-                        <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                            <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                            <span>Dining</span>
-                        </div>
-                        <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                            <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                            <span>Tennis</span>
-                        </div>
-                        <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                            <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                            <span>Fitness</span>
-                        </div>
-                        <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                            <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                            <span>Aquatics</span>
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=5138+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Cherokee Country Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=5138+Lyons+View+Pike,+Knoxville,+TN+37919" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -234,6 +232,45 @@ try {
                 <br>
                 
                 <p>Beyond golf, Cherokee Country Club offers a complete country club experience with world-class dining, tennis facilities, fitness amenities, and aquatic programs. The club serves as a cornerstone of the Knoxville community, hosting numerous charitable events and maintaining its reputation as one of East Tennessee's premier private clubs.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Championship Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Tennis Courts</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Fitness Center</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Swimming Pool</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Event Hosting</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Valet Parking</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Course Gallery -->
