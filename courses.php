@@ -27,6 +27,21 @@ $courses_static = [
         'slug' => 'bear-trace-harrison-bay'
     ],
     [
+        'id' => 29,
+        'name' => 'Avalon Golf & Country Club',
+        'location' => 'Lenoir City, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Joseph L. Lee designed semi-private course with Primo Zoysia greens',
+        'image' => '/images/courses/avalon-golf-country-club/1.jpeg',
+        'price_range' => '$50-85',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Joseph L. Lee',
+        'amenities' => ['Pro Shop', 'Restaurant', 'Driving Range', 'Golf Lessons'],
+        'slug' => 'avalon-golf-country-club'
+    ],
+    [
         'id' => 2,
         'name' => 'Belle Meade Country Club',
         'location' => 'Nashville, TN',
