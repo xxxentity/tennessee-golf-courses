@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cherokee Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Cherokee Country Club - Historic 1907 private club featuring Donald Ross classic links-style design in Knoxville, TN. Promoting and elevating the game of golf since 1907.">
+    <meta name="description" content="Cherokee Country Club - Historic 1907 private club featuring Donald Ross design in Knoxville, TN. Promoting and elevating the game of golf since 1907.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -100,32 +100,35 @@ try {
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stat {
+        .course-rating {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
-        .course-info-section {
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
             padding: 4rem 0;
-            background: #f8f9fa;
         }
         
-        .course-info-cards {
+        .course-info-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 4rem;
         }
         
@@ -133,176 +136,91 @@ try {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .course-info-card h3 i {
-            color: #4a7c59;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+        }
+        
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-item:last-child {
-            border-bottom: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #2c5234;
+            color: #666;
         }
         
         .spec-value {
-            color: #666;
-            font-weight: 500;
+            font-weight: 700;
+            color: #2c5234;
         }
         
-        .location-info {
-            text-align: left;
+        .private-notice {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1rem 0;
         }
         
-        .location-details p {
-            margin-bottom: 0.8rem;
+        .private-notice h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .private-notice p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
+        }
+        
+        .amenity-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .location-details i {
-            color: #4a7c59;
-            width: 16px;
-        }
-        
-        .location-details a {
-            color: #4a7c59;
-            text-decoration: none;
-        }
-        
-        .location-details a:hover {
-            text-decoration: underline;
-        }
-        
-        .course-description {
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        
-        .tee-info-section {
-            padding: 4rem 0;
+            gap: 0.75rem;
+            padding: 1rem;
             background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .tee-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tee-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .tee-card h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-        }
-        
-        .tee-card.championship h3 { border-left: 4px solid #000; padding-left: 1rem; }
-        .tee-card.regular h3 { border-left: 4px solid #6c757d; padding-left: 1rem; }
-        .tee-card.forward h3 { border-left: 4px solid #28a745; padding-left: 1rem; }
-        .tee-card.ladies h3 { border-left: 4px solid #dc3545; padding-left: 1rem; }
-        
-        .tee-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .tee-stat {
-            text-align: center;
-        }
-        
-        .tee-stat-label {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-        
-        .tee-stat-value {
+        .amenity-item i {
+            color: #4a7c59;
             font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c5234;
         }
         
         .photo-gallery {
-            padding: 4rem 0;
-            background: white;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -311,16 +229,16 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: scale(1.05);
         }
         
         .gallery-button {
             text-align: center;
+            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -329,161 +247,15 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #ddd;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover,
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .btn-submit {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #2c5234;
-        }
-        
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
         }
         
         /* Modal Styles */
@@ -526,8 +298,6 @@ try {
             cursor: pointer;
             background: none;
             border: none;
-            padding: 0;
-            line-height: 1;
         }
         
         .close:hover {
@@ -555,385 +325,522 @@ try {
             transform: scale(1.05);
         }
         
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .booking-section {
+            background: linear-gradient(135deg, #2c5234, #4a7c59);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .booking-content h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .booking-content p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .booking-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-book {
+            background: #ffd700;
+            color: #2c5234;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-book:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-contact {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-contact:hover {
+            background: white;
+            color: #2c5234;
+        }
+        
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+        
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
+        }
+        
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
+        }
+        
+        .login-prompt {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .login-prompt a {
+            color: #2c5234;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #f5c6cb;
+        }
+        
         @media (max-width: 768px) {
             .course-hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .course-info-cards {
+            .course-info-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
             }
             
-            .tee-cards {
+            .course-specs {
                 grid-template-columns: 1fr;
             }
             
-            .hero-stats {
-                gap: 15px;
-            }
-            
-            .hero-stat {
-                font-size: 1rem;
+            .booking-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- Dynamic Navigation -->
-    <?php include '../includes/navigation.php'; ?>
-
+    <?php include '../header.php'; ?>
+    
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Cherokee Country Club</h1>
-            <p>Donald Ross Classic Links Style • Knoxville, Tennessee</p>
-            <div class="hero-stats">
-                <?php if ($avg_rating): ?>
-                    <div class="hero-stat">
-                        <i class="fas fa-star" style="color: #ffd700;"></i>
-                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                    </div>
-                <?php endif; ?>
-                <div class="hero-stat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Knoxville, TN</span>
+            <p>Donald Ross Design • 6,370 Yards • Par 70 • Private</p>
+            <?php if ($avg_rating): ?>
+            <div class="course-rating">
+                <div class="rating-stars">
+                    <?php
+                    $full_stars = floor($avg_rating);
+                    $half_star = ($avg_rating - $full_stars) >= 0.5;
+                    
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $full_stars) {
+                            echo '<i class="fas fa-star"></i>';
+                        } elseif ($i == $full_stars + 1 && $half_star) {
+                            echo '<i class="fas fa-star-half-alt"></i>';
+                        } else {
+                            echo '<i class="far fa-star"></i>';
+                        }
+                    }
+                    ?>
                 </div>
-                <div class="hero-stat">
-                    <i class="fas fa-ruler"></i>
-                    <span>6,407 yards</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Since 1907</span>
-                </div>
+                <div class="rating-text"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</div>
             </div>
+            <?php endif; ?>
         </div>
     </section>
-
-    <!-- Course Information Cards -->
-    <section class="course-info-section">
+    
+    <!-- Course Details Section -->
+    <section class="course-details">
         <div class="container">
-            <div class="course-info-cards">
+            <div class="course-info-grid">
+                <!-- Course Information -->
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
                     <div class="course-specs">
                         <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
+                            <span class="spec-label">Designer</span>
                             <span class="spec-value">Donald Ross</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Year Founded:</span>
+                            <span class="spec-label">Year Opened</span>
                             <span class="spec-value">1907</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
+                            <span class="spec-label">Par</span>
                             <span class="spec-value">70</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Length:</span>
-                            <span class="spec-value">6,407 yards</span>
+                            <span class="spec-label">Yardage</span>
+                            <span class="spec-value">6,370</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Style:</span>
-                            <span class="spec-value">Classic Links</span>
+                            <span class="spec-label">Type</span>
+                            <span class="spec-value">Private</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Private Club</span>
+                            <span class="spec-label">Course Rating</span>
+                            <span class="spec-value">71.3</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating</span>
+                            <span class="spec-value">128</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Greens</span>
+                            <span class="spec-value">Bermuda</span>
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- Membership Information -->
                 <div class="course-info-card">
                     <h3><i class="fas fa-users"></i> Membership</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Club Type:</span>
-                            <span class="spec-value">Private Country Club</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Founded:</span>
-                            <span class="spec-value">1907</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Access:</span>
-                            <span class="spec-value">Members & Guests Only</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Club Focus:</span>
-                            <span class="spec-value">Family Club Experience</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Activities:</span>
-                            <span class="spec-value">Golf, Social, Recreation</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Philosophy:</span>
-                            <span class="spec-value">Promote & Elevate Golf</span>
-                        </div>
+                    <div class="private-notice">
+                        <h4>Private Club</h4>
+                        <p>Members and invited guests only</p>
                     </div>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Cherokee Country Club operates as an exclusive private club. 
+                        Contact the club directly for membership information and guest policies.
+                    </p>
                 </div>
-
+                
+                <!-- Location & Contact -->
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 5138 Lyons View Pike, Knoxville, TN 37939</p>
-                            <p><i class="fas fa-phone"></i> (865) 584-4637</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.cherokeecountryclub.com" target="_blank">cherokeecountryclub.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=5138+Lyons+View+Pike+Knoxville+TN+37939" target="_blank">Get Directions</a></p>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Address</span>
+                            <span class="spec-value">5138 Lyons View Pike</span>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=5138+Lyons+View+Pike+Knoxville+TN+37939&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
-                        </iframe>
+                        <div class="spec-item">
+                            <span class="spec-label">City</span>
+                            <span class="spec-value">Knoxville, TN 37919</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Phone</span>
+                            <span class="spec-value">(865) 584-4637</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Founded</span>
+                            <span class="spec-value">1907</span>
+                        </div>
+                    </div>
+                    
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <i class="fas fa-golf-ball"></i>
+                            <span>Golf</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Dining</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-tennis-ball"></i>
+                            <span>Tennis</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Fitness</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-swimmer"></i>
+                            <span>Aquatics</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Course Description -->
+            <div class="section-content">
+                <h2>About Cherokee Country Club</h2>
+                <p>Established in 1907, Cherokee Country Club stands as one of Tennessee's most prestigious and historic private clubs. Located on a picturesque bend of the Tennessee River with sweeping views of the Great Smoky Mountains, Cherokee has been promoting and elevating the game of golf for over a century.</p>
+                
+                <p>The club's golf course showcases the timeless design principles of Donald Ross, who was commissioned in 1919 to enhance the layout. After various modifications over the decades, renowned restoration architect Ron Prichard was brought in during 2000 to restore the course to its original Ross glory, utilizing historical aerial photographs and design principles. The restoration was completed and reopened for play in 2008.</p>
+                
+                <p>This challenging par-70 layout stretches 6,370 yards and features the unique characteristic of six par-3 holes, including back-to-back par-5s at holes 4 and 5. The hilly terrain and strategic bunkering create a demanding yet fair test of golf that rewards thoughtful course management and precise shot-making.</p>
+                
+                <p>Beyond golf, Cherokee Country Club offers a complete country club experience with world-class dining, tennis facilities, fitness amenities, and aquatic programs. The club serves as a cornerstone of the Knoxville community, hosting numerous charitable events and maintaining its reputation as one of East Tennessee's premier private clubs.</p>
             </div>
         </div>
     </section>
-
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>A Century-Old Donald Ross Classic</h2>
-                <p>Cherokee Country Club stands as one of Tennessee's most prestigious golf destinations, founded in 1907 with a mission to "promote and elevate golf." This historic private club features a classic Donald Ross links-style design that has challenged and delighted golfers for over a century.</p>
-                
-                <p>Located on the scenic Lyons View Pike in Knoxville, Cherokee Country Club embodies the timeless principles of Donald Ross architecture. The course showcases the legendary designer's signature style with strategic bunkering, subtle green contours, and thoughtful routing that rewards precision and course management over pure distance.</p>
-                
-                <p>As a family-oriented private club, Cherokee provides high-quality, year-round social and recreational activities centered around the game of golf. The club's philosophy emphasizes making golf an important part of members' lifestyle and recreational pleasure, fostering a community where the pursuit of the game is both challenging and enjoyable.</p>
-                
-                <p>With multiple tee options ranging from 5,025 to 6,407 yards, Cherokee Country Club accommodates golfers of all skill levels while maintaining the integrity and challenge of Ross's original design. The course features slope ratings from 125 to 133, providing a true test of golf in one of Knoxville's most beautiful settings.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tee Information Section -->
-    <section class="tee-info-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Tee Information</h2>
-                <p>Multiple options to match your skill level</p>
-            </div>
-            <div class="tee-cards">
-                <div class="tee-card championship">
-                    <h3>Ross Tees (Championship)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">6,407</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">71.6</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">133</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">70</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card regular">
-                    <h3>Black Tees (Regular)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">6,164</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">70.2</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">132</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">70</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card forward">
-                    <h3>Green Tees (Women's)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">5,470</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">72.0</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">129</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">70</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card ladies">
-                    <h3>White Tees (Forward)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">5,025</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">69.9</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">125</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">71</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Photo Gallery -->
     <section class="photo-gallery">
         <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the classic beauty of Cherokee Country Club</p>
-            </div>
+            <h2>Course Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/7.jpeg');"></div>
+                <?php for ($i = 1; $i <= 8; $i++): ?>
+                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/<?php echo $i; ?>.jpeg');" onclick="openGallery()"></div>
+                <?php endfor; ?>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
-
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Cherokee Country Club - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Cherokee Country Club</p>
-            </div>
+            <h2>Course Reviews</h2>
             
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
                 <div class="comment-form-container">
                     <h3>Share Your Experience</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div class="success-message"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div class="error-message"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
                     <form method="POST" class="comment-form">
                         <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
+                            <label for="rating">Your Rating:</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2">★</label>
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1">★</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience at Cherokee Country Club..." required></textarea>
+                            <textarea name="comment_text" id="comment_text" placeholder="Share your thoughts about Cherokee Country Club..." required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Post Review</button>
                     </form>
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
+                    <p><a href="../login.php">Log in</a> to share your review of Cherokee Country Club</p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Comments -->
-            <div class="comments-container">
-                <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
-                            </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+            <?php if (count($comments) > 0): ?>
+                <?php foreach ($comments as $comment): ?>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                            <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                         </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                        <div class="rating-stars">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
+                            <?php endfor; ?>
+                        </div>
+                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-comments">
+                    <i class="fas fa-comments"></i>
+                    <h3>No reviews yet</h3>
+                    <p>Be the first to share your experience at Cherokee Country Club!</p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <h2>Experience Cherokee Country Club</h2>
+                <p>Historic Donald Ross design with over a century of golf tradition. Private club serving members and invited guests.</p>
+                <div class="booking-buttons">
+                    <a href="tel:(865)584-4637" class="btn-book">Call: (865) 584-4637</a>
+                    <a href="https://www.cherokeecountryclub.com" target="_blank" class="btn-contact">Visit Website</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <?php include '../includes/footer.php'; ?>
-
+    
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cherokee Country Club Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div id="fullGalleryGrid" class="full-gallery-grid">
+                <!-- Images will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <?php include '../footer.php'; ?>
+    
     <script>
-        // Gallery Modal Functions
+        // Star rating functionality
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio, index) => {
+            radio.addEventListener('change', function() {
+                const stars = document.querySelectorAll('.star-rating label');
+                stars.forEach((star, starIndex) => {
+                    if (starIndex >= (5 - this.value)) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Gallery modal functionality
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
@@ -941,7 +848,7 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images
+            // Add all 25 images
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
@@ -960,77 +867,13 @@ try {
             document.body.style.overflow = 'auto';
         }
         
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
                 closeGallery();
             }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-        
-        // Interactive star rating functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
+        }
     </script>
 </body>
 </html>
