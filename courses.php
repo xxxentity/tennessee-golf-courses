@@ -42,6 +42,21 @@ $courses_static = [
         'slug' => 'avalon-golf-country-club'
     ],
     [
+        'id' => 38,
+        'name' => 'Bluegrass Yacht & Country Club',
+        'location' => 'Hendersonville, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Unique private club combining Robert Bruce Harris golf design with yacht marina facilities since 1951',
+        'image' => '/images/courses/bluegrass-yacht-country-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Robert Bruce Harris',
+        'amenities' => ['Championship Golf', 'Yacht Marina', 'Tennis Courts', 'Fine Dining', 'Swimming Pools', 'Spa Services', 'Youth Programs', 'Event Hosting'],
+        'slug' => 'bluegrass-yacht-country-club'
+    ],
+    [
         'id' => 2,
         'name' => 'Belle Meade Country Club',
         'location' => 'Nashville, TN',
