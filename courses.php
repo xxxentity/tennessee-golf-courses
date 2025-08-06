@@ -757,15 +757,16 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     
     <style>
         .courses-page {
-            padding-top: 80px;
+            padding-top: 0px;
             min-height: 100vh;
             background: var(--bg-light);
         }
         
         .page-header {
             background: var(--bg-white);
-            padding: 2rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border-color);
+            margin-top: 80px;
         }
         
         .page-title {
@@ -796,7 +797,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             height: calc(100vh - 120px);
             overflow-y: auto;
             position: sticky;
-            top: 100px;
+            top: 110px;
         }
         
         /* Custom scrollbar for sidebar */
@@ -1102,11 +1103,12 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         
         @media screen and (max-width: 768px) {
             .courses-page {
-                padding-top: 70px;
+                padding-top: 0px;
             }
             
             .page-header {
-                padding: 1rem 0;
+                padding: 0.5rem 0;
+                margin-top: 70px;
             }
             
             .page-title {
