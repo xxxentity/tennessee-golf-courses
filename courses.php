@@ -7,7 +7,12 @@ $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
 $price_filter = isset($_GET['price']) ? $_GET['price'] : '';
 $difficulty_filter = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
 $amenities_filter = isset($_GET['amenities']) ? $_GET['amenities'] : '';
-$sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'rating';
+$sort_by = isset($_GET['sort']) ? $_GET['sort'] : 'name';
+
+// Pagination parameters
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+$courses_per_page = 10;
+$offset = ($page - 1) * $courses_per_page;
 
 // Static course data with real ratings from database (alphabetical order)
 $courses_static = [
@@ -632,8 +637,98 @@ foreach ($courses_static as $course) {
     $courses[] = $course;
 }
 
-// Get top 2 rated courses
-$featured_courses = array_slice($courses, 0, 2);
+// Apply filters to courses
+$filtered_courses = [];
+foreach ($courses as $course) {
+    // Region filter
+    if ($region_filter && $course['region'] !== $region_filter) {
+        continue;
+    }
+    
+    // Price filter
+    if ($price_filter) {
+        $price_match = false;
+        switch ($price_filter) {
+            case 'budget':
+                $price_match = (strpos($course['price_range'], '$') !== false && 
+                              (strpos($course['price_range'], 'Under') !== false ||
+                               preg_match('/\$\d+-\d+/', $course['price_range']) && 
+                               (int)preg_replace('/[^\d]/', '', $course['price_range']) < 50));
+                break;
+            case 'moderate':
+                $price_match = (strpos($course['price_range'], '$') !== false && 
+                              preg_match('/\$\d+-\d+/', $course['price_range']) && 
+                              (int)preg_replace('/[^\d]/', '', $course['price_range']) >= 50 && 
+                              (int)preg_replace('/[^\d]/', '', $course['price_range']) <= 100);
+                break;
+            case 'premium':
+                $price_match = ($course['price_range'] === 'Private Club' || 
+                              (strpos($course['price_range'], '$') !== false && 
+                               preg_match('/\$\d+-\d+/', $course['price_range']) && 
+                               (int)preg_replace('/[^\d]/', '', $course['price_range']) > 100));
+                break;
+        }
+        if (!$price_match) continue;
+    }
+    
+    // Difficulty filter
+    if ($difficulty_filter && strpos($course['difficulty'], $difficulty_filter) === false) {
+        continue;
+    }
+    
+    // Amenities filter
+    if ($amenities_filter && is_array($amenities_filter)) {
+        $has_amenity = false;
+        foreach ($amenities_filter as $amenity) {
+            if (in_array($amenity, $course['amenities'])) {
+                $has_amenity = true;
+                break;
+            }
+        }
+        if (!$has_amenity) continue;
+    }
+    
+    $filtered_courses[] = $course;
+}
+
+// Apply sorting
+switch ($sort_by) {
+    case 'rating':
+        usort($filtered_courses, function($a, $b) {
+            if ($a['avg_rating'] === null && $b['avg_rating'] === null) return 0;
+            if ($a['avg_rating'] === null) return 1;
+            if ($b['avg_rating'] === null) return -1;
+            return $b['avg_rating'] <=> $a['avg_rating'];
+        });
+        break;
+    case 'name':
+        usort($filtered_courses, function($a, $b) {
+            return strcmp($a['name'], $b['name']);
+        });
+        break;
+    case 'price_low':
+    case 'price_high':
+        usort($filtered_courses, function($a, $b) use ($sort_by) {
+            $price_a = $a['price_range'] === 'Private Club' ? 999 : (int)preg_replace('/[^\d]/', '', $a['price_range']);
+            $price_b = $b['price_range'] === 'Private Club' ? 999 : (int)preg_replace('/[^\d]/', '', $b['price_range']);
+            return $sort_by === 'price_low' ? $price_a <=> $price_b : $price_b <=> $price_a;
+        });
+        break;
+}
+
+// Pagination calculations
+$total_courses = count($filtered_courses);
+$total_pages = ceil($total_courses / $courses_per_page);
+$page = max(1, min($page, $total_pages)); // Ensure page is valid
+$offset = ($page - 1) * $courses_per_page;
+
+// Get courses for current page
+$paginated_courses = array_slice($filtered_courses, $offset, $courses_per_page);
+
+// Get top 2 rated courses for featured section (from all courses, not filtered)
+$featured_courses = array_slice(array_filter($courses, function($course) {
+    return $course['avg_rating'] !== null;
+}), 0, 2);
 ?>
 
 <!DOCTYPE html>
@@ -662,7 +757,7 @@ $featured_courses = array_slice($courses, 0, 2);
     
     <style>
         .courses-page {
-            padding-top: 140px;
+            padding-top: 80px;
             min-height: 100vh;
             background: var(--bg-light);
         }
@@ -698,9 +793,29 @@ $featured_courses = array_slice($courses, 0, 2);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            height: fit-content;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
             position: sticky;
-            top: 160px;
+            top: 100px;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        .filters-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .filters-sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .filters-sidebar::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .filters-sidebar::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
         }
         
         .filter-group {
@@ -913,25 +1028,125 @@ $featured_courses = array_slice($courses, 0, 2);
             color: var(--text-gray);
         }
         
+        /* Pagination Styles */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            gap: 0.5rem;
+        }
+        
+        .pagination-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border-color);
+            background: var(--bg-white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .pagination-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .pagination-info {
+            margin: 0 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .results-summary {
+            background: var(--bg-light);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
         @media screen and (max-width: 1024px) {
             .courses-container {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+                padding: 1rem;
             }
             
             .filters-sidebar {
                 position: static;
+                height: auto;
+                max-height: 300px;
                 margin-bottom: 1rem;
             }
         }
         
         @media screen and (max-width: 768px) {
+            .courses-page {
+                padding-top: 70px;
+            }
+            
+            .page-header {
+                padding: 1rem 0;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
             .courses-grid {
                 grid-template-columns: 1fr;
             }
             
             .course-card {
                 margin-bottom: 1rem;
+            }
+            
+            .filters-sidebar {
+                padding: 1rem;
+                max-height: 250px;
+            }
+            
+            .pagination-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .pagination-info {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .pagination-container {
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+            
+            .pagination-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -958,10 +1173,10 @@ $featured_courses = array_slice($courses, 0, 2);
                     <div class="sort-section">
                         <div class="filter-title">Sort By</div>
                         <select class="sort-select" name="sort" onchange="this.form.submit()">
+                            <option value="name" <?php echo $sort_by === 'name' ? 'selected' : ''; ?>>Name A-Z</option>
                             <option value="rating" <?php echo $sort_by === 'rating' ? 'selected' : ''; ?>>Highest Rated</option>
                             <option value="price_low" <?php echo $sort_by === 'price_low' ? 'selected' : ''; ?>>Price: Low to High</option>
                             <option value="price_high" <?php echo $sort_by === 'price_high' ? 'selected' : ''; ?>>Price: High to Low</option>
-                            <option value="name" <?php echo $sort_by === 'name' ? 'selected' : ''; ?>>Name A-Z</option>
                         </select>
                     </div>
 
@@ -1108,17 +1323,31 @@ $featured_courses = array_slice($courses, 0, 2);
 
                 <!-- All Courses -->
                 <section class="all-courses-section">
+                    <div class="results-summary">
+                        <?php if ($total_courses > 0): ?>
+                            Showing <?php echo $offset + 1; ?> - <?php echo min($offset + $courses_per_page, $total_courses); ?> of <?php echo $total_courses; ?> golf courses
+                        <?php else: ?>
+                            No courses found matching your criteria
+                        <?php endif; ?>
+                    </div>
+                    
                     <h2 class="section-title">All Tennessee Golf Courses</h2>
+                    
                     <div class="courses-grid">
-                        <?php if (!empty($courses)): ?>
-                            <?php foreach ($courses as $course): ?>
+                        <?php if (!empty($paginated_courses)): ?>
+                            <?php foreach ($paginated_courses as $course): ?>
                                 <div class="course-card">
                                     <div class="course-image">
                                         <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
                                         <div class="course-rating">
-                                            <i class="fas fa-star"></i>
-                                            <?php echo number_format($course['avg_rating'], 1); ?>
-                                            <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
+                                            <?php if ($course['avg_rating'] !== null): ?>
+                                                <i class="fas fa-star"></i>
+                                                <?php echo number_format($course['avg_rating'], 1); ?>
+                                                <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
+                                            <?php else: ?>
+                                                <i class="fas fa-star" style="color: #ddd;"></i>
+                                                <span style="color: #666; font-size: 0.8rem;">No ratings</span>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <div class="course-content">
@@ -1134,9 +1363,12 @@ $featured_courses = array_slice($courses, 0, 2);
                                             <span class="feature-tag"><?php echo htmlspecialchars($course['designer']); ?> Design</span>
                                         </div>
                                         <div class="course-amenities">
-                                            <?php foreach ($course['amenities'] as $amenity): ?>
+                                            <?php foreach (array_slice($course['amenities'], 0, 4) as $amenity): ?>
                                                 <i class="fas fa-check amenity-icon" title="<?php echo htmlspecialchars($amenity); ?>"></i>
                                             <?php endforeach; ?>
+                                            <?php if (count($course['amenities']) > 4): ?>
+                                                <span style="color: var(--text-gray); font-size: 0.8rem;">+<?php echo count($course['amenities']) - 4; ?> more</span>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="course-footer">
                                             <span class="course-price"><?php echo htmlspecialchars($course['price_range']); ?></span>
@@ -1153,6 +1385,56 @@ $featured_courses = array_slice($courses, 0, 2);
                             </div>
                         <?php endif; ?>
                     </div>
+                    
+                    <!-- Pagination -->
+                    <?php if ($total_pages > 1): ?>
+                        <div class="pagination-container">
+                            <!-- Previous Button -->
+                            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => max(1, $page - 1)])); ?>" 
+                               class="pagination-btn <?php echo $page <= 1 ? 'disabled' : ''; ?>">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            
+                            <!-- Page Numbers -->
+                            <?php
+                            $start_page = max(1, $page - 2);
+                            $end_page = min($total_pages, $page + 2);
+                            
+                            // Show first page if not in range
+                            if ($start_page > 1): ?>
+                                <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => 1])); ?>" class="pagination-btn">1</a>
+                                <?php if ($start_page > 2): ?>
+                                    <span class="pagination-btn disabled">...</span>
+                                <?php endif; ?>
+                            <?php endif;
+                            
+                            // Show page range
+                            for ($i = $start_page; $i <= $end_page; $i++): ?>
+                                <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $i])); ?>" 
+                                   class="pagination-btn <?php echo $i == $page ? 'active' : ''; ?>">
+                                    <?php echo $i; ?>
+                                </a>
+                            <?php endfor;
+                            
+                            // Show last page if not in range
+                            if ($end_page < $total_pages): ?>
+                                <?php if ($end_page < $total_pages - 1): ?>
+                                    <span class="pagination-btn disabled">...</span>
+                                <?php endif; ?>
+                                <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => $total_pages])); ?>" class="pagination-btn"><?php echo $total_pages; ?></a>
+                            <?php endif; ?>
+                            
+                            <!-- Next Button -->
+                            <a href="?<?php echo http_build_query(array_merge($_GET, ['page' => min($total_pages, $page + 1)])); ?>" 
+                               class="pagination-btn <?php echo $page >= $total_pages ? 'disabled' : ''; ?>">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                            
+                            <span class="pagination-info">
+                                Page <?php echo $page; ?> of <?php echo $total_pages; ?>
+                            </span>
+                        </div>
+                    <?php endif; ?>
                 </section>
             </main>
         </div>
