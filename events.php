@@ -36,7 +36,7 @@ session_start();
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 110px;
+            margin-top: 70px;
         }
         
         .events-hero h1 {

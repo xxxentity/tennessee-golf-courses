@@ -28,7 +28,7 @@ session_start();
     
     <style>
         .about-page {
-            padding-top: 140px;
+            padding-top: 90px;
             min-height: 40vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
         }

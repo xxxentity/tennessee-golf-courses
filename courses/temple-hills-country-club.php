@@ -80,7 +80,7 @@ try {
     
     <style>
         .course-hero {
-            height: 30vh;
+            height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/temple-hills-country-club/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -89,7 +89,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 40px;
+            margin-top: 20px;
         }
         
         .course-hero-content h1 {

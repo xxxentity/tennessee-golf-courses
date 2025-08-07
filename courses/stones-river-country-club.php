@@ -83,7 +83,7 @@ try {
 
     <!-- Course Hero Section -->
     <section class="course-hero" style="
-        height: 30vh; 
+        height: 60vh; 
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/stones-river-country-club/1.jpeg'); 
         background-size: cover; 
         background-position: center; 
@@ -92,7 +92,7 @@ try {
         justify-content: center; 
         text-align: center; 
         color: white;
-        margin-top: 40px;
+        margin-top: 20px;
     ">
         <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Stones River Country Club</h1>
