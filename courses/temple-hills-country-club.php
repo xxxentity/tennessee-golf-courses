@@ -58,45 +58,50 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Hills Country Club - Leon Howard Design | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Temple Hills Country Club, a prestigious private club in Franklin with 27 holes designed by Leon Howard. Championship golf since 1972.">
+    <title>Temple Hills Country Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Temple Hills Country Club - Prestigious 27-hole private club designed by Leon Howard in Franklin, TN. Private members only with championship golf since 1972.">
     <link rel="canonical" href="https://tennesseegolfcourses.com/courses/temple-hills-country-club">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Analytics -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7VPNPCDTBP');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
     </script>
     
     <style>
         .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/temple-hills-country-club/1.jpeg');
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/temple-hills-country-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            position: relative;
+            color: white;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            opacity: 0.9;
         }
         
         .course-rating {
@@ -119,29 +124,26 @@ try {
         
         .course-details {
             padding: 4rem 0;
-            background-color: #f8f9fa;
         }
         
         .course-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-            border-bottom: 2px solid #228B22;
-            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
@@ -150,258 +152,51 @@ try {
             gap: 1rem;
         }
         
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
+        }
+        
         .spec-item {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #555;
+            color: #666;
         }
         
         .spec-value {
-            color: #2c5234;
-            font-weight: 600;
-        }
-        
-        .course-description {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .course-description h2 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .course-description p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-        
-        .course-layout {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .course-layout h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .layout-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .nine-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #228B22;
-        }
-        
-        .nine-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #228B22;
-            margin-bottom: 1rem;
-        }
-        
-        .nine-details {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .nine-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .combinations-section {
-            background: #e8f5e8;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-        }
-        
-        .combinations-title {
-            font-size: 1.2rem;
             font-weight: 700;
             color: #2c5234;
-            margin-bottom: 1rem;
         }
         
-        .combinations-list {
+        .amenities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        
-        .combination-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .membership-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .membership-section h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
-        }
-        
-        .membership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .membership-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .membership-card:hover {
-            border-color: #228B22;
-            transform: translateY(-2px);
-        }
-        
-        .membership-icon {
-            font-size: 3rem;
-            color: #228B22;
-            margin-bottom: 1rem;
-        }
-        
-        .membership-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c5234;
-            margin-bottom: 1rem;
-        }
-        
-        .membership-price {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        
-        .membership-features {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        
-        .membership-features li {
-            padding: 0.25rem 0;
-            color: #555;
-        }
-        
-        .membership-features li::before {
-            content: '✓';
-            color: #228B22;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
-        .facilities-grid {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .facilities-grid h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
-        }
-        
-        .facilities-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .facility-card {
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
             background: #f8f9fa;
-            padding: 1.5rem;
             border-radius: 10px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
         }
         
-        .facility-card:hover {
-            border-color: #228B22;
-            transform: translateY(-2px);
-        }
-        
-        .facility-icon {
-            font-size: 2.5rem;
-            color: #228B22;
-            margin-bottom: 1rem;
-        }
-        
-        .facility-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c5234;
-            margin-bottom: 0.5rem;
-        }
-        
-        .facility-description {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
+        .amenity-item i {
+            color: #4a7c59;
+            font-size: 1.2rem;
         }
         
         .photo-gallery {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .photo-gallery h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
@@ -411,10 +206,10 @@ try {
         }
         
         .gallery-item {
-            position: relative;
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -423,16 +218,33 @@ try {
             transform: scale(1.05);
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
         }
         
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
@@ -441,140 +253,71 @@ try {
         }
         
         .modal-content {
-            margin: auto;
-            display: block;
+            margin: 2% auto;
+            padding: 20px;
             width: 90%;
-            max-width: 900px;
-            max-height: 80%;
-            margin-top: 5%;
+            max-width: 1200px;
+            position: relative;
         }
         
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .reviews-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .reviews-header {
+        .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            color: white;
         }
         
-        .reviews-title {
-            color: #2c5234;
+        .modal-title {
             font-size: 2rem;
             margin: 0;
         }
         
-        .overall-rating {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .rating-display {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .stars {
-            color: #ffd700;
-        }
-        
-        .review-form {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .star-rating {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-        
-        .star-rating input {
-            display: none;
-        }
-        
-        .star-rating label {
-            font-size: 1.5rem;
-            color: #ddd;
-            cursor: pointer;
-            margin-bottom: 0;
-        }
-        
-        .star-rating input:checked ~ label,
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            min-height: 100px;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #2c5234, #228B22);
+        .close {
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            background: none;
+            border: none;
         }
         
-        .submit-btn:hover {
-            transform: translateY(-2px);
+        .close:hover {
+            color: #ccc;
         }
         
-        .reviews-list {
-            space-y: 1.5rem;
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
         }
         
         .review-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .review-header {
@@ -590,83 +333,163 @@ try {
         }
         
         .review-date {
-            color: #888;
+            color: #666;
             font-size: 0.9rem;
         }
         
-        .review-rating {
-            color: #ffd700;
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
             margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
         }
         
-        .review-text {
-            color: #555;
-            line-height: 1.6;
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
         }
         
-        .alert {
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
             padding: 1rem;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
         }
         
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
         }
         
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
         }
         
         .login-prompt {
-            text-align: center;
-            padding: 2rem;
             background: #f8f9fa;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
-        .login-link {
+        .login-prompt a {
             color: #2c5234;
-            text-decoration: none;
             font-weight: 600;
+            text-decoration: none;
         }
         
-        .login-link:hover {
+        .login-prompt a:hover {
             text-decoration: underline;
         }
         
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
-            
+        }
+        
+        @media (max-width: 768px) {
             .course-info-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .course-specs {
-                grid-template-columns: 1fr;
+            .course-details {
+                padding: 2rem 0;
             }
             
-            .layout-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .membership-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .facilities-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .reviews-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .course-info-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -674,11 +497,11 @@ try {
 <body>
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Hero Section -->
+    <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Temple Hills Country Club</h1>
-            <p>Prestigious Private Club Since 1972</p>
+            <p>Leon Howard Design • Franklin, Tennessee</p>
             
             <div class="course-rating">
                 <?php if ($avg_rating !== null): ?>
@@ -709,437 +532,426 @@ try {
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <!-- Course Information Cards -->
             <div class="course-info-grid">
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
+                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Total Holes:</span>
-                            <span class="spec-value">27 holes</span>
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">27</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Par (18 holes):</span>
-                            <span class="spec-value">72</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Total Yardage:</span>
-                            <span class="spec-value">6,831 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Greens:</span>
-                            <span class="spec-value">Bent Grass</span>
+                            <span class="spec-label">Par:</span>
+                            <span class="spec-value">108 (27 holes - three 9-hole courses)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">Leon Howard</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
+                            <span class="spec-label">Opened:</span>
                             <span class="spec-value">1972</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-crown"></i> Private Club Excellence</h3>
-                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Membership:</span>
-                            <span class="spec-value">Private Club</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Management:</span>
-                            <span class="spec-value">Invited Club Management</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Network Access:</span>
-                            <span class="spec-value">300+ Clubs Nationwide</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Wedding Rating:</span>
-                            <span class="spec-value">5.0 (100% Recommended)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Location:</span>
-                            <span class="spec-value">Franklin, TN</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Private</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-phone"></i> Contact Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Phone:</span>
-                            <span class="spec-value">(615) 646-4785</span>
+                    <h3><i class="fas fa-crown"></i> Private Members Only</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Exclusive Membership</h4>
+                        <p style="margin-bottom: 1rem; color: #666; font-size: 0.95rem;">Temple Hills Country Club is a private club requiring membership for access to all facilities and golf privileges.</p>
+                        
+                        <div class="course-specs single-column">
+                            <div class="spec-item">
+                                <span class="spec-label">Access:</span>
+                                <span class="spec-value">Members Only</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Guest Policy:</span>
+                                <span class="spec-value">Member accompanied guests</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Membership Info:</span>
+                                <span class="spec-value">Contact (615) 646-4785</span>
+                            </div>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Address:</span>
-                            <span class="spec-value">6376 Temple Road</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">City:</span>
-                            <span class="spec-value">Franklin, TN 37069</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">General Manager:</span>
-                            <span class="spec-value">Arthur Foister, PGA</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Fairways:</span>
-                            <span class="spec-value">Bermuda Grass</span>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <p><strong>Address:</strong><br>
+                    6376 Temple Road<br>
+                    Franklin, TN 37069</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (615) 646-4785</p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=6376+Temple+Road,+Franklin,+TN+37069&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Temple Hills Country Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=6376+Temple+Road,+Franklin,+TN+37069" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Course Description -->
-            <div class="course-description">
-                <h2>About Temple Hills Country Club</h2>
-                <p>Temple Hills Country Club stands as one of Franklin's premier private golf and social destinations, offering an exceptional 27-hole golf experience designed by Leon Howard in 1972. Located in the heart of Tennessee's beautiful rolling countryside, this exclusive club provides members with a unique three-course, nine-hole configuration that was relatively uncommon for private clubs of its era.</p>
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About Temple Hills Country Club</h3>
+                <p>Temple Hills Country Club is a prestigious private club featuring a unique 27-hole golf experience designed by Leon Howard in 1972. Located in Franklin, Tennessee, this exclusive club offers members three distinct nine-hole courses that can be combined for varied 18-hole playing experiences.</p>
                 
-                <p>The club's distinctive layout features three separate nine-hole courses - Dogwood, Quail Run, and Deer Crest - each with its own character and challenges. This innovative design allows members to enjoy three different 18-hole combinations, providing varied playing experiences and ensuring that each round offers fresh challenges and scenic beauty.</p>
+                <br>
                 
-                <p>Built on rolling terrain with undulating greens and plush fairways, Temple Hills showcases bent grass greens and Bermuda fairways throughout its 6,831 yards. The course design emphasizes fair but challenging play with no hidden hazards, featuring numerous trees and water hazards that reward accuracy and strategic thinking while maintaining playability for golfers of all skill levels.</p>
+                <p>The club's layout features rolling terrain with bentgrass greens and Bermuda fairways, providing challenging yet fair play across all 27 holes. Each of the three nine-hole courses - designed with its own character and strategic challenges - offers members multiple playing options and ensures that every round presents fresh experiences.</p>
                 
-                <p>As part of the prestigious Invited network, Temple Hills Country Club provides members with access to over 300 clubs nationwide, along with comprehensive amenities including fine dining, tennis, swimming, and world-class event facilities. The club has earned a perfect 5.0 rating for wedding and event services with a 100% recommendation rate, making it a premier destination for both golf and special occasions.</p>
-            </div>
-
-            <!-- Course Layout -->
-            <div class="course-layout">
-                <h2>27-Hole Championship Layout</h2>
-                <div class="layout-grid">
-                    <div class="nine-card">
-                        <div class="nine-title">Dogwood Course</div>
-                        <div class="nine-details">The most accessible of the three courses, featuring wide fairways and strategic bunkering that rewards smart course management.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 36</div>
-                            <div><strong>Yardage:</strong> 3,351 yards</div>
-                            <div><strong>Character:</strong> Strategic</div>
-                            <div><strong>Best For:</strong> All skill levels</div>
-                        </div>
-                    </div>
-                    <div class="nine-card">
-                        <div class="nine-title">Quail Run Course</div>
-                        <div class="nine-details">Features the signature 8th hole - a stunning 192-yard par 3. Known for its challenging approach shots and well-protected greens.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 36</div>
-                            <div><strong>Yardage:</strong> 3,408 yards</div>
-                            <div><strong>Signature:</strong> #8 Par-3</div>
-                            <div><strong>Length:</strong> 192 yards</div>
-                        </div>
-                    </div>
-                    <div class="nine-card">
-                        <div class="nine-title">Deer Crest Course</div>
-                        <div class="nine-details">The most challenging course with tree-lined fairways and numerous out-of-bounds areas requiring precision and local knowledge.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 36</div>
-                            <div><strong>Yardage:</strong> 3,423 yards</div>
-                            <div><strong>Difficulty:</strong> Most Challenging</div>
-                            <div><strong>Features:</strong> Tree-lined fairways</div>
-                        </div>
-                    </div>
-                </div>
+                <br>
                 
-                <div class="combinations-section">
-                    <div class="combinations-title">18-Hole Playing Combinations</div>
-                    <div class="combinations-list">
-                        <div class="combination-item">Dogwood + Deer Crest</div>
-                        <div class="combination-item">Deer Crest + Quail Run</div>
-                        <div class="combination-item">Dogwood + Quail Run</div>
+                <p>Beyond championship golf, Temple Hills provides comprehensive amenities including fine dining, tennis courts, swimming facilities, and world-class event hosting. As a private club, Temple Hills maintains an exclusive atmosphere while offering members access to exceptional facilities and personalized service.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>27-Hole Championship Golf</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Clubhouse Dining</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-tennis-ball"></i>
+                        <span>Tennis Courts</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-swimmer"></i>
+                        <span>Swimming Pool</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-table-tennis"></i>
+                        <span>Pickleball Courts</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Private Events</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Golf Instruction</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Membership Section -->
-            <div class="membership-section">
-                <h2>Membership Investment</h2>
-                <div class="membership-grid">
-                    <div class="membership-card">
-                        <div class="membership-icon">
-                            <i class="fas fa-golf-ball"></i>
-                        </div>
-                        <div class="membership-title">Full Golf Membership</div>
-                        <div class="membership-price">Initiation: $2,501 - $10,000</div>
-                        <ul class="membership-features">
-                            <li>Unlimited golf privileges</li>
-                            <li>Full club amenities access</li>
-                            <li>Dining and social events</li>
-                            <li>Guest privileges</li>
-                            <li>Invited network access</li>
-                        </ul>
-                    </div>
-                    <div class="membership-card">
-                        <div class="membership-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="membership-title">Social Membership</div>
-                        <div class="membership-price">Annual Dues: $5,001 - $10,000</div>
-                        <ul class="membership-features">
-                            <li>Dining privileges</li>
-                            <li>Tennis and swimming</li>
-                            <li>Social events access</li>
-                            <li>Event facility use</li>
-                            <li>Limited golf privileges</li>
-                        </ul>
-                    </div>
-                    <div class="membership-card">
-                        <div class="membership-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="membership-title">Junior Executive</div>
-                        <div class="membership-price">Contact for Pricing</div>
-                        <ul class="membership-features">
-                            <li>Young professional focused</li>
-                            <li>Golf and social privileges</li>
-                            <li>Networking opportunities</li>
-                            <li>Career development events</li>
-                            <li>Flexible membership terms</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </section>
 
-            <!-- Facilities Grid -->
-            <div class="facilities-grid">
-                <h2>Club Facilities & Amenities</h2>
-                <div class="facilities-list">
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-golf-ball"></i>
-                        </div>
-                        <div class="facility-title">27-Hole Championship Golf</div>
-                        <div class="facility-description">Three distinct nine-hole courses by Leon Howard with bent grass greens and Bermuda fairways</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-swimmer"></i>
-                        </div>
-                        <div class="facility-title">Junior Olympic Pool</div>
-                        <div class="facility-description">Seasonal swimming facility with competitive and recreational swimming programs</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-tennis-ball"></i>
-                        </div>
-                        <div class="facility-title">Tennis Complex</div>
-                        <div class="facility-description">Multiple courts with professional instruction, clinics, and tournament hosting</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-table-tennis"></i>
-                        </div>
-                        <div class="facility-title">Pickleball Courts</div>
-                        <div class="facility-description">Modern pickleball facilities for America's fastest-growing racquet sport</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-                        <div class="facility-title">Fine Dining</div>
-                        <div class="facility-description">Casual grill room and formal dining with panoramic golf course views</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="facility-title">Event Facilities</div>
-                        <div class="facility-description">Wedding ceremonies, corporate events, and private celebrations with 5.0 rating</div>
-                    </div>
-                </div>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Temple Hills Country Club</p>
             </div>
-
-            <!-- Photo Gallery -->
-            <div class="photo-gallery">
-                <h2>Club Gallery</h2>
-                <div class="gallery-grid">
-                    <?php for ($i = 2; $i <= 25; $i++): ?>
-                        <div class="gallery-item" onclick="openModal('../images/courses/temple-hills-country-club/<?php echo $i; ?>.jpeg')">
-                            <img src="../images/courses/temple-hills-country-club/<?php echo $i; ?>.jpeg" alt="Temple Hills Country Club - Photo <?php echo $i; ?>">
-                        </div>
-                    <?php endfor; ?>
-                </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/temple-hills-country-club/7.jpeg');"></div>
             </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+            </div>
+        </div>
+    </section>
 
-            <!-- Reviews Section -->
-            <div class="reviews-section">
-                <div class="reviews-header">
-                    <h2 class="reviews-title">Member Reviews</h2>
-                    <?php if ($total_reviews > 0): ?>
-                        <div class="overall-rating">
-                            <div class="rating-display">
-                                <div class="stars">
-                                    <?php
-                                    $rating = $avg_rating;
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= floor($rating)) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i <= ceil($rating)) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span><?php echo number_format($avg_rating, 1); ?>/5</span>
-                                <span class="review-count">(<?php echo $total_reviews; ?> reviews)</span>
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Temple Hills Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from members who have experienced Temple Hills</p>
+            </div>
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
+                        <div class="form-group">
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating" id="temple-rating-stars">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
-                    <?php endif; ?>
+                        <div class="form-group">
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience at this course..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Post Review</button>
+                    </form>
                 </div>
-
-                <?php if ($is_logged_in): ?>
-                    <!-- Review Form -->
-                    <div class="review-form">
-                        <h3>Share Your Experience</h3>
-                        
-                        <?php if (isset($success_message)): ?>
-                            <div class="alert alert-success"><?php echo $success_message; ?></div>
-                        <?php endif; ?>
-                        
-                        <?php if (isset($error_message)): ?>
-                            <div class="alert alert-error"><?php echo $error_message; ?></div>
-                        <?php endif; ?>
-                        
-                        <form method="POST">
-                            <div class="form-group">
-                                <label>Your Rating:</label>
-                                <div class="star-rating">
-                                    <input type="radio" name="rating" value="5" id="star5">
-                                    <label for="star5">★</label>
-                                    <input type="radio" name="rating" value="4" id="star4">
-                                    <label for="star4">★</label>
-                                    <input type="radio" name="rating" value="3" id="star3">
-                                    <label for="star3">★</label>
-                                    <input type="radio" name="rating" value="2" id="star2">
-                                    <label for="star2">★</label>
-                                    <input type="radio" name="rating" value="1" id="star1">
-                                    <label for="star1">★</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="comment_text">Your Review:</label>
-                                <textarea name="comment_text" id="comment_text" placeholder="Share your thoughts about Temple Hills Country Club..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Submit Review</button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><a href="../login" class="login-link">Login</a> or <a href="../register" class="login-link">Register</a> to leave a review</p>
-                    </div>
-                <?php endif; ?>
-
-                <!-- Existing Reviews -->
-                <?php if (!empty($comments)): ?>
-                    <div class="reviews-list">
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="review-card">
-                                <div class="review-header">
-                                    <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                    <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                                </div>
-                                <div class="review-rating">
-                                    <?php
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $comment['rating']) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <div class="review-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php else: ?>
-                    <div class="no-reviews">
+            <?php else: ?>
+                <div class="login-prompt">
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
+                <?php if (empty($comments)): ?>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
                         <p>No reviews yet. Be the first to share your experience!</p>
                     </div>
+                <?php else: ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                            </div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <h2>Interested in Membership?</h2>
+                <p>Contact Temple Hills Country Club to learn about exclusive membership opportunities</p>
+                <div class="booking-buttons">
+                    <a href="tel:(615) 646-4785" class="btn-book">Call (615) 646-4785</a>
+                    <a href="#" class="btn-contact">Membership Information</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <?php include '../includes/footer.php'; ?>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.php#courses">Golf Courses</a></li>
+                        <li><a href="../index.php#reviews">Reviews</a></li>
+                        <li><a href="../index.php#news">News</a></li>
+                        <li><a href="../index.php#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="#">Nashville Area</a></li>
+                        <li><a href="#">Chattanooga Area</a></li>
+                        <li><a href="#">Knoxville Area</a></li>
+                        <li><a href="#">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
+                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="/script.js?v=5"></script>
     <script>
-        // Photo gallery modal functionality
-        function openModal(imageSrc) {
-            document.getElementById('photoModal').style.display = 'block';
-            document.getElementById('modalImage').src = imageSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('photoModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside the image
-        window.onclick = function(event) {
-            const modal = document.getElementById('photoModal');
-            if (event.target === modal) {
-                closeModal();
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/temple-hills-country-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/temple-hills-country-club/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
             }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeModal();
+                closeGallery();
             }
         });
-
-        // Star rating functionality
-        const starInputs = document.querySelectorAll('.star-rating input');
-        const starLabels = document.querySelectorAll('.star-rating label');
-
-        starLabels.forEach((label, index) => {
-            label.addEventListener('mouseover', () => {
-                highlightStars(index);
-            });
-            
-            label.addEventListener('click', () => {
-                starInputs[index].checked = true;
-            });
-        });
-
-        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
-            const checkedIndex = Array.from(starInputs).findIndex(input => input.checked);
-            if (checkedIndex !== -1) {
-                highlightStars(checkedIndex);
-            } else {
-                clearStars();
-            }
-        });
-
-        function highlightStars(index) {
-            starLabels.forEach((label, i) => {
-                if (i >= index) {
-                    label.style.color = '#ffd700';
-                } else {
-                    label.style.color = '#ddd';
+    </script>
+    <script>
+        // Interactive star rating functionality for Temple Hills
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingContainer = document.getElementById('temple-rating-stars');
+            if (ratingContainer) {
+                const stars = ratingContainer.querySelectorAll('label');
+                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+                
+                // Handle star hover
+                stars.forEach((star, index) => {
+                    star.addEventListener('mouseenter', function() {
+                        highlightStars(index + 1);
+                    });
+                    
+                    star.addEventListener('click', function() {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        radioInputs[rating - 1].checked = true;
+                        setActiveStars(rating);
+                    });
+                });
+                
+                // Handle container mouse leave
+                ratingContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
+                    if (checkedInput) {
+                        setActiveStars(parseInt(checkedInput.value));
+                    } else {
+                        clearStars();
+                    }
+                });
+                
+                function highlightStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
                 }
-            });
-        }
-
-        function clearStars() {
-            starLabels.forEach(label => {
-                label.style.color = '#ddd';
-            });
-        }
+                
+                function setActiveStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function clearStars() {
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>

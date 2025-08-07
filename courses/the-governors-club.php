@@ -79,7 +79,7 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
+            height: 75vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/the-governors-club/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {
@@ -159,144 +159,39 @@ try {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #333;
+            color: #666;
         }
         
         .spec-value {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .amenities-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .amenities-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .amenities-list i {
+            font-weight: 700;
             color: #2c5234;
-            width: 20px;
         }
         
-        .location-info {
-            margin-bottom: 2rem;
-        }
-        
-        .location-info iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .location-details p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .location-details i {
-            color: #2c5234;
-            width: 20px;
-        }
-        
-        .course-description {
-            background: #f8f9fa;
-            padding: 3rem 0;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .signature-holes {
-            padding: 4rem 0;
-        }
-        
-        .holes-grid {
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .hole-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .hole-number {
-            background: #2c5234;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .amenity-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .hole-details h4 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .hole-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hole-stat {
-            text-align: center;
-        }
-        
-        .hole-stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-        
-        .hole-stat-value {
+        .amenity-item i {
+            color: #4a7c59;
             font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c5234;
         }
         
         .photo-gallery {
@@ -412,107 +307,123 @@ try {
         }
         
         .reviews-section {
-            padding: 4rem 0;
             background: #f8f9fa;
+            padding: 4rem 0;
         }
         
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .review-form {
+        .review-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .review-form h3 {
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
             color: #2c5234;
             margin-bottom: 1.5rem;
         }
         
-        .form-group {
+        .comment-form .form-group {
             margin-bottom: 1.5rem;
         }
         
-        .form-group label {
+        .comment-form label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #333;
+            color: #2c5234;
         }
         
-        .rating-input {
+        .star-rating {
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            justify-content: flex-start;
+            gap: 5px;
         }
         
-        .rating-input input[type="radio"] {
+        .star-rating input[type="radio"] {
             display: none;
         }
         
-        .rating-input label {
-            font-size: 1.5rem;
+        .star-rating label {
             color: #ddd;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
         
-        .rating-input label:hover {
+        .star-rating label:hover {
             color: #ffd700;
         }
         
-        .rating-input label.active {
+        .star-rating label.active {
             color: #ffd700;
         }
         
-        .form-group textarea {
+        .comment-form textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #ddd;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
-            resize: vertical;
-            min-height: 120px;
             font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
         }
         
-        .form-group textarea:focus {
-            border-color: #2c5234;
+        .comment-form textarea:focus {
             outline: none;
+            border-color: #2c5234;
         }
         
-        .submit-btn {
+        .btn-submit {
             background: #2c5234;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.75rem 2rem;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
         
-        .submit-btn:hover {
-            background: #1a3020;
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
         }
         
         .login-prompt {
-            text-align: center;
+            background: #f8f9fa;
             padding: 2rem;
-            background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
         .login-prompt a {
@@ -525,106 +436,59 @@ try {
             text-decoration: underline;
         }
         
-        .comments-list {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .comment-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-name {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-content {
-            line-height: 1.6;
-            color: #555;
-        }
-        
-        .section-header {
+        .no-comments {
             text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
+            padding: 3rem;
             color: #666;
-            font-size: 1.1rem;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
         }
         
         .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
         }
         
         @media (max-width: 768px) {
             .course-info-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 1.5rem;
             }
             
-            .course-hero-content h1 {
-                font-size: 2.5rem;
+            .course-details {
+                padding: 2rem 0;
             }
             
-            .course-hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .holes-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hole-stats {
-                gap: 1rem;
+            .course-info-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -696,7 +560,7 @@ try {
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Arnold Palmer Signature</span>
+                            <span class="spec-value">Arnold Palmer</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Opened:</span>
@@ -710,35 +574,35 @@ try {
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <h3><i class="fas fa-crown"></i> Private Club Excellence</h3>
                     <div class="course-specs single-column">
                         <div class="spec-item">
                             <span class="spec-label">Membership:</span>
-                            <span class="spec-value">Private Club</span>
+                            <span class="spec-value">By Invitation</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Winstead Farm:</span>
-                            <span class="spec-value">Historic 1860s estate</span>
+                            <span class="spec-label">Location:</span>
+                            <span class="spec-value">Exclusive Brentwood</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Exclusive Location:</span>
-                            <span class="spec-value">Brentwood luxury</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Championship:</span>
-                            <span class="spec-value">Palmer legacy design</span>
+                            <span class="spec-label">Historic Estate:</span>
+                            <span class="spec-value">1860s Winstead Farm</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Clubhouse:</span>
-                            <span class="spec-value">Antebellum mansion</span>
+                            <span class="spec-value">Antebellum Mansion</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Dining:</span>
-                            <span class="spec-value">Fine cuisine</span>
+                            <span class="spec-value">Fine Cuisine</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Tennis:</span>
-                            <span class="spec-value">Championship courts</span>
+                            <span class="spec-value">Championship Courts</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Events:</span>
+                            <span class="spec-value">Private Functions</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Contact:</span>
@@ -749,96 +613,112 @@ try {
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 1500 Governors Club Drive, Brentwood, TN 37027</p>
-                            <p><i class="fas fa-phone"></i> (615) 370-0707</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.thegovernorsclub.com" target="_blank">thegovernorsclub.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=1500+Governors+Club+Drive,+Brentwood,+TN+37027" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=1500+Governors+Club+Drive,+Brentwood,+TN+37027&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                    <p><strong>Address:</strong><br>
+                    1500 Governors Club Drive<br>
+                    Brentwood, TN 37027</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (615) 370-0707</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://www.thegovernorsclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">thegovernorsclub.com</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=1500+Governors+Club+Drive,+Brentwood,+TN+37027&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="The Governors Club Golf Course Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1500+Governors+Club+Drive,+Brentwood,+TN+37027" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Championship Golf at The Governors Club</h2>
-                <p>The Governors Club represents the pinnacle of luxury golf in the Nashville area, combining Arnold Palmer's legendary design expertise with the historic charm of the 1860s Winstead farmland. This exclusive Brentwood club showcases Palmer's signature style across 7,031 masterfully crafted yards, where strategic shot-making and natural beauty converge to create an unforgettable golf experience.</p>
+            <!-- Course Description -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About The Governors Club</h3>
+                <p>The Governors Club represents the pinnacle of luxury golf in the Nashville area, combining Arnold Palmer's legendary design expertise with the historic charm of the 1860s Winstead farmland. This exclusive Brentwood private club showcases Palmer's signature style across 7,031 masterfully crafted yards, where strategic shot-making and natural beauty converge to create an unforgettable golf experience.</p>
                 
-                <p>Built on the grounds of a historic antebellum estate, The Governors Club seamlessly blends championship golf with Southern elegance. Palmer's design philosophy shines through in every hole, featuring generous fairways that reward accuracy, strategically placed hazards that demand precision, and immaculate greens that provide the ultimate test of putting skill. The course's natural topography and mature trees create a park-like setting that enhances both the challenge and beauty of the layout.</p>
+                <br>
+                
+                <p>Built on the grounds of a historic antebellum estate, The Governors Club seamlessly blends championship golf with Southern elegance. Palmer's design philosophy shines through in every hole, featuring generous fairways that reward accuracy, strategically placed hazards that demand precision, and immaculate greens that provide the ultimate test of putting skill.</p>
+                
+                <br>
+                
+                <p>The course's natural topography and mature trees create a park-like setting that enhances both the challenge and beauty of the layout. Each hole flows naturally through the rolling Tennessee terrain, offering members a diverse and engaging golf experience that has made The Governors Club a coveted destination for discerning golfers.</p>
+                
+                <br>
                 
                 <p>The club's centerpiece antebellum mansion serves as a stunning clubhouse, offering members and guests a glimpse into Tennessee's rich history while providing modern luxury amenities. From championship tennis courts to fine dining experiences, The Governors Club delivers an unparalleled private club experience that honors both Arnold Palmer's golf legacy and the timeless elegance of Southern hospitality.</p>
+                
+                <br>
+                
+                <p>As one of the most prestigious private clubs in the region, The Governors Club maintains an atmosphere of exclusivity and refinement. The membership enjoys access to world-class golf facilities, exceptional dining, and a rich social calendar that celebrates the traditions of private club life in one of Tennessee's most desirable communities.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the holes that define The Governors Club's championship character</p>
-            </div>
-            
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">6</div>
-                    <div class="hole-details">
-                        <h4>Palmer's Strategic Par-4</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">415</div>
-                            </div>
-                        </div>
-                        <p>A quintessential Arnold Palmer design showcasing risk-reward strategy. This beautiful dogleg right demands precise placement while offering multiple routes to the green, embodying Palmer's aggressive yet thoughtful approach to golf course architecture.</p>
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Private Club Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Championship Golf</span>
                     </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">14</div>
-                    <div class="hole-details">
-                        <h4>Historic Estate Par-3</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">175</div>
-                            </div>
-                        </div>
-                        <p>A stunning par-3 that frames the historic antebellum mansion in the background. Palmer's design utilizes the estate's natural beauty while creating a challenging green complex that tests precision and club selection in an absolutely breathtaking setting.</p>
+                    <div class="amenity-item">
+                        <i class="fas fa-home"></i>
+                        <span>Antebellum Clubhouse</span>
                     </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">18</div>
-                    <div class="hole-details">
-                        <h4>Championship Finish</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">445</div>
-                            </div>
-                        </div>
-                        <p>A magnificent finishing hole that epitomizes Arnold Palmer's championship design legacy. The approach shot to an elevated green with the historic clubhouse as backdrop creates a memorable conclusion worthy of The King's architectural vision.</p>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-wine-glass"></i>
+                        <span>Members Bar</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-tennis-ball"></i>
+                        <span>Tennis Courts</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-swimming-pool"></i>
+                        <span>Pool & Aquatic</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Fitness Center</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Private Events</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span>Concierge Service</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-car"></i>
+                        <span>Valet Parking</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-users"></i>
+                        <span>Social Events</span>
                     </div>
                 </div>
             </div>
@@ -850,7 +730,7 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>Course Gallery</h2>
-                <p>Experience the beauty of The Governors Club</p>
+                <p>Experience the elegance of The Governors Club</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" style="background-image: url('../images/courses/the-governors-club/2.jpeg');"></div>
@@ -882,76 +762,80 @@ try {
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-header">
-                <h2>Player Reviews</h2>
-                <p>Share your experience at The Governors Club</p>
+            <div class="section-header">
+                <h2>Member & Guest Reviews</h2>
+                <p>Read experiences from those who have played The Governors Club</p>
             </div>
-
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST">
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
                         <div class="form-group">
-                            <label>Rating</label>
-                            <div class="rating-input" id="rating-stars">
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1" data-rating="1">★</label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2" data-rating="2">★</label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3" data-rating="3">★</label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4" data-rating="4">★</label>
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5" data-rating="5">★</label>
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating" id="governors-rating-stars">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at The Governors Club..." required></textarea>
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience at The Governors Club..." required></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
+                        <button type="submit" class="btn-submit">Post Review</button>
                     </form>
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
                 </div>
             <?php endif; ?>
-
-            <div class="comments-list">
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
                 <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -959,60 +843,55 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js"></script>
+    <script src="/script.js?v=5"></script>
     <script>
-        // Interactive star rating functionality
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all available images (adjust number as needed)
+            for (let i = 1; i <= 18; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/the-governors-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-governors-club/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
+    <script>
+        // Interactive star rating functionality for The Governors Club
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
+            const ratingContainer = document.getElementById('governors-rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
@@ -1061,50 +940,12 @@ try {
                 }
                 
                 function clearStars() {
-                    stars.forEach(star => star.classList.remove('active'));
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
                 }
             }
         });
-
-        // Gallery functionality
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const grid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            grid.innerHTML = '';
-            
-            // Add photos dynamically
-            const photos = [
-                '../images/courses/the-governors-club/1.jpeg',
-                '../images/courses/the-governors-club/2.jpeg',
-                '../images/courses/the-governors-club/3.jpeg',
-                '../images/courses/the-governors-club/4.jpeg',
-                '../images/courses/the-governors-club/5.jpeg',
-                '../images/courses/the-governors-club/6.jpeg'
-            ];
-            
-            photos.forEach(photo => {
-                const item = document.createElement('div');
-                item.className = 'full-gallery-item';
-                item.style.backgroundImage = `url('${photo}')`;
-                grid.appendChild(item);
-            });
-            
-            modal.style.display = 'block';
-        }
-
-        function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
     </script>
 </body>
 </html>

@@ -79,7 +79,7 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
+            height: 75vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/bear-trace-harrison-bay/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {

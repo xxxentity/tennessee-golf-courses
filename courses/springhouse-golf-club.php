@@ -79,8 +79,8 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/courses/springhouse-golf-club/1.jpeg');
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/springhouse-golf-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 80px;
             position: relative;
         }
         

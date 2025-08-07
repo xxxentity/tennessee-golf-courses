@@ -59,10 +59,11 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>McCabe Golf Course - Nashville Parks & Recreation | Tennessee Golf Courses</title>
-    <meta name="description" content="Play McCabe Golf Course, Nashville's premier municipal golf course since 1942. 27 holes, voted 'best place to play' by Nashville Scene magazine.">
+    <meta name="description" content="McCabe Golf Course - Nashville's premier municipal golf course since 1942. 27 holes designed by Gary Roger Baird, voted 'best place to play' by Nashville Scene magazine.">
     <link rel="canonical" href="https://tennesseegolfcourses.com/courses/mccabe-golf-course">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -73,30 +74,38 @@ try {
         gtag('config', 'G-7VPNPCDTBP');
     </script>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    
     <style>
         .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/mccabe-golf-course/1.jpeg');
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/mccabe-golf-course/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            position: relative;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .course-hero-content {
+            max-width: 800px;
         }
         
         .course-hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            font-weight: 700;
         }
         
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            opacity: 0.9;
         }
         
         .course-rating {
@@ -119,29 +128,26 @@ try {
         
         .course-details {
             padding: 4rem 0;
-            background-color: #f8f9fa;
         }
         
         .course-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
         
         .course-info-card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-            border-bottom: 2px solid #228B22;
-            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
@@ -150,212 +156,51 @@ try {
             gap: 1rem;
         }
         
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
+        }
+        
         .spec-item {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #555;
+            color: #666;
         }
         
         .spec-value {
+            font-weight: 700;
             color: #2c5234;
-            font-weight: 600;
         }
         
-        .course-description {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .course-description h2 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .course-description p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-        
-        .course-layout {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .course-layout h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .layout-grid {
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .nine-card {
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
             background: #f8f9fa;
-            padding: 1.5rem;
             border-radius: 10px;
-            border-left: 4px solid #228B22;
         }
         
-        .nine-title {
+        .amenity-item i {
+            color: #4a7c59;
             font-size: 1.2rem;
-            font-weight: 700;
-            color: #228B22;
-            margin-bottom: 0.5rem;
-        }
-        
-        .nine-details {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .nine-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .pricing-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .pricing-section h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .pricing-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .pricing-card:hover {
-            border-color: #228B22;
-            transform: translateY(-2px);
-        }
-        
-        .pricing-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #2c5234;
-            margin-bottom: 1rem;
-        }
-        
-        .price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #228B22;
-            margin-bottom: 0.5rem;
-        }
-        
-        .price-description {
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .facilities-grid {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .facilities-grid h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
-        }
-        
-        .facilities-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .facility-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .facility-card:hover {
-            border-color: #228B22;
-            transform: translateY(-2px);
-        }
-        
-        .facility-icon {
-            font-size: 2.5rem;
-            color: #228B22;
-            margin-bottom: 1rem;
-        }
-        
-        .facility-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c5234;
-            margin-bottom: 0.5rem;
-        }
-        
-        .facility-description {
-            color: #555;
-            font-size: 0.9rem;
-            line-height: 1.5;
         }
         
         .photo-gallery {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .photo-gallery h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
@@ -365,10 +210,10 @@ try {
         }
         
         .gallery-item {
-            position: relative;
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -377,16 +222,33 @@ try {
             transform: scale(1.05);
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
         }
         
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 9999;
             left: 0;
             top: 0;
             width: 100%;
@@ -395,140 +257,71 @@ try {
         }
         
         .modal-content {
-            margin: auto;
-            display: block;
+            margin: 2% auto;
+            padding: 20px;
             width: 90%;
-            max-width: 900px;
-            max-height: 80%;
-            margin-top: 5%;
+            max-width: 1200px;
+            position: relative;
         }
         
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .reviews-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .reviews-header {
+        .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            color: white;
         }
         
-        .reviews-title {
-            color: #2c5234;
+        .modal-title {
             font-size: 2rem;
             margin: 0;
         }
         
-        .overall-rating {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .rating-display {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .stars {
-            color: #ffd700;
-        }
-        
-        .review-form {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .star-rating {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-        
-        .star-rating input {
-            display: none;
-        }
-        
-        .star-rating label {
-            font-size: 1.5rem;
-            color: #ddd;
-            cursor: pointer;
-            margin-bottom: 0;
-        }
-        
-        .star-rating input:checked ~ label,
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            min-height: 100px;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #2c5234, #228B22);
+        .close {
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            background: none;
+            border: none;
         }
         
-        .submit-btn:hover {
-            transform: translateY(-2px);
+        .close:hover {
+            color: #ccc;
         }
         
-        .reviews-list {
-            space-y: 1.5rem;
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
         }
         
         .review-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .review-header {
@@ -544,83 +337,196 @@ try {
         }
         
         .review-date {
-            color: #888;
+            color: #666;
             font-size: 0.9rem;
         }
         
-        .review-rating {
-            color: #ffd700;
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
             margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
         }
         
-        .review-text {
-            color: #555;
-            line-height: 1.6;
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
         }
         
-        .alert {
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
             padding: 1rem;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
         }
         
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
         }
         
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
         }
         
         .login-prompt {
-            text-align: center;
-            padding: 2rem;
             background: #f8f9fa;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
-        .login-link {
+        .login-prompt a {
             color: #2c5234;
-            text-decoration: none;
             font-weight: 600;
+            text-decoration: none;
         }
         
-        .login-link:hover {
+        .login-prompt a:hover {
             text-decoration: underline;
         }
         
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .pricing-category {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid #2c5234;
+        }
+        
+        .pricing-category h4 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .pricing-value {
+            font-weight: 700;
+            color: #2c5234;
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
-            
+        }
+        
+        @media (max-width: 768px) {
             .course-info-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .course-specs {
-                grid-template-columns: 1fr;
+            .course-details {
+                padding: 2rem 0;
             }
             
-            .layout-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .facilities-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .reviews-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .course-info-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -628,21 +534,22 @@ try {
 <body>
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Hero Section -->
+    <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>McCabe Golf Course</h1>
-            <p>Nashville's Premier Municipal Course Since 1942</p>
-            
+            <p>Municipal Course • Nashville, Tennessee</p>
             <div class="course-rating">
-                <?php if ($avg_rating !== null): ?>
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
-                        <?php
-                        $rating = $avg_rating;
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
                         for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= floor($rating)) {
+                            if ($i <= $full_stars) {
                                 echo '<i class="fas fa-star"></i>';
-                            } elseif ($i <= ceil($rating)) {
+                            } elseif ($i == $full_stars + 1 && $half_star) {
                                 echo '<i class="fas fa-star-half-alt"></i>';
                             } else {
                                 echo '<i class="far fa-star"></i>';
@@ -650,11 +557,12 @@ try {
                         }
                         ?>
                     </div>
-                    <div class="rating-text">
-                        <?php echo number_format($avg_rating, 1); ?>/5 (<?php echo $total_reviews; ?> reviews)
-                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
-                    <div class="rating-text">No ratings yet - Be the first to review!</div>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -663,416 +571,388 @@ try {
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <!-- Course Information Cards -->
             <div class="course-info-grid">
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
+                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Total Holes:</span>
-                            <span class="spec-value">27 holes</span>
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">27</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Par (18 holes):</span>
+                            <span class="spec-label">Par:</span>
                             <span class="spec-value">70-71</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Total Yardage:</span>
-                            <span class="spec-value">6,000-6,100 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">114</span>
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">6,000-6,100</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Gary Roger Baird (South)</span>
+                            <span class="spec-value">Gary Roger Baird (South Nine)</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
+                            <span class="spec-label">Opened:</span>
                             <span class="spec-value">1942</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-award"></i> Accolades & Recognition</h3>
-                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Nashville Scene:</span>
-                            <span class="spec-value">"Best Place to Play" 2014</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Status:</span>
-                            <span class="spec-value">Most Profitable Municipal</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Historic Tournament:</span>
-                            <span class="spec-value">Capital City Golf Classic</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Celebrities:</span>
-                            <span class="spec-value">Mickey Mantle, Jackie Fargo</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Age Ranking:</span>
-                            <span class="spec-value">3rd Oldest Municipal</span>
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Municipal</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-phone"></i> Contact & Hours</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Phone:</span>
-                            <span class="spec-value">(615) 862-8491</span>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-category">
+                        <h4>2025 Pricing</h4>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Weekday 9 Holes:</span>
+                            <span class="pricing-value">$17</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Address:</span>
-                            <span class="spec-value">100 46th Avenue North</span>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Weekday 18 Holes:</span>
+                            <span class="pricing-value">$34</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Hours:</span>
-                            <span class="spec-value">6:00 AM to Dark</span>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Weekend 9 Holes:</span>
+                            <span class="pricing-value">$22</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Tee Times:</span>
-                            <span class="spec-value">7 Days in Advance</span>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Weekend 18 Holes:</span>
+                            <span class="pricing-value">$44</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Walk-ins:</span>
-                            <span class="spec-value">Welcome</span>
+                    </div>
+                    <div class="pricing-category">
+                        <h4>Additional Fees</h4>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Cart Rental:</span>
+                            <span class="pricing-value">$8 per 9 holes</span>
+                        </div>
+                        <div class="pricing-item">
+                            <span class="pricing-label">Annual Membership:</span>
+                            <span class="pricing-value">$1,000 (Resident)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <p><strong>Address:</strong><br>
+                    100 46th Avenue North<br>
+                    Nashville, TN 37209</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (615) 862-8491</p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    6:00 AM to Dark Daily</p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=100+46th+Avenue+North,+Nashville,+TN+37209&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="McCabe Golf Course Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=100+46th+Avenue+North,+Nashville,+TN+37209" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Course Description -->
-            <div class="course-description">
-                <h2>About McCabe Golf Course</h2>
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About McCabe Golf Course</h3>
                 <p>McCabe Golf Course stands as Nashville's premier municipal golf facility, serving the community since 1942 when it was built through FDR's Works Progress Administration. Originally designed under Parks Commissioner Edwin Warner and C.E. Danis from Shelby Golf Club, with assistance from Hershel "Hut" Eaton, McCabe has evolved into a 27-hole championship facility that consistently earns recognition as the best place to play golf in Metro Nashville.</p>
+                
+                <br>
                 
                 <p>Located just minutes from downtown Nashville in the Sylvan Park area, McCabe offers golfers a unique 27-hole experience with three distinct nine-hole courses: the North Nine, Middle Nine, and South Nine (designed by Gary Roger Baird, ASGCA). This configuration allows players to combine any two nines for varied 18-hole experiences, ensuring that repeat visits always offer something fresh.</p>
                 
+                <br>
+                
                 <p>The course has been voted "best place to play" by Nashville Scene magazine in 2014 and holds the distinction of being the most profitable municipal course in Nashville. With wide-open fairways, large tree-lined layouts, and excellent course conditions, McCabe provides an accessible yet challenging experience for golfers of all skill levels.</p>
+                
+                <br>
                 
                 <p>McCabe's rich tournament history includes the annual Capital City Golf Classic, which has been hosted since 1960 and has attracted celebrities like Mickey Mantle and pro wrestling legend Jackie Fargo. Today, the course continues to serve five active golf associations and maintains its reputation as a cornerstone of Nashville's municipal golf system.</p>
             </div>
 
-            <!-- Course Layout -->
-            <div class="course-layout">
-                <h2>27-Hole Layout</h2>
-                <div class="layout-grid">
-                    <div class="nine-card">
-                        <div class="nine-title">North Nine (2007)</div>
-                        <div class="nine-details">Rebuilt in 2007 with challenging elevation changes, especially on the finishing 9th hole.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 35</div>
-                            <div><strong>Yardage:</strong> 3,115 yards</div>
-                            <div><strong>Signature:</strong> 9th hole</div>
-                            <div><strong>Features:</strong> Elevation changes</div>
-                        </div>
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>27-Hole Golf</span>
                     </div>
-                    <div class="nine-card">
-                        <div class="nine-title">Middle Nine (2006)</div>
-                        <div class="nine-details">Features traditional parkland design with mature trees and strategic bunker placement.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 35</div>
-                            <div><strong>Yardage:</strong> 2,980 yards</div>
-                            <div><strong>Challenging:</strong> #3 (439 yards)</div>
-                            <div><strong>Finish:</strong> Par-4, 335 yards</div>
-                        </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Driving Range</span>
                     </div>
-                    <div class="nine-card">
-                        <div class="nine-title">South Nine (Gary Baird)</div>
-                        <div class="nine-details">Designed by Gary Roger Baird, ASGCA, featuring the course's lone par-5 and signature holes.</div>
-                        <div class="nine-specs">
-                            <div><strong>Par:</strong> 35 (men), 36 (women)</div>
-                            <div><strong>Yardage:</strong> 3,032 yards</div>
-                            <div><strong>Par-5:</strong> 538 yards</div>
-                            <div><strong>Signature:</strong> #9 (420-yard par-4)</div>
-                        </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-flag"></i>
+                        <span>Putting Green</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Pricing Section -->
-            <div class="pricing-section">
-                <h2>2025 Green Fees</h2>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <div class="pricing-title">Weekday 9 Holes</div>
-                        <div class="price">$17</div>
-                        <div class="price-description">Monday through Friday</div>
+                    <div class="amenity-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>PGA Instruction</span>
                     </div>
-                    <div class="pricing-card">
-                        <div class="pricing-title">Weekday 18 Holes</div>
-                        <div class="price">$34</div>
-                        <div class="price-description">Monday through Friday</div>
+                    <div class="amenity-item">
+                        <i class="fas fa-store"></i>
+                        <span>Pro Shop</span>
                     </div>
-                    <div class="pricing-card">
-                        <div class="pricing-title">Weekend 9 Holes</div>
-                        <div class="price">$22</div>
-                        <div class="price-description">Saturday and Sunday</div>
+                    <div class="amenity-item">
+                        <i class="fas fa-users"></i>
+                        <span>Golf Associations</span>
                     </div>
-                    <div class="pricing-card">
-                        <div class="pricing-title">Weekend 18 Holes</div>
-                        <div class="price">$44</div>
-                        <div class="price-description">Saturday and Sunday</div>
+                    <div class="amenity-item">
+                        <i class="fas fa-car"></i>
+                        <span>Cart Rentals</span>
                     </div>
-                    <div class="pricing-card">
-                        <div class="pricing-title">Cart Rental</div>
-                        <div class="price">$8</div>
-                        <div class="price-description">Per 9 holes, per player</div>
-                    </div>
-                    <div class="pricing-card">
-                        <div class="pricing-title">Annual Membership</div>
-                        <div class="price">$1,000</div>
-                        <div class="price-description">Resident ($1,200 Non-Resident)</div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Tournament Hosting</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Facilities Grid -->
-            <div class="facilities-grid">
-                <h2>Practice Facilities & Amenities</h2>
-                <div class="facilities-list">
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-golf-ball"></i>
-                        </div>
-                        <div class="facility-title">27-Hole Golf</div>
-                        <div class="facility-description">Three distinct nine-hole courses for varied 18-hole combinations and experiences</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div class="facility-title">Driving Range</div>
-                        <div class="facility-description">27 hitting stations on two-level tee with Bermuda grass surface and target greens</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <div class="facility-title">Putting & Chipping</div>
-                        <div class="facility-description">Large practice area with fine white silica sand bunkers for short game improvement</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="facility-title">PGA Instruction</div>
-                        <div class="facility-description">Three PGA Professionals available for individual and group lessons</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <div class="facility-title">Pro Shop</div>
-                        <div class="facility-description">Full-service pro shop with helpful staff and rental clubs available</div>
-                    </div>
-                    <div class="facility-card">
-                        <div class="facility-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="facility-title">Golf Associations</div>
-                        <div class="facility-description">Home to five active golf associations including men's, women's, and senior groups</div>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </section>
 
-            <!-- Photo Gallery -->
-            <div class="photo-gallery">
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
                 <h2>Course Gallery</h2>
-                <div class="gallery-grid">
-                    <?php for ($i = 2; $i <= 25; $i++): ?>
-                        <div class="gallery-item" onclick="openModal('../images/courses/mccabe-golf-course/<?php echo $i; ?>.jpeg')">
-                            <img src="../images/courses/mccabe-golf-course/<?php echo $i; ?>.jpeg" alt="McCabe Golf Course - Photo <?php echo $i; ?>">
-                        </div>
-                    <?php endfor; ?>
-                </div>
+                <p>Experience the beauty of McCabe Golf Course</p>
             </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/7.jpeg');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
+            </div>
+        </div>
+    </section>
 
-            <!-- Reviews Section -->
-            <div class="reviews-section">
-                <div class="reviews-header">
-                    <h2 class="reviews-title">Player Reviews</h2>
-                    <?php if ($total_reviews > 0): ?>
-                        <div class="overall-rating">
-                            <div class="rating-display">
-                                <div class="stars">
-                                    <?php
-                                    $rating = $avg_rating;
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= floor($rating)) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i <= ceil($rating)) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span><?php echo number_format($avg_rating, 1); ?>/5</span>
-                                <span class="review-count">(<?php echo $total_reviews; ?> reviews)</span>
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">McCabe Golf Course - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced McCabe Golf Course</p>
+            </div>
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
+                        <div class="form-group">
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating" id="mccabe-rating-stars">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
-                    <?php endif; ?>
+                        <div class="form-group">
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this course..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Post Review</button>
+                    </form>
                 </div>
-
-                <?php if ($is_logged_in): ?>
-                    <!-- Review Form -->
-                    <div class="review-form">
-                        <h3>Share Your Experience</h3>
-                        
-                        <?php if (isset($success_message)): ?>
-                            <div class="alert alert-success"><?php echo $success_message; ?></div>
-                        <?php endif; ?>
-                        
-                        <?php if (isset($error_message)): ?>
-                            <div class="alert alert-error"><?php echo $error_message; ?></div>
-                        <?php endif; ?>
-                        
-                        <form method="POST">
-                            <div class="form-group">
-                                <label>Your Rating:</label>
-                                <div class="star-rating">
-                                    <input type="radio" name="rating" value="5" id="star5">
-                                    <label for="star5">★</label>
-                                    <input type="radio" name="rating" value="4" id="star4">
-                                    <label for="star4">★</label>
-                                    <input type="radio" name="rating" value="3" id="star3">
-                                    <label for="star3">★</label>
-                                    <input type="radio" name="rating" value="2" id="star2">
-                                    <label for="star2">★</label>
-                                    <input type="radio" name="rating" value="1" id="star1">
-                                    <label for="star1">★</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="comment_text">Your Review:</label>
-                                <textarea name="comment_text" id="comment_text" placeholder="Share your thoughts about McCabe Golf Course..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Submit Review</button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><a href="../login" class="login-link">Login</a> or <a href="../register" class="login-link">Register</a> to leave a review</p>
-                    </div>
-                <?php endif; ?>
-
-                <!-- Existing Reviews -->
-                <?php if (!empty($comments)): ?>
-                    <div class="reviews-list">
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="review-card">
-                                <div class="review-header">
-                                    <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                    <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                                </div>
-                                <div class="review-rating">
-                                    <?php
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $comment['rating']) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <div class="review-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php else: ?>
-                    <div class="no-reviews">
+            <?php else: ?>
+                <div class="login-prompt">
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
+                <?php if (empty($comments)): ?>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
                         <p>No reviews yet. Be the first to share your experience!</p>
                     </div>
+                <?php else: ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                            </div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
+    <script src="/script.js?v=5"></script>
     <script>
-        // Photo gallery modal functionality
-        function openModal(imageSrc) {
-            document.getElementById('photoModal').style.display = 'block';
-            document.getElementById('modalImage').src = imageSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('photoModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside the image
-        window.onclick = function(event) {
-            const modal = document.getElementById('photoModal');
-            if (event.target === modal) {
-                closeModal();
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/mccabe-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/mccabe-golf-course/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
             }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeModal();
+                closeGallery();
             }
         });
-
-        // Star rating functionality
-        const starInputs = document.querySelectorAll('.star-rating input');
-        const starLabels = document.querySelectorAll('.star-rating label');
-
-        starLabels.forEach((label, index) => {
-            label.addEventListener('mouseover', () => {
-                highlightStars(index);
-            });
-            
-            label.addEventListener('click', () => {
-                starInputs[index].checked = true;
-            });
-        });
-
-        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
-            const checkedIndex = Array.from(starInputs).findIndex(input => input.checked);
-            if (checkedIndex !== -1) {
-                highlightStars(checkedIndex);
-            } else {
-                clearStars();
-            }
-        });
-
-        function highlightStars(index) {
-            starLabels.forEach((label, i) => {
-                if (i >= index) {
-                    label.style.color = '#ffd700';
-                } else {
-                    label.style.color = '#ddd';
+    </script>
+    <script>
+        // Interactive star rating functionality for McCabe
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingContainer = document.getElementById('mccabe-rating-stars');
+            if (ratingContainer) {
+                const stars = ratingContainer.querySelectorAll('label');
+                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
+                
+                // Handle star hover
+                stars.forEach((star, index) => {
+                    star.addEventListener('mouseenter', function() {
+                        highlightStars(index + 1);
+                    });
+                    
+                    star.addEventListener('click', function() {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        radioInputs[rating - 1].checked = true;
+                        setActiveStars(rating);
+                    });
+                });
+                
+                // Handle container mouse leave
+                ratingContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
+                    if (checkedInput) {
+                        setActiveStars(parseInt(checkedInput.value));
+                    } else {
+                        clearStars();
+                    }
+                });
+                
+                function highlightStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
                 }
-            });
-        }
-
-        function clearStars() {
-            starLabels.forEach(label => {
-                label.style.color = '#ddd';
-            });
-        }
+                
+                function setActiveStars(rating) {
+                    stars.forEach((star, index) => {
+                        if (index < rating) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
+                }
+                
+                function clearStars() {
+                    stars.forEach(star => {
+                        star.classList.remove('active');
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>

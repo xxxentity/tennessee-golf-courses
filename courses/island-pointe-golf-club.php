@@ -75,8 +75,8 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/island-pointe-golf-club/1.jpeg');
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/island-pointe-golf-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -84,7 +84,7 @@ try {
             justify-content: center;
             color: white;
             text-align: center;
-            position: relative;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {

@@ -548,8 +548,8 @@ try {
             }
             
             .course-hero {
-                height: 60vh;
-                margin-top: 120px;
+                height: 75vh;
+                margin-top: 80px;
             }
             
             .course-hero-content h1 {
