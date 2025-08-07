@@ -66,9 +66,13 @@ $article = [
             width: 100%;
             max-width: 800px;
             height: 400px;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
+            background: white;
             border-radius: 15px;
             margin-bottom: 2rem;
+            padding: 1rem;
+            box-shadow: var(--shadow-light);
         }
         
         .article-title {
@@ -107,12 +111,15 @@ $article = [
         
         .putter-image {
             width: 100%;
-            max-width: 400px;
-            height: 250px;
-            object-fit: cover;
+            max-width: 500px;
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+            background: white;
             border-radius: 10px;
             margin: 1rem 0;
             box-shadow: var(--shadow-light);
+            padding: 1rem;
         }
         
         .putter-rank {
