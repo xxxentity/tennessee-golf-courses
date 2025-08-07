@@ -76,637 +76,294 @@ try {
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
-    <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/fox-den-country-club/1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 120px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .course-info {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .info-card h3 {
-            color: #2c5530;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .info-card h3 i {
-            color: #4a7c59;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .amenity-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .amenity-card i {
-            font-size: 2rem;
-            color: #4a7c59;
-            margin-bottom: 1rem;
-        }
-        
-        .amenity-card h4 {
-            color: #2c5530;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tee-information {
-            background: white;
-            padding: 60px 0;
-        }
-        
-        .tee-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .tee-card {
-            background: #f8f9fa;
-            border-left: 5px solid;
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-        
-        .tee-card.black { border-left-color: #1a1a1a; }
-        .tee-card.white { border-left-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .tee-card.green { border-left-color: #2e7d32; }
-        .tee-card.blue { border-left-color: #1976d2; }
-        .tee-card.silver { border-left-color: #9e9e9e; }
-        
-        .tee-card h3 {
-            margin-bottom: 1rem;
-            color: #2c5530;
-        }
-        
-        .tee-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-        }
-        
-        .tee-stat {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.25rem 0;
-        }
-        
-        .gallery-section {
-            padding: 60px 0;
-            background: #f8f9fa;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 16/9;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .reviews-section {
-            padding: 60px 0;
-            background: white;
-        }
-        
-        .review-form {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-        }
-        
-        .review-form h3 {
-            margin-bottom: 1.5rem;
-            color: #2c5530;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .btn {
-            background: #4a7c59;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: #3d6b4a;
-        }
-        
-        .reviews-list {
-            space-y: 1.5rem;
-        }
-        
-        .review-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .review-rating {
-            color: #ffc107;
-        }
-        
-        .review-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-        }
-        
-        .modal-content {
-            position: relative;
-            margin: auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 800px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        .error-message {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tee-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../" class="nav-logo">
-                <img src="../images/logos/tgc-logo.png" alt="Tennessee Golf Courses">
-            </a>
-            <div class="nav-menu">
-                <a href="../" class="nav-link">Home</a>
-                <a href="../courses" class="nav-link">Courses</a>
-                <a href="../news" class="nav-link">News</a>
-                <a href="../about" class="nav-link">About</a>
-                <a href="../contact" class="nav-link">Contact</a>
-                <?php if ($is_logged_in): ?>
-                    <a href="../profile" class="nav-link">Profile</a>
-                    <a href="../logout" class="nav-link">Logout</a>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/fox-den-country-club/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Fox Den Country Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Championship Design • Knoxville, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
-                    <a href="../login" class="nav-link">Login</a>
-                    <a href="../register" class="nav-link">Register</a>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Fox Den Country Club</h1>
-            <p>Premier private golf club in Knoxville, Tennessee</p>
-        </div>
     </section>
 
-    <!-- Course Information -->
-    <section class="course-info">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Details</h3>
-                    <p><strong>Location:</strong> Knoxville, TN</p>
-                    <p><strong>Type:</strong> Private Country Club</p>
-                    <p><strong>Holes:</strong> 18</p>
-                    <p><strong>Par:</strong> 72</p>
-                    <p><strong>Yardage:</strong> 4,718 - 7,110 yards</p>
-                    <p><strong>Designer:</strong> Championship Design</p>
+    <!-- Course Details -->
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">7,110</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Championship Design</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1995</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="info-card">
-                    <h3><i class="fas fa-calendar-check"></i> Membership</h3>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
+                    <div class="membership-notice" style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Private Members Only</h4>
+                        <p style="margin: 0; opacity: 0.9;">Membership required for play</p>
+                    </div>
                     <p>Fox Den Country Club offers exclusive membership opportunities for golf enthusiasts in the Knoxville area. The club provides a premier golf experience with championship-caliber facilities and comprehensive amenities for members and their families.</p>
+                    <p>Membership includes access to the championship 18-hole golf course, practice facilities, clubhouse dining, and all member events and tournaments.</p>
                 </div>
-                
-                <div class="info-card">
-                    <h3><i class="fas fa-trophy"></i> Course Features</h3>
-                    <p>Championship 18-hole layout with seven different tee options accommodating golfers of all skill levels. The course ranges from 4,718 yards to 7,110 yards, providing challenges for every player while maintaining playability and enjoyment.</p>
-                </div>
-            </div>
 
-            <!-- Amenities Grid -->
-            <div class="amenities-grid">
-                <div class="amenity-card">
-                    <i class="fas fa-golf-ball"></i>
-                    <h4>Championship Golf</h4>
-                    <p>18-hole par 72 championship course with multiple tee options and challenging layout</p>
-                </div>
-                
-                <div class="amenity-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h4>Practice Facilities</h4>
-                    <p>Comprehensive practice areas including driving range and putting greens</p>
-                </div>
-                
-                <div class="amenity-card">
-                    <i class="fas fa-building"></i>
-                    <h4>Clubhouse</h4>
-                    <p>Elegant clubhouse with dining facilities and member services</p>
-                </div>
-                
-                <div class="amenity-card">
-                    <i class="fas fa-utensils"></i>
-                    <h4>Dining</h4>
-                    <p>Fine dining restaurant and grill for members and guests</p>
-                </div>
-                
-                <div class="amenity-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h4>Events & Tournaments</h4>
-                    <p>Member tournaments, social events, and private functions</p>
-                </div>
-                
-                <div class="amenity-card">
-                    <i class="fas fa-users"></i>
-                    <h4>Member Services</h4>
-                    <p>Professional staff and comprehensive member amenities</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tee Information -->
-    <section class="tee-information">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2c5530;">Tee Information</h2>
-            <div class="tee-cards">
-                <div class="tee-card black">
-                    <h3>Black Tees (Championship)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <span>Yardage:</span>
-                            <span>7,110 yards</span>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6000 Fox Den Drive</span>
                         </div>
-                        <div class="tee-stat">
-                            <span>Par:</span>
-                            <span>72</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Knoxville, TN 37918</span>
                         </div>
-                        <div class="tee-stat">
-                            <span>Course Rating:</span>
-                            <span>74.3</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(865) 922-3035</span>
                         </div>
-                        <div class="tee-stat">
-                            <span>Slope Rating:</span>
-                            <span>135</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://foxdencc.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="tee-card white">
-                    <h3>White Tees (Men's)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <span>Yardage:</span>
-                            <span>6,575 yards</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Par:</span>
-                            <span>72</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Course Rating:</span>
-                            <span>71.9</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Slope Rating:</span>
-                            <span>130</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card green">
-                    <h3>Green Tees (Mixed)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <span>Yardage:</span>
-                            <span>5,872 yards</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Par:</span>
-                            <span>72</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Course Rating:</span>
-                            <span>68.6 (M) / 73.9 (W)</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Slope Rating:</span>
-                            <span>126 (M) / 131 (W)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card blue">
-                    <h3>Blue Tees (Forward)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <span>Yardage:</span>
-                            <span>5,279 yards</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Par:</span>
-                            <span>72</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Course Rating:</span>
-                            <span>65.9 (M) / 70.6 (W)</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Slope Rating:</span>
-                            <span>115 (M) / 126 (W)</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tee-card silver">
-                    <h3>Silver Tees (Forward)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <span>Yardage:</span>
-                            <span>4,718 yards</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Par:</span>
-                            <span>72</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Course Rating:</span>
-                            <span>64.1</span>
-                        </div>
-                        <div class="tee-stat">
-                            <span>Slope Rating:</span>
-                            <span>113</span>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=6000+Fox+Den+Drive,+Knoxville,+TN+37918&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Fox Den Country Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=6000+Fox+Den+Drive,+Knoxville,+TN+37918" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Photo Gallery -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2c5530;">Photo Gallery</h2>
-            <div class="gallery-grid">
-                <!-- Gallery images will be populated here -->
-                <?php for ($i = 1; $i <= 25; $i++): ?>
-                <div class="gallery-item" onclick="openModal('../images/courses/fox-den-country-club/<?php echo $i; ?>.jpeg')">
-                    <img src="../images/courses/fox-den-country-club/<?php echo $i; ?>.jpeg" alt="Fox Den Country Club Photo <?php echo $i; ?>" loading="lazy">
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Fox Den Country Club</h3>
+                <p>Established in 1995, Fox Den Country Club stands as one of Knoxville's premier private golf destinations, offering members an exceptional championship golf experience on a meticulously maintained 18-hole, par 72 layout. This exclusive club has built a reputation for excellence in both course conditions and member amenities over nearly three decades of operation.</p>
+                
+                <br>
+                
+                <p>The championship course stretches 7,110 yards from the championship tees with a slope rating of 135 and course rating of 74.3, providing a challenging yet fair test for golfers of all skill levels. With seven different tee options ranging from 4,718 to 7,110 yards, the course accommodates players from beginners to scratch golfers, ensuring an enjoyable round for every member.</p>
+                
+                <br>
+                
+                <p>Fox Den's strategic design features rolling terrain, mature tree lines, and well-positioned hazards that reward precision and course management. The layout demands thoughtful shot selection while offering multiple route options on many holes, creating a dynamic playing experience that reveals new challenges and opportunities with each round.</p>
+                
+                <br>
+                
+                <p>As a private country club, Fox Den provides comprehensive amenities including professional instruction, tournament hosting capabilities, elegant dining facilities, and a full-service clubhouse. The club maintains the highest standards in course conditioning and member services, ensuring a premium golf experience in the heart of East Tennessee.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Championship Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Driving Range</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-building" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Clubhouse</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Tournament Hosting</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-users" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Member Events</span>
+                    </div>
                 </div>
-                <?php endfor; ?>
+            </div>
+
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 8; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/fox-den-country-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
+                </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2c5530;">
-                Course Reviews 
-                <?php if ($avg_rating): ?>
-                    <span style="color: #ffc107; font-size: 0.8em;">
-                        (<?php echo $avg_rating; ?>/5 - <?php echo $total_reviews; ?> review<?php echo $total_reviews != 1 ? 's' : ''; ?>)
-                    </span>
-                <?php endif; ?>
-            </h2>
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
             
             <?php if ($is_logged_in): ?>
-            <form method="POST" class="review-form">
-                <h3>Share Your Experience</h3>
-                
-                <?php if (isset($success_message)): ?>
-                    <div class="success-message"><?php echo $success_message; ?></div>
-                <?php endif; ?>
-                
-                <?php if (isset($error_message)): ?>
-                    <div class="error-message"><?php echo $error_message; ?></div>
-                <?php endif; ?>
-                
-                <div class="form-group">
-                    <label for="rating">Rating:</label>
-                    <select name="rating" id="rating" required>
-                        <option value="">Select a rating</option>
-                        <option value="5">5 Stars - Excellent</option>
-                        <option value="4">4 Stars - Very Good</option>
-                        <option value="3">3 Stars - Good</option>
-                        <option value="2">2 Stars - Fair</option>
-                        <option value="1">1 Star - Poor</option>
-                    </select>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Fox Den Country Club..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
+                    </form>
                 </div>
-                
-                <div class="form-group">
-                    <label for="comment_text">Your Review:</label>
-                    <textarea name="comment_text" id="comment_text" placeholder="Share your thoughts about Fox Den Country Club..." required></textarea>
-                </div>
-                
-                <button type="submit" class="btn">Submit Review</button>
-            </form>
             <?php else: ?>
-            <div class="review-form">
-                <p style="text-align: center; margin: 0;">
-                    <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 500;">Login</a> 
-                    or 
-                    <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 500;">Register</a> 
-                    to leave a review
-                </p>
-            </div>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
+                </div>
             <?php endif; ?>
             
+            <!-- Reviews List -->
             <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <p style="text-align: center; color: #666; font-style: italic;">
-                        No reviews yet. Be the first to share your experience!
-                    </p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
+                    </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                    <div class="review-item">
-                        <div class="review-header">
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <div>
-                                <strong><?php echo htmlspecialchars($comment['username']); ?></strong>
-                                <div class="review-rating">
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : '-o'; ?>"></i>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
                                     <?php endfor; ?>
                                 </div>
                             </div>
-                            <small style="color: #666;">
+                            <span style="color: #888; font-size: 0.9rem;">
                                 <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
-                            </small>
+                            </span>
                         </div>
-                        <div class="review-text">
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
                             <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
                         </div>
                     </div>
@@ -716,40 +373,84 @@ try {
         </div>
     </section>
 
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modalImage" src="" alt="Fox Den Country Club">
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
+            </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <?php include '../includes/footer.php'; ?>
+
     <script>
-        // Image modal functionality
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.style.display = 'block';
-            modalImg.src = imageSrc;
-        }
-
-        // Close modal when clicking the X or outside the image
-        document.querySelector('.close').onclick = function() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
-
-        document.getElementById('imageModal').onclick = function(event) {
-            if (event.target === this) {
-                this.style.display = 'none';
-            }
-        }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                document.getElementById('imageModal').style.display = 'none';
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
             }
         });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryImages = document.getElementById('galleryImages');
+            
+            // Clear previous images
+            galleryImages.innerHTML = '';
+            
+            // Load all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const img = document.createElement('img');
+                img.src = `../images/courses/fox-den-country-club/${i}.jpeg`;
+                img.alt = `Fox Den Country Club Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
