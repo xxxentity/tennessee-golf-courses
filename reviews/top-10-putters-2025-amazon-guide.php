@@ -105,6 +105,16 @@ $article = [
             border-left: 5px solid var(--primary-color);
         }
         
+        .putter-image {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: var(--shadow-light);
+        }
+        
         .putter-rank {
             background: var(--primary-color);
             color: white;
@@ -261,6 +271,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#1</div>
                     <h3 class="putter-name">Odyssey Golf DFX 2025 Putter</h3>
+                    <img src="/images/news/putters-2025/1.jpeg" alt="Odyssey Golf DFX 2025 Putter" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.7/5 stars (649 reviews)
@@ -314,6 +325,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#2</div>
                     <h3 class="putter-name">TaylorMade Golf Spider #3</h3>
+                    <img src="/images/news/putters-2025/2.jpeg" alt="TaylorMade Golf Spider #3" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.7/5 stars (61 reviews)
@@ -367,6 +379,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#3</div>
                     <h3 class="putter-name">Callaway Golf AI-One Cruiser Putter</h3>
+                    <img src="/images/news/putters-2025/3.jpeg" alt="Callaway Golf AI-One Cruiser Putter" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.6/5 stars (89 reviews)
@@ -420,6 +433,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#4</div>
                     <h3 class="putter-name">TaylorMade Golf Kalea Spider Putter</h3>
+                    <img src="/images/news/putters-2025/4.jpeg" alt="TaylorMade Golf Kalea Spider Putter" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.6/5 stars (21 reviews)
@@ -473,6 +487,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#5</div>
                     <h3 class="putter-name">Scotty Cameron Studio Style Newport 2</h3>
+                    <img src="/images/news/putters-2025/5.jpeg" alt="Scotty Cameron Studio Style Newport 2" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.7/5 stars (45 reviews)
@@ -526,6 +541,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#6</div>
                     <h3 class="putter-name">TaylorMade Golf TP Black Palisades</h3>
+                    <img src="/images/news/putters-2025/6.jpeg" alt="TaylorMade Golf TP Black Palisades" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.7/5 stars (21 reviews)
@@ -579,6 +595,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#7</div>
                     <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird</h3>
+                    <img src="/images/news/putters-2025/7.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.5/5 stars (73 reviews)
@@ -632,6 +649,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#8</div>
                     <h3 class="putter-name">Cleveland Golf HB Soft 2 Putter (Model 11)</h3>
+                    <img src="/images/news/putters-2025/8.jpeg" alt="Cleveland Golf HB Soft 2 Putter Model 11" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.6/5 stars (110 reviews)
@@ -685,6 +703,7 @@ $article = [
                 <div class="putter-item">
                     <div class="putter-rank">#9</div>
                     <h3 class="putter-name">TaylorMade Golf TP Black Putter Palisades</h3>
+                    <img src="/images/news/putters-2025/9.jpeg" alt="TaylorMade Golf TP Black Putter Palisades" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.7/5 stars (21 reviews)
@@ -737,29 +756,30 @@ $article = [
                 <!-- #10 Putter -->
                 <div class="putter-item">
                     <div class="putter-rank">#10</div>
-                    <h3 class="putter-name">Cobra King 3D Printed Agera</h3>
+                    <h3 class="putter-name">Bettinardi QB14 Queen Bee Putter</h3>
+                    <img src="/images/news/putters-2025/10.jpeg" alt="Bettinardi QB14 Queen Bee Putter" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        4.4/5 stars (38 reviews)
+                        4.6/5 stars (42 reviews)
                     </div>
-                    <p>Revolutionary 3D-printed construction allows for precise weight distribution and unique design elements.</p>
+                    <p>Premium one-piece milled 303 stainless steel putter with revolutionary Mini Honeycomb™ face milling. Compact crossover design between blade and mallet with caramel copper PVD finish and exceptional craftsmanship.</p>
                     
                     <div class="putter-details">
                         <div class="detail-item">
                             <span>Price Range:</span>
-                            <span><strong>$199.99 - $249.99</strong></span>
+                            <span><strong>$299.99 - $349.99</strong></span>
                         </div>
                         <div class="detail-item">
                             <span>Type:</span>
-                            <span>3D-Printed Mallet</span>
+                            <span>Mid-Mallet/Blade Hybrid</span>
                         </div>
                         <div class="detail-item">
-                            <span>Construction:</span>
-                            <span>3D Printed</span>
+                            <span>Material:</span>
+                            <span>303 Stainless Steel</span>
                         </div>
                         <div class="detail-item">
                             <span>Face:</span>
-                            <span>SIK Face Technology</span>
+                            <span>Mini Honeycomb™ Milling</span>
                         </div>
                     </div>
 
@@ -767,17 +787,17 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Innovative 3D-printed technology</li>
-                                <li>Precise weight distribution</li>
-                                <li>Unique aesthetic appeal</li>
-                                <li>Excellent stability</li>
+                                <li>Premium one-piece milled construction</li>
+                                <li>Softest Honeycomb™ face milling to date</li>
+                                <li>Beautiful caramel copper PVD finish</li>
+                                <li>Excellent visual alignment cues</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Non-traditional appearance</li>
-                                <li>Limited availability</li>
+                                <li>Premium price point</li>
+                                <li>Limited customization on Amazon</li>
                             </ul>
                         </div>
                     </div>
