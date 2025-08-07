@@ -80,7 +80,7 @@ try {
     
     <style>
         .course-hero {
-            height: 75vh;
+            height: 40vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/nashville-golf-athletic-club/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -89,7 +89,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 80px;
+            margin-top: 60px;
         }
         
         .course-hero-content h1 {
@@ -548,8 +548,8 @@ try {
             }
             
             .course-hero {
-                height: 75vh;
-                margin-top: 80px;
+                height: 40vh;
+                margin-top: 60px;
             }
             
             .course-hero-content h1 {

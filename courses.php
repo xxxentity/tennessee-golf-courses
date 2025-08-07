@@ -758,7 +758,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <style>
         .courses-page {
             padding-top: 0px;
-            min-height: 100vh;
+            min-height: 60vh;
             background: var(--bg-light);
         }
         
@@ -794,7 +794,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            height: calc(100vh - 120px);
+            height: calc(60vh - 120px);
             overflow-y: auto;
             position: sticky;
             top: 110px;

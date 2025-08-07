@@ -32,7 +32,7 @@ session_start();
                         url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            padding: 120px 0 80px;
+            padding: 80px 0 60px;
             text-align: center;
             color: white;
             position: relative;
@@ -54,7 +54,7 @@ session_start();
         }
         
         .coming-soon-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background: #f8faf9;
         }
         
@@ -256,6 +256,8 @@ session_start();
 
     <?php include 'includes/footer.php'; ?>
 
+    <script src="/weather.js?v=3"></script>
+    
     <script>
         function handleNotificationSignup(event) {
             event.preventDefault();

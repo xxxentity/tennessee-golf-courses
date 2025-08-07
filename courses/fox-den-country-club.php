@@ -83,7 +83,7 @@ try {
 
     <!-- Course Hero Section -->
     <section class="course-hero" style="
-        height: 75vh; 
+        height: 40vh; 
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/fox-den-country-club/1.jpeg'); 
         background-size: cover; 
         background-position: center; 
@@ -92,7 +92,7 @@ try {
         justify-content: center; 
         text-align: center; 
         color: white;
-        margin-top: 80px;
+        margin-top: 60px;
     ">
         <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Fox Den Country Club</h1>

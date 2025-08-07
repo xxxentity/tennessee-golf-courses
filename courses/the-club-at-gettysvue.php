@@ -79,7 +79,7 @@ try {
     
     <style>
         .course-hero {
-            height: 75vh;
+            height: 40vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/the-club-at-gettysvue/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 80px;
+            margin-top: 60px;
         }
         
         .course-hero-content h1 {
