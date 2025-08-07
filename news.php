@@ -4,16 +4,6 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
-        'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
-        'slug' => 'top-10-putters-2025-amazon-guide',
-        'date' => '2025-08-06',
-        'time' => '4:30 PM',
-        'category' => 'Equipment',
-        'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
-        'image' => '/images/news/putters-2025/hero-putters-collage.jpg',
-        'featured' => true
-    ],
-    [
         'title' => 'Scheffler Captures First Claret Jug with Dominant Victory',
         'slug' => 'scheffler-wins-2025-british-open-final-round',
         'date' => '2025-07-21',
