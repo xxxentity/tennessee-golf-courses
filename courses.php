@@ -797,7 +797,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         
         .courses-container {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 320px 1fr;
             gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -813,6 +813,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             overflow-y: auto;
             position: sticky;
             top: 110px;
+            min-width: 280px;
         }
         
         /* Custom scrollbar for sidebar */
@@ -839,10 +840,10 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         }
         
         .filter-title {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         .filter-option {
@@ -867,23 +868,24 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         
         .sort-select {
             width: 100%;
-            padding: 1rem 0.75rem;
+            padding: 1.2rem 1rem;
             border: 2px solid var(--border-color);
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 500;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
             background: white;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-height: 50px;
+            min-height: 65px;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c5234' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c5234' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.2rem;
-            padding-right: 3rem;
+            background-position: right 1.2rem center;
+            background-size: 1.5rem;
+            padding-right: 3.5rem;
+            color: var(--text-dark);
         }
         
         .sort-select:focus {
@@ -1147,14 +1149,15 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             }
             
             .sort-select {
-                font-size: 1.15rem;
-                padding: 1.1rem 0.9rem;
-                min-height: 55px;
-                background-size: 1.3rem;
+                font-size: 1.4rem;
+                padding: 1.3rem 1rem;
+                min-height: 70px;
+                background-size: 1.6rem;
+                border-radius: 14px;
             }
             
             .filter-title {
-                font-size: 1.15rem;
+                font-size: 1.5rem;
             }
         }
         
@@ -1186,15 +1189,16 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             }
             
             .sort-select {
-                font-size: 1.2rem;
-                padding: 1.2rem 0.9rem;
-                min-height: 60px;
-                background-size: 1.4rem;
-                padding-right: 3.5rem;
+                font-size: 1.5rem;
+                padding: 1.4rem 1rem;
+                min-height: 75px;
+                background-size: 1.7rem;
+                padding-right: 4rem;
+                border-radius: 15px;
             }
             
             .filter-title {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
             }
             
             .pagination-btn {
@@ -1221,17 +1225,18 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             }
             
             .sort-select {
-                font-size: 1.3rem;
-                padding: 1.3rem 1rem;
-                min-height: 65px;
-                background-size: 1.5rem;
-                padding-right: 4rem;
-                border-radius: 12px;
+                font-size: 1.6rem;
+                padding: 1.5rem 1.2rem;
+                min-height: 80px;
+                background-size: 1.8rem;
+                padding-right: 4.5rem;
+                border-radius: 16px;
+                font-weight: 700;
             }
             
             .filter-title {
-                font-size: 1.3rem;
-                margin-bottom: 1.2rem;
+                font-size: 1.7rem;
+                margin-bottom: 1.5rem;
             }
         }
         
