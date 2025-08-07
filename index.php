@@ -22,6 +22,8 @@
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9809687352497578"
+     crossorigin="anonymous"></script>
     
     <style>
         .search-container {
