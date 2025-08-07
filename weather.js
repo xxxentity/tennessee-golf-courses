@@ -22,7 +22,7 @@ class WeatherManager {
 
         // Fetch new weather data from our own API
         try {
-            const response = await fetch('/api/weather.php');
+            const response = await fetch('/weather-api.php');
             
             if (!response.ok) {
                 throw new Error('Weather API unavailable');
@@ -46,14 +46,14 @@ class WeatherManager {
             // Cache the data
             this.cacheWeather(this.weatherData);
             
-            console.log('Weather updated with real API data:', this.weatherData, 'Source:', result.source);
+            console.log('Weather updated with real API data:', this.weatherData, 'Source:', result.source, 'Debug:', result.debug);
             
         } catch (error) {
             console.error('Weather API error, using fallback:', error);
             
-            // Use consistent fallback data with higher temperature
+            // Use consistent fallback data with current temperature
             this.weatherData = {
-                temp: '75',
+                temp: '87',
                 condition: 'Partly Cloudy',
                 windSpeed: '8',
                 visibility: '10',
