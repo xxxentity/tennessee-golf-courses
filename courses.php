@@ -870,7 +870,16 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             padding: 0.75rem;
             border: 2px solid var(--border-color);
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 82, 52, 0.1);
         }
         
         .courses-content {
@@ -1114,6 +1123,15 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 max-height: 300px;
                 margin-bottom: 1rem;
             }
+            
+            .sort-select {
+                font-size: 1.05rem;
+                padding: 0.9rem;
+            }
+            
+            .filter-title {
+                font-size: 1.15rem;
+            }
         }
         
         @media screen and (max-width: 768px) {
@@ -1141,6 +1159,15 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             .filters-sidebar {
                 padding: 1rem;
                 max-height: 250px;
+            }
+            
+            .sort-select {
+                font-size: 1.1rem;
+                padding: 1rem 0.75rem;
+            }
+            
+            .filter-title {
+                font-size: 1.2rem;
             }
             
             .pagination-btn {

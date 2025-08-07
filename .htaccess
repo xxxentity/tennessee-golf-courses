@@ -36,6 +36,7 @@ RewriteRule ^courses/hillwood-country-club/?$ courses/hillwood-country-club.php 
 RewriteRule ^courses/holston-hills-country-club/?$ courses/holston-hills-country-club.php [L]
 RewriteRule ^courses/island-pointe-golf-club/?$ courses/island-pointe-golf-club.php [L]
 RewriteRule ^courses/mccabe-golf-course/?$ courses/mccabe-golf-course.php [L]
+RewriteRule ^courses/mirimichi-golf-course/?$ courses/mirimichi-golf-course.php [L]
 RewriteRule ^courses/nashville-national-golf-links/?$ courses/nashville-national-golf-links.php [L]
 RewriteRule ^courses/nashville-golf-athletic-club/?$ courses/nashville-golf-athletic-club.php [L]
 RewriteRule ^courses/richland-country-club/?$ courses/richland-country-club.php [L]
