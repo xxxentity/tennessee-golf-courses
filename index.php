@@ -28,7 +28,7 @@
     <style>
         .search-container {
             position: relative;
-            z-index: 99999;
+            z-index: 99999 !important;
         }
         
         .search-results {
@@ -41,7 +41,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             max-height: 400px;
             overflow-y: auto;
-            z-index: 999999;
+            z-index: 2147483647 !important; /* Maximum z-index value */
             display: none;
             margin-top: 4px;
         }
@@ -90,16 +90,27 @@
             z-index: 200;
         }
         
+        /* Override hero overflow to allow dropdown visibility */
+        #home.hero {
+            overflow: visible !important;
+        }
+        
         /* Ensure the hero section is positioned */
         .hero {
             position: relative;
             z-index: 10;
+            overflow: visible !important;
         }
         
         /* Ensure stats bar doesn't overlap */
         .stats-bar {
             position: relative;
             z-index: 1;
+        }
+        
+        /* Force hero-search container to allow overflow */
+        .hero-search {
+            overflow: visible !important;
         }
     </style>
 </head>
