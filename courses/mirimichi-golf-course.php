@@ -556,7 +556,7 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Mirimichi Golf Course</h1>
-            <p>Championship Design • Millington, Tennessee</p>
+            <p>Bill Bergin Design • Millington, Tennessee</p>
             <div class="course-rating">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
@@ -606,16 +606,16 @@ try {
                             <span class="spec-value">7,400+</span>
                         </div>
                         <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Bill Bergin</span>
+                        </div>
+                        <div class="spec-item">
                             <span class="spec-label">Course Rating:</span>
                             <span class="spec-value">75.7 / 136</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
                             <span class="spec-value">Public</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Features:</span>
-                            <span class="spec-value">Water, Bunkers</span>
                         </div>
                     </div>
                 </div>
