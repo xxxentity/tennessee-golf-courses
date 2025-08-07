@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Legacy Golf Course - Raymond Floyd Design | Tennessee Golf Courses</title>
-    <meta name="description" content="The Legacy Golf Course - Raymond Floyd designed championship course in Springfield, TN. Ranked #2 public course in Tennessee with 6,755 yards of challenging golf.">
+    <title>The Legacy Golf Course - Tennessee Golf Courses</title>
+    <meta name="description" content="The Legacy Golf Course - Raymond Floyd designed championship course in Springfield, TN. Ranked #2 public course in Tennessee with pristine bentgrass greens and rolling hills.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,515 +81,408 @@ try {
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Header -->
-    <section class="course-header">
-        <div class="course-hero">
-            <div class="course-hero-content">
-                <div class="course-hero-text">
-                    <div class="course-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Springfield, Tennessee</span>
-                    </div>
-                    <h1 class="course-title">The Legacy Golf Course</h1>
-                    <p class="course-subtitle">Raymond Floyd Championship Design</p>
-                    
-                    <div class="course-meta">
-                        <div class="course-rating">
-                            <?php if ($avg_rating): ?>
-                                <div class="stars">
-                                    <?php
-                                    $full_stars = floor($avg_rating);
-                                    $half_star = ($avg_rating - $full_stars) >= 0.5;
-                                    
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $full_stars) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i == $full_stars + 1 && $half_star) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span class="rating-text"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                            <?php else: ?>
-                                <div class="stars">
-                                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                </div>
-                                <span class="rating-text">Be the first to review</span>
-                            <?php endif; ?>
-                        </div>
+    <!-- Course Hero Section -->
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/the-legacy-golf-course/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">The Legacy Golf Course</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Raymond Floyd Design • Springfield, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
                         
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-flag"></i>
-                                <span>18 Holes</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Par 72</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler"></i>
-                                <span>6,755 Yards</span>
-                            </div>
-                        </div>
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
                     </div>
-                    
-                    <div class="course-actions">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
-                            Contact Course
-                        </a>
-                        <a href="#photos" class="btn btn-secondary">
-                            <i class="fas fa-camera"></i>
-                            View Photos
-                        </a>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
-                </div>
-                
-                <div class="course-hero-image">
-                    <div class="hero-image-container">
-                        <img src="/images/courses/the-legacy-golf-course/1.jpeg" alt="The Legacy Golf Course" class="hero-image">
-                        <div class="image-overlay">
-                            <div class="price-badge">
-                                <span class="price-label">#2 Ranked</span>
-                                <span class="price-amount">Public Course TN</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="details-grid">
-                <!-- About Section -->
-                <div class="details-main">
-                    <div class="detail-section">
-                        <h2>About The Legacy Golf Course</h2>
-                        <p>The Legacy Golf Course stands as one of Tennessee's premier public golf destinations, masterfully designed by PGA Hall of Famer Raymond Floyd and opened in 1996. Located just 30 minutes north of Nashville in Springfield, this 6,755-yard championship course has earned recognition as the #2 ranked public course in Tennessee by Golf Advisor.</p>
-                        
-                        <p>Floyd's design philosophy emphasized "target golf at its best," creating a layout that rewards accuracy over raw distance. The course winds through rolling hills, woodlands, and scenic Tennessee countryside, featuring bentgrass greens with significant undulation and strategic bunkering that challenges golfers of all skill levels.</p>
-                        
-                        <p>Beyond its championship golf, The Legacy is certified as an Audubon Cooperative Sanctuary, demonstrating its commitment to environmental stewardship while providing wildlife habitats and conserving natural resources. This combination of exceptional golf and environmental consciousness makes The Legacy a true destination for discerning golfers.</p>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Raymond Floyd Design Legacy</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-year">1996</div>
-                                <div class="timeline-content">
-                                    <h4>Course Opening</h4>
-                                    <p>The Legacy Golf Course opens as Raymond Floyd's Tennessee design</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2000s</div>
-                                <div class="timeline-content">
-                                    <h4>Recognition & Awards</h4>
-                                    <p>Earns ranking as one of Tennessee's top public courses</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2010s</div>
-                                <div class="timeline-content">
-                                    <h4>Audubon Certification</h4>
-                                    <p>Achieves Cooperative Sanctuary status for environmental stewardship</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2024</div>
-                                <div class="timeline-content">
-                                    <h4>Current Recognition</h4>
-                                    <p>Ranked #6 in Golf Advisor's Top Courses in Tennessee</p>
-                                </div>
-                            </div>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Course Design & Challenge</h3>
-                        <div class="layout-grid">
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-bullseye"></i>
-                                </div>
-                                <h4>Target Golf</h4>
-                                <p>Raymond Floyd's "target golf at its best" philosophy emphasizing precision</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h4>Elevation Changes</h4>
-                                <p>Rolling hills and blind shots create strategic challenges throughout</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <h4>Natural Setting</h4>
-                                <p>Integrated with Tennessee countryside and mature woodlands</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-seedling"></i>
-                                </div>
-                                <h4>Bentgrass Greens</h4>
-                                <p>Fast, undulating putting surfaces with strategic pin positions</p>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Raymond Floyd: Hall of Fame Designer</h3>
-                        <p>Raymond Floyd's credentials as both player and designer are unmatched in modern golf. As a four-time major champion and World Golf Hall of Fame inductee (1989), Floyd brought decades of competitive experience to The Legacy's design. His unique perspective, gained from being one of only two players to win official PGA Tour events in four different decades, is evident in every strategic element of the course.</p>
-                        
-                        <p>Floyd's design portfolio includes prestigious courses like the "Blue Monster" at Doral, TPC Las Vegas, and Turnberry Isle. At The Legacy, he created a course where no single hole dominates, instead providing consistent challenge and beauty throughout the entire round. His philosophy of accuracy over distance makes the course accessible to amateur golfers while maintaining championship-level challenge from the back tees.</p>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,755</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Raymond Floyd</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1996</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="details-sidebar">
-                    <div class="info-card">
-                        <h3>Course Information</h3>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <strong>Architect:</strong>
-                                <span>Raymond Floyd</span>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-section">
+                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekday Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$75</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$58</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$38</span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <strong>Opened:</strong>
-                                <span>1996</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Type:</strong>
-                                <span>Public</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Holes:</strong>
-                                <span>18</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Par:</strong>
-                                <span>72</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Floyd Tees:</strong>
-                                <span>6,755 yards (Rating 73.0, Slope 134)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Tournament Tees:</strong>
-                                <span>6,133 yards (Rating 69.8, Slope 128)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Forward Tees:</strong>
-                                <span>4,860 yards (Rating 68.2, Slope 118)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Green Type:</strong>
-                                <span>Bentgrass</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Certification:</strong>
-                                <span>Audubon Cooperative Sanctuary</span>
+                            
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekend Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$85</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$68</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Tournament Packages</span>
+                                    <span>Available</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="amenities-card">
-                        <h3>Amenities & Services</h3>
-                        <div class="amenities-list">
-                            <div class="amenity-item">
-                                <i class="fas fa-home"></i>
-                                <span>Full Clubhouse with Course Views</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-store"></i>
-                                <span>Fully Stocked Pro Shop</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>The Legacy Grill Restaurant</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Full Driving Range</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Four-Level Putting Green</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-hand-paper"></i>
-                                <span>Short Game Complex</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-mountain"></i>
-                                <span>Practice Bunker</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>PGA Professional Instruction</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-tools"></i>
-                                <span>Club Repair & Custom Fitting</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>Tournament Hosting</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-credit-card"></i>
-                                <span>USGA Handicap Services</span>
-                            </div>
+                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+                            #2 Ranked Public Course in Tennessee • Raymond Floyd Design
                         </div>
                     </div>
+                </div>
 
-                    <div class="contact-card" id="contact">
-                        <h3>Contact Information</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Address:</strong>
-                                    <span>100 Ray Floyd Drive<br>Springfield, TN 37172</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone:</strong>
-                                    <span>(615) 384-4653</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <div>
-                                    <strong>Website:</strong>
-                                    <a href="https://www.golfthelegacy.com" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-road"></i>
-                                <div>
-                                    <strong>Distance:</strong>
-                                    <span>30 minutes from Nashville</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <strong>Practice Hours:</strong>
-                                    <span>Sunrise to 30 minutes before sunset</span>
-                                </div>
-                            </div>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">100 Ray Floyd Drive</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Springfield, TN 37172</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 384-4653</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.golfthelegacy.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=100+Ray+Floyd+Drive,+Springfield,+TN+37172&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="The Legacy Golf Course Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=100+Ray+Floyd+Drive,+Springfield,+TN+37172" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery" id="photos">
-        <div class="container">
-            <h2>Course Photos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/1.jpeg', 'The Legacy Golf Course Clubhouse')">
-                    <img src="/images/courses/the-legacy-golf-course/1.jpeg" alt="The Legacy Golf Course Clubhouse">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About The Legacy Golf Course</h3>
+                <p>Designed by PGA Hall of Famer Raymond Floyd and opened in 1996, The Legacy Golf Course stands as Tennessee's #2 ranked public course and one of the Southeast's premier championship golf destinations. Located just 30 minutes north of Nashville in Springfield, this 6,755-yard masterpiece showcases Floyd's design philosophy of "target golf at its best."</p>
+                
+                <br>
+                
+                <p>The championship layout features pristine bentgrass greens with significant undulation and strategic bunkering that rewards accuracy over distance. Floyd's design winds through rolling Tennessee hills and mature woodlands, creating a natural beauty that complements the strategic challenge on every hole. With four sets of tees ranging from 4,860 to 6,755 yards, the course accommodates golfers of all skill levels.</p>
+                
+                <br>
+                
+                <p>Beyond exceptional golf, The Legacy earned recognition as an Audubon Cooperative Sanctuary, demonstrating environmental stewardship while maintaining championship conditioning. The course has hosted numerous tournaments and continues to attract golfers seeking a premium public golf experience with Hall of Fame design credentials.</p>
+                
+                <br>
+                
+                <p>The facility features comprehensive amenities including a four-level practice putting green, full driving range, short game complex, and the Legacy Grill restaurant. With its combination of Raymond Floyd's design excellence, environmental consciousness, and tournament-quality conditioning, The Legacy provides an unmatched public golf experience in Middle Tennessee.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Championship Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Legacy Grill Restaurant</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Driving Range</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Four-Level Putting Green</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-hand-paper" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Short Game Complex</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-leaf" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Audubon Sanctuary</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/2.jpeg', 'Raymond Floyd Championship Design')">
-                    <img src="/images/courses/the-legacy-golf-course/2.jpeg" alt="Raymond Floyd Championship Design">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+            </div>
+
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/the-legacy-golf-course/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/3.jpeg', 'Scenic Tennessee Countryside')">
-                    <img src="/images/courses/the-legacy-golf-course/3.jpeg" alt="Scenic Tennessee Countryside">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/4.jpeg', 'Four-Level Putting Green')">
-                    <img src="/images/courses/the-legacy-golf-course/4.jpeg" alt="Four-Level Putting Green">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/5.jpeg', 'Target Golf Challenge')">
-                    <img src="/images/courses/the-legacy-golf-course/5.jpeg" alt="Target Golf Challenge">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/the-legacy-golf-course/6.jpeg', 'Practice Range Complex')">
-                    <img src="/images/courses/the-legacy-golf-course/6.jpeg" alt="Practice Range Complex">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Course Reviews</h2>
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
             
             <?php if ($is_logged_in): ?>
-                <!-- Review Form -->
-                <div class="review-form-container">
-                    <h3>Share Your Experience</h3>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
                     <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
                     <?php endif; ?>
                     
-                    <form method="POST" class="review-form">
-                        <div class="rating-input">
-                            <label>Your Rating:</label>
-                            <div class="star-rating">
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1"><i class="fas fa-star"></i></label>
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" placeholder="Share your experience playing The Legacy Golf Course..."></textarea>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at The Legacy Golf Course..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Review
-                        </button>
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../auth/login.php">Login</a> to write a review</p>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Reviews -->
+            <!-- Reviews List -->
             <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <div class="no-reviews">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <strong class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></strong>
-                                    <div class="review-rating">
-                                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                            <i class="fas fa-star <?php echo $i <= $comment['rating'] ? 'filled' : 'empty'; ?>"></i>
-                                        <?php endfor; ?>
-                                    </div>
-                                </div>
-                                <div class="review-date">
-                                    <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
+                                    <?php endfor; ?>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                            </div>
+                            <span style="color: #888; font-size: 0.9rem;">
+                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                            </span>
                         </div>
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
+                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
+                        </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-nav">
-            <button class="modal-nav-btn" id="prevBtn" onclick="changeImage(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav-btn" id="nextBtn" onclick="changeImage(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js"></script>
+    <script>
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
+            }
+        });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryImages = document.getElementById('galleryImages');
+            
+            // Clear previous images
+            galleryImages.innerHTML = '';
+            
+            // Load all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const img = document.createElement('img');
+                img.src = `../images/courses/the-legacy-golf-course/${i}.jpeg`;
+                img.alt = `The Legacy Golf Course Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

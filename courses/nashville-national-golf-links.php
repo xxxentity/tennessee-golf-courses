@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nashville National Golf Links - Natural Beauty Golf | Tennessee Golf Courses</title>
-    <meta name="description" content="Nashville National Golf Links - 18-hole championship course in Joelton featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty. Formerly Highland Rim Golf Course.">
+    <title>Nashville National Golf Links - Tennessee Golf Courses</title>
+    <meta name="description" content="Nashville National Golf Links - 18-hole championship course in Joelton featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty. Family owned since 2021.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,507 +81,408 @@ try {
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Header -->
-    <section class="course-header">
-        <div class="course-hero">
-            <div class="course-hero-content">
-                <div class="course-hero-text">
-                    <div class="course-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Joelton, Tennessee</span>
-                    </div>
-                    <h1 class="course-title">Nashville National Golf Links</h1>
-                    <p class="course-subtitle">Golf in Natural Tennessee Beauty</p>
-                    
-                    <div class="course-meta">
-                        <div class="course-rating">
-                            <?php if ($avg_rating): ?>
-                                <div class="stars">
-                                    <?php
-                                    $full_stars = floor($avg_rating);
-                                    $half_star = ($avg_rating - $full_stars) >= 0.5;
-                                    
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $full_stars) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i == $full_stars + 1 && $half_star) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span class="rating-text"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                            <?php else: ?>
-                                <div class="stars">
-                                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                </div>
-                                <span class="rating-text">Be the first to review</span>
-                            <?php endif; ?>
-                        </div>
+    <!-- Course Hero Section -->
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/nashville-national-golf-links/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Nashville National Golf Links</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Natural Tennessee Beauty • Joelton, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
                         
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-flag"></i>
-                                <span>18 Holes</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Par 72</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler"></i>
-                                <span>6,217 Yards</span>
-                            </div>
-                        </div>
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
                     </div>
-                    
-                    <div class="course-actions">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
-                            Contact Course
-                        </a>
-                        <a href="#photos" class="btn btn-secondary">
-                            <i class="fas fa-camera"></i>
-                            View Photos
-                        </a>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
-                </div>
-                
-                <div class="course-hero-image">
-                    <div class="hero-image-container">
-                        <img src="/images/courses/nashville-national-golf-links/1.jpeg" alt="Nashville National Golf Links" class="hero-image">
-                        <div class="image-overlay">
-                            <div class="price-badge">
-                                <span class="price-label">Experience</span>
-                                <span class="price-amount">Natural Beauty</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="details-grid">
-                <!-- About Section -->
-                <div class="details-main">
-                    <div class="detail-section">
-                        <h2>About Nashville National Golf Links</h2>
-                        <p>Nashville National Golf Links, formerly Highland Rim Golf Course, stands as a testament to golf played in its most natural setting. Established in 1999 and now under family ownership, this 18-hole championship course is carved among limestone bluffs with scenic elevation changes and the soothing sounds of Sycamore Creek flowing throughout the property.</p>
-                        
-                        <p>Located just minutes from downtown Nashville at 1725 New Hope Road in Joelton, the course offers a unique promise: not a single home fronts the property, and never will. This commitment to preserving the natural landscape ensures that golfers experience the game as it was intended - away from the stresses of daily life in a pristine Tennessee setting.</p>
-                        
-                        <p>The course stretches 6,217 yards through diverse terrain featuring rolling hills, mature trees, and strategic water features. Under new ownership, Nashville National has undergone continuous upgrades to both the course conditions and amenities, creating a welcoming atmosphere where golfers feel truly at home.</p>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Course Evolution & Heritage</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-year">1999</div>
-                                <div class="timeline-content">
-                                    <h4>Highland Rim Golf Course Opens</h4>
-                                    <p>Original course established in the natural Tennessee landscape</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2010s</div>
-                                <div class="timeline-content">
-                                    <h4>Course Maturation</h4>
-                                    <p>Trees and landscaping develop, creating challenging conditions</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2020</div>
-                                <div class="timeline-content">
-                                    <h4>Ownership Change</h4>
-                                    <p>New family ownership takes over operations</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2021</div>
-                                <div class="timeline-content">
-                                    <h4>Rebranding to Nashville National</h4>
-                                    <p>Course renamed to reflect commitment to natural golf experience</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2022-2025</div>
-                                <div class="timeline-content">
-                                    <h4>Continuous Improvements</h4>
-                                    <p>Ongoing course and facility upgrades under family ownership</p>
-                                </div>
-                            </div>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Natural Features & Layout</h3>
-                        <div class="layout-grid">
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-mountain"></i>
-                                </div>
-                                <h4>Limestone Bluffs</h4>
-                                <p>Dramatic rock formations create stunning backdrops and strategic challenges</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-water"></i>
-                                </div>
-                                <h4>Sycamore Creek</h4>
-                                <p>Natural creek winds through the course, providing both beauty and hazard</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h4>Elevation Changes</h4>
-                                <p>Rolling terrain offers varied shot requirements and scenic vistas</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-tree"></i>
-                                </div>
-                                <h4>Mature Landscape</h4>
-                                <p>No residential development - pure natural Tennessee environment</p>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Family Ownership Philosophy</h3>
-                        <p>Nashville National Golf Links is proudly family owned and operated, with a philosophy centered on providing golfers with an exceptional experience. The ownership team is constantly upgrading both the course conditions and amenities, ensuring that every visitor feels welcomed and valued.</p>
-                        
-                        <p>This commitment to hospitality, combined with the course's pristine natural setting, creates an atmosphere where golfers can truly escape and enjoy the game in its purest form. The family's dedication to maintaining the property's natural integrity while providing modern amenities sets Nashville National apart from other golf experiences in the Nashville area.</p>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,217</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Established:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1999</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Rebranded:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2021</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Semi-Private</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="details-sidebar">
-                    <div class="info-card">
-                        <h3>Course Information</h3>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <strong>Established:</strong>
-                                <span>1999 (as Highland Rim)</span>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-section">
+                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekday Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$65</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$45</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$30</span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <strong>Rebranded:</strong>
-                                <span>2021 (Nashville National)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Type:</strong>
-                                <span>Semi-Private</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Holes:</strong>
-                                <span>18</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Par:</strong>
-                                <span>72</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Yardage:</strong>
-                                <span>6,217 yards</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Terrain:</strong>
-                                <span>Rolling Hills</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Water Features:</strong>
-                                <span>Sycamore Creek</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Unique Feature:</strong>
-                                <span>No residential development</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Setting:</strong>
-                                <span>Limestone bluffs & natural beauty</span>
+                            
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekend Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$75</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$55</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Group Rates</span>
+                                    <span>Available</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="amenities-card">
-                        <h3>Amenities & Services</h3>
-                        <div class="amenities-list">
-                            <div class="amenity-item">
-                                <i class="fas fa-store"></i>
-                                <span>Pro Shop</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Clubhouse Restaurant</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-car"></i>
-                                <span>Golf Cart Rental</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Covered Driving Range</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Practice Putting Green</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-users"></i>
-                                <span>Group Events</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Golf Instruction</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>Tournament Hosting</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-parking"></i>
-                                <span>Ample Parking</span>
-                            </div>
+                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+                            Family owned • Natural Tennessee beauty • No residential development
                         </div>
                     </div>
+                </div>
 
-                    <div class="contact-card" id="contact">
-                        <h3>Contact Information</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Address:</strong>
-                                    <span>1725 New Hope Road<br>Nashville, TN 37080</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone:</strong>
-                                    <span>(615) 876-4653</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <div>
-                                    <strong>Website:</strong>
-                                    <a href="https://nashvillenational.golf" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <strong>Hours:</strong>
-                                    <span>Dawn to Dusk<br>Weather Permitting</span>
-                                </div>
-                            </div>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1725 New Hope Road</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Nashville, TN 37080</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 876-4653</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://nashvillenational.golf" target="_blank" style="color: #2c5234;">Visit Site</a></span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=1725+New+Hope+Road,+Nashville,+TN+37080&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Nashville National Golf Links Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1725+New+Hope+Road,+Nashville,+TN+37080" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery" id="photos">
-        <div class="container">
-            <h2>Course Photos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/1.jpeg', 'Nashville National Golf Links Clubhouse')">
-                    <img src="/images/courses/nashville-national-golf-links/1.jpeg" alt="Nashville National Golf Links Clubhouse">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Nashville National Golf Links</h3>
+                <p>Nashville National Golf Links, formerly Highland Rim Golf Course, stands as a testament to golf played in its most natural setting. Established in 1999 and rebranded in 2021 under family ownership, this 18-hole championship course is carved among limestone bluffs with scenic elevation changes and the soothing sounds of Sycamore Creek flowing throughout the property.</p>
+                
+                <br>
+                
+                <p>Located just minutes from downtown Nashville at 1725 New Hope Road in Joelton, the course offers a unique promise: not a single home fronts the property, and never will. This commitment to preserving the natural landscape ensures that golfers experience the game as it was intended - away from the stresses of daily life in a pristine Tennessee setting.</p>
+                
+                <br>
+                
+                <p>The course stretches 6,217 yards through diverse terrain featuring rolling hills, mature trees, and strategic water features. The dramatic limestone bluffs create stunning backdrops while Sycamore Creek winds through multiple holes, providing both natural beauty and strategic challenges that reward thoughtful course management.</p>
+                
+                <br>
+                
+                <p>Under family ownership since 2020, Nashville National has undergone continuous upgrades to both course conditions and amenities, creating a welcoming atmosphere where golfers feel truly at home. The family's dedication to hospitality, combined with the course's pristine natural setting, creates an exceptional golf experience that represents the best of Tennessee's natural beauty.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Championship Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-mountain" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Limestone Bluffs</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-water" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Sycamore Creek</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Clubhouse Restaurant</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Covered Driving Range</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Putting Green</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-users" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Family Owned</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/2.jpeg', 'Limestone Bluffs and Natural Beauty')">
-                    <img src="/images/courses/nashville-national-golf-links/2.jpeg" alt="Limestone Bluffs and Natural Beauty">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+            </div>
+
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/nashville-national-golf-links/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/3.jpeg', 'Sycamore Creek Water Feature')">
-                    <img src="/images/courses/nashville-national-golf-links/3.jpeg" alt="Sycamore Creek Water Feature">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/4.jpeg', 'Scenic Elevation Changes')">
-                    <img src="/images/courses/nashville-national-golf-links/4.jpeg" alt="Scenic Elevation Changes">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/5.jpeg', 'Covered Driving Range')">
-                    <img src="/images/courses/nashville-national-golf-links/5.jpeg" alt="Covered Driving Range">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/nashville-national-golf-links/6.jpeg', 'Natural Tennessee Landscape')">
-                    <img src="/images/courses/nashville-national-golf-links/6.jpeg" alt="Natural Tennessee Landscape">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Course Reviews</h2>
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
             
             <?php if ($is_logged_in): ?>
-                <!-- Review Form -->
-                <div class="review-form-container">
-                    <h3>Share Your Experience</h3>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
                     <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
                     <?php endif; ?>
                     
-                    <form method="POST" class="review-form">
-                        <div class="rating-input">
-                            <label>Your Rating:</label>
-                            <div class="star-rating">
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1"><i class="fas fa-star"></i></label>
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" placeholder="Share your experience playing Nashville National Golf Links..."></textarea>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Nashville National Golf Links..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Review
-                        </button>
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../auth/login.php">Login</a> to write a review</p>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Reviews -->
+            <!-- Reviews List -->
             <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <div class="no-reviews">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <strong class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></strong>
-                                    <div class="review-rating">
-                                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                            <i class="fas fa-star <?php echo $i <= $comment['rating'] ? 'filled' : 'empty'; ?>"></i>
-                                        <?php endfor; ?>
-                                    </div>
-                                </div>
-                                <div class="review-date">
-                                    <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
+                                    <?php endfor; ?>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                            </div>
+                            <span style="color: #888; font-size: 0.9rem;">
+                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                            </span>
                         </div>
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
+                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
+                        </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-nav">
-            <button class="modal-nav-btn" id="prevBtn" onclick="changeImage(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav-btn" id="nextBtn" onclick="changeImage(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js"></script>
+    <script>
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
+            }
+        });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryImages = document.getElementById('galleryImages');
+            
+            // Clear previous images
+            galleryImages.innerHTML = '';
+            
+            // Load all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const img = document.createElement('img');
+                img.src = `../images/courses/nashville-national-golf-links/${i}.jpeg`;
+                img.alt = `Nashville National Golf Links Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

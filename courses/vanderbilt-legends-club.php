@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanderbilt Legends Club - Premier University Golf Facility | Tennessee Golf Courses</title>
-    <meta name="description" content="Vanderbilt Legends Club - 36-hole championship facility in Franklin, TN. Tom Kite & Bob Cupp design, home to Vanderbilt golf teams and Korn Ferry Tour events.">
+    <title>Vanderbilt Legends Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Vanderbilt Legends Club - Premier 36-hole championship facility in Franklin, TN. Tom Kite & Bob Cupp design, home to Vanderbilt golf teams and Korn Ferry Tour events.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,531 +81,376 @@ try {
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Header -->
-    <section class="course-header">
-        <div class="course-hero">
-            <div class="course-hero-content">
-                <div class="course-hero-text">
-                    <div class="course-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Franklin, Tennessee</span>
-                    </div>
-                    <h1 class="course-title">Vanderbilt Legends Club</h1>
-                    <p class="course-subtitle">Premier 36-Hole University Golf Facility</p>
-                    
-                    <div class="course-meta">
-                        <div class="course-rating">
-                            <?php if ($avg_rating): ?>
-                                <div class="stars">
-                                    <?php
-                                    $full_stars = floor($avg_rating);
-                                    $half_star = ($avg_rating - $full_stars) >= 0.5;
-                                    
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $full_stars) {
-                                            echo '<i class="fas fa-star"></i>';
-                                        } elseif ($i == $full_stars + 1 && $half_star) {
-                                            echo '<i class="fas fa-star-half-alt"></i>';
-                                        } else {
-                                            echo '<i class="far fa-star"></i>';
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <span class="rating-text"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                            <?php else: ?>
-                                <div class="stars">
-                                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                </div>
-                                <span class="rating-text">Be the first to review</span>
-                            <?php endif; ?>
-                        </div>
+    <!-- Course Hero Section -->
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/vanderbilt-legends-club/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Vanderbilt Legends Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Tom Kite & Bob Cupp Design • Franklin, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
                         
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-flag"></i>
-                                <span>36 Holes</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>Two Par 72s</span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler"></i>
-                                <span>7,190 Yards (North)</span>
-                            </div>
-                        </div>
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
                     </div>
-                    
-                    <div class="course-actions">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
-                            Contact Club
-                        </a>
-                        <a href="#photos" class="btn btn-secondary">
-                            <i class="fas fa-camera"></i>
-                            View Photos
-                        </a>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
-                </div>
-                
-                <div class="course-hero-image">
-                    <div class="hero-image-container">
-                        <img src="/images/courses/vanderbilt-legends-club/1.jpeg" alt="Vanderbilt Legends Club" class="hero-image">
-                        <div class="image-overlay">
-                            <div class="price-badge">
-                                <span class="price-label">University</span>
-                                <span class="price-amount">Excellence</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="details-grid">
-                <!-- About Section -->
-                <div class="details-main">
-                    <div class="detail-section">
-                        <h2>About Vanderbilt Legends Club</h2>
-                        <p>Vanderbilt Legends Club stands as Middle Tennessee's premier golf facility, featuring 36 holes of championship golf designed by World Golf Hall of Famer Tom Kite and renowned architect Bob Cupp. Since opening in 1992, this exceptional facility has served as the home course for Vanderbilt University's prestigious Men's and Women's golf teams while hosting numerous marquee events including LPGA tournaments and NCAA Championships.</p>
-                        
-                        <p>Located just 20 minutes south of downtown Nashville and 30 minutes from Nashville International Airport, the club offers two distinct 18-hole courses. The North Course, stretching 7,190 yards from the championship tees, represents the pinnacle of strategic design and has been recognized as one of the Southeast's most challenging layouts. The facility's commitment to excellence extends beyond golf, with the completion of a massive Golf House renovation in 2024 through the Vandy United fundraising campaign.</p>
-                        
-                        <p>As the official home of Vanderbilt athletics and host venue for the Korn Ferry Tour's Simmons Bank Open for the Snedeker Foundation, Vanderbilt Legends Club represents the perfect marriage of collegiate tradition and professional tournament golf, making it a true destination for serious golfers.</p>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Club History & Championships</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-year">1992</div>
-                                <div class="timeline-content">
-                                    <h4>Grand Opening</h4>
-                                    <p>Vanderbilt Legends Club opens with Tom Kite & Bob Cupp design</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">1993-96</div>
-                                <div class="timeline-content">
-                                    <h4>Tennessee State Open</h4>
-                                    <p>Hosts prestigious state championship for four consecutive years</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2000-06</div>
-                                <div class="timeline-content">
-                                    <h4>LPGA Tour Events</h4>
-                                    <p>Franklin American Mortgage Championship hosted by Vince Gill & Amy Grant</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2012</div>
-                                <div class="timeline-content">
-                                    <h4>NCAA Women's Championship</h4>
-                                    <p>Hosts NCAA Division I Women's Golf Championship</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2024</div>
-                                <div class="timeline-content">
-                                    <h4>Korn Ferry Tour Partnership</h4>
-                                    <p>Five-year agreement to host Simmons Bank Open for Snedeker Foundation</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-year">2024</div>
-                                <div class="timeline-content">
-                                    <h4>Golf House Renovation</h4>
-                                    <p>Massive clubhouse expansion completed through Vandy United campaign</p>
-                                </div>
-                            </div>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Total Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">36</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Course Design & Architecture</h3>
-                        <div class="layout-grid">
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                                <h4>Championship Design</h4>
-                                <p>Tom Kite & Bob Cupp collaboration creating tournament-caliber conditions</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <h4>University Home</h4>
-                                <p>Official home course for Vanderbilt Men's and Women's golf teams</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-golf-ball"></i>
-                                </div>
-                                <h4>Practice Facility</h4>
-                                <p>19-acre state-of-the-art practice facility with double tees</p>
-                            </div>
-                            <div class="layout-item">
-                                <div class="layout-icon">
-                                    <i class="fas fa-calendar"></i>
-                                </div>
-                                <h4>Tournament Venue</h4>
-                                <p>Host to professional tours, NCAA events, and Mason Rudolph Championship</p>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">North Course:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Par 72, 7,190 yards</span>
                         </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h3>Vanderbilt University Connection</h3>
-                        <p>Vanderbilt Legends Club serves as more than just a golf facility—it's an integral part of the Vanderbilt University experience. The club offers special rates to all Vanderbilt faculty, staff, students, and alumni, strengthening the bond between the university community and this world-class facility.</p>
-                        
-                        <p>The club's association with Vanderbilt University brings a level of academic excellence and tradition that permeates every aspect of the operation. From hosting the annual Mason Rudolph Championship to serving as the training ground for SEC-competing golf teams, Vanderbilt Legends Club embodies the university's commitment to excellence in all endeavors.</p>
-                        
-                        <p>The 2024 Golf House renovation, funded through the Vandy United campaign, demonstrates the ongoing commitment to maintaining this facility as a crown jewel of both Vanderbilt University and Middle Tennessee golf.</p>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">South Course:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Par 72, Championship</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designers:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Tom Kite & Bob Cupp</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1992</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="details-sidebar">
-                    <div class="info-card">
-                        <h3>Facility Information</h3>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <strong>Architects:</strong>
-                                <span>Tom Kite & Bob Cupp</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Opened:</strong>
-                                <span>1992</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Type:</strong>
-                                <span>Private Club</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Total Holes:</strong>
-                                <span>36 (North & South Courses)</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>North Course:</strong>
-                                <span>Par 72, 7,190 yards</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>South Course:</strong>
-                                <span>Par 72, Championship Layout</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Practice Facility:</strong>
-                                <span>19-acre state-of-the-art complex</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>University Teams:</strong>
-                                <span>Vanderbilt Men's & Women's Golf</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Professional Tours:</strong>
-                                <span>Korn Ferry Tour Host</span>
-                            </div>
-                            <div class="info-item">
-                                <strong>Recognition:</strong>
-                                <span>Middle Tennessee's Premier Facility</span>
-                            </div>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
+                    <div class="membership-notice" style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600;">Private Members Only</h4>
+                        <p style="margin: 0; opacity: 0.9;">University Club with limited outside play</p>
+                    </div>
+                    <p>Vanderbilt Legends Club operates as a private facility serving Vanderbilt University athletics and members. The club offers special rates to all Vanderbilt faculty, staff, students, and alumni, strengthening the bond between the university community and this world-class facility.</p>
+                    <p>As home to the Vanderbilt Commodores golf teams and host venue for the Korn Ferry Tour, the club maintains tournament-quality conditions year-round while providing an exceptional member experience.</p>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1500 Legends Club Lane</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Franklin, TN 37069</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 791-8100</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.vanderbiltlegendsclub.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
                         </div>
                     </div>
-
-                    <div class="amenities-card">
-                        <h3>Club Amenities</h3>
-                        <div class="amenities-list">
-                            <div class="amenity-item">
-                                <i class="fas fa-home"></i>
-                                <span>Renovated Golf House (2024)</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-store"></i>
-                                <span>Professional Pro Shop</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Fine Dining Restaurant</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-golf-ball"></i>
-                                <span>19-Acre Practice Facility</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Two Putting Greens</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-hand-paper"></i>
-                                <span>Short Game Practice Area</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-mountain"></i>
-                                <span>Practice Bunkers</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Professional Instruction</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>Tournament Operations</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-users"></i>
-                                <span>Corporate Events</span>
-                            </div>
-                            <div class="amenity-item">
-                                <i class="fas fa-university"></i>
-                                <span>Vanderbilt Alumni Benefits</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-card" id="contact">
-                        <h3>Contact Information</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Address:</strong>
-                                    <span>1500 Legends Club Lane<br>Franklin, TN 37069</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone:</strong>
-                                    <span>(615) 791-8100</span>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <div>
-                                    <strong>Website:</strong>
-                                    <a href="https://www.vanderbiltlegendsclub.com" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-university"></i>
-                                <div>
-                                    <strong>University:</strong>
-                                    <a href="https://vucommodores.com/facilities/vanderbilt-legends-club/" target="_blank">Vanderbilt Athletics</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-plane"></i>
-                                <div>
-                                    <strong>Distance:</strong>
-                                    <span>20 min to Nashville<br>30 min to Airport</span>
-                                </div>
-                            </div>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=1500+Legends+Club+Lane,+Franklin,+TN+37069&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Vanderbilt Legends Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1500+Legends+Club+Lane,+Franklin,+TN+37069" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery" id="photos">
-        <div class="container">
-            <h2>Club Photos</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/1.jpeg', 'Vanderbilt Legends Club Golf House')">
-                    <img src="/images/courses/vanderbilt-legends-club/1.jpeg" alt="Vanderbilt Legends Club Golf House">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Vanderbilt Legends Club</h3>
+                <p>Vanderbilt Legends Club stands as Middle Tennessee's premier golf facility, featuring 36 holes of championship golf designed by World Golf Hall of Famer Tom Kite and renowned architect Bob Cupp. Since opening in 1992, this exceptional facility has served as the home course for Vanderbilt University's prestigious Men's and Women's golf teams while hosting numerous marquee events.</p>
+                
+                <br>
+                
+                <p>The North Course, stretching 7,190 yards from the championship tees, represents the pinnacle of strategic design and has been recognized as one of the Southeast's most challenging layouts. Both courses feature the signature Kite/Cupp design philosophy emphasizing precision over power, with strategic bunkering and undulating greens that reward thoughtful course management.</p>
+                
+                <br>
+                
+                <p>As host venue for the Korn Ferry Tour's Simmons Bank Open for the Snedeker Foundation and former home to LPGA events, Vanderbilt Legends Club has proven itself capable of challenging the world's best players. The facility has also hosted the NCAA Division I Women's Golf Championship and the Tennessee State Open multiple times.</p>
+                
+                <br>
+                
+                <p>The 2024 Golf House renovation, funded through the Vandy United campaign, along with the 19-acre state-of-the-art practice facility, ensures that Vanderbilt Legends Club maintains its position as a crown jewel of both Vanderbilt University and Middle Tennessee golf. Located just 20 minutes from downtown Nashville, the club represents the perfect marriage of collegiate tradition and professional tournament golf.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>36-Hole Championship Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-home" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Renovated Golf House</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Professional Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>19-Acre Practice Facility</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-calendar" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Tournament Hosting</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-university" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Vanderbilt University</span>
                     </div>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/2.jpeg', 'North Course Championship Layout')">
-                    <img src="/images/courses/vanderbilt-legends-club/2.jpeg" alt="North Course Championship Layout">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+            </div>
+
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/vanderbilt-legends-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
                 </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/3.jpeg', '19-Acre Practice Facility')">
-                    <img src="/images/courses/vanderbilt-legends-club/3.jpeg" alt="19-Acre Practice Facility">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/4.jpeg', 'Vanderbilt Team Training')">
-                    <img src="/images/courses/vanderbilt-legends-club/4.jpeg" alt="Vanderbilt Team Training">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/5.jpeg', 'Tournament-Quality Conditions')">
-                    <img src="/images/courses/vanderbilt-legends-club/5.jpeg" alt="Tournament-Quality Conditions">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('/images/courses/vanderbilt-legends-club/6.jpeg', 'Tom Kite & Bob Cupp Design')">
-                    <img src="/images/courses/vanderbilt-legends-club/6.jpeg" alt="Tom Kite & Bob Cupp Design">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Club Reviews</h2>
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
             
             <?php if ($is_logged_in): ?>
-                <!-- Review Form -->
-                <div class="review-form-container">
-                    <h3>Share Your Experience</h3>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
                     <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
                     <?php endif; ?>
                     
-                    <form method="POST" class="review-form">
-                        <div class="rating-input">
-                            <label>Your Rating:</label>
-                            <div class="star-rating">
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2"><i class="fas fa-star"></i></label>
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1"><i class="fas fa-star"></i></label>
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" placeholder="Share your experience at Vanderbilt Legends Club..."></textarea>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Vanderbilt Legends Club..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Submit Review
-                        </button>
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../auth/login.php">Login</a> to write a review</p>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Reviews -->
+            <!-- Reviews List -->
             <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <div class="no-reviews">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <strong class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></strong>
-                                    <div class="review-rating">
-                                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                            <i class="fas fa-star <?php echo $i <= $comment['rating'] ? 'filled' : 'empty'; ?>"></i>
-                                        <?php endfor; ?>
-                                    </div>
-                                </div>
-                                <div class="review-date">
-                                    <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
+                                    <?php endfor; ?>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                            </div>
+                            <span style="color: #888; font-size: 0.9rem;">
+                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                            </span>
                         </div>
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
+                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
+                        </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-nav">
-            <button class="modal-nav-btn" id="prevBtn" onclick="changeImage(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav-btn" id="nextBtn" onclick="changeImage(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../courses">Golf Courses</a></li>
-                        <li><a href="../reviews">Reviews</a></li>
-                        <li><a href="../news">News</a></li>
-                        <li><a href="../about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="../courses.php?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="../courses.php?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="../courses.php?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="../courses.php?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="../privacy-policy">Privacy Policy</a></li>
-                        <li><a href="../terms-of-service">Terms of Service</a></li>
-                        <li><a href="../contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="../script.js"></script>
+    <script>
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
+            }
+        });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryImages = document.getElementById('galleryImages');
+            
+            // Clear previous images
+            galleryImages.innerHTML = '';
+            
+            // Load all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const img = document.createElement('img');
+                img.src = `../images/courses/vanderbilt-legends-club/${i}.jpeg`;
+                img.alt = `Vanderbilt Legends Club Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
+            }
+            
+            modal.style.display = 'block';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

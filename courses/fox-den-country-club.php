@@ -275,7 +275,7 @@ try {
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    <?php for ($i = 1; $i <= 8; $i++): ?>
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
                     <div class="gallery-item" style="height: 250px; background: url('../images/courses/fox-den-country-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
                     <?php endfor; ?>
                 </div>
