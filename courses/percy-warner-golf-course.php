@@ -59,7 +59,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percy Warner Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Percy Warner Golf Course - Historic 1937 public course in scenic Percy Warner Park. 9-hole layout through tree-lined fairways in Nashville, TN.">
+    <meta name="description" content="Percy Warner Golf Course - Historic 1937 municipal 9-hole course in Percy Warner Park, Nashville. Affordable golf in a scenic park setting since 1937.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -76,809 +76,413 @@ try {
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
-    <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/percy-warner-golf-course/1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 120px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
-        }
-        
-        .course-info-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .course-info-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .course-info-card h3 i {
-            color: #4a7c59;
-        }
-        
-        .course-specs {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .spec-value {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .location-info {
-            text-align: left;
-        }
-        
-        .location-details p {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .location-details i {
-            color: #4a7c59;
-            width: 16px;
-        }
-        
-        .location-details a {
-            color: #4a7c59;
-            text-decoration: none;
-        }
-        
-        .location-details a:hover {
-            text-decoration: underline;
-        }
-        
-        .course-description {
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        
-        .photo-gallery {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .gallery-button {
-            text-align: center;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .reviews-section {
-            background: white;
-            padding: 4rem 0;
-        }
-        
-        .comment-form-container {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #ddd;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover,
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .btn-submit {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #2c5234;
-        }
-        
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .comment-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-        }
-        
-        .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            color: white;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
-        .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            line-height: 1;
-        }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
-        .full-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .course-info-cards {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .hero-stats {
-                gap: 15px;
-            }
-            
-            .hero-stat {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
-
 <body>
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Percy Warner Golf Course</h1>
-            <p>Historic Municipal Course • Percy Warner Park, Nashville</p>
-            <div class="hero-stats">
-                <?php if ($avg_rating): ?>
-                    <div class="hero-stat">
-                        <i class="fas fa-star" style="color: #ffd700;"></i>
-                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/percy-warner-golf-course/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Percy Warner Golf Course</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Historic Municipal Course • Percy Warner Park, Nashville</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
-                <div class="hero-stat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Nashville, TN</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-flag"></i>
-                    <span>9 Holes • Par 34</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Since 1937</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information Cards -->
-    <section class="course-info-section">
-        <div class="container">
-            <div class="course-info-cards">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
-                            <span class="spec-value">1937</span>
+    <!-- Course Details -->
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">9</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">9</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">34</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">34</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,600</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Length:</span>
-                            <span class="spec-value">2,600 yards</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1937</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Municipal Public</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Setting:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Tree-lined Parkland</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Setting:</span>
-                            <span class="spec-value">Tree-lined parkland</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Manager:</span>
-                            <span class="spec-value">Kevin Forte</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Municipal</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Weekday Walking:</span>
-                            <span class="spec-value">$17</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weekday Riding:</span>
-                            <span class="spec-value">$25</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weekend Walking:</span>
-                            <span class="spec-value">$22</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weekend Riding:</span>
-                            <span class="spec-value">$30</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Cart Fee:</span>
-                            <span class="spec-value">$10</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Club Rental:</span>
-                            <span class="spec-value">$12</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Senior Rates:</span>
-                            <span class="spec-value">Available</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 1221 Forrest Park Dr, Nashville, TN 37205</p>
-                            <p><i class="fas fa-phone"></i> (615) 862-8492</p>
-                            <p><i class="fas fa-tree"></i> Located in Percy Warner Park</p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=1221+Forrest+Park+Dr+Nashville+TN+37205" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=1221+Forrest+Park+Dr+Nashville+TN+37205&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Nashville's Historic Park Course</h2>
-                <p>Percy Warner Golf Course has been a beloved Nashville golf destination since 1937, nestled within the scenic hills of Percy Warner Park. This charming 9-hole municipal course offers an authentic golf experience through tree-lined fairways and small, undulating greens that challenge players of all skill levels.</p>
-                
-                <p>At 2,600 yards and par 34, Percy Warner provides the perfect setting for a quick round, practice session, or introduction to the game. The course winds through the natural beauty of one of Nashville's most treasured parks, offering golfers stunning views and a peaceful escape from city life.</p>
-                
-                <p>Recently restored through a collaborative effort between Metro Parks and Recreation, Friends of Warner Parks, and the Tennessee Golf Foundation, Percy Warner Golf Course continues its tradition of providing affordable, accessible golf to the Nashville community. The course features all the amenities needed for an enjoyable round, including cart and club rentals, with memberships available for frequent players.</p>
-                
-                <p>Whether you're a beginner learning the game or an experienced golfer looking for a quick, scenic round, Percy Warner Golf Course delivers a quintessential Nashville golf experience in one of the city's most beautiful settings.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the natural beauty of Percy Warner Golf Course</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/percy-warner-golf-course/7.jpeg');"></div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Percy Warner Golf Course - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have played Percy Warner Golf Course</p>
-            </div>
-            
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-section">
+                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekday Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$17</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes w/ Cart</span>
+                                    <span>$25</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Senior Rates</span>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekend Rates</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$22</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes w/ Cart</span>
+                                    <span>$30</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Club Rental</span>
+                                    <span>$12</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing at Percy Warner Golf Course..." required></textarea>
+                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+                            Nashville's Historic Park Course • Affordable Municipal Golf Since 1937
                         </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
+                    </div>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1221 Forrest Park Dr</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Nashville, TN 37205</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 862-8492</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Location:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Percy Warner Park</span>
+                        </div>
+                    </div>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=1221+Forrest+Park+Dr,+Nashville,+TN+37205&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Percy Warner Golf Course Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1221+Forrest+Park+Dr,+Nashville,+TN+37205" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Percy Warner Golf Course</h3>
+                <p>Percy Warner Golf Course has served as Nashville's beloved municipal golf destination since 1937, offering an authentic and affordable golf experience within the scenic beauty of Percy Warner Park. This charming 9-hole, par 34 course stretches 2,600 yards through tree-lined fairways and natural parkland settings that showcase some of Nashville's most treasured outdoor spaces.</p>
+                
+                <br>
+                
+                <p>The course winds through the rolling hills and mature trees of Percy Warner Park, creating a serene and challenging environment that emphasizes accuracy and course management. With small, undulating greens and strategic tree placement, Percy Warner provides an excellent test of short game skills while remaining accessible to golfers of all skill levels, from beginners learning the game to experienced players seeking a quick, enjoyable round.</p>
+                
+                <br>
+                
+                <p>Recently restored through a collaborative effort between Metro Parks and Recreation, Friends of Warner Parks, and the Tennessee Golf Foundation, Percy Warner Golf Course continues its nearly century-long tradition of providing quality, affordable golf to the Nashville community. The restoration has enhanced the course's natural beauty while maintaining its historic character and charm.</p>
+                
+                <br>
+                
+                <p>Whether you're looking for a peaceful morning round, an ideal practice facility, or an introduction to the game of golf, Percy Warner Golf Course delivers a quintessential Nashville golf experience in one of the city's most beautiful park settings. The combination of historic significance, natural beauty, and exceptional value makes this municipal gem a must-play destination for anyone seeking authentic Tennessee golf.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>9-Hole Golf Course</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-tree" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Percy Warner Park</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-history" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Historic Course Since 1937</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Cart Rental</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Club Rental</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-users" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Beginner Friendly</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-clock" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Quick Round Golf</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-dollar-sign" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Affordable Municipal Rates</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/percy-warner-golf-course/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
+                </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
+            
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Percy Warner Golf Course..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Comments -->
-            <div class="comments-container">
+            <!-- Reviews List -->
+            <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
                                     <?php endfor; ?>
                                 </div>
                             </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <span style="color: #888; font-size: 0.9rem;">
+                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                            </span>
                         </div>
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
+                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
+                        </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        // Gallery Modal Functions
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
+            }
+        });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
         function openGallery() {
             const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
+            const galleryImages = document.getElementById('galleryImages');
             
-            // Clear existing content
-            galleryGrid.innerHTML = '';
+            // Clear previous images
+            galleryImages.innerHTML = '';
             
-            // Generate all 25 images
+            // Load all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/percy-warner-golf-course/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/percy-warner-golf-course/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const img = document.createElement('img');
+                img.src = `../images/courses/percy-warner-golf-course/${i}.jpeg`;
+                img.alt = `Percy Warner Golf Course Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.getElementById('galleryModal').style.display = 'none';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-        
-        // Interactive star rating functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
+        }
     </script>
 </body>
 </html>

@@ -77,489 +77,30 @@ try {
       gtag('config', 'G-7VPNPCDTBP');
     </script>
     
-    <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/cheekwood-golf-club/1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 120px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #666;
-        }
-        
-        .spec-value {
-            font-weight: 700;
-            color: #2c5234;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-            justify-items: center;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.2rem;
-        }
-        
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-        }
-        
-        .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            color: white;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
-        .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
-        .full-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .reviewer-name {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .booking-section {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .booking-content h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .booking-content p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .booking-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-book {
-            background: #ffd700;
-            color: #2c5234;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-book:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-        }
-        
-        .btn-contact {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-contact:hover {
-            background: white;
-            color: #2c5234;
-        }
-        
-        /* Comment System Styles */
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #ddd;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #1e3f26;
-            transform: translateY(-1px);
-        }
-        
-        .login-prompt {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ddd;
-        }
-        
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
-        
-        /* Responsive Design for Course Info Grid */
-        @media (max-width: 1024px) {
-            .course-info-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .course-details {
-                padding: 2rem 0;
-            }
-            
-            .course-info-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Cheekwood Golf Club</h1>
-            <p>Executive 9-Hole Course • Franklin, Tennessee</p>
-            <div class="course-rating">
+    <section class="course-hero" style="
+        height: 75vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cheekwood-golf-club/1.jpeg'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 80px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Cheekwood Golf Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Executive 9-Hole Course • Franklin, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
                         <?php 
                         $full_stars = floor($avg_rating);
                         $half_star = ($avg_rating - $full_stars) >= 0.5;
@@ -575,7 +116,7 @@ try {
                         }
                         ?>
                     </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
                         <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
@@ -587,126 +128,115 @@ try {
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">9 (18)</span>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">9 (Executive)</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">33 (66)</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">33</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">2,623</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,623</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Bobby Greenwood</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Bobby Greenwood</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">2015</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2015</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Public</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">9 - Holes</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (Cart):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (Cart):</span>
-                                <span class="spec-value">$33.25</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday Senior (Cart):</span>
-                                <span class="spec-value">$27</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend Senior (Cart):</span>
-                                <span class="spec-value">$27</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday Junior (Cart):</span>
-                                <span class="spec-value">$20</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend Junior (Cart):</span>
-                                <span class="spec-value">$25</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">18 - Holes</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (Cart):</span>
-                                <span class="spec-value">$47</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (Cart):</span>
-                                <span class="spec-value">$54.15</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday Senior (Cart):</span>
-                                <span class="spec-value">$43</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend Senior (Cart):</span>
-                                <span class="spec-value">$43</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday Junior (Cart):</span>
-                                <span class="spec-value">$35</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend Junior (Cart):</span>
-                                <span class="spec-value">$45</span>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    285 Spencer Creek Rd<br>
-                    Franklin, TN 37069</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (615) 794-8223</p>
-                    
-                    <p><strong>Website:</strong><br>
-                    <a href="https://cheekwoodgolfclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">cheekwoodgolfclub.com</a></p>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-section">
+                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">9 Holes w/ Cart</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>Weekday</span>
+                                    <span>$30</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>Weekend</span>
+                                    <span>$33.25</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Senior</span>
+                                    <span>$27</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">18 Holes w/ Cart</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>Weekday</span>
+                                    <span>$47</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>Weekend</span>
+                                    <span>$54.15</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>Junior Rates</span>
+                                    <span>Available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+                            Executive 9-Hole Course • Franklin's Premier Short Course
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">285 Spencer Creek Rd</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Franklin, TN 37069</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 794-8223</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://cheekwoodgolfclub.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
+                        </div>
+                    </div>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=285+Spencer+Creek+Rd+Franklin+TN+37069&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=285+Spencer+Creek+Rd,+Franklin,+TN+37069&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Cheekwood Golf Club Golf Course Location">
+                            title="Cheekwood Golf Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=8919+Harrison+Bay+Road,+Harrison,+TN+37341" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=285+Spencer+Creek+Rd,+Franklin,+TN+37069" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
@@ -718,350 +248,243 @@ try {
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Cheekwood Golf Club</h3>
-                <p>Cheekwood Golf Club offers an intimate executive golf experience nestled within Franklin's beautifully wooded residential landscape. This thoughtfully designed 9-hole layout features a challenging yet accessible par-33 composition with four par-4s, four par-3s, and one strategic par-5, creating the perfect environment for golfers seeking quality golf in a condensed format.</p>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Cheekwood Golf Club</h3>
+                <p>Cheekwood Golf Club offers an intimate executive golf experience nestled within Franklin's beautifully wooded residential landscape. This thoughtfully designed 9-hole layout features a challenging yet accessible par-33 composition with four par-4s, four par-3s, and one strategic par-5, creating the perfect environment for golfers seeking quality golf in a condensed format that emphasizes precision and course management.</p>
                 
                 <br>
                 
-                <p>Located at 285 Spencer Creek Road, this executive course emphasizes precision and course management over distance, making it an ideal venue for sharpening your short game and developing strategic thinking.</p>
+                <p>Located at 285 Spencer Creek Road, this executive course provides an ideal venue for sharpening your short game and developing strategic thinking skills. The wooded setting creates natural beauty and challenge, with mature trees framing each hole and establishing defined playing corridors that reward accuracy and thoughtful shot selection over pure distance.</p>
                 
                 <br>
                 
-                <p>The wooded setting provides natural beauty and challenge, with mature trees framing each hole and creating defined playing corridors that reward accuracy over distance.</p>
+                <p>What distinguishes Cheekwood Golf Club is its unique approach to practice and player development, featuring a compact short-game area with a 100-yard target green and an expansive putting surface adjacent to the clubhouse. These practice facilities allow golfers to fine-tune their skills and build confidence before tackling the course's strategic challenges.</p>
                 
                 <br>
                 
-                <p>What sets Cheekwood Golf Club apart is its unique approach to practice, featuring a compact short-game area with a 100-yard target green and an expansive putting surface adjacent to the clubhouse, allowing golfers to fine-tune their skills before tackling the course.<br><br></p>
-                
-                <p>The facility's commitment to accessibility and player development makes it a valuable addition to Middle Tennessee's diverse golf offerings, providing an excellent venue for both seasoned players and newcomers building confidence.<br><br></p>
-                
-                <p>Located in Franklin's beautifully wooded residential area, Cheekwood Golf Club provides a serene, park-like setting that showcases Middle Tennessee's natural beauty while offering an enjoyable and approachable golf experience for players of all skill levels.</p>
+                <p>The facility's commitment to accessibility and player development makes it a valuable addition to Middle Tennessee's diverse golf offerings, providing an excellent venue for both seasoned players looking to work on specific aspects of their game and newcomers building confidence in a welcoming, park-like setting that showcases Franklin's natural beauty.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Executive 9-Hole Course</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Pro Shop</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Rentals</span>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Cart Rental</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Short Practice Area</span>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Short Game Area</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-flag"></i>
-                        <span>Putting Green</span>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-flag" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Putting Green</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Food & Beverages</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-user-tie" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Golf Instruction</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-club"></i>
-                        <span>Club Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Operation 36 Coaching</span>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Club Rental</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Cheekwood Golf Club</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cheekwood-golf-club/7.jpeg');"></div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (6+)</button>
+            <!-- Course Gallery -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
+                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <?php for ($i = 1; $i <= 6; $i++): ?>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/cheekwood-golf-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <?php endfor; ?>
+                </div>
+                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Cheekwood Golf Club - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Bear Trace</p>
-            </div>
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
             
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
                     <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="bear-rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this course..." required></textarea>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Cheekwood Golf Club..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
+                        
+                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
                     </form>
                 </div>
             <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
+                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
+                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
+                        or 
+                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
+                        to leave a review
+                    </p>
                 </div>
             <?php endif; ?>
             
-            <!-- Display Comments -->
-            <div class="comments-container">
+            <!-- Reviews List -->
+            <div class="reviews-list">
                 <?php if (empty($comments)): ?>
-                    <div class="no-comments">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
+                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
+                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
+                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
+                                    <?php endfor; ?>
+                                </div>
                             </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                            <span style="color: #888; font-size: 0.9rem;">
+                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
+                            </span>
                         </div>
+                        <div class="review-text" style="color: #555; line-height: 1.6;">
+                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
+                        </div>
+                    </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section class="booking-section">
-        <div class="container">
-            <div class="booking-content">
-                <h2>Ready to Play Bear Trace?</h2>
-                <p>Book your tee time today and experience one of Tennessee's premier golf destinations</p>
-                <div class="booking-buttons">
-                    <a href="#" class="btn-book">Book Tee Time</a>
-                    <a href="#" class="btn-contact">Contact Pro Shop</a>
-                </div>
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
+            <div id="galleryImages" style="text-align: center;">
+                <!-- Gallery images will be loaded here -->
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.php#courses">Golf Courses</a></li>
-                        <li><a href="../index.php#reviews">Reviews</a></li>
-                        <li><a href="../index.php#news">News</a></li>
-                        <li><a href="../index.php#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="/script.js?v=5"></script>
     <script>
-        // Gallery Modal Functions
+        // Star rating functionality
+        const starLabels = document.querySelectorAll('.star-rating label');
+        const starInputs = document.querySelectorAll('.star-rating input');
+        
+        starLabels.forEach((label, index) => {
+            label.addEventListener('mouseenter', () => {
+                updateStars(starLabels.length - index);
+            });
+            
+            label.addEventListener('click', () => {
+                starInputs[starLabels.length - 1 - index].checked = true;
+            });
+        });
+        
+        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStars(6 - parseInt(checkedInput.value));
+            } else {
+                updateStars(0);
+            }
+        });
+        
+        function updateStars(count) {
+            starLabels.forEach((label, index) => {
+                if (index < count) {
+                    label.style.color = '#ffd700';
+                } else {
+                    label.style.color = '#ddd';
+                }
+            });
+        }
+
+        // Gallery modal functionality
         function openGallery() {
             const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
+            const galleryImages = document.getElementById('galleryImages');
             
-            // Clear existing content
-            galleryGrid.innerHTML = '';
+            // Clear previous images
+            galleryImages.innerHTML = '';
             
-            // Generate all 103 images
-            for (let i = 1; i <= 103; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/cheekwood-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/cheekwood-golf-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+            // Load all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const img = document.createElement('img');
+                img.src = `../images/courses/cheekwood-golf-club/${i}.jpeg`;
+                img.alt = `Cheekwood Golf Club Photo ${i}`;
+                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
+                galleryImages.appendChild(img);
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Bear Trace
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('bear-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
+        }
     </script>
 </body>
 </html>
