@@ -842,11 +842,11 @@ $article = [
                 </div>
 
                 <h3>Conclusion</h3>
-                <p>The <strong>TaylorMade Spider Tour X L-Neck</strong> stands as our top choice, combining Scottie Scheffler's proven championship performance with Gold Medal recognition. For value seekers, the <strong>Wilson Infinite Buckingham</strong> delivers MyGolfSpy's Most Wanted performance at just $129.99.</p>
+                <p>The <strong>TaylorMade Spider Tour X L-Neck</strong> stands as our top choice, combining Scottie Scheffler's proven championship performance with Gold Medal recognition.</p>
 
-                <p>Zero-torque technology dominates 2025, with the <strong>Odyssey Ai-ONE Square 2 Square Jailbird</strong> leading the category. Whatever your budget or preference, these ten putters represent the pinnacle of 2025 putting performance, all available on Amazon with verified customer satisfaction.</p>
+                <p>Zero-torque technology dominates 2025, with the <strong>Odyssey Ai-ONE Square 2 Square Jailbird</strong> leading the category. Whatever your budget or preference, these ten putters represent the pinnacle of 2025 putting performance.</p>
 
-                <p><em>All prices and ratings accurate as of publication date. Amazon prices may vary.</em></p>
+                <p><em>All prices and ratings accurate as of publication date.</em></p>
             </article>
         </div>
     </div>
