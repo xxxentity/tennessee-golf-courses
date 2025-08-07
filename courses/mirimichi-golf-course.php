@@ -618,6 +618,10 @@ try {
                             <span class="spec-value">Public</span>
                         </div>
                     </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #444; line-height: 1.6;">
+                        <strong>Course Features:</strong><br>
+                        Elevated greens, deep bunkers, scenic water features, and strategic design make this course a true championship test.
+                    </p>
                 </div>
 
                 <div class="course-info-card">
@@ -670,9 +674,6 @@ try {
                     
                     <p><strong>Phone:</strong><br>
                     (901) 259-3800</p>
-                    
-                    <p><strong>Course Features:</strong><br>
-                    Elevated greens, deep bunkers, scenic water features, and strategic design make this course a true championship test.</p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
