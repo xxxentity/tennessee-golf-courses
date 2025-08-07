@@ -241,21 +241,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    searchBtn.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
+    if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+    }
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
 
     // Newsletter subscription
     const newsletterForm = document.querySelector('.newsletter-form');
     const newsletterInput = document.querySelector('.newsletter-input');
     const newsletterBtn = document.querySelector('.newsletter-btn');
 
-    newsletterBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const email = newsletterInput.value.trim();
+    if (newsletterBtn && newsletterInput) {
+        newsletterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = newsletterInput.value.trim();
         
         if (email && isValidEmail(email)) {
             // Simulate subscription (replace with actual API call)
@@ -272,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showNotification('Please enter a valid email address', 'error');
         }
     });
+    }
 
     // Course card interactions - Allow natural link navigation
     // Real course pages now exist, so we don't need to prevent default navigation
