@@ -627,7 +627,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=1"></script>
+    <script src="/weather.js?v=2"></script>
     <script src="/script.js?v=4"></script>
     <script>
         // Carousel functionality

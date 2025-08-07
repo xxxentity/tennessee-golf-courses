@@ -565,7 +565,7 @@ Time: " . date('Y-m-d H:i:s');
         </div>
     </footer>
 
-    <script src="/weather.js?v=1"></script>
+    <script src="/weather.js?v=2"></script>
     <script src="/script.js?v=4"></script>
 </body>
 </html>

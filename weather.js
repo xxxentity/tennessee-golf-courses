@@ -20,37 +20,40 @@ class WeatherManager {
             return this.weatherData;
         }
 
-        // Fetch new weather data
+        // Fetch new weather data from our own API
         try {
-            const response = await fetch('https://wttr.in/Nashville,TN?format=j1');
+            const response = await fetch('/api/weather.php');
             
             if (!response.ok) {
                 throw new Error('Weather API unavailable');
             }
             
-            const data = await response.json();
-            const current = data.current_condition[0];
+            const result = await response.json();
+            
+            if (!result.success) {
+                throw new Error('Weather API returned error');
+            }
             
             this.weatherData = {
-                temp: current.temp_F,
-                condition: current.weatherDesc[0].value,
-                windSpeed: current.windspeedMiles,
-                visibility: current.visibility,
-                icon: this.getWeatherIcon(current.weatherDesc[0].value.toLowerCase()),
+                temp: result.data.temp.toString(),
+                condition: result.data.condition,
+                windSpeed: result.data.windSpeed.toString(),
+                visibility: result.data.visibility.toString(),
+                icon: result.data.icon,
                 timestamp: now
             };
             
             // Cache the data
             this.cacheWeather(this.weatherData);
             
-            console.log('Weather updated with real API data:', this.weatherData);
+            console.log('Weather updated with real API data:', this.weatherData, 'Source:', result.source);
             
         } catch (error) {
-            console.log('Weather API error, using fallback:', error);
+            console.error('Weather API error, using fallback:', error);
             
-            // Use consistent fallback data
+            // Use consistent fallback data with higher temperature
             this.weatherData = {
-                temp: '72',
+                temp: '75',
                 condition: 'Partly Cloudy',
                 windSpeed: '8',
                 visibility: '10',
