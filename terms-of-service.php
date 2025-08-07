@@ -411,6 +411,7 @@ session_start();
         </div>
     </footer>
 
+    <script src="/weather.js?v=1"></script>
     <script src="/script.js?v=4"></script>
 </body>
 </html>
