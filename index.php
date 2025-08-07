@@ -32,7 +32,10 @@
         }
         
         .search-results {
-            position: fixed;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
             background: white;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -41,9 +44,6 @@
             z-index: 999999;
             display: none;
             margin-top: 4px;
-            width: auto;
-            min-width: 300px;
-            max-width: 600px;
         }
         
         .search-result-item {
@@ -87,7 +87,19 @@
         
         .hero-search {
             position: relative;
-            z-index: 999999;
+            z-index: 200;
+        }
+        
+        /* Ensure the hero section is positioned */
+        .hero {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Ensure stats bar doesn't overlap */
+        .stats-bar {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
@@ -399,7 +411,6 @@
             
             if (courses.length === 0) {
                 heroSearchResults.innerHTML = '<div class="search-no-results">No courses found</div>';
-                positionSearchResults();
                 heroSearchResults.style.display = 'block';
                 return;
             }
@@ -422,36 +433,13 @@
                 heroSearchResults.appendChild(item);
             });
             
-            positionSearchResults();
             heroSearchResults.style.display = 'block';
-        }
-
-        function positionSearchResults() {
-            const searchContainer = document.querySelector('.search-container');
-            const rect = searchContainer.getBoundingClientRect();
-            
-            heroSearchResults.style.left = rect.left + 'px';
-            heroSearchResults.style.top = (rect.bottom + 4) + 'px';
-            heroSearchResults.style.width = rect.width + 'px';
         }
 
         // Close results when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.search-container')) {
                 heroSearchResults.style.display = 'none';
-            }
-        });
-
-        // Reposition on scroll and resize
-        window.addEventListener('scroll', function() {
-            if (heroSearchResults.style.display === 'block') {
-                positionSearchResults();
-            }
-        });
-
-        window.addEventListener('resize', function() {
-            if (heroSearchResults.style.display === 'block') {
-                positionSearchResults();
             }
         });
 
