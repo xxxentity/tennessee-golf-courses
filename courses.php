@@ -753,7 +753,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf Courses in Tennessee - Find Your Perfect Course</title>
     <meta name="description" content="Discover the best golf courses in Tennessee. Browse by location, price, difficulty and amenities. Read reviews and book tee times.">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -840,11 +840,11 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         }
         
         .filter-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding: 0.5rem 0;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            color: var(--primary-color) !important;
+            margin-bottom: 2rem !important;
+            padding: 1rem 0 !important;
         }
         
         .filter-option {
@@ -864,32 +864,35 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         }
         
         .sort-section {
-            margin-bottom: 3rem;
-            padding: 1.5rem 0;
+            margin-bottom: 3rem !important;
+            padding: 2rem 0 !important;
+            background-color: #f0f0f0 !important;
+            border-radius: 10px !important;
         }
         
         .sort-select {
-            width: 100%;
-            padding: 1.8rem 1.2rem;
-            border: 3px solid var(--border-color);
-            border-radius: 15px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: white;
+            width: 100% !important;
+            padding: 2rem 1.5rem !important;
+            border: 4px solid #2c5234 !important;
+            border-radius: 15px !important;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            background: white !important;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-height: 85px;
-            height: 85px;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c5234' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 1.5rem center;
-            background-size: 2rem;
-            padding-right: 4rem;
-            color: var(--text-dark);
-            box-sizing: border-box;
+            min-height: 100px !important;
+            height: 100px !important;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c5234' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 1.5rem center !important;
+            background-size: 2.5rem !important;
+            padding-right: 5rem !important;
+            color: var(--text-dark) !important;
+            box-sizing: border-box !important;
+            margin: 1rem 0 !important;
         }
         
         .sort-select:focus {
