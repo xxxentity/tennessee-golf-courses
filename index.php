@@ -28,7 +28,7 @@
     <style>
         .search-container {
             position: relative;
-            z-index: 1000;
+            z-index: 99999;
         }
         
         .search-results {
@@ -41,7 +41,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             max-height: 400px;
             overflow-y: auto;
-            z-index: 9999;
+            z-index: 999999;
             display: none;
             margin-top: 4px;
         }
@@ -87,7 +87,7 @@
         
         .hero-search {
             position: relative;
-            z-index: 200;
+            z-index: 999999;
         }
     </style>
 </head>
