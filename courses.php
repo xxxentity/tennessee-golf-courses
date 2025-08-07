@@ -272,6 +272,21 @@ $courses_static = [
         'slug' => 'mccabe-golf-course'
     ],
     [
+        'id' => 39,
+        'name' => 'Mirimichi Golf Course',
+        'location' => 'Millington, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Championship 18-hole golf course featuring over 7,400 yards with elevated greens, deep bunkers, and scenic water features. Name means "place of happy retreat" in Native American.',
+        'image' => '/images/courses/mirimichi-golf-course/1.jpeg',
+        'price_range' => '$40-65',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Championship Design',
+        'amenities' => ['Championship Golf', 'Elevated Greens', 'Water Features', 'Strategic Bunkers', 'Multiple Tees', 'Natural Beauty'],
+        'slug' => 'mirimichi-golf-course'
+    ],
+    [
         'id' => 13,
         'name' => 'Nashville National Golf Links',
         'location' => 'Joelton, TN',
