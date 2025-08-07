@@ -78,6 +78,101 @@ try {
     </script>
     
     <style>
+        /* Course Closure Modal Styles */
+        .course-modal {
+            display: flex;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .modal-body p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 1rem 0 2rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .modal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+        }
+        
+        .btn-stay {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-stay:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-new-course {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .btn-new-course:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 78, 59, 0.3);
+        }
+
         .course-hero {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/big-creek-golf-club/1.jpeg');
@@ -569,6 +664,27 @@ try {
 </head>
 
 <body>
+    <!-- Course Closure Modal -->
+    <div id="closureModal" class="course-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-info-circle"></i> Course Update</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Big Creek Golf Club</strong> is permanently closed, but it has reopened under a new name and management.</p>
+                <p>The course is now operating as <strong>Mirimichi Golf Course</strong> with updated facilities and amenities.</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-stay" onclick="closeModal()">
+                    <i class="fas fa-eye"></i> View Historical Info
+                </button>
+                <a href="/courses/mirimichi-golf-course" class="modal-btn btn-new-course">
+                    <i class="fas fa-golf-ball"></i> Visit New Course Page
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
@@ -925,6 +1041,24 @@ try {
                     });
                 }
             }
+        });
+        
+        // Course Closure Modal functionality
+        function closeModal() {
+            document.getElementById('closureModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('closureModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Show modal on page load
+        window.addEventListener('load', function() {
+            document.getElementById('closureModal').style.display = 'flex';
         });
     </script>
 </body>
