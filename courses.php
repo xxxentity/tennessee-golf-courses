@@ -758,7 +758,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <style>
         .courses-page {
             padding-top: 0px;
-            min-height: 60vh;
+            min-height: 40vh;
             background: var(--bg-light);
         }
         
@@ -794,7 +794,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            height: calc(60vh - 120px);
+            height: calc(40vh - 120px);
             overflow-y: auto;
             position: sticky;
             top: 110px;
@@ -1585,7 +1585,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=3"></script>
+    <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
     <script>
         // Auto-submit form when filters change

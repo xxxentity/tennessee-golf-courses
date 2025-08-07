@@ -123,9 +123,15 @@ class WeatherManager {
     }
 
     async updateWeatherDisplay() {
+        // Check if we're on a page with weather elements
+        const tempElement = document.getElementById('weather-temp');
+        if (!tempElement) {
+            console.log('Weather elements not found on this page, skipping weather update');
+            return;
+        }
+        
         const weather = await this.getWeather();
         
-        const tempElement = document.getElementById('weather-temp');
         const windElement = document.getElementById('wind-speed');
         const visibilityElement = document.getElementById('visibility');
         const weatherIcon = document.querySelector('.weather-widget i');

@@ -32,7 +32,7 @@ session_start();
                         url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            padding: 80px 0 60px;
+            padding: 50px 0 40px;
             text-align: center;
             color: white;
             position: relative;
@@ -54,7 +54,7 @@ session_start();
         }
         
         .coming-soon-section {
-            padding: 60px 0;
+            padding: 40px 0;
             background: #f8faf9;
         }
         
@@ -256,7 +256,8 @@ session_start();
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="/weather.js?v=3"></script>
+    <script src="/weather.js?v=4"></script>
+    <script src="/script.js?v=4"></script>
     
     <script>
         function handleNotificationSignup(event) {

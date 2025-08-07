@@ -68,7 +68,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
     <style>
         .reviews-page {
             padding-top: 140px;
-            min-height: 60vh;
+            min-height: 40vh;
             background: var(--bg-light);
         }
         
@@ -602,7 +602,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=3"></script>
+    <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
     <script>
         // Carousel functionality

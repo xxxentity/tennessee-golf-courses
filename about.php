@@ -29,7 +29,7 @@ session_start();
     <style>
         .about-page {
             padding-top: 140px;
-            min-height: 60vh;
+            min-height: 40vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
         }
         
@@ -604,7 +604,7 @@ session_start();
         </div>
     </footer>
 
-    <script src="/weather.js?v=3"></script>
+    <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
 </body>
 </html>

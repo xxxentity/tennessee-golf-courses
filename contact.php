@@ -101,7 +101,7 @@ Time: " . date('Y-m-d H:i:s');
     <style>
         .contact-page {
             padding-top: 140px;
-            min-height: 60vh;
+            min-height: 40vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
         }
         
@@ -565,7 +565,7 @@ Time: " . date('Y-m-d H:i:s');
         </div>
     </footer>
 
-    <script src="/weather.js?v=3"></script>
+    <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
 </body>
 </html>
