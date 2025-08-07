@@ -79,7 +79,7 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
+            height: 75vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/tpc-southwind/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {
@@ -159,310 +159,39 @@ try {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #333;
+            color: #666;
         }
         
         .spec-value {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .amenities-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .amenities-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .amenities-list i {
+            font-weight: 700;
             color: #2c5234;
-            width: 20px;
         }
         
-        .location-info {
-            margin-bottom: 2rem;
-        }
-        
-        .location-info iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .location-details p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .location-details i {
-            color: #2c5234;
-            width: 20px;
-        }
-        
-        .course-description {
-            background: #f8f9fa;
-            padding: 3rem 0;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .signature-holes {
-            padding: 4rem 0;
-        }
-        
-        .holes-grid {
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .hole-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .hole-number {
-            background: #2c5234;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .amenity-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-        
-        .hole-details h4 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .hole-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hole-stat {
-            text-align: center;
-        }
-        
-        .hole-stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-        
-        .hole-stat-value {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c5234;
-        }
-        
-        .reviews-section {
-            padding: 4rem 0;
+            gap: 0.75rem;
+            padding: 1rem;
             background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .review-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .review-form h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .rating-input {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .rating-input input[type="radio"] {
-            display: none;
-        }
-        
-        .rating-input label {
-            font-size: 1.5rem;
-            color: #ddd;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        
-        .rating-input label:hover {
-            color: #ffd700;
-        }
-        
-        .rating-input label.active {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            resize: vertical;
-            min-height: 120px;
-            font-family: inherit;
-        }
-        
-        .form-group textarea:focus {
-            border-color: #2c5234;
-            outline: none;
-        }
-        
-        .submit-btn {
-            background: #2c5234;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #1a3020;
-        }
-        
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: #e3f2fd;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .comments-list {
-            space-y: 2rem;
-        }
-        
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .amenity-item i {
+            color: #4a7c59;
+            font-size: 1.2rem;
         }
         
         .photo-gallery {
@@ -577,26 +306,189 @@ try {
             transform: scale(1.05);
         }
         
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+        
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
+        }
+        
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
+        }
+        
+        .login-prompt {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .login-prompt a {
+            color: #2c5234;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
             .course-info-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
-            
-            .course-specs {
+        }
+        
+        @media (max-width: 768px) {
+            .course-info-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .holes-grid {
-                grid-template-columns: 1fr;
+            .course-details {
+                padding: 2rem 0;
             }
             
-            .hole-stats {
-                gap: 1rem;
+            .course-info-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -683,127 +575,131 @@ try {
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Private Club</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Members:</span>
-                            <span class="spec-value">Included in membership</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Guest Rates:</span>
-                            <span class="spec-value">Contact club directly</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Reservations:</span>
-                            <span class="spec-value">Members and guests only</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Contact:</span>
-                            <span class="spec-value">(901) 748-0330</span>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Tournament Venue</h4>
+                        <div class="course-specs single-column">
+                            <div class="spec-item">
+                                <span class="spec-label">Course Type:</span>
+                                <span class="spec-value">Private Club</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Members:</span>
+                                <span class="spec-value">Included in membership</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Guest Play:</span>
+                                <span class="spec-value">With member only</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Tournament:</span>
+                                <span class="spec-value">FedEx St. Jude Championship</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Contact:</span>
+                                <span class="spec-value">(901) 748-0330</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 3325 Club at Southwind, Memphis, TN 38125</p>
-                            <p><i class="fas fa-phone"></i> (901) 748-0330</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://tpc.com/southwind" target="_blank">tpc.com/southwind</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                    <p><strong>Address:</strong><br>
+                    3325 Club at Southwind<br>
+                    Memphis, TN 38125</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (901) 748-0330</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://tpc.com/southwind" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tpc.com/southwind</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=3325+Club+at+Southwind,+Memphis,+TN+38125&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="TPC Southwind Golf Course Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=3325+Club+at+Southwind,+Memphis,+TN+38125" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Championship Golf at TPC Southwind</h2>
-                <p>TPC Southwind stands as Tennessee's premier championship golf course and the PGA Tour's only private club in the state. Home to the prestigious FedEx St. Jude Championship, this Ron Prichard masterpiece offers 7,244 yards of challenging golf that has tested the world's best players since 1988.</p>
-                
-                <p>Built on the site of a former dairy farm, TPC Southwind features undulating zoysia fairways, champion Bermuda greens, and numerous lakes, streams, and ponds. <br>With 94 bunkers and 10 water hazards, the course is considered one of the most challenging on the PGA Tour schedule. <br>Water comes into play on more than half the holes, creating a demanding test for golfers of all skill levels.</p>
-                
-                <p>The course's design philosophy balances playability with strategy, challenge with stunning beauty. Each hole was meticulously crafted to create a compelling test of golf that exhilarates and inspires amidst the unspoiled beauty of the Memphis countryside. Adding charm to the layout are two grain silos and a windmill, remnants of the dairy farm that once occupied the site.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the holes that define TPC Southwind's championship character</p>
             </div>
             
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">11</div>
-                    <div class="hole-details">
-                        <h4>Island Green Challenge</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">165</div>
-                            </div>
-                        </div>
-                        <p>Reminiscent of TPC Sawgrass's famous 17th, this par-3 requires a precise short iron over water to a small island green. A pot bunker guards the front edge, making club selection crucial.</p>
-                    </div>
-                </div>
+            <!-- Course Description -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About TPC Southwind</h3>
+                <p>TPC Southwind stands as Tennessee's premier championship golf course and the PGA Tour's only private club in the state. Home to the prestigious FedEx St. Jude Championship, this Ron Prichard masterpiece offers 7,244 yards of challenging golf that has tested the world's best players since 1988.</p>
                 
-                <div class="hole-card">
-                    <div class="hole-number">14</div>
-                    <div class="hole-details">
-                        <h4>The Toughest Par-3</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">231</div>
-                            </div>
-                        </div>
-                        <p>Consistently ranked as one of the toughest par-3s on the PGA Tour. This elevated tee shot requires a long iron or wood to a narrow, undulating green protected by water along the entire right side.</p>
-                    </div>
-                </div>
+                <br>
                 
-                <div class="hole-card">
-                    <div class="hole-number">18</div>
-                    <div class="hole-details">
-                        <h4>Championship Finish</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">461</div>
-                            </div>
-                        </div>
-                        <p>A spectacular finishing hole with water protecting the entire left side of the fairway. The approach shot must carry over a lake that fronts the green, creating drama for tournament finishes.</p>
+                <p>Built on the site of a former dairy farm, TPC Southwind features undulating zoysia fairways, champion Bermuda greens, and numerous lakes, streams, and ponds. With 94 bunkers and 10 water hazards, the course is considered one of the most challenging on the PGA Tour schedule.</p>
+                
+                <br>
+                
+                <p>Water comes into play on more than half the holes, creating a demanding test for golfers of all skill levels. The course's design philosophy balances playability with strategy, challenge with stunning beauty.</p>
+                
+                <br>
+                
+                <p>Each hole was meticulously crafted to create a compelling test of golf that exhilarates and inspires amidst the unspoiled beauty of the Memphis countryside. Adding charm to the layout are two grain silos and a windmill, remnants of the dairy farm that once occupied the site.</p>
+                
+                <br>
+                
+                <p>As the host of the <a href="https://www.pgatour.com/tournaments/fedex-st-jude-championship" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">FedEx St. Jude Championship</a>, TPC Southwind represents the ultimate test of championship golf, where the world's best players compete annually in one of the PGA Tour's premier events.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Driving Range</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Championship Clubhouse</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>PGA Instruction</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Tournament Hosting</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-car"></i>
+                        <span>Caddie Service</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>PGA Tour Venue</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-users"></i>
+                        <span>Private Events</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Photo Gallery -->
     <section class="photo-gallery">
@@ -842,76 +738,80 @@ try {
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-header">
-                <h2>Player Reviews</h2>
-                <p>Share your experience at TPC Southwind</p>
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced TPC Southwind</p>
             </div>
-
+            
+            <?php if (isset($success_message)): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($error_message)): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <!-- Comment Form (Only for logged in users) -->
             <?php if ($is_logged_in): ?>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST">
+                <div class="comment-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form method="POST" class="comment-form">
                         <div class="form-group">
-                            <label>Rating</label>
-                            <div class="rating-input" id="rating-stars">
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1" data-rating="1">★</label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2" data-rating="2">★</label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3" data-rating="3">★</label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4" data-rating="4">★</label>
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5" data-rating="5">★</label>
+                            <label for="rating">Rating:</label>
+                            <div class="star-rating" id="tpc-rating-stars">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
                             </div>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at TPC Southwind..." required></textarea>
+                            <label for="comment_text">Your Review:</label>
+                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this championship course..." required></textarea>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
+                        <button type="submit" class="btn-submit">Post Review</button>
                     </form>
                 </div>
             <?php else: ?>
                 <div class="login-prompt">
-                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
+                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
                 </div>
             <?php endif; ?>
-
-            <div class="comments-list">
+            
+            <!-- Display Comments -->
+            <div class="comments-container">
                 <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -919,60 +819,55 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/courses">Golf Courses</a></li>
-                        <li><a href="/reviews">Reviews</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
     <script>
-        // Interactive star rating functionality
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 45 images (starting from 2.jpeg to 45.jpeg = 44 images)
+            for (let i = 2; i <= 45; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/tpc-southwind/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/tpc-southwind/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
+    <script>
+        // Interactive star rating functionality for TPC Southwind
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
+            const ratingContainer = document.getElementById('tpc-rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
@@ -1025,47 +920,6 @@ try {
                         star.classList.remove('active');
                     });
                 }
-            }
-        });
-
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 45 images (starting from 2.jpeg to 45.jpeg = 44 images)
-            for (let i = 2; i <= 45; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/tpc-southwind/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/tpc-southwind/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
             }
         });
     </script>

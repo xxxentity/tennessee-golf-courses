@@ -79,7 +79,7 @@ try {
     
     <style>
         .course-hero {
-            height: 60vh;
+            height: 75vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/holston-hills-country-club/1.jpeg');
             background-size: cover;
             background-position: center;
@@ -88,7 +88,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 80px;
         }
         
         .course-hero-content h1 {
@@ -100,32 +100,35 @@ try {
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stat {
+        .course-rating {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
-        .course-info-section {
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
             padding: 4rem 0;
-            background: #f8f9fa;
         }
         
-        .course-info-cards {
+        .course-info-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 4rem;
         }
         
@@ -133,192 +136,73 @@ try {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .course-info-card h3 i {
-            color: #4a7c59;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+        }
+        
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-item:last-child {
-            border-bottom: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #2c5234;
+            color: #666;
         }
         
         .spec-value {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .location-info {
-            text-align: left;
-        }
-        
-        .location-details p {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .location-details i {
-            color: #4a7c59;
-            width: 16px;
-        }
-        
-        .location-details a {
-            color: #4a7c59;
-            text-decoration: none;
-        }
-        
-        .location-details a:hover {
-            text-decoration: underline;
-        }
-        
-        .course-description {
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
+            font-weight: 700;
             color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
         }
         
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        
-        .signature-holes {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .holes-grid {
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .hole-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .hole-number {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: #4a7c59;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .amenity-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border: 4px solid white;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .hole-details h4 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .hole-stats {
-            display: flex;
-            gap: 2rem;
-            margin: 1.5rem 0;
-        }
-        
-        .hole-stat {
-            text-align: center;
-        }
-        
-        .hole-stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hole-stat-value {
-            font-size: 1.8rem;
-            font-weight: bold;
+        .amenity-item i {
             color: #4a7c59;
+            font-size: 1.2rem;
         }
         
-        .hole-details p {
-            color: #555;
-            line-height: 1.6;
-        }
         
         .photo-gallery {
-            padding: 4rem 0;
-            background: white;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -331,12 +215,12 @@ try {
         }
         
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: scale(1.05);
         }
         
         .gallery-button {
             text-align: center;
+            margin-top: 2rem;
         }
         
         .btn-gallery {
@@ -356,7 +240,6 @@ try {
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Modal Styles */
@@ -433,12 +316,38 @@ try {
             padding: 4rem 0;
         }
         
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Comment System Styles */
         .comment-form-container {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .comment-form-container h3 {
@@ -446,11 +355,11 @@ try {
             margin-bottom: 1.5rem;
         }
         
-        .form-group {
+        .comment-form .form-group {
             margin-bottom: 1.5rem;
         }
         
-        .form-group label {
+        .comment-form label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
@@ -459,8 +368,8 @@ try {
         
         .star-rating {
             display: flex;
+            justify-content: flex-start;
             gap: 5px;
-            margin-bottom: 1rem;
         }
         
         .star-rating input[type="radio"] {
@@ -468,202 +377,220 @@ try {
         }
         
         .star-rating label {
-            cursor: pointer;
-            font-size: 1.5rem;
             color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
             transition: color 0.3s ease;
         }
         
-        .star-rating label:hover,
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
         .star-rating label.active {
             color: #ffd700;
         }
         
-        .form-group textarea {
+        .comment-form textarea {
             width: 100%;
             padding: 1rem;
-            border: 1px solid #ddd;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
             font-family: inherit;
+            font-size: 14px;
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
+        }
+        
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
         }
         
         .btn-submit {
-            background: #4a7c59;
+            background: #2c5234;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.75rem 2rem;
             border: none;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .btn-submit:hover {
-            background: #2c5234;
+            background: #1e3f26;
+            transform: translateY(-1px);
         }
         
         .login-prompt {
-            text-align: center;
+            background: #f8f9fa;
             padding: 2rem;
-            background: white;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
             margin-bottom: 3rem;
         }
         
         .login-prompt a {
             color: #2c5234;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 600;
         }
         
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+        .login-prompt a:hover {
+            text-decoration: underline;
         }
         
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
             color: #666;
-            font-size: 0.9rem;
         }
         
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
         }
+        
         
         .alert {
-            padding: 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
         }
         
         .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .course-info-cards {
+            .course-info-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            .holes-grid {
-                grid-template-columns: 1fr;
+            .course-details {
+                padding: 2rem 0;
             }
             
-            .hole-stats {
-                gap: 1rem;
+            .course-info-card {
+                padding: 1.5rem;
             }
-            
-            .hero-stats {
-                gap: 15px;
-            }
-            
-            .hero-stat {
-                font-size: 1rem;
-            }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 
 <body>
+    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Holston Hills Country Club</h1>
-            <p>Donald Ross's 1927 Masterpiece</p>
-            <div class="hero-stats">
-                <?php if ($avg_rating): ?>
-                    <div class="hero-stat">
-                        <i class="fas fa-star" style="color: #ffd700;"></i>
-                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
+            <p>Donald Ross's 1927 Masterpiece • Knoxville, Tennessee</p>
+            <div class="course-rating">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
-                <div class="hero-stat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Knoxville, TN</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-ruler"></i>
-                    <span>6,932 yards</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information Cards -->
-    <section class="course-info-section">
+    <!-- Course Details -->
+    <section class="course-details">
         <div class="container">
-            <div class="course-info-cards">
+            <div class="course-info-grid">
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
+                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Donald Ross</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
-                            <span class="spec-value">1927</span>
+                            <span class="spec-label">Holes:</span>
+                            <span class="spec-value">18</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Par:</span>
                             <span class="spec-value">72</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Length:</span>
-                            <span class="spec-value">6,932 yards</span>
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">6,932</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Donald Ross</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1927</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
                             <span class="spec-value">Private</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">134</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs">
+                    <h3><i class="fas fa-dollar-sign"></i> Membership & Access</h3>
+                    <div class="course-specs single-column">
                         <div class="spec-item">
                             <span class="spec-label">Membership:</span>
                             <span class="spec-value">Private Club</span>
@@ -677,7 +604,7 @@ try {
                             <span class="spec-value">Available</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Cart Fee:</span>
+                            <span class="spec-label">Cart Policy:</span>
                             <span class="spec-value">Included</span>
                         </div>
                         <div class="spec-item">
@@ -685,99 +612,106 @@ try {
                             <span class="spec-value">Strict</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Reservations:</span>
-                            <span class="spec-value">(865) 584-6230</span>
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">134</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 5801 Lyons View Pike, Knoxville, TN 37919</p>
-                            <p><i class="fas fa-phone"></i> (865) 584-6230</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.holstonhills.com" target="_blank">holstonhills.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=Holston+Hills+Country+Club+Knoxville+TN" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=Holston+Hills+Country+Club+Knoxville+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                    <p><strong>Address:</strong><br>
+                    5801 Lyons View Pike<br>
+                    Knoxville, TN 37919</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (865) 584-6230</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://www.holstonhills.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">holstonhills.com</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=5801+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Holston Hills Country Club Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=5801+Lyons+View+Pike,+Knoxville,+TN+37919" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>America's Purest Donald Ross Design</h2>
+            <!-- Course Description -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-golf-ball"></i> About Holston Hills Country Club</h3>
                 <p>Holston Hills Country Club stands as one of Tennessee's most revered golf destinations, featuring a virtually untouched Donald Ross masterpiece from 1927. This championship layout has been recognized as one of the purest Donald Ross courses in America, maintaining its original character while hosting some of the region's most prestigious golf events.</p>
+                
+                <br>
                 
                 <p>Built on the historic MacDonald Farm in East Knoxville, Holston Hills showcases Ross's legendary design philosophy with trademark crowned greens, strategic bunkering, and natural elevation changes. The course gained national recognition immediately upon completion, being hailed as the finest course in Tennessee and earning its place among America's elite golf destinations.</p>
                 
+                <br>
+                
                 <p>The 6,932-yard layout features Ross's signature green complexes with multiple pin positions and gentle undulations that create natural spectator areas. This pristine private club has preserved Ross's original intent while maintaining championship conditions that continue to challenge Tennessee's finest golfers nearly a century after its opening.</p>
+                
+                <br>
+                
+                <p>As one of America's most historic private clubs, Holston Hills has maintained its exclusivity and prestige throughout its distinguished history. The club's commitment to preserving Donald Ross's original design vision makes it a pilgrimage site for golf architecture enthusiasts and a coveted destination for serious golfers seeking an authentic Ross experience.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card">
+                <h3><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Practice Range</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Fine Dining</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Caddie Service</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Private Events</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-swimming-pool"></i>
+                        <span>Swimming Pool</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Fitness Center</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-wine-glass"></i>
+                        <span>Private Locker Rooms</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the strategic brilliance of Donald Ross design</p>
-            </div>
-            
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">7</div>
-                    <div class="hole-details">
-                        <h4>Ross's Split Fairway</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">517</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">5</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Handicap</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                        </div>
-                        <p>One of Ross's most unique designs, the 7th features a split fairway divided by a natural ridge with strategic bunkering. This par-5 demands careful course management and rewards strategic thinking over pure distance.</p>
-                    </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">16</div>
-                    <div class="hole-details">
-                        <h4>Driveable Risk-Reward</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">304</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Handicap</div>
-                                <div class="hole-stat-value">11</div>
-                            </div>
-                        </div>
-                        <p>A perfect Ross risk-reward par-4 featuring a driveable elevated green complex. Players must choose between a conservative layup or attempting to drive the challenging crowned green surrounded by deep bunkers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Photo Gallery -->
     <section class="photo-gallery">
@@ -840,7 +774,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="rating-stars">
+                            <div class="star-rating" id="holston-rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -869,26 +803,27 @@ try {
             <!-- Display Comments -->
             <div class="comments-container">
                 <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div class="rating-stars">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -896,7 +831,56 @@ try {
         </div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.php#courses">Golf Courses</a></li>
+                        <li><a href="../index.php#reviews">Reviews</a></li>
+                        <li><a href="../index.php#news">News</a></li>
+                        <li><a href="../index.php#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="#">Nashville Area</a></li>
+                        <li><a href="#">Chattanooga Area</a></li>
+                        <li><a href="#">Knoxville Area</a></li>
+                        <li><a href="#">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
+                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=5"></script>
 
     <script>
         // Gallery Modal Functions
@@ -940,9 +924,9 @@ try {
             }
         });
         
-        // Interactive star rating functionality
+        // Interactive star rating functionality for Holston Hills
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
+            const ratingContainer = document.getElementById('holston-rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
