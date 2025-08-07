@@ -525,7 +525,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                     </div>
                                     <h3 class="review-title"><?php echo htmlspecialchars($review['title']); ?></h3>
                                     <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
-                                    <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
+                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>.php" class="read-more">
                                         Read Full Review <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
