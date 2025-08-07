@@ -1151,6 +1151,91 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 font-size: 0.8rem;
             }
         }
+        
+        /* Search Bar Styles */
+        .search-bar-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-bar-wrapper {
+            position: relative;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 82, 52, 0.1);
+        }
+        
+        .search-bar-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+            margin-top: 4px;
+        }
+        
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-result-item:hover {
+            background: #f9fafb;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+        
+        .search-result-location {
+            color: var(--text-gray);
+            font-size: 13px;
+            margin-top: 2px;
+        }
+        
+        .search-no-results {
+            padding: 20px;
+            text-align: center;
+            color: var(--text-gray);
+        }
     </style>
 </head>
 <body>
@@ -1171,6 +1256,15 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             <!-- Filters Sidebar -->
             <aside class="filters-sidebar">
                 <form method="GET" id="filters-form">
+                    <!-- Search Bar -->
+                    <div class="search-bar-container">
+                        <div class="search-bar-wrapper">
+                            <input type="text" class="search-bar" id="courses-search" placeholder="Search courses..." autocomplete="off">
+                            <i class="fas fa-search search-bar-icon"></i>
+                            <div class="search-results" id="courses-search-results"></div>
+                        </div>
+                    </div>
+                    
                     <!-- Sort Options -->
                     <div class="sort-section">
                         <div class="filter-title">Sort By</div>
@@ -1500,6 +1594,84 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 input.addEventListener('change', function() {
                     document.getElementById('filters-form').submit();
                 });
+            });
+            
+            // Search functionality
+            const coursesSearchInput = document.getElementById('courses-search');
+            const coursesSearchResults = document.getElementById('courses-search-results');
+            let searchTimeout;
+
+            coursesSearchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                const query = this.value.trim();
+                
+                if (query.length < 2) {
+                    coursesSearchResults.style.display = 'none';
+                    return;
+                }
+                
+                searchTimeout = setTimeout(() => {
+                    fetchCourses(query);
+                }, 300);
+            });
+
+            function fetchCourses(query) {
+                fetch(`/search-courses.php?q=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displayResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Search error:', error);
+                    });
+            }
+
+            function displayResults(courses) {
+                coursesSearchResults.innerHTML = '';
+                
+                if (courses.length === 0) {
+                    coursesSearchResults.innerHTML = '<div class="search-no-results">No courses found</div>';
+                    coursesSearchResults.style.display = 'block';
+                    return;
+                }
+                
+                courses.forEach(course => {
+                    const item = document.createElement('div');
+                    item.className = 'search-result-item';
+                    item.innerHTML = `
+                        <div>
+                            <div class="search-result-name">${course.name}</div>
+                            <div class="search-result-location">${course.location}</div>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color: #ccc; font-size: 12px;"></i>
+                    `;
+                    
+                    item.addEventListener('click', () => {
+                        window.location.href = `/courses/${course.slug}`;
+                    });
+                    
+                    coursesSearchResults.appendChild(item);
+                });
+                
+                coursesSearchResults.style.display = 'block';
+            }
+
+            // Close results when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.search-bar-container')) {
+                    coursesSearchResults.style.display = 'none';
+                }
+            });
+
+            // Handle Enter key in search input
+            coursesSearchInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const query = this.value.trim();
+                    if (query) {
+                        window.location.href = `/courses?search=${encodeURIComponent(query)}`;
+                    }
+                }
             });
         });
     </script>

@@ -8,11 +8,13 @@ RewriteRule ^ /%1 [NC,L,R=301]
 # Handle specific pages that conflict with directories
 RewriteRule ^courses/?$ courses.php [L]
 RewriteRule ^news/?$ news.php [L]
+RewriteRule ^events/?$ events.php [L]
 RewriteRule ^about/?$ about.php [L]
 RewriteRule ^contact/?$ contact.php [L]
 RewriteRule ^reviews/?$ reviews.php [L]
 RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
+RewriteRule ^search-courses.php$ search-courses.php [L]
 
 # Handle course pages (in subdirectory - alphabetical order)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]

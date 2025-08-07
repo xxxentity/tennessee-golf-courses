@@ -22,6 +22,61 @@
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
+    
+    <style>
+        .search-container {
+            position: relative;
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            margin-top: 4px;
+        }
+        
+        .search-result-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-result-item:hover {
+            background: #f5f5f5;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .search-result-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .search-no-results {
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,8 +91,9 @@
             <div class="hero-search">
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search courses by name or city..." class="search-input">
+                    <input type="text" placeholder="Search courses by name or city..." class="search-input" id="hero-search-input">
                     <button class="search-btn">Find Courses</button>
+                    <div class="search-results" id="hero-search-results"></div>
                 </div>
             </div>
         </div>
@@ -293,5 +349,92 @@
     </footer>
 
     <script src="/script.js?v=4"></script>
+    
+    <script>
+        // Autocomplete functionality for hero search
+        const heroSearchInput = document.getElementById('hero-search-input');
+        const heroSearchResults = document.getElementById('hero-search-results');
+        let searchTimeout;
+
+        heroSearchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const query = this.value.trim();
+            
+            if (query.length < 2) {
+                heroSearchResults.style.display = 'none';
+                return;
+            }
+            
+            searchTimeout = setTimeout(() => {
+                fetchCourses(query);
+            }, 300);
+        });
+
+        function fetchCourses(query) {
+            fetch(`/search-courses.php?q=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    displayResults(data);
+                })
+                .catch(error => {
+                    console.error('Search error:', error);
+                });
+        }
+
+        function displayResults(courses) {
+            heroSearchResults.innerHTML = '';
+            
+            if (courses.length === 0) {
+                heroSearchResults.innerHTML = '<div class="search-no-results">No courses found</div>';
+                heroSearchResults.style.display = 'block';
+                return;
+            }
+            
+            courses.forEach(course => {
+                const item = document.createElement('div');
+                item.className = 'search-result-item';
+                item.innerHTML = `
+                    <div>
+                        <div class="search-result-name">${course.name}</div>
+                        <div class="search-result-location">${course.location}</div>
+                    </div>
+                    <i class="fas fa-chevron-right" style="color: #ccc;"></i>
+                `;
+                
+                item.addEventListener('click', () => {
+                    window.location.href = `/courses/${course.slug}`;
+                });
+                
+                heroSearchResults.appendChild(item);
+            });
+            
+            heroSearchResults.style.display = 'block';
+        }
+
+        // Close results when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.search-container')) {
+                heroSearchResults.style.display = 'none';
+            }
+        });
+
+        // Handle search button click
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const query = heroSearchInput.value.trim();
+            if (query) {
+                window.location.href = `/courses?search=${encodeURIComponent(query)}`;
+            }
+        });
+
+        // Handle Enter key in search input
+        heroSearchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const query = this.value.trim();
+                if (query) {
+                    window.location.href = `/courses?search=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+    </script>
 </body>
 </html>

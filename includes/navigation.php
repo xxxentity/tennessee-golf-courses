@@ -15,6 +15,7 @@ $is_main_page = (
     strpos($current_page, '/courses') === 0 ||
     strpos($current_page, '/reviews') === 0 ||
     strpos($current_page, '/news') === 0 ||
+    strpos($current_page, '/events') === 0 ||
     strpos($current_page, '/about') === 0 ||
     strpos($current_page, '/contact') === 0
 );
@@ -71,6 +72,7 @@ $is_main_page = (
             <li><a href="/courses" class="nav-link">Courses</a></li>
             <li><a href="/reviews" class="nav-link">Reviews</a></li>
             <li><a href="/news" class="nav-link">News</a></li>
+            <li><a href="/events" class="nav-link">Events</a></li>
             <li><a href="/about" class="nav-link">About</a></li>
             <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
