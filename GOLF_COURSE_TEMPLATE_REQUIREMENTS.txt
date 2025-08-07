@@ -1,0 +1,253 @@
+TENNESSEE GOLF COURSES - TEMPLATE REQUIREMENTS & STANDARDS
+===========================================================
+Last Updated: August 6, 2025
+Purpose: Detailed requirements for creating and fixing golf course pages
+
+TEMPLATE REFERENCE
+==================
+- PRIMARY TEMPLATE: Bear Trace at Harrison Bay (bear-trace-harrison-bay.php)
+- SECONDARY REFERENCES: Cherokee Country Club, Hillwood Country Club, Bluegrass Yacht & Country Club
+- All new courses and fixes must match Bear Trace template structure EXACTLY
+
+REQUIRED PHP STRUCTURE
+======================
+1. SESSION AND DATABASE SETUP (Lines 1-53)
+   - session_start();
+   - require_once '../config/database.php';
+   - Set $course_slug and $course_name variables
+   - User login check: $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+   - Comment submission handling with rating validation (1-5) and error messages
+   - Database queries for existing comments and average ratings
+   - PDO exception handling
+
+2. HTML HEAD SECTION (Lines 56-79)
+   - Standard DOCTYPE html
+   - UTF-8 charset and viewport meta
+   - Title: "[Course Name] - Tennessee Golf Courses"
+   - Meta description with course designer and location
+   - CSS links: ../styles.css, Google Fonts Inter, Font Awesome 6.4.0
+   - Favicon links with tab-logo.png
+   - Google Analytics gtag.js with ID G-7VPNPCDTBP
+
+3. NAVIGATION INCLUDE (Line 82)
+   - MUST USE: <?php include '../includes/navigation.php'; ?>
+   - NOT: ../header.php (old/incorrect)
+
+REQUIRED LAYOUT STRUCTURE
+=========================
+1. HERO SECTION (Lines 84-127)
+   - Height: 75vh
+   - Background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/[slug]/1.jpeg')
+   - Centered content with max-width: 800px
+   - H1: Course name (font-size: 3.5rem, font-weight: 700)
+   - Subtitle: "[Designer] Design • [City], Tennessee" (font-size: 1.3rem, opacity: 0.9)
+   - Rating display with PHP logic for stars and review count
+   - Margin-top: 80px for navigation clearance
+
+2. THREE-COLUMN GRID SECTION (Lines 129-247)
+   - Container: max-width: 1200px, margin: 0 auto, padding: 0 2rem
+   - Grid: display: grid, grid-template-columns: repeat(3, 1fr), gap: 3rem, margin-bottom: 4rem
+   - Each card: background: white, padding: 2rem, border-radius: 15px, box-shadow: 0 10px 30px rgba(0,0,0,0.1)
+
+   COLUMN 1 - COURSE INFORMATION:
+   - Header: <i class="fas fa-info-circle"></i> Course Information
+   - Single-column specs grid
+   - Required fields: Holes, Par, Yardage, Designer, Opened, Type
+   - Each spec-item: display: flex, justify-content: space-between, border-bottom: 1px solid #f0f0f0
+
+   COLUMN 2 - PRICING/MEMBERSHIP:
+   For Private Clubs:
+   - Header: <i class="fas fa-users"></i> Membership
+   - Bronze gradient notice: background: linear-gradient(135deg, #8B4513, #A0522D)
+   - "Private Members Only" or "Private Club" heading
+   - Description paragraph about membership requirements
+   
+   For Public/Semi-Private Clubs:
+   - Header: <i class="fas fa-dollar-sign"></i> Green Fees
+   - Pricing categories in styled boxes
+   - Use pricing-category class with border-left: 4px solid #2c5234
+   - Include pricing notes at bottom
+
+   COLUMN 3 - LOCATION & CONTACT:
+   - Header: <i class="fas fa-map-marker-alt"></i> Location & Contact
+   - Contact details in spec-item format
+   - Required: Address, City, Phone, Website
+   - Google Maps embed (REQUIRED):
+     - iframe src: https://maps.google.com/maps?q=[address]&t=&z=15&ie=UTF8&iwloc=&output=embed
+     - Width: 100%, Height: 200px
+     - Style: border:0, border-radius: 8px, box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+     - Loading: lazy, referrerpolicy: no-referrer-when-downgrade
+   - Directions link below map pointing to Google Maps directions
+
+3. COURSE DESCRIPTION SECTION (Lines 249-265)
+   - SEPARATE full-width card BELOW the 3-column grid
+   - Header: <i class="fas fa-golf-ball"></i> About [Course Name]
+   - 3-4 paragraphs with <br> spacing between each
+   - Content should summarize course history, design, features, and experience
+   - Write as comprehensive summary of all research data provided
+
+4. AMENITIES SECTION (Lines 267-304)
+   - SEPARATE full-width card BELOW the course description
+   - Header: <i class="fas fa-star"></i> Club Amenities
+   - Grid: display: grid, grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+   - Each amenity: display: flex, align-items: center, gap: 0.75rem, padding: 1rem
+   - Background: #f8f9fa, border-radius: 10px
+   - Font Awesome icons with color: #4a7c59, font-size: 1.2rem
+   - Common amenities: Championship Golf, Restaurant/Dining, Pro Shop, Driving Range, etc.
+
+5. COURSE GALLERY SECTION (Lines 306-318)
+   - SEPARATE full-width card
+   - Header: <i class="fas fa-camera"></i> Course Gallery
+   - Grid showing first 8 images: ../images/courses/[slug]/1.jpeg through 8.jpeg
+   - "View Full Gallery (25 Photos)" button
+   - JavaScript modal functionality for full gallery (1-25 images)
+
+6. REVIEWS SECTION (Lines 321-389)
+   - Background: #f8f9fa, padding: 4rem 0
+   - Conditional login check for comment form
+   - Star rating system with JavaScript functionality
+   - Display existing comments with username, date, rating stars, and text
+   - "No reviews yet" message if no comments exist
+
+7. GALLERY MODAL (Lines 392-403)
+   - Hidden modal overlay with z-index: 9999
+   - JavaScript functions: openGallery(), closeGallery()
+   - Loads all 25 images dynamically
+   - Click outside to close functionality
+
+8. FOOTER INCLUDE (Line 406)
+   - MUST USE: <?php include '../includes/footer.php'; ?>
+   - NOT: ../footer.php (old/incorrect)
+
+9. JAVASCRIPT (Lines 408-462)
+   - Star rating functionality for comment form
+   - Gallery modal open/close functions
+   - Dynamic image loading for full gallery (1-25 images)
+   - Window click event for modal closing
+
+REQUIRED DATA FIELDS
+====================
+From golf_course_generator.py structure:
+- course_name: Full official name
+- course_slug: URL-friendly version (lowercase, hyphens)
+- designer: Course architect/designer name
+- year_opened: Year course opened
+- par: Course par (usually 70, 71, or 72)
+- yardage: Length from championship/longest tees
+- course_type: Private, Semi-Private, Public, Resort
+- location_city: City, State
+- address: Street address
+- phone: Phone number with area code
+- website: Official website URL
+- description: Multi-paragraph course description
+- amenities: Array of club amenities
+- course_rating: USGA course rating (if available)
+- slope_rating: USGA slope rating (if available)
+- greens_type: Type of grass used on greens
+
+INTEGRATION REQUIREMENTS
+========================
+1. ADD TO COURSES.PHP ARRAY
+   - Insert in alphabetical order by course name
+   - Use next available ID number
+   - Include all required fields: name, location, region, description, image, price_range, difficulty, holes, par, designer, amenities, slug
+
+2. ADD TO .HTACCESS
+   - Insert URL rewrite rule in alphabetical order
+   - Format: RewriteRule ^courses/[slug]/?$ courses/[slug].php [L]
+
+3. UPDATE DATABASE FILE
+   - Mark course as completed with ✓ symbol
+   - Update address if needed to match research
+   - Format: [Course Name] - [Address], [City] [ZIP] [OPEN] - [Type] ✓
+
+4. COMMIT TO GITHUB
+   - Descriptive commit message with course name and key features
+   - Include all file changes in single commit
+   - Add Claude Code attribution footer
+   - Push immediately after commit
+
+RESEARCH REQUIREMENTS
+=====================
+1. THOROUGH WEB RESEARCH
+   - Use ALL provided URLs thoroughly
+   - Extract: designer, opening year, yardage, par, course rating/slope
+   - Look for: amenities, course history, special features
+   - Find: accurate address, phone, website
+   - If missing info: ask user rather than guess
+
+2. COURSE DESCRIPTION WRITING
+   - Write 3-4 paragraph comprehensive summary
+   - Include: history, design details, course characteristics, amenities
+   - Mention: designer, opening year, yardage, par, special features
+   - Avoid: generic language, focus on what makes course unique
+   - Base on: ALL research data from provided URLs
+
+COMMON FIXES FOR EXISTING COURSES
+==================================
+When fixing existing courses to match template:
+
+1. STRUCTURE ISSUES
+   - Change ../header.php to ../includes/navigation.php
+   - Change ../footer.php to ../includes/footer.php
+   - Remove extensive inline CSS (replace with template structure)
+   - Implement proper three-column grid layout
+   - Move amenities to separate full-width card
+
+2. MISSING FEATURES
+   - Add Google Maps embed with directions link
+   - Ensure proper hero section formatting
+   - Add gallery modal JavaScript functionality
+   - Implement star rating system for reviews
+   - Add proper course description structure with <br> spacing
+
+3. CONTENT ORGANIZATION
+   - Course Information (left column)
+   - Pricing/Membership (middle column) 
+   - Location & Contact with map (right column)
+   - Course Description (separate full-width card)
+   - Amenities (separate full-width card)
+   - Gallery (separate full-width card)
+   - Reviews section
+
+QUALITY STANDARDS
+=================
+- ALL courses must look identical in structure to Bear Trace template
+- NO custom CSS styling that differs from template
+- Consistent spacing, colors, and typography
+- Professional, clean appearance
+- Mobile-responsive design (handled by template)
+- Fast loading with optimized images
+- SEO-friendly meta descriptions and titles
+- Accessible design with proper alt text and ARIA labels
+
+ERROR PREVENTION
+================
+- NEVER use old header.php or footer.php includes
+- NEVER skip Google Maps integration
+- NEVER put amenities in wrong location (must be separate card)
+- NEVER use custom styling that breaks template consistency
+- ALWAYS follow three-column → description → amenities → gallery pattern
+- ALWAYS write course descriptions based on research, not generic text
+- ALWAYS ask user for missing information rather than guessing
+- ALWAYS test that modal gallery functionality works
+- ALWAYS commit all files together (PHP, courses.php, .htaccess, database)
+
+DEBUGGING CHECKLIST
+===================
+Before considering course complete:
+□ Navigation include correct (../includes/navigation.php)
+□ Footer include correct (../includes/footer.php)  
+□ Three-column grid properly implemented
+□ Google Maps embed present with directions link
+□ Amenities in separate full-width card (not in columns)
+□ Course description as separate full-width card
+□ Gallery modal JavaScript functions present
+□ Star rating system implemented
+□ All required data fields populated
+□ Added to courses.php array
+□ Added to .htaccess file
+□ Database marked as complete
+□ Committed and pushed to GitHub
+
+This document serves as the complete reference for maintaining consistency and quality across all Tennessee golf course pages.
