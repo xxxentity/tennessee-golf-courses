@@ -885,26 +885,26 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         .new-sort-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            row-gap: 2rem;
+            gap: 0.75rem;
+            row-gap: 1rem;
         }
         
         .new-sort-btn {
             background: white;
             color: var(--primary-color);
             border: none;
-            padding: 2.5rem 1rem;
+            padding: 1.25rem 0.5rem;
             border-radius: 12px;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            min-height: 90px;
+            min-height: 45px;
         }
         
         .new-sort-btn:hover {
@@ -921,7 +921,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         }
         
         .new-sort-btn i {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         
         .courses-content {
