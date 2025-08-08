@@ -630,6 +630,21 @@ $courses_static = [
         'designer' => 'Unknown',
         'amenities' => ['Pro Shop', 'Practice Area', 'Putting Green', 'Food & Beverages'],
         'slug' => 'cheekwood-golf-club'
+    ],
+    [
+        'id' => 42,
+        'name' => 'Sweetens Cove Golf Club',
+        'location' => 'South Pittsburg, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Handcrafted masterpiece with wildly contoured greens and elaborate bunkering in scenic Sequatchie Valley. One of the most audacious 9-hole designs in the Southeast.',
+        'image' => '/images/courses/sweetens-cove-golf-club/1.jpeg',
+        'price_range' => '$15-135',
+        'difficulty' => 'Advanced',
+        'holes' => 9,
+        'par' => 36,
+        'designer' => 'King Collins Dormer',
+        'amenities' => ['Pro Shop', 'Practice Area', 'Cart Rentals', 'All-Day Play', 'Unique Design'],
+        'slug' => 'sweetens-cove-golf-club'
     ]
 ];
 
