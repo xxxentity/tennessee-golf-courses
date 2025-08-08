@@ -809,7 +809,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            height: calc(40vh - 120px);
+            max-height: calc(100vh - 150px);
             overflow-y: auto;
             position: sticky;
             top: 110px;
@@ -1162,7 +1162,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             .filters-sidebar {
                 position: static;
                 height: auto;
-                max-height: 300px;
+                max-height: none;
                 margin-bottom: 1rem;
             }
             
@@ -1205,7 +1205,6 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             
             .filters-sidebar {
                 padding: 1rem;
-                max-height: 250px;
             }
             
             .new-sort-container {
