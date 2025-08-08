@@ -797,7 +797,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         
         .courses-container {
             display: grid;
-            grid-template-columns: 420px 1fr;
+            grid-template-columns: 320px 1fr;
             gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -813,7 +813,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             overflow-y: auto;
             position: sticky;
             top: 110px;
-            min-width: 380px;
+            min-width: 280px;
         }
         
         /* Custom scrollbar for sidebar */
