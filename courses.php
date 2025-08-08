@@ -866,17 +866,18 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         /* New Sort Design - Button Based */
         .new-sort-container {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            padding: 2rem;
+            padding: 4rem 2rem;
             border-radius: 15px;
             margin-bottom: 3rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            min-height: 300px;
         }
         
         .new-sort-title {
             color: white;
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
             text-align: center;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
@@ -884,14 +885,15 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         .new-sort-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1.5rem;
+            row-gap: 2rem;
         }
         
         .new-sort-btn {
             background: white;
             color: var(--primary-color);
             border: none;
-            padding: 1.2rem 1rem;
+            padding: 2.5rem 1rem;
             border-radius: 12px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -902,6 +904,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             justify-content: center;
             gap: 0.5rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 90px;
         }
         
         .new-sort-btn:hover {
