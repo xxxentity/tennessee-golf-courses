@@ -622,17 +622,78 @@ try {
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    
+                    <!-- Off-Season Rates -->
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 1rem;">Daily Green Fees</h4>
-                        <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.2rem; font-weight: 600; color: #2c5234; margin-bottom: 0.5rem;">Call for Daily Rates</p>
-                            <p style="font-size: 1rem; color: #666; margin-bottom: 1rem;">Current pricing and availability</p>
-                            <a href="tel:931-707-1640" style="display: inline-block; background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">
-                                <i class="fas fa-phone"></i> (931) 707-1640
-                            </a>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Off-Season Rates</h4>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                                <div><strong>Standard (with cart):</strong></div>
+                                <div>18 holes: $39 • 9 holes: $20</div>
+                                <div><strong>Walking:</strong></div>
+                                <div>18 holes: $21 • 9 holes: $11</div>
+                                <div><strong>Senior (62+) with cart:</strong></div>
+                                <div>18 holes: $39 • 9 holes: $20</div>
+                                <div><strong>Senior walking:</strong></div>
+                                <div>18 holes: $21 • 9 holes: $11</div>
+                                <div><strong>Junior/Student with cart:</strong></div>
+                                <div>18 holes: $39 • 9 holes: $20</div>
+                                <div><strong>Junior/Student walking:</strong></div>
+                                <div>18 holes: $21 • 9 holes: $11</div>
+                                <div><strong>Replay with cart:</strong></div>
+                                <div>18 holes: $20 • 9 holes: $15</div>
+                                <div><strong>Replay walking:</strong></div>
+                                <div>18 holes: $12 • 9 holes: $9</div>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- In-Season Rates -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">In-Season Rates</h4>
+                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                                <div><strong>Standard with cart:</strong></div>
+                                <div>18 holes: $75 • 9 holes: $38</div>
+                                <div><strong>Standard walking:</strong></div>
+                                <div>18 holes: $55 • 9 holes: $28</div>
+                                <div><strong>Senior (62+) with cart:</strong></div>
+                                <div>18 holes: $60 • 9 holes: $30</div>
+                                <div><strong>Senior walking:</strong></div>
+                                <div>18 holes: $40 • 9 holes: $20</div>
+                                <div><strong>Twilight (after 3 PM) with cart:</strong></div>
+                                <div>Unlimited: $30</div>
+                                <div><strong>Twilight walking:</strong></div>
+                                <div>Unlimited: $20</div>
+                                <div><strong>Junior/Student with cart:</strong></div>
+                                <div>18 holes: $41 • 9 holes: $22</div>
+                                <div><strong>Junior/Student walking:</strong></div>
+                                <div>18 holes: $21 • 9 holes: $12</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plateau Players Card -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Plateau Players Card Rates</h4>
+                        <div style="background: #e8f4ea; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-style: italic;">Must purchase $29 Plateau Player's Card. Cumberland County or bordering county residents only.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                                <div><strong>Standard with cart:</strong></div>
+                                <div>18 holes: $48 • 9 holes: $24</div>
+                                <div><strong>Standard walking:</strong></div>
+                                <div>18 holes: $28 • 9 holes: $14</div>
+                                <div><strong>Senior with cart:</strong></div>
+                                <div>18 holes: $41 • 9 holes: $22</div>
+                                <div><strong>Senior walking:</strong></div>
+                                <div>18 holes: $21 • 9 holes: $12</div>
+                            </div>
+                        </div>
+                    </div>
                         
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Tennessee Golf Trail Annual Pass</h4>
+                    <!-- Annual Pass -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Tennessee Golf Trail Annual Pass</h4>
                         <div class="course-specs">
                             <div class="spec-item">
                                 <span class="spec-label">Regular Members:</span>
@@ -642,16 +703,12 @@ try {
                                 <span class="spec-label">Senior Members:</span>
                                 <span class="spec-value">$2,600</span>
                             </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Individual Annual:</span>
-                                <span class="spec-value">Available</span>
-                            </div>
                         </div>
                     </div>
-                    <div style="font-size: 0.9rem; color: #666; font-style: italic;">
-                        <p>* All rates subject to change</p>
-                        <p>* Cart fees may apply</p>
-                        <p>* Special rates for Tennessee residents</p>
+
+                    <div style="font-size: 0.85rem; color: #666; font-style: italic; text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <p><strong>Contact for Reservations:</strong> <a href="tel:931-707-1640" style="color: #4a7c59; font-weight: 600;">(931) 707-1640</a></p>
+                        <p style="margin: 0.5rem 0;">All rates plus tax • Rates subject to change • Junior/Student: 18 & under or valid college ID</p>
                     </div>
                 </div>
 
