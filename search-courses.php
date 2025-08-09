@@ -56,7 +56,8 @@ $courses = [
     ['name' => 'Sweetens Cove Golf Club', 'location' => 'South Pittsburg, TN', 'slug' => 'sweetens-cove-golf-club'],
     ['name' => 'Warrior\'s Path State Park Golf Course', 'location' => 'Kingsport, TN', 'slug' => 'warriors-path-state-park-golf-course'],
     ['name' => 'Eagle\'s Landing Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'eagles-landing-golf-club'],
-    ['name' => 'Sevierville Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'sevierville-golf-club']
+    ['name' => 'Sevierville Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'sevierville-golf-club'],
+    ['name' => 'Bear Trace at Cumberland Mountain', 'location' => 'Crossville, TN', 'slug' => 'bear-trace-cumberland-mountain']
 ];
 
 // Search for matches (case-insensitive)

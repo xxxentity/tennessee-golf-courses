@@ -690,6 +690,21 @@ $courses_static = [
         'designer' => 'D.J. DeVictor',
         'amenities' => ['Extensive Driving Range', 'Putting Green', 'Pro Shop', 'Restaurant', 'Cart Included', 'PGA Instruction', 'Chipping Area', 'Online Booking', 'Event Dining'],
         'slug' => 'sevierville-golf-club'
+    ],
+    [
+        'id' => 46,
+        'name' => 'Bear Trace at Cumberland Mountain',
+        'location' => 'Crossville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Award-winning Jack Nicklaus Signature Design featuring dramatic elevation changes and natural stone elements. Named #1 Public Course in Tennessee by GOLFWEEK.',
+        'image' => '/images/courses/bear-trace-cumberland-mountain/1.jpeg',
+        'price_range' => 'Call for Rates',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Jack Nicklaus',
+        'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Snack Bar', 'Cart Rentals', 'PGA Instruction', 'Cabins', 'Camping', 'Club Rental', 'GPS Carts', 'Walking Allowed', 'Banquet Hall'],
+        'slug' => 'bear-trace-cumberland-mountain'
     ]
 ];
 
