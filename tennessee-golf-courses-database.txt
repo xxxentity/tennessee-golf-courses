@@ -66,14 +66,14 @@ Roan Valley Golf Estates - 8127 Roan Valley Dr, Bluff City 37618 [OPEN] - Semi-P
 Ridgefields Country Club - 158 Golf Course Rd, Kingsport 37664 [OPEN] - Private
 Rivermont Golf Club - 1500 Rivermont Dr, Johns Creek 37659 [OPEN] - Public
 Rocky Mount Golf Course - 1031 Rocky Mount School Rd, Unicoi 37692 [OPEN] - Public
-Warrior's Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 [OPEN] - State Park (George Cobb Design)
+Warrior's Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 [OPEN] - State Park (George Cobb Design) ✓
 
 GATLINBURG/PIGEON FORGE/SEVIERVILLE AREA
 -----------------------------------------
 
 Bent Creek Golf Course - 3919 E Parkway, Gatlinburg 37738 [OPEN] - Public
 Dollywood Golf - 2390 Dollywood Parks Blvd, Pigeon Forge 37863 [OPEN] - Public
-Eagle's Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 [OPEN] - Public
+Eagle's Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 [OPEN] - Public ✓
 Gatlinburg Golf Course - 520 Dollywood Ln, Pigeon Forge 37863 [OPEN] - Public
 Pigeon Forge Golf Club - 2776 Teaster Ln, Pigeon Forge 37863 [OPEN] - Public
 Piney Creek Golf Course - 3094 Wears Valley Rd, Sevierville 37862 [OPEN] - Public

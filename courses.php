@@ -660,6 +660,21 @@ $courses_static = [
         'designer' => 'George Cobb',
         'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Snack Bar', 'Cart Rentals', 'PGA Lessons', 'Practice Bunker', 'Event Hosting'],
         'slug' => 'warriors-path-state-park-golf-course'
+    ],
+    [
+        'id' => 44,
+        'name' => 'Eagle\'s Landing Golf Club',
+        'location' => 'Sevierville, TN',
+        'region' => 'Smoky Mountains Area',
+        'description' => 'D.J. DeVictor designed championship municipal course in the heart of the Great Smoky Mountains. Recently named Best Public Golf Course by Tennessee Turfgrass Association.',
+        'image' => '/images/courses/eagles-landing-golf-club/1.jpeg',
+        'price_range' => '$38-79',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'D.J. DeVictor',
+        'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'Restaurant', 'Cart Included', 'PGA Instruction', 'Practice Bunkers', 'Banquet Facility'],
+        'slug' => 'eagles-landing-golf-club'
     ]
 ];
 
