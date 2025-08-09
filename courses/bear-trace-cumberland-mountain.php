@@ -623,6 +623,15 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 1rem;">Daily Green Fees</h4>
+                        <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <p style="font-size: 1.2rem; font-weight: 600; color: #2c5234; margin-bottom: 0.5rem;">Call for Daily Rates</p>
+                            <p style="font-size: 1rem; color: #666; margin-bottom: 1rem;">Current pricing and availability</p>
+                            <a href="tel:931-707-1640" style="display: inline-block; background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">
+                                <i class="fas fa-phone"></i> (931) 707-1640
+                            </a>
+                        </div>
+                        
                         <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Tennessee Golf Trail Annual Pass</h4>
                         <div class="course-specs">
                             <div class="spec-item">
@@ -640,9 +649,9 @@ try {
                         </div>
                     </div>
                     <div style="font-size: 0.9rem; color: #666; font-style: italic;">
-                        <p>* Daily green fees available</p>
                         <p>* All rates subject to change</p>
-                        <p>* Call (931) 707-1640 for current pricing</p>
+                        <p>* Cart fees may apply</p>
+                        <p>* Special rates for Tennessee residents</p>
                     </div>
                 </div>
 
@@ -776,7 +785,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (100+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
             </div>
         </div>
     </section>
@@ -951,8 +960,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 100 images
-            for (let i = 1; i <= 100; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/bear-trace-cumberland-mountain/${i}.jpeg')`;
