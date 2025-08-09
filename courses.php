@@ -645,6 +645,21 @@ $courses_static = [
         'designer' => 'King Collins Dormer',
         'amenities' => ['Pro Shop', 'Practice Area', 'Cart Rentals', 'All-Day Play', 'Unique Design'],
         'slug' => 'sweetens-cove-golf-club'
+    ],
+    [
+        'id' => 43,
+        'name' => 'Warrior\'s Path State Park Golf Course',
+        'location' => 'Kingsport, TN',
+        'region' => 'Tri-Cities Area',
+        'description' => 'George Cobb designed championship course on Fort Patrick Henry Lake with scenic mountain views. One of the most popular courses in the Tennessee State Parks system.',
+        'image' => '/images/courses/warriors-path-state-park-golf-course/1.jpeg',
+        'price_range' => '$22-27',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'George Cobb',
+        'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Snack Bar', 'Cart Rentals', 'PGA Lessons', 'Practice Bunker', 'Event Hosting'],
+        'slug' => 'warriors-path-state-park-golf-course'
     ]
 ];
 
