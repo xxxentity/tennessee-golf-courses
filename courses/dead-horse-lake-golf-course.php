@@ -459,34 +459,78 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     
-                    <!-- Daily Green Fees -->
+                    <!-- Season Rates -->
                     <div style="margin-bottom: 1.5rem;">
-                        <div style="text-align: center; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 1.5rem;">
-                            <p style="font-size: 1.2rem; font-weight: 600; color: #2c5234; margin-bottom: 0.5rem;">Call for Current Rates</p>
-                            <p style="font-size: 1rem; color: #666; margin-bottom: 1rem;">Daily pricing and tee times</p>
-                            <a href="tel:865-693-5270" style="display: inline-block; background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">
-                                <i class="fas fa-phone"></i> (865) 693-5270
-                            </a>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Season Rates</h4>
+                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;"></div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
+                                
+                                <div style="text-align: left;"><strong>Weekday Walking:</strong></div>
+                                <div>$14</div>
+                                <div>$25</div>
+                                
+                                <div style="text-align: left;"><strong>Weekday w/Cart:</strong></div>
+                                <div>$25</div>
+                                <div>$45</div>
+                                
+                                <div style="text-align: left;"><strong>Weekend Walking:</strong></div>
+                                <div>$18</div>
+                                <div>$33</div>
+                                
+                                <div style="text-align: left;"><strong>Weekend w/Cart:</strong></div>
+                                <div>$33</div>
+                                <div>$55</div>
+                            </div>
                         </div>
-                        
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Approximate Pricing</h4>
-                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px;">
+                    </div>
+
+                    <!-- Off Season Rates -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Off Season Rates (Jan - Mid March)</h4>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;"></div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
+                                
+                                <div style="text-align: left;"><strong>Weekday Walking:</strong></div>
+                                <div>$12</div>
+                                <div>$22</div>
+                                
+                                <div style="text-align: left;"><strong>Weekday w/Cart:</strong></div>
+                                <div>$22</div>
+                                <div>$42</div>
+                                
+                                <div style="text-align: left;"><strong>Weekend Walking:</strong></div>
+                                <div>$16</div>
+                                <div>$28</div>
+                                
+                                <div style="text-align: left;"><strong>Weekend w/Cart:</strong></div>
+                                <div>$28</div>
+                                <div>$50</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Junior Rates -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Junior Rates (15 & Under)</h4>
+                        <div style="background: #e8f4ea; padding: 1rem; border-radius: 8px;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
-                                <div><strong>Green Fees:</strong></div>
-                                <div>$25 - $36</div>
-                                <div><strong>Cart Rental:</strong></div>
-                                <div>Available</div>
-                                <div><strong>Walking:</strong></div>
-                                <div>Allowed</div>
-                                <div><strong>Junior Rates:</strong></div>
-                                <div>Ages 15 & Under</div>
+                                <div><strong>18 Holes:</strong></div>
+                                <div>$15</div>
+                                <div><strong>9 Holes:</strong></div>
+                                <div>$10</div>
                             </div>
                         </div>
                     </div>
 
                     <div style="font-size: 0.85rem; color: #666; font-style: italic; text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
                         <p><strong>For Reservations:</strong> <a href="tel:865-693-5270" style="color: #4a7c59; font-weight: 600;">(865) 693-5270</a></p>
-                        <p style="margin: 0.5rem 0;">All rates include sales tax • Rates subject to change without notice</p>
+                        <p style="margin: 0.5rem 0;">All rates include sales tax • Junior rates for ages 15 & under must walk unless playing with paid adult</p>
                     </div>
                 </div>
 
