@@ -795,5 +795,8 @@ try {
         // Load initial photos when page loads
         document.addEventListener('DOMContentLoaded', loadInitialPhotos);
     </script>
+    
+    <script src="/weather.js?v=4"></script>
+    <script src="/script.js?v=4"></script>
 </body>
 </html>
