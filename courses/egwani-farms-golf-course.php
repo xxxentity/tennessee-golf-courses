@@ -392,7 +392,7 @@ try {
     </style>
 </head>
 <body>
-    <?php include '../includes/header.php'; ?>
+    <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
