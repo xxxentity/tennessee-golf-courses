@@ -2,8 +2,8 @@
 session_start();
 require_once '../config/database.php';
 
-$course_slug = 'eagles-landing-golf-club';
-$course_name = 'Eagle\'s Landing Golf Club';
+$course_slug = 'sevierville-golf-club';
+$course_name = 'Sevierville Golf Club';
 
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eagle's Landing Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Eagle's Landing Golf Club - Premier municipal golf course in Sevierville, TN. Experience championship golf in the heart of the Great Smoky Mountains with scenic mountain views.">
+    <title>Sevierville Golf Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Sevierville Golf Club - Premier championship golf facility in Sevierville, TN. Two 18-hole courses (River & Highlands) in the heart of the Great Smoky Mountains.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/eagles-landing-golf-club/1.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/sevierville-golf-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -555,8 +555,8 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
-            <h1>Eagle's Landing Golf Club</h1>
-            <p>Championship Municipal Golf • Sevierville, Tennessee</p>
+            <h1>Sevierville Golf Club</h1>
+            <p>Championship Golf Facility • Sevierville, Tennessee</p>
             <div class="course-rating">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
@@ -594,24 +594,24 @@ try {
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
                     <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+                            <span class="spec-label">Courses:</span>
+                            <span class="spec-value">2 x 18-hole + 9-hole</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                            <span class="spec-label">River Course:</span>
+                            <span class="spec-value">Par 72</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,027</span>
+                            <span class="spec-label">Highlands Course:</span>
+                            <span class="spec-value">Par 70</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">D.J. DeVictor</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1994</span>
+                            <span class="spec-label">Established:</span>
+                            <span class="spec-value">1994 (Expanded 2011)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
@@ -645,39 +645,40 @@ try {
                     </div>
                     <div style="font-size: 0.9rem; color: #666; font-style: italic;">
                         <p>* Prices subject to change seasonally</p>
-                        <p>* Cart rental included in all rates</p>
-                        <p>* Call for current pricing and specials</p>
+                        <p>* Online tee time booking available</p>
+                        <p>* Golf attire required (collared shirts)</p>
                     </div>
                 </div>
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    1556 Old Knoxville Highway<br>
+                    1444 Old Knoxville Highway<br>
                     Sevierville, TN 37876</p>
                     
                     <p><strong>Phone:</strong><br>
                     (865) 429-4223</p>
                     
-                    <p><strong>Pro Shop:</strong><br>
-                    (865) 429-2915</p>
+                    <p><strong>Hours:</strong><br>
+                    Pro Shop: 7:00 AM - 7:00 PM<br>
+                    Driving Range: 7:00 AM - 7:00 PM</p>
                     
                     <p><strong>Website:</strong><br>
                     <a href="https://www.seviervillegolfclub.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">seviervillegolfclub.com</a></p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=1444+Old+Knoxville+Highway,+Sevierville,+TN+37876&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Eagle's Landing Golf Club Location">
+                            title="Sevierville Golf Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1444+Old+Knoxville+Highway,+Sevierville,+TN+37876" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
@@ -690,24 +691,24 @@ try {
 
             <!-- Course Description -->
             <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Eagle's Landing Golf Club</h3>
-                <p>Eagle's Landing Golf Club, now known as the Sevierville Golf Club, is a premier 18-hole championship municipal golf course that opened in 1994 in the heart of the Great Smoky Mountains. Designed by D.J. DeVictor, this par-72 course stretches 7,027 yards from the gold tees and offers golfers a challenging yet rewarding experience with stunning mountain scenery.</p>
+                <h3><i class="fas fa-golf-ball"></i> About Sevierville Golf Club</h3>
+                <p>Sevierville Golf Club (formerly Eagle's Landing Golf Club) is a premier championship golf facility that originally opened in 1994 and was expanded in 2011. Located just north of Pigeon Forge in the heart of the Great Smoky Mountains, this municipal golf facility offers golfers an exceptional multi-course experience with spectacular mountain views.</p>
                 
                 <br>
                 
-                <p>Recently named Best Public Golf Course the last two years by the Tennessee Turfgrass Association and recognized by Golf Advisor as one of the top 50 US Courses, Eagle's Landing has established itself as one of Tennessee's premier golf destinations.</p>
+                <p>The facility features two championship 18-hole courses designed by D.J. DeVictor, plus a 9-hole option. <strong>The River Course</strong> (par 72) plays along and across the scenic Little Pigeon River, while <strong>The Highlands Course</strong> (par 70) winds through rolling hills and fresh water mountain ponds.</p>
                 
                 <br>
                 
-                <p>The course features Bermuda grass fairways and bent grass greens, providing excellent playing conditions year-round. With five different tee options ranging from 4,986 to 7,027 yards, the course accommodates golfers of all skill levels while maintaining its championship character.</p>
+                <p>Recognized by Golf Advisor as one of the top 50 US Courses and awarded a 4-star rating by Golf Digest, Sevierville Golf Club has established itself as a "resort class facility" operating on a daily fee basis. The course was nominated for "Best Public Course" award in 1995.</p>
                 
                 <br>
                 
-                <p>Located along the Little Pigeon River, the course benefits from its proximity to the Great Smoky Mountains, offering majestic scenery and fresh mountain air. The layout features strategic water hazards and well-placed bunkers that reward precision and course management.<br><br></p>
+                <p>The facility offers a complete golf experience with an extensive driving range, chipping area, putting green, and a full-service clubhouse with Mulligan's restaurant featuring mountain and river views. The pro shop is fully stocked and private dining facilities are available for events.<br><br></p>
                 
-                <p>What sets Eagle's Landing apart is its municipal ownership, ensuring affordable green fees while maintaining championship-quality conditions. The course is cart-only, ensuring pace of play and course protection.<br><br></p>
+                <p>What sets Sevierville Golf Club apart is its combination of championship-quality golf with affordability and accessibility. The courses accommodate all skill levels while providing the challenge and beauty that serious golfers demand.<br><br></p>
                 
-                <p>The facility is conveniently located near major tourist attractions including <a href="https://www.dollywood.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Dollywood</a>, <a href="https://www.gatlinburg.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Gatlinburg</a>, and the <a href="https://www.nps.gov/grsm/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Great Smoky Mountains National Park</a>, making it an ideal stop for golf vacations and family trips to the area.</p>
+                <p>Located in the heart of Tennessee's most popular tourist destination, the club is perfectly positioned near <a href="https://www.dollywood.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Dollywood</a>, <a href="https://www.gatlinburg.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Gatlinburg</a>, and the <a href="https://www.nps.gov/grsm/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Great Smoky Mountains National Park</a>, making it an ideal destination for golf vacations and family trips.</p>
             </div>
 
             <!-- Amenities -->
@@ -716,7 +717,7 @@ try {
                 <div class="amenities-grid">
                     <div class="amenity-item">
                         <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
+                        <span>Extensive Driving Range</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-bullseye"></i>
@@ -724,7 +725,7 @@ try {
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
+                        <span>Full-Service Pro Shop</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-utensils"></i>
@@ -740,11 +741,15 @@ try {
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-trophy"></i>
-                        <span>Practice Bunkers</span>
+                        <span>Chipping Area</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Banquet Facility</span>
+                        <span>Private Event Dining</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-laptop"></i>
+                        <span>Online Booking</span>
                     </div>
                 </div>
             </div>
@@ -756,15 +761,15 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>Course Gallery</h2>
-                <p>Experience the beauty of Eagle's Landing Golf Club</p>
+                <p>Experience the beauty of Sevierville Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/sevierville-golf-club/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
@@ -776,7 +781,7 @@ try {
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Eagle's Landing Golf Club - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Sevierville Golf Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
             <div class="full-gallery-grid" id="fullGalleryGrid">
@@ -790,7 +795,7 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Eagle's Landing</p>
+                <p>Read reviews from golfers who have experienced Sevierville Golf Club</p>
             </div>
             
             <?php if (isset($success_message)): ?>
@@ -812,7 +817,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="eagles-rating-stars">
+                            <div class="star-rating" id="sevierville-rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -873,10 +878,10 @@ try {
     <section class="booking-section">
         <div class="container">
             <div class="booking-content">
-                <h2>Ready to Play Eagle's Landing?</h2>
+                <h2>Ready to Play Sevierville Golf Club?</h2>
                 <p>Book your tee time today and experience championship golf in the Smoky Mountains</p>
                 <div class="booking-buttons">
-                    <a href="https://www.seviervillegolfclub.com/" target="_blank" class="btn-book">Book Tee Time</a>
+                    <a href="https://www.seviervillegolfclub.com/" target="_blank" class="btn-book">Book Tee Time Online</a>
                     <a href="tel:865-429-4223" class="btn-contact">Contact Pro Shop</a>
                 </div>
             </div>
@@ -932,36 +937,8 @@ try {
         </div>
     </footer>
 
-    <!-- Name Change Notification Modal -->
-    <div id="nameChangeModal" class="modal" style="display: block;">
-        <div class="modal-content" style="max-width: 500px; margin: 10% auto;">
-            <div style="background: linear-gradient(135deg, #2c5234, #4a7c59); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
-                <h3 style="margin: 0 0 1rem 0; font-size: 1.8rem;">📍 Course Name Change Notice</h3>
-                <p style="margin-bottom: 1.5rem; opacity: 0.9;">This course is now operating as <strong>Sevierville Golf Club</strong> (formerly Eagle's Landing Golf Club). The facility expanded in 2011 with additional courses and amenities.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="stayOnCurrentPage()" style="background: transparent; border: 2px solid white; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-                        View Historical Info
-                    </button>
-                    <button onclick="goToNewPage()" style="background: #ffd700; color: #2c5234; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-                        Go to Current Info
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="/script.js?v=5"></script>
     <script>
-        // Name Change Modal Functions
-        function stayOnCurrentPage() {
-            document.getElementById('nameChangeModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function goToNewPage() {
-            window.location.href = '/courses/sevierville-golf-club';
-        }
-        
         // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
@@ -974,8 +951,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/eagles-landing-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/eagles-landing-golf-club/${i}.jpeg`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/sevierville-golf-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/sevierville-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
@@ -1004,9 +981,9 @@ try {
         });
     </script>
     <script>
-        // Interactive star rating functionality for Eagle's Landing
+        // Interactive star rating functionality for Sevierville Golf Club
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('eagles-rating-stars');
+            const ratingContainer = document.getElementById('sevierville-rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');

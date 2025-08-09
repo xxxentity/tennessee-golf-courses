@@ -45,6 +45,7 @@ RewriteRule ^courses/springhouse-golf-club/?$ courses/springhouse-golf-club.php 
 RewriteRule ^courses/sweetens-cove-golf-club/?$ courses/sweetens-cove-golf-club.php [L]
 RewriteRule ^courses/warriors-path-state-park-golf-course/?$ courses/warriors-path-state-park-golf-course.php [L]
 RewriteRule ^courses/eagles-landing-golf-club/?$ courses/eagles-landing-golf-club.php [L]
+RewriteRule ^courses/sevierville-golf-club/?$ courses/sevierville-golf-club.php [L]
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]

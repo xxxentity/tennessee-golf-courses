@@ -675,6 +675,21 @@ $courses_static = [
         'designer' => 'D.J. DeVictor',
         'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'Restaurant', 'Cart Included', 'PGA Instruction', 'Practice Bunkers', 'Banquet Facility'],
         'slug' => 'eagles-landing-golf-club'
+    ],
+    [
+        'id' => 45,
+        'name' => 'Sevierville Golf Club',
+        'location' => 'Sevierville, TN',
+        'region' => 'Smoky Mountains Area',
+        'description' => 'Premier championship golf facility with two 18-hole courses (River & Highlands) plus 9-hole option. Recognized by Golf Advisor as one of top 50 US Courses.',
+        'image' => '/images/courses/sevierville-golf-club/1.jpeg',
+        'price_range' => '$29-79',
+        'difficulty' => 'Intermediate',
+        'holes' => '36 + 9',
+        'par' => '70/72',
+        'designer' => 'D.J. DeVictor',
+        'amenities' => ['Extensive Driving Range', 'Putting Green', 'Pro Shop', 'Restaurant', 'Cart Included', 'PGA Instruction', 'Chipping Area', 'Online Booking', 'Event Dining'],
+        'slug' => 'sevierville-golf-club'
     ]
 ];
 
