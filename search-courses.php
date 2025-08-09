@@ -52,7 +52,11 @@ $courses = [
     ['name' => 'Willow Creek Golf Club', 'location' => 'Knoxville, TN', 'slug' => 'willow-creek-golf-club'],
     ['name' => 'Whittle Springs Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'whittle-springs-golf-course'],
     ['name' => 'White Plains Golf Course', 'location' => 'Memphis, TN', 'slug' => 'white-plains-golf-course'],
-    ['name' => 'Cheekwood Golf Club', 'location' => 'Nashville, TN', 'slug' => 'cheekwood-golf-club']
+    ['name' => 'Cheekwood Golf Club', 'location' => 'Nashville, TN', 'slug' => 'cheekwood-golf-club'],
+    ['name' => 'Sweetens Cove Golf Club', 'location' => 'South Pittsburg, TN', 'slug' => 'sweetens-cove-golf-club'],
+    ['name' => 'Warrior\'s Path State Park Golf Course', 'location' => 'Kingsport, TN', 'slug' => 'warriors-path-state-park-golf-course'],
+    ['name' => 'Eagle\'s Landing Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'eagles-landing-golf-club'],
+    ['name' => 'Sevierville Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'sevierville-golf-club']
 ];
 
 // Search for matches (case-insensitive)
