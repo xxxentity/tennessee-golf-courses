@@ -692,6 +692,21 @@ $courses_static = [
         'slug' => 'sevierville-golf-club'
     ],
     [
+        'id' => 47,
+        'name' => 'Dead Horse Lake Golf Course',
+        'location' => 'Louisville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Family-owned public course designed by Joe Parker in 1972. Features rolling landscape with Dead Horse Lake throughout 18 holes, offering a relaxed environment for golfers of all skill levels.',
+        'image' => '/images/courses/dead-horse-lake-golf-course/1.jpeg',
+        'price_range' => '$25-36',
+        'difficulty' => 'Beginner',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Joe Parker',
+        'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Restaurant/Bar', 'Cart Rentals', 'PGA Professional', 'Banquet Hall', 'Walking Allowed', 'Club Rental', 'Family Friendly'],
+        'slug' => 'dead-horse-lake-golf-course'
+    ],
+    [
         'id' => 46,
         'name' => 'Bear Trace at Cumberland Mountain',
         'location' => 'Crossville, TN',
