@@ -692,6 +692,21 @@ $courses_static = [
         'slug' => 'sevierville-golf-club'
     ],
     [
+        'id' => 48,
+        'name' => 'Egwani Farms Golf Course',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Built in 1991 on former farmland with river views on 7 holes. Extensively renovated in 2016 with championship Bermuda greens, GPS carts, and 15 acres of natural fescue.',
+        'image' => '/images/courses/egwani-farms-golf-course/1.jpeg',
+        'price_range' => '$29-59',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Original Layout',
+        'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Little River Deli', 'GPS Carts', 'Teaching Pro', 'Short Game Area', 'Historic Clubhouse', 'River Views', 'Rental Clubs'],
+        'slug' => 'egwani-farms-golf-course'
+    ],
+    [
         'id' => 47,
         'name' => 'Dead Horse Lake Golf Course',
         'location' => 'Louisville, TN',
