@@ -692,6 +692,21 @@ $courses_static = [
         'slug' => 'sevierville-golf-club'
     ],
     [
+        'id' => 49,
+        'name' => 'Lambert Acres Golf Club',
+        'location' => 'Maryville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Ray Franklin designed 27-hole layout from 1965 in the foothills of the Great Smoky Mountains. Features three 9-hole courses with rolling hills and scenic mountain views.',
+        'image' => '/images/courses/lambert-acres-golf-club/1.jpeg',
+        'price_range' => '$32-50',
+        'difficulty' => 'Intermediate',
+        'holes' => 27,
+        'par' => 72,
+        'designer' => 'Ray Franklin',
+        'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'Snack Bar', 'Cart Rentals', 'Club Rentals', 'Chipping Area', 'Mountain Views', 'Open Year-Round', 'Bus Parking'],
+        'slug' => 'lambert-acres-golf-club'
+    ],
+    [
         'id' => 48,
         'name' => 'Egwani Farms Golf Course',
         'location' => 'Knoxville, TN',

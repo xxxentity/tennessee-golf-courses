@@ -57,6 +57,7 @@ $courses = [
     ['name' => 'Warrior\'s Path State Park Golf Course', 'location' => 'Kingsport, TN', 'slug' => 'warriors-path-state-park-golf-course'],
     ['name' => 'Eagle\'s Landing Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'eagles-landing-golf-club'],
     ['name' => 'Sevierville Golf Club', 'location' => 'Sevierville, TN', 'slug' => 'sevierville-golf-club'],
+    ['name' => 'Lambert Acres Golf Club', 'location' => 'Maryville, TN', 'slug' => 'lambert-acres-golf-club'],
     ['name' => 'Egwani Farms Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'egwani-farms-golf-course'],
     ['name' => 'Dead Horse Lake Golf Course', 'location' => 'Louisville, TN', 'slug' => 'dead-horse-lake-golf-course'],
     ['name' => 'Bear Trace at Cumberland Mountain', 'location' => 'Crossville, TN', 'slug' => 'bear-trace-cumberland-mountain']
