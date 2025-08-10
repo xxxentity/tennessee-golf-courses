@@ -46,6 +46,7 @@ RewriteRule ^courses/sweetens-cove-golf-club/?$ courses/sweetens-cove-golf-club.
 RewriteRule ^courses/warriors-path-state-park-golf-course/?$ courses/warriors-path-state-park-golf-course.php [L]
 RewriteRule ^courses/eagles-landing-golf-club/?$ courses/eagles-landing-golf-club.php [L]
 RewriteRule ^courses/sevierville-golf-club/?$ courses/sevierville-golf-club.php [L]
+RewriteRule ^courses/pine-oaks-golf-course/?$ courses/pine-oaks-golf-course.php [L]
 RewriteRule ^courses/lambert-acres-golf-club/?$ courses/lambert-acres-golf-club.php [L]
 RewriteRule ^courses/egwani-farms-golf-course/?$ courses/egwani-farms-golf-course.php [L]
 RewriteRule ^courses/dead-horse-lake-golf-course/?$ courses/dead-horse-lake-golf-course.php [L]

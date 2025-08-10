@@ -692,6 +692,21 @@ $courses_static = [
         'slug' => 'sevierville-golf-club'
     ],
     [
+        'id' => 50,
+        'name' => 'Pine Oaks Golf Course',
+        'location' => 'Johnson City, TN',
+        'region' => 'Tri-Cities Area',
+        'description' => 'Historic municipal course designed by Alexander G. McKay in 1963. Originally built to provide affordable golf for the common man with scenic mountain views and quality conditions.',
+        'image' => '/images/courses/pine-oaks-golf-course/1.jpeg',
+        'price_range' => '$15-40',
+        'difficulty' => 'Beginner',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Alexander G. McKay',
+        'amenities' => ['Practice Facility', 'Pro Shop', 'Cart Rentals', 'Club Rentals', 'Walking Friendly', 'Online Booking', 'Mountain Views', 'Affordable Rates', 'Extended Hours', 'All Skill Levels'],
+        'slug' => 'pine-oaks-golf-course'
+    ],
+    [
         'id' => 49,
         'name' => 'Lambert Acres Golf Club',
         'location' => 'Maryville, TN',
