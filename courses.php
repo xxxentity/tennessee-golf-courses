@@ -737,6 +737,21 @@ $courses_static = [
         'slug' => 'druid-hills-golf-club'
     ],
     [
+        'id' => 53,
+        'name' => 'Blackthorn Club',
+        'location' => 'Jonesborough, TN',
+        'region' => 'Tri-Cities Area',
+        'description' => 'Exclusive private championship golf course stretching over 7,100 yards from the back tees. Features challenging 74.5/144 rating with multiple tee options in the greater Tri-Cities area.',
+        'image' => '/images/courses/blackthorn-club/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Expert',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Championship Design',
+        'amenities' => ['Championship Golf', 'Practice Facilities', 'Pro Shop', 'Fine Dining', 'Club Rentals', 'Golf Instruction', 'Member Events', 'Private Club', 'Tournament Host', 'Multiple Tees', 'Mountain Setting', 'Exclusive Access'],
+        'slug' => 'blackthorn-club'
+    ],
+    [
         'id' => 49,
         'name' => 'Lambert Acres Golf Club',
         'location' => 'Maryville, TN',
