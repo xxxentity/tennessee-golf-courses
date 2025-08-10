@@ -732,7 +732,7 @@ $courses_static = [
         'difficulty' => 'Advanced',
         'holes' => 18,
         'par' => 72,
-        'designer' => 'Resort Design',
+        'designer' => 'Leon Howard',
         'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'The Legends Restaurant', 'Snack Bar', 'Club Rentals', 'Golf Lessons', 'Group Clinics', 'Event Hosting', 'Resort Community', 'Mountain Views', 'Year-Round Play'],
         'slug' => 'druid-hills-golf-club'
     ],

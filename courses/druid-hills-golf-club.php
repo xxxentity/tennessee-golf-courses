@@ -442,12 +442,16 @@ try {
                             <span class="spec-value">6,270 (Blue Tees)</span>
                         </div>
                         <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Leon Howard</span>
+                        </div>
+                        <div class="spec-item">
                             <span class="spec-label">Course Rating:</span>
                             <span class="spec-value">71.1 / 128 Slope</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Elevation:</span>
-                            <span class="spec-value">Highest Point in Fairfield Glade</span>
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1970</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
@@ -459,18 +463,78 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     
-                    <div style="text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
-                        <h4 style="color: #2c5234; margin-bottom: 1rem;">Contact for Current Rates</h4>
-                        <p style="margin-bottom: 1rem; color: #666;">Please call for seasonal pricing, resort packages, and tee time availability.</p>
-                        <div style="background: #4a7c59; color: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                            <p style="margin: 0; font-weight: 600;">
-                                <i class="fas fa-phone"></i> (931) 456-2864
-                            </p>
+                    <!-- Member Rates -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Member Rates</h4>
+                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; text-align: left;">Rate Type</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
+                                
+                                <div style="text-align: left;"><strong>Preferred Member:</strong></div>
+                                <div>$23</div>
+                                <div>$45</div>
+                                
+                                <div style="text-align: left;"><strong>Regular Member:</strong></div>
+                                <div>$32</div>
+                                <div>$61</div>
+                                
+                                <div style="text-align: left;"><strong>Preferred After 2pm/4pm:</strong></div>
+                                <div>$17</div>
+                                <div>$33</div>
+                                
+                                <div style="text-align: left;"><strong>Member After 2pm/4pm:</strong></div>
+                                <div>$28</div>
+                                <div>$51</div>
+                                
+                                <div style="text-align: left;"><strong>Junior/Super Senior (85+):</strong></div>
+                                <div>$20</div>
+                                <div>$39</div>
+                                
+                                <div style="text-align: left;"><strong>Member Walking:</strong></div>
+                                <div>$15</div>
+                                <div>$28</div>
+                                
+                                <div style="text-align: left;"><strong>PGA/LPGA:</strong></div>
+                                <div>-</div>
+                                <div>$39</div>
+                            </div>
                         </div>
-                        <p style="font-size: 0.85rem; color: #666; font-style: italic;">
-                            Resort packages available • Annual memberships offered<br>
-                            Multiple tee options for all skill levels
-                        </p>
+                    </div>
+
+                    <!-- Guest Rates -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Guest Rates</h4>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; text-align: left;">Guest Type</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
+                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
+                                
+                                <div style="text-align: left;"><strong>Guest w/ Member:</strong></div>
+                                <div>$42</div>
+                                <div>$80</div>
+                                
+                                <div style="text-align: left;"><strong>Guest After 2pm/4pm:</strong></div>
+                                <div>$28</div>
+                                <div>$51</div>
+                                
+                                <div style="text-align: left;"><strong>Unaccompanied Guest:</strong></div>
+                                <div>$47</div>
+                                <div>$90</div>
+                                
+                                <div style="text-align: left;"><strong>Unaccompanied After 2pm:</strong></div>
+                                <div>-</div>
+                                <div>$51</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.85rem; color: #666; font-style: italic; text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <p><strong>For Reservations:</strong> <a href="tel:931-456-2864" style="color: #4a7c59; font-weight: 600;">(931) 456-2864</a></p>
+                        <p style="margin: 0.5rem 0;">Resort packages available • Annual memberships offered</p>
+                        <p style="margin: 0;">**Twilight rates apply after specified times</p>
                     </div>
                 </div>
 
@@ -512,7 +576,7 @@ try {
             <!-- Course Description -->
             <div class="course-info-card">
                 <h3><i class="fas fa-golf-ball"></i> About Druid Hills Golf Club</h3>
-                <p>Druid Hills Golf Club sits majestically on the highest point in Fairfield Glade, offering spectacular vistas of the surrounding Cumberland Mountains. This championship 18-hole, par 72 course features rolling, tree-lined fairways that wind through the natural beauty of the Cumberland Plateau, creating a true test of golf for players of all skill levels.</p>
+                <p>Druid Hills Golf Club sits majestically on the highest point in Fairfield Glade, offering spectacular vistas of the surrounding Cumberland Mountains. This championship 18-hole, par 72 course was designed by Leon Howard in 1970 and features rolling, tree-lined fairways that wind through the natural beauty of the Cumberland Plateau, creating a true test of golf for players of all skill levels.</p>
                 
                 <br>
                 
