@@ -722,6 +722,21 @@ $courses_static = [
         'slug' => 'laurel-valley-country-club'
     ],
     [
+        'id' => 52,
+        'name' => 'Druid Hills Golf Club',
+        'location' => 'Fairfield Glade, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Championship resort course on the highest point in Fairfield Glade featuring rolling, tree-lined fairways, undulating bent grass greens, and spectacular Cumberland Mountain vistas.',
+        'image' => '/images/courses/druid-hills-golf-club/1.jpeg',
+        'price_range' => 'Call for Rates',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Resort Design',
+        'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'The Legends Restaurant', 'Snack Bar', 'Club Rentals', 'Golf Lessons', 'Group Clinics', 'Event Hosting', 'Resort Community', 'Mountain Views', 'Year-Round Play'],
+        'slug' => 'druid-hills-golf-club'
+    ],
+    [
         'id' => 49,
         'name' => 'Lambert Acres Golf Club',
         'location' => 'Maryville, TN',

@@ -62,7 +62,8 @@ $courses = [
     ['name' => 'Egwani Farms Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'egwani-farms-golf-course'],
     ['name' => 'Dead Horse Lake Golf Course', 'location' => 'Louisville, TN', 'slug' => 'dead-horse-lake-golf-course'],
     ['name' => 'Bear Trace at Cumberland Mountain', 'location' => 'Crossville, TN', 'slug' => 'bear-trace-cumberland-mountain'],
-    ['name' => 'Laurel Valley Country Club', 'location' => 'Townsend, TN', 'slug' => 'laurel-valley-country-club']
+    ['name' => 'Laurel Valley Country Club', 'location' => 'Townsend, TN', 'slug' => 'laurel-valley-country-club'],
+    ['name' => 'Druid Hills Golf Club', 'location' => 'Fairfield Glade, TN', 'slug' => 'druid-hills-golf-club']
 ];
 
 // Search for matches (case-insensitive)
