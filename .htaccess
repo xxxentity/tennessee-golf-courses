@@ -51,6 +51,7 @@ RewriteRule ^courses/lambert-acres-golf-club/?$ courses/lambert-acres-golf-club.
 RewriteRule ^courses/egwani-farms-golf-course/?$ courses/egwani-farms-golf-course.php [L]
 RewriteRule ^courses/dead-horse-lake-golf-course/?$ courses/dead-horse-lake-golf-course.php [L]
 RewriteRule ^courses/bear-trace-cumberland-mountain/?$ courses/bear-trace-cumberland-mountain.php [L]
+RewriteRule ^courses/laurel-valley-country-club/?$ courses/laurel-valley-country-club.php [L]
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]

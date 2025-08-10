@@ -707,6 +707,21 @@ $courses_static = [
         'slug' => 'pine-oaks-golf-course'
     ],
     [
+        'id' => 51,
+        'name' => 'Laurel Valley Country Club',
+        'location' => 'Townsend, TN',
+        'region' => 'Smoky Mountains Area',
+        'description' => 'Edmund B. Ault designed championship course nestled in a cozy valley of the Great Smoky Mountains. Now operating as Wild Laurel Golf Course, this Audubon International Certified course features bent grass greens and mountain wildlife at every turn.',
+        'image' => '/images/courses/laurel-valley-country-club/1.jpeg',
+        'price_range' => '$30-50',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Edmund B. Ault',
+        'amenities' => ['Practice Areas', 'Pro Shop', 'Tavern & Café', 'Craft Beer Bar', 'Club Rentals', 'Cart Included', 'Fitness Center', 'Swimming Pool', 'Event Hosting', 'Audubon Certified', 'Mountain Views', 'Wildlife Viewing'],
+        'slug' => 'laurel-valley-country-club'
+    ],
+    [
         'id' => 49,
         'name' => 'Lambert Acres Golf Club',
         'location' => 'Maryville, TN',

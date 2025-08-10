@@ -33,9 +33,9 @@ Heritage Golf Course - 2525 Old Harriman Hwy, Crossville 38555 [OPEN] - Public
 Holston Hills Country Club - 7644 Holston Hills Rd, Knoxville 37914 [OPEN] - Private (Donald Ross Design) ✓
 Honeywell Golf Course - 1 Honeywell Way, Morristown 37814 [OPEN] - Public
 Lambert Acres Golf Club - 2508 Asbury Rd, Knoxville 37914 [OPEN] - Public ✓
-Laurel Valley Country Club - 5964 Laurel Valley Dr, Townsend 37882 [OPEN] - Public
+Laurel Valley Country Club - 5964 Laurel Valley Dr, Townsend 37882 [OPEN] - Public ✓
 Pine Oaks Golf Course - 4825 Wynn Rd, Knoxville 37919 [OPEN] - Public ✓
-River Islands Golf Club - 9610 Kodak Rd, Kodak 37764 [OPEN] - Public
+River Islands Golf Club - 9610 Kodak Rd, Kodak 37764 [OPEN] - Public ✓
 Smoky Mountain Country Club - 1 Country Club Dr, Sevierville 37862 [OPEN] - Private
 Tennessee National Golf Club - 1340 Clubhouse Dr, Loudon 37774 [OPEN] - Semi-Private
 Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 [OPEN] - Public ✓
