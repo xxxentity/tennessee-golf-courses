@@ -366,30 +366,30 @@ $article = [
                     <!-- Product #5 -->
                     <div class="product-card" id="wilson-staff-model">
                         <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model Golf Ball" loading="lazy">
                         
-                        <p>The TaylorMade TP5 and TP5x earn our top spot by delivering the best overall performance for the widest range of skilled golfers. The new 360° ClearPath Alignment and re-engineered core design make these the most complete tour balls available in 2025.</p>
+                        <p>The Wilson Staff Model represents the best value in tour-quality golf balls for 2025. Available in two versions to suit different player preferences, these four-piece urethane balls deliver exceptional performance at a price point significantly below the competition.</p>
 
                         <div class="product-specs">
                             <div class="spec-row">
                                 <span class="spec-label">Construction:</span>
-                                <span class="spec-value">5-layer tour ball</span>
+                                <span class="spec-value">4-piece with urethane cover</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">New Feature:</span>
-                                <span class="spec-value">360° ClearPath Alignment</span>
+                                <span class="spec-label">Compression:</span>
+                                <span class="spec-value">Staff Model (Lower) / Model X (Higher)</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Core Design:</span>
-                                <span class="spec-value">Re-engineered multi-mantle layers</span>
+                                <span class="spec-label">Cover Technology:</span>
+                                <span class="spec-value">3SIX2 seamless urethane</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Cover:</span>
-                                <span class="spec-value">Tour Urethane (most aggressive yet)</span>
+                                <span class="spec-label">Dimple Pattern:</span>
+                                <span class="spec-value">362 dimples</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">TP5x Claim:</span>
-                                <span class="spec-value">Half club longer than previous</span>
+                                <span class="spec-label">Best For:</span>
+                                <span class="spec-value">All swing speeds seeking tour performance</span>
                             </div>
                         </div>
 
@@ -397,26 +397,26 @@ $article = [
                             <div class="pros">
                                 <h4>Pros</h4>
                                 <ul>
-                                    <li>Best combination of distance and spin</li>
-                                    <li>Superior greenside performance</li>
-                                    <li>Innovative alignment system</li>
-                                    <li>Two models for different preferences</li>
-                                    <li>Slightly lower price than Pro V1</li>
+                                    <li>Outstanding value for tour-level performance</li>
+                                    <li>Two compression options to suit different players</li>
+                                    <li>Excellent spin control around greens</li>
+                                    <li>Impressive distance off the driver</li>
+                                    <li>Durable construction</li>
                                 </ul>
                             </div>
                             <div class="cons">
                                 <h4>Cons</h4>
                                 <ul>
-                                    <li>Firmer feel than some competitors</li>
-                                    <li>May be too low spinning for some</li>
-                                    <li>Alignment graphics not for everyone</li>
+                                    <li>Less brand recognition than competitors</li>
+                                    <li>Limited color options</li>
+                                    <li>Slightly firmer feel than some prefer</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <p>The TP5 offers a perfect balance of soft feel and performance, while the TP5x is engineered for maximum distance with its lower spin profile. Rory McIlroy's switch from TP5x to TP5 at the start of 2025 highlights the standard TP5's improved ball speed and versatility. The combination of touch and performance around the greens simply can't be matched by rivals.</p>
+                        <p>In testing, the Wilson Staff Model X produced impressive driver numbers with 161 mph ball speed, 2,300 RPM spin, and 285 yards carry totaling 305 yards. The standard Staff Model offers a softer feel, particularly noticeable on wedge shots, making it an excellent alternative to the Pro V1 at a fraction of the cost.</p>
 
-                        <a href="https://amzn.to/4myTvlg" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                        <a href="https://amzn.to/3Jcuw93" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
                     <!-- Product #2 -->
@@ -587,33 +587,33 @@ $article = [
                         <a href="https://amzn.to/4fsfV5w" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
-                    <!-- Product #5 -->
-                    <div class="product-card" id="wilson-staff-model">
-                        <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model Golf Ball" loading="lazy">
+                    <!-- Product #1 -->
+                    <div class="product-card" id="taylormade-tp5">
+                        <h3 class="product-title">1. TaylorMade TP5/TP5x</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 Golf Ball" loading="lazy">
                         
-                        <p>The Wilson Staff Model represents the best value in tour-quality golf balls for 2025. Available in two versions to suit different player preferences, these four-piece urethane balls deliver exceptional performance at a price point significantly below the competition.</p>
+                        <p>The TaylorMade TP5 and TP5x earn our top spot by delivering the best overall performance for the widest range of skilled golfers. The new 360° ClearPath Alignment and re-engineered core design make these the most complete tour balls available in 2025.</p>
 
                         <div class="product-specs">
                             <div class="spec-row">
                                 <span class="spec-label">Construction:</span>
-                                <span class="spec-value">4-piece with urethane cover</span>
+                                <span class="spec-value">5-layer tour ball</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Compression:</span>
-                                <span class="spec-value">Staff Model (Lower) / Model X (Higher)</span>
+                                <span class="spec-label">New Feature:</span>
+                                <span class="spec-value">360° ClearPath Alignment</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Cover Technology:</span>
-                                <span class="spec-value">3SIX2 seamless urethane</span>
+                                <span class="spec-label">Core Design:</span>
+                                <span class="spec-value">Re-engineered multi-mantle layers</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Dimple Pattern:</span>
-                                <span class="spec-value">362 dimples</span>
+                                <span class="spec-label">Cover:</span>
+                                <span class="spec-value">Tour Urethane (most aggressive yet)</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Best For:</span>
-                                <span class="spec-value">All swing speeds seeking tour performance</span>
+                                <span class="spec-label">TP5x Claim:</span>
+                                <span class="spec-value">Half club longer than previous</span>
                             </div>
                         </div>
 
@@ -621,26 +621,26 @@ $article = [
                             <div class="pros">
                                 <h4>Pros</h4>
                                 <ul>
-                                    <li>Outstanding value for tour-level performance</li>
-                                    <li>Two compression options to suit different players</li>
-                                    <li>Excellent spin control around greens</li>
-                                    <li>Impressive distance off the driver</li>
-                                    <li>Durable construction</li>
+                                    <li>Best combination of distance and spin</li>
+                                    <li>Superior greenside performance</li>
+                                    <li>Innovative alignment system</li>
+                                    <li>Two models for different preferences</li>
+                                    <li>Slightly lower price than Pro V1</li>
                                 </ul>
                             </div>
                             <div class="cons">
                                 <h4>Cons</h4>
                                 <ul>
-                                    <li>Less brand recognition than competitors</li>
-                                    <li>Limited color options</li>
-                                    <li>Slightly firmer feel than some prefer</li>
+                                    <li>Firmer feel than some competitors</li>
+                                    <li>May be too low spinning for some</li>
+                                    <li>Alignment graphics not for everyone</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <p>In testing, the Wilson Staff Model X produced impressive driver numbers with 161 mph ball speed, 2,300 RPM spin, and 285 yards carry totaling 305 yards. The standard Staff Model offers a softer feel, particularly noticeable on wedge shots, making it an excellent alternative to the Pro V1 at a fraction of the cost.</p>
+                        <p>The TP5 offers a perfect balance of soft feel and performance, while the TP5x is engineered for maximum distance with its lower spin profile. Rory McIlroy's switch from TP5x to TP5 at the start of 2025 highlights the standard TP5's improved ball speed and versatility. The combination of touch and performance around the greens simply can't be matched by rivals.</p>
 
-                        <a href="https://amzn.to/3Jcuw93" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                        <a href="https://amzn.to/4myTvlg" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
                     <h2>Comparison Table</h2>
