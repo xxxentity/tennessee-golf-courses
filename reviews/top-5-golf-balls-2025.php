@@ -354,241 +354,17 @@ $article = [
 
                     <h2>Quick Overview: Top 5 Golf Balls of 2025</h2>
                     <ol>
-                        <li><strong>Wilson Staff Model/Model X</strong> - Best Value Tour Ball</li>
-                        <li><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</li>
-                        <li><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</li>
-                        <li><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</li>
-                        <li><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</li>
+                        <li><a href="#taylormade-tp5" style="color: var(--secondary-color); text-decoration: none;"><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</a></li>
+                        <li><a href="#titleist-pro-v1" style="color: var(--secondary-color); text-decoration: none;"><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</a></li>
+                        <li><a href="#callaway-chrome-soft" style="color: var(--secondary-color); text-decoration: none;"><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</a></li>
+                        <li><a href="#srixon-z-star" style="color: var(--secondary-color); text-decoration: none;"><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</a></li>
+                        <li><a href="#wilson-staff-model" style="color: var(--secondary-color); text-decoration: none;"><strong>Wilson Staff Model/Model X</strong> - Best Value Tour Ball</a></li>
                     </ol>
 
                     <h2>Detailed Reviews</h2>
 
-                    <!-- Product #5 -->
-                    <div class="product-card">
-                        <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model Golf Ball" loading="lazy">
-                        
-                        <p>The Wilson Staff Model represents the best value in tour-quality golf balls for 2025. Available in two versions to suit different player preferences, these four-piece urethane balls deliver exceptional performance at a price point significantly below the competition.</p>
-
-                        <div class="product-specs">
-                            <div class="spec-row">
-                                <span class="spec-label">Construction:</span>
-                                <span class="spec-value">4-piece with urethane cover</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Compression:</span>
-                                <span class="spec-value">Staff Model (Lower) / Model X (Higher)</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Cover Technology:</span>
-                                <span class="spec-value">3SIX2 seamless urethane</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Dimple Pattern:</span>
-                                <span class="spec-value">362 dimples</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Best For:</span>
-                                <span class="spec-value">All swing speeds seeking tour performance</span>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Pros</h4>
-                                <ul>
-                                    <li>Outstanding value for tour-level performance</li>
-                                    <li>Two compression options to suit different players</li>
-                                    <li>Excellent spin control around greens</li>
-                                    <li>Impressive distance off the driver</li>
-                                    <li>Durable construction</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>Cons</h4>
-                                <ul>
-                                    <li>Less brand recognition than competitors</li>
-                                    <li>Limited color options</li>
-                                    <li>Slightly firmer feel than some prefer</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p>In testing, the Wilson Staff Model X produced impressive driver numbers with 161 mph ball speed, 2,300 RPM spin, and 285 yards carry totaling 305 yards. The standard Staff Model offers a softer feel, particularly noticeable on wedge shots, making it an excellent alternative to the Pro V1 at a fraction of the cost.</p>
-
-                        <a href="#" class="buy-button">Check Current Price</a>
-                    </div>
-
-                    <!-- Product #4 -->
-                    <div class="product-card">
-                        <h3 class="product-title">4. Srixon Z-Star 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 Golf Ball" loading="lazy">
-                        
-                        <p>The ninth generation Srixon Z-Star introduces groundbreaking sustainability features while maintaining its position as the softest tour ball on the market. The new biomass urethane cover derived from corn reduces environmental impact without compromising performance.</p>
-
-                        <div class="product-specs">
-                            <div class="spec-row">
-                                <span class="spec-label">Construction:</span>
-                                <span class="spec-value">3-piece tour ball</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Compression:</span>
-                                <span class="spec-value">88 (4 points softer than 2023)</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Core Technology:</span>
-                                <span class="spec-value">FastLayer DG Core 2.0</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Cover Material:</span>
-                                <span class="spec-value">Biomass urethane from corn</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Special Feature:</span>
-                                <span class="spec-value">Spin Skin+ coating</span>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Pros</h4>
-                                <ul>
-                                    <li>Softest compression tour ball available</li>
-                                    <li>Exceptional greenside spin and control</li>
-                                    <li>Environmentally friendly biomass cover</li>
-                                    <li>Enhanced durability with new urethane paint</li>
-                                    <li>Lower driver spin for more distance</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>Cons</h4>
-                                <ul>
-                                    <li>May be too soft for high swing speeds</li>
-                                    <li>Not the longest ball for most players</li>
-                                    <li>Limited availability compared to major brands</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p>The FastLayer DG Core 2.0 starts soft at the center and gradually firms toward the outside, optimizing spin and distance. Despite being the lowest spinning off the driver, it paradoxically offers the highest greenside spin in the Z-Star family, making it ideal for players who prioritize short game control.</p>
-
-                        <a href="#" class="buy-button">Check Current Price</a>
-                    </div>
-
-                    <!-- Product #3 -->
-                    <div class="product-card">
-                        <h3 class="product-title">3. Callaway Chrome Soft</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/3.jpeg" alt="Callaway Chrome Soft Golf Ball" loading="lazy">
-                        
-                        <p>The Callaway Chrome Soft continues to be the ideal choice for average swing speed golfers seeking tour-quality performance. With its ultra-low 65 compression and new Hyper Fast Soft Core, this ball delivers exceptional feel without sacrificing distance or control.</p>
-
-                        <div class="product-specs">
-                            <div class="spec-row">
-                                <span class="spec-label">Construction:</span>
-                                <span class="spec-value">3-piece (redesigned from 4-piece)</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Compression:</span>
-                                <span class="spec-value">65 (ultra-soft)</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Core Technology:</span>
-                                <span class="spec-value">Hyper Fast Soft Core</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Dimple Pattern:</span>
-                                <span class="spec-value">332 Seamless Tour Aero</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Ideal Swing Speed:</span>
-                                <span class="spec-value">Under 105 MPH</span>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Pros</h4>
-                                <ul>
-                                    <li>Lowest compression tour ball</li>
-                                    <li>Excellent for moderate swing speeds</li>
-                                    <li>Outstanding feel on all shots</li>
-                                    <li>Multiple alignment options available</li>
-                                    <li>Consistent high ball flight</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>Cons</h4>
-                                <ul>
-                                    <li>May spin too much for fast swingers</li>
-                                    <li>Slightly shorter than firmer balls</li>
-                                    <li>Premium price point</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p>The new urethane cover formulation increases friction for enhanced wedge spin while maintaining the soft feel Chrome Soft is known for. Available in white, yellow, and with Triple Track, TruTrack, and Truvis alignment aids, it offers more visual options than most tour balls.</p>
-
-                        <a href="#" class="buy-button">Check Current Price</a>
-                    </div>
-
-                    <!-- Product #2 -->
-                    <div class="product-card">
-                        <h3 class="product-title">2. Titleist Pro V1/Pro V1x 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 Golf Ball" loading="lazy">
-                        
-                        <p>Celebrating its 25th anniversary in 2025, the completely overhauled Titleist Pro V1 and Pro V1x continue to dominate professional tours. The new models promise more speed off the tee, better iron control, and increased wedge spin while offering improved feel.</p>
-
-                        <div class="product-specs">
-                            <div class="spec-row">
-                                <span class="spec-label">Construction:</span>
-                                <span class="spec-value">Multi-layer urethane</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Launch Date:</span>
-                                <span class="spec-value">February 2025</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Key Update:</span>
-                                <span class="spec-value">Softer feel, more speed</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Tour Usage:</span>
-                                <span class="spec-value">70% PGA, 76% LPGA, 74% DP World</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-label">Options:</span>
-                                <span class="spec-value">Pro V1 (lower flight) / Pro V1x (higher flight)</span>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h4>Pros</h4>
-                                <ul>
-                                    <li>Most played ball on professional tours</li>
-                                    <li>Proven consistency and quality control</li>
-                                    <li>New alignment options for 2025</li>
-                                    <li>Softer feel than previous generation</li>
-                                    <li>Excellent all-around performance</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h4>Cons</h4>
-                                <ul>
-                                    <li>Most expensive option</li>
-                                    <li>May not suit all swing types</li>
-                                    <li>Less forgiving than some alternatives</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <p>The 2025 Pro V1x plays noticeably softer than the 2024 version while maintaining spin characteristics, eliminating the harsh "click" feel some players disliked. Early testing shows positive launch monitor data supporting Titleist's claims of increased speed and control.</p>
-
-                        <a href="#" class="buy-button">Check Current Price</a>
-                    </div>
-
                     <!-- Product #1 -->
-                    <div class="product-card">
+                    <div class="product-card" id="taylormade-tp5">
                         <h3 class="product-title">1. TaylorMade TP5/TP5x</h3>
                         <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 Golf Ball" loading="lazy">
                         
@@ -640,7 +416,231 @@ $article = [
 
                         <p>The TP5 offers a perfect balance of soft feel and performance, while the TP5x is engineered for maximum distance with its lower spin profile. Rory McIlroy's switch from TP5x to TP5 at the start of 2025 highlights the standard TP5's improved ball speed and versatility. The combination of touch and performance around the greens simply can't be matched by rivals.</p>
 
-                        <a href="#" class="buy-button">Check Current Price</a>
+                        <a href="https://amzn.to/4myTvlg" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                    </div>
+
+                    <!-- Product #2 -->
+                    <div class="product-card" id="titleist-pro-v1">
+                        <h3 class="product-title">2. Titleist Pro V1/Pro V1x 2025</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 Golf Ball" loading="lazy">
+                        
+                        <p>Celebrating its 25th anniversary in 2025, the completely overhauled Titleist Pro V1 and Pro V1x continue to dominate professional tours. The new models promise more speed off the tee, better iron control, and increased wedge spin while offering improved feel.</p>
+
+                        <div class="product-specs">
+                            <div class="spec-row">
+                                <span class="spec-label">Construction:</span>
+                                <span class="spec-value">Multi-layer urethane</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Launch Date:</span>
+                                <span class="spec-value">February 2025</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Key Update:</span>
+                                <span class="spec-value">Softer feel, more speed</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Tour Usage:</span>
+                                <span class="spec-value">70% PGA, 76% LPGA, 74% DP World</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Options:</span>
+                                <span class="spec-value">Pro V1 (lower flight) / Pro V1x (higher flight)</span>
+                            </div>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>Pros</h4>
+                                <ul>
+                                    <li>Most played ball on professional tours</li>
+                                    <li>Proven consistency and quality control</li>
+                                    <li>New alignment options for 2025</li>
+                                    <li>Softer feel than previous generation</li>
+                                    <li>Excellent all-around performance</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>Cons</h4>
+                                <ul>
+                                    <li>Most expensive option</li>
+                                    <li>May not suit all swing types</li>
+                                    <li>Less forgiving than some alternatives</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>The 2025 Pro V1x plays noticeably softer than the 2024 version while maintaining spin characteristics, eliminating the harsh "click" feel some players disliked. Early testing shows positive launch monitor data supporting Titleist's claims of increased speed and control.</p>
+
+                        <a href="https://amzn.to/45bBFiz" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                    </div>
+
+                    <!-- Product #3 -->
+                    <div class="product-card" id="callaway-chrome-soft">
+                        <h3 class="product-title">3. Callaway Chrome Soft</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/3.jpeg" alt="Callaway Chrome Soft Golf Ball" loading="lazy">
+                        
+                        <p>The Callaway Chrome Soft continues to be the ideal choice for average swing speed golfers seeking tour-quality performance. With its ultra-low 65 compression and new Hyper Fast Soft Core, this ball delivers exceptional feel without sacrificing distance or control.</p>
+
+                        <div class="product-specs">
+                            <div class="spec-row">
+                                <span class="spec-label">Construction:</span>
+                                <span class="spec-value">3-piece (redesigned from 4-piece)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Compression:</span>
+                                <span class="spec-value">65 (ultra-soft)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Core Technology:</span>
+                                <span class="spec-value">Hyper Fast Soft Core</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Dimple Pattern:</span>
+                                <span class="spec-value">332 Seamless Tour Aero</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Ideal Swing Speed:</span>
+                                <span class="spec-value">Under 105 MPH</span>
+                            </div>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>Pros</h4>
+                                <ul>
+                                    <li>Lowest compression tour ball</li>
+                                    <li>Excellent for moderate swing speeds</li>
+                                    <li>Outstanding feel on all shots</li>
+                                    <li>Multiple alignment options available</li>
+                                    <li>Consistent high ball flight</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>Cons</h4>
+                                <ul>
+                                    <li>May spin too much for fast swingers</li>
+                                    <li>Slightly shorter than firmer balls</li>
+                                    <li>Premium price point</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>The new urethane cover formulation increases friction for enhanced wedge spin while maintaining the soft feel Chrome Soft is known for. Available in white, yellow, and with Triple Track, TruTrack, and Truvis alignment aids, it offers more visual options than most tour balls.</p>
+
+                        <a href="https://amzn.to/4mWhMCn" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                    </div>
+
+                    <!-- Product #4 -->
+                    <div class="product-card" id="srixon-z-star">
+                        <h3 class="product-title">4. Srixon Z-Star 2025</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 Golf Ball" loading="lazy">
+                        
+                        <p>The ninth generation Srixon Z-Star introduces groundbreaking sustainability features while maintaining its position as the softest tour ball on the market. The new biomass urethane cover derived from corn reduces environmental impact without compromising performance.</p>
+
+                        <div class="product-specs">
+                            <div class="spec-row">
+                                <span class="spec-label">Construction:</span>
+                                <span class="spec-value">3-piece tour ball</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Compression:</span>
+                                <span class="spec-value">88 (4 points softer than 2023)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Core Technology:</span>
+                                <span class="spec-value">FastLayer DG Core 2.0</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Cover Material:</span>
+                                <span class="spec-value">Biomass urethane from corn</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Special Feature:</span>
+                                <span class="spec-value">Spin Skin+ coating</span>
+                            </div>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>Pros</h4>
+                                <ul>
+                                    <li>Softest compression tour ball available</li>
+                                    <li>Exceptional greenside spin and control</li>
+                                    <li>Environmentally friendly biomass cover</li>
+                                    <li>Enhanced durability with new urethane paint</li>
+                                    <li>Lower driver spin for more distance</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>Cons</h4>
+                                <ul>
+                                    <li>May be too soft for high swing speeds</li>
+                                    <li>Not the longest ball for most players</li>
+                                    <li>Limited availability compared to major brands</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>The FastLayer DG Core 2.0 starts soft at the center and gradually firms toward the outside, optimizing spin and distance. Despite being the lowest spinning off the driver, it paradoxically offers the highest greenside spin in the Z-Star family, making it ideal for players who prioritize short game control.</p>
+
+                        <a href="https://amzn.to/4fsfV5w" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                    </div>
+
+                    <!-- Product #5 -->
+                    <div class="product-card" id="wilson-staff-model">
+                        <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model Golf Ball" loading="lazy">
+                        
+                        <p>The Wilson Staff Model represents the best value in tour-quality golf balls for 2025. Available in two versions to suit different player preferences, these four-piece urethane balls deliver exceptional performance at a price point significantly below the competition.</p>
+
+                        <div class="product-specs">
+                            <div class="spec-row">
+                                <span class="spec-label">Construction:</span>
+                                <span class="spec-value">4-piece with urethane cover</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Compression:</span>
+                                <span class="spec-value">Staff Model (Lower) / Model X (Higher)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Cover Technology:</span>
+                                <span class="spec-value">3SIX2 seamless urethane</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Dimple Pattern:</span>
+                                <span class="spec-value">362 dimples</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Best For:</span>
+                                <span class="spec-value">All swing speeds seeking tour performance</span>
+                            </div>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>Pros</h4>
+                                <ul>
+                                    <li>Outstanding value for tour-level performance</li>
+                                    <li>Two compression options to suit different players</li>
+                                    <li>Excellent spin control around greens</li>
+                                    <li>Impressive distance off the driver</li>
+                                    <li>Durable construction</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>Cons</h4>
+                                <ul>
+                                    <li>Less brand recognition than competitors</li>
+                                    <li>Limited color options</li>
+                                    <li>Slightly firmer feel than some prefer</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>In testing, the Wilson Staff Model X produced impressive driver numbers with 161 mph ball speed, 2,300 RPM spin, and 285 yards carry totaling 305 yards. The standard Staff Model offers a softer feel, particularly noticeable on wedge shots, making it an excellent alternative to the Pro V1 at a fraction of the cost.</p>
+
+                        <a href="https://amzn.to/3Jcuw93" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
                     <h2>Comparison Table</h2>
