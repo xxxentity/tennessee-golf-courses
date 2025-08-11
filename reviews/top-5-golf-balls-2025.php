@@ -354,11 +354,11 @@ $article = [
 
                     <h2>Quick Overview: Top 5 Golf Balls of 2025</h2>
                     <ol>
-                        <li><a href="#wilson-staff-model" style="color: var(--secondary-color); text-decoration: none;"><strong>Wilson Staff Model/Model X</strong> - Best Value Tour Ball</a></li>
-                        <li><a href="#srixon-z-star" style="color: var(--secondary-color); text-decoration: none;"><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</a></li>
-                        <li><a href="#callaway-chrome-soft" style="color: var(--secondary-color); text-decoration: none;"><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</a></li>
-                        <li><a href="#titleist-pro-v1" style="color: var(--secondary-color); text-decoration: none;"><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</a></li>
-                        <li><a href="#taylormade-tp5" style="color: var(--secondary-color); text-decoration: none;"><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</a></li>
+                        <li value="5"><a href="#wilson-staff-model" style="color: var(--secondary-color); text-decoration: none;"><strong>Wilson Staff Model/Model X</strong> - Best Value Tour Ball</a></li>
+                        <li value="4"><a href="#srixon-z-star" style="color: var(--secondary-color); text-decoration: none;"><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</a></li>
+                        <li value="3"><a href="#callaway-chrome-soft" style="color: var(--secondary-color); text-decoration: none;"><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</a></li>
+                        <li value="2"><a href="#titleist-pro-v1" style="color: var(--secondary-color); text-decoration: none;"><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</a></li>
+                        <li value="1"><a href="#taylormade-tp5" style="color: var(--secondary-color); text-decoration: none;"><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</a></li>
                     </ol>
 
                     <h2>Detailed Reviews</h2>
