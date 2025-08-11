@@ -4,6 +4,36 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'FedEx St. Jude Championship 2025: Complete Tournament Recap and Community Impact',
+        'slug' => 'fedex-st-jude-championship-2025-complete-recap-community-impact',
+        'date' => '2025-08-11',
+        'time' => '10:00 AM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Complete recap of the 2025 FedEx St. Jude Championship week featuring Justin Rose\'s playoff victory and the tournament\'s extraordinary community impact for St. Jude Children\'s Research Hospital.',
+        'image' => '/images/news/fedex-st-jude-championship-2025-complete-recap-community-impact/main.jpeg',
+        'featured' => true
+    ],
+    [
+        'title' => 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers More Heartbreak',
+        'slug' => 'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak',
+        'date' => '2025-08-10',
+        'time' => '8:15 PM',
+        'category' => 'Tournament Coverage',
+        'excerpt' => 'Justin Rose defeats J.J. Spaun in dramatic three-hole playoff to win FedEx St. Jude Championship as Tommy Fleetwood\'s quest continues.',
+        'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.jpeg',
+        'featured' => true
+    ],
+    [
+        'title' => 'Fleetwood Maintains Narrow Lead as Scheffler Charges into Contention',
+        'slug' => 'fleetwood-maintains-narrow-lead-scheffler-charges',
+        'date' => '2025-08-09',
+        'time' => '7:45 PM',
+        'category' => 'Tournament Coverage',
+        'excerpt' => 'Tommy Fleetwood holds one-shot lead entering final round as Scottie Scheffler fires 65 to surge into contention at FedEx St. Jude Championship.',
+        'image' => '/images/news/fleetwood-maintains-narrow-lead-scheffler-charges/main.jpeg',
+        'featured' => true
+    ],
+    [
         'title' => 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play',
         'slug' => 'fleetwood-takes-command-weather-halts-play',
         'date' => '2025-08-08',
