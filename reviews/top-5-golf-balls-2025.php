@@ -419,33 +419,33 @@ $article = [
                         <a href="https://amzn.to/3Jcuw93" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
-                    <!-- Product #2 -->
-                    <div class="product-card" id="titleist-pro-v1">
-                        <h3 class="product-title">2. Titleist Pro V1/Pro V1x 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 Golf Ball" loading="lazy">
+                    <!-- Product #4 -->
+                    <div class="product-card" id="srixon-z-star">
+                        <h3 class="product-title">4. Srixon Z-Star 2025</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 Golf Ball" loading="lazy">
                         
-                        <p>Celebrating its 25th anniversary in 2025, the completely overhauled Titleist Pro V1 and Pro V1x continue to dominate professional tours. The new models promise more speed off the tee, better iron control, and increased wedge spin while offering improved feel.</p>
+                        <p>The ninth generation Srixon Z-Star introduces groundbreaking sustainability features while maintaining its position as the softest tour ball on the market. The new biomass urethane cover derived from corn reduces environmental impact without compromising performance.</p>
 
                         <div class="product-specs">
                             <div class="spec-row">
                                 <span class="spec-label">Construction:</span>
-                                <span class="spec-value">Multi-layer urethane</span>
+                                <span class="spec-value">3-piece tour ball</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Launch Date:</span>
-                                <span class="spec-value">February 2025</span>
+                                <span class="spec-label">Compression:</span>
+                                <span class="spec-value">88 (4 points softer than 2023)</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Key Update:</span>
-                                <span class="spec-value">Softer feel, more speed</span>
+                                <span class="spec-label">Core Technology:</span>
+                                <span class="spec-value">FastLayer DG Core 2.0</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Tour Usage:</span>
-                                <span class="spec-value">70% PGA, 76% LPGA, 74% DP World</span>
+                                <span class="spec-label">Cover Material:</span>
+                                <span class="spec-value">Biomass urethane from corn</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Options:</span>
-                                <span class="spec-value">Pro V1 (lower flight) / Pro V1x (higher flight)</span>
+                                <span class="spec-label">Special Feature:</span>
+                                <span class="spec-value">Spin Skin+ coating</span>
                             </div>
                         </div>
 
@@ -453,26 +453,26 @@ $article = [
                             <div class="pros">
                                 <h4>Pros</h4>
                                 <ul>
-                                    <li>Most played ball on professional tours</li>
-                                    <li>Proven consistency and quality control</li>
-                                    <li>New alignment options for 2025</li>
-                                    <li>Softer feel than previous generation</li>
-                                    <li>Excellent all-around performance</li>
+                                    <li>Softest compression tour ball available</li>
+                                    <li>Exceptional greenside spin and control</li>
+                                    <li>Environmentally friendly biomass cover</li>
+                                    <li>Enhanced durability with new urethane paint</li>
+                                    <li>Lower driver spin for more distance</li>
                                 </ul>
                             </div>
                             <div class="cons">
                                 <h4>Cons</h4>
                                 <ul>
-                                    <li>Most expensive option</li>
-                                    <li>May not suit all swing types</li>
-                                    <li>Less forgiving than some alternatives</li>
+                                    <li>May be too soft for high swing speeds</li>
+                                    <li>Not the longest ball for most players</li>
+                                    <li>Limited availability compared to major brands</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <p>The 2025 Pro V1x plays noticeably softer than the 2024 version while maintaining spin characteristics, eliminating the harsh "click" feel some players disliked. Early testing shows positive launch monitor data supporting Titleist's claims of increased speed and control.</p>
+                        <p>The FastLayer DG Core 2.0 starts soft at the center and gradually firms toward the outside, optimizing spin and distance. Despite being the lowest spinning off the driver, it paradoxically offers the highest greenside spin in the Z-Star family, making it ideal for players who prioritize short game control.</p>
 
-                        <a href="https://amzn.to/45bBFiz" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                        <a href="https://amzn.to/4fsfV5w" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
                     <!-- Product #3 -->
@@ -531,33 +531,33 @@ $article = [
                         <a href="https://amzn.to/4mWhMCn" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
-                    <!-- Product #4 -->
-                    <div class="product-card" id="srixon-z-star">
-                        <h3 class="product-title">4. Srixon Z-Star 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 Golf Ball" loading="lazy">
+                    <!-- Product #2 -->
+                    <div class="product-card" id="titleist-pro-v1">
+                        <h3 class="product-title">2. Titleist Pro V1/Pro V1x 2025</h3>
+                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 Golf Ball" loading="lazy">
                         
-                        <p>The ninth generation Srixon Z-Star introduces groundbreaking sustainability features while maintaining its position as the softest tour ball on the market. The new biomass urethane cover derived from corn reduces environmental impact without compromising performance.</p>
+                        <p>Celebrating its 25th anniversary in 2025, the completely overhauled Titleist Pro V1 and Pro V1x continue to dominate professional tours. The new models promise more speed off the tee, better iron control, and increased wedge spin while offering improved feel.</p>
 
                         <div class="product-specs">
                             <div class="spec-row">
                                 <span class="spec-label">Construction:</span>
-                                <span class="spec-value">3-piece tour ball</span>
+                                <span class="spec-value">Multi-layer urethane</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Compression:</span>
-                                <span class="spec-value">88 (4 points softer than 2023)</span>
+                                <span class="spec-label">Launch Date:</span>
+                                <span class="spec-value">February 2025</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Core Technology:</span>
-                                <span class="spec-value">FastLayer DG Core 2.0</span>
+                                <span class="spec-label">Key Update:</span>
+                                <span class="spec-value">Softer feel, more speed</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Cover Material:</span>
-                                <span class="spec-value">Biomass urethane from corn</span>
+                                <span class="spec-label">Tour Usage:</span>
+                                <span class="spec-value">70% PGA, 76% LPGA, 74% DP World</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-label">Special Feature:</span>
-                                <span class="spec-value">Spin Skin+ coating</span>
+                                <span class="spec-label">Options:</span>
+                                <span class="spec-value">Pro V1 (lower flight) / Pro V1x (higher flight)</span>
                             </div>
                         </div>
 
