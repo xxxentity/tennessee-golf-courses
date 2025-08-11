@@ -4,6 +4,18 @@ session_start();
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
+        'slug' => 'top-5-golf-balls-2025',
+        'date' => '2025-08-11',
+        'time' => '2:45 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
+        'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
         'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
         'slug' => 'top-10-putters-2025-amazon-guide',
         'date' => '2025-08-06',
