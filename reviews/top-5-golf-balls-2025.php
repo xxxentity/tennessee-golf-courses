@@ -354,18 +354,18 @@ $article = [
 
                     <h2>Quick Overview: Top 5 Golf Balls of 2025</h2>
                     <ol>
-                        <li><a href="#taylormade-tp5" style="color: var(--secondary-color); text-decoration: none;"><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</a></li>
-                        <li><a href="#titleist-pro-v1" style="color: var(--secondary-color); text-decoration: none;"><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</a></li>
-                        <li><a href="#callaway-chrome-soft" style="color: var(--secondary-color); text-decoration: none;"><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</a></li>
-                        <li><a href="#srixon-z-star" style="color: var(--secondary-color); text-decoration: none;"><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</a></li>
                         <li><a href="#wilson-staff-model" style="color: var(--secondary-color); text-decoration: none;"><strong>Wilson Staff Model/Model X</strong> - Best Value Tour Ball</a></li>
+                        <li><a href="#srixon-z-star" style="color: var(--secondary-color); text-decoration: none;"><strong>Srixon Z-Star 2025</strong> - Softest Tour Ball</a></li>
+                        <li><a href="#callaway-chrome-soft" style="color: var(--secondary-color); text-decoration: none;"><strong>Callaway Chrome Soft</strong> - Best for Average Swing Speeds</a></li>
+                        <li><a href="#titleist-pro-v1" style="color: var(--secondary-color); text-decoration: none;"><strong>Titleist Pro V1/Pro V1x 2025</strong> - Most Popular on Tour</a></li>
+                        <li><a href="#taylormade-tp5" style="color: var(--secondary-color); text-decoration: none;"><strong>TaylorMade TP5/TP5x</strong> - Best Overall Performance</a></li>
                     </ol>
 
                     <h2>Detailed Reviews</h2>
 
-                    <!-- Product #1 -->
-                    <div class="product-card" id="taylormade-tp5">
-                        <h3 class="product-title">1. TaylorMade TP5/TP5x</h3>
+                    <!-- Product #5 -->
+                    <div class="product-card" id="wilson-staff-model">
+                        <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
                         <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 Golf Ball" loading="lazy">
                         
                         <p>The TaylorMade TP5 and TP5x earn our top spot by delivering the best overall performance for the widest range of skilled golfers. The new 360° ClearPath Alignment and re-engineered core design make these the most complete tour balls available in 2025.</p>
