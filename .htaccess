@@ -80,6 +80,7 @@ RewriteRule ^news/scheffler-wins-2025-british-open-final-round/?$ news/scheffler
 
 # Handle review article pages (in subdirectory)
 RewriteRule ^reviews/top-10-putters-2025-amazon-guide/?$ reviews/top-10-putters-2025-amazon-guide.php [L]
+RewriteRule ^reviews/top-5-golf-balls-2025/?$ reviews/top-5-golf-balls-2025.php [L]
 
 # Handle auth pages (clean URLs without /auth/ prefix)
 RewriteRule ^login/?$ auth/login.php [L]
