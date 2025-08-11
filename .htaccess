@@ -73,6 +73,7 @@ RewriteRule ^courses/whittle-springs-golf-course/?$ courses/whittle-springs-golf
 RewriteRule ^courses/white-plains-golf-course/?$ courses/white-plains-golf-course.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/fedex-st-jude-first-round-bhatia-leads/?$ news/fedex-st-jude-first-round-bhatia-leads.php [L]
 RewriteRule ^news/open-championship-2025-round-1-royal-portrush/?$ news/open-championship-2025-round-1-royal-portrush.php [L]
 RewriteRule ^news/scheffler-extends-lead-open-championship-round-3/?$ news/scheffler-extends-lead-open-championship-round-3.php [L]
 RewriteRule ^news/scheffler-seizes-control-open-championship-round-2/?$ news/scheffler-seizes-control-open-championship-round-2.php [L]

@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Bhatia Blazes to First-Round Lead at FedEx St. Jude Championship',
+        'slug' => 'fedex-st-jude-first-round-bhatia-leads',
+        'date' => '2025-08-07',
+        'time' => '7:00 PM',
+        'category' => 'Tournament Coverage',
+        'excerpt' => 'Akshay Bhatia shoots career-best 62 to lead FedEx St. Jude Championship as playoff bubble players battle in Memphis heat.',
+        'image' => '/images/news/fedex-st-jude-first-round-bhatia-leads/main.jpeg',
+        'featured' => true
+    ],
+    [
         'title' => 'Scheffler Captures First Claret Jug with Dominant Victory',
         'slug' => 'scheffler-wins-2025-british-open-final-round',
         'date' => '2025-07-21',
