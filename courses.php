@@ -975,6 +975,55 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             color: var(--text-gray);
         }
         
+        .construction-notice {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .construction-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+        
+        .construction-content i {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        .construction-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .construction-text strong {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .construction-text span {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+        
         .courses-container {
             display: grid;
             grid-template-columns: 320px 1fr;
@@ -1375,6 +1424,27 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 font-size: 2rem;
             }
             
+            .construction-notice {
+                padding: 0.75rem 1rem;
+                margin-top: 1rem;
+            }
+            
+            .construction-content {
+                gap: 0.75rem;
+            }
+            
+            .construction-content i {
+                font-size: 1.25rem;
+            }
+            
+            .construction-text strong {
+                font-size: 1rem;
+            }
+            
+            .construction-text span {
+                font-size: 0.875rem;
+            }
+            
             .courses-grid {
                 grid-template-columns: 1fr;
             }
@@ -1548,6 +1618,17 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             <div class="container">
                 <h1 class="page-title">Tennessee Golf Courses</h1>
                 <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
+                
+                <!-- Under Construction Notice -->
+                <div class="construction-notice">
+                    <div class="construction-content">
+                        <i class="fas fa-tools"></i>
+                        <div class="construction-text">
+                            <strong>Under Construction</strong>
+                            <span>We're actively adding new courses every day! Check back frequently for updates.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
