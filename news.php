@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play',
+        'slug' => 'fleetwood-takes-command-weather-halts-play',
+        'date' => '2025-08-08',
+        'time' => '6:30 PM',
+        'category' => 'Tournament Coverage',
+        'excerpt' => 'Tommy Fleetwood builds commanding lead at FedEx St. Jude Championship before severe weather suspends second round play.',
+        'image' => '/images/news/fleetwood-takes-command-weather-halts-play/main.jpeg',
+        'featured' => true
+    ],
+    [
         'title' => 'Bhatia Blazes to First-Round Lead at FedEx St. Jude Championship',
         'slug' => 'fedex-st-jude-first-round-bhatia-leads',
         'date' => '2025-08-07',
