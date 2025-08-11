@@ -565,26 +565,26 @@ $article = [
                             <div class="pros">
                                 <h4>Pros</h4>
                                 <ul>
-                                    <li>Softest compression tour ball available</li>
-                                    <li>Exceptional greenside spin and control</li>
-                                    <li>Environmentally friendly biomass cover</li>
-                                    <li>Enhanced durability with new urethane paint</li>
-                                    <li>Lower driver spin for more distance</li>
+                                    <li>Most played ball on professional tours</li>
+                                    <li>Proven consistency and quality control</li>
+                                    <li>New alignment options for 2025</li>
+                                    <li>Softer feel than previous generation</li>
+                                    <li>Excellent all-around performance</li>
                                 </ul>
                             </div>
                             <div class="cons">
                                 <h4>Cons</h4>
                                 <ul>
-                                    <li>May be too soft for high swing speeds</li>
-                                    <li>Not the longest ball for most players</li>
-                                    <li>Limited availability compared to major brands</li>
+                                    <li>Most expensive option</li>
+                                    <li>May not suit all swing types</li>
+                                    <li>Less forgiving than some alternatives</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <p>The FastLayer DG Core 2.0 starts soft at the center and gradually firms toward the outside, optimizing spin and distance. Despite being the lowest spinning off the driver, it paradoxically offers the highest greenside spin in the Z-Star family, making it ideal for players who prioritize short game control.</p>
+                        <p>The 2025 Pro V1x plays noticeably softer than the 2024 version while maintaining spin characteristics, eliminating the harsh "click" feel some players disliked. Early testing shows positive launch monitor data supporting Titleist's claims of increased speed and control.</p>
 
-                        <a href="https://amzn.to/4fsfV5w" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
+                        <a href="https://amzn.to/45bBFiz" class="buy-button" target="_blank" rel="noopener">Check Current Price</a>
                     </div>
 
                     <!-- Product #1 -->
