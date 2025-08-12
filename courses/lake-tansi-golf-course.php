@@ -163,18 +163,33 @@ try {
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="background: linear-gradient(135deg, #4a7c59, #2c5234); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">$25 - $65</h4>
-                        <p style="margin: 0; opacity: 0.9;">Seasonal rates apply</p>
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">2025 Rates</h4>
+                        <p style="margin: 0; opacity: 0.9;">Call for current pricing</p>
                     </div>
-                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                        <p style="margin: 0; font-size: 0.9rem; color: #666; text-align: center;">
-                            <strong>Winter:</strong> $37-39 | <strong>Summer:</strong> $25-65<br>
-                            <strong>Cart:</strong> $22 (18 holes) | $15 (9 holes)
-                        </p>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <div style="margin-bottom: 1rem;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #2c5234; font-size: 1rem;"><strong>Winter Rates</strong> (Jan 1 - Mar 31, Nov 1 - Dec 31)</h5>
+                            <div style="font-size: 0.9rem; color: #666;">
+                                <div>• Members: $34 (18 holes) | $22 (9 holes)</div>
+                                <div>• Public: $37-39 (18 holes) | $27-29 (9 holes)</div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <h5 style="margin: 0 0 0.5rem 0; color: #2c5234; font-size: 1rem;"><strong>Summer Rates</strong> (Apr 1 - Oct 31)</h5>
+                            <div style="font-size: 0.9rem; color: #666;">
+                                <div>• Members: $34 (18 holes) | $22 (9 holes)</div>
+                                <div>• Public: $25-65 (18 holes) | $25-45 (9 holes)</div>
+                            </div>
+                        </div>
+                        <div style="border-top: 1px solid #ddd; padding-top: 1rem;">
+                            <div style="font-size: 0.9rem; color: #666; text-align: center;">
+                                <strong>Cart Fees:</strong> $22 (18 holes) | $15 (9 holes)
+                            </div>
+                        </div>
                     </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Lake Tansi Golf Course offers competitive public rates with seasonal pricing. 
-                        Call (931) 788-3301 for current rates and tee times.
+                    <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.9rem;">
+                        Annual memberships and Frequent Players Cards available. 
+                        Call (931) 788-3301 or 800-600-9913 for packages and current rates.
                     </p>
                 </div>
 
