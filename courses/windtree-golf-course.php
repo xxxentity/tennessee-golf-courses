@@ -192,8 +192,8 @@ try {
             </div>
             <h2 class="modal-title">Course Permanently Closed</h2>
             <p class="modal-text">
-                Windtree Golf Course permanently closed in 2017. This page is maintained for historical reference and 
-                to preserve the memory of this course that served the Mount Juliet golf community for 26 years.
+                Windtree Golf Course permanently closed in November 2017 after a failed residential development proposal. 
+                This page is maintained for historical reference and to preserve the memory of this course that served the Mount Juliet golf community for 27 years.
             </p>
             <button class="modal-button" onclick="closeModal()">Continue to Historical Information</button>
         </div>
@@ -276,8 +276,8 @@ try {
                         <p style="margin: 0; opacity: 0.9;">As of 2017</p>
                     </div>
                     <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Windtree Golf Course closed permanently in 2017 after serving the Mount Juliet community for 26 years. 
-                        The course is no longer accessible to the public and the property has been repurposed.
+                        Windtree Golf Course closed permanently in November 2017 following a failed residential development proposal. 
+                        The course served the Mount Juliet community for 27 years before economic challenges and development pressures led to its closure.
                     </p>
                 </div>
 
@@ -328,7 +328,7 @@ try {
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Windtree Golf Course (Historical)</h3>
-                <p>Windtree Golf Course served the Mount Juliet and Nashville area golf community from 1991 to 2017, offering 26 years of championship golf on a well-designed John LaFoy layout. Located on Nonaville Road, the course provided an accessible daily-fee golf experience that challenged players with its strategic design and well-maintained playing conditions.</p>
+                <p>Windtree Golf Course served the Mount Juliet and Nashville area golf community from 1991 to 2017, offering 27 years of championship golf on a well-designed John LaFoy layout. Located on Nonaville Road, the course provided an accessible daily-fee golf experience that challenged players with its strategic design and well-maintained playing conditions.</p>
                 
                 <br>
                 
@@ -340,7 +340,7 @@ try {
                 
                 <br>
                 
-                <p>The course permanently closed in 2017, marking the end of an era for Mount Juliet area golf. While the facility is no longer operational, Windtree Golf Course remains an important part of Tennessee golf history, having provided countless memorable rounds and served as a gathering place for the local golf community throughout its quarter-century of operation.</p>
+                <p>The course permanently closed in November 2017 following economic challenges and a failed residential development proposal. A plan to build 351 single-family homes on the property (Windtree Pines) was voted down by the Mt. Juliet City Commission, citing traffic concerns. The closure reflected broader industry trends, as the saturation of golf courses built in the 1990s led to numerous course closures nationwide due to operational costs and insufficient growth in new golfers.</p>
             </div>
 
             <!-- Former Amenities -->
