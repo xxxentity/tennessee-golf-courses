@@ -752,6 +752,21 @@ $courses_static = [
         'slug' => 'pine-oaks-golf-course'
     ],
     [
+        'id' => 71,
+        'name' => 'Lake Tansi Golf Course',
+        'location' => 'Crossville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Robert Renaud designed championship course since 1961. Ranked 9th in Tennessee by Golf Advisor with 6 tee options and mountain views',
+        'image' => '/images/courses/lake-tansi-golf-course/1.jpeg',
+        'price_range' => '$25-65',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Robert Renaud',
+        'amenities' => ['Championship Golf', 'Pro Shop', 'Golf Lessons', 'Mountain Views', 'Six Tee Options', 'Online Tee Times', 'Top 10 in Tennessee'],
+        'slug' => 'lake-tansi-golf-course'
+    ],
+    [
         'id' => 51,
         'name' => 'Laurel Valley Country Club',
         'location' => 'Townsend, TN',
