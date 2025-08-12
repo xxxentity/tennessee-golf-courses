@@ -587,6 +587,21 @@ $courses_static = [
         'slug' => 'vanderbilt-legends-club'
     ],
     [
+        'id' => 70,
+        'name' => 'Windtree Golf Course',
+        'location' => 'Mount Juliet, TN',
+        'region' => 'Nashville Area',
+        'description' => 'John LaFoy designed championship course from 1991. Semi-private course that served the Mount Juliet community for 26 years. PERMANENTLY CLOSED 2017 - preserved for historical reference.',
+        'image' => '/images/courses/windtree-golf-course/1.jpeg',
+        'price_range' => 'CLOSED',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'John LaFoy',
+        'amenities' => ['Historical Reference', 'Formerly Semi-Private', 'Had Championship Golf', 'Had Pro Shop', 'Had Practice Facilities'],
+        'slug' => 'windtree-golf-course'
+    ],
+    [
         'id' => 26,
         'name' => 'Willow Creek Golf Club',
         'location' => 'Knoxville, TN',
