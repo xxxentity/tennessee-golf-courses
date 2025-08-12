@@ -65,6 +65,175 @@ try {
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
+    
+    <style>
+        .article-page {
+            padding-top: 0px;
+            min-height: 100vh;
+            background: var(--bg-light);
+        }
+        
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 2.8rem;
+            color: var(--text-black);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .article-content {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+        
+        .stat-highlight {
+            background: #f0f8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid #4a7c59;
+        }
+        
+        .stat-highlight h4 {
+            color: #2c5234;
+            margin-bottom: 0.5rem;
+        }
+        
+        .leaderboard {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .leaderboard h3 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+        }
+        
+        .leaderboard-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .leaderboard-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .leaderboard-entry.leader {
+            background: linear-gradient(90deg, #ffd700, transparent);
+            margin: 0 -1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        
+        .player-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .player-score {
+            font-weight: 700;
+            color: #d32f2f;
+        }
+        
+        .quote-box {
+            background: #e8f5e8;
+            border-left: 4px solid #4a7c59;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        
+        .eagle-box {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            color: #2c5234;
+            border: 2px solid #e6c200;
+        }
+        
+        .eagle-box h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 1rem;
+            }
+            
+            .article-header, .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <?php include '../includes/navigation.php'; ?>
