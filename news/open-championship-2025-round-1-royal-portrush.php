@@ -461,7 +461,7 @@ try {
                     </div>
                 </header>
                 
-                <img src="/images/news/open-championship-2025-round-1-royal-portrush/main.jpeg" alt="Open Championship Royal Portrush Round 1" class="article-image">
+                <img src="/images/news/open-championship-2025-round-1/royal-portrush-round1.jpg" alt="Open Championship Royal Portrush Round 1" class="article-image">
                 
                 <div class="article-content">
 

@@ -465,7 +465,7 @@ try {
                     </div>
                 </header>
                 
-                <img src="/images/news/open-championship-round-2-2025/scottie-round-2.png" alt="Scottie Scheffler Open Championship Round 2" class="article-image">
+                <img src="/images/news/open-championship-round-2/scheffler-64.jpg" alt="Scottie Scheffler Open Championship Round 2" class="article-image">
                 
                 <div class="article-content">
 

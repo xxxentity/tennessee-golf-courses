@@ -81,7 +81,7 @@ try {
                 </div>
             </div>
 
-            <img src="/images/news/open-championship-round-3-2025/scottie-lead.png" alt="Scottie Scheffler extends lead at Open Championship" class="article-image">
+            <img src="/images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler extends lead at Open Championship" class="article-image">
 
             <div class="article-content">
 
