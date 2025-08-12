@@ -19,6 +19,7 @@ $courses = [
     ['name' => 'Belle Meade Country Club', 'location' => 'Nashville, TN', 'slug' => 'belle-meade-country-club'],
     ['name' => 'Big Creek Golf Club', 'location' => 'Millington, TN', 'slug' => 'big-creek-golf-club'],
     ['name' => 'Cedar Crest Golf Club', 'location' => 'Murfreesboro, TN', 'slug' => 'cedar-crest-golf-club'],
+    ['name' => 'Cumberland Cove Golf Course', 'location' => 'Monterey, TN', 'slug' => 'cumberland-cove-golf-course'],
     ['name' => 'Cherokee Country Club', 'location' => 'Knoxville, TN', 'slug' => 'cherokee-country-club'],
     ['name' => 'Gaylord Springs Golf Links', 'location' => 'Nashville, TN', 'slug' => 'gaylord-springs-golf-links'],
     ['name' => 'Forrest Crossing Golf Course', 'location' => 'Franklin, TN', 'slug' => 'forrest-crossing-golf-course'],

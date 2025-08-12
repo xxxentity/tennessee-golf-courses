@@ -107,6 +107,21 @@ $courses_static = [
         'slug' => 'big-creek-golf-club'
     ],
     [
+        'id' => 74,
+        'name' => 'Cumberland Cove Golf Course',
+        'location' => 'Monterey, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Gary Roger Baird designed championship course since 1967. 18-hole par-72 layout with bent grass greens and mountain views',
+        'image' => '/images/courses/cumberland-cove-golf-course/1.jpeg',
+        'price_range' => 'Call for Rates',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Gary Roger Baird',
+        'amenities' => ['Championship Golf', 'Pro Shop', 'Driving Range', 'Putting Green', 'Teaching Pro', 'Bar & Grill', 'Mountain Views', 'Bent Grass Greens'],
+        'slug' => 'cumberland-cove-golf-course'
+    ],
+    [
         'id' => 3,
         'name' => 'Cedar Crest Golf Club',
         'location' => 'Murfreesboro, TN',
