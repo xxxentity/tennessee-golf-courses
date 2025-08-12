@@ -608,8 +608,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                         <?php endforeach; ?>
                     </div>
                     
-                    <!-- Load More Button (when we have more articles) -->
-                    <?php if (count($filtered_articles) >= 9): ?>
+                    <!-- Load More Button (hidden since all articles are shown) -->
+                    <?php if (false): // Disabled - all articles are already displayed ?>
                     <div class="load-more-container">
                         <button class="load-more-btn" onclick="loadMoreArticles()">
                             <i class="fas fa-plus"></i> Load More Articles
