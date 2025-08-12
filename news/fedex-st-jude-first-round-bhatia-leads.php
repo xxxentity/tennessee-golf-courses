@@ -270,7 +270,7 @@ try {
         }
         
         .share-button.twitter {
-            background: #1da1f2;
+            background: #000000;
             color: white;
         }
         
@@ -565,7 +565,7 @@ try {
                             <i class="fab fa-facebook-f"></i> Share on Facebook
                         </a>
                         <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_title); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-button twitter">
-                            <i class="fab fa-twitter"></i> Share on Twitter
+                            <i class="fab fa-x-twitter"></i> Share on X
                         </a>
                         <a href="mailto:?subject=<?php echo urlencode($article_title); ?>&body=<?php echo urlencode('Check out this article: https://tennesseegolfcourses.com/news/' . $article_slug); ?>" class="share-button email">
                             <i class="far fa-envelope"></i> Share via Email

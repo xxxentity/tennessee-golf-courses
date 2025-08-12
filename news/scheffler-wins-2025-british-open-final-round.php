@@ -442,6 +442,22 @@ try {
         <p>The 153rd Open Championship will be remembered as the moment Scottie Scheffler announced himself among golf's immortals, capturing his first Claret Jug with a performance that exemplified everything great about major championship golf. At Royal Portrush, in front of passionate crowds and on one of the sport's grandest stages, the world's best player delivered when it mattered most.</p>
     </div>
 
+    <!-- Share Section -->
+    <section class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center; margin: 2rem auto; max-width: 800px;">
+        <h3 style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Article</h3>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                <i class="fab fa-facebook-f"></i> Share on Facebook
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_title); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                <i class="fab fa-x-twitter"></i> Share on X
+            </a>
+            <a href="mailto:?subject=<?php echo urlencode($article_title); ?>&body=<?php echo urlencode('Check out this article: https://tennesseegolfcourses.com/news/' . $article_slug); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: var(--primary-color); color: white;">
+                <i class="far fa-envelope"></i> Share via Email
+            </a>
+        </div>
+    </section>
+
     <!-- Comments Section -->
     <section class="comments-section" style="background: #f8f9fa; padding: 4rem 0;">
         <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
