@@ -69,7 +69,7 @@ try {
     
     <style>
         .article-page {
-            padding-top: 90px;
+            padding-top: 0px;
             min-height: 100vh;
             background: var(--bg-light);
         }
