@@ -162,6 +162,12 @@ try {
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    
+                    <div style="background: linear-gradient(135deg, #4a7c59 0%, #2c5234 100%); color: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; text-align: center; box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);">
+                        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Call for Pricing and Tee Times</h4>
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">(931) 432-5149</p>
+                    </div>
+                    
                     <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
                         <div style="margin-bottom: 1rem;">
                             <h5 style="margin: 0 0 0.5rem 0; color: #2c5234; font-size: 1rem;"><strong>Monday Special</strong></h5>
