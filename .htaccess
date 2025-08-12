@@ -70,6 +70,7 @@ RewriteRule ^courses/troubadour-golf-field-club/?$ courses/troubadour-golf-field
 RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.php [L]
 RewriteRule ^courses/vanderbilt-legends-club/?$ courses/vanderbilt-legends-club.php [L]
 RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
+RewriteRule ^courses/williams-creek-golf-course/?$ courses/williams-creek-golf-course.php [L]
 RewriteRule ^courses/whittle-springs-golf-course/?$ courses/whittle-springs-golf-course.php [L]
 RewriteRule ^courses/white-plains-golf-course/?$ courses/white-plains-golf-course.php [L]
 

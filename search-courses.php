@@ -51,6 +51,7 @@ $courses = [
     ['name' => 'Two Rivers Golf Course', 'location' => 'Nashville, TN', 'slug' => 'two-rivers-golf-course'],
     ['name' => 'Vanderbilt Legends Club', 'location' => 'Franklin, TN', 'slug' => 'vanderbilt-legends-club'],
     ['name' => 'Willow Creek Golf Club', 'location' => 'Knoxville, TN', 'slug' => 'willow-creek-golf-club'],
+    ['name' => 'Williams Creek Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'williams-creek-golf-course'],
     ['name' => 'Whittle Springs Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'whittle-springs-golf-course'],
     ['name' => 'White Plains Golf Course', 'location' => 'Memphis, TN', 'slug' => 'white-plains-golf-course'],
     ['name' => 'Cheekwood Golf Club', 'location' => 'Nashville, TN', 'slug' => 'cheekwood-golf-club'],

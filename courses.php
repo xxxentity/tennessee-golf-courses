@@ -602,6 +602,21 @@ $courses_static = [
         'slug' => 'willow-creek-golf-club'
     ],
     [
+        'id' => 69,
+        'name' => 'Williams Creek Golf Course',
+        'location' => 'Knoxville, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Tom Fazio designed championship par 3 course with 18 holes ranging from 85 to 245 yards',
+        'image' => '/images/courses/williams-creek-golf-course/1.jpeg',
+        'price_range' => 'Public',
+        'difficulty' => 'Beginner',
+        'holes' => 18,
+        'par' => 54,
+        'designer' => 'Tom Fazio',
+        'amenities' => ['Par 3 Course', 'Driving Range', 'Short Game Station', 'Putting Green', 'Three Tee Options', 'All Skill Levels'],
+        'slug' => 'williams-creek-golf-course'
+    ],
+    [
         'id' => 33,
         'name' => 'Whittle Springs Golf Course',
         'location' => 'Knoxville, TN',
