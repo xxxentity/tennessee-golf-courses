@@ -14,6 +14,7 @@ if (strlen($query) < 2) {
 $courses = [
     ['name' => 'Bear Trace at Harrison Bay', 'location' => 'Harrison, TN', 'slug' => 'bear-trace-harrison-bay'],
     ['name' => 'Avalon Golf & Country Club', 'location' => 'Lenoir City, TN', 'slug' => 'avalon-golf-country-club'],
+    ['name' => 'Belle Acres Golf Course', 'location' => 'Cookeville, TN', 'slug' => 'belle-acres-golf-course'],
     ['name' => 'Bluegrass Yacht & Country Club', 'location' => 'Hendersonville, TN', 'slug' => 'bluegrass-yacht-country-club'],
     ['name' => 'Belle Meade Country Club', 'location' => 'Nashville, TN', 'slug' => 'belle-meade-country-club'],
     ['name' => 'Big Creek Golf Club', 'location' => 'Millington, TN', 'slug' => 'big-creek-golf-club'],

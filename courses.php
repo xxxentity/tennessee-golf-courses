@@ -62,6 +62,21 @@ $courses_static = [
         'slug' => 'bluegrass-yacht-country-club'
     ],
     [
+        'id' => 73,
+        'name' => 'Belle Acres Golf Course',
+        'location' => 'Cookeville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Historic Dr. J.P. Terry designed 9-hole course since 1930. Cookeville\'s oldest course with largest practice facility in the area',
+        'image' => '/images/courses/belle-acres-golf-course/1.jpeg',
+        'price_range' => '$21-33',
+        'difficulty' => 'Beginner to Intermediate',
+        'holes' => 9,
+        'par' => 35,
+        'designer' => 'Dr. J.P. Terry',
+        'amenities' => ['Historic Course (1930)', 'Largest Practice Facility', 'Bent Grass Greens', 'Weekly Scrambles', 'Multiple Tee Options', 'Cart Rentals', 'Walking Friendly'],
+        'slug' => 'belle-acres-golf-course'
+    ],
+    [
         'id' => 2,
         'name' => 'Belle Meade Country Club',
         'location' => 'Nashville, TN',
