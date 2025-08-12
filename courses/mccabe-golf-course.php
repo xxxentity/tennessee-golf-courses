@@ -75,8 +75,8 @@ try {
     </script>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=2">
-    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=2">
+    <link rel="icon" type="image/png" href="../images/logos/tab-logo.png?v=3">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.png?v=3">
     
     <style>
         .course-hero {
