@@ -79,7 +79,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
     
     <style>
         .reviews-page {
-            padding-top: 90px;
+            padding-top: 0px;
             min-height: 40vh;
             background: var(--bg-light);
         }

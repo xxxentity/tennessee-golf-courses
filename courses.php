@@ -961,7 +961,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             background: var(--bg-white);
             padding: 1rem 0;
             border-bottom: 1px solid var(--border-color);
-            margin-top: 80px;
+            margin-top: 0px;
         }
         
         .page-title {
@@ -1417,7 +1417,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             
             .page-header {
                 padding: 0.5rem 0;
-                margin-top: 70px;
+                margin-top: 0px;
             }
             
             .page-title {
