@@ -107,6 +107,21 @@ $courses_static = [
         'slug' => 'cedar-crest-golf-club'
     ],
     [
+        'id' => 54,
+        'name' => 'The Club at Five Oaks',
+        'location' => 'Lebanon, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Neal Carson designed championship course on 500+ acres with Zoysia fairways and Bermuda greens',
+        'image' => '/images/courses/the-club-at-five-oaks/1.jpeg',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Neal Carson',
+        'amenities' => ['Championship Golf', 'Clubhouse', 'Fine Dining', 'Driving Range', 'Pool & Recreation', 'Social Events'],
+        'slug' => 'the-club-at-five-oaks'
+    ],
+    [
         'id' => 32,
         'name' => 'Cherokee Country Club',
         'location' => 'Knoxville, TN',
