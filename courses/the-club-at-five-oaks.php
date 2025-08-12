@@ -92,7 +92,7 @@ try {
         justify-content: center; 
         text-align: center; 
         color: white;
-        margin-top: 0px;
+        margin-top: 20px;
     ">
         <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">The Club at Five Oaks</h1>
@@ -373,18 +373,29 @@ try {
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
+        <div style="margin: 2% auto; padding: 20px; width: 90%; max-width: 1200px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; color: white;">
+                <h2 style="font-size: 2rem; margin: 0;">The Club at Five Oaks Gallery</h2>
+                <button onclick="closeGallery()" style="color: white; font-size: 3rem; font-weight: bold; cursor: pointer; background: none; border: none;">&times;</button>
+            </div>
+            <div id="fullGalleryGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-height: 70vh; overflow-y: auto;">
+                <!-- Images will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
 
     <script>
         // Star rating functionality
-        document.querySelectorAll('.star-rating input').forEach(input => {
-            input.addEventListener('change', function() {
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
                 const stars = document.querySelectorAll('.star-rating label');
-                const selectedValue = this.value;
-                
-                stars.forEach((star, index) => {
-                    if (index >= (5 - selectedValue)) {
+                stars.forEach((star, starIndex) => {
+                    if (starIndex >= (5 - this.value)) {
                         star.style.color = '#ffd700';
                     } else {
                         star.style.color = '#ddd';
@@ -392,10 +403,45 @@ try {
                 });
             });
         });
-
-        // Gallery function placeholder
+        
+        // Gallery modal functionality
         function openGallery() {
-            alert('Gallery feature coming soon!');
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Add all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.style.height = '200px';
+                galleryItem.style.backgroundImage = `url('../images/courses/the-club-at-five-oaks/${i}.jpeg')`;
+                galleryItem.style.backgroundSize = 'cover';
+                galleryItem.style.backgroundPosition = 'center';
+                galleryItem.style.borderRadius = '10px';
+                galleryItem.style.cursor = 'pointer';
+                galleryItem.style.transition = 'transform 0.3s ease';
+                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-five-oaks/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeGallery();
+            }
         }
     </script>
 </body>
