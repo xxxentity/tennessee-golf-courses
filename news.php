@@ -585,8 +585,13 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             <section class="news-section">
                 <?php if (!empty($filtered_articles)): ?>
                     <div class="news-grid">
-                        <?php foreach ($filtered_articles as $article): ?>
-                            <article class="news-card">
+                        <?php 
+                        $articles_per_page = 6;
+                        $total_articles = count($filtered_articles);
+                        $initial_articles = array_slice($filtered_articles, 0, $articles_per_page);
+                        ?>
+                        <?php foreach ($filtered_articles as $index => $article): ?>
+                            <article class="news-card" data-article-index="<?php echo $index; ?>" style="<?php echo $index >= $articles_per_page ? 'display: none;' : ''; ?>">
                                 <div class="news-image">
                                     <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
                                 </div>
@@ -608,9 +613,9 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                         <?php endforeach; ?>
                     </div>
                     
-                    <!-- Load More Button (hidden since all articles are shown) -->
-                    <?php if (false): // Disabled - all articles are already displayed ?>
-                    <div class="load-more-container">
+                    <!-- Load More Button -->
+                    <?php if ($total_articles > $articles_per_page): ?>
+                    <div class="load-more-container" id="loadMoreContainer">
                         <button class="load-more-btn" onclick="loadMoreArticles()">
                             <i class="fas fa-plus"></i> Load More Articles
                         </button>
@@ -722,10 +727,30 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             }
         });
 
-        // Load more functionality (placeholder)
+        // Load more functionality
+        let currentlyShown = <?php echo isset($articles_per_page) ? $articles_per_page : 6; ?>;
+        const totalArticles = <?php echo isset($total_articles) ? $total_articles : count($filtered_articles); ?>;
+        const articlesPerLoad = 3;
+        
         function loadMoreArticles() {
-            // This would load more articles via AJAX in a real implementation
-            alert('Loading more articles... (feature coming soon!)');
+            const articles = document.querySelectorAll('.news-card');
+            const nextBatch = Math.min(currentlyShown + articlesPerLoad, totalArticles);
+            
+            for (let i = currentlyShown; i < nextBatch; i++) {
+                if (articles[i]) {
+                    articles[i].style.display = 'block';
+                }
+            }
+            
+            currentlyShown = nextBatch;
+            
+            // Hide button if all articles are shown
+            if (currentlyShown >= totalArticles) {
+                const loadMoreContainer = document.getElementById('loadMoreContainer');
+                if (loadMoreContainer) {
+                    loadMoreContainer.style.display = 'none';
+                }
+            }
         }
     </script>
 </body>
