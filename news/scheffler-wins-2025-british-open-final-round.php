@@ -50,7 +50,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scheffler Captures First Claret Jug with Dominant Victory at Royal Portrush - Tennessee Golf Courses</title>
     <meta name="description" content="Scottie Scheffler wins his first British Open title with a commanding four-shot victory at Royal Portrush, completing the third leg of his career Grand Slam.">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -66,246 +66,408 @@ try {
       gtag('config', 'G-7VPNPCDTBP');
     </script>
     <style>
-        /* Logo image styling */
-        .logo-image {
-            height: 100px;
-            width: auto;
-            object-fit: contain;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-            max-height: 100px;
-        }
-
-        .nav-logo:hover .logo-image {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-        }
-
-        /* Navigation auth section on the right */
-        .nav-auth {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 6px;
-            margin-left: auto;
-            margin-right: 8px;
-            flex-wrap: nowrap;
-            max-width: 400px;
-        }
-
-        .login-btn {
-            background: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color) !important;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            padding: 8px 16px !important;
-            font-size: 16px;
-            font-weight: 500;
-            width: auto;
-            text-align: center;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .login-btn:hover {
-            background: var(--primary-color);
-            color: var(--text-light) !important;
-            transform: translateY(-1px);
-        }
-
-        .register-btn {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--text-light) !important;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-light);
-            padding: 8px 16px !important;
-            font-size: 16px;
-            font-weight: 500;
-            width: auto;
-            text-align: center;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .register-btn:hover {
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .article-hero {
-            height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/news/open-championship-final-2025/scottie-final-round.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 0px;
+        .article-page {
+            padding-top: 0px;
+            min-height: 100vh;
+            background: var(--bg-light);
         }
         
-        .article-content {
-            max-width: 800px;
+        .article-container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 2rem;
-            line-height: 1.7;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 2.8rem;
+            color: var(--text-black);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
         }
         
         .article-meta {
             display: flex;
-            align-items: center;
             gap: 2rem;
-            margin-bottom: 2rem;
-            color: #666;
-            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
         }
         
-        .article-date {
+        .article-meta span {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
-        .article-category {
-            background: #4a7c59;
-            color: white;
-            padding: 0.25rem 0.75rem;
+        .article-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
             border-radius: 20px;
-            font-size: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-light);
         }
         
-        .final-leaderboard {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
+        .article-content {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
         }
         
-        .final-leaderboard h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
         }
         
-        .leaderboard-entry {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .leaderboard-entry:last-child {
-            border-bottom: none;
-        }
-        
-        .leaderboard-entry.champion {
-            background: linear-gradient(90deg, #ffd700, transparent);
-            margin: 0 -1rem;
-            padding: 0.75rem 1rem;
-            border-radius: 5px;
-            font-weight: 700;
-        }
-        
-        .player-name {
+        .article-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
             font-weight: 600;
-            color: #2c5234;
         }
         
-        .player-score {
-            font-weight: 700;
-            color: #d32f2f;
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-black);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
         }
         
-        .quote-box {
-            background: #e8f5e8;
-            border-left: 4px solid #4a7c59;
+        .article-content blockquote {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
             padding: 1.5rem;
             margin: 2rem 0;
             font-style: italic;
+            border-radius: 8px;
         }
         
-        .stat-highlight {
-            background: #f0f8f0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 1px solid #4a7c59;
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
         }
         
-        .stat-highlight h4 {
-            color: #2c5234;
+        .article-content li {
             margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
         
-        .champion-box {
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
+        .scoreboard {
+            background: var(--bg-light);
             padding: 2rem;
             border-radius: 15px;
             margin: 2rem 0;
-            text-align: center;
-            color: #2c5234;
-            border: 2px solid #e6c200;
         }
         
-        .champion-box h4 {
+        .scoreboard-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .scoreboard-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .scoreboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
             margin-bottom: 0.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .scoreboard-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .player-rank {
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .player-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-black);
+        }
+        
+        .player-score {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
+        .share-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .share-title {
             font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .trophy-ceremony {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .trophy-ceremony h4 {
+            color: var(--text-black);
             margin-bottom: 1rem;
-            color: #ffd700;
         }
         
-        .double-bogey-box {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 1.5rem;
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .share-button.facebook {
+            background: #1877f2;
+            color: white;
+        }
+        
+        .share-button.twitter {
+            background: #000000;
+            color: white;
+        }
+        
+        .share-button.email {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .share-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .comments-section {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+        
+        .comments-header {
+            font-size: 1.8rem;
+            color: var(--text-black);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .comment-form {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+        }
+        
+        .comment-form h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .comment-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
             border-radius: 10px;
-            margin: 2rem 0;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
         }
         
-        .double-bogey-box h4 {
-            color: #856404;
+        .comment-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .comment-submit {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .comment-submit:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .comment {
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 0.5rem;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .comment-date {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+        
+        .comment-text {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .login-prompt {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+        }
+        
+        .login-prompt p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+        
+        .login-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .login-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .success-message, .error-message {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 1rem;
+            }
+            
+            .article-header, .article-content, .comments-section {
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-image {
+                height: 300px;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+            
+            .share-button {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Article Hero -->
-    <section class="article-hero">
-        <div class="hero-content">
-            <h1>Scheffler Captures First Claret Jug with Dominant Victory</h1>
-            <p>World No. 1 completes commanding four-shot triumph at Royal Portrush to claim his fourth major championship</p>
-        </div>
-    </section>
-
-    <!-- Article Content -->
-    <div class="article-content">
-        <div class="article-meta">
-            <div class="article-date">
-                <i class="fas fa-calendar-alt"></i>
-                <span>July 21, 2025 - 8:30 PM</span>
-            </div>
-            <span class="article-category">Major Championship</span>
-        </div>
+    <div class="article-page">
+        <div class="article-container">
+            <article>
+                <header class="article-header">
+                    <span class="article-category">Major Championship</span>
+                    <h1 class="article-title">Scheffler Captures First Claret Jug with Dominant Victory</h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar"></i> July 21, 2025</span>
+                        <span><i class="far fa-clock"></i> 8:30 PM</span>
+                        <span><i class="far fa-user"></i> TGC Staff</span>
+                    </div>
+                </header>
+                
+                <img src="/images/news/open-championship-final-2025/scottie-final-round.png" alt="Scottie Scheffler Open Championship Final Round" class="article-image">
+                
+                <div class="article-content">
 
         <p>PORTRUSH, Northern Ireland — Scottie Scheffler lifted the iconic Claret Jug for the first time in his career on Sunday evening, capturing The 153rd Open Championship with a commanding four-shot victory at Royal Portrush. The world No. 1's final-round 3-under 68 capped off a masterful week-long performance that saw him finish at 17-under par, the third-lowest 72-hole total in Open Championship history.</p>
 
@@ -314,32 +476,35 @@ try {
             <p>Scottie Scheffler wins his first Open Championship and fourth major title with a dominant display at Royal Portrush, earning $3.1 million and joining golf's elite company.</p>
         </div>
 
-        <div class="final-leaderboard">
-            <h3><i class="fas fa-trophy"></i> Final Leaderboard</h3>
-            <div class="leaderboard-entry champion">
-                <span class="player-name">Scottie Scheffler (USA)</span>
-                <span class="player-score">-17 (68-64-67-68)</span>
-            </div>
-            <div class="leaderboard-entry">
-                <span class="player-name">Harris English (USA)</span>
-                <span class="player-score">-13 (Four shots back)</span>
-            </div>
-            <div class="leaderboard-entry">
-                <span class="player-name">Cole Gotterup (USA)</span>
-                <span class="player-score">-12 (Five shots back)</span>
-            </div>
-            <div class="leaderboard-entry">
-                <span class="player-name">Will Clark (ENG)</span>
-                <span class="player-score">-11 (Six shots back)</span>
-            </div>
-            <div class="leaderboard-entry">
-                <span class="player-name">Matt Fitzpatrick (ENG)</span>
-                <span class="player-score">-11 (Six shots back)</span>
-            </div>
-            <div class="leaderboard-entry">
-                <span class="player-name">Rory McIlroy (NIR)</span>
-                <span class="player-score">-10 (T7, Seven shots back)</span>
-            </div>
+        <div class="scoreboard">
+            <h3 class="scoreboard-title">Final Leaderboard</h3>
+            <ul class="scoreboard-list">
+                <li class="scoreboard-item">
+                    <span class="player-rank">1</span>
+                    <span class="player-name">Scottie Scheffler (USA)</span>
+                    <span class="player-score">-17 (68-64-67-68)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-rank">2</span>
+                    <span class="player-name">Harris English (USA)</span>
+                    <span class="player-score">-13 (Four shots back)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-rank">3</span>
+                    <span class="player-name">Cole Gotterup (USA)</span>
+                    <span class="player-score">-12 (Five shots back)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-rank">T4</span>
+                    <span class="player-name">Will Clark (ENG)</span>
+                    <span class="player-score">-11 (Six shots back)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-rank">T4</span>
+                    <span class="player-name">Matt Fitzpatrick (ENG)</span>
+                    <span class="player-score">-11 (Six shots back)</span>
+                </li>
+            </ul>
         </div>
 
         <p>Starting the final round with a four-shot advantage, Scheffler quickly extended his lead to seven shots through the opening holes before encountering his only significant challenge of the week. The 28-year-old American demonstrated remarkable resilience and championship composure, weathering a mid-round storm to secure his first British Open title in emphatic fashion.</p>
@@ -388,12 +553,26 @@ try {
 
         <p>Among the week's most remarkable storylines was Bryson DeChambeau's incredible comeback performance. After opening with a disastrous 7-over 78 that left him tied for 144th and seemingly out of contention, the 2024 U.S. Open champion mounted one of the most impressive turnarounds in major championship history. DeChambeau responded with three consecutive outstanding rounds of 65-68-64, playing his final 54 holes in 16-under par—the second-lowest such score in the 153-year history of The Open.</p>
 
-        <div class="stat-highlight">
-            <h4><i class="fas fa-chart-bar"></i> DeChambeau's Historic Comeback</h4>
-            <p><strong>Opening Round:</strong> 7-over 78 (T144th place)<br>
-            <strong>Final Three Rounds:</strong> 65-68-64 (16-under par)<br>
-            <strong>Final Position:</strong> T10 at 9-under par<br>
-            <strong>Final Round 64:</strong> Tied for best round of the tournament</p>
+        <div class="scoreboard">
+            <h3 class="scoreboard-title">DeChambeau's Historic Comeback</h3>
+            <ul class="scoreboard-list">
+                <li class="scoreboard-item">
+                    <span class="player-name">Opening Round:</span>
+                    <span class="player-score">7-over 78 (T144th place)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Final Three Rounds:</span>
+                    <span class="player-score">65-68-64 (16-under par)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Final Position:</span>
+                    <span class="player-score">T10 at 9-under par</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Final Round 64:</span>
+                    <span class="player-score">Tied for best round</span>
+                </li>
+            </ul>
         </div>
 
         <p>DeChambeau's final-round 64 tied for the tournament's lowest score and matched his best round in 124 career major championship rounds. The performance likely secured his spot on the U.S. Ryder Cup team, with Captain Keegan Bradley having left an inspirational message in his locker during the week. "Normally I'd be super pissed and frustrated, which I was rightfully so, because I thought I played pretty well and shot 7 over," DeChambeau reflected. "I said to myself, I'm going to do something different this time... I'm going to give it everything I have tomorrow, no matter what happens."</p>
@@ -423,12 +602,26 @@ try {
 
         <p>As the sun set over Royal Portrush and the celebrations began in earnest, Scheffler's dominance over professional golf reached new heights. With three major championships in 2025 and just the U.S. Open standing between him and the career Grand Slam, the Texan has established himself as the defining player of his generation.</p>
 
-        <div class="stat-highlight">
-            <h4><i class="fas fa-history"></i> Championship by the Numbers</h4>
-            <p><strong>Final Score:</strong> 17-under par (267 total) - Third-lowest 72-hole total in Open Championship history<br>
-            <strong>Margin of Victory:</strong> Four shots over Harris English<br>
-            <strong>Perfect Record:</strong> 10-0 when holding the 54-hole lead in tournaments<br>
-            <strong>Prize Money:</strong> $3.1 million</p>
+        <div class="scoreboard">
+            <h3 class="scoreboard-title">Championship by the Numbers</h3>
+            <ul class="scoreboard-list">
+                <li class="scoreboard-item">
+                    <span class="player-name">Final Score:</span>
+                    <span class="player-score">17-under par (267 total)</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Margin of Victory:</span>
+                    <span class="player-score">Four shots over Harris English</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Perfect Record:</span>
+                    <span class="player-score">10-0 when holding 54-hole lead</span>
+                </li>
+                <li class="scoreboard-item">
+                    <span class="player-name">Prize Money:</span>
+                    <span class="player-score">$3.1 million</span>
+                </li>
+            </ul>
         </div>
 
         <p>For Royal Portrush, hosting The Open for just the second time since 1951, the week provided a spectacular showcase of Northern Ireland's golfing heritage. The course's demanding layout and unpredictable conditions created the perfect stage for championship drama, with Scheffler ultimately proving himself worthy of joining the illustrious list of Open champions.</p>
@@ -440,23 +633,23 @@ try {
         <br>
 
         <p>The 153rd Open Championship will be remembered as the moment Scottie Scheffler announced himself among golf's immortals, capturing his first Claret Jug with a performance that exemplified everything great about major championship golf. At Royal Portrush, in front of passionate crowds and on one of the sport's grandest stages, the world's best player delivered when it mattered most.</p>
-    </div>
+                </div>
 
-    <!-- Share Section -->
-    <section class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center; margin: 2rem auto; max-width: 800px;">
-        <h3 style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Article</h3>
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
-                <i class="fab fa-facebook-f"></i> Share on Facebook
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_title); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                <strong>𝕏</strong> Share on X
-            </a>
-            <a href="mailto:?subject=<?php echo urlencode($article_title); ?>&body=<?php echo urlencode('Check out this article: https://tennesseegolfcourses.com/news/' . $article_slug); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: var(--primary-color); color: white;">
-                <i class="far fa-envelope"></i> Share via Email
-            </a>
-        </div>
-    </section>
+                
+                <div class="share-section">
+                    <h3 class="share-title">Share This Article</h3>
+                    <div class="share-buttons">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-button facebook">
+                            <i class="fab fa-facebook-f"></i> Share on Facebook
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_title); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-button twitter">
+                            <strong>𝕏</strong> Share on X
+                        </a>
+                        <a href="mailto:?subject=<?php echo urlencode($article_title); ?>&body=<?php echo urlencode('Check out this article: https://tennesseegolfcourses.com/news/' . $article_slug); ?>" class="share-button email">
+                            <i class="far fa-envelope"></i> Share via Email
+                        </a>
+                    </div>
+                </div>
 
                 
                 <div class="comments-section">
@@ -491,7 +684,7 @@ try {
                                 <div class="comment">
                                     <div class="comment-header">
                                         <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
-                                        <span class="comment-date"><?php echo date('M j, Y \\a\\t g:i A', strtotime($comment['created_at'])); ?></span>
+                                        <span class="comment-date"><?php echo date('M j, Y \a\t g:i A', strtotime($comment['created_at'])); ?></span>
                                     </div>
                                     <p class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
                                 </div>
