@@ -458,115 +458,55 @@ try {
         </div>
     </section>
 
-    <!-- Comments Section -->
-    <section class="comments-section" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
-            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="color: #2c5234; margin-bottom: 1rem;">Discussion</h2>
-                <p>Share your thoughts on this article</p>
-            </div>
-            
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success" style="background: rgba(34, 197, 94, 0.1); color: #16a34a; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(34, 197, 94, 0.2);">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(239, 68, 68, 0.2);">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Leave a Comment</h3>
-                    <form method="POST" class="comment-form">
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Comment:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your thoughts on this article..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; font-size: 14px; resize: vertical; min-height: 100px;"></textarea>
+                
+                <div class="comments-section">
+                    <h2 class="comments-header">Comments</h2>
+                    
+                    <?php if ($is_logged_in): ?>
+                        <div class="comment-form">
+                            <h3>Leave a Comment</h3>
+                            <?php if (isset($success_message)): ?>
+                                <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
+                            <?php endif; ?>
+                            <?php if (isset($error_message)): ?>
+                                <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+                            <?php endif; ?>
+                            <form method="POST" action="">
+                                <textarea name="comment_text" class="comment-textarea" placeholder="Share your thoughts..." required></textarea>
+                                <button type="submit" class="comment-submit">Post Comment</button>
+                            </form>
                         </div>
-                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Post Comment</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p><a href="/login" style="color: #2c5234; font-weight: 600; text-decoration: none;">Login</a> or <a href="/register" style="color: #2c5234; font-weight: 600; text-decoration: none;">Register</a> to join the discussion</p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Display Comments -->
-            <div class="comments-container">
-                <?php if (empty($comments)): ?>
-                    <div class="no-comments" style="text-align: center; padding: 3rem; color: #666;">
-                        <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; color: #ddd;"></i>
-                        <p>No comments yet. Be the first to share your thoughts!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <div class="comment-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                <div class="commenter-name" style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-date" style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y • g:i A', strtotime($comment['created_at'])); ?></div>
-                            </div>
-                            <p style="line-height: 1.6; color: #333;"><?php echo htmlspecialchars($comment['comment_text']); ?></p>
+                    <?php else: ?>
+                        <div class="login-prompt">
+                            <p>Please log in to leave a comment.</p>
+                            <a href="/login" class="login-button">Log In</a>
                         </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    <?php endif; ?>
+                    
+                    <div class="comments-list">
+                        <?php if (empty($comments)): ?>
+                            <p style="text-align: center; color: var(--text-gray); padding: 2rem;">No comments yet. Be the first to share your thoughts!</p>
+                        <?php else: ?>
+                            <?php foreach ($comments as $comment): ?>
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
+                                        <span class="comment-date"><?php echo date('M j, Y \\a\\t g:i A', strtotime($comment['created_at'])); ?></span>
+                                    </div>
+                                    <p class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/#courses">Golf Courses</a></li>
-                        <li><a href="/#reviews">Reviews</a></li>
-                        <li><a href="/#news">News</a></li>
-                        <li><a href="/#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
+            </article>
         </div>
-    </footer>
+    </div>
 
-    <script src="../script.js"></script>
+
+    <?php include '../includes/footer.php'; ?>
+    
+    <script src="/weather.js?v=4"></script>
+    <script src="/script.js?v=4"></script>
 </body>
 </html>
