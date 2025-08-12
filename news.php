@@ -145,7 +145,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
     
     <style>
         .news-page {
-            padding-top: 90px;
+            padding-top: 0px;
             min-height: 40vh;
             background: var(--bg-light);
         }
