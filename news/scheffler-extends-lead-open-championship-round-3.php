@@ -145,7 +145,7 @@ try {
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 120px;
+            margin-top: 70px;
         }
         
         .article-content {

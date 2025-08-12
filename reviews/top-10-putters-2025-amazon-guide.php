@@ -42,7 +42,7 @@ $article = [
     
     <style>
         .article-page {
-            padding-top: 140px;
+            padding-top: 90px;
             min-height: 100vh;
             background: var(--bg-light);
         }
