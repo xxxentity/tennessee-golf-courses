@@ -797,6 +797,21 @@ $courses_static = [
         'slug' => 'druid-hills-golf-club'
     ],
     [
+        'id' => 72,
+        'name' => 'Southern Hills Golf & Country Club',
+        'location' => 'Cookeville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Perry Maxwell designed championship course since 1988. 18 holes with 7 tee options and exceptional greens maintained to the highest standards',
+        'image' => '/images/courses/southern-hills-golf-country-club/1.jpeg',
+        'price_range' => '$35-65',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Perry Maxwell',
+        'amenities' => ['Championship Golf', 'Pro Shop', 'The 19th Hole Restaurant', 'Exceptional Greens', 'Seven Tee Options', 'PGA Professional Instruction'],
+        'slug' => 'southern-hills-golf-country-club'
+    ],
+    [
         'id' => 53,
         'name' => 'Blackthorn Club',
         'location' => 'Jonesborough, TN',
