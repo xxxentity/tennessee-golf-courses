@@ -161,10 +161,10 @@ try {
                 </div>
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Pricing</h3>
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="background: linear-gradient(135deg, #4a7c59, #2c5234); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Daily Fee Course</h4>
-                        <p style="margin: 0; opacity: 0.9;">Open to the public</p>
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Call for Pricing</h4>
+                        <p style="margin: 0; opacity: 0.9;">Contact course directly</p>
                     </div>
                     <p style="text-align: center; color: #666; margin-top: 1rem;">
                         Williams Creek Golf Course welcomes golfers of all skill levels. This championship par 3 course offers 
