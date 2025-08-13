@@ -157,7 +157,7 @@
             <div class="courses-grid">
                 <div class="course-card">
                     <a href="courses/bear-trace-harrison-bay" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="/images/courses/bear-trace-harrison-bay/1.jpeg" alt="Bear Trace at Harrison Bay">
+                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bear Trace at Harrison Bay" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                     <div class="course-content">
                         <a href="courses/bear-trace-harrison-bay" style="text-decoration: none;">
@@ -176,7 +176,7 @@
 
                 <div class="course-card">
                     <a href="courses/tpc-southwind" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="/images/courses/tpc-southwind/1.jpeg" alt="TPC Southwind">
+                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TPC Southwind" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                     <div class="course-content">
                         <a href="courses/tpc-southwind" style="text-decoration: none;">
@@ -193,6 +193,43 @@
                     </div>
                 </div>
 
+                <div class="course-card">
+                    <a href="courses/belle-meade-country-club" class="course-image clickable-image" style="text-decoration: none;">
+                        <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Belle Meade Country Club" style="width: 100%; height: 200px; object-fit: cover;">
+                    </a>
+                    <div class="course-content">
+                        <a href="courses/belle-meade-country-club" style="text-decoration: none;">
+                            <h3 class="clickable-title">Belle Meade Country Club</h3>
+                        </a>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
+                        <p class="course-description">Historic Donald Ross design since 1921 in exclusive Belle Meade neighborhood</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Donald Ross</span>
+                        </div>
+                        <a href="courses/belle-meade-country-club" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <a href="courses/gaylord-springs-golf-links" class="course-image clickable-image" style="text-decoration: none;">
+                        <img src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gaylord Springs Golf Links" style="width: 100%; height: 200px; object-fit: cover;">
+                    </a>
+                    <div class="course-content">
+                        <a href="courses/gaylord-springs-golf-links" style="text-decoration: none;">
+                            <h3 class="clickable-title">Gaylord Springs Golf Links</h3>
+                        </a>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
+                        <p class="course-description">Scottish links-style course by Larry Nelson at Gaylord Opryland Resort</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Resort Course</span>
+                        </div>
+                        <a href="courses/gaylord-springs-golf-links" class="btn-primary">View Details</a>
+                    </div>
+                </div>
 
             </div>
             <div class="section-footer">
@@ -269,9 +306,8 @@
                 <p>Read reviews from golfers across Tennessee's premier courses</p>
             </div>
             <div style="text-align: center; padding: 60px 0;">
-                <i class="fas fa-comments" style="font-size: 48px; color: var(--primary-color); margin-bottom: 20px;"></i>
-                <p style="font-size: 18px; color: var(--text-gray);">Course reviews coming soon! Sign up to be notified when reviews go live.</p>
-                <a href="#newsletter" class="btn-primary" style="margin-top: 20px;">Get Notified</a>
+                <p style="font-size: 18px; color: var(--text-gray);">Be the first to share your experience! Visit any course page to leave a review.</p>
+                <a href="courses" class="btn-primary" style="margin-top: 20px;">Browse Courses</a>
             </div>
         </div>
     </section>

@@ -520,8 +520,8 @@ a[href^="www."]::after {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 .course-card {
@@ -560,7 +560,7 @@ a[href^="www."]::after {
 
 .course-image {
     position: relative;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
