@@ -119,8 +119,12 @@ try {
             <div class="course-info-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
                 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Details</h3>
-                    <div class="course-specs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                        </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">71</span>
@@ -130,15 +134,7 @@ try {
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,702</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">73.4</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">139</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Architect:</span>
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">Donald Ross</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
@@ -166,24 +162,15 @@ try {
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1511 Riverview Road</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Chattanooga, TN 37405</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(423) 266-6178</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.chattanoogagcc.org" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
-                    </div>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    1511 Riverview Road<br>
+                    Chattanooga, TN 37405</p>
+                    
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    (423) 266-6178</p>
+                    
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.chattanoogagcc.org" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">chattanoogagcc.org</a></p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
