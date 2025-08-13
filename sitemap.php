@@ -68,18 +68,81 @@ if ($isHuman) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <style>
             body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: #f8f9fa; color: #333; }
-            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .container { max-width: 800px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
             h1 { color: #2c5234; margin-bottom: 2rem; text-align: center; }
-            h2 { color: #4a7c59; border-bottom: 2px solid #4a7c59; padding-bottom: 0.5rem; margin-top: 2rem; }
-            .sitemap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-            .sitemap-section { background: #f8f9fa; padding: 1.5rem; border-radius: 10px; }
-            .sitemap-section h3 { color: #2c5234; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-            .sitemap-links { list-style: none; padding: 0; margin: 0; }
-            .sitemap-links li { margin-bottom: 0.75rem; }
-            .sitemap-links a { color: #4a7c59; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; border-radius: 5px; transition: all 0.3s ease; }
-            .sitemap-links a:hover { background: #e9ecef; color: #2c5234; }
-            .count { background: #4a7c59; color: white; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.8rem; margin-left: auto; }
-            .xml-link { text-align: center; margin-top: 2rem; padding: 1rem; background: #e9ecef; border-radius: 10px; }
+            
+            .sitemap-section { margin-bottom: 1rem; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden; }
+            
+            .section-header { 
+                background: #f8f9fa; 
+                padding: 1rem 1.5rem; 
+                cursor: pointer; 
+                display: flex; 
+                align-items: center; 
+                justify-content: space-between; 
+                transition: all 0.3s ease;
+                border: none;
+                width: 100%;
+                text-align: left;
+                font-family: inherit;
+            }
+            .section-header:hover { background: #e9ecef; }
+            
+            .section-title { 
+                color: #2c5234; 
+                font-size: 1.1rem; 
+                font-weight: 600; 
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+                margin: 0;
+            }
+            
+            .section-meta { display: flex; align-items: center; gap: 1rem; }
+            .count { background: #4a7c59; color: white; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.8rem; }
+            .arrow { color: #4a7c59; transition: transform 0.3s ease; font-size: 1.2rem; }
+            .arrow.expanded { transform: rotate(180deg); }
+            
+            .section-content { 
+                display: none; 
+                padding: 0 1.5rem 1.5rem 1.5rem; 
+                background: white;
+                border-top: 1px solid #f0f0f0;
+            }
+            .section-content.expanded { display: block; }
+            
+            .sitemap-links { 
+                list-style: none; 
+                padding: 0; 
+                margin: 0; 
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+                gap: 0.5rem; 
+            }
+            .sitemap-links li { margin-bottom: 0; }
+            .sitemap-links a { 
+                color: #4a7c59; 
+                text-decoration: none; 
+                font-weight: 500; 
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+                padding: 0.5rem; 
+                border-radius: 5px; 
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+            }
+            .sitemap-links a:hover { background: #f8f9fa; color: #2c5234; }
+            
+            .main-pages .sitemap-links { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            
+            .xml-link { 
+                text-align: center; 
+                margin-top: 2rem; 
+                padding: 1rem; 
+                background: #e9ecef; 
+                border-radius: 10px; 
+            }
             .xml-link a { color: #4a7c59; font-weight: 600; text-decoration: none; }
         </style>
     </head>
@@ -87,9 +150,18 @@ if ($isHuman) {
         <div class="container">
             <h1><i class="fas fa-sitemap"></i> Tennessee Golf Courses - Site Map</h1>
             
-            <div class="sitemap-grid">
-                <div class="sitemap-section">
-                    <h3><i class="fas fa-home"></i> Main Pages</h3>
+            <!-- Main Pages Section -->
+            <div class="sitemap-section main-pages">
+                <button class="section-header" onclick="toggleSection('main-pages')">
+                    <h3 class="section-title">
+                        <i class="fas fa-home"></i> Main Pages
+                    </h3>
+                    <div class="section-meta">
+                        <span class="count"><?php echo count($mainPages); ?></span>
+                        <i class="fas fa-chevron-down arrow" id="main-pages-arrow"></i>
+                    </div>
+                </button>
+                <div class="section-content" id="main-pages-content">
                     <ul class="sitemap-links">
                         <?php foreach ($mainPages as $page): ?>
                         <li><a href="<?php echo $baseUrl . '/' . $page['url']; ?>">
@@ -99,9 +171,20 @@ if ($isHuman) {
                         <?php endforeach; ?>
                     </ul>
                 </div>
+            </div>
 
-                <div class="sitemap-section">
-                    <h3><i class="fas fa-golf-ball"></i> Golf Courses <span class="count"><?php echo count($courseFiles); ?></span></h3>
+            <!-- Golf Courses Section -->
+            <div class="sitemap-section">
+                <button class="section-header" onclick="toggleSection('courses')">
+                    <h3 class="section-title">
+                        <i class="fas fa-golf-ball"></i> Golf Courses
+                    </h3>
+                    <div class="section-meta">
+                        <span class="count"><?php echo count($courseFiles); ?></span>
+                        <i class="fas fa-chevron-down arrow" id="courses-arrow"></i>
+                    </div>
+                </button>
+                <div class="section-content" id="courses-content">
                     <ul class="sitemap-links">
                         <?php 
                         usort($courseFiles, function($a, $b) { return strcmp($a['url'], $b['url']); });
@@ -115,9 +198,20 @@ if ($isHuman) {
                         <?php endforeach; ?>
                     </ul>
                 </div>
+            </div>
 
-                <div class="sitemap-section">
-                    <h3><i class="fas fa-newspaper"></i> News Articles <span class="count"><?php echo count($newsFiles); ?></span></h3>
+            <!-- News Articles Section -->
+            <div class="sitemap-section">
+                <button class="section-header" onclick="toggleSection('news')">
+                    <h3 class="section-title">
+                        <i class="fas fa-newspaper"></i> News Articles
+                    </h3>
+                    <div class="section-meta">
+                        <span class="count"><?php echo count($newsFiles); ?></span>
+                        <i class="fas fa-chevron-down arrow" id="news-arrow"></i>
+                    </div>
+                </button>
+                <div class="section-content" id="news-content">
                     <ul class="sitemap-links">
                         <?php 
                         usort($newsFiles, function($a, $b) { return strcmp($b['modified'], $a['modified']); });
@@ -131,9 +225,20 @@ if ($isHuman) {
                         <?php endforeach; ?>
                     </ul>
                 </div>
+            </div>
 
-                <div class="sitemap-section">
-                    <h3><i class="fas fa-star"></i> Reviews <span class="count"><?php echo count($reviewFiles); ?></span></h3>
+            <!-- Reviews Section -->
+            <div class="sitemap-section">
+                <button class="section-header" onclick="toggleSection('reviews')">
+                    <h3 class="section-title">
+                        <i class="fas fa-star"></i> Reviews
+                    </h3>
+                    <div class="section-meta">
+                        <span class="count"><?php echo count($reviewFiles); ?></span>
+                        <i class="fas fa-chevron-down arrow" id="reviews-arrow"></i>
+                    </div>
+                </button>
+                <div class="section-content" id="reviews-content">
                     <ul class="sitemap-links">
                         <?php 
                         usort($reviewFiles, function($a, $b) { return strcmp($b['modified'], $a['modified']); });
@@ -157,6 +262,26 @@ if ($isHuman) {
                 </p>
             </div>
         </div>
+
+        <script>
+            function toggleSection(sectionId) {
+                const content = document.getElementById(sectionId + '-content');
+                const arrow = document.getElementById(sectionId + '-arrow');
+                
+                if (content.classList.contains('expanded')) {
+                    content.classList.remove('expanded');
+                    arrow.classList.remove('expanded');
+                } else {
+                    content.classList.add('expanded');
+                    arrow.classList.add('expanded');
+                }
+            }
+
+            // Auto-expand main pages section by default
+            document.addEventListener('DOMContentLoaded', function() {
+                toggleSection('main-pages');
+            });
+        </script>
     </body>
     </html>
     <?php
