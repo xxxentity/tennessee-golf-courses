@@ -167,6 +167,21 @@ $courses_static = [
         'slug' => 'cherokee-country-club'
     ],
     [
+        'id' => 75,
+        'name' => 'Chattanooga Golf & Country Club',
+        'location' => 'Chattanooga, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Historic Donald Ross design from the 1920s, enhanced by Bill Bergin in 2005. The oldest golf club in the South, established in 1896.',
+        'image' => '/images/courses/chattanooga-golf-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Championship Golf', 'Pro Shop', 'Private Lessons', 'Club Fitting', 'Junior Golf Program', 'Fine Dining', 'Event Hosting', 'Historic Clubhouse'],
+        'slug' => 'chattanooga-golf-country-club'
+    ],
+    [
         'id' => 4,
         'name' => 'Gaylord Springs Golf Links',
         'location' => 'Nashville, TN',
