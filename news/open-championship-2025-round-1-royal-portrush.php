@@ -457,7 +457,7 @@ try {
                     <div class="article-meta">
                         <span><i class="far fa-calendar"></i> July 17, 2025</span>
                         <span><i class="far fa-clock"></i> 6:00 PM</span>
-                        <span><i class="far fa-user"></i> TGC Staff</span>
+                        <span><i class="far fa-user"></i> TGC Editorial Team</span>
                     </div>
                 </header>
                 
