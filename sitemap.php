@@ -1,183 +1,207 @@
 <?php
-header('Content-Type: application/xml; charset=utf-8');
-echo '<?xml version="1.0" encoding="UTF-8"?>';
-?>
+// Determine if this is a human visitor or search engine bot
+$isHuman = !isset($_GET['format']) || $_GET['format'] !== 'xml';
+$userAgent = strtolower($_SERVER['HTTP_USER_AGENT'] ?? '');
+$isBot = strpos($userAgent, 'bot') !== false || strpos($userAgent, 'crawler') !== false || strpos($userAgent, 'spider') !== false;
+
+// Force XML for bots, allow HTML for humans
+if ($isBot) {
+    $isHuman = false;
+}
+
+$baseUrl = 'https://tennesseegolfcourses.com';
+
+// Function to get file modification date
+function getFileModDate($filepath) {
+    if (file_exists($filepath)) {
+        return date('Y-m-d', filemtime($filepath));
+    }
+    return date('Y-m-d');
+}
+
+// Function to scan directory for PHP files
+function scanDirectory($dir, $baseDir = '') {
+    $files = [];
+    if (is_dir($dir)) {
+        $items = glob($dir . '/*.php');
+        foreach ($items as $item) {
+            $filename = basename($item, '.php');
+            $cleanUrl = $baseDir ? $baseDir . '/' . $filename : $filename;
+            $files[] = [
+                'url' => $cleanUrl,
+                'file' => $item,
+                'modified' => getFileModDate($item)
+            ];
+        }
+    }
+    return $files;
+}
+
+// Scan all content directories
+$courseFiles = scanDirectory(__DIR__ . '/courses', 'courses');
+$newsFiles = scanDirectory(__DIR__ . '/news', 'news');
+$reviewFiles = scanDirectory(__DIR__ . '/reviews', 'reviews');
+
+// Main pages with their file paths
+$mainPages = [
+    ['url' => '', 'name' => 'Home', 'file' => __DIR__ . '/index.php', 'priority' => '1.0', 'changefreq' => 'weekly'],
+    ['url' => 'courses', 'name' => 'Golf Courses', 'file' => __DIR__ . '/courses.php', 'priority' => '0.9', 'changefreq' => 'weekly'],
+    ['url' => 'reviews', 'name' => 'Reviews', 'file' => __DIR__ . '/reviews.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
+    ['url' => 'news', 'name' => 'News', 'file' => __DIR__ . '/news.php', 'priority' => '0.8', 'changefreq' => 'daily'],
+    ['url' => 'events', 'name' => 'Events', 'file' => __DIR__ . '/events.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
+    ['url' => 'about', 'name' => 'About', 'file' => __DIR__ . '/about.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
+    ['url' => 'contact', 'name' => 'Contact', 'file' => __DIR__ . '/contact.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
+    ['url' => 'privacy-policy', 'name' => 'Privacy Policy', 'file' => __DIR__ . '/privacy-policy.php', 'priority' => '0.3', 'changefreq' => 'yearly'],
+    ['url' => 'terms-of-service', 'name' => 'Terms of Service', 'file' => __DIR__ . '/terms-of-service.php', 'priority' => '0.3', 'changefreq' => 'yearly']
+];
+
+if ($isHuman) {
+    // Human-readable HTML version
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Map - Tennessee Golf Courses</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <style>
+            body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background: #f8f9fa; color: #333; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            h1 { color: #2c5234; margin-bottom: 2rem; text-align: center; }
+            h2 { color: #4a7c59; border-bottom: 2px solid #4a7c59; padding-bottom: 0.5rem; margin-top: 2rem; }
+            .sitemap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+            .sitemap-section { background: #f8f9fa; padding: 1.5rem; border-radius: 10px; }
+            .sitemap-section h3 { color: #2c5234; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+            .sitemap-links { list-style: none; padding: 0; margin: 0; }
+            .sitemap-links li { margin-bottom: 0.75rem; }
+            .sitemap-links a { color: #4a7c59; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; border-radius: 5px; transition: all 0.3s ease; }
+            .sitemap-links a:hover { background: #e9ecef; color: #2c5234; }
+            .count { background: #4a7c59; color: white; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.8rem; margin-left: auto; }
+            .xml-link { text-align: center; margin-top: 2rem; padding: 1rem; background: #e9ecef; border-radius: 10px; }
+            .xml-link a { color: #4a7c59; font-weight: 600; text-decoration: none; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1><i class="fas fa-sitemap"></i> Tennessee Golf Courses - Site Map</h1>
+            
+            <div class="sitemap-grid">
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-home"></i> Main Pages</h3>
+                    <ul class="sitemap-links">
+                        <?php foreach ($mainPages as $page): ?>
+                        <li><a href="<?php echo $baseUrl . '/' . $page['url']; ?>">
+                            <i class="fas fa-link"></i>
+                            <?php echo $page['name']; ?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-golf-ball"></i> Golf Courses <span class="count"><?php echo count($courseFiles); ?></span></h3>
+                    <ul class="sitemap-links">
+                        <?php 
+                        usort($courseFiles, function($a, $b) { return strcmp($a['url'], $b['url']); });
+                        foreach ($courseFiles as $course): 
+                            $courseName = ucwords(str_replace('-', ' ', basename($course['url'])));
+                        ?>
+                        <li><a href="<?php echo $baseUrl . '/' . $course['url']; ?>">
+                            <i class="fas fa-golf-ball"></i>
+                            <?php echo $courseName; ?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-newspaper"></i> News Articles <span class="count"><?php echo count($newsFiles); ?></span></h3>
+                    <ul class="sitemap-links">
+                        <?php 
+                        usort($newsFiles, function($a, $b) { return strcmp($b['modified'], $a['modified']); });
+                        foreach ($newsFiles as $article): 
+                            $articleName = ucwords(str_replace('-', ' ', basename($article['url'])));
+                        ?>
+                        <li><a href="<?php echo $baseUrl . '/' . $article['url']; ?>">
+                            <i class="fas fa-newspaper"></i>
+                            <?php echo $articleName; ?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-star"></i> Reviews <span class="count"><?php echo count($reviewFiles); ?></span></h3>
+                    <ul class="sitemap-links">
+                        <?php 
+                        usort($reviewFiles, function($a, $b) { return strcmp($b['modified'], $a['modified']); });
+                        foreach ($reviewFiles as $review): 
+                            $reviewName = ucwords(str_replace('-', ' ', basename($review['url'])));
+                        ?>
+                        <li><a href="<?php echo $baseUrl . '/' . $review['url']; ?>">
+                            <i class="fas fa-star"></i>
+                            <?php echo $reviewName; ?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="xml-link">
+                <p><strong>For search engines:</strong> <a href="<?php echo $baseUrl; ?>/sitemap.xml?format=xml">XML Sitemap</a></p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                    This sitemap automatically updates when new content is added. 
+                    Total pages: <?php echo count($mainPages) + count($courseFiles) + count($newsFiles) + count($reviewFiles); ?>
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    <?php
+} else {
+    // XML version for search engines
+    header('Content-Type: application/xml; charset=utf-8');
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url>
-    <loc>https://tennesseegolfcourses.com/</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Main Pages -->
-  <url>
-    <loc>https://tennesseegolfcourses.com/courses</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/reviews</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/news</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/events</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/about</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/contact</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Course Pages -->
-  <?php
-  $courses = [
-    'avalon-golf-country-club',
-    'bear-trace-cumberland-mountain',
-    'bear-trace-harrison-bay', 
-    'belle-acres-golf-course',
-    'belle-meade-country-club',
-    'big-creek-golf-club',
-    'blackthorn-club',
-    'bluegrass-yacht-country-club',
-    'cedar-crest-golf-club',
-    'cheekwood-golf-club',
-    'cherokee-country-club',
-    'cumberland-cove-golf-course',
-    'dead-horse-lake-golf-course',
-    'druid-hills-golf-club',
-    'eagles-landing-golf-club',
-    'egwani-farms-golf-course',
-    'forrest-crossing-golf-course',
-    'fox-den-country-club',
-    'gaylord-springs-golf-links',
-    'greystone-golf-course',
-    'harpeth-hills-golf-course',
-    'hermitage-golf-course',
-    'hillwood-country-club',
-    'holston-hills-country-club',
-    'island-pointe-golf-club',
-    'lake-tansi-golf-course',
-    'lambert-acres-golf-club',
-    'laurel-valley-country-club',
-    'mccabe-golf-course',
-    'mirimichi-golf-course',
-    'nashville-golf-athletic-club',
-    'nashville-national-golf-links',
-    'old-hickory-country-club',
-    'percy-warner-golf-course',
-    'pine-oaks-golf-course',
-    'richland-country-club',
-    'sevierville-golf-club',
-    'southern-hills-golf-country-club',
-    'springhouse-golf-club',
-    'stones-river-country-club',
-    'sweetens-cove-golf-club',
-    'ted-rhodes-golf-course',
-    'temple-hills-country-club',
-    'the-club-at-five-oaks',
-    'the-club-at-gettysvue',
-    'the-golf-club-of-tennessee',
-    'the-governors-club',
-    'the-grove',
-    'the-legacy-golf-course',
-    'three-ridges-golf-course',
-    'tpc-southwind',
-    'troubadour-golf-field-club',
-    'two-rivers-golf-course',
-    'vanderbilt-legends-club',
-    'warriors-path-state-park-golf-course',
-    'white-plains-golf-course',
-    'whittle-springs-golf-course',
-    'williams-creek-golf-course',
-    'willow-creek-golf-club',
-    'windtree-golf-course'
-  ];
-  
-  foreach ($courses as $course): ?>
-  <url>
-    <loc>https://tennesseegolfcourses.com/courses/<?php echo $course; ?></loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <?php endforeach; ?>
-  
-  <!-- News Articles -->
-  <?php
-  $news = [
-    'fedex-st-jude-championship-2025-complete-recap-community-impact',
-    'fedex-st-jude-first-round-bhatia-leads',
-    'fleetwood-maintains-narrow-lead-scheffler-charges',
-    'fleetwood-takes-command-weather-halts-play',
-    'open-championship-2025-round-1-royal-portrush',
-    'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak',
-    'scheffler-extends-lead-open-championship-round-3',
-    'scheffler-seizes-control-open-championship-round-2',
-    'scheffler-wins-2025-british-open-final-round'
-  ];
-  
-  foreach ($news as $article): ?>
-  <url>
-    <loc>https://tennesseegolfcourses.com/news/<?php echo $article; ?></loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <?php endforeach; ?>
-  
-  <!-- Review Articles -->
-  <url>
-    <loc>https://tennesseegolfcourses.com/reviews/top-10-putters-2025-amazon-guide</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/reviews/top-5-golf-balls-2025</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://tennesseegolfcourses.com/privacy-policy</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/terms-of-service</loc>
-    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+    <?php foreach ($mainPages as $page): ?>
+    <url>
+        <loc><?php echo $baseUrl . '/' . $page['url']; ?></loc>
+        <lastmod><?php echo getFileModDate($page['file']); ?></lastmod>
+        <changefreq><?php echo $page['changefreq']; ?></changefreq>
+        <priority><?php echo $page['priority']; ?></priority>
+    </url>
+    <?php endforeach; ?>
+
+    <?php foreach ($courseFiles as $course): ?>
+    <url>
+        <loc><?php echo $baseUrl . '/' . $course['url']; ?></loc>
+        <lastmod><?php echo $course['modified']; ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <?php endforeach; ?>
+
+    <?php foreach ($newsFiles as $article): ?>
+    <url>
+        <loc><?php echo $baseUrl . '/' . $article['url']; ?></loc>
+        <lastmod><?php echo $article['modified']; ?></lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <?php endforeach; ?>
+
+    <?php foreach ($reviewFiles as $review): ?>
+    <url>
+        <loc><?php echo $baseUrl . '/' . $review['url']; ?></loc>
+        <lastmod><?php echo $review['modified']; ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <?php endforeach; ?>
 </urlset>
+    <?php
+}
+?>
