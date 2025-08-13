@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Favicon -->
-<link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
+<link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4" sizes="32x32">
+<link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4" sizes="16x16">
 <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
 
 <!-- Google tag (gtag.js) -->
