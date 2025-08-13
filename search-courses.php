@@ -30,6 +30,7 @@ $courses = [
     ['name' => 'Hermitage Golf Course', 'location' => 'Old Hickory, TN', 'slug' => 'hermitage-golf-course'],
     ['name' => 'Hillwood Country Club', 'location' => 'Nashville, TN', 'slug' => 'hillwood-country-club'],
     ['name' => 'Holston Hills Country Club', 'location' => 'Knoxville, TN', 'slug' => 'holston-hills-country-club'],
+    ['name' => 'Honky Tonk National Golf Course', 'location' => 'Sparta, TN', 'slug' => 'honky-tonk-national-golf-course'],
     ['name' => 'Island Pointe Golf Club', 'location' => 'Kodak, TN', 'slug' => 'island-pointe-golf-club'],
     ['name' => 'McCabe Golf Course', 'location' => 'Nashville, TN', 'slug' => 'mccabe-golf-course'],
     ['name' => 'Mirimichi Golf Course', 'location' => 'Millington, TN', 'slug' => 'mirimichi-golf-course'],

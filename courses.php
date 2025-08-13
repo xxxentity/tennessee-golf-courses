@@ -332,6 +332,21 @@ $courses_static = [
         'slug' => 'holston-hills-country-club'
     ],
     [
+        'id' => 103,
+        'name' => 'Honky Tonk National Golf Course',
+        'location' => 'Sparta, TN',
+        'region' => 'Upper Cumberland',
+        'description' => 'Tennessee\'s first Jacobsen & Hardy design featuring 6,900 yards of championship golf high above Center Hill Lake. Seven tee options with rolling hillsides and picturesque plateaus.',
+        'image' => '/images/courses/honky-tonk-national-golf-course/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Jacobsen & Hardy',
+        'amenities' => ['Championship Golf', 'Pro Shop', 'Bar Restaurant', 'Dinner Bar', 'Lodging Available', 'Center Hill Lake', 'Seven Tee Options', 'Lakeside Experience'],
+        'slug' => 'honky-tonk-national-golf-course'
+    ],
+    [
         'id' => 11,
         'name' => 'Island Pointe Golf Club',
         'location' => 'Kodak, TN',

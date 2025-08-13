@@ -42,6 +42,7 @@ RewriteRule ^courses/harpeth-hills-golf-course/?$ courses/harpeth-hills-golf-cou
 RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php [L]
 RewriteRule ^courses/hillwood-country-club/?$ courses/hillwood-country-club.php [L]
 RewriteRule ^courses/holston-hills-country-club/?$ courses/holston-hills-country-club.php [L]
+RewriteRule ^courses/honky-tonk-national-golf-course/?$ courses/honky-tonk-national-golf-course.php [L]
 RewriteRule ^courses/island-pointe-golf-club/?$ courses/island-pointe-golf-club.php [L]
 RewriteRule ^courses/mccabe-golf-course/?$ courses/mccabe-golf-course.php [L]
 RewriteRule ^courses/mirimichi-golf-course/?$ courses/mirimichi-golf-course.php [L]
