@@ -606,10 +606,10 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/courses">Golf Courses</a></li>
+                        <li><a href="/courses">Courses</a></li>
                         <li><a href="/reviews">Reviews</a></li>
                         <li><a href="/news">News</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/events">Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -618,7 +618,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                         <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
                         <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
                         <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</li>
+                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
