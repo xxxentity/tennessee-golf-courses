@@ -182,6 +182,21 @@ $courses_static = [
         'slug' => 'chattanooga-golf-country-club'
     ],
     [
+        'id' => 102,
+        'name' => 'Clarksville Country Club',
+        'location' => 'Clarksville, TN',
+        'region' => 'Clarksville Area',
+        'description' => 'Historic private country club established in 1913 featuring championship golf with rolling hills, undulating topography, and tree-lined fairways. Host to TGA and USGA events.',
+        'image' => '/images/courses/clarksville-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Classic Design',
+        'amenities' => ['Championship Golf', 'Fitness Center', 'Swimming Pool', 'Tennis Courts', 'Dining Options', 'Practice Facilities', 'Tournament Hosting', 'Private Club Experience'],
+        'slug' => 'clarksville-country-club'
+    ],
+    [
         'id' => 76,
         'name' => 'Council Fire Golf Club',
         'location' => 'Chattanooga, TN',
