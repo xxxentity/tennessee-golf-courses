@@ -125,7 +125,7 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <i class="fas fa-golf-ball"></i>
-                    <div class="stat-number">4</div>
+                    <div class="stat-number">3</div>
                     <div class="stat-label">Featured Courses</div>
                 </div>
                 <div class="stat-item">
@@ -156,46 +156,8 @@
             </div>
             <div class="courses-grid">
                 <div class="course-card">
-                    <a href="courses/bear-trace-harrison-bay" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bear Trace at Harrison Bay" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div class="course-content">
-                        <a href="courses/bear-trace-harrison-bay" style="text-decoration: none;">
-                            <h3 class="clickable-title">Bear Trace at Harrison Bay</h3>
-                        </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Harrison, TN</p>
-                        <p class="course-description">Jack Nicklaus Signature Design with stunning lakefront views</p>
-                        <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Nicklaus Design</span>
-                        </div>
-                        <a href="courses/bear-trace-harrison-bay" class="btn-primary">View Details</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <a href="courses/tpc-southwind" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="TPC Southwind" style="width: 100%; height: 200px; object-fit: cover;">
-                    </a>
-                    <div class="course-content">
-                        <a href="courses/tpc-southwind" style="text-decoration: none;">
-                            <h3 class="clickable-title">TPC Southwind</h3>
-                        </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Memphis, TN</p>
-                        <p class="course-description">Championship PGA Tour venue with challenging water hazards</p>
-                        <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 70</span>
-                            <span class="feature-tag">PGA Tour Host</span>
-                        </div>
-                        <a href="courses/tpc-southwind" class="btn-primary">View Details</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
                     <a href="courses/belle-meade-country-club" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Belle Meade Country Club" style="width: 100%; height: 200px; object-fit: cover;">
+                        <img src="/images/courses/belle-meade-country-club/1.jpeg" alt="Belle Meade Country Club">
                     </a>
                     <div class="course-content">
                         <a href="courses/belle-meade-country-club" style="text-decoration: none;">
@@ -213,21 +175,40 @@
                 </div>
 
                 <div class="course-card">
-                    <a href="courses/gaylord-springs-golf-links" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gaylord Springs Golf Links" style="width: 100%; height: 200px; object-fit: cover;">
+                    <a href="courses/the-grove" class="course-image clickable-image" style="text-decoration: none;">
+                        <img src="/images/courses/the-grove/1.jpeg" alt="The Grove">
                     </a>
                     <div class="course-content">
-                        <a href="courses/gaylord-springs-golf-links" style="text-decoration: none;">
-                            <h3 class="clickable-title">Gaylord Springs Golf Links</h3>
+                        <a href="courses/the-grove" style="text-decoration: none;">
+                            <h3 class="clickable-title">The Grove</h3>
                         </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
-                        <p class="course-description">Scottish links-style course by Larry Nelson at Gaylord Opryland Resort</p>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> College Grove, TN</p>
+                        <p class="course-description">Award-winning Fred Couples design with stunning natural beauty</p>
                         <div class="course-features">
                             <span class="feature-tag">18 Holes</span>
                             <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Resort Course</span>
+                            <span class="feature-tag">Fred Couples</span>
                         </div>
-                        <a href="courses/gaylord-springs-golf-links" class="btn-primary">View Details</a>
+                        <a href="courses/the-grove" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <a href="courses/vanderbilt-legends-club" class="course-image clickable-image" style="text-decoration: none;">
+                        <img src="/images/courses/vanderbilt-legends-club/1.jpeg" alt="Vanderbilt Legends Club">
+                    </a>
+                    <div class="course-content">
+                        <a href="courses/vanderbilt-legends-club" style="text-decoration: none;">
+                            <h3 class="clickable-title">Vanderbilt Legends Club</h3>
+                        </a>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Franklin, TN</p>
+                        <p class="course-description">Championship course designed by Fuzzy Zoeller and Clyde Johnston</p>
+                        <div class="course-features">
+                            <span class="feature-tag">18 Holes</span>
+                            <span class="feature-tag">Par 72</span>
+                            <span class="feature-tag">Championship</span>
+                        </div>
+                        <a href="courses/vanderbilt-legends-club" class="btn-primary">View Details</a>
                     </div>
                 </div>
 
