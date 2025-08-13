@@ -90,27 +90,10 @@
             z-index: 200;
         }
         
-        /* Override hero overflow to allow dropdown visibility */
-        #home.hero {
-            overflow: visible !important;
-        }
-        
-        /* Ensure the hero section is positioned */
-        .hero {
-            position: relative;
-            z-index: 10;
-            overflow: visible !important;
-        }
-        
         /* Ensure stats bar doesn't overlap */
         .stats-bar {
             position: relative;
             z-index: 1;
-        }
-        
-        /* Force hero-search container to allow overflow */
-        .hero-search {
-            overflow: visible !important;
         }
     </style>
 </head>
