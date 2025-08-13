@@ -960,6 +960,36 @@ $courses_static = [
         'designer' => 'Jack Nicklaus',
         'amenities' => ['Driving Range', 'Practice Green', 'Pro Shop', 'Snack Bar', 'Cart Rentals', 'PGA Instruction', 'Cabins', 'Camping', 'Club Rental', 'GPS Carts', 'Walking Allowed', 'Banquet Hall'],
         'slug' => 'bear-trace-cumberland-mountain'
+    ],
+    [
+        'id' => 100,
+        'name' => 'Tennessee Grasslands Golf & CC - Fairvue',
+        'location' => 'Gallatin, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Bill Bergin designed championship course representing the pinnacle of luxury golf north of Nashville. Features premium TifEagle Ultradwarf Bermuda greens and Meyer Zoysia fairways on Old Hickory Lake.',
+        'image' => '/images/courses/tennessee-grasslands-fairvue/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bill Bergin',
+        'amenities' => ['Championship Golf', 'Lakeside Pools', 'Fitness Facilities', 'Racquet Sports', 'Private Dining', 'Performance Center', 'Old Hickory Lake', 'Luxury Experience'],
+        'slug' => 'tennessee-grasslands-fairvue'
+    ],
+    [
+        'id' => 101,
+        'name' => 'Tennessee Grasslands Golf & CC - Foxland',
+        'location' => 'Gallatin, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Bill Bergin designed championship masterpiece opened in 2007. The crown jewel of luxury golf north of Nashville featuring premium TifEagle Ultradwarf Bermuda greens and demanding 7,171-yard layout.',
+        'image' => '/images/courses/tennessee-grasslands-foxland/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bill Bergin',
+        'amenities' => ['Championship Golf', 'Lakeside Pools', 'Fitness Facilities', 'Racquet Sports', 'Private Dining', 'Performance Center', 'Old Hickory Lake', 'Luxury Experience'],
+        'slug' => 'tennessee-grasslands-foxland'
     ]
 ];
 
