@@ -5,7 +5,7 @@ session_start();
 $article = [
     'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
     'slug' => 'top-10-putters-2025-amazon-guide',
-    'date' => '2025-08-06',
+    'date' => 'Aug 6, 2025',
     'time' => '4:30 PM',
     'category' => 'Equipment Reviews',
     'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
@@ -261,10 +261,10 @@ $article = [
                 <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top Golf Putters 2025" class="article-hero-image">
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
-                    <span><i class="fas fa-calendar-alt"></i> <?php echo date('M j, Y', strtotime($article['date'])); ?></span>
-                    <span><i class="fas fa-clock"></i> <?php echo $article['read_time']; ?></span>
-                    <span><i class="fas fa-tag"></i> <?php echo $article['category']; ?></span>
-                    <span><i class="fas fa-user"></i> <?php echo $article['author']; ?></span>
+                    <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
+                    <span><i class="far fa-clock"></i> <?php echo htmlspecialchars($article['read_time']); ?></span>
+                    <span><i class="far fa-user"></i> <?php echo htmlspecialchars($article['author']); ?></span>
+                    <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article['category']); ?></span>
                 </div>
             </header>
 
