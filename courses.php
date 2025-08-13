@@ -182,6 +182,21 @@ $courses_static = [
         'slug' => 'chattanooga-golf-country-club'
     ],
     [
+        'id' => 76,
+        'name' => 'Council Fire Golf Club',
+        'location' => 'Chattanooga, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Bob Cupp designed championship course from 1992. Private club with tournament pedigree featuring 7,186 yards of premier golf and mountain views.',
+        'image' => '/images/courses/council-fire-golf-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bob Cupp',
+        'amenities' => ['Championship Golf', 'Tournament Host', 'Tennis Courts', 'Swimming Pool', 'Fine Dining', 'Social Areas', 'Mountain Views', 'Water Features'],
+        'slug' => 'council-fire-golf-club'
+    ],
+    [
         'id' => 4,
         'name' => 'Gaylord Springs Golf Links',
         'location' => 'Nashville, TN',
