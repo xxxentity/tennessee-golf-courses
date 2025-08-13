@@ -597,7 +597,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
