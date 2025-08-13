@@ -62,7 +62,7 @@ try {
     <meta name="description" content="The Club at Five Oaks - Neal Carson designed championship golf course in Lebanon, TN. 18-hole par-72 course featuring rolling hills, Zoysia fairways, and Bermuda greens on 500+ acres.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">

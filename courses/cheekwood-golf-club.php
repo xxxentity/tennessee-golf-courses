@@ -62,7 +62,7 @@ try {
     <meta name="description" content="Cheekwood Golf Club - Executive 9-hole golf course in Franklin, TN. Par 33 layout with 4 par-4s, 4 par-3s, and 1 par-5 in beautifully wooded setting.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">

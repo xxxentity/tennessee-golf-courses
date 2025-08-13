@@ -11,7 +11,7 @@ session_start();
     <meta name="description" content="Upcoming golf tournaments, charity events, and competitions at Tennessee golf courses. Find local golf events, scrambles, and championship tournaments near you.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logos/tab-logo.webp?v=2">
