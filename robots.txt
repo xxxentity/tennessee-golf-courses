@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /courses
+Allow: /reviews
+Allow: /news
+Allow: /events
+Allow: /about
+Allow: /contact
+
+# Course pages
+Allow: /courses/*
+
+# News and review articles
+Allow: /news/*
+Allow: /reviews/*
+
+# Disallow admin and auth areas
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /user/
+Disallow: /config/
+Disallow: /database/
+Disallow: /includes/
+Disallow: /uploads/
+
+# Disallow utility files
+Disallow: *.php$
+Disallow: /search-courses.php
+Disallow: /weather-api.php
+Disallow: /newsletter-subscribe.php
+Disallow: /setup_course_comments.php
+Disallow: /debug_db.php
+Disallow: /deploy.php
+
+# Allow CSS, JS, and images
+Allow: /styles.css
+Allow: /script.js
+Allow: /weather.js
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://tennesseegolfcourses.com/sitemap.xml
