@@ -71,6 +71,7 @@ RewriteRule ^courses/the-club-at-gettysvue/?$ courses/the-club-at-gettysvue.php 
 RewriteRule ^courses/the-golf-club-of-tennessee/?$ courses/the-golf-club-of-tennessee.php [L]
 RewriteRule ^courses/the-grove/?$ courses/the-grove.php [L]
 RewriteRule ^courses/the-governors-club/?$ courses/the-governors-club.php [L]
+RewriteRule ^courses/the-honors-course/?$ courses/the-honors-course.php [L]
 RewriteRule ^courses/the-legacy-golf-course/?$ courses/the-legacy-golf-course.php [L]
 RewriteRule ^courses/three-ridges-golf-course/?$ courses/three-ridges-golf-course.php [L]
 RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]

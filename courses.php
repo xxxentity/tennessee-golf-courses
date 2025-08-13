@@ -512,6 +512,21 @@ $courses_static = [
         'slug' => 'the-governors-club'
     ],
     [
+        'id' => 77,
+        'name' => 'The Honors Course',
+        'location' => 'Ooltewah, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Pete Dye designed championship course from 1983. Private club dedicated to honoring amateur golf with USGA championship pedigree.',
+        'image' => '/images/courses/the-honors-course/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Expert',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Pete Dye',
+        'amenities' => ['Championship Golf', 'USGA Championships', 'Amateur Golf Focus', 'Pete Dye Design', 'Zoysia Fairways', 'Native Grass Rough', 'Lightning Greens', 'Exceptional Services'],
+        'slug' => 'the-honors-course'
+    ],
+    [
         'id' => 21,
         'name' => 'Temple Hills Country Club',
         'location' => 'Franklin, TN',
