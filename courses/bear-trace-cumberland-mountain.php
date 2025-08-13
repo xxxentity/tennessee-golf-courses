@@ -986,21 +986,20 @@ try {
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
+                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> info@tennesseegolfcourses.com</li>
-                        <li><i class="fas fa-phone"></i> (615) 555-GOLF</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Nashville, TN</li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
-                </div>
-            </div>
+                </div>            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
             </div>

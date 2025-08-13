@@ -367,10 +367,10 @@
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="#">Nashville Area</a></li>
-                        <li><a href="#">Chattanooga Area</a></li>
-                        <li><a href="#">Knoxville Area</a></li>
-                        <li><a href="#">Memphis Area</a></li>
+                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
