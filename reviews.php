@@ -544,15 +544,9 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                     <div class="reviews-grid">
                         <?php foreach ($filtered_reviews as $index => $review): ?>
                             <article class="review-card">
-                                <?php if ($index === 0): // Only first article gets clickable image and title ?>
-                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
-                                        <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
-                                    </a>
-                                <?php else: ?>
-                                    <div class="review-image">
-                                        <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
-                                    </div>
-                                <?php endif; ?>
+                                <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
+                                    <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
+                                </a>
                                 <div class="review-content">
                                     <div class="review-meta">
                                         <span class="review-date">
@@ -561,13 +555,9 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                         </span>
                                         <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
                                     </div>
-                                    <?php if ($index === 0): // Only first article gets clickable title ?>
-                                        <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
-                                            <h3 class="review-title clickable-title"><?php echo htmlspecialchars($review['title']); ?></h3>
-                                        </a>
-                                    <?php else: ?>
-                                        <h3 class="review-title"><?php echo htmlspecialchars($review['title']); ?></h3>
-                                    <?php endif; ?>
+                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                                        <h3 class="review-title clickable-title"><?php echo htmlspecialchars($review['title']); ?></h3>
+                                    </a>
                                     <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
                                     <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
                                         Read Full Review <i class="fas fa-arrow-right"></i>

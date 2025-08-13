@@ -453,6 +453,26 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             gap: 0.75rem;
         }
         
+        /* Clickable image and title styles */
+        .clickable-image {
+            display: block;
+            cursor: pointer;
+        }
+        
+        .clickable-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .clickable-title {
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .clickable-title:hover {
+            color: var(--secondary-color);
+        }
+        
         .no-results {
             text-align: center;
             padding: 3rem;
@@ -592,9 +612,9 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                         ?>
                         <?php foreach ($filtered_articles as $index => $article): ?>
                             <article class="news-card" data-article-index="<?php echo $index; ?>" style="<?php echo $index >= $articles_per_page ? 'display: none;' : ''; ?>">
-                                <div class="news-image">
+                                <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="news-image clickable-image" style="text-decoration: none;">
                                     <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
-                                </div>
+                                </a>
                                 <div class="news-content">
                                     <div class="news-meta">
                                         <span class="news-date">
@@ -603,7 +623,9 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                                         </span>
                                         <span class="news-category"><?php echo htmlspecialchars($article['category']); ?></span>
                                     </div>
-                                    <h3 class="news-title"><?php echo htmlspecialchars($article['title']); ?></h3>
+                                    <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" style="text-decoration: none;">
+                                        <h3 class="news-title clickable-title"><?php echo htmlspecialchars($article['title']); ?></h3>
+                                    </a>
                                     <p class="news-excerpt"><?php echo htmlspecialchars($article['excerpt']); ?></p>
                                     <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
