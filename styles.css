@@ -40,16 +40,21 @@ body {
 }
 
 /* External links styling */
-a[href^="http"]:not([href*="tennesseegolfcourses.com"])::after {
+a[href^="http"]:not([href*="tennesseegolfcourses.com"]):not(.social-links a)::after {
     content: " ↗";
     font-size: 0.8em;
     opacity: 0.6;
 }
 
-a[href^="www."]::after {
+a[href^="www."]:not(.social-links a)::after {
     content: " ↗";
     font-size: 0.8em;
     opacity: 0.6;
+}
+
+/* Remove arrows from social media links */
+.social-links a::after {
+    content: none !important;
 }
 
 .container {
