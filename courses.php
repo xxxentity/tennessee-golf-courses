@@ -2057,10 +2057,10 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="courses.php">Golf Courses</a></li>
-                        <li><a href="reviews.php">Reviews</a></li>
-                        <li><a href="news.php">News</a></li>
-                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/events">Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

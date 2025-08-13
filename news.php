@@ -674,10 +674,10 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="courses">Golf Courses</a></li>
-                        <li><a href="reviews">Reviews</a></li>
-                        <li><a href="news">News</a></li>
-                        <li><a href="about">About Us</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/events">Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
