@@ -1875,7 +1875,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                     <div class="courses-grid">
                         <?php foreach ($featured_courses as $course): ?>
                             <div class="course-card">
-                                <div class="course-image">
+                                <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="course-image clickable-image" style="text-decoration: none;">
                                     <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
                                     <div class="course-rating">
                                         <?php if ($course['avg_rating'] !== null): ?>
@@ -1887,9 +1887,11 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                                             <span style="color: #666;">No ratings yet</span>
                                         <?php endif; ?>
                                     </div>
-                                </div>
+                                </a>
                                 <div class="course-content">
-                                    <h3><?php echo htmlspecialchars($course['name']); ?></h3>
+                                    <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" style="text-decoration: none;">
+                                        <h3 class="clickable-title"><?php echo htmlspecialchars($course['name']); ?></h3>
+                                    </a>
                                     <p class="course-location">
                                         <i class="fas fa-map-marker-alt"></i>
                                         <?php echo htmlspecialchars($course['location']); ?>
@@ -1931,7 +1933,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                         <?php if (!empty($paginated_courses)): ?>
                             <?php foreach ($paginated_courses as $course): ?>
                                 <div class="course-card">
-                                    <div class="course-image">
+                                    <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="course-image clickable-image" style="text-decoration: none;">
                                         <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
                                         <div class="course-rating">
                                             <?php if ($course['avg_rating'] !== null): ?>
@@ -1943,9 +1945,11 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                                                 <span style="color: #666; font-size: 0.8rem;">No ratings</span>
                                             <?php endif; ?>
                                         </div>
-                                    </div>
+                                    </a>
                                     <div class="course-content">
-                                        <h3><?php echo htmlspecialchars($course['name']); ?></h3>
+                                        <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" style="text-decoration: none;">
+                                            <h3 class="clickable-title"><?php echo htmlspecialchars($course['name']); ?></h3>
+                                        </a>
                                         <p class="course-location">
                                             <i class="fas fa-map-marker-alt"></i>
                                             <?php echo htmlspecialchars($course['location']); ?>

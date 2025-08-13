@@ -594,6 +594,26 @@ a[href^="www."]::after {
     color: var(--text-dark);
 }
 
+/* Clickable image and title styles */
+.clickable-image {
+    display: block;
+    cursor: pointer;
+}
+
+.clickable-image:hover img {
+    transform: scale(1.05);
+}
+
+.clickable-title {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.clickable-title:hover {
+    color: var(--secondary-color);
+}
+
 .course-location {
     color: var(--text-gray);
     font-size: 14px;

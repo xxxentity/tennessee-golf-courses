@@ -173,11 +173,13 @@
             </div>
             <div class="courses-grid">
                 <div class="course-card">
-                    <div class="course-image">
+                    <a href="courses/bear-trace-harrison-bay" class="course-image clickable-image" style="text-decoration: none;">
                         <img src="/images/courses/bear-trace-harrison-bay/1.jpeg" alt="Bear Trace at Harrison Bay">
-                    </div>
+                    </a>
                     <div class="course-content">
-                        <h3>Bear Trace at Harrison Bay</h3>
+                        <a href="courses/bear-trace-harrison-bay" style="text-decoration: none;">
+                            <h3 class="clickable-title">Bear Trace at Harrison Bay</h3>
+                        </a>
                         <p class="course-location"><i class="fas fa-map-marker-alt"></i> Harrison, TN</p>
                         <p class="course-description">Jack Nicklaus Signature Design with stunning lakefront views</p>
                         <div class="course-features">
@@ -190,11 +192,13 @@
                 </div>
 
                 <div class="course-card">
-                    <div class="course-image">
+                    <a href="courses/tpc-southwind" class="course-image clickable-image" style="text-decoration: none;">
                         <img src="/images/courses/tpc-southwind/1.jpeg" alt="TPC Southwind">
-                    </div>
+                    </a>
                     <div class="course-content">
-                        <h3>TPC Southwind</h3>
+                        <a href="courses/tpc-southwind" style="text-decoration: none;">
+                            <h3 class="clickable-title">TPC Southwind</h3>
+                        </a>
                         <p class="course-location"><i class="fas fa-map-marker-alt"></i> Memphis, TN</p>
                         <p class="course-description">Championship PGA Tour venue with challenging water hazards</p>
                         <div class="course-features">
