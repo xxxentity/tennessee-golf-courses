@@ -197,6 +197,21 @@ $courses_static = [
         'slug' => 'clarksville-country-club'
     ],
     [
+        'id' => 104,
+        'name' => 'Colonial Country Club',
+        'location' => 'Cordova, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Premier private club with 100+ year history and 30+ PGA Tour events. Rated #4 golf course in Tennessee by Golf Digest. Championship layout with 7,334 yards and legendary tournament pedigree.',
+        'image' => '/images/courses/colonial-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Expert',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Championship Design',
+        'amenities' => ['Championship Golf', 'Tennis Courts', 'Fitness Center', 'Swimming Pool', 'Fine Dining', 'Casual Dining', 'PGA Tour History', 'Southern Hospitality'],
+        'slug' => 'colonial-country-club'
+    ],
+    [
         'id' => 76,
         'name' => 'Council Fire Golf Club',
         'location' => 'Chattanooga, TN',

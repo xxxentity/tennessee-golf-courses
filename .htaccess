@@ -34,6 +34,7 @@ RewriteRule ^courses/council-fire-golf-club/?$ courses/council-fire-golf-club.ph
 RewriteRule ^courses/cheekwood-golf-club/?$ courses/cheekwood-golf-club.php [L]
 RewriteRule ^courses/cheekwood-golf-club-test/?$ courses/cheekwood-golf-club-test.php [L]
 RewriteRule ^courses/clarksville-country-club/?$ courses/clarksville-country-club.php [L]
+RewriteRule ^courses/colonial-country-club/?$ courses/colonial-country-club.php [L]
 RewriteRule ^courses/gaylord-springs-golf-links/?$ courses/gaylord-springs-golf-links.php [L]
 RewriteRule ^courses/forrest-crossing-golf-course/?$ courses/forrest-crossing-golf-course.php [L]
 RewriteRule ^courses/fox-den-country-club/?$ courses/fox-den-country-club.php [L]
