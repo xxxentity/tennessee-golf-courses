@@ -207,7 +207,7 @@ $courses_static = [
         'difficulty' => 'Expert',
         'holes' => 18,
         'par' => 72,
-        'designer' => 'Championship Design',
+        'designer' => 'Joe Finger',
         'amenities' => ['Championship Golf', 'Tennis Courts', 'Fitness Center', 'Swimming Pool', 'Fine Dining', 'Casual Dining', 'PGA Tour History', 'Southern Hospitality'],
         'slug' => 'colonial-country-club'
     ],

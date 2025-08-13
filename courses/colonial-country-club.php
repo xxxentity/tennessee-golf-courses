@@ -135,11 +135,11 @@ try {
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Championship Design</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Joe Finger</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Established:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">100+ Years</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1913</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
