@@ -28,6 +28,7 @@ html, body {
     padding: 0;
     border: 0;
     outline: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -353,7 +354,7 @@ a[href^="www."]::after {
     align-items: center;
     transition: all 0.3s ease;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     gap: 8px;
 }
 
