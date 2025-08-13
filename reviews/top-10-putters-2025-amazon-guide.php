@@ -284,7 +284,8 @@ $article = [
                     <li style="margin-bottom: 0.75rem;"><a href="#putter-1" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">1. TaylorMade Spider Tour X L-Neck</a></li>
                 </ol>
 
-                <!-- #10 Putter -->
+<!-- #10 Putter -->
+
                 <div class="putter-item" id="putter-10">
                     <div class="putter-rank">#10</div>
                     <h3 class="putter-name">Bettinardi QB14 Queen Bee Putter</h3>
@@ -338,385 +339,8 @@ $article = [
                     </a>
                 </div>
 
-                <!-- #2 Putter -->
-                <div class="putter-item" id="putter-2">
-                    <div class="putter-rank">#2</div>
-                    <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird</h3>
-                    <img src="/images/reviews/top-10-putters-2025/2.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Today's Golfer Best Zero-Torque Winner 2025
-                    </div>
-                    <p>Winner of Today's Golfer's Best Zero-Torque Putter 2025. Revolutionary AI-designed face insert provides consistent ball speeds across the face, while the center-shafted design stays square to your putting path.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$249.99 - $299.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>Zero-Torque Mallet</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Technology:</span>
-                            <span>AI-Designed Face</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Shaft:</span>
-                            <span>Center-Shafted</span>
-                        </div>
-                    </div>
+<!-- #9 Putter -->
 
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>Award-winning zero-torque design</li>
-                                <li>AI-optimized face technology</li>
-                                <li>Stays square throughout stroke</li>
-                                <li>Exceptional consistency</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Adjustment period for new users</li>
-                                <li>Non-traditional appearance</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/4fqwKxB" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #3 Putter -->
-                <div class="putter-item" id="putter-3">
-                    <div class="putter-rank">#3</div>
-                    <h3 class="putter-name">Callaway Golf AI-One Cruiser Putter</h3>
-                    <img src="/images/reviews/top-10-putters-2025/3.jpeg" alt="Callaway Golf AI-One Cruiser Putter" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        4.6/5 stars (89 reviews)
-                    </div>
-                    <p>Revolutionary AI-designed face technology with counter-balanced design for enhanced stability. Features 380-gram head weight, interchangeable weights, and classic White Hot feel with aluminum backing for consistent ball speed.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$279.99 - $334.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>Counter-Balanced Mallet</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Weight:</span>
-                            <span>380g Adjustable</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Technology:</span>
-                            <span>AI-Designed Face</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>AI-optimized face consistency</li>
-                                <li>Counter-balanced stability</li>
-                                <li>Interchangeable weight system</li>
-                                <li>Classic White Hot feel</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Higher price point</li>
-                                <li>Requires adjustment period</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/4fqdHn2" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #4 Putter -->
-                <div class="putter-item" id="putter-4">
-                    <div class="putter-rank">#4</div>
-                    <h3 class="putter-name">Wilson Infinite Buckingham</h3>
-                    <img src="/images/reviews/top-10-putters-2025/4.jpeg" alt="Wilson Infinite Buckingham" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        2025 MyGolfSpy Most Wanted Mallet Winner
-                    </div>
-                    <p>Elite performance at a budget price! MyGolfSpy's 2025 Most Wanted Mallet Putter excels on medium and short range putts. Features counterbalance weighting and high-MOI design at an unbeatable value.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$129.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>High-MOI Mallet</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Face:</span>
-                            <span>Double-Milled</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Weight:</span>
-                            <span>Counterbalanced</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>MyGolfSpy 2025 Most Wanted Winner</li>
-                                <li>Exceptional value at $129.99</li>
-                                <li>Elite performance on medium putts</li>
-                                <li>High-MOI forgiveness</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Less premium materials</li>
-                                <li>Limited customization options</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/4mzUstW" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #5 Putter -->
-                <div class="putter-item" id="putter-5">
-                    <div class="putter-rank">#5</div>
-                    <h3 class="putter-name">Scotty Cameron Studio Style Newport 2</h3>
-                    <img src="/images/reviews/top-10-putters-2025/5.jpeg" alt="Scotty Cameron Studio Style Newport 2" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Today's Golfer Bronze Medal Winner
-                    </div>
-                    <p>Bronze medal winner in Today's Golfer blade category. Premium milled construction with Studio Carbon Steel face insert for soft feel and controlled ball speed. Represents the pinnacle of putter craftsmanship.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$449.99 - $499.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>Premium Blade</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Face:</span>
-                            <span>Studio Carbon Steel</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Finish:</span>
-                            <span>Milled & Polished</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>Unmatched premium craftsmanship</li>
-                                <li>Exceptional subjective appeal</li>
-                                <li>Classic Newport design</li>
-                                <li>Tour-proven performance</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Premium price point</li>
-                                <li>Requires precise putting stroke</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/3UQmoO4" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #6 Putter -->
-                <div class="putter-item" id="putter-6">
-                    <div class="putter-rank">#6</div>
-                    <h3 class="putter-name">TaylorMade Spider ZT</h3>
-                    <img src="/images/reviews/top-10-putters-2025/6.jpeg" alt="TaylorMade Spider ZT" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Tour-Proven Winner (Brian Harmon)
-                    </div>
-                    <p>TaylorMade's first zero-torque putter, proven by Brian Harmon's 2025 Valero Texas Open victory. Features CG positioned 25mm behind face with shaft directly in line for minimal face twisting and maximum control.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$449.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>Zero-Torque Mallet</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Material:</span>
-                            <span>Multi-Material Milled</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Insert:</span>
-                            <span>Pure Roll TPU</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>Tour-proven zero-torque technology</li>
-                                <li>Eliminates face twisting</li>
-                                <li>Premium multi-material construction</li>
-                                <li>Exceptional distance control</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Premium pricing</li>
-                                <li>Non-traditional setup feel</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/45oXNFe" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #7 Putter -->
-                <div class="putter-item" id="putter-7">
-                    <div class="putter-rank">#7</div>
-                    <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird Cruiser</h3>
-                    <img src="/images/reviews/top-10-putters-2025/7.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird Cruiser" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        Most Consistent Zero-Torque Putter
-                    </div>
-                    <p>Counter-balanced version at 38" length with 380-gram head weight. Features 17" grip for choke-down capability and 3.3° forward shaft lean. Exceptional value at $349 with tour-level stability.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$349.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Length:</span>
-                            <span>38" Counter-Balanced</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Weight:</span>
-                            <span>380g Head</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Grip:</span>
-                            <span>17" Extended</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>Most consistent zero-torque performance</li>
-                                <li>Counter-balanced stability</li>
-                                <li>Exceptional value at $349</li>
-                                <li>Choke-down grip versatility</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Requires adjustment to 38" length</li>
-                                <li>Heavier than standard putters</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/4lf1rqQ" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #8 Putter -->
-                <div class="putter-item" id="putter-8">
-                    <div class="putter-rank">#8</div>
-                    <h3 class="putter-name">Cleveland Golf HB Soft 2 Putter (Model 11)</h3>
-                    <img src="/images/reviews/top-10-putters-2025/8.jpeg" alt="Cleveland Golf HB Soft 2 Putter Model 11" class="putter-image">
-                    <div class="putter-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        4.6/5 stars (110 reviews)
-                    </div>
-                    <p>Classic blade design with precision-milled face technology. Third place overall in Today's Golfer's comprehensive 2025 testing, excelling on mid-to-long range putts with exceptional value under $160.</p>
-                    
-                    <div class="putter-details">
-                        <div class="detail-item">
-                            <span>Price Range:</span>
-                            <span><strong>$138.04 - $159.99</strong></span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Type:</span>
-                            <span>Classic Blade</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Face:</span>
-                            <span>Precision Milled</span>
-                        </div>
-                        <div class="detail-item">
-                            <span>Strength:</span>
-                            <span>Mid-Long Range</span>
-                        </div>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>Pros</h4>
-                            <ul>
-                                <li>Third place in comprehensive testing</li>
-                                <li>Exceptional value proposition</li>
-                                <li>Excels on longer putts</li>
-                                <li>Precision-milled consistency</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>Cons</h4>
-                            <ul>
-                                <li>Less forgiving than mallets</li>
-                                <li>Minimal alignment aids</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <a href="https://amzn.to/47hoEFt" class="amazon-link" target="_blank" rel="nofollow">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-
-                <!-- #9 Putter -->
                 <div class="putter-item" id="putter-9">
                     <div class="putter-rank">#9</div>
                     <h3 class="putter-name">TaylorMade Golf TP Black Putter Palisades</h3>
@@ -770,7 +394,393 @@ $article = [
                     </a>
                 </div>
 
-                <!-- #1 Putter -->
+<!-- #8 Putter -->
+
+                <div class="putter-item" id="putter-8">
+                    <div class="putter-rank">#8</div>
+                    <h3 class="putter-name">Cleveland Golf HB Soft 2 Putter (Model 11)</h3>
+                    <img src="/images/reviews/top-10-putters-2025/8.jpeg" alt="Cleveland Golf HB Soft 2 Putter Model 11" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        4.6/5 stars (110 reviews)
+                    </div>
+                    <p>Classic blade design with precision-milled face technology. Third place overall in Today's Golfer's comprehensive 2025 testing, excelling on mid-to-long range putts with exceptional value under $160.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$138.04 - $159.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>Classic Blade</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Face:</span>
+                            <span>Precision Milled</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Strength:</span>
+                            <span>Mid-Long Range</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Third place in comprehensive testing</li>
+                                <li>Exceptional value proposition</li>
+                                <li>Excels on longer putts</li>
+                                <li>Precision-milled consistency</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Less forgiving than mallets</li>
+                                <li>Minimal alignment aids</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/47hoEFt" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #7 Putter -->
+
+                <div class="putter-item" id="putter-7">
+                    <div class="putter-rank">#7</div>
+                    <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird Cruiser</h3>
+                    <img src="/images/reviews/top-10-putters-2025/7.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird Cruiser" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        Most Consistent Zero-Torque Putter
+                    </div>
+                    <p>Counter-balanced version at 38" length with 380-gram head weight. Features 17" grip for choke-down capability and 3.3° forward shaft lean. Exceptional value at $349 with tour-level stability.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$349.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Length:</span>
+                            <span>38" Counter-Balanced</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Weight:</span>
+                            <span>380g Head</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Grip:</span>
+                            <span>17" Extended</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Most consistent zero-torque performance</li>
+                                <li>Counter-balanced stability</li>
+                                <li>Exceptional value at $349</li>
+                                <li>Choke-down grip versatility</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Requires adjustment to 38" length</li>
+                                <li>Heavier than standard putters</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/4lf1rqQ" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #6 Putter -->
+
+                <div class="putter-item" id="putter-6">
+                    <div class="putter-rank">#6</div>
+                    <h3 class="putter-name">TaylorMade Spider ZT</h3>
+                    <img src="/images/reviews/top-10-putters-2025/6.jpeg" alt="TaylorMade Spider ZT" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        Tour-Proven Winner (Brian Harmon)
+                    </div>
+                    <p>TaylorMade's first zero-torque putter, proven by Brian Harmon's 2025 Valero Texas Open victory. Features CG positioned 25mm behind face with shaft directly in line for minimal face twisting and maximum control.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$449.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>Zero-Torque Mallet</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Material:</span>
+                            <span>Multi-Material Milled</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Insert:</span>
+                            <span>Pure Roll TPU</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Tour-proven zero-torque technology</li>
+                                <li>Eliminates face twisting</li>
+                                <li>Premium multi-material construction</li>
+                                <li>Exceptional distance control</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Premium pricing</li>
+                                <li>Non-traditional setup feel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/45oXNFe" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #5 Putter -->
+
+                <div class="putter-item" id="putter-5">
+                    <div class="putter-rank">#5</div>
+                    <h3 class="putter-name">Scotty Cameron Studio Style Newport 2</h3>
+                    <img src="/images/reviews/top-10-putters-2025/5.jpeg" alt="Scotty Cameron Studio Style Newport 2" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        Today's Golfer Bronze Medal Winner
+                    </div>
+                    <p>Bronze medal winner in Today's Golfer blade category. Premium milled construction with Studio Carbon Steel face insert for soft feel and controlled ball speed. Represents the pinnacle of putter craftsmanship.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$449.99 - $499.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>Premium Blade</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Face:</span>
+                            <span>Studio Carbon Steel</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Finish:</span>
+                            <span>Milled & Polished</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Unmatched premium craftsmanship</li>
+                                <li>Exceptional subjective appeal</li>
+                                <li>Classic Newport design</li>
+                                <li>Tour-proven performance</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Premium price point</li>
+                                <li>Requires precise putting stroke</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/3UQmoO4" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #4 Putter -->
+
+                <div class="putter-item" id="putter-4">
+                    <div class="putter-rank">#4</div>
+                    <h3 class="putter-name">Wilson Infinite Buckingham</h3>
+                    <img src="/images/reviews/top-10-putters-2025/4.jpeg" alt="Wilson Infinite Buckingham" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        2025 MyGolfSpy Most Wanted Mallet Winner
+                    </div>
+                    <p>Elite performance at a budget price! MyGolfSpy's 2025 Most Wanted Mallet Putter excels on medium and short range putts. Features counterbalance weighting and high-MOI design at an unbeatable value.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$129.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>High-MOI Mallet</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Face:</span>
+                            <span>Double-Milled</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Weight:</span>
+                            <span>Counterbalanced</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>MyGolfSpy 2025 Most Wanted Winner</li>
+                                <li>Exceptional value at $129.99</li>
+                                <li>Elite performance on medium putts</li>
+                                <li>High-MOI forgiveness</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Less premium materials</li>
+                                <li>Limited customization options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/4mzUstW" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #3 Putter -->
+
+                <div class="putter-item" id="putter-3">
+                    <div class="putter-rank">#3</div>
+                    <h3 class="putter-name">Callaway Golf AI-One Cruiser Putter</h3>
+                    <img src="/images/reviews/top-10-putters-2025/3.jpeg" alt="Callaway Golf AI-One Cruiser Putter" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        4.6/5 stars (89 reviews)
+                    </div>
+                    <p>Revolutionary AI-designed face technology with counter-balanced design for enhanced stability. Features 380-gram head weight, interchangeable weights, and classic White Hot feel with aluminum backing for consistent ball speed.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$279.99 - $334.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>Counter-Balanced Mallet</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Weight:</span>
+                            <span>380g Adjustable</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Technology:</span>
+                            <span>AI-Designed Face</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>AI-optimized face consistency</li>
+                                <li>Counter-balanced stability</li>
+                                <li>Interchangeable weight system</li>
+                                <li>Classic White Hot feel</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Higher price point</li>
+                                <li>Requires adjustment period</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/4fqdHn2" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #2 Putter -->
+
+                <div class="putter-item" id="putter-2">
+                    <div class="putter-rank">#2</div>
+                    <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird</h3>
+                    <img src="/images/reviews/top-10-putters-2025/2.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird" class="putter-image">
+                    <div class="putter-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        Today's Golfer Best Zero-Torque Winner 2025
+                    </div>
+                    <p>Winner of Today's Golfer's Best Zero-Torque Putter 2025. Revolutionary AI-designed face insert provides consistent ball speeds across the face, while the center-shafted design stays square to your putting path.</p>
+                    
+                    <div class="putter-details">
+                        <div class="detail-item">
+                            <span>Price Range:</span>
+                            <span><strong>$249.99 - $299.99</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Type:</span>
+                            <span>Zero-Torque Mallet</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Technology:</span>
+                            <span>AI-Designed Face</span>
+                        </div>
+                        <div class="detail-item">
+                            <span>Shaft:</span>
+                            <span>Center-Shafted</span>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Award-winning zero-torque design</li>
+                                <li>AI-optimized face technology</li>
+                                <li>Stays square throughout stroke</li>
+                                <li>Exceptional consistency</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Adjustment period for new users</li>
+                                <li>Non-traditional appearance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://amzn.to/4fqwKxB" class="amazon-link" target="_blank" rel="nofollow">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+
+<!-- #1 Putter -->
+
                 <div class="putter-item" id="putter-1">
                     <div class="putter-rank">#1</div>
                     <h3 class="putter-name">TaylorMade Spider Tour X L-Neck</h3>
