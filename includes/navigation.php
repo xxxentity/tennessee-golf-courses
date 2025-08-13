@@ -64,7 +64,7 @@ $is_main_page = (
         echo "<!-- Professional Clean URLs Implementation -->";
         ?>
         <a href="/" class="nav-logo">
-            <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="logo-image">
+            <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
         </a>
         
         <ul class="nav-menu" id="nav-menu">

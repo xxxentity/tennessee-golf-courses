@@ -4,7 +4,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="../images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="../images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">

@@ -131,8 +131,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/logos/tab-logo.png?v=2">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.png?v=2">
+    <link rel="icon" type="image/png" href="/images/logos/tab-logo.webp?v=2">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=2">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -661,7 +661,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="/images/logos/logo.png" alt="Tennessee Golf Courses" class="footer-logo-image">
+                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
                     </div>
                     <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
                     <div class="social-links">
