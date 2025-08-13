@@ -377,6 +377,21 @@ $courses_static = [
         'slug' => 'island-pointe-golf-club'
     ],
     [
+        'id' => 105,
+        'name' => 'Jackson Country Club',
+        'location' => 'Jackson, TN',
+        'region' => 'West Tennessee',
+        'description' => 'Historic private club since 1914, known as "The Hub" of Hub City. Championship golf with 6,849 yards, host to TGA championships and USGA qualifiers. Legends Hogan, Nelson, and Palmer played here.',
+        'image' => '/images/courses/jackson-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Hugh H. Miller',
+        'amenities' => ['Championship Golf', 'Tennis Facilities', 'Swimming Pool', 'Health & Fitness', 'Dining Services', 'Banquet Hall', 'Tournament Host', 'Family Activities'],
+        'slug' => 'jackson-country-club'
+    ],
+    [
         'id' => 12,
         'name' => 'McCabe Golf Course',
         'location' => 'Nashville, TN',

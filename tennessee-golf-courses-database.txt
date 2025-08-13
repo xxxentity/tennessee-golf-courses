@@ -16,39 +16,39 @@ EAST TENNESSEE
 KNOXVILLE METRO AREA
 --------------------
 
-Avalon Golf & Country Club - 1 Avalon Blvd, Lenoir City 37772 [OPEN] - Semi-Private ✓
-Bear Trace at Harrison Bay - 8175 Harrison Bay Rd, Harrison 37341 [OPEN] - Public/Resort (Jack Nicklaus Design) ✓
-Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 [OPEN] - Private
-Cherokee Country Club - 5138 Lyons View Pike, Knoxville 37919 [OPEN] - Private (Donald Ross Design) ✓
-Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 [OPEN] - Public ✓
-Druid Hills Golf Club - 3300 Asbury Rd, Knoxville 37914 [OPEN] - Private ✓
-Egwani Farms Golf Course - 3543 Sevierville Pike, Knoxville 37920 [OPEN] - Public ✓
+Avalon Golf & Country Club - 1 Avalon Blvd, Lenoir City 37772 [OPEN] - Semi-Private ✓ ✓
+Bear Trace at Harrison Bay - 8175 Harrison Bay Rd, Harrison 37341 [OPEN] - Public/Resort (Jack Nicklaus Design) ✓ ✓
+Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 [OPEN] - Private ✓
+Cherokee Country Club - 5138 Lyons View Pike, Knoxville 37919 [OPEN] - Private (Donald Ross Design) ✓ ✓
+Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 [OPEN] - Public ✓ ✓
+Druid Hills Golf Club - 3300 Asbury Rd, Knoxville 37914 [OPEN] - Private ✓ ✓
+Egwani Farms Golf Course - 3543 Sevierville Pike, Knoxville 37920 [OPEN] - Public ✓ ✓
 Fairfield Glade Resort Golf Courses - 100 Fairfield Blvd, Fairfield Glade 38558 [OPEN] - Resort
   - Druid Hills Course (18-hole, par 72)
   - Dorchester Course (18-hole, par 72)  
   - Stonehenge Course (18-hole, par 72)
-Five Oaks Golf & Country Club - 3945 Five Oaks Dr, Lebanon 37087 [OPEN] - Semi-Private
+Five Oaks Golf & Country Club - 3945 Five Oaks Dr, Lebanon 37087 [OPEN] - Semi-Private ✓
 Fox Den Golf Course - 2435 Fox Den Rd, Knoxville 37909 [OPEN] - Public ✓
 Heritage Golf Course - 2525 Old Harriman Hwy, Crossville 38555 [OPEN] - Public
 Holston Hills Country Club - 7644 Holston Hills Rd, Knoxville 37914 [OPEN] - Private (Donald Ross Design) ✓
 Honeywell Golf Course - 1 Honeywell Way, Morristown 37814 [OPEN] - Public
-Lambert Acres Golf Club - 2508 Asbury Rd, Knoxville 37914 [OPEN] - Public ✓
-Laurel Valley Country Club - 5964 Laurel Valley Dr, Townsend 37882 [OPEN] - Public ✓
-Pine Oaks Golf Course - 4825 Wynn Rd, Knoxville 37919 [OPEN] - Public ✓
+Lambert Acres Golf Club - 2508 Asbury Rd, Knoxville 37914 [OPEN] - Public ✓ ✓
+Laurel Valley Country Club - 5964 Laurel Valley Dr, Townsend 37882 [OPEN] - Public ✓ ✓
+Pine Oaks Golf Course - 4825 Wynn Rd, Knoxville 37919 [OPEN] - Public ✓ ✓
 River Islands Golf Club - 9610 Kodak Rd, Kodak 37764 [OPEN] - Public ✓
 Smoky Mountain Country Club - 1 Country Club Dr, Sevierville 37862 [OPEN] - Private
 Tennessee National Golf Club - 1340 Clubhouse Dr, Loudon 37774 [OPEN] - Semi-Private
-Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 [OPEN] - Public ✓
+Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 [OPEN] - Public ✓ ✓
 University of Tennessee Golf Practice Facility - 1551 Lake Loudon Blvd, Knoxville 37996 [OPEN] - University
 Watauga Golf Course - 600 N Wilcox Dr, Kingsport 37660 [OPEN] - Public
-Whittle Springs Golf Course - 3708 Whittle Springs Rd, Knoxville 37917 [OPEN] - Public/Municipal ✓
-Williams Creek Golf Course - 1901 Williams Creek Dr, Knoxville 37932 [OPEN] - Public
-Windtree Golf Course - 600 Windtree Ln, Mount Juliet 37122 [OPEN] - Public
+Whittle Springs Golf Course - 3708 Whittle Springs Rd, Knoxville 37917 [OPEN] - Public/Municipal ✓ ✓
+Williams Creek Golf Course - 1901 Williams Creek Dr, Knoxville 37932 [OPEN] - Public ✓
+Windtree Golf Course - 600 Windtree Ln, Mount Juliet 37122 [OPEN] - Public ✓
 
 TRI-CITIES AREA (Johnson City, Kingsport, Bristol)
 -------------------------------------------------
 
-Blackthorn Club - 1090 Old Gray Station Rd, Johnson City 37615 [OPEN] - Private ✓
+Blackthorn Club - 1090 Old Gray Station Rd, Johnson City 37615 [OPEN] - Private ✓ ✓
 Blue Ridge Country Club - 694 Sunset Dr, Johnson City 37604 [OPEN] - Private
 Bristol Country Club - 16652 Lee Hwy, Bristol 37620 [OPEN] - Private
 Buffalo Valley Golf Course - 958 Burgess Falls Rd, Sparta 38583 [OPEN] - Public
@@ -66,43 +66,43 @@ Roan Valley Golf Estates - 8127 Roan Valley Dr, Bluff City 37618 [OPEN] - Semi-P
 Ridgefields Country Club - 158 Golf Course Rd, Kingsport 37664 [OPEN] - Private
 Rivermont Golf Club - 1500 Rivermont Dr, Johns Creek 37659 [OPEN] - Public
 Rocky Mount Golf Course - 1031 Rocky Mount School Rd, Unicoi 37692 [OPEN] - Public
-Warrior's Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 [OPEN] - State Park (George Cobb Design) ✓
+Warrior's Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 [OPEN] - State Park (George Cobb Design) ✓ ✓
 
 GATLINBURG/PIGEON FORGE/SEVIERVILLE AREA
 -----------------------------------------
 
 Bent Creek Golf Course - 3919 E Parkway, Gatlinburg 37738 [OPEN] - Public
 Dollywood Golf - 2390 Dollywood Parks Blvd, Pigeon Forge 37863 [OPEN] - Public
-Eagle's Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 [OPEN] - Public ✓
+Eagle's Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 [OPEN] - Public ✓ ✓
 Gatlinburg Golf Course - 520 Dollywood Ln, Pigeon Forge 37863 [OPEN] - Public
 Pigeon Forge Golf Club - 2776 Teaster Ln, Pigeon Forge 37863 [OPEN] - Public
 Piney Creek Golf Course - 3094 Wears Valley Rd, Sevierville 37862 [OPEN] - Public
-Sevierville Golf Club - 3242 Wears Valley Rd, Sevierville 37862 [OPEN] - Public/Municipal ✓
+Sevierville Golf Club - 3242 Wears Valley Rd, Sevierville 37862 [OPEN] - Public/Municipal ✓ ✓
 Smoky Mountain Country Club - 1 Country Club Dr, Sevierville 37862 [OPEN] - Private
 
 CROSSVILLE/CUMBERLAND PLATEAU
 ------------------------------
 
-Bear Trace at Cumberland Mountain - 407 Wild Plum Ln, Crossville 38572 [OPEN] - State Park (Jack Nicklaus Design) ✓
+Bear Trace at Cumberland Mountain - 407 Wild Plum Ln, Crossville 38572 [OPEN] - State Park (Jack Nicklaus Design) ✓ ✓
 Crosswinds Golf Course - 1000 Crosswinds Dr, Crossville 38555 [OPEN] - Public
 Cumberland Gardens Golf Course - 589 Dry Valley Rd, Cookeville 38501 [OPEN] - Public
 Cumberland Mountain State Park Golf Course - 24 Office Dr, Crossville 38555 [OPEN] - State Park
 Deer Creek Golf Club - 1717 Sparta Hwy, Crossville 38555 [OPEN] - Semi-Private
 Druid Hills Golf Club (Fairfield Glade) - 100 Fairfield Blvd, Fairfield Glade 38558 [OPEN] - Resort
 Heritage Golf Course - 2525 Old Harriman Hwy, Crossville 38555 [OPEN] - Public
-Lake Tansi Golf Course - 1 Tansi Blvd, Crossville 38572 [OPEN] - Public
+Lake Tansi Golf Course - 1 Tansi Blvd, Crossville 38572 [OPEN] - Public ✓
 Mountain View Golf Club - 100 Fairfield Blvd, Fairfield Glade 38558 [OPEN] - Resort
 Skyline Golf Course - 4500 Peavine Rd, Crossville 38571 [OPEN] - Public
 
 COOKEVILLE AREA (CORRECTED)
 ---------------------------
 
-Belle Acres Golf Course - 901 E Broad St, Cookeville 38501 [OPEN] - Public (9-hole, par 35)
-Cumberland Cove Golf Course (formerly Mountain Ridge) - 16941 Highway 70 N, Monterey 38574 [OPEN] - Public
+Belle Acres Golf Course - 901 E Broad St, Cookeville 38501 [OPEN] - Public (9-hole, par 35) ✓
+Cumberland Cove Golf Course (formerly Mountain Ridge) - 16941 Highway 70 N, Monterey 38574 [OPEN] - Public ✓
 Ironwood Golf Course - 3801 Ironwood Rd, Cookeville 38501 [CLOSED - PERMANENTLY CLOSED 2019] - Was Public
-Southern Hills Golf & Country Club - 4770 Ben Jared Road, Cookeville 38506 [OPEN] - Public
+Southern Hills Golf & Country Club - 4770 Ben Jared Road, Cookeville 38506 [OPEN] - Public ✓
 Tennessee Tech Golden Eagle Golf Club - 1500 Country Club Road, Cookeville 38501 [OPEN] - Public/University
-White Plains Golf Course - 4000 Plantation Drive, Cookeville 38506 [OPEN] - Semi-Private ✓
+White Plains Golf Course - 4000 Plantation Drive, Cookeville 38506 [OPEN] - Semi-Private ✓ ✓
 
 CHATTANOOGA METRO AREA
 ----------------------
@@ -120,7 +120,7 @@ Laurel Valley Golf Club - 7989 E Brainerd Rd, Chattanooga 37421 [OPEN] - Public
 Lookout Mountain Golf Club - 1001 Scenic Hwy, Lookout Mountain 37350 [OPEN] - Private
 Moccasin Bend Golf Course - 381 Moccasin Bend Rd, Chattanooga 37405 [OPEN] - Public/Municipal
 Signal Mountain Golf & Country Club - 2200 Tatum Dr, Signal Mountain 37377 [OPEN] - Private
-Sweetens Cove Golf Club - 940 Sweetens Cove Rd, South Pittsburg 37380 [OPEN] - Public (9-hole specialty course)
+Sweetens Cove Golf Club - 940 Sweetens Cove Rd, South Pittsburg 37380 [OPEN] - Public (9-hole specialty course) ✓
 The Honors Course - 9603 Lee Hwy, Ooltewah 37363 [OPEN] - Private (Pete Dye Design)
 Valleybrook Golf Club - 40 Valleybrook Dr, Hixson 37343 [OPEN] - Public
 Windstone Golf Club - 9090 Windstone Dr, Ringgold 30736 [OPEN] - Public
@@ -131,43 +131,43 @@ MIDDLE TENNESSEE
 NASHVILLE METRO AREA
 --------------------
 
-Belle Meade Country Club - 4025 Harding Pike, Nashville 37205 [OPEN] - Private (Tom Bendelow Design) ✓
-Bluegrass Yacht & Country Club - 550 Johnny Cash Parkway, Hendersonville 37075 [OPEN] - Private ✓
+Belle Meade Country Club - 4025 Harding Pike, Nashville 37205 [OPEN] - Private (Tom Bendelow Design) ✓ ✓
+Bluegrass Yacht & Country Club - 550 Johnny Cash Parkway, Hendersonville 37075 [OPEN] - Private ✓ ✓
 Brown Creek Golf Course - 1600 Browns Creek Rd, Gallatin 37066 [OPEN] - Public
-Cheekwood Golf Course - 1200 Forrest Park Dr, Nashville 37205 [OPEN] - Private ✓
+Cheekwood Golf Course - 1200 Forrest Park Dr, Nashville 37205 [OPEN] - Private ✓ ✓
 Country Hills Golf Course - 300 Country Hills Dr, Hendersonville 37075 [OPEN] - Public
 Crockett Golf Course - 1221 Crockett Dr, Brentwood 37027 [OPEN] - Public
 Fairvue Plantation Golf Club - 7000 Plantation Way, Gallatin 37066 [OPEN] - Private
-Forrest Crossing Golf Course - 750 Riverview Dr, Franklin 37064 [OPEN] - Public ✓
-Gaylord Springs Golf Links - 18 Springs Way, Nashville 37214 [OPEN] - Resort (Larry Nelson Design) ✓
-Golf Club of Tennessee - 1620 Carters Creek Pike, Franklin 37064 [OPEN] - Private (Tom Fazio Design) ✓
-Governors Club - 1601 Governors Club Dr, Brentwood 37027 [OPEN] - Private
-Greystone Golf Club - 5955 Old Hickory Blvd, Hermitage 37076 [OPEN] - Public ✓
-Harpeth Hills Golf Course - 2424 Old Hickory Blvd, Nashville 37221 [OPEN] - Public/Municipal ✓
+Forrest Crossing Golf Course - 750 Riverview Dr, Franklin 37064 [OPEN] - Public ✓ ✓
+Gaylord Springs Golf Links - 18 Springs Way, Nashville 37214 [OPEN] - Resort (Larry Nelson Design) ✓ ✓
+Golf Club of Tennessee - 1620 Carters Creek Pike, Franklin 37064 [OPEN] - Private (Tom Fazio Design) ✓ ✓
+Governors Club - 1601 Governors Club Dr, Brentwood 37027 [OPEN] - Private ✓
+Greystone Golf Club - 5955 Old Hickory Blvd, Hermitage 37076 [OPEN] - Public ✓ ✓
+Harpeth Hills Golf Course - 2424 Old Hickory Blvd, Nashville 37221 [OPEN] - Public/Municipal ✓ ✓
 Harpeth Valley Golf Center - 2424 Old Hickory Blvd, Nashville 37221 [OPEN] - Practice Facility
-Hermitage Golf Course - 3939 Old Hickory Blvd, Hermitage 37076 [OPEN] - Public/Municipal (President Andrew Jackson's estate) ✓
-Hillwood Country Club - 6201 Hickory Valley Road, Nashville 37205 [OPEN] - Private ✓
+Hermitage Golf Course - 3939 Old Hickory Blvd, Hermitage 37076 [OPEN] - Public/Municipal (President Andrew Jackson's estate) ✓ ✓
+Hillwood Country Club - 6201 Hickory Valley Road, Nashville 37205 [OPEN] - Private ✓ ✓
 Indian Hills Golf Club - 850 Indian Hills Dr, Murfreesboro 37130 [OPEN] - Public
 Legends Club of Tennessee - 1500 Legends Club Ln, Franklin 37069 [OPEN] - Private
 Long Hollow Golf Course - 2101 Long Hollow Pike, Gallatin 37066 [OPEN] - Public
-McCabe Golf Course - 100 46th Ave N, Nashville 37209 [OPEN] - Public/Municipal ✓
+McCabe Golf Course - 100 46th Ave N, Nashville 37209 [OPEN] - Public/Municipal ✓ ✓
 Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [OPEN] - Public/Municipal
 Montgomery Bell State Park Golf Course - 1020 Hotel Ave, Burns 37029 [OPEN] - State Park
-Nashville Golf & Athletic Club - 300 Golf Club Ln, Nashville 37215 [OPEN] - Private ✓
+Nashville Golf & Athletic Club - 300 Golf Club Ln, Nashville 37215 [OPEN] - Private ✓ ✓
 Old Fort Golf Course - 761 Golf Ln, Murfreesboro 37129 [OPEN] - Public/Municipal
-Old Hickory Golf Club - 4538 Old Hickory Blvd, Old Hickory 37138 [OPEN] - Public ✓
-Percy Warner Golf Course - 2500 Old Hickory Blvd, Nashville 37221 [OPEN] - Public/Municipal ✓
+Old Hickory Golf Club - 4538 Old Hickory Blvd, Old Hickory 37138 [OPEN] - Public ✓ ✓
+Percy Warner Golf Course - 2500 Old Hickory Blvd, Nashville 37221 [OPEN] - Public/Municipal ✓ ✓
 Radnor Lake Golf Course - 1500 Franklin Pike, Nashville 37204 [OPEN] - Public
-Richland Country Club - 3100 Richland Ave, Nashville 37205 [OPEN] - Private (Donald Ross Design) ✓
+Richland Country Club - 3100 Richland Ave, Nashville 37205 [OPEN] - Private (Donald Ross Design) ✓ ✓
 Riverside Golf Course - 1000 Riverside Dr, Smyrna 37167 [OPEN] - Public
 Smyrna Municipal Golf Course - 100 Sam Ridley Pkwy, Smyrna 37167 [OPEN] - Public/Municipal
-Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 [CLOSED] - Public (Ross Jones Design) ✓
-Ted Rhodes Golf Course - 1901 Ed Temple Blvd, Nashville 37208 [OPEN] - Public/Municipal ✓
-The Governors Club - 1601 Governors Club Dr, Brentwood 37027 [OPEN] - Private ✓
+Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 [CLOSED] - Public (Ross Jones Design) ✓ ✓
+Ted Rhodes Golf Course - 1901 Ed Temple Blvd, Nashville 37208 [OPEN] - Public/Municipal ✓ ✓
+The Governors Club - 1601 Governors Club Dr, Brentwood 37027 [OPEN] - Private ✓ ✓
 Twelve Stones Golf Club - 501 Twelve Stones Crossing, Goodlettsville 37072 [OPEN] - Public
-Two Rivers Golf Course - 3140 McGavock Pike, Nashville 37214 [OPEN] - Public/Municipal ✓
-Vanderbilt Legends Club - 1500 Legends Club Ln, Franklin 37069 [OPEN] - Private (University-affiliated) ✓
-Willow Creek Golf & Country Club - 106 Willow Creek Dr, Lebanon 37087 [OPEN] - Semi-Private ✓
+Two Rivers Golf Course - 3140 McGavock Pike, Nashville 37214 [OPEN] - Public/Municipal ✓ ✓
+Vanderbilt Legends Club - 1500 Legends Club Ln, Franklin 37069 [OPEN] - Private (University-affiliated) ✓ ✓
+Willow Creek Golf & Country Club - 106 Willow Creek Dr, Lebanon 37087 [OPEN] - Semi-Private ✓ ✓
 WindRiver Golf Club - 1000 Golf Club Dr, Palmyra 37142 [OPEN] - Semi-Private
 
 CLARKSVILLE/MONTGOMERY COUNTY
@@ -187,8 +187,8 @@ Ridgewood Golf Course - 2400 Ridgewood Dr, Columbia 38401 [OPEN] - Public
 SPARTA/WHITE COUNTY (CORRECTED)
 -------------------------------
 
-Honky Tonk National Golf Course - Above Center Hill Lake, Sparta 38583 [OPEN] - Private/Resort (Peter Jacobsen Design)
-RiverWatch Golf Club & Resort - 16 Golf Course Dr, Sparta 38583 [CLOSED] - Was Public (may be same location as Honky Tonk)
+Honky Tonk National Golf Course 2023 - Above Center Hill Lake, Sparta 38583 [OPEN] - Private/Resort (Peter Jacobsen Design)
+RiverWatch Golf Club & Resort 2012 - 16 Golf Course Dr, Sparta 38583 [CLOSED] - Was Public (may be same location as Honky Tonk)
 Sparta Golf & Country Club - 129 Lester Flat Rd, Sparta 38583 [OPEN] - Public (9-hole, par 35)
 
 TULLAHOMA/MANCHESTER AREA
@@ -213,7 +213,7 @@ MEMPHIS METRO AREA
 ------------------
 
 Audubon Golf Course - 4160 Park Ave, Memphis 38111 [OPEN] - Public/Municipal
-Big Creek Golf Course - 6294 Elmore Rd, Millington 38053 [CLOSED] - Public ✓
+Big Creek Golf Course - 6294 Elmore Rd, Millington 38053 [CLOSED] - Public ✓ ✓
 Colonial Country Club - 5551 Colonial Circle, Memphis 38117 [OPEN] - Private
 Cottonwoods Golf Course - 6775 Appling Farms Pkwy, Bartlett 38002 [OPEN] - Public
 Crown Golf Club - 1947 Crownover Rd, Millington 38053 [OPEN] - Semi-Private
@@ -226,7 +226,7 @@ Galloway Golf Course - 3815 Walnut Grove Rd, Memphis 38111 [OPEN] - Public/Munic
 Glen Eagle Country Club - 5740 Glen Eagle Dr, Memphis 38120 [OPEN] - Private
 Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [OPEN] - Public/Municipal
 Links at Whitehaven - 1045 Finley Rd, Memphis 38116 [OPEN] - Public/Municipal
-Mirimichi Golf Course - 6195 Woodstock Cuba Rd, Millington 38053 [OPEN] - Public
+Mirimichi Golf Course - 6195 Woodstock Cuba Rd, Millington 38053 [OPEN] - Public ✓
 Overton Park Golf Course - 2080 Poplar Ave, Memphis 38104 [OPEN] - Public/Municipal (oldest course in Memphis)
 Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [OPEN] - Public/Municipal
 Pine Hill Country Club - 1005 Alice Ave, Memphis 38106 [OPEN] - Private
@@ -235,7 +235,7 @@ Plantation Golf Club - 5850 Plantation Rd, Germantown 38138 [OPEN] - Private
 Quail Ridge Golf Course - 6069 Quail Ridge Dr, Bartlett 38002 [OPEN] - Public
 Ridgeway Country Club - 5292 Poplar Ave, Memphis 38119 [OPEN] - Private
 Rolling Hills Country Club - 4444 Walnut Grove Rd, Memphis 38117 [OPEN] - Private
-Southwind Golf Club - 2000 Kirby Woods Cove, Memphis 38125 [OPEN] - Private (PGA Tour venue) ✓
+Southwind Golf Club - 2000 Kirby Woods Cove, Memphis 38125 [OPEN] - Private (PGA Tour venue) ✓ ✓
 Stonebridge Golf Club - 3049 Davies Plantation Rd, Memphis 38133 [OPEN] - Semi-Private
 T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [OPEN] - State Park
 Tennessee Golf & Country Club - 9850 Hwy 64, Lakeland 38002 [OPEN] - Private
@@ -332,6 +332,19 @@ SOURCES: Tennessee Golf Association, Municipal websites, State Park services, Un
 
 Last Updated: July 2025 (Deep Research Edition)
 Next Update Recommended: January 2026
+
+✓ = Course file exists in courses folder
+
+ADDITIONAL COURSES IN FOLDER NOT IN DATABASE:
+- Cedar Crest Golf Club
+- Island Pointe Golf Club
+- Nashville National Golf Links
+- Stones River Country Club
+- Temple Hills Country Club
+- The Club at Gettysvue
+- The Grove
+- The Legacy Golf Course
+- Troubadour Golf Field Club
 
 TOTAL FACILITIES BY TYPE:
 - Public/Municipal: 75+
