@@ -285,7 +285,6 @@ $article = [
                 </ol>
 
 <!-- #10 Putter -->
-
                 <div class="putter-item" id="putter-10">
                     <div class="putter-rank">#10</div>
                     <h3 class="putter-name">Bettinardi QB14 Queen Bee Putter</h3>
@@ -340,7 +339,6 @@ $article = [
                 </div>
 
 <!-- #9 Putter -->
-
                 <div class="putter-item" id="putter-9">
                     <div class="putter-rank">#9</div>
                     <h3 class="putter-name">TaylorMade Golf TP Black Putter Palisades</h3>
@@ -395,7 +393,6 @@ $article = [
                 </div>
 
 <!-- #8 Putter -->
-
                 <div class="putter-item" id="putter-8">
                     <div class="putter-rank">#8</div>
                     <h3 class="putter-name">Cleveland Golf HB Soft 2 Putter (Model 11)</h3>
@@ -450,7 +447,6 @@ $article = [
                 </div>
 
 <!-- #7 Putter -->
-
                 <div class="putter-item" id="putter-7">
                     <div class="putter-rank">#7</div>
                     <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird Cruiser</h3>
@@ -505,7 +501,6 @@ $article = [
                 </div>
 
 <!-- #6 Putter -->
-
                 <div class="putter-item" id="putter-6">
                     <div class="putter-rank">#6</div>
                     <h3 class="putter-name">TaylorMade Spider ZT</h3>
@@ -560,7 +555,6 @@ $article = [
                 </div>
 
 <!-- #5 Putter -->
-
                 <div class="putter-item" id="putter-5">
                     <div class="putter-rank">#5</div>
                     <h3 class="putter-name">Scotty Cameron Studio Style Newport 2</h3>
@@ -615,7 +609,6 @@ $article = [
                 </div>
 
 <!-- #4 Putter -->
-
                 <div class="putter-item" id="putter-4">
                     <div class="putter-rank">#4</div>
                     <h3 class="putter-name">Wilson Infinite Buckingham</h3>
@@ -670,7 +663,6 @@ $article = [
                 </div>
 
 <!-- #3 Putter -->
-
                 <div class="putter-item" id="putter-3">
                     <div class="putter-rank">#3</div>
                     <h3 class="putter-name">Callaway Golf AI-One Cruiser Putter</h3>
@@ -725,7 +717,6 @@ $article = [
                 </div>
 
 <!-- #2 Putter -->
-
                 <div class="putter-item" id="putter-2">
                     <div class="putter-rank">#2</div>
                     <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird</h3>
@@ -780,7 +771,6 @@ $article = [
                 </div>
 
 <!-- #1 Putter -->
-
                 <div class="putter-item" id="putter-1">
                     <div class="putter-rank">#1</div>
                     <h3 class="putter-name">TaylorMade Spider Tour X L-Neck</h3>
