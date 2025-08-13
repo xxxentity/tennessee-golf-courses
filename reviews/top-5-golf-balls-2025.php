@@ -5,7 +5,7 @@ session_start();
 $article = [
     'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
     'slug' => 'top-5-golf-balls-2025',
-    'date' => '2025-08-11',
+    'date' => 'Aug 11, 2025',
     'time' => '2:45 PM',
     'category' => 'Equipment Reviews',
     'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
