@@ -192,7 +192,7 @@ $courses_static = [
         'difficulty' => 'Advanced',
         'holes' => 18,
         'par' => 72,
-        'designer' => 'Classic Design',
+        'designer' => 'George Cobb',
         'amenities' => ['Championship Golf', 'Fitness Center', 'Swimming Pool', 'Tennis Courts', 'Dining Options', 'Practice Facilities', 'Tournament Hosting', 'Private Club Experience'],
         'slug' => 'clarksville-country-club'
     ],
