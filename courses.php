@@ -437,6 +437,21 @@ $courses_static = [
         'slug' => 'mirimichi-golf-course'
     ],
     [
+        'id' => 75,
+        'name' => 'Montgomery Bell State Park Golf Course',
+        'location' => 'Burns, TN',
+        'region' => 'Nashville Area',
+        'description' => 'George Cobb/Gary Baird designed championship course 40 minutes from Nashville. Golf Digest Top 100 Public Places to Play with challenging 6,614-yard layout and Dogwood Classic host.',
+        'image' => '/images/courses/montgomery-bell-state-park-golf-course/1.webp',
+        'price_range' => '$40-50',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'George Cobb / Gary Baird',
+        'amenities' => ['Golf Digest Top 100', 'Championship Course', 'State Park Setting', 'Driving Range', 'Restaurant', 'Pro Shop', 'Tournament Host', 'On-Site Lodge', 'Best Value Nashville', 'Dogwood Classic'],
+        'slug' => 'montgomery-bell-state-park-golf-course'
+    ],
+    [
         'id' => 13,
         'name' => 'Nashville National Golf Links',
         'location' => 'Joelton, TN',
