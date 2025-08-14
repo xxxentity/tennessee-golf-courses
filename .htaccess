@@ -66,6 +66,7 @@ RewriteRule ^courses/egwani-farms-golf-course/?$ courses/egwani-farms-golf-cours
 RewriteRule ^courses/fall-creek-falls-state-park-golf-course/?$ courses/fall-creek-falls-state-park-golf-course.php [L]
 RewriteRule ^courses/dead-horse-lake-golf-course/?$ courses/dead-horse-lake-golf-course.php [L]
 RewriteRule ^courses/bear-trace-cumberland-mountain/?$ courses/bear-trace-cumberland-mountain.php [L]
+RewriteRule ^courses/bear-trace-at-tims-ford/?$ courses/bear-trace-at-tims-ford.php [L]
 RewriteRule ^courses/laurel-valley-country-club/?$ courses/laurel-valley-country-club.php [L]
 RewriteRule ^courses/druid-hills-golf-club/?$ courses/druid-hills-golf-club.php [L]
 RewriteRule ^courses/blackthorn-club/?$ courses/blackthorn-club.php [L]

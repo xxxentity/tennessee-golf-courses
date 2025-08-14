@@ -1082,6 +1082,21 @@ $courses_static = [
         'slug' => 'bear-trace-cumberland-mountain'
     ],
     [
+        'id' => 78,
+        'name' => 'Bear Trace at Tims Ford',
+        'location' => 'Winchester, TN',
+        'region' => 'Middle Tennessee',
+        'description' => 'Jack Nicklaus Signature Design from 1999 on Tims Ford Lake peninsula. Award-winning links-style course with water visible from every hole and Top Ten Places You Can Play recognition.',
+        'image' => '/images/courses/bear-trace-at-tims-ford/1.webp',
+        'price_range' => '$47-57',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Jack Nicklaus',
+        'amenities' => ['Jack Nicklaus Design', 'Links-Style Course', 'Tims Ford Lake Views', 'Tennessee Golf Trail', 'Award Winner 1999', 'Driving Range', 'Restaurant', 'Pro Shop', 'On-Site Lodge', 'State Park Setting'],
+        'slug' => 'bear-trace-at-tims-ford'
+    ],
+    [
         'id' => 100,
         'name' => 'Tennessee Grasslands Golf & CC - Fairvue',
         'location' => 'Gallatin, TN',
