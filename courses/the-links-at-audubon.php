@@ -610,8 +610,8 @@ try {
                             <span class="spec-value">Bill Bergin</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Renovated:</span>
-                            <span class="spec-value">2024</span>
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1950s</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
@@ -623,32 +623,40 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Contact for Current Rates</h4>
-                        <div class="course-specs single-column">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Weekday Rates</h4>
+                        <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Phone:</span>
-                                <span class="spec-value">(901) 683-6941</span>
+                                <span class="spec-label">18 Holes:</span>
+                                <span class="spec-value">$35</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Website:</span>
-                                <span class="spec-value">Memphis Public Links</span>
+                                <span class="spec-label">9 Holes:</span>
+                                <span class="spec-value">$18</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 Holes (Sr/Jr):</span>
+                                <span class="spec-value">$13</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Available Services</h4>
-                        <div class="course-specs single-column">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Weekend/Holiday Rates</h4>
+                        <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Cart Rental:</span>
-                                <span class="spec-value">9 or 18 holes</span>
+                                <span class="spec-label">18 Holes:</span>
+                                <span class="spec-value">$45</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Pull Carts:</span>
-                                <span class="spec-value">Available</span>
+                                <span class="spec-label">9 Holes:</span>
+                                <span class="spec-value">$23</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Hours:</span>
-                                <span class="spec-value">Dawn to Dusk</span>
+                                <span class="spec-label">Cart (18):</span>
+                                <span class="spec-value">$20</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Cart (9):</span>
+                                <span class="spec-value">$10</span>
                             </div>
                         </div>
                     </div>
