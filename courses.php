@@ -692,6 +692,21 @@ $courses_static = [
         'slug' => 'the-club-at-gettysvue'
     ],
     [
+        'id' => 79,
+        'name' => 'The Links at Audubon',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Bill Bergin designed championship course renovated in 2024 with $8.1 million investment. Completely reimagined municipal course featuring 6,985-yard layout, 6-hole short course, and new driving range.',
+        'image' => '/images/courses/the-links-at-audubon/1.webp',
+        'price_range' => 'Call for Rates',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Bill Bergin',
+        'amenities' => ['2024 Renovation', '$8.1M Investment', '6-Hole Short Course', 'Driving Range', 'Municipal Course', 'Golf Professionals', 'Cart Rentals', 'Pull Carts', 'Memphis Parks'],
+        'slug' => 'the-links-at-audubon'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
