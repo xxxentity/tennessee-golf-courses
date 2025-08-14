@@ -113,6 +113,9 @@ if (!empty($category_filter)) {
     });
 }
 
+// Re-index the filtered array to start from 0
+$filtered_articles = array_values($filtered_articles);
+
 // Get featured articles for carousel (latest 3)
 $featured_articles = array_slice(array_filter($articles, function($article) {
     return $article['featured'];
