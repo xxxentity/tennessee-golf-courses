@@ -24,16 +24,16 @@ HIGHEST PRIORITY - TOP RANKED/MAJOR MISSING COURSES
 5. Henry Horton State Park Golf Course - 4209 Nashville Hwy, Chapel Hill 37034 [NEEDS WORK] - State Park
 6. Paris Landing State Park Golf Course - 16055 Hwy 79 N, Buchanan 38222 [NEEDS WORK] - State Park
 7. T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [NEEDS WORK] - State Park
-8. Tims Ford State Park Golf Course - 570 Tims Ford Dr, Winchester 37398 [NEEDS WORK] - State Park
+✓ Bear Trace at Tims Ford - 570 Tims Ford Dr, Winchester 37398 - State Park (Jack Nicklaus)
 
 MEMPHIS MUNICIPAL COURSES (MAJOR PUBLIC ACCESS)
 ----------------------------------------------
 
-9. Audubon Golf Course - 4160 Park Ave, Memphis 38111 [NEEDS WORK] - Municipal
+✓ The Links at Audubon - 4160 Park Ave, Memphis 38111 - Municipal (Bill Bergin, $8.1M renovation 2024)
 10. Davy Crockett Golf Course - 4380 Range Line Rd, Memphis 38127 [NEEDS WORK] - Municipal
 11. Edmondson Golf Course - 8548 Douglass Ave, Memphis 38108 [NEEDS WORK] - Municipal
-12. Fox Meadows Golf Course - 3064 Clarke Rd, Memphis 38115 [NEEDS WORK] - Municipal
-13. Galloway Golf Course - 3815 Walnut Grove Rd, Memphis 38111 [NEEDS WORK] - Municipal
+✓ The Links at Fox Meadows - 3064 Clarke Rd, Memphis 38115 - Municipal (Chic Adams, 1957)
+✓ The Links at Galloway - 3815 Walnut Grove Rd, Memphis 38111 - Municipal (Kevin Tucker, 2002)
 14. Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [NEEDS WORK] - Municipal
 15. Links at Whitehaven - 1045 Finley Rd, Memphis 38116 [NEEDS WORK] - Municipal
 
@@ -89,6 +89,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Avalon Golf & Country Club - 1 Avalon Blvd, Lenoir City 37772 - Semi-Private
 ✓ Bear Trace at Cumberland Mountain - 407 Wild Plum Ln, Crossville 38572 - State Park (Jack Nicklaus)
 ✓ Bear Trace at Harrison Bay - 8175 Harrison Bay Rd, Harrison 37341 - Public/Resort (Jack Nicklaus)
+✓ Bear Trace at Tims Ford - 570 Tims Ford Dr, Winchester 37398 - State Park (Jack Nicklaus)
 ✓ Belle Acres Golf Course - 901 E Broad St, Cookeville 38501 - Public (9-hole, par 35)
 ✓ Belle Meade Country Club - 4025 Harding Pike, Nashville 37205 - Private (Donald Ross)
 ✓ Big Creek Golf Club - 6294 Elmore Rd, Millington 38053 - Public [PERMANENTLY CLOSED]
@@ -144,6 +145,9 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ The Grove - 7770 Bakers Bridge Ave, College Grove 37046 - Private
 ✓ The Honors Course - 9603 Lee Highway, Ooltewah 37363 - Private (Pete Dye)
 ✓ The Legacy Golf Course - 1500 Legacy Dr, Springfield 37172 - Public
+✓ The Links at Audubon - 4160 Park Ave, Memphis 38111 - Municipal (Bill Bergin, $8.1M renovation 2024)
+✓ The Links at Fox Meadows - 3064 Clarke Rd, Memphis 38115 - Municipal (Chic Adams, 1957)
+✓ The Links at Galloway - 3815 Walnut Grove Rd, Memphis 38111 - Municipal (Kevin Tucker, 2002)
 ✓ Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 - Public
 ✓ TPC Southwind - 2000 Kirby Woods Cove, Memphis 38125 - Private (PGA Tour venue)
 ✓ Troubadour Golf & Field Club - 4600 Murfreesboro Rd, College Grove 37046 - Private
@@ -176,8 +180,8 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 69
-- High Priority Missing: 35+
+- Completed Course Pages: 73
+- High Priority Missing: 31+
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
 
