@@ -722,6 +722,21 @@ $courses_static = [
         'slug' => 'the-links-at-fox-meadows'
     ],
     [
+        'id' => 81,
+        'name' => 'The Links at Galloway',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Kevin Tucker designed municipal course from 2002. Historic Galloway Golf Course featuring 6,013-yard Par 70 layout with challenging greens and strategic bunkering managed by Sean McFetridge, PGA.',
+        'image' => '/images/courses/the-links-at-galloway/1.webp',
+        'price_range' => '$27-35',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Kevin Tucker',
+        'amenities' => ['Municipal Course', 'Driving Range', 'Pro Shop', 'PGA Professional', 'Tournament Hosting', 'Cart Rentals', 'Group Outings', 'Free Parking'],
+        'slug' => 'the-links-at-galloway'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
