@@ -4,7 +4,7 @@ Updated: August 2025 (Cleaned & Reorganized Edition)
 Total Verified Courses: 270+ Statewide | Database Focus: 95+ Major Facilities
 
 STATUS LEGEND:
-✓ = Course page created and live on website
+  = Course page created and live on website
 [NEEDS WORK] = Course needs page creation
 [VERIFY] = Need to verify current status
 [CLOSED] = Permanently closed
@@ -17,32 +17,29 @@ INCOMPLETE COURSES - NEED COURSE PAGES (PRIORITY ORDER)
 HIGHEST PRIORITY - TOP RANKED/MAJOR MISSING COURSES
 --------------------------------------------------
 
-1. Troubadour Golf & Field Club - 4600 Murfreesboro Rd, College Grove 37046 [NEEDS WORK] - Private (Ranked #3 in Tennessee)
-2. The Legacy Golf Course - 1500 Legacy Dr, Springfield 37172 [NEEDS WORK] - Public (Ranked #2 public in Tennessee)  
-3. Fall Creek Falls State Park Golf Course - 2009 Village Camp Rd, Pikeville 37367 [NEEDS WORK] - State Park
-4. Montgomery Bell State Park Golf Course - 1020 Hotel Ave, Burns 37029 [NEEDS WORK] - State Park
-5. Henry Horton State Park Golf Course - 4209 Nashville Hwy, Chapel Hill 37034 [NEEDS WORK] - State Park
-6. Paris Landing State Park Golf Course - 16055 Hwy 79 N, Buchanan 38222 [NEEDS WORK] - State Park
-7. T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [NEEDS WORK] - State Park
-8. Tims Ford State Park Golf Course - 570 Tims Ford Dr, Winchester 37398 [NEEDS WORK] - State Park
+1. Fall Creek Falls State Park Golf Course - 2009 Village Camp Rd, Pikeville 37367 [NEEDS WORK] - State Park
+3. Montgomery Bell State Park Golf Course - 1020 Hotel Ave, Burns 37029 [NEEDS WORK] - State Park
+4. Henry Horton State Park Golf Course - 4209 Nashville Hwy, Chapel Hill 37034 [NEEDS WORK] - State Park
+5. Paris Landing State Park Golf Course - 16055 Hwy 79 N, Buchanan 38222 [NEEDS WORK] - State Park
+6. T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [NEEDS WORK] - State Park
+7. Tims Ford State Park Golf Course - 570 Tims Ford Dr, Winchester 37398 [NEEDS WORK] - State Park
 
 MEMPHIS MUNICIPAL COURSES (MAJOR PUBLIC ACCESS)
 ----------------------------------------------
 
-9. Audubon Golf Course - 4160 Park Ave, Memphis 38111 [NEEDS WORK] - Municipal
-10. Davy Crockett Golf Course - 4380 Range Line Rd, Memphis 38127 [NEEDS WORK] - Municipal
-11. Edmondson Golf Course - 8548 Douglass Ave, Memphis 38108 [NEEDS WORK] - Municipal
-12. Fox Meadows Golf Course - 3064 Clarke Rd, Memphis 38115 [NEEDS WORK] - Municipal
-13. Galloway Golf Course - 3815 Walnut Grove Rd, Memphis 38111 [NEEDS WORK] - Municipal
-14. Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [NEEDS WORK] - Municipal
-15. Links at Whitehaven - 1045 Finley Rd, Memphis 38116 [NEEDS WORK] - Municipal
+8. Audubon Golf Course - 4160 Park Ave, Memphis 38111 [NEEDS WORK] - Municipal
+9. Davy Crockett Golf Course - 4380 Range Line Rd, Memphis 38127 [NEEDS WORK] - Municipal
+10. Edmondson Golf Course - 8548 Douglass Ave, Memphis 38108 [NEEDS WORK] - Municipal
+11. Fox Meadows Golf Course - 3064 Clarke Rd, Memphis 38115 [NEEDS WORK] - Municipal
+12. Galloway Golf Course - 3815 Walnut Grove Rd, Memphis 38111 [NEEDS WORK] - Municipal
+13. Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [NEEDS WORK] - Municipal
+14. Links at Whitehaven - 1045 Finley Rd, Memphis 38116 [NEEDS WORK] - Municipal
 
 KNOXVILLE AREA MAJOR COURSES
 ---------------------------
 
-16. Fox Den Country Club - 2435 Fox Den Rd, Knoxville 37909 [NEEDS WORK] - Public
-17. Fairfield Glade Resort - 100 Fairfield Blvd, Fairfield Glade 38558 [NEEDS WORK] - Resort (3 courses)
-18. Tennessee National Golf Club - 1340 Clubhouse Dr, Loudon 37774 [NEEDS WORK] - Semi-Private
+16. Fairfield Glade Resort - 100 Fairfield Blvd, Fairfield Glade 38558 [NEEDS WORK] - Resort (3 courses)
+17. Tennessee National Golf Club - 1340 Clubhouse Dr, Loudon 37774 [NEEDS WORK] - Semi-Private
 
 CHATTANOOGA AREA PRIORITY
 ------------------------
@@ -69,7 +66,6 @@ COURSES NEEDING VERIFICATION
 ---------------------------
 
 28. Tanasi Golf Course - Loudon [VERIFY] - May be permanently closed
-29. Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 [VERIFY] - Verify current status
 
 LOWER PRIORITY COURSES
 ---------------------
@@ -102,7 +98,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Colonial Country Club - 2736 Countrywood Parkway, Cordova 38016 - Private (Joe Finger)
 ✓ Council Fire Golf Club - 1400 Council Fire Dr, Chattanooga 37421 - Private
 ✓ Cumberland Cove Golf Course - 16941 Highway 70 N, Monterey 38574 - Public
-✓ Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 - Public [VERIFY STATUS]
+✓ Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 - Public
 ✓ Druid Hills Golf Club - 3300 Asbury Rd, Knoxville 37914 - Private
 ✓ Eagles Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 - Public
 ✓ Egwani Farms Golf Course - 3543 Sevierville Pike, Knoxville 37920 - Public
@@ -143,10 +139,10 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ The Governors Club - 1601 Governors Club Dr, Brentwood 37027 - Private
 ✓ The Grove - 7770 Bakers Bridge Ave, College Grove 37046 - Private
 ✓ The Honors Course - 9603 Lee Highway, Ooltewah 37363 - Private (Pete Dye)
-✓ The Legacy Golf Course - 1500 Legacy Dr, Springfield 37172 - Public
+✓ The Legacy Golf Course - 1500 Legacy Dr, Springfield 37172 - Public (Ranked #2 public in Tennessee)
 ✓ Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 - Public
 ✓ TPC Southwind - 2000 Kirby Woods Cove, Memphis 38125 - Private (PGA Tour venue)
-✓ Troubadour Golf & Field Club - 4600 Murfreesboro Rd, College Grove 37046 - Private
+✓ Troubadour Golf & Field Club - 4600 Murfreesboro Rd, College Grove 37046 - Private (Ranked #3 in Tennessee)
 ✓ Two Rivers Golf Course - 3140 McGavock Pike, Nashville 37214 - Municipal
 ✓ Vanderbilt Legends Club - 1500 Legends Club Ln, Franklin 37069 - Private (University-affiliated)
 ✓ Warriors Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 - State Park (George Cobb)
@@ -161,8 +157,6 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 PERMANENTLY CLOSED COURSES (FOR INFORMATIONAL PURPOSES)
 =======================================================
 
-✓ Big Creek Golf Club - 6294 Elmore Rd, Millington 38053 [PERMANENTLY CLOSED] - Was Public
-✓ Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 [PERMANENTLY CLOSED] - Was Public (Ross Jones)
 Azalea Golf Club - Nashville [PERMANENTLY CLOSED 2018] - Was Public 18-hole course
 Bartlett Hills Golf Course - Bartlett [PERMANENTLY CLOSED 2016] - Was Public 18-hole course  
 Full Gospel Golf Course - Memphis [PERMANENTLY CLOSED 2020] - Was Semi-Private 9-hole course

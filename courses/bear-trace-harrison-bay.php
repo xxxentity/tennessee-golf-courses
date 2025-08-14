@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/bear-trace-harrison-bay/1.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/bear-trace-harrison-bay/1.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -772,12 +772,12 @@ try {
                 <p>Experience the beauty of Bear Trace at Harrison Bay</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/5.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/6.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/7.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (100+)</button>
@@ -958,8 +958,8 @@ try {
             for (let i = 1; i <= 103; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/bear-trace-harrison-bay/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/bear-trace-harrison-bay/${i}.jpeg`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/bear-trace-harrison-bay/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/bear-trace-harrison-bay/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
