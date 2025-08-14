@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/bear-trace-cumberland-mountain/1.webp');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/bear-trace-cumberland-mountain/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -834,12 +834,12 @@ try {
                 <p>Experience the beauty of Bear Trace at Cumberland Mountain</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/4.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/5.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/6.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/7.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
@@ -1020,8 +1020,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/bear-trace-cumberland-mountain/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/bear-trace-cumberland-mountain/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/bear-trace-cumberland-mountain/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/bear-trace-cumberland-mountain/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

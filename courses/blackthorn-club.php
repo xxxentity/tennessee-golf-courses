@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/blackthorn-club/1.webp');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/blackthorn-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -720,7 +720,7 @@ try {
             for (let i = 1; i <= 8; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/blackthorn-club/${i}.webp" alt="Blackthorn Club Photo ${i}" loading="lazy">`;
+                galleryItem.innerHTML = `<img src="../images/courses/blackthorn-club/${i}.jpeg" alt="Blackthorn Club Photo ${i}" loading="lazy">`;
                 galleryGrid.appendChild(galleryItem);
             }
         }
@@ -736,7 +736,7 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/blackthorn-club/${i}.webp" alt="Blackthorn Club Photo ${i}" loading="lazy">`;
+                galleryItem.innerHTML = `<img src="../images/courses/blackthorn-club/${i}.jpeg" alt="Blackthorn Club Photo ${i}" loading="lazy">`;
                 galleryGrid.appendChild(galleryItem);
             }
             

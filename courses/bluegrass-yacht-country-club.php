@@ -84,7 +84,7 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero" style="
         height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/bluegrass-yacht-country-club/1.webp'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/bluegrass-yacht-country-club/1.jpeg'); 
         background-size: cover; 
         background-position: center; 
         display: flex; 
@@ -278,7 +278,7 @@ try {
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
                     <?php for ($i = 1; $i <= 8; $i++): ?>
-                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/bluegrass-yacht-country-club/<?php echo $i; ?>.webp'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
+                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/bluegrass-yacht-country-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
                     <?php endfor; ?>
                 </div>
                 <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
@@ -402,13 +402,13 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.style.height = '200px';
-                galleryItem.style.backgroundImage = `url('../images/courses/bluegrass-yacht-country-club/${i}.webp')`;
+                galleryItem.style.backgroundImage = `url('../images/courses/bluegrass-yacht-country-club/${i}.jpeg')`;
                 galleryItem.style.backgroundSize = 'cover';
                 galleryItem.style.backgroundPosition = 'center';
                 galleryItem.style.borderRadius = '10px';
                 galleryItem.style.cursor = 'pointer';
                 galleryItem.style.transition = 'transform 0.3s ease';
-                galleryItem.onclick = () => window.open(`../images/courses/bluegrass-yacht-country-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/bluegrass-yacht-country-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

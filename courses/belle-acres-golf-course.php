@@ -84,7 +84,7 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero" style="
         height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/belle-acres-golf-course/1.webp'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/belle-acres-golf-course/1.jpeg'); 
         background-size: cover; 
         background-position: center; 
         display: flex; 
@@ -338,7 +338,7 @@ try {
             <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                 <?php for ($i = 1; $i <= 12; $i++): ?>
                     <div class="gallery-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; cursor: pointer;" onclick="openGallery(<?= $i ?>)">
-                        <img src="../images/courses/belle-acres-golf-course/<?= $i ?>.webp" 
+                        <img src="../images/courses/belle-acres-golf-course/<?= $i ?>.jpeg" 
                              alt="Belle Acres Golf Course Image <?= $i ?>" 
                              style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;"
                              onmouseover="this.style.transform='scale(1.05)'"
@@ -449,7 +449,7 @@ try {
 
         function openGallery(imageIndex) {
             currentImageIndex = imageIndex;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${imageIndex}.webp`;
+            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${imageIndex}.jpeg`;
             document.getElementById('galleryModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
@@ -461,12 +461,12 @@ try {
 
         function nextImage() {
             currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.webp`;
+            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.jpeg`;
         }
 
         function prevImage() {
             currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : totalImages;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.webp`;
+            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.jpeg`;
         }
 
         function showReviewForm() {

@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cedar-crest-golf-club/1.webp');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cedar-crest-golf-club/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -813,12 +813,12 @@ try {
                 <p>Experience the beauty of Cedar Crest Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/5.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/6.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/7.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/5.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/6.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/7.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
@@ -1039,8 +1039,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/cedar-crest-golf-club/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/cedar-crest-golf-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
