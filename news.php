@@ -577,7 +577,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
 
             <!-- Search and Filter Bar -->
             <div class="search-filter-bar">
-                <form method="GET" class="search-container">
+                <form method="GET" class="search-container" id="search-form">
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" name="search" class="search-input" 
                            placeholder="Search articles..." 
@@ -742,9 +742,14 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
 
         // Search form handling
         document.addEventListener('DOMContentLoaded', function() {
-            const searchForm = document.querySelector('.search-container form');
-            if (searchForm) {
-                searchForm.id = 'search-form';
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        document.getElementById('search-form').submit();
+                    }
+                });
             }
         });
 
