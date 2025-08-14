@@ -52,6 +52,7 @@ $courses = [
     ['name' => 'The Governors Club', 'location' => 'Brentwood, TN', 'slug' => 'the-governors-club'],
     ['name' => 'The Honors Course', 'location' => 'Ooltewah, TN', 'slug' => 'the-honors-course'],
     ['name' => 'The Links at Audubon', 'location' => 'Memphis, TN', 'slug' => 'the-links-at-audubon'],
+    ['name' => 'The Links at Fox Meadows', 'location' => 'Memphis, TN', 'slug' => 'the-links-at-fox-meadows'],
     ['name' => 'Temple Hills Country Club', 'location' => 'Franklin, TN', 'slug' => 'temple-hills-country-club'],
     ['name' => 'Ted Rhodes Golf Course', 'location' => 'Nashville, TN', 'slug' => 'ted-rhodes-golf-course'],
     ['name' => 'The Club at Five Oaks', 'location' => 'Lebanon, TN', 'slug' => 'the-club-at-five-oaks'],

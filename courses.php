@@ -707,6 +707,21 @@ $courses_static = [
         'slug' => 'the-links-at-audubon'
     ],
     [
+        'id' => 80,
+        'name' => 'The Links at Fox Meadows',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Chic Adams designed championship course from 1957. Historic 160-acre municipal course and longest in Memphis Public Links System, featuring tree-lined fairways, small greens, and natural water features.',
+        'image' => '/images/courses/the-links-at-fox-meadows/1.webp',
+        'price_range' => '$18-27',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Chic Adams',
+        'amenities' => ['Historic Course (1957)', 'Longest Municipal Course', 'Tree-lined Fairways', 'Natural Water Features', 'Clubhouse', 'Golf Shop', 'Chipping Course', 'Golf Lessons', 'Leagues', 'Tournament Packages'],
+        'slug' => 'the-links-at-fox-meadows'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
