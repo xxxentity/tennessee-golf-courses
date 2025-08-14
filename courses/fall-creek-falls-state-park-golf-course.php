@@ -627,28 +627,49 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Current Rates</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Mar - Nov)</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">18 Holes:</span>
-                                <span class="spec-value">$33 - $51</span>
+                                <span class="spec-label">Weekday (18):</span>
+                                <span class="spec-value">$47 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend (18):</span>
+                                <span class="spec-value">$52 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekday (9):</span>
+                                <span class="spec-value">$27 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend (9):</span>
+                                <span class="spec-value">$30 + tax</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Out of Season (Nov - Mar)</h4>
+                        <div class="course-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Weekday (18):</span>
+                                <span class="spec-value">$43 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend (18):</span>
+                                <span class="spec-value">$46 + tax</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">9 Holes:</span>
-                                <span class="spec-value">$41</span>
+                                <span class="spec-value">$27 + tax</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Cart Rental:</span>
+                                <span class="spec-label">Cart Fee:</span>
                                 <span class="spec-value">Included</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Twilight Rate:</span>
-                                <span class="spec-value">Available</span>
                             </div>
                         </div>
                     </div>
                     <div style="font-size: 0.9rem; color: #666; text-align: center; font-style: italic;">
-                        <p>Rates vary by season and day of week.<br>Call for current pricing and tee times.</p>
+                        <p>Rates subject to change. Senior and twilight discounts available.<br>Call (423) 881-5706 for current pricing and tee times.</p>
                     </div>
                 </div>
 
