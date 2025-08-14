@@ -626,33 +626,72 @@ try {
                         <h4 style="color: #2c5234; margin-bottom: 0.5rem;">18 Holes</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Weekday:</span>
+                                <span class="spec-label">Mon-Thurs:</span>
                                 <span class="spec-value">$27</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Weekend:</span>
+                                <span class="spec-label">Fri-Sun/Holidays:</span>
                                 <span class="spec-value">$35</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Cart Rental:</span>
-                                <span class="spec-value">$15</span>
+                                <span class="spec-label">Juniors (17 & under):</span>
+                                <span class="spec-value">$18-35</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Senior/Junior:</span>
-                                <span class="spec-value">$22</span>
+                                <span class="spec-label">Seniors (62 & older):</span>
+                                <span class="spec-value">$18-35</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Range Ball Tokens</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">9 Holes</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Large Bucket:</span>
-                                <span class="spec-value">$10</span>
+                                <span class="spec-label">Mon-Thurs:</span>
+                                <span class="spec-value">$14</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Small Bucket:</span>
-                                <span class="spec-value">$5</span>
+                                <span class="spec-label">Fri-Sun/Holidays:</span>
+                                <span class="spec-value">$18</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Juniors/Seniors:</span>
+                                <span class="spec-value">$10-18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Saturday Special</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Saturday after 12:00PM - Adult with junior (17 & under) plays 1/2 price, junior plays FREE!</p>
+                        <div class="course-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">18 holes w/ cart:</span>
+                                <span class="spec-value">$28</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18 holes walking:</span>
+                                <span class="spec-value">$18</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 holes w/ cart:</span>
+                                <span class="spec-value">$14</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 holes walking:</span>
+                                <span class="spec-value">$10</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Cart Fees (per player)</h4>
+                        <div class="course-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">18 holes:</span>
+                                <span class="spec-value">$20</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 holes:</span>
+                                <span class="spec-value">$10</span>
                             </div>
                         </div>
                     </div>
