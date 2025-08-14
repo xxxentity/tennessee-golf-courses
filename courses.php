@@ -737,6 +737,21 @@ $courses_static = [
         'slug' => 'the-links-at-galloway'
     ],
     [
+        'id' => 82,
+        'name' => 'The Links at Whitehaven',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Kevin Tucker designed 9-hole municipal course from 1973. Affordable Memphis community course featuring 2,460-yard Par 36 layout on 100 acres with free junior golf.',
+        'image' => '/images/courses/the-links-at-whitehaven/1.webp',
+        'price_range' => '$7-10',
+        'difficulty' => 'Beginner to Intermediate',
+        'holes' => 9,
+        'par' => 36,
+        'designer' => 'Kevin Tucker',
+        'amenities' => ['Municipal Course', 'Driving Range', 'Golf Shop', 'Snack Bar', 'Banquet Facilities', 'Junior Programs', 'Cart Rentals', 'Practice Area'],
+        'slug' => 'the-links-at-whitehaven'
+    ],
+    [
         'id' => 22,
         'name' => 'The Legacy Golf Course',
         'location' => 'Springfield, TN',
