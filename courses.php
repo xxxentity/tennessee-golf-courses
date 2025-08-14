@@ -257,6 +257,21 @@ $courses_static = [
         'slug' => 'forrest-crossing-golf-course'
     ],
     [
+        'id' => 74,
+        'name' => 'Fall Creek Falls State Park Golf Course',
+        'location' => 'Spencer, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => 'Joe Lee designed championship course in Tennessee\'s largest state park. 3-time Golf Digest Top 100 Public Courses selection with Audubon Sanctuary certification.',
+        'image' => '/images/courses/fall-creek-falls-state-park-golf-course/1.webp',
+        'price_range' => '$33-51',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Joe Lee',
+        'amenities' => ['State Park Setting', 'Top 100 Public Course', 'Audubon Sanctuary', 'Driving Range', 'Restaurant', 'Pro Shop', 'Tournament Hosting', 'PGA Instruction', 'Waterfalls Views', 'Hiking Trails Nearby'],
+        'slug' => 'fall-creek-falls-state-park-golf-course'
+    ],
+    [
         'id' => 35,
         'name' => 'Fox Den Country Club',
         'location' => 'Knoxville, TN',
