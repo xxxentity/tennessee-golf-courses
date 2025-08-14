@@ -587,6 +587,21 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
+        'id' => 81,
+        'name' => 'Overton Park 9',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'King Collins redesigned historic 9-hole municipal course from 1906. Unique public golf experience through Memphis\' old growth forest with 2,275-yard Par 34 layout and affordable rates.',
+        'image' => '/images/courses/overton-park-9/1.webp',
+        'price_range' => '$10-15',
+        'difficulty' => 'Beginner to Intermediate',
+        'holes' => 9,
+        'par' => 34,
+        'designer' => 'King Collins',
+        'amenities' => ['Historic Forest Setting', 'Pro Shop', 'Abe Goodman Clubhouse', 'Online Tee Times', 'Junior Golf Programs', 'Affordable Rates', 'Native Grass Areas', 'Wildlife Habitat'],
+        'slug' => 'overton-park-9'
+    ],
+    [
         'id' => 77,
         'name' => 'Paris Landing State Park Golf Course',
         'location' => 'Buchanan, TN',

@@ -93,7 +93,8 @@ $courses = [
     ['name' => 'Tennessee National Golf Club', 'location' => 'Loudon, TN', 'slug' => 'tennessee-national-golf-club'],
     ['name' => 'Lookout Mountain Club', 'location' => 'Lookout Mountain, GA', 'slug' => 'lookout-mountain-club'],
     ['name' => 'Moccasin Bend Golf Course', 'location' => 'Chattanooga, TN', 'slug' => 'moccasin-bend-golf-course'],
-    ['name' => 'Ross Creek Landing Golf Course', 'location' => 'Clifton, TN', 'slug' => 'ross-creek-landing-golf-course']
+    ['name' => 'Ross Creek Landing Golf Course', 'location' => 'Clifton, TN', 'slug' => 'ross-creek-landing-golf-course'],
+    ['name' => 'Overton Park 9', 'location' => 'Memphis, TN', 'slug' => 'overton-park-9']
 ];
 
 // Search for matches (case-insensitive)

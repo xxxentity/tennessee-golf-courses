@@ -103,6 +103,7 @@ RewriteRule ^courses/white-plains-golf-course/?$ courses/white-plains-golf-cours
 RewriteRule ^courses/lookout-mountain-club/?$ courses/lookout-mountain-club.php [L]
 RewriteRule ^courses/moccasin-bend-golf-course/?$ courses/moccasin-bend-golf-course.php [L]
 RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landing-golf-course.php [L]
+RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/fedex-st-jude-championship-2025-complete-recap-community-impact/?$ news/fedex-st-jude-championship-2025-complete-recap-community-impact.php [L]
