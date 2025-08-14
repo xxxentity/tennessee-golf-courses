@@ -527,6 +527,21 @@ $courses_static = [
         'slug' => 'richland-country-club'
     ],
     [
+        'id' => 80,
+        'name' => 'Ross Creek Landing Golf Course',
+        'location' => 'Clifton, TN',
+        'region' => 'Middle Tennessee',
+        'description' => 'Jack Nicklaus Signature Design from 2001. Championship 18-hole course featuring 7,131-yard Par 72 layout with challenging slope ratings and multiple tee options in scenic Tennessee Valley.',
+        'image' => '/images/courses/ross-creek-landing-golf-course/1.webp',
+        'price_range' => '$42-48',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Jack Nicklaus',
+        'amenities' => ['Jack Nicklaus Design', 'Driving Range', 'Pro Shop', 'Cart Rentals', 'Tournament Play', 'Senior Discounts', 'Elevated Greens', 'Water Features'],
+        'slug' => 'ross-creek-landing-golf-course'
+    ],
+    [
         'id' => 16,
         'name' => 'Stones River Country Club',
         'location' => 'Murfreesboro, TN',
