@@ -2,8 +2,8 @@
 session_start();
 require_once '../config/database.php';
 
-$course_slug = 'tennessee-national-golf-club';
-$course_name = 'Tennessee National Golf Club';
+$course_slug = 'lookout-mountain-club';
+$course_name = 'Lookout Mountain Club';
 
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
@@ -58,8 +58,8 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennessee National Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Tennessee National Golf Club - Greg Norman and Tad Burnett designed championship course in Loudon, TN. Top 10 Tennessee course featuring 7,393-yard Par 72 layout with 19-acre practice facility.">
+    <title>Lookout Mountain Club - Tennessee Golf Courses</title>
+    <meta name="description" content="Lookout Mountain Club - Seth Raynor designed championship course from 1925 in Lookout Mountain, GA. Golfweek-ranked classical course featuring 6,702-yard Par 70 layout with multi-state views.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/tennessee-national-golf-club/1.webp');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/lookout-mountain-club/1.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -555,8 +555,8 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
-            <h1>Tennessee National Golf Club</h1>
-            <p>Greg Norman Signature Design • Loudon, Tennessee</p>
+            <h1>Lookout Mountain Club</h1>
+            <p>Seth Raynor Design • Lookout Mountain, Georgia</p>
             <div class="course-rating">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
@@ -599,23 +599,23 @@ try {
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                            <span class="spec-value">70</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,393</span>
+                            <span class="spec-value">6,702</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Greg Norman & Tad Burnett</span>
+                            <span class="spec-value">Seth Raynor</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Opened:</span>
-                            <span class="spec-value">2007</span>
+                            <span class="spec-value">1925</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
-                            <span class="spec-value">Semi-Private</span>
+                            <span class="spec-value">Private</span>
                         </div>
                     </div>
                 </div>
@@ -627,7 +627,7 @@ try {
                         <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
                     </div>
                     <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Tennessee National Golf Club operates as an exclusive private club serving East Tennessee families since 2007. 
+                        Lookout Mountain Club operates as an exclusive private club serving families since 1925. 
                         Contact the club directly for membership information and guest policies.
                     </p>
                 </div>
@@ -635,34 +635,31 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    8301 Tennessee National Dr<br>
-                    Loudon, TN 37774</p>
+                    1201 Fleetwood Drive<br>
+                    Lookout Mountain, GA 30750</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (706) 820-1551</p>
                     
                     <p><strong>Pro Shop:</strong><br>
-                    (865) 657-2001 ext. 2</p>
-                    
-                    <p><strong>Director of Golf:</strong><br>
-                    Cody Cable, PGA</p>
-                    
-                    <p><strong>Membership:</strong><br>
-                    Kara Pratt - (865) 224-0838</p>
+                    (706) 841-7131</p>
                     
                     <p><strong>Website:</strong><br>
-                    <a href="https://www.tennesseenational.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tennesseenational.com</a></p>
+                    <a href="https://www.lookoutmountain.club" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">lookoutmountain.club</a></p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=8301+Tennessee+National+Dr,+Loudon,+TN+37774&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=1201+Fleetwood+Drive,+Lookout+Mountain,+GA+30750&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Tennessee National Golf Club Location">
+                            title="Lookout Mountain Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=8301+Tennessee+National+Dr,+Loudon,+TN+37774" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1201+Fleetwood+Drive,+Lookout+Mountain,+GA+30750" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
@@ -675,69 +672,69 @@ try {
 
             <!-- Course Description -->
             <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Tennessee National Golf Club</h3>
-                <p>Tennessee National Golf Club is a stunning Greg Norman Signature Golf Course co-designed with Tad Burnett, opened in 2007 in the scenic hills of Loudon, Tennessee. Ranked as one of the "Top 10 Courses in Tennessee," this championship layout offers a premier golf experience with breathtaking views of Watts Bar Lake and the surrounding East Tennessee landscape.</p>
+                <h3><i class="fas fa-golf-ball"></i> About Lookout Mountain Club</h3>
+                <p>Lookout Mountain Club stands as one of America's most distinguished private golf clubs, featuring a masterful Seth Raynor design that opened in 1925. Perched atop historic Lookout Mountain on the Georgia-Tennessee border, this exclusive club has been recognized by Golfweek magazine as "one of America's top classical golf courses," a testament to Raynor's timeless architectural brilliance.</p>
                 
                 <br>
                 
-                <p>The course measures an impressive 7,393 yards from the championship tees with a challenging slope rating of 139, making it one of the more demanding tests of golf in the state. The Norman-Burnett design takes full advantage of the natural terrain, incorporating dramatic elevation changes, strategic bunkering, and water features that come into play on several holes.</p>
+                <p>The course showcases Raynor's signature template approach, with holes inspired by famous golf courses from St. Andrews and North Berwick. Each hole presents unique characteristics, from elevated tee boxes offering panoramic multi-state views to natural rock formations and strategically placed bunkers that challenge golfers while maintaining the course's classical beauty.</p>
                 
                 <br>
                 
-                <p>One of the standout features of Tennessee National is its state-of-the-art practice facility spanning 19 acres. This comprehensive training ground includes an oversized grass teeing area, two practice chipping and putting greens, and a private tee with a dedicated short game area. The facility also features TopTracer technology, allowing golfers to track their shots and improve their game with real-time data.</p>
+                <p>Measuring 6,702 yards from the championship tees with a demanding slope rating of 136, Lookout Mountain Club provides a challenging yet fair test of golf. The course's elevated location offers spectacular views across multiple states, with scenic mountain and historic battlefield vistas that create an unparalleled golfing experience steeped in both natural beauty and American history.</p>
                 
                 <br>
                 
-                <p>The club recently unveiled a brand-new 25,000 square foot clubhouse that serves as the centerpiece of the golf experience. This impressive facility houses dining options, event spaces, and the pro shop, providing members and guests with first-class amenities. Adjacent to the golf facilities, the Sunset Saloon offers a casual atmosphere for post-round refreshments and camaraderie.<br><br></p>
+                <p>The club's commitment to excellence extends beyond golf, with the tagline "Tradition Redefined, Luxury Reinvented" reflecting its dedication to providing members with a complete lifestyle experience. The facility includes world-class amenities such as tennis and pickleball courts, a resort-style pool, fitness facilities, and exceptional dining options.<br><br></p>
                 
-                <p>Under the direction of PGA Class A Professional Cody Cable, Tennessee National maintains the highest standards of course conditioning and customer service. The semi-private nature of the club allows public play while maintaining an exclusive atmosphere, making it accessible to both members and daily fee players seeking a premium golf experience.<br><br></p>
+                <p>A highlight of the club's social calendar is the annual "Swing Ding," a golf event that has been a beloved tradition since 1959, bringing members together for competition and camaraderie. The club also hosts corporate outings and charitable tournaments, maintaining its role as a cornerstone of the local community.<br><br></p>
                 
-                <p>Tennessee National Golf Club represents the perfect blend of championship golf, stunning natural beauty, and world-class amenities, making it a must-play destination for golfers visiting East Tennessee. The course's strategic design challenges players of all skill levels while providing multiple tee options to ensure an enjoyable round for everyone.</p>
+                <p>Lookout Mountain Club represents more than just a golf course—it embodies a way of life for its members. With nearly a century of history and tradition, combined with Seth Raynor's architectural genius and the dramatic natural setting atop Lookout Mountain, the club offers an exclusive golf experience that few courses in America can match.</p>
             </div>
 
             <!-- Amenities -->
             <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
+                <h3><i class="fas fa-star"></i> Club Amenities</h3>
                 <div class="amenities-grid">
                     <div class="amenity-item">
                         <i class="fas fa-golf-ball"></i>
-                        <span>19-Acre Practice Facility</span>
+                        <span>Seth Raynor Design</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-bullseye"></i>
-                        <span>TopTracer Range</span>
+                        <i class="fas fa-mountain"></i>
+                        <span>Multi-State Views</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-building"></i>
-                        <span>25,000 sq ft Clubhouse</span>
+                        <i class="fas fa-award"></i>
+                        <span>Golfweek Top Classical</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-utensils"></i>
-                        <span>Full Restaurant</span>
+                        <span>Fine Dining</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
+                        <span>Premium Pro Shop</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
+                        <i class="fas fa-tennis-ball"></i>
+                        <span>Tennis & Pickleball</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-glass-cheers"></i>
-                        <span>Sunset Saloon</span>
+                        <i class="fas fa-swimming-pool"></i>
+                        <span>Resort-Style Pool</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Fitness Facilities</span>
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Event Hosting</span>
+                        <span>Private Events</span>
                     </div>
                     <div class="amenity-item">
-                        <i class="fas fa-bullseye"></i>
-                        <span>Short Game Area</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-users"></i>
-                        <span>Memberships Available</span>
+                        <i class="fas fa-history"></i>
+                        <span>Historic Since 1925</span>
                     </div>
                 </div>
             </div>
@@ -749,15 +746,15 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>Course Gallery</h2>
-                <p>Experience the beauty of Tennessee National Golf Club</p>
+                <p>Experience the beauty of Lookout Mountain Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/4.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/5.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/6.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tennessee-national-golf-club/7.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/5.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/6.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lookout-mountain-club/7.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
@@ -769,7 +766,7 @@ try {
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Tennessee National Golf Club - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Lookout Mountain Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
             <div class="full-gallery-grid" id="fullGalleryGrid">
@@ -783,7 +780,7 @@ try {
         <div class="container">
             <div class="section-header">
                 <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Tennessee National</p>
+                <p>Read reviews from golfers who have experienced Lookout Mountain Club</p>
             </div>
             
             <?php if (isset($success_message)): ?>
@@ -805,7 +802,7 @@ try {
                     <form method="POST" class="comment-form">
                         <div class="form-group">
                             <label for="rating">Rating:</label>
-                            <div class="star-rating" id="tn-national-rating-stars">
+                            <div class="star-rating" id="lookout-rating-stars">
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
                                 <input type="radio" id="star2" name="rating" value="2" />
@@ -866,11 +863,11 @@ try {
     <section class="booking-section">
         <div class="container">
             <div class="booking-content">
-                <h2>Ready to Play Tennessee National?</h2>
-                <p>Book your tee time today and experience one of Tennessee's premier golf destinations</p>
+                <h2>Experience Lookout Mountain Club</h2>
+                <p>Contact the club for membership information and guest policies</p>
                 <div class="booking-buttons">
-                    <a href="tel:+18656572001" class="btn-book">Call Pro Shop</a>
-                    <a href="https://www.tennesseenational.com" target="_blank" rel="noopener noreferrer" class="btn-contact">Visit Website</a>
+                    <a href="tel:+17068201551" class="btn-book">Call Club</a>
+                    <a href="https://www.lookoutmountain.club" target="_blank" rel="noopener noreferrer" class="btn-contact">Visit Website</a>
                 </div>
             </div>
         </div>
@@ -938,8 +935,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/tennessee-national-golf-club/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/tennessee-national-golf-club/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/lookout-mountain-club/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/lookout-mountain-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
@@ -968,9 +965,9 @@ try {
         });
     </script>
     <script>
-        // Interactive star rating functionality for Tennessee National
+        // Interactive star rating functionality for Lookout Mountain
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('tn-national-rating-stars');
+            const ratingContainer = document.getElementById('lookout-rating-stars');
             if (ratingContainer) {
                 const stars = ratingContainer.querySelectorAll('label');
                 const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');

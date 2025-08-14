@@ -1097,6 +1097,21 @@ $courses_static = [
         'slug' => 'lambert-acres-golf-club'
     ],
     [
+        'id' => 78,
+        'name' => 'Lookout Mountain Club',
+        'location' => 'Lookout Mountain, GA',
+        'region' => 'Chattanooga Area',
+        'description' => 'Seth Raynor designed championship course from 1925. Golfweek-ranked classical layout on Lookout Mountain featuring 6,702-yard Par 70 with multi-state views.',
+        'image' => '/images/courses/lookout-mountain-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 70,
+        'designer' => 'Seth Raynor',
+        'amenities' => ['Championship Golf', 'Historic Design (1925)', 'Mountain Views', 'Golfweek Ranked', 'Private Club', 'Classical Architecture', 'Multi-State Views', 'Seth Raynor Design'],
+        'slug' => 'lookout-mountain-club'
+    ],
+    [
         'id' => 48,
         'name' => 'Egwani Farms Golf Course',
         'location' => 'Knoxville, TN',
