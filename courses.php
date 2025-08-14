@@ -1185,6 +1185,21 @@ $courses_static = [
         'designer' => 'Bill Bergin',
         'amenities' => ['Championship Golf', 'Lakeside Pools', 'Fitness Facilities', 'Racquet Sports', 'Private Dining', 'Performance Center', 'Old Hickory Lake', 'Luxury Experience'],
         'slug' => 'tennessee-grasslands-foxland'
+    ],
+    [
+        'id' => 102,
+        'name' => 'Tennessee National Golf Club',
+        'location' => 'Loudon, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Greg Norman and Tad Burnett designed championship course from 2007. Top 10 Tennessee course featuring 7,393-yard Par 72 layout with 19-acre practice facility and new 25,000 sq ft clubhouse.',
+        'image' => '/images/courses/tennessee-national-golf-club/1.webp',
+        'price_range' => 'Call for Pricing',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Greg Norman & Tad Burnett',
+        'amenities' => ['Greg Norman Signature', 'Top 10 Course', '19-Acre Practice Facility', 'TopTracer Range', '25,000 sq ft Clubhouse', 'Semi-Private', 'Lake Views', 'PGA Instruction'],
+        'slug' => 'tennessee-national-golf-club'
     ]
 ];
 

@@ -88,6 +88,7 @@ RewriteRule ^courses/the-links-at-whitehaven/?$ courses/the-links-at-whitehaven.
 RewriteRule ^courses/the-legacy-golf-course/?$ courses/the-legacy-golf-course.php [L]
 RewriteRule ^courses/tennessee-grasslands-fairvue/?$ courses/tennessee-grasslands-fairvue.php [L]
 RewriteRule ^courses/tennessee-grasslands-foxland/?$ courses/tennessee-grasslands-foxland.php [L]
+RewriteRule ^courses/tennessee-national-golf-club/?$ courses/tennessee-national-golf-club.php [L]
 RewriteRule ^courses/three-ridges-golf-course/?$ courses/three-ridges-golf-course.php [L]
 RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
 RewriteRule ^courses/troubadour-golf-field-club/?$ courses/troubadour-golf-field-club.php [L]
