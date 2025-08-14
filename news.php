@@ -8,7 +8,7 @@ $articles = [
         'slug' => 'fedex-st-jude-championship-2025-complete-recap-community-impact',
         'date' => '2025-08-11',
         'time' => '10:00 AM',
-        'category' => 'Tournament Recap',
+        'category' => 'Tennessee News',
         'excerpt' => 'Complete recap of the 2025 FedEx St. Jude Championship week featuring Justin Rose\'s playoff victory and the tournament\'s extraordinary community impact for St. Jude Children\'s Research Hospital.',
         'image' => '/images/news/fedex-st-jude-championship-2025-complete-recap-community-impact/main.jpeg',
         'featured' => true
@@ -18,7 +18,7 @@ $articles = [
         'slug' => 'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak',
         'date' => '2025-08-10',
         'time' => '8:15 PM',
-        'category' => 'Tournament Coverage',
+        'category' => 'Tennessee News',
         'excerpt' => 'Justin Rose defeats J.J. Spaun in dramatic three-hole playoff to win FedEx St. Jude Championship as Tommy Fleetwood\'s quest continues.',
         'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.jpeg',
         'featured' => true
@@ -28,7 +28,7 @@ $articles = [
         'slug' => 'fleetwood-maintains-narrow-lead-scheffler-charges',
         'date' => '2025-08-09',
         'time' => '7:45 PM',
-        'category' => 'Tournament Coverage',
+        'category' => 'Tennessee News',
         'excerpt' => 'Tommy Fleetwood holds one-shot lead entering final round as Scottie Scheffler fires 65 to surge into contention at FedEx St. Jude Championship.',
         'image' => '/images/news/fleetwood-maintains-narrow-lead-scheffler-charges/main.jpeg',
         'featured' => true
@@ -38,7 +38,7 @@ $articles = [
         'slug' => 'fleetwood-takes-command-weather-halts-play',
         'date' => '2025-08-08',
         'time' => '6:30 PM',
-        'category' => 'Tournament Coverage',
+        'category' => 'Tennessee News',
         'excerpt' => 'Tommy Fleetwood builds commanding lead at FedEx St. Jude Championship before severe weather suspends second round play.',
         'image' => '/images/news/fleetwood-takes-command-weather-halts-play/main.jpeg',
         'featured' => true
@@ -48,7 +48,7 @@ $articles = [
         'slug' => 'fedex-st-jude-first-round-bhatia-leads',
         'date' => '2025-08-07',
         'time' => '7:00 PM',
-        'category' => 'Tournament Coverage',
+        'category' => 'Tennessee News',
         'excerpt' => 'Akshay Bhatia shoots career-best 62 to lead FedEx St. Jude Championship as playoff bubble players battle in Memphis heat.',
         'image' => '/images/news/fedex-st-jude-first-round-bhatia-leads/main.jpeg',
         'featured' => true
@@ -588,10 +588,9 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                 <form method="GET">
                     <select name="category" class="category-filter" onchange="this.form.submit()">
                         <option value="">All Categories</option>
-                        <option value="Major Championship" <?php echo $category_filter === 'Major Championship' ? 'selected' : ''; ?>>Major Championships</option>
-                        <option value="PGA Tour" <?php echo $category_filter === 'PGA Tour' ? 'selected' : ''; ?>>PGA Tour</option>
-                        <option value="Course News" <?php echo $category_filter === 'Course News' ? 'selected' : ''; ?>>Course News</option>
-                        <option value="Equipment" <?php echo $category_filter === 'Equipment' ? 'selected' : ''; ?>>Equipment</option>
+                        <option value="Tennessee News" <?php echo $category_filter === 'Tennessee News' ? 'selected' : ''; ?>>Tennessee News</option>
+                        <option value="Tournament News" <?php echo $category_filter === 'Tournament News' ? 'selected' : ''; ?>>Tournament News</option>
+                        <option value="Equipment News" <?php echo $category_filter === 'Equipment News' ? 'selected' : ''; ?>>Equipment News</option>
                     </select>
                     <input type="hidden" name="search" value="<?php echo htmlspecialchars($search_query); ?>">
                 </form>
