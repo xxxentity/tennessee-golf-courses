@@ -332,6 +332,21 @@ $courses_static = [
         'slug' => 'hermitage-golf-course'
     ],
     [
+        'id' => 76,
+        'name' => 'Henry Horton State Park Golf Course',
+        'location' => 'Chapel Hill, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Historic 1962 championship golf course designed by Bob Cupp. First Tennessee Golf Trail course with challenging 7,066-yard layout. Features rolling hills and strategic design.',
+        'image' => '/images/courses/henry-horton-state-park-golf-course/1.webp',
+        'price_range' => '$40-50',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bob Cupp',
+        'amenities' => ['Historic Course (1962)', 'Tennessee Golf Trail', 'State Park Setting', 'Driving Range', 'Restaurant', 'Pro Shop', 'Tournament Host', 'On-Site Lodge', 'Championship Layout'],
+        'slug' => 'henry-horton-state-park-golf-course'
+    ],
+    [
         'id' => 9,
         'name' => 'Hillwood Country Club',
         'location' => 'Nashville, TN',
