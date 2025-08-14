@@ -223,7 +223,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
         .slide-content {
             background: linear-gradient(transparent, rgba(0,0,0,0.8));
             width: 100%;
-            padding: 2rem;
+            padding: 2rem 5rem;
             color: white;
         }
         
@@ -519,6 +519,10 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             
             .carousel-nav {
                 display: none;
+            }
+            
+            .slide-content {
+                padding: 2rem;
             }
         }
     </style>
