@@ -45,6 +45,7 @@ $courses = [
     ['name' => 'Stones River Country Club', 'location' => 'Murfreesboro, TN', 'slug' => 'stones-river-country-club'],
     ['name' => 'Springhouse Golf Club', 'location' => 'Nashville, TN', 'slug' => 'springhouse-golf-club'],
     ['name' => 'Old Hickory Country Club', 'location' => 'Old Hickory, TN', 'slug' => 'old-hickory-country-club'],
+    ['name' => 'Paris Landing State Park Golf Course', 'location' => 'Buchanan, TN', 'slug' => 'paris-landing-state-park-golf-course'],
     ['name' => 'Percy Warner Golf Course', 'location' => 'Nashville, TN', 'slug' => 'percy-warner-golf-course'],
     ['name' => 'The Golf Club of Tennessee', 'location' => 'Kingston Springs, TN', 'slug' => 'the-golf-club-of-tennessee'],
     ['name' => 'The Grove', 'location' => 'College Grove, TN', 'slug' => 'the-grove'],

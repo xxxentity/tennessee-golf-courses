@@ -557,6 +557,21 @@ $courses_static = [
         'slug' => 'old-hickory-country-club'
     ],
     [
+        'id' => 77,
+        'name' => 'Paris Landing State Park Golf Course',
+        'location' => 'Buchanan, TN',
+        'region' => 'Western Tennessee',
+        'description' => 'Benjamin Wihry designed championship course from 1971 on Kentucky Lake. Golf Digest 4-star rated for 27 years with Audubon Sanctuary certification and scenic lakeside views.',
+        'image' => '/images/courses/paris-landing-state-park-golf-course/1.webp',
+        'price_range' => '$42-52',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Benjamin Wihry',
+        'amenities' => ['Golf Digest 4-Star', 'Kentucky Lake Views', 'Tennessee Golf Trail', 'Audubon Sanctuary', 'State Park Setting', 'Driving Range', 'Pro Shop', 'On-Site Lodge', 'Championship Layout', 'Marina Access'],
+        'slug' => 'paris-landing-state-park-golf-course'
+    ],
+    [
         'id' => 29,
         'name' => 'Percy Warner Golf Course',
         'location' => 'Nashville, TN',
