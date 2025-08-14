@@ -679,8 +679,6 @@ try {
                     <p><strong>Website:</strong><br>
                     <a href="https://www.overtonpark9.org" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">overtonpark9.org</a></p>
                     
-                    <p><strong>Social Media:</strong><br>
-                    Instagram: @overtonpark9golf</p>
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
