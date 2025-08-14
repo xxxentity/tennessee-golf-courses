@@ -25,6 +25,7 @@ $courses = [
     ['name' => 'Colonial Country Club', 'location' => 'Cordova, TN', 'slug' => 'colonial-country-club'],
     ['name' => 'Gaylord Springs Golf Links', 'location' => 'Nashville, TN', 'slug' => 'gaylord-springs-golf-links'],
     ['name' => 'Forrest Crossing Golf Course', 'location' => 'Franklin, TN', 'slug' => 'forrest-crossing-golf-course'],
+    ['name' => 'Fall Creek Falls State Park Golf Course', 'location' => 'Spencer, TN', 'slug' => 'fall-creek-falls-state-park-golf-course'],
     ['name' => 'Fox Den Country Club', 'location' => 'Knoxville, TN', 'slug' => 'fox-den-country-club'],
     ['name' => 'Greystone Golf Course', 'location' => 'Dickson, TN', 'slug' => 'greystone-golf-course'],
     ['name' => 'Harpeth Hills Golf Course', 'location' => 'Nashville, TN', 'slug' => 'harpeth-hills-golf-course'],
