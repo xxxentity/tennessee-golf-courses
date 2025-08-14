@@ -91,7 +91,8 @@ $courses = [
     ['name' => 'Tennessee Grasslands Golf & CC - Fairvue', 'location' => 'Gallatin, TN', 'slug' => 'tennessee-grasslands-fairvue'],
     ['name' => 'Tennessee Grasslands Golf & CC - Foxland', 'location' => 'Gallatin, TN', 'slug' => 'tennessee-grasslands-foxland'],
     ['name' => 'Tennessee National Golf Club', 'location' => 'Loudon, TN', 'slug' => 'tennessee-national-golf-club'],
-    ['name' => 'Lookout Mountain Club', 'location' => 'Lookout Mountain, GA', 'slug' => 'lookout-mountain-club']
+    ['name' => 'Lookout Mountain Club', 'location' => 'Lookout Mountain, GA', 'slug' => 'lookout-mountain-club'],
+    ['name' => 'Moccasin Bend Golf Course', 'location' => 'Chattanooga, TN', 'slug' => 'moccasin-bend-golf-course']
 ];
 
 // Search for matches (case-insensitive)

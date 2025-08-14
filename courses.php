@@ -452,6 +452,21 @@ $courses_static = [
         'slug' => 'mirimichi-golf-course'
     ],
     [
+        'id' => 79,
+        'name' => 'Moccasin Bend Golf Course',
+        'location' => 'Chattanooga, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'John LaFoy designed championship course from 1966. One of Chattanooga\'s most naturally beautiful golf destinations with Bentgrass greens, water frequently in play, and 6,469-yard Par 72 layout.',
+        'image' => '/images/courses/moccasin-bend-golf-course/1.webp',
+        'price_range' => '$35-40',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'John LaFoy',
+        'amenities' => ['Practice Facilities', 'Bar & Grill', 'Pro Shop', 'Cart Rentals', 'Event Hosting', 'Tournament Play', 'Bentgrass Greens', 'Water Features'],
+        'slug' => 'moccasin-bend-golf-course'
+    ],
+    [
         'id' => 75,
         'name' => 'Montgomery Bell State Park Golf Course',
         'location' => 'Burns, TN',
