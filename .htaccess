@@ -78,6 +78,7 @@ RewriteRule ^courses/paris-landing-state-park-golf-course/?$ courses/paris-landi
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/pickwick-landing-state-park/?$ courses/pickwick-landing-state-park.php [L]
 RewriteRule ^courses/temple-hills-country-club/?$ courses/temple-hills-country-club.php [L]
+RewriteRule ^courses/tanasi-golf-course/?$ courses/tanasi-golf-course.php [L]
 RewriteRule ^courses/ted-rhodes-golf-course/?$ courses/ted-rhodes-golf-course.php [L]
 RewriteRule ^courses/the-club-at-five-oaks/?$ courses/the-club-at-five-oaks.php [L]
 RewriteRule ^courses/the-club-at-gettysvue/?$ courses/the-club-at-gettysvue.php [L]

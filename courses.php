@@ -772,6 +772,24 @@ $courses_static = [
         'slug' => 'temple-hills-country-club'
     ],
     [
+        'id' => 82,
+        'name' => 'Tanasi Golf Course',
+        'location' => 'Tellico Village/Loudon, TN',
+        'region' => 'East Tennessee',
+        'description' => 'Championship resort course designed by Ault, Clark & Associates in 1996. Located in scenic Tellico Village with stunning mountain and lake views, this par 72 layout features 6,715 yards of strategic golf.',
+        'image' => '/images/courses/tanasi-golf-course/1.jpeg',
+        'price_range' => '$65-85',
+        'difficulty' => 'Intermediate to Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'yardage' => 6715,
+        'opened' => 1996,
+        'designer' => 'Ault, Clark & Associates',
+        'course_type' => 'Resort',
+        'amenities' => ['Championship Golf', 'Resort Course', 'Mountain Views', 'Lake Views', 'Pro Shop', 'Restaurant', 'Driving Range', 'Practice Facilities', 'Cart Rental', 'Golf Lessons'],
+        'slug' => 'tanasi-golf-course'
+    ],
+    [
         'id' => 31,
         'name' => 'Ted Rhodes Golf Course',
         'location' => 'Nashville, TN',

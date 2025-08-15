@@ -68,7 +68,7 @@ OTHER PRIORITY COURSES
 COURSES NEEDING VERIFICATION
 ---------------------------
 
-28. Tanasi Golf Course - Loudon [VERIFY] - May be permanently closed
+28. [REMOVED] - Tanasi Golf Course has been verified as active and added to completed courses
 29. Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 [VERIFY] - Verify current status
 
 LOWER PRIORITY COURSES
@@ -136,6 +136,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 - Public (Ross Jones) [PERMANENTLY CLOSED]
 ✓ Stones River Country Club - 1830 NW Broad St, Murfreesboro 37129 - Private
 ✓ Sweetens Cove Golf Club - 940 Sweetens Cove Rd, South Pittsburg 37380 - Public (9-hole specialty course)
+✓ Tanasi Golf Course - Tellico Village, Loudon 37774 - Resort (Ault, Clark & Associates, 1996, 6,715 yards, par 72)
 ✓ Ted Rhodes Golf Course - 1901 Ed Temple Blvd, Nashville 37208 - Municipal
 ✓ Temple Hills Country Club - 5001 Edmondson Pike, Nashville 37211 - Private
 ✓ Tennessee Grasslands Golf & CC - Fairvue Course - 7000 Plantation Way, Gallatin 37066 - Private (Bill Bergin, 2004)
@@ -182,7 +183,7 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 79
+- Completed Course Pages: 80
 - High Priority Missing: 25+
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
