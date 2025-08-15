@@ -67,6 +67,7 @@ $courses = [
     ['name' => 'The Legacy Golf Course', 'location' => 'Springfield, TN', 'slug' => 'the-legacy-golf-course'],
     ['name' => 'Three Ridges Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'three-ridges-golf-course'],
     ['name' => 'TPC Southwind', 'location' => 'Memphis, TN', 'slug' => 'tpc-southwind'],
+    ['name' => 'Toqua Golf Course', 'location' => 'Loudon, TN', 'slug' => 'toqua-golf-course'],
     ['name' => 'Troubadour Golf & Field Club', 'location' => 'College Grove, TN', 'slug' => 'troubadour-golf-field-club'],
     ['name' => 'Two Rivers Golf Course', 'location' => 'Nashville, TN', 'slug' => 'two-rivers-golf-course'],
     ['name' => 'Vanderbilt Legends Club', 'location' => 'Franklin, TN', 'slug' => 'vanderbilt-legends-club'],

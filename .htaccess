@@ -96,6 +96,7 @@ RewriteRule ^courses/tennessee-grasslands-foxland/?$ courses/tennessee-grassland
 RewriteRule ^courses/tennessee-national-golf-club/?$ courses/tennessee-national-golf-club.php [L]
 RewriteRule ^courses/three-ridges-golf-course/?$ courses/three-ridges-golf-course.php [L]
 RewriteRule ^courses/tpc-southwind/?$ courses/tpc-southwind.php [L]
+RewriteRule ^courses/toqua-golf-course/?$ courses/toqua-golf-course.php [L]
 RewriteRule ^courses/troubadour-golf-field-club/?$ courses/troubadour-golf-field-club.php [L]
 RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.php [L]
 RewriteRule ^courses/vanderbilt-legends-club/?$ courses/vanderbilt-legends-club.php [L]

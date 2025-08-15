@@ -925,6 +925,21 @@ $courses_static = [
         'slug' => 'tpc-southwind'
     ],
     [
+        'id' => 109,
+        'name' => 'Toqua Golf Course',
+        'location' => 'Loudon, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'First championship course at Tellico Village designed by Ault, Clark & Associates in 1987. Nominated as "best new course" by Golf Digest with 7,049-yard lakeside layout.',
+        'image' => '/images/courses/toqua-golf-course/1.webp',
+        'price_range' => '$47-83',
+        'difficulty' => 'Intermediate to Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Ault, Clark & Associates',
+        'amenities' => ['Championship Golf Course', 'Driving Range', 'Practice Putting Green', 'Short-Game Practice Area', 'New Clubhouse (2019)', 'Sports Bar & Restaurant', '150-Seat Pavilion', 'Lake Views'],
+        'slug' => 'toqua-golf-course'
+    ],
+    [
         'id' => 27,
         'name' => 'Troubadour Golf & Field Club',
         'location' => 'College Grove, TN',
