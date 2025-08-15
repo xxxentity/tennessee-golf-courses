@@ -542,7 +542,7 @@ try {
     </style>
 </head>
 <body>
-    <?php include '../header.php'; ?>
+    <?php include '../includes/navigation.php'; ?>
     
     <!-- Course Hero Section -->
     <section class="course-hero">
@@ -876,7 +876,7 @@ try {
         </div>
     </section>
     
-    <?php include '../footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     
     <script>
         // Gallery functionality
