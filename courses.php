@@ -617,6 +617,21 @@ $courses_static = [
         'slug' => 'paris-landing-state-park-golf-course'
     ],
     [
+        'id' => 78,
+        'name' => 'Pickwick Landing State Park Golf Course',
+        'location' => 'Counce, TN',
+        'region' => 'Western Tennessee',
+        'description' => 'Championship 72-par course featuring Champion Bermuda greens on a 6,483-yard layout with water on 8 holes near historic Pickwick Dam.',
+        'image' => '/images/courses/pickwick-landing-state-park/1.webp',
+        'price_range' => '$45-55',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'State Park Design',
+        'amenities' => ['State Park Setting', 'Pickwick Dam Views', 'Water Features', 'Champion Bermuda Greens', 'Driving Range', 'Pro Shop', 'Cart Rentals', 'On-Site Lodge'],
+        'slug' => 'pickwick-landing-state-park'
+    ],
+    [
         'id' => 29,
         'name' => 'Percy Warner Golf Course',
         'location' => 'Nashville, TN',
