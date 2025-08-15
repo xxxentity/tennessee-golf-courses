@@ -627,36 +627,44 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Apr - Oct)</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Standard (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekday (18):</span>
+                                <span class="spec-value">$49 + tax</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Senior (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekend (18):</span>
+                                <span class="spec-value">$52 + tax</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Junior (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekday (9):</span>
+                                <span class="spec-value">$30 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend (9):</span>
+                                <span class="spec-value">$32 + tax</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Off Season (Nov - Mar)</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Out of Season</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Standard (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekday (18):</span>
+                                <span class="spec-value">$42 + tax</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Senior (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekend (18):</span>
+                                <span class="spec-value">$42 + tax</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Junior (18):</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">Weekday (9):</span>
+                                <span class="spec-value">$25 + tax</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend (9):</span>
+                                <span class="spec-value">$25 + tax</span>
                             </div>
                         </div>
                     </div>
