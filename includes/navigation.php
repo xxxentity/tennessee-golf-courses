@@ -75,6 +75,17 @@ $is_main_page = (
             <li><a href="/events" class="nav-link">Events</a></li>
             <li><a href="/about" class="nav-link">About</a></li>
             <li><a href="/contact" class="nav-link">Contact</a></li>
+            
+            <!-- Mobile Auth Links -->
+            <li class="mobile-auth-divider"></li>
+            <?php if ($is_logged_in): ?>
+                <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span></li>
+                <li class="mobile-auth-item"><a href="/profile" class="nav-link">My Profile</a></li>
+                <li class="mobile-auth-item"><a href="/logout" class="nav-link logout-link">Logout</a></li>
+            <?php else: ?>
+                <li class="mobile-auth-item"><a href="/login" class="nav-link login-btn">Login</a></li>
+                <li class="mobile-auth-item"><a href="/register" class="nav-link register-btn">Register</a></li>
+            <?php endif; ?>
         </ul>
         
         <div class="nav-auth">
