@@ -73,7 +73,7 @@ a[href^="www."]:not(.social-links a)::after {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 999;
     box-shadow: var(--shadow-light);
     margin: 0;
     border: 0;
@@ -141,7 +141,7 @@ a[href^="www."]:not(.social-links a)::after {
     top: 40px;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1002;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin: 0;
     border-top: 0;
@@ -259,6 +259,8 @@ a[href^="www."]:not(.social-links a)::after {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
+    z-index: 1004;
 }
 
 .bar {
@@ -1069,7 +1071,7 @@ a[href^="www."]:not(.social-links a)::after {
         padding: 15px 0;
         max-height: calc(100vh - 60px);
         overflow-y: auto;
-        z-index: 1000;
+        z-index: 1003;
     }
 
     .nav-menu.active {
@@ -1092,6 +1094,9 @@ a[href^="www."]:not(.social-links a)::after {
         display: flex;
         padding: 8px;
         font-size: 24px;
+        position: relative;
+        z-index: 1004;
+        margin-left: 10px;
     }
     
     /* Adjusted Hero Section */
