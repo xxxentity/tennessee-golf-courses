@@ -1180,6 +1180,21 @@ $courses_static = [
         'slug' => 'druid-hills-golf-club'
     ],
     [
+        'id' => 108,
+        'name' => 'Signal Mountain Golf & Country Club',
+        'location' => 'Signal Mountain, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Historic Donald Ross design from 1922. Private mountain retreat with championship 6,148-yard layout, spectacular views, and host of the Signal Mountain Invitational.',
+        'image' => '/images/courses/signal-mountain-golf-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Intermediate to Advanced',
+        'holes' => 18,
+        'par' => 71,
+        'designer' => 'Donald Ross',
+        'amenities' => ['Championship Golf Course', 'Heated Pool', 'Multiple Dining Options', 'Event Facilities', 'Mountain Views', 'Tournament Host', 'Bent Grass Greens', 'Family Activities'],
+        'slug' => 'signal-mountain-golf-country-club'
+    ],
+    [
         'id' => 72,
         'name' => 'Southern Hills Golf & Country Club',
         'location' => 'Cookeville, TN',

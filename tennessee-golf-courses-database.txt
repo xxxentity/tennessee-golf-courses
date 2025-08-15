@@ -30,8 +30,6 @@ KNOXVILLE AREA MAJOR COURSES
 CHATTANOOGA AREA PRIORITY
 ------------------------
 
-6. Signal Mountain Golf & Country Club - 2200 Tatum Dr, Signal Mountain 37377 [NEEDS WORK] - Private
-
 UNIVERSITY COURSES
 -----------------
 
@@ -113,6 +111,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Richland Country Club - 3100 Richland Ave, Nashville 37205 - Private (Donald Ross)
 ✓ Ross Creek Landing Golf Course - 1000 Bear Trace Dr, Clifton 38425 - State Park (Jack Nicklaus)
 ✓ Sevierville Golf Club - 3242 Wears Valley Rd, Sevierville 37862 - Municipal
+✓ Signal Mountain Golf & Country Club - 809 James Boulevard, Signal Mountain 37377 - Private (Donald Ross, 1922)
 ✓ Southern Hills Golf & Country Club - 4770 Ben Jared Road, Cookeville 38506 - Public
 ✓ Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 - Public (Ross Jones) [PERMANENTLY CLOSED]
 ✓ Stones River Country Club - 1830 NW Broad St, Murfreesboro 37129 - Private
@@ -166,8 +165,8 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 90
-- High Priority Missing: 14
+- Completed Course Pages: 91
+- High Priority Missing: 13
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
 

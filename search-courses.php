@@ -89,6 +89,7 @@ $courses = [
     ['name' => 'Bear Trace at Tims Ford', 'location' => 'Winchester, TN', 'slug' => 'bear-trace-at-tims-ford'],
     ['name' => 'Laurel Valley Country Club', 'location' => 'Townsend, TN', 'slug' => 'laurel-valley-country-club'],
     ['name' => 'Druid Hills Golf Club', 'location' => 'Fairfield Glade, TN', 'slug' => 'druid-hills-golf-club'],
+    ['name' => 'Signal Mountain Golf & Country Club', 'location' => 'Signal Mountain, TN', 'slug' => 'signal-mountain-golf-country-club'],
     ['name' => 'Southern Hills Golf & Country Club', 'location' => 'Cookeville, TN', 'slug' => 'southern-hills-golf-country-club'],
     ['name' => 'Blackthorn Club', 'location' => 'Jonesborough, TN', 'slug' => 'blackthorn-club'],
     ['name' => 'Chattanooga Golf & Country Club', 'location' => 'Chattanooga, TN', 'slug' => 'chattanooga-golf-country-club'],
