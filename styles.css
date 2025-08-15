@@ -1064,6 +1064,21 @@ a[href^="www."]:not(.social-links a)::after {
         padding: 10px 0;
     }
     
+    /* Move hamburger menu to right on mobile */
+    .nav-container {
+        justify-content: space-between;
+    }
+    
+    .nav-logo {
+        order: 1;
+    }
+    
+    .nav-toggle {
+        order: 2;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1103,15 +1118,16 @@ a[href^="www."]:not(.social-links a)::after {
     
     /* Show mobile auth items on mobile */
     .mobile-auth-item {
-        display: block;
+        display: block !important;
     }
     
     .mobile-auth-divider {
-        display: block;
+        display: block !important;
         height: 1px;
         background: var(--border-color);
         margin: 20px 40px;
         padding: 0;
+        list-style: none;
     }
     
     .welcome-mobile {
@@ -1132,7 +1148,6 @@ a[href^="www."]:not(.social-links a)::after {
         font-size: 24px;
         position: relative;
         z-index: 1004;
-        margin-left: 10px;
     }
     
     /* Adjusted Hero Section */
@@ -1202,55 +1217,68 @@ a[href^="www."]:not(.social-links a)::after {
         font-size: 16px;
     }
     
-    /* Better Card Spacing for Mobile */
+    /* Better Card Spacing for Mobile - Fix visibility */
     .course-card {
         margin-bottom: 20px;
         border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-white);
-        overflow: visible;
+        display: flex !important;
+        flex-direction: column !important;
+        background: var(--bg-white) !important;
+        overflow: visible !important;
+        transform: none !important;
+        position: relative !important;
+    }
+    
+    .course-card:hover {
+        transform: none !important;
     }
     
     .course-image {
         height: 200px;
         overflow: hidden;
+        position: relative !important;
     }
     
     .course-content {
         display: block !important;
-        padding: 20px;
+        padding: 20px !important;
         visibility: visible !important;
         opacity: 1 !important;
+        position: relative !important;
+        background: var(--bg-white) !important;
     }
     
     .course-content h3 {
-        font-size: 1.25rem;
-        margin-bottom: 8px;
-        color: var(--primary-color);
+        font-size: 1.25rem !important;
+        margin-bottom: 8px !important;
+        color: var(--primary-color) !important;
+        display: block !important;
     }
     
     .course-location {
-        font-size: 14px;
-        color: var(--text-gray);
-        margin-bottom: 8px;
+        font-size: 14px !important;
+        color: var(--text-gray) !important;
+        margin-bottom: 8px !important;
+        display: block !important;
     }
     
     .course-description {
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 12px;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+        display: block !important;
     }
     
     .course-features {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
     }
     
     .feature-tag {
-        font-size: 12px;
-        padding: 4px 10px;
+        font-size: 12px !important;
+        padding: 4px 10px !important;
+        display: inline-block !important;
     }
     
     .course-info {
