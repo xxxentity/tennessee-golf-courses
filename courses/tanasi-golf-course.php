@@ -631,31 +631,72 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Rack Rates</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">2025 Daily Fee Rates</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">Peak Season:</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">18-Hole w/Lease Cart:</span>
+                                <span class="spec-value">$51.25</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Standard:</span>
-                                <span class="spec-value">Call for rates</span>
+                                <span class="spec-label">18-Hole w/Private Cart:</span>
+                                <span class="spec-value">$47.50</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole w/Lease Cart:</span>
+                                <span class="spec-value">$31.00</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole w/Private Cart:</span>
+                                <span class="spec-value">$28.75</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Twilight Rates</h4>
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">2025 Member Rates</h4>
                         <div class="course-specs">
                             <div class="spec-item">
-                                <span class="spec-label">After 2:00 PM:</span>
-                                <span class="spec-value">Available daily</span>
+                                <span class="spec-label">18-Hole w/Lease Cart:</span>
+                                <span class="spec-value">$48.75</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18-Hole w/Private Cart:</span>
+                                <span class="spec-value">$45.25</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole w/Lease Cart:</span>
+                                <span class="spec-value">$29.00</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole w/Private Cart:</span>
+                                <span class="spec-value">$27.75</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Guest Rates</h4>
+                        <div class="course-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">18-Hole with Member:</span>
+                                <span class="spec-value">$62.00</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole with Member:</span>
+                                <span class="spec-value">$38.25</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18-Hole without Member:</span>
+                                <span class="spec-value">$82.50</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9-Hole without Member:</span>
+                                <span class="spec-value">$46.50</span>
                             </div>
                         </div>
                     </div>
                     <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;"><strong>Uniform pricing across all three Tellico Village courses</strong><br>
-                        Unlimited packages available<br>
-                        Reservations: Chelsea Reservations</p>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;"><strong>PrePaid packages available with near 5% savings</strong><br>
+                        Reservations: Chelsea Reservations<br>
+                        Pro Shop: (865) 458-4707</p>
                     </div>
                 </div>
 
