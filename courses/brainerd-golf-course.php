@@ -687,9 +687,6 @@ try {
                     <p><strong>Manager:</strong><br>
                     Edwin Prichard</p>
                     
-                    <p><strong>Email:</strong><br>
-                    <a href="mailto:taylor_e@chattanooga.gov" style="color: #4a7c59;">taylor_e@chattanooga.gov</a></p>
-                    
                     <p><strong>Website:</strong><br>
                     <a href="https://chattanooga.gov/things-to-do/golf-courses/brainerd" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">chattanooga.gov</a></p>
                     
