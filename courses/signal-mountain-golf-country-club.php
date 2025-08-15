@@ -620,7 +620,7 @@ try {
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Donald Ross (1922)</span>
+                            <span class="spec-value">Donald Ross</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Opened:</span>
