@@ -46,3 +46,6 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Mobile Improvements Script -->
+    <script src="/js/mobile-improvements.js"></script>

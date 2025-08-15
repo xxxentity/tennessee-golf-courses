@@ -1,0 +1,296 @@
+/* Mobile-Specific Styles for Course Pages */
+/* To be included in course pages after the main styles */
+
+@media (max-width: 768px) {
+    /* Course Hero Section */
+    .course-hero {
+        height: 40vh;
+        min-height: 300px;
+        margin-top: 15px;
+    }
+    
+    .course-hero-content h1 {
+        font-size: 2rem;
+        padding: 0 20px;
+        line-height: 1.2;
+    }
+    
+    .course-hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    /* Course Container */
+    .course-container {
+        padding: 1.5rem 15px;
+    }
+    
+    /* Course Header Mobile */
+    .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .rating-info {
+        width: 100%;
+    }
+    
+    .quick-info {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 14px;
+    }
+    
+    .quick-info-item {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+    
+    /* Three Column Grid to Single Column */
+    .course-sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Course Info Cards Mobile */
+    .course-info-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .course-info-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .course-info-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    /* Specs Table Mobile */
+    .course-specs {
+        gap: 0.75rem;
+    }
+    
+    .spec-item {
+        padding-bottom: 0.5rem;
+        font-size: 14px;
+    }
+    
+    /* Amenities Grid Mobile */
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .amenity-item {
+        padding: 0.5rem 0.75rem;
+        font-size: 14px;
+    }
+    
+    .amenity-item i {
+        font-size: 1.1rem;
+    }
+    
+    /* Gallery Grid Mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .gallery-item {
+        height: 200px;
+        border-radius: 10px;
+    }
+    
+    /* Gallery Modal Mobile */
+    .full-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.5rem;
+        max-height: 60vh;
+    }
+    
+    .full-gallery-item {
+        height: 150px;
+    }
+    
+    .modal-header {
+        margin-bottom: 1rem;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Comments Section Mobile */
+    .comments-section {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .comments-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .review-summary {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .review-rating {
+        font-size: 2.5rem;
+    }
+    
+    .comment-item {
+        padding: 1rem;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    /* Comment Form Mobile */
+    .comment-form-container {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .comment-form-container h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .star-rating label {
+        font-size: 1.25rem;
+    }
+    
+    /* Maps Mobile */
+    .course-map iframe {
+        height: 180px;
+    }
+    
+    /* Touch-Friendly Buttons */
+    .btn-gallery,
+    .btn-submit {
+        min-height: 48px;
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+    
+    /* Better Text Readability */
+    .course-info-card p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    /* Ad Space Preparation */
+    .mobile-ad-placeholder {
+        margin: 20px 0;
+        padding: 20px;
+        background: #f8f9fa;
+        text-align: center;
+        min-height: 100px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Very Small Screens */
+    .course-hero {
+        height: 35vh;
+        min-height: 250px;
+    }
+    
+    .course-hero-content h1 {
+        font-size: 1.5rem;
+        padding: 0 15px;
+    }
+    
+    .course-hero-content p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    .course-container {
+        padding: 1rem 10px;
+    }
+    
+    .quick-info-item {
+        flex: 0 0 100%;
+        font-size: 13px;
+    }
+    
+    .course-info-card {
+        padding: 1.25rem;
+    }
+    
+    .course-info-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-item {
+        height: 180px;
+    }
+    
+    .full-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .full-gallery-item {
+        height: 120px;
+    }
+    
+    /* Smaller Font Sizes */
+    .spec-item,
+    .amenity-item,
+    .comment-text {
+        font-size: 13px;
+    }
+    
+    .review-rating {
+        font-size: 2rem;
+    }
+    
+    /* Compact Spacing */
+    .course-sections {
+        gap: 1rem;
+    }
+    
+    .comments-section {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+    /* Prevent iOS zoom on form inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+    
+    /* Fix iOS button appearance */
+    .btn-gallery,
+    .btn-submit,
+    button {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}
+
+/* Android Specific Fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* Ensure proper touch targets on Android */
+    a, button, input, select, textarea {
+        min-height: 44px;
+    }
+}

@@ -1025,129 +1025,396 @@ a[href^="www."]:not(.social-links a)::after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Improved Weather Bar for Mobile */
+    .weather-bar {
+        padding: 6px 0;
+        font-size: 12px;
+    }
+    
     .weather-container {
         flex-direction: column;
-        gap: 8px;
-        padding: 8px 16px;
+        gap: 6px;
+        padding: 6px 12px;
     }
     
     .weather-info {
-        gap: 20px;
+        gap: 15px;
+        font-size: 11px;
     }
     
     .golf-conditions {
-        gap: 15px;
+        gap: 10px;
     }
     
     .condition-item {
-        font-size: 12px;
+        font-size: 11px;
+    }
+    
+    /* Fixed Mobile Navigation Menu */
+    .navbar {
+        height: 60px;
+        padding: 10px 0;
     }
     
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 110px;
+        top: 60px; /* Reduced from 110px to align with smaller navbar */
         flex-direction: column;
         background-color: var(--bg-white);
         width: 100%;
         text-align: center;
         transition: var(--transition);
-        box-shadow: var(--shadow-medium);
-        padding: 20px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 15px 0;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        z-index: 1000;
     }
 
     .nav-menu.active {
         left: 0;
     }
+    
+    .nav-menu li {
+        padding: 12px 20px;
+        width: 100%;
+    }
+    
+    .nav-link {
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
 
     .nav-toggle {
         display: flex;
+        padding: 8px;
+        font-size: 24px;
+    }
+    
+    /* Adjusted Hero Section */
+    .hero {
+        margin-top: 60px; /* Adjusted for smaller navbar */
+        height: 50vh;
+        min-height: 350px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    /* Improved Mobile Typography */
+    body {
+        font-size: 16px; /* Prevent iOS zoom on input focus */
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.6;
     }
 
+    /* Better Touch Targets */
     .search-container {
         flex-direction: column;
-        gap: 12px;
-        padding: 20px;
+        gap: 10px;
+        padding: 15px;
     }
 
     .search-input {
-        padding: 16px;
-        text-align: center;
+        padding: 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 8px;
     }
 
     .search-btn {
         width: 100%;
-        padding: 16px;
+        padding: 14px 20px;
+        font-size: 16px;
+        min-height: 48px; /* Google recommended touch target */
+    }
+    
+    /* Improved Button Touch Targets */
+    .btn-primary, .btn-secondary, button {
+        min-height: 48px;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    /* Better Card Spacing for Mobile */
+    .course-card {
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+    
+    .course-info {
+        padding: 20px;
+    }
+    
+    .course-title {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+    
+    .course-meta {
+        font-size: 14px;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+    .stat-item {
+        padding: 20px 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .stat-label {
+        font-size: 14px;
     }
 
     .courses-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
     }
 
     .news-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
     }
-
+    
+    /* Mobile Newsletter Section */
     .newsletter-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
+        padding: 20px;
     }
 
     .newsletter-text h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Improved Form Elements */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+        border-radius: 8px;
     }
 
     .form-group {
         flex-direction: column;
-        gap: 12px;
-        padding: 12px;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    /* Mobile Footer */
+    .footer {
+        padding: 40px 0 20px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
+        padding: 0 20px;
+    }
+    
+    .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Ad Space Preparation */
+    .mobile-ad-space {
+        padding: 20px 0;
+        text-align: center;
+        min-height: 100px;
+    }
+    
+    /* Better Section Spacing */
+    .featured-courses,
+    .latest-news,
+    .newsletter {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+        margin-top: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
-
+    
+    /* Smaller Weather Bar on Very Small Screens */
+    .weather-bar {
+        position: relative; /* Change from fixed to relative on very small screens */
+        font-size: 11px;
+    }
+    
+    .weather-info {
+        gap: 10px;
+    }
+    
+    /* Even Smaller Navigation */
+    .navbar {
+        height: 50px;
+        padding: 8px 0;
+    }
+    
+    .nav-logo img {
+        height: 30px;
+    }
+    
+    .nav-menu {
+        top: 50px;
+        max-height: calc(100vh - 50px);
+    }
+    
+    /* Adjusted Hero for Small Screens */
     .hero {
         background-attachment: scroll;
+        margin-top: 0; /* Since weather bar is relative now */
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        padding: 0 20px;
     }
 
+    /* Smaller Typography */
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Single Column Stats on Small Screens */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    /* Better Spacing */
     .section-header {
-        margin-bottom: 40px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
     }
 
     .featured-courses,
     .latest-news {
-        padding: 60px 0;
+        padding: 30px 0;
     }
 
     .newsletter {
-        padding: 60px 0;
+        padding: 30px 0;
+    }
+    
+    .newsletter-text h2 {
+        font-size: 1.5rem;
     }
 
     .footer {
-        padding: 40px 0 20px;
+        padding: 30px 0 20px;
+    }
+    
+    .footer-content {
+        padding: 0 15px;
+    }
+    
+    /* Course Cards on Small Screens */
+    .course-card {
+        margin-bottom: 15px;
+    }
+    
+    .course-info {
+        padding: 15px;
+    }
+    
+    .course-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Smaller Buttons but Still Touch-Friendly */
+    .btn-primary, .btn-secondary, button {
+        font-size: 14px;
+        padding: 10px 20px;
+        min-height: 44px;
+    }
+    
+    .search-btn {
+        font-size: 14px;
+        min-height: 44px;
     }
 }
 

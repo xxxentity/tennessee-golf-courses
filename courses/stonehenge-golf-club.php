@@ -63,6 +63,7 @@ try {
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../mobile-course-styles.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">
@@ -518,27 +519,6 @@ try {
             color: #666;
         }
         
-        @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .course-sections {
-                grid-template-columns: 1fr;
-            }
-            
-            .amenities-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .full-gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-        }
     </style>
 </head>
 <body>
