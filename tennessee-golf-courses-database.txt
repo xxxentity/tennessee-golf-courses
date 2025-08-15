@@ -115,6 +115,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Southern Hills Golf & Country Club - 4770 Ben Jared Road, Cookeville 38506 - Public
 ✓ Springhouse Golf Club - 18 Springhouse Ln, Nashville 37214 - Public (Ross Jones) [PERMANENTLY CLOSED]
 ✓ Stones River Country Club - 1830 NW Broad St, Murfreesboro 37129 - Private
+✓ Stonehenge Golf Club - 222 Fairfield Blvd, Fairfield Glade 38558 - Resort/Public (Joe Lee, 1984)
 ✓ Sweetens Cove Golf Club - 940 Sweetens Cove Rd, South Pittsburg 37380 - Public (9-hole specialty course)
 ✓ Tanasi Golf Course - Tellico Village, Loudon 37774 - Resort (Ault, Clark & Associates, 1996, 6,715 yards, par 72)
 ✓ Ted Rhodes Golf Course - 1901 Ed Temple Blvd, Nashville 37208 - Municipal
@@ -167,7 +168,7 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 93
+- Completed Course Pages: 94
 - High Priority Missing: 13
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+

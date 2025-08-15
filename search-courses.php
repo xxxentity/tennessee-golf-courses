@@ -102,6 +102,7 @@ $courses = [
     ['name' => 'Lookout Mountain Club', 'location' => 'Lookout Mountain, GA', 'slug' => 'lookout-mountain-club'],
     ['name' => 'Moccasin Bend Golf Course', 'location' => 'Chattanooga, TN', 'slug' => 'moccasin-bend-golf-course'],
     ['name' => 'Ross Creek Landing Golf Course', 'location' => 'Clifton, TN', 'slug' => 'ross-creek-landing-golf-course'],
+    ['name' => 'Stonehenge Golf Club', 'location' => 'Fairfield Glade, TN', 'slug' => 'stonehenge-golf-club'],
     ['name' => 'Overton Park 9', 'location' => 'Memphis, TN', 'slug' => 'overton-park-9']
 ];
 

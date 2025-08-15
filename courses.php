@@ -592,6 +592,21 @@ $courses_static = [
         'slug' => 'stones-river-country-club'
     ],
     [
+        'id' => 111,
+        'name' => 'Stonehenge Golf Club',
+        'location' => 'Fairfield Glade, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => '#1 resort course in Tennessee. Joe Lee design from 1984 featuring native stone walls and championship layout with 6,549-yard course rating 71.8.',
+        'image' => '/images/courses/stonehenge-golf-club/1.webp',
+        'price_range' => '$45-98',
+        'difficulty' => 'Intermediate to Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Joe Lee',
+        'amenities' => ['#1 Resort Course in TN', 'Native Stone Walls', 'Natural Turf Driving Range', 'Practice Putting Green', 'Chipping Green', 'Stonehenge Grille', 'Golf Shop', 'Bentgrass Surfaces'],
+        'slug' => 'stonehenge-golf-club'
+    ],
+    [
         'id' => 30,
         'name' => 'Springhouse Golf Club',
         'location' => 'Nashville, TN',

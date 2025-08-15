@@ -106,6 +106,7 @@ RewriteRule ^courses/williams-creek-golf-course/?$ courses/williams-creek-golf-c
 RewriteRule ^courses/windtree-golf-course/?$ courses/windtree-golf-course.php [L]
 RewriteRule ^courses/signal-mountain-golf-country-club/?$ courses/signal-mountain-golf-country-club.php [L]
 RewriteRule ^courses/southern-hills-golf-country-club/?$ courses/southern-hills-golf-country-club.php [L]
+RewriteRule ^courses/stonehenge-golf-club/?$ courses/stonehenge-golf-club.php [L]
 RewriteRule ^courses/whittle-springs-golf-course/?$ courses/whittle-springs-golf-course.php [L]
 RewriteRule ^courses/white-plains-golf-course/?$ courses/white-plains-golf-course.php [L]
 RewriteRule ^courses/lookout-mountain-club/?$ courses/lookout-mountain-club.php [L]
