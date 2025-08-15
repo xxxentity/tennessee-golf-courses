@@ -76,7 +76,6 @@ LOWER PRIORITY COURSES
 
 30. Overton Park Golf Course - 2080 Poplar Ave, Memphis 38104 [NEEDS WORK] - Municipal (Historic - oldest in Memphis)
 31. Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [NEEDS WORK] - Municipal
-32. Brainerd Golf Course - 4019 Ringgold Rd, Chattanooga 37412 [NEEDS WORK] - Municipal
 33. Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 ✓ - Municipal (Gary Weller design, 1965)
 34. Old Fort Golf Course - 761 Golf Ln, Murfreesboro 37129 [NEEDS WORK] - Municipal
 35. Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [NEEDS WORK] - Municipal
@@ -94,6 +93,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Belle Meade Country Club - 4025 Harding Pike, Nashville 37205 - Private (Donald Ross)
 ✓ Big Creek Golf Club - 6294 Elmore Rd, Millington 38053 - Public [PERMANENTLY CLOSED]
 ✓ Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 - Private
+✓ Brainerd Golf Course - 4019 Ringgold Rd, Chattanooga 37412 - Municipal (Donald Ross, 1926)
 ✓ Bluegrass Yacht & Country Club - 550 Johnny Cash Parkway, Hendersonville 37075 - Private
 ✓ Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 - Municipal (Gary Weller, 1965)
 ✓ Cedar Crest Golf Club - 2640 S Rutherford Blvd, Murfreesboro 37130 - Public
@@ -182,8 +182,8 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 77
-- High Priority Missing: 27+
+- Completed Course Pages: 78
+- High Priority Missing: 26+
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
 

@@ -107,6 +107,24 @@ $courses_static = [
         'slug' => 'big-creek-golf-club'
     ],
     [
+        'id' => 80,
+        'name' => 'Brainerd Golf Course',
+        'location' => 'Chattanooga, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Historic Donald Ross designed municipal course since 1926. Classic 18-hole layout featuring traditional Ross characteristics with small elevated greens, strategic bunkering, and tree-lined fairways in East Chattanooga',
+        'image' => '/images/courses/brainerd-golf-course/1.jpeg',
+        'price_range' => '$25-35',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'yardage' => 6470,
+        'designer' => 'Donald Ross',
+        'course_type' => 'Municipal',
+        'opened' => 1926,
+        'amenities' => ['Historic Donald Ross Design (1926)', 'Pro Shop', 'Snack Bar', 'Driving Range', 'Putting Green', 'Cart Rentals', 'Golf Lessons', 'Group Outings', 'Walking Friendly', 'Traditional Layout'],
+        'slug' => 'brainerd-golf-course'
+    ],
+    [
         'id' => 79,
         'name' => 'Brown Acres Golf Course',
         'location' => 'Chattanooga, TN',
