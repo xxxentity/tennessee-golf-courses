@@ -1064,25 +1064,33 @@ a[href^="www."]:not(.social-links a)::after {
         padding: 10px 0;
     }
     
+    /* Fix header positioning to not overlap with weather bar */
+    .header {
+        top: 30px !important; /* Reduced from 40px to account for smaller weather bar */
+        z-index: 1002;
+    }
+    
     /* Move hamburger menu to right on mobile */
     .nav-container {
         justify-content: space-between;
+        position: relative;
     }
     
     .nav-logo {
-        order: 1;
+        position: absolute;
+        left: 20px;
     }
     
     .nav-toggle {
-        order: 2;
-        margin-left: auto;
-        margin-right: 0;
+        position: absolute;
+        right: 20px;
+        margin: 0;
     }
     
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 60px; /* Reduced from 110px to align with smaller navbar */
+        top: 90px; /* Weather bar (30px) + Header (60px) */
         flex-direction: column;
         background-color: var(--bg-white);
         width: 100%;
@@ -1090,7 +1098,7 @@ a[href^="www."]:not(.social-links a)::after {
         transition: var(--transition);
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         padding: 15px 0;
-        max-height: calc(100vh - 60px);
+        max-height: calc(100vh - 90px);
         overflow-y: auto;
         z-index: 1003;
     }
@@ -1152,7 +1160,7 @@ a[href^="www."]:not(.social-links a)::after {
     
     /* Adjusted Hero Section */
     .hero {
-        margin-top: 60px; /* Adjusted for smaller navbar */
+        margin-top: 90px; /* Weather bar (30px) + Header (60px) */
         height: 50vh;
         min-height: 350px;
     }
@@ -1217,68 +1225,89 @@ a[href^="www."]:not(.social-links a)::after {
         font-size: 16px;
     }
     
-    /* Better Card Spacing for Mobile - Fix visibility */
-    .course-card {
+    /* Fix Featured Courses on Mobile Homepage */
+    .featured-courses .course-card {
         margin-bottom: 20px;
         border-radius: 12px;
-        display: flex !important;
-        flex-direction: column !important;
+        display: block !important;
         background: var(--bg-white) !important;
         overflow: visible !important;
         transform: none !important;
         position: relative !important;
+        height: auto !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     }
     
-    .course-card:hover {
+    .featured-courses .course-card:hover {
         transform: none !important;
     }
     
-    .course-image {
-        height: 200px;
-        overflow: hidden;
-        position: relative !important;
+    .featured-courses .course-image {
+        height: 200px !important;
+        overflow: hidden !important;
+        display: block !important;
+        width: 100% !important;
     }
     
-    .course-content {
+    .featured-courses .course-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .featured-courses .course-content {
         display: block !important;
         padding: 20px !important;
         visibility: visible !important;
         opacity: 1 !important;
-        position: relative !important;
+        position: static !important;
         background: var(--bg-white) !important;
+        height: auto !important;
+        width: 100% !important;
     }
     
-    .course-content h3 {
+    .featured-courses .course-content * {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .featured-courses .course-content h3 {
         font-size: 1.25rem !important;
         margin-bottom: 8px !important;
         color: var(--primary-color) !important;
-        display: block !important;
     }
     
-    .course-location {
+    .featured-courses .course-location {
         font-size: 14px !important;
         color: var(--text-gray) !important;
         margin-bottom: 8px !important;
-        display: block !important;
     }
     
-    .course-description {
+    .featured-courses .course-description {
         font-size: 14px !important;
         line-height: 1.5 !important;
         margin-bottom: 12px !important;
-        display: block !important;
     }
     
-    .course-features {
+    .featured-courses .course-features {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 8px !important;
+        margin-bottom: 15px !important;
     }
     
-    .feature-tag {
+    .featured-courses .feature-tag {
         font-size: 12px !important;
         padding: 4px 10px !important;
         display: inline-block !important;
+        background: #f0f0f0 !important;
+        border-radius: 4px !important;
+    }
+    
+    .featured-courses .btn-primary {
+        display: inline-block !important;
+        margin-top: 10px !important;
     }
     
     .course-info {
