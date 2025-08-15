@@ -73,6 +73,7 @@ RewriteRule ^courses/laurel-valley-country-club/?$ courses/laurel-valley-country
 RewriteRule ^courses/druid-hills-golf-club/?$ courses/druid-hills-golf-club.php [L]
 RewriteRule ^courses/blackthorn-club/?$ courses/blackthorn-club.php [L]
 RewriteRule ^courses/old-hickory-country-club/?$ courses/old-hickory-country-club.php [L]
+RewriteRule ^courses/old-fort-golf-course/?$ courses/old-fort-golf-course.php [L]
 RewriteRule ^courses/paris-landing-state-park-golf-course/?$ courses/paris-landing-state-park-golf-course.php [L]
 RewriteRule ^courses/percy-warner-golf-course/?$ courses/percy-warner-golf-course.php [L]
 RewriteRule ^courses/pickwick-landing-state-park/?$ courses/pickwick-landing-state-park.php [L]

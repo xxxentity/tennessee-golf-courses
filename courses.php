@@ -623,6 +623,21 @@ $courses_static = [
     ],
     [
         'id' => 81,
+        'name' => 'Old Fort Golf Course',
+        'location' => 'Murfreesboro, TN',
+        'region' => 'Nashville Area',
+        'description' => 'Leon Howard designed 18-hole municipal course opened in 1985. Features 6,980 yards of challenging golf with excellent value for public play in the Murfreesboro area.',
+        'image' => '/images/courses/old-fort-golf-course/1.jpeg',
+        'price_range' => '$35-50',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Leon Howard',
+        'amenities' => ['Pro Shop', 'Driving Range', 'Putting Green', 'Cart Rentals', 'Golf Lessons', 'Snack Bar', 'Tournament Hosting', 'Group Outings'],
+        'slug' => 'old-fort-golf-course'
+    ],
+    [
+        'id' => 106,
         'name' => 'Overton Park 9',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',
@@ -817,7 +832,7 @@ $courses_static = [
         'slug' => 'the-links-at-fox-meadows'
     ],
     [
-        'id' => 81,
+        'id' => 107,
         'name' => 'The Links at Galloway',
         'location' => 'Memphis, TN',
         'region' => 'Memphis Area',

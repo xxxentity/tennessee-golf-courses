@@ -77,7 +77,6 @@ LOWER PRIORITY COURSES
 30. Overton Park Golf Course - 2080 Poplar Ave, Memphis 38104 [NEEDS WORK] - Municipal (Historic - oldest in Memphis)
 31. Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [NEEDS WORK] - Municipal
 33. Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 ✓ - Municipal (Gary Weller design, 1965)
-34. Old Fort Golf Course - 761 Golf Ln, Murfreesboro 37129 [NEEDS WORK] - Municipal
 35. Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [NEEDS WORK] - Municipal
 
 ================================================================
@@ -127,6 +126,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Nashville Golf & Athletic Club - 300 Golf Club Ln, Nashville 37215 - Private
 ✓ Nashville National Golf Links - 1 Golf Club Ln, Joelton 37080 - Semi-Private
 ✓ Old Hickory Country Club - 4538 Old Hickory Blvd, Old Hickory 37138 - Public
+✓ Old Fort Golf Course - 761 Golf Ln, Murfreesboro 37129 - Municipal (Leon Howard design, 1985)
 ✓ Percy Warner Golf Course - 2500 Old Hickory Blvd, Nashville 37221 - Municipal
 ✓ Pickwick Landing State Park Golf Course - 120 Playground Loop, Counce 38326 - State Park
 ✓ Pine Oaks Golf Course - 4825 Wynn Rd, Knoxville 37919 - Public
@@ -182,8 +182,8 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 78
-- High Priority Missing: 26+
+- Completed Course Pages: 79
+- High Priority Missing: 25+
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
 
