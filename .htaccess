@@ -26,6 +26,7 @@ RewriteRule ^courses/belle-acres-golf-course/?$ courses/belle-acres-golf-course.
 RewriteRule ^courses/belle-meade-country-club/?$ courses/belle-meade-country-club.php [L]
 RewriteRule ^courses/bluegrass-yacht-country-club/?$ courses/bluegrass-yacht-country-club.php [L]
 RewriteRule ^courses/big-creek-golf-club/?$ courses/big-creek-golf-club.php [L]
+RewriteRule ^courses/brown-acres-golf-course/?$ courses/brown-acres-golf-course.php [L]
 RewriteRule ^courses/cedar-crest-golf-club/?$ courses/cedar-crest-golf-club.php [L]
 RewriteRule ^courses/cumberland-cove-golf-course/?$ courses/cumberland-cove-golf-course.php [L]
 RewriteRule ^courses/cherokee-country-club/?$ courses/cherokee-country-club.php [L]

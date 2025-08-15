@@ -77,7 +77,7 @@ LOWER PRIORITY COURSES
 30. Overton Park Golf Course - 2080 Poplar Ave, Memphis 38104 [NEEDS WORK] - Municipal (Historic - oldest in Memphis)
 31. Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [NEEDS WORK] - Municipal
 32. Brainerd Golf Course - 4019 Ringgold Rd, Chattanooga 37412 [NEEDS WORK] - Municipal
-33. Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 [NEEDS WORK] - Public
+33. Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 ✓ - Municipal (Gary Weller design, 1965)
 34. Old Fort Golf Course - 761 Golf Ln, Murfreesboro 37129 [NEEDS WORK] - Municipal
 35. Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [NEEDS WORK] - Municipal
 
@@ -95,6 +95,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Big Creek Golf Club - 6294 Elmore Rd, Millington 38053 - Public [PERMANENTLY CLOSED]
 ✓ Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 - Private
 ✓ Bluegrass Yacht & Country Club - 550 Johnny Cash Parkway, Hendersonville 37075 - Private
+✓ Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 - Municipal (Gary Weller, 1965)
 ✓ Cedar Crest Golf Club - 2640 S Rutherford Blvd, Murfreesboro 37130 - Public
 ✓ Chattanooga Golf & Country Club - 5158 Conner St, Chattanooga 37411 - Private
 ✓ Cheekwood Golf Club - 1200 Forrest Park Dr, Nashville 37205 - Private

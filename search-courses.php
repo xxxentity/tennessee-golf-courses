@@ -18,6 +18,7 @@ $courses = [
     ['name' => 'Bluegrass Yacht & Country Club', 'location' => 'Hendersonville, TN', 'slug' => 'bluegrass-yacht-country-club'],
     ['name' => 'Belle Meade Country Club', 'location' => 'Nashville, TN', 'slug' => 'belle-meade-country-club'],
     ['name' => 'Big Creek Golf Club', 'location' => 'Millington, TN', 'slug' => 'big-creek-golf-club'],
+    ['name' => 'Brown Acres Golf Course', 'location' => 'Chattanooga, TN', 'slug' => 'brown-acres-golf-course'],
     ['name' => 'Cedar Crest Golf Club', 'location' => 'Murfreesboro, TN', 'slug' => 'cedar-crest-golf-club'],
     ['name' => 'Cumberland Cove Golf Course', 'location' => 'Monterey, TN', 'slug' => 'cumberland-cove-golf-course'],
     ['name' => 'Cherokee Country Club', 'location' => 'Knoxville, TN', 'slug' => 'cherokee-country-club'],

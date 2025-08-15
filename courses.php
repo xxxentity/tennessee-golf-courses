@@ -107,6 +107,23 @@ $courses_static = [
         'slug' => 'big-creek-golf-club'
     ],
     [
+        'id' => 79,
+        'name' => 'Brown Acres Golf Course',
+        'location' => 'Chattanooga, TN',
+        'region' => 'Chattanooga Area',
+        'description' => 'Gary Weller designed municipal course since 1965. Traditional 18-hole layout with tree-lined fairways and challenging greens overlooking the Tennessee River valley',
+        'image' => '/images/courses/brown-acres-golf-course/1.jpeg',
+        'price_range' => '$25-40',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'yardage' => 6742,
+        'designer' => 'Gary Weller',
+        'course_type' => 'Municipal',
+        'amenities' => ['Pro Shop', 'Snack Bar', 'Driving Range', 'Putting Green', 'Cart Rentals', 'Group Outings', 'Walking Friendly', 'River Valley Views'],
+        'slug' => 'brown-acres-golf-course'
+    ],
+    [
         'id' => 74,
         'name' => 'Cumberland Cove Golf Course',
         'location' => 'Monterey, TN',
