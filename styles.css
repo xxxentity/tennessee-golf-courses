@@ -1037,6 +1037,9 @@ a[href^="www."]:not(.social-links a)::after {
     .weather-bar {
         padding: 5px 0;
         font-size: 14px;
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1003 !important;
     }
     
     .weather-container {
@@ -1076,13 +1079,13 @@ a[href^="www."]:not(.social-links a)::after {
         padding: 10px 0;
     }
     
-    /* Fix header positioning to not overlap with weather bar */
+    /* Fix header positioning - weather bar goes on top */
     .header {
-        top: 30px !important; /* Reduced from 40px to account for smaller weather bar */
+        top: 30px !important; /* Position below weather bar */
         z-index: 1002;
     }
     
-    /* Move hamburger menu to right on mobile */
+    /* Swap positions: hamburger left, logo right on mobile */
     .nav-container {
         justify-content: space-between;
         position: relative;
@@ -1090,12 +1093,12 @@ a[href^="www."]:not(.social-links a)::after {
     
     .nav-logo {
         position: absolute;
-        left: 20px;
+        right: 20px;
     }
     
     .nav-toggle {
         position: absolute;
-        right: 20px;
+        left: 20px;
         margin: 0;
     }
     
@@ -1112,7 +1115,7 @@ a[href^="www."]:not(.social-links a)::after {
         padding: 15px 0;
         max-height: calc(100vh - 90px);
         overflow-y: auto;
-        z-index: 1003;
+        z-index: 1001;
     }
 
     .nav-menu.active {
