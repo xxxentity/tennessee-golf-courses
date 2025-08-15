@@ -865,6 +865,21 @@ $courses_static = [
         'slug' => 'the-links-at-galloway'
     ],
     [
+        'id' => 110,
+        'name' => 'The Links at Kahite',
+        'location' => 'Vonore, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Ault, Clark & Associates championship links design from 2002. True links-style course with 7,170-yard layout, 93 bunkers, and famous 808-yard par 6 9th hole.',
+        'image' => '/images/courses/the-links-at-kahite/1.webp',
+        'price_range' => '$47-83',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Ault, Clark & Associates',
+        'amenities' => ['True Links-Style Design', 'Par 6 9th Hole (808 yards)', 'Smoky Mountain Views', 'Tellico Lake Surrounds', 'Driving Range', 'Practice Putting Green', 'Fitness Center', 'Outdoor Pool'],
+        'slug' => 'the-links-at-kahite'
+    ],
+    [
         'id' => 82,
         'name' => 'The Links at Whitehaven',
         'location' => 'Memphis, TN',

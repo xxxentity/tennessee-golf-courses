@@ -132,6 +132,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ The Links at Audubon - 4160 Park Ave, Memphis 38111 - Municipal (Bill Bergin, $8.1M renovation 2024)
 ✓ The Links at Fox Meadows - 3064 Clarke Rd, Memphis 38115 - Municipal (Chic Adams, 1957)
 ✓ The Links at Galloway - 3815 Walnut Grove Rd, Memphis 38111 - Municipal (Kevin Tucker, 2002)
+✓ The Links at Kahite - 100 Kahite Trail, Vonore 37885 - Resort (Ault, Clark & Associates, 2002, 7,170 yards, par 72)
 ✓ The Links at Whitehaven - 1045 Finley Rd, Memphis 38116 - Municipal
 ✓ Three Ridges Golf Course - 7441 Three Ridges Dr, Knoxville 37918 - Public
 ✓ Toqua Golf Course - 200 Toqua Club Way, Loudon 37774 - Resort (Ault, Clark & Associates, 1987, 7,049 yards, par 72)
@@ -166,7 +167,7 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 92
+- Completed Course Pages: 93
 - High Priority Missing: 13
 - Total Focus Database: 95+ major Tennessee courses
 - Estimated Total Tennessee Courses: 270+
