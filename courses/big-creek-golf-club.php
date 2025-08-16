@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 
 $course_slug = 'big-creek-golf-club';
 $course_name = 'Big Creek Golf Club';
@@ -10,6 +11,11 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
     $rating = (int)$_POST['rating'];
     $comment_text = trim($_POST['comment_text']);
     $user_id = $_SESSION['user_id'];
@@ -880,6 +886,7 @@ try {
                     <h3>Share Your Experience</h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">Share your memories of playing Big Creek Golf Club during its operational years.</p>
                     <form method="POST" class="comment-form">
+                        <?php echo CSRFProtection::getTokenField(); ?>
                         <div class="form-group">
                             <label for="rating">Rating (based on your memory):</label>
                             <div class="star-rating" id="rating-stars">

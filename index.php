@@ -1,3 +1,7 @@
+<?php
+// Load security headers
+require_once 'includes/security-headers.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

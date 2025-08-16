@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 
 $course_slug = 'belle-acres-golf-course';
 $course_name = 'Belle Acres Golf Course';
@@ -10,6 +11,11 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
     $rating = (int)$_POST['rating'];
     $comment_text = trim($_POST['comment_text']);
     $user_id = $_SESSION['user_id'];
@@ -455,6 +461,7 @@ try {
                     <?php endif; ?>
                     
                     <form method="POST" class="comment-form">
+                        <?php echo CSRFProtection::getTokenField(); ?>
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
                             <div class="star-rating" style="display: flex; gap: 5px;">

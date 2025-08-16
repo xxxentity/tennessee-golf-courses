@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 
 $course_slug = 'bear-trace-cumberland-mountain';
 $course_name = 'Bear Trace at Cumberland Mountain';
@@ -10,6 +11,11 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
     $rating = (int)$_POST['rating'];
     $comment_text = trim($_POST['comment_text']);
     $user_id = $_SESSION['user_id'];
@@ -25,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     } else {
         $error_message = "Please provide a valid rating and comment.";
     }
+    } // Close CSRF validation
 }
 
 // Get existing comments
@@ -882,6 +889,7 @@ try {
                 <div class="comment-form-container">
                     <h3>Share Your Experience</h3>
                     <form method="POST" class="comment-form">
+                        <?php echo CSRFProtection::getTokenField(); ?>
                         <div class="form-group">
                             <label for="rating">Rating:</label>
                             <div class="star-rating" id="cumberland-rating-stars">

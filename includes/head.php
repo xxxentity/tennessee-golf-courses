@@ -1,4 +1,7 @@
 <?php
+// Load security headers first
+require_once __DIR__ . '/security-headers.php';
+
 // Default head elements for all pages
 // Usage: include this file in the <head> section of every page
 ?>
