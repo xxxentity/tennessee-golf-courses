@@ -560,7 +560,7 @@ try {
                 <div class="rating-info">
                     <?php if ($avg_rating): ?>
                         <div class="rating-stars">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                            <?php for ($i = 1; $i <= 3; $i++): ?>
                                 <?php if ($i <= floor($avg_rating)): ?>
                                     <i class="fas fa-star"></i>
                                 <?php elseif ($i - 0.5 <= $avg_rating): ?>
@@ -851,7 +851,7 @@ try {
                         <div>
                             <div class="review-rating"><?php echo $avg_rating; ?></div>
                             <div class="review-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <?php for ($i = 1; $i <= 3; $i++): ?>
                                     <?php if ($i <= floor($avg_rating)): ?>
                                         <i class="fas fa-star"></i>
                                     <?php elseif ($i - 0.5 <= $avg_rating): ?>
@@ -910,7 +910,7 @@ try {
                                     <span class="comment-date"><?php echo date('M d, Y', strtotime($comment['created_at'])); ?></span>
                                 </div>
                                 <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php for ($i = 1; $i <= 3; $i++): ?>
                                         <?php if ($i <= $comment['rating']): ?>
                                             <i class="fas fa-star"></i>
                                         <?php else: ?>

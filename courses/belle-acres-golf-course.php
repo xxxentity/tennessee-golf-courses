@@ -102,7 +102,7 @@ try {
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <div style="display: flex;">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <i class="fas fa-star" style="color: <?= $i <= $avg_rating ? '#ffd700' : '#666' ?>; font-size: 1.2rem;"></i>
+                                        <i class="fas fa-star" style="color: <?= $i <= $avg_rating ? '#ffd700' : '#666' ?>; font-size: 1.2rem;"></i>
                             <?php endfor; ?>
                         </div>
                         <span style="font-size: 1.1rem; font-weight: 600;"><?= $avg_rating ?></span>
@@ -382,7 +382,7 @@ try {
                     <div style="margin-bottom: 1rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Rating:</label>
                         <div style="display: flex; gap: 0.5rem;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                            <?php for ($i = 1; $i <= 3; $i++): ?>
                                 <input type="radio" name="rating" value="<?= $i ?>" id="rating<?= $i ?>" required style="display: none;">
                                 <label for="rating<?= $i ?>" style="cursor: pointer; font-size: 1.5rem; color: #ddd;" onmouseover="highlightStars(<?= $i ?>)" onclick="selectRating(<?= $i ?>)">★</label>
                             <?php endfor; ?>
@@ -414,7 +414,7 @@ try {
                                     <div style="font-weight: 600; color: #2c5234;"><?= htmlspecialchars($comment['username']) ?></div>
                                     <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
                                         <div style="display: flex;">
-                                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <?php for ($i = 1; $i <= 3; $i++): ?>
                                                 <span style="color: <?= $i <= $comment['rating'] ? '#ffd700' : '#ddd' ?>; font-size: 0.9rem;">★</span>
                                             <?php endfor; ?>
                                         </div>

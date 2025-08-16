@@ -879,7 +879,7 @@ try {
                                 <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
                             <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <?php for ($i = 1; $i <= 3; $i++): ?>
                                     <?php if ($i <= $comment['rating']): ?>
                                         <i class="fas fa-star"></i>
                                     <?php else: ?>

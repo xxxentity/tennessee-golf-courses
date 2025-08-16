@@ -826,7 +826,7 @@ try {
                             </div>
                             <div style="margin-bottom: 1rem;">
                                 <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>; margin-right: 2px;"></i>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>; margin-right: 2px;"></i>
                                 <?php endfor; ?>
                             </div>
                             <div class="review-content">

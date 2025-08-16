@@ -404,7 +404,7 @@ try {
                     <div class="rating-stars">
                         <?php
                         $stars = round($avg_rating);
-                        for ($i = 1; $i <= 5; $i++) {
+                        for ($i = 1; $i <= 3; $i++) {
                             echo $i <= $stars ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
                         }
                         ?>
@@ -692,7 +692,7 @@ try {
                                 <span class="comment-date"><?= date('M j, Y', strtotime($comment['created_at'])) ?></span>
                             </div>
                             <div class="comment-rating">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <?php for ($i = 1; $i <= 3; $i++): ?>
                                     <i class="<?= $i <= $comment['rating'] ? 'fas' : 'far' ?> fa-star"></i>
                                 <?php endfor; ?>
                             </div>

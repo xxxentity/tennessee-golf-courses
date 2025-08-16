@@ -101,7 +101,7 @@ try {
                 <?php if ($avg_rating): ?>
                     <div class="rating-stars">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <i class="fas fa-star" style="color: <?php echo $i <= round($avg_rating) ? '#ffc107' : '#e0e0e0'; ?>; font-size: 1.5rem;"></i>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= round($avg_rating) ? '#ffc107' : '#e0e0e0'; ?>; font-size: 1.5rem;"></i>
                         <?php endfor; ?>
                     </div>
                     <span style="font-size: 1.2rem;"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
@@ -256,7 +256,7 @@ try {
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
                 <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    <?php for ($i = 1; $i <= 8; $i++): ?>
+                    <?php for ($i = 1; $i <= 3; $i++): ?>
                     <div class="gallery-item" style="height: 250px; background: url('../images/courses/honky-tonk-national-golf-course/<?php echo $i; ?>.webp'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
                     <?php endfor; ?>
                 </div>
@@ -336,7 +336,7 @@ try {
                                     <h4 style="margin: 0; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></h4>
                                     <div class="rating-stars" style="margin: 0.5rem 0;">
                                         <?php for ($i = 1; $i <= 5; $i++): ?>
-                                            <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffc107' : '#e0e0e0'; ?>;"></i>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffc107' : '#e0e0e0'; ?>;"></i>
                                         <?php endfor; ?>
                                     </div>
                                 </div>

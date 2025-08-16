@@ -508,7 +508,7 @@ try {
                     <div class="rating-stars">
                         <?php
                         $rating = $avg_rating;
-                        for ($i = 1; $i <= 5; $i++) {
+                        for ($i = 1; $i <= 3; $i++) {
                             if ($i <= floor($rating)) {
                                 echo '<i class="fas fa-star"></i>';
                             } elseif ($i <= ceil($rating)) {
@@ -769,7 +769,7 @@ try {
                                 <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
                             <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <?php for ($i = 1; $i <= 3; $i++): ?>
                                     <?php if ($i <= $comment['rating']): ?>
                                         <i class="fas fa-star"></i>
                                     <?php else: ?>

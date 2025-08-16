@@ -343,7 +343,7 @@ try {
                         </div>
                         <div style="color: #ffd700; margin-bottom: 1rem;">
                             <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
                             <?php endfor; ?>
                         </div>
                         <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>

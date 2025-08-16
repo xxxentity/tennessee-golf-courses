@@ -898,7 +898,7 @@ try {
                             <div class="comment-header">
                                 <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
                                 <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php for ($i = 1; $i <= 3; $i++): ?>
                                         <?php if ($i <= $comment['rating']): ?>
                                             <i class="fas fa-star"></i>
                                         <?php else: ?>
