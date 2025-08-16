@@ -1685,65 +1685,54 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             cursor: pointer;
         }
         
-        /* New Sort Design - Button Based */
-        .new-sort-container {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            padding: 4rem 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            min-height: 300px;
-        }
-        
-        .new-sort-title {
-            color: white;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .new-sort-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            row-gap: 1rem;
-        }
-        
-        .new-sort-btn {
+        /* Professional Sort Design */
+        .sort-section {
             background: white;
-            color: var(--primary-color);
-            border: none;
-            padding: 1.25rem 0.5rem;
+            border: 1px solid #e5e7eb;
             border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sort-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.3rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            min-height: 45px;
+            margin-bottom: 1rem;
         }
         
-        .new-sort-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            background: #f8f9fa;
-        }
-        
-        .new-sort-btn.active {
-            background: var(--gold-color);
-            color: var(--text-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
-        }
-        
-        .new-sort-btn i {
+        .sort-title {
+            color: #374151;
             font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            margin-right: 1rem;
+        }
+        
+        .sort-select {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 0.65rem;
+            min-width: 160px;
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 82, 52, 0.1);
+        }
+        
+        .sort-select:hover {
+            border-color: #9ca3af;
         }
         
         .courses-content {
@@ -1988,18 +1977,8 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 margin-bottom: 1rem;
             }
             
-            .new-sort-container {
-                padding: 1.8rem;
-            }
-            
-            .new-sort-title {
-                font-size: 1.8rem;
-                margin-bottom: 1.8rem;
-            }
-            
-            .new-sort-btn {
-                padding: 1.4rem 1.2rem;
-                font-size: 1.2rem;
+            .sort-section {
+                padding: 1.25rem;
             }
         }
         
@@ -2050,24 +2029,18 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 padding: 1rem;
             }
             
-            .new-sort-container {
-                padding: 2rem;
-                margin-bottom: 3rem;
+            .sort-section {
+                padding: 1rem;
             }
             
-            .new-sort-title {
-                font-size: 2rem;
-                margin-bottom: 2rem;
+            .sort-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
             }
             
-            .new-sort-buttons {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            
-            .new-sort-btn {
-                padding: 1.6rem 1.4rem;
-                font-size: 1.3rem;
+            .sort-select {
+                width: 100%;
             }
             
             .pagination-btn {
@@ -2093,25 +2066,8 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 font-size: 0.8rem;
             }
             
-            .new-sort-container {
-                padding: 2.2rem;
-                margin-bottom: 3.5rem;
-            }
-            
-            .new-sort-title {
-                font-size: 2.2rem;
-                margin-bottom: 2.5rem;
-            }
-            
-            .new-sort-buttons {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .new-sort-btn {
-                padding: 1.8rem 1.6rem;
-                font-size: 1.4rem;
-                font-weight: 700;
+            .sort-section {
+                padding: 1rem;
             }
         }
         
@@ -2239,26 +2195,16 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                         </div>
                     </div>
                     
-                    <!-- Sort Options - Completely New Design -->
-                    <div class="new-sort-container">
-                        <h3 class="new-sort-title">Sort Golf Courses</h3>
-                        <div class="new-sort-buttons">
-                            <button type="submit" name="sort" value="name" class="new-sort-btn <?php echo $sort_by === 'name' ? 'active' : ''; ?>">
-                                <i class="fas fa-sort-alpha-down"></i>
-                                Name A-Z
-                            </button>
-                            <button type="submit" name="sort" value="rating" class="new-sort-btn <?php echo $sort_by === 'rating' ? 'active' : ''; ?>">
-                                <i class="fas fa-star"></i>
-                                Top Rated
-                            </button>
-                            <button type="submit" name="sort" value="price_low" class="new-sort-btn <?php echo $sort_by === 'price_low' ? 'active' : ''; ?>">
-                                <i class="fas fa-dollar-sign"></i>
-                                Price Low
-                            </button>
-                            <button type="submit" name="sort" value="price_high" class="new-sort-btn <?php echo $sort_by === 'price_high' ? 'active' : ''; ?>">
-                                <i class="fas fa-coins"></i>
-                                Price High
-                            </button>
+                    <!-- Sort Options - Professional Design -->
+                    <div class="sort-section">
+                        <div class="sort-header">
+                            <h3 class="sort-title">Sort by:</h3>
+                            <select name="sort" class="sort-select" onchange="this.form.submit()">
+                                <option value="name" <?php echo $sort_by === 'name' ? 'selected' : ''; ?>>Name (A-Z)</option>
+                                <option value="rating" <?php echo $sort_by === 'rating' ? 'selected' : ''; ?>>Highest Rated</option>
+                                <option value="price_low" <?php echo $sort_by === 'price_low' ? 'selected' : ''; ?>>Price (Low to High)</option>
+                                <option value="price_high" <?php echo $sort_by === 'price_high' ? 'selected' : ''; ?>>Price (High to Low)</option>
+                            </select>
                         </div>
                     </div>
 
