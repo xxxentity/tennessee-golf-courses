@@ -75,47 +75,7 @@ try {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
-    
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/belle-acres-golf-course/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/belle-acres-golf-course/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });\n    </script>
+    </script>
     
     <style>
         .photo-gallery {
@@ -252,246 +212,299 @@ try {
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Belle Acres Golf Course</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Dr. J.P. Terry Design • Cookeville, Tennessee</p>
             <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating): ?>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="display: flex;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?= $i <= $avg_rating ? '#ffd700' : '#666' ?>; font-size: 1.2rem;"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <span style="font-size: 1.1rem; font-weight: 600;"><?= $avg_rating ?></span>
-                        <span style="opacity: 0.8;">(<?= $total_reviews ?> review<?= $total_reviews !== 1 ? 's' : '' ?>)</span>
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
                     </div>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
-                    <span style="opacity: 0.8;">No reviews yet</span>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                    </div>
                 <?php endif; ?>
             </div>
-            <a href="#course-info" style="background: #4a7c59; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block;">Explore Course Details</a>
         </div>
     </section>
 
-    <!-- Course Information Section -->
-    <section id="course-info" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
-            <!-- Quick Stats -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> Course Details</h3>
-                <div class="course-specs" style="display: grid; gap: 1rem;">
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">9</span>
+    <!-- Course Details -->
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">9</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">35</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,934</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Dr. J.P. Terry</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1930</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
+                        </div>
                     </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">35</span>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div class="pricing-section">
+                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekdays (Mon-Fri)</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes w/ Cart</span>
+                                    <span>$21.00</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$10.50</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$29.40</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$16.80</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
+                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekends & Holidays</h4>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes w/ Cart</span>
+                                    <span>$23.10</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>9 Holes Walking</span>
+                                    <span>$12.60</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
+                                    <span>18 Holes w/ Cart</span>
+                                    <span>$32.55</span>
+                                </div>
+                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
+                                    <span>18 Holes Walking</span>
+                                    <span>$19.95</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                            Senior (55+), Military & Tech discounts available • Call (931) 310-0645
+                        </div>
                     </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,934 yards</span>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">901 E Broad St</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Cookeville, TN</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(931) 310-0645</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://belleacresgolf.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
+                        </div>
                     </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Course Type:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">Dr. J.P. Terry</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Year Opened:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">1930</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Slope Rating:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">111</span>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=901+E+Broad+St,+Cookeville,+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Belle Acres Golf Course Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=901+E+Broad+St,+Cookeville,+TN" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Green Fees -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Belle Acres Golf Course</h3>
+                <p>Belle Acres Golf Course holds the distinction of being Cookeville's oldest golf course, having served the community since May 1, 1930. Built by Dr. J.P. Terry with assistance from Arnold Mears, a professional from Richland Golf Course in Nashville, this historic 9-hole course has evolved significantly from its humble beginnings with sand greens to become a modern golfing facility with bent grass greens.</p>
                 
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-                    <div style="margin-bottom: 1rem;">
-                        <h5 style="margin: 0 0 0.5rem 0; color: #2c5234; font-size: 1rem;"><strong>Weekdays (Mon-Fri)</strong></h5>
-                        <div style="font-size: 0.9rem; color: #666;">
-                            <div>• 9 Holes w/ Cart: $21.00</div>
-                            <div>• 9 Holes Walking: $10.50</div>
-                            <div>• 18 Holes w/ Cart: $29.40</div>
-                            <div>• 18 Holes Walking: $16.80</div>
-                        </div>
-                    </div>
-                    <div style="border-top: 1px solid #ddd; padding-top: 1rem;">
-                        <h5 style="margin: 0 0 0.5rem 0; color: #2c5234; font-size: 1rem;"><strong>Weekends & Holidays</strong></h5>
-                        <div style="font-size: 0.9rem; color: #666;">
-                            <div>• 9 Holes w/ Cart: $23.10</div>
-                            <div>• 9 Holes Walking: $12.60</div>
-                            <div>• 18 Holes w/ Cart: $32.55</div>
-                            <div>• 18 Holes Walking: $19.95</div>
-                        </div>
-                    </div>
-                    <div style="border-top: 1px solid #ddd; padding-top: 1rem; margin-top: 1rem;">
-                        <div style="font-size: 0.85rem; color: #666; text-align: center;">
-                            <strong>Special Rates:</strong> Senior (55+), Military & Tech discounts available
-                        </div>
-                    </div>
-                </div>
-                <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.9rem;">
-                    Call (931) 310-0645 for tee times and current specials.
-                </p>
-            </div>
-
-            <!-- Contact & Location -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">901 E Broad St</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">Cookeville, TN</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">(931) 310-0645</span>
-                    </div>
-                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                        <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                        <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://belleacresgolf.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                    </div>
-                </div>
+                <br>
                 
-                <div class="course-map" style="margin-top: 1.5rem;">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=901+E+Broad+St,+Cookeville,+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="200" 
-                        style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Belle Acres Golf Course Location">
-                    </iframe>
-                    <div style="margin-top: 0.5rem; text-align: center;">
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=901+E+Broad+St,+Cookeville,+TN" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                            <i class="fas fa-directions"></i> Get Directions
-                        </a>
+                <p>The course originally opened with just 7 holes featuring sand greens, but within a year was expanded to 9 holes. Over the decades, the playing surfaces have undergone several transformations - from sand greens to cotton-seed hulls, then to Bermuda grass (which presented crabgrass challenges), and finally to the current bent grass greens that provide excellent playing conditions year-round.</p>
+                
+                <br>
+                
+                <p>Today's Belle Acres offers golfers a challenging yet accessible 9-hole, par-35 experience stretching 2,934 yards from the championship tees. The course features three different tee options to accommodate players of all skill levels, with slope ratings ranging from 109 to 111. What truly sets Belle Acres apart is its practice facilities - boasting the largest practice facility in the Cookeville area, making it an ideal destination for both casual rounds and serious practice sessions.</p>
+                
+                <br>
+                
+                <p>The course maintains a strong community focus with its popular weekly A-B-C-D Scramble every Tuesday at 5:00 PM, where golfers can sign up in person by 4:30 PM and compete for prizes. This tradition exemplifies Belle Acres' commitment to fostering local golf culture while providing an affordable, quality golf experience in the heart of Tennessee.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>9-Hole Course</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Largest Practice Facility</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-leaf" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Bent Grass Greens</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Cart Rentals</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-users" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Weekly Scrambles</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-history" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Historic Course (1930)</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Course Description -->
-        <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-            <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Belle Acres Golf Course</h3>
-            <p>Belle Acres Golf Course holds the distinction of being Cookeville's oldest golf course, having served the community since May 1, 1930. Built by Dr. J.P. Terry with assistance from Arnold Mears, a professional from Richland Golf Course in Nashville, this historic 9-hole course has evolved significantly from its humble beginnings with sand greens to become a modern golfing facility with bent grass greens.</p>
-            
-            <br>
-            
-            <p>The course originally opened with just 7 holes featuring sand greens, but within a year was expanded to 9 holes. Over the decades, the playing surfaces have undergone several transformations - from sand greens to cotton-seed hulls, then to Bermuda grass (which presented crabgrass challenges), and finally to the current bent grass greens that provide excellent playing conditions year-round.</p>
-            
-            <br>
-            
-            <p>Today's Belle Acres offers golfers a challenging yet accessible 9-hole, par-35 experience stretching 2,934 yards from the championship tees. The course features three different tee options to accommodate players of all skill levels, with slope ratings ranging from 109 to 111. What truly sets Belle Acres apart is its practice facilities - boasting the largest practice facility in the Cookeville area, making it an ideal destination for both casual rounds and serious practice sessions.</p>
-            
-            <br>
-            
-            <p>The course maintains a strong community focus with its popular weekly A-B-C-D Scramble every Tuesday at 5:00 PM, where golfers can sign up in person by 4:30 PM and compete for prizes. This tradition exemplifies Belle Acres' commitment to fostering local golf culture while providing an affordable, quality golf experience in the heart of Tennessee.</p>
-        </div>
-
-        <!-- Tee Information -->
-        <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-            <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-chart-line"></i> Tee Options & Ratings</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
-                    <h4 style="color: #2c5234; margin-bottom: 1rem;">Championship Tees</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.9rem;">
-                        <div><strong>Yardage:</strong> 2,934</div>
-                        <div><strong>Par:</strong> 35</div>
-                        <div><strong>Slope:</strong> 111</div>
-                        <div><strong>Holes:</strong> 9</div>
-                    </div>
-                </div>
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #4a7c59;">
-                    <h4 style="color: #2c5234; margin-bottom: 1rem;">Middle Tees</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.9rem;">
-                        <div><strong>Yardage:</strong> 2,745</div>
-                        <div><strong>Par:</strong> 35</div>
-                        <div><strong>Slope:</strong> 109</div>
-                        <div><strong>Holes:</strong> 9</div>
-                    </div>
-                </div>
-                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #ffc107;">
-                    <h4 style="color: #2c5234; margin-bottom: 1rem;">Forward Tees</h4>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 0.9rem;">
-                        <div><strong>Yardage:</strong> 2,290</div>
-                        <div><strong>Par:</strong> 35</div>
-                        <div><strong>Slope:</strong> 110</div>
-                        <div><strong>Holes:</strong> 9</div>
-                    </div>
-                </div>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Belle Acres Golf Course</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/4.jpeg');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
+    </section>
 
-        <!-- Amenities -->
-        <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-            <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
-            <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>9-Hole Course</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Largest Practice Facility</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-leaf" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Bent Grass Greens</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Range Balls Available</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Cart Rentals</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-walking" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Walking Friendly</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-users" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Weekly Scrambles</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-history" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Historic Course (1930)</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-tee" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Multiple Tee Options</span>
-                </div>
-                <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                    <i class="fas fa-medal" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                    <span>Metal Spikes Allowed</span>
-                </div>
-            </div>
-        </div>
-
-        
-                            <p style="color: #555; line-height: 1.5; margin: 0;"><?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
+    <!-- Reviews Section -->
+    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
+            
+            <?php if ($is_logged_in): ?>
+                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                    
+                    <?php if (isset($success_message)): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <?php if (isset($error_message)): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                    <?php endif; ?>
+                    
+                    <form method="POST" class="comment-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                            <div class="star-rating" style="display: flex; gap: 5px;">
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                            </div>
                         </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                            <textarea name="comment_text" placeholder="Share your thoughts about Belle Acres Golf Course..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
+                        </div>
+                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
+                    </form>
+                </div>
+            <?php else: ?>
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
+                    <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Belle Acres Golf Course</p>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (count($comments) > 0): ?>
+                <?php foreach ($comments as $comment): ?>
+                    <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
+                            <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                        </div>
+                        <div style="color: #ffd700; margin-bottom: 1rem;">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
+                            <?php endfor; ?>
+                        </div>
+                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div style="text-align: center; padding: 3rem; color: #666;">
+                    <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                    <h3>No reviews yet</h3>
+                    <p>Be the first to share your experience at Belle Acres Golf Course!</p>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -507,86 +520,62 @@ try {
             </div>
         </div>
     </div>
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Belle Acres Golf Course</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/3.webp');"></div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
+    <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
-
+    
     <script>
-        let currentImageIndex = 1;
-        const totalImages = 25;
-
-        function openGallery(imageIndex) {
-            currentImageIndex = imageIndex;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${imageIndex}.jpeg`;
-            document.getElementById('galleryModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        // Star rating functionality
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                const stars = document.querySelectorAll('.star-rating label');
+                stars.forEach((star, starIndex) => {
+                    if (starIndex >= (5 - this.value)) {
+                        star.style.color = '#ffd700';
+                    } else {
+                        star.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+        
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/belle-acres-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/belle-acres-golf-course/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
         function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
-
-        function nextImage() {
-            currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.jpeg`;
-        }
-
-        function prevImage() {
-            currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : totalImages;
-            document.getElementById('galleryImage').src = `../images/courses/belle-acres-golf-course/${currentImageIndex}.jpeg`;
-        }
-
-        function showReviewForm() {
-            document.getElementById('reviewForm').style.display = 'block';
-        }
-
-        function hideReviewForm() {
-            document.getElementById('reviewForm').style.display = 'none';
-        }
-
-        function highlightStars(rating) {
-            for (let i = 1; i <= 5; i++) {
-                const star = document.querySelector(`label[for="rating${i}"]`);
-                star.style.color = i <= rating ? '#ffd700' : '#ddd';
-            }
-        }
-
-        function selectRating(rating) {
-            document.getElementById(`rating${rating}`).checked = true;
-            for (let i = 1; i <= 5; i++) {
-                const star = document.querySelector(`label[for="rating${i}"]`);
-                star.style.color = i <= rating ? '#ffd700' : '#ddd';
-            }
-        }
-
-        // Close gallery with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
                 closeGallery();
             }
         });
-
-        // Close gallery when clicking outside image
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) {
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
                 closeGallery();
             }
         });
