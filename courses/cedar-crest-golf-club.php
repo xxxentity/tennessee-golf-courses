@@ -813,9 +813,9 @@ try {
                 <p>Experience the beauty of Cedar Crest Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -1037,7 +1037,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/cedar-crest-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
