@@ -406,7 +406,6 @@ try {
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
