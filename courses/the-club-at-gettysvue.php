@@ -931,9 +931,9 @@ try {
                 <p>Experience the mountain beauty of The Club at Gettysvue</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

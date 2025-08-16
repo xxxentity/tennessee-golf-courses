@@ -759,9 +759,9 @@ try {
                 <p>Experience the beauty of Eagle's Landing Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/eagles-landing-golf-club/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>

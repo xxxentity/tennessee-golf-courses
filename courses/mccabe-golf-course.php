@@ -739,9 +739,9 @@ try {
                 <p>Experience the beauty of McCabe Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/mccabe-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
