@@ -337,6 +337,11 @@
                 ?>
 
                 <form action="register-process" method="POST">
+                    <?php 
+                    session_start(); 
+                    require_once '../includes/csrf.php'; 
+                    echo CSRFProtection::getTokenField(); 
+                    ?>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div class="form-icon">

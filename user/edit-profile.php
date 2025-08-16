@@ -532,6 +532,7 @@ try {
             // Create form data
             const formData = new FormData();
             formData.append('profile_picture', file);
+            formData.append('csrf_token', '<?php require_once "../includes/csrf.php"; echo CSRFProtection::getToken(); ?>');
             
             // Upload file
             fetch('upload-profile-picture.php', {

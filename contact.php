@@ -1,11 +1,17 @@
 <?php
 session_start();
+require_once 'includes/csrf.php';
 
 // Handle form submission
 $success_message = '';
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validate CSRF token first
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please try again.';
+    } else {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $inquiry_type = $_POST['inquiry_type'];
@@ -71,6 +77,7 @@ Time: " . date('Y-m-d H:i:s');
     } else {
         $error_message = implode(", ", $errors);
     }
+    } // Close CSRF validation else block
 }
 ?>
 
@@ -373,6 +380,7 @@ Time: " . date('Y-m-d H:i:s');
                 <?php endif; ?>
 
                 <form method="POST" action="">
+                    <?php echo CSRFProtection::getTokenField(); ?>
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">

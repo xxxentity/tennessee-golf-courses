@@ -1,11 +1,20 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     header('Content-Type: application/json');
     echo json_encode(['success' => false, 'error' => 'Not logged in']);
+    exit;
+}
+
+// Validate CSRF token for AJAX request
+$csrf_token = $_POST['csrf_token'] ?? '';
+if (!CSRFProtection::validateToken($csrf_token)) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'error' => 'Security token expired or invalid. Please refresh the page.']);
     exit;
 }
 

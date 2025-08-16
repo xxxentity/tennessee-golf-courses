@@ -1,6 +1,14 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
+
+// Validate CSRF token first
+$csrf_token = $_POST['csrf_token'] ?? '';
+if (!CSRFProtection::validateToken($csrf_token)) {
+    header('Location: /login?error=' . urlencode('Security token expired or invalid. Please try again.'));
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: /login');
