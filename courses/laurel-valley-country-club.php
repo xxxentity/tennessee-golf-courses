@@ -661,16 +661,34 @@ try {
 
     <!-- Photo Gallery -->
     <section class="gallery-section">
-        <div class="container">
-            <h2>Course Gallery</h2>
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Gallery images will be loaded here -->
+        <div class="container">            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Laurel Valley Country Club</p>
             </div>
-            <div style="text-align: center;">
-                <button class="view-all-btn" onclick="loadAllPhotos()">View Full Gallery (25 Photos)</button>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/4.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
+
+
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Laurel Valley Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Reviews Section -->
     <section class="reviews-section">
@@ -788,40 +806,46 @@ try {
         });
         
         // Gallery functionality
-        let photosLoaded = false;
-        
-        function loadInitialPhotos() {
-            const galleryGrid = document.getElementById('galleryGrid');
-            for (let i = 1; i <= 8; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/laurel-valley-country-club/${i}.jpeg" alt="Laurel Valley Country Club Photo ${i}" loading="lazy">`;
-                galleryGrid.appendChild(galleryItem);
-            }
-        }
-        
-        function loadAllPhotos() {
-            if (photosLoaded) return;
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
             
-            const galleryGrid = document.getElementById('galleryGrid');
-            // Clear existing photos
+            // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Load all 25 photos
+            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/laurel-valley-country-club/${i}.jpeg" alt="Laurel Valley Country Club Photo ${i}" loading="lazy">`;
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/laurel-valley-country-club/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/laurel-valley-country-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
-            // Hide the button
-            document.querySelector('.view-all-btn').style.display = 'none';
-            photosLoaded = true;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
         
-        // Load initial photos when page loads
-        document.addEventListener('DOMContentLoaded', loadInitialPhotos);
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
     </script>
     
     <script src="/weather.js?v=4"></script>
