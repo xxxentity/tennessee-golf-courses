@@ -400,7 +400,7 @@ try {
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
-    </section>\n\n
+    </section>
 
     <!-- Reviews Section -->
     <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
@@ -485,7 +485,6 @@ try {
                 <!-- Photos will be loaded dynamically -->
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Dynamic Footer -->

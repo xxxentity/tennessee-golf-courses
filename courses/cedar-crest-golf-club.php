@@ -1037,7 +1037,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/cedar-crest-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

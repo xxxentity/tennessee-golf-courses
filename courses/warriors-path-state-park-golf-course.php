@@ -956,7 +956,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/warriors-path-state-park-golf-course/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/warriors-path-state-park-golf-course/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/warriors-path-state-park-golf-course/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

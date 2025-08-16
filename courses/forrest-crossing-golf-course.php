@@ -1037,7 +1037,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/forrest-crossing-golf-course/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/forrest-crossing-golf-course/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/forrest-crossing-golf-course/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

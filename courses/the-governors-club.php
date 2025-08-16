@@ -857,7 +857,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/the-governors-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-governors-club/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/the-governors-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

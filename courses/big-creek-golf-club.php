@@ -954,7 +954,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/big-creek-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/big-creek-golf-club/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/big-creek-golf-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

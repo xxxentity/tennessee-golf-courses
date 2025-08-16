@@ -833,7 +833,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/tpc-southwind/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/tpc-southwind/${i}.jpeg`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/tpc-southwind/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
