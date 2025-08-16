@@ -197,17 +197,21 @@ try {
             padding: 4rem 0;
         }
         
+        .photo-gallery {
+            margin: 4rem 0;
+        }
+        
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
         }
         
         .gallery-item {
-            aspect-ratio: 4/3;
-            border-radius: 10px;
-            overflow: hidden;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -216,26 +220,93 @@ try {
             transform: scale(1.05);
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
         }
         
-        .view-all-btn {
+        .btn-gallery {
             background: #4a7c59;
             color: white;
-            border: none;
             padding: 1rem 2rem;
-            border-radius: 25px;
+            border: none;
+            border-radius: 50px;
             font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
             cursor: pointer;
-            margin-top: 2rem;
-            transition: background 0.3s ease;
         }
         
-        .view-all-btn:hover {
-            background: #3d6249;
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
         }
         
         .reviews-section {
@@ -610,9 +681,9 @@ try {
                 <p>Experience the beauty of Egwani Farms Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -762,8 +833,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/egwani-farms-golf-course/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/egwani-farms-golf-course/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/egwani-farms-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/egwani-farms-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
