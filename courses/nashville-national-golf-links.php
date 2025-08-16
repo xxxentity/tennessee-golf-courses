@@ -303,20 +303,25 @@ try {
                 </div>
             </div>
 
-            <!-- Course Gallery -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
-                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/nashville-national-golf-links/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
-                    <?php endfor; ?>
-                </div>
-                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
-                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
-                </div>
+            
+    </section>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Nashville National Golf Links</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/3.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
-    </section>
+    </section>\n\n
 
     <!-- Reviews Section -->
     <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
@@ -405,14 +410,18 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-        <div style="position: relative; margin: auto; padding: 20px; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
-            <span style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeGallery()">&times;</span>
-            <div id="galleryImages" style="text-align: center;">
-                <!-- Gallery images will be loaded here -->
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Nashville National Golf Links - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Footer -->
@@ -452,37 +461,46 @@ try {
             });
         }
 
-        // Gallery modal functionality
+        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
-            const galleryImages = document.getElementById('galleryImages');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
             
-            // Clear previous images
-            galleryImages.innerHTML = '';
+            // Clear existing content
+            galleryGrid.innerHTML = '';
             
-            // Load all 25 images
+            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const img = document.createElement('img');
-                img.src = `../images/courses/nashville-national-golf-links/${i}.jpeg`;
-                img.alt = `Nashville National Golf Links Photo ${i}`;
-                img.style.cssText = 'width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px;';
-                galleryImages.appendChild(img);
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/nashville-national-golf-links/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/nashville-national-golf-links/${i}.webp`, '_blank');
+                galleryGrid.appendChild(galleryItem);
             }
             
             modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
         function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
             const modal = document.getElementById('galleryModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
     </script>
 </body>
 </html>

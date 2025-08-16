@@ -273,20 +273,25 @@ try {
                 </div>
             </div>
 
-            <!-- Course Gallery -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
-                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/belle-meade-country-club/<?php echo $i; ?>.jpeg'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
-                    <?php endfor; ?>
-                </div>
-                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
-                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
-                </div>
+            
+    </section>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Belle Meade Country Club</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/3.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
-    </section>
+    </section>\n\n
 
     <!-- Reviews Section -->
     <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
@@ -359,17 +364,18 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);">
-        <div style="margin: 2% auto; padding: 20px; width: 90%; max-width: 1200px; position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; color: white;">
-                <h2 style="font-size: 2rem; margin: 0;">Belle Meade Country Club Gallery</h2>
-                <button onclick="closeGallery()" style="color: white; font-size: 3rem; font-weight: bold; cursor: pointer; background: none; border: none;">&times;</button>
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Belle Meade Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div id="fullGalleryGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-height: 70vh; overflow-y: auto;">
-                <!-- Images will be loaded here by JavaScript -->
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Dynamic Footer -->
@@ -390,7 +396,7 @@ try {
             });
         });
         
-        // Gallery modal functionality
+        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
@@ -398,37 +404,38 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Add all 25 images
+            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
-                galleryItem.style.height = '200px';
-                galleryItem.style.backgroundImage = `url('../images/courses/belle-meade-country-club/${i}.jpeg')`;
-                galleryItem.style.backgroundSize = 'cover';
-                galleryItem.style.backgroundPosition = 'center';
-                galleryItem.style.borderRadius = '10px';
-                galleryItem.style.cursor = 'pointer';
-                galleryItem.style.transition = 'transform 0.3s ease';
-                galleryItem.onclick = () => window.open(`../images/courses/belle-meade-country-club/${i}.jpeg`, '_blank');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/belle-meade-country-club/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/belle-meade-country-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
         
         function closeGallery() {
             const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
         
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target === modal) {
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
                 closeGallery();
             }
-        }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
     </script>
 </body>
 </html>

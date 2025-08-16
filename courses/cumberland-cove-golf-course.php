@@ -75,7 +75,47 @@ try {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
-    </script>
+    
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/cumberland-cove-golf-course/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/cumberland-cove-golf-course/${i}.webp`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });\n    </script>
 </head>
 <body>
     <!-- Dynamic Navigation -->
@@ -346,96 +386,7 @@ try {
             </div>
         </div>
 
-        <!-- Course Gallery -->
-        <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-            <h3 style="color: #2c5234; margin-bottom: 2rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
-            <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <?php for ($i = 1; $i <= 12; $i++): ?>
-                    <div class="gallery-item" style="position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; cursor: pointer;" onclick="openGallery(<?= $i ?>)">
-                        <img src="../images/courses/cumberland-cove-golf-course/<?= $i ?>.jpeg" 
-                             alt="Cumberland Cove Golf Course Image <?= $i ?>" 
-                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;"
-                             onmouseover="this.style.transform='scale(1.05)'"
-                             onmouseout="this.style.transform='scale(1)'">
-                        <div style="position: absolute; inset: 0; background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0)); transition: background 0.3s ease;" 
-                             onmouseover="this.style.background='linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1))'"
-                             onmouseout="this.style.background='linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0))'"></div>
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
-
-        <!-- Reviews Section -->
-        <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <h3 style="color: #2c5234; margin: 0; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Reviews</h3>
-                <?php if ($is_logged_in): ?>
-                    <button onclick="showReviewForm()" style="background: #4a7c59; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Write a Review</button>
-                <?php else: ?>
-                    <a href="../login" style="background: #4a7c59; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; font-weight: 600;">Login to Review</a>
-                <?php endif; ?>
-            </div>
-
-            <?php if (isset($success_message)): ?>
-                <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; border: 1px solid #c3e6cb;">
-                    <?= htmlspecialchars($success_message) ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if (isset($error_message)): ?>
-                <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; border: 1px solid #f5c6cb;">
-                    <?= htmlspecialchars($error_message) ?>
-                </div>
-            <?php endif; ?>
-
-            <!-- Review Form -->
-            <?php if ($is_logged_in): ?>
-            <div id="reviewForm" style="display: none; background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
-                <h4 style="color: #2c5234; margin-bottom: 1rem;">Share Your Experience</h4>
-                <form method="POST">
-                    <div style="margin-bottom: 1rem;">
-                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Rating:</label>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <?php for ($i = 1; $i <= 3; $i++): ?>
-                                <input type="radio" name="rating" value="<?= $i ?>" id="rating<?= $i ?>" required style="display: none;">
-                                <label for="rating<?= $i ?>" style="cursor: pointer; font-size: 1.5rem; color: #ddd;" onmouseover="highlightStars(<?= $i ?>)" onclick="selectRating(<?= $i ?>)">★</label>
-                            <?php endfor; ?>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                        <textarea name="comment_text" id="comment_text" rows="4" required 
-                                style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; resize: vertical;"
-                                placeholder="Share your thoughts about Cumberland Cove Golf Course..."></textarea>
-                    </div>
-                    <div style="display: flex; gap: 1rem;">
-                        <button type="submit" style="background: #4a7c59; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Submit Review</button>
-                        <button type="button" onclick="hideReviewForm()" style="background: #6c757d; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; cursor: pointer; font-weight: 600;">Cancel</button>
-                    </div>
-                </form>
-            </div>
-            <?php endif; ?>
-
-            <!-- Display Reviews -->
-            <div style="space-y: 1.5rem;">
-                <?php if (empty($comments)): ?>
-                    <p style="text-align: center; color: #666; font-style: italic; padding: 2rem;">No reviews yet. Be the first to share your experience!</p>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div style="border-bottom: 1px solid #eee; padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                                <div>
-                                    <div style="font-weight: 600; color: #2c5234;"><?= htmlspecialchars($comment['username']) ?></div>
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
-                                        <div style="display: flex;">
-                                            <?php for ($i = 1; $i <= 3; $i++): ?>
-                                                <span style="color: <?= $i <= $comment['rating'] ? '#ffd700' : '#ddd' ?>; font-size: 0.9rem;">★</span>
-                                            <?php endfor; ?>
-                                        </div>
-                                        <span style="font-size: 0.85rem; color: #666;"><?= date('M j, Y', strtotime($comment['created_at'])) ?></span>
-                                    </div>
-                                </div>
-                            </div>
+        
                             <p style="color: #555; line-height: 1.5; margin: 0;"><?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
                         </div>
                     <?php endforeach; ?>
@@ -444,15 +395,35 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="position: relative; max-width: 90%; max-height: 90%;">
-            <img id="galleryImage" src="" alt="Course Image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-            <button onclick="closeGallery()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; padding: 0.5rem;">×</button>
-            <button onclick="prevImage()" style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%;">‹</button>
-            <button onclick="nextImage()" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 2rem; cursor: pointer; padding: 0.5rem; border-radius: 50%;">›</button>
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cumberland Cove Golf Course - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
         </div>
     </div>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Cumberland Cove Golf Course</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/3.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+            </div>
+        </div>
+    </section>\n\n
 
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>

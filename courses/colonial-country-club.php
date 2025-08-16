@@ -75,7 +75,47 @@ try {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
-    </script>
+    
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/colonial-country-club/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/colonial-country-club/${i}.webp`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });\n    </script>
 </head>
 <body>
     <!-- Dynamic Navigation -->
@@ -255,20 +295,25 @@ try {
                 </div>
             </div>
 
-            <!-- Course Gallery -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-camera"></i> Course Gallery</h3>
-                <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
-                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                    <div class="gallery-item" style="height: 250px; background: url('../images/courses/colonial-country-club/<?php echo $i; ?>.webp'); background-size: cover; background-position: center; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()"></div>
-                    <?php endfor; ?>
-                </div>
-                <div class="gallery-button" style="text-align: center; margin-top: 2rem;">
-                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">View Full Gallery (25 Photos)</button>
-                </div>
+            
+    </section>
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Colonial Country Club</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/3.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
-    </section>
+    </section>\n\n
 
     <!-- Reviews Section -->
     <section class="reviews-section" id="reviews" style="background: #f8f9fa; padding: 4rem 0;">
