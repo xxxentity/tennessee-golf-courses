@@ -702,15 +702,12 @@ try {
                 <p>Experience the beauty of Troubadour Golf & Field Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/4.webp');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>

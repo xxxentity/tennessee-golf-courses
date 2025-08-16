@@ -694,12 +694,9 @@ try {
                 <p>Experience the beauty and history of Old Hickory Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/old-hickory-country-club/4.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>

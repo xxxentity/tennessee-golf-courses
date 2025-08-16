@@ -709,12 +709,9 @@ try {
                 <p>Experience the beauty of TPC Southwind</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/4.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (44+)</button>

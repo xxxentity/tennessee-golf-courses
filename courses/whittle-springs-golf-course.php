@@ -839,15 +839,12 @@ try {
                 <p>Experience the unique beauty of Whittle Springs Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/4.webp');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>

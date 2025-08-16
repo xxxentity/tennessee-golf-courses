@@ -656,7 +656,7 @@ try {
                 <!-- Gallery images will be loaded here -->
             </div>
             <div style="text-align: center;">
-                <button class="view-all-btn" onclick="loadAllPhotos()">View All Photos (25)</button>
+                <button class="view-all-btn" onclick="loadAllPhotos()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>

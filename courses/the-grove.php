@@ -853,12 +853,9 @@ try {
                 <p>Experience the beauty of The Grove</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/4.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (12+)</button>

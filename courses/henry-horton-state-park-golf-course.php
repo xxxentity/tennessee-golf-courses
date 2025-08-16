@@ -801,12 +801,9 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/2.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/3.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/4.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/5.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/6.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/henry-horton-state-park-golf-course/7.webp');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>

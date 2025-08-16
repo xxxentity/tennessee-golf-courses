@@ -775,12 +775,9 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/2.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/3.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/4.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/5.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/6.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/7.webp');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>

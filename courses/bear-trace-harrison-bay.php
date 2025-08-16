@@ -772,12 +772,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Harrison Bay</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-harrison-bay/4.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (100+)</button>

@@ -836,12 +836,9 @@ try {
                 <p>Experience the beauty of Island Pointe Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/4.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/5.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/6.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/7.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/island-pointe-golf-club/4.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
