@@ -834,9 +834,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Cumberland Mountain</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
