@@ -1,7 +1,16 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - redirect to login
+    header('Location: /login?error=' . urlencode($e->getMessage()));
+    exit;
+}
 
 // Validate CSRF token first
 $csrf_token = $_POST['csrf_token'] ?? '';
@@ -80,12 +89,13 @@ try {
     $stmt = $pdo->prepare("UPDATE users SET login_attempts = 0, account_locked_until = NULL WHERE id = ?");
     $stmt->execute([$user['id']]);
     
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['email'] = $user['email'];
-    $_SESSION['first_name'] = $user['first_name'];
-    $_SESSION['last_name'] = $user['last_name'];
-    $_SESSION['logged_in'] = true;
+    // Use secure session login method
+    SecureSession::login($user['id'], $user['username']);
+    
+    // Store additional user data
+    SecureSession::set('email', $user['email']);
+    SecureSession::set('first_name', $user['first_name']);
+    SecureSession::set('last_name', $user['last_name']);
     
     // Redirect to homepage or requested page
     $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '/';

@@ -1,12 +1,16 @@
 <?php
-// Only start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+require_once __DIR__ . '/session-security.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
 }
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-$first_name = $is_logged_in ? $_SESSION['first_name'] : '';
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
+$first_name = $is_logged_in ? SecureSession::get('first_name', '') : '';
 
 // Determine if this is a main site page (should show weather bar)
 $current_page = $_SERVER['REQUEST_URI'];

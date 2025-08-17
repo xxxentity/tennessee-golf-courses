@@ -1,13 +1,17 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 
-// Destroy all session data
-session_destroy();
-
-// Clear session cookie
-if (isset($_COOKIE[session_name()])) {
-    setcookie(session_name(), '', time()-3600, '/');
+// Start secure session to access it
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session already invalid, just redirect
+    header('Location: /');
+    exit;
 }
+
+// Destroy session securely
+SecureSession::logout();
 
 // Redirect to homepage
 header('Location: /');

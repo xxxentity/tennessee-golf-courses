@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/init.php';
 require_once 'includes/csrf.php';
 
 // Handle form submission
