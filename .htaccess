@@ -1,6 +1,28 @@
 # Tennessee Golf Courses - Professional Clean URLs
 RewriteEngine On
 
+# Force HTTPS (uncomment when SSL certificate is installed)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Security: Prevent access to sensitive files
+<FilesMatch "\.(env|git|gitignore|sql|log|md|sh|yml|yaml|json|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Prevent access to .htaccess itself
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
 # Sitemap redirect
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
@@ -173,9 +195,29 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
 
 # Security headers
 <IfModule mod_headers.c>
-    Header always set X-Frame-Options DENY
-    Header always set X-Content-Type-Options nosniff
+    # Prevent clickjacking
+    Header always set X-Frame-Options "DENY"
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Enable XSS protection (legacy browsers)
     Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy (formerly Feature Policy)
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    
+    # Remove PHP version header
+    Header always unset X-Powered-By
+    
+    # Content Security Policy (basic - adjust as needed)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://maps.google.com; object-src 'none'; base-uri 'self';"
+    
+    # HSTS - Uncomment when HTTPS is enabled
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
 # Cache static assets
@@ -185,8 +227,45 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
     ExpiresByType image/jpeg "access plus 1 month"
     ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/pdf "access plus 1 month"
     ExpiresByType text/javascript "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Prevent PHP execution in upload directories
+<Directory ~ "uploads">
+    <Files ~ "\.php$">
+        Order allow,deny
+        Deny from all
+    </Files>
+</Directory>
+
+# Block access to backup files
+<FilesMatch "(\.(bak|backup|old|orig|original|tmp|temp|copy|save)|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect against XSS attacks via file uploads
+<FilesMatch "\.(html|htm|js|php|php3|php4|php5|phps|phtml|shtml)$">
+    <IfModule mod_headers.c>
+        Header set X-Content-Type-Options "nosniff"
+    </IfModule>
+</FilesMatch>
+
+# Disable HTTP TRACE method
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+</IfModule>
+
+# Block common exploit attempts
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+    RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F]
 </IfModule>
