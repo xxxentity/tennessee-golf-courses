@@ -1,9 +1,23 @@
 # Tennessee Golf Courses - Professional Clean URLs
 RewriteEngine On
 
-# Force HTTPS
+# Fix any .tld redirects - redirect to proper .com domain
+RewriteCond %{HTTP_HOST} ^(www\.)?tennesseegolfcourses\.tld$ [NC]
+RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
+
+# Handle www subdomain - redirect to non-www
+RewriteCond %{HTTP_HOST} ^www\.tennesseegolfcourses\.com$ [NC]
+RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
+
+# Force HTTPS for the main domain
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^tennesseegolfcourses\.com$ [NC]
+RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
+
+# Catch-all for any other domain variations
+RewriteCond %{HTTP_HOST} !^tennesseegolfcourses\.com$ [NC]
+RewriteCond %{HTTP_HOST} !^$
+RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
 
 # Security: Prevent access to sensitive files
 <FilesMatch "\.(env|git|gitignore|sql|log|md|sh|yml|yaml|json|lock)$">
