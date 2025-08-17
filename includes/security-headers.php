@@ -29,10 +29,8 @@ $csp = "default-src 'self'; " .
 
 header("Content-Security-Policy: $csp");
 
-// Force HTTPS in production (uncomment when using HTTPS)
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-    header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
-}
+// Force HTTPS in production
+header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
 
 // Permissions Policy (formerly Feature Policy)
 header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()');
