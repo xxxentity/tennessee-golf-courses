@@ -3,6 +3,8 @@ session_start();
 require_once '../config/database.php';
 require_once '../includes/rate-limiter.php';
 require_once '../includes/csrf.php';
+require_once '../includes/auth-security.php';
+require_once '../includes/input-validation.php';
 
 // Validate CSRF token first
 $csrf_token = $_POST['csrf_token'] ?? '';
@@ -24,33 +26,45 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Get form data
-$username = trim($_POST['username']);
-$email = trim($_POST['email']);
-$first_name = trim($_POST['first_name']);
-$last_name = trim($_POST['last_name']);
-$password = $_POST['password'];
-$confirm_password = $_POST['confirm_password'];
+// Get and validate form data using enhanced input validation
+$formData = [
+    'username' => $_POST['username'] ?? '',
+    'email' => $_POST['email'] ?? '',
+    'first_name' => $_POST['first_name'] ?? '',
+    'last_name' => $_POST['last_name'] ?? ''
+];
+
+$validationRules = [
+    'username' => ['type' => 'username'],
+    'email' => ['type' => 'email', 'check_dns' => false],
+    'first_name' => ['type' => 'name', 'name_type' => 'first'],
+    'last_name' => ['type' => 'name', 'name_type' => 'last']
+];
+
+$validation = InputValidator::validateArray($formData, $validationRules);
+$errors = [];
+
+// Extract validated data
+$username = $validation['data']['username'];
+$email = $validation['data']['email'];
+$first_name = $validation['data']['first_name'];
+$last_name = $validation['data']['last_name'];
+$password = $_POST['password'] ?? '';
+$confirm_password = $_POST['confirm_password'] ?? '';
 $agree_terms = isset($_POST['agree_terms']) ? $_POST['agree_terms'] : false;
 $newsletter_subscribe = isset($_POST['newsletter_subscribe']) ? $_POST['newsletter_subscribe'] : false;
 
-// Validation
-$errors = [];
-
-if (empty($username) || strlen($username) < 3) {
-    $errors[] = "Username must be at least 3 characters long";
+// Collect validation errors
+if (!$validation['valid']) {
+    foreach ($validation['errors'] as $field => $fieldErrors) {
+        $errors = array_merge($errors, $fieldErrors);
+    }
 }
 
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Please enter a valid email address";
-}
-
-if (empty($first_name) || empty($last_name)) {
-    $errors[] = "First and last name are required";
-}
-
-if (strlen($password) < 6) {
-    $errors[] = "Password must be at least 6 characters long";
+// Enhanced password strength validation
+$passwordValidation = AuthSecurity::validatePasswordStrength($password);
+if (!$passwordValidation['valid']) {
+    $errors = array_merge($errors, $passwordValidation['feedback']);
 }
 
 if ($password !== $confirm_password) {
@@ -84,10 +98,10 @@ if (!empty($errors)) {
 
 // Hash password and insert user
 try {
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    $password_hash = AuthSecurity::hashPassword($password);
     
     // Generate email verification token
-    $email_verification_token = bin2hex(random_bytes(32));
+    $email_verification_token = AuthSecurity::generateEmailVerificationToken();
     
     $stmt = $pdo->prepare("INSERT INTO users (username, email, first_name, last_name, password_hash, email_verification_token, email_verified) VALUES (?, ?, ?, ?, ?, ?, 0)");
     $stmt->execute([$username, $email, $first_name, $last_name, $password_hash, $email_verification_token]);

@@ -1,53 +1,46 @@
 <?php
-session_start();
+require_once '../includes/admin-security-simple.php';
+require_once '../includes/csrf.php';
+require_once '../config/database.php';
 
-// If already logged in as admin, redirect to newsletter admin
-if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
-    header('Location: /admin/newsletter');
+// If already logged in, redirect to dashboard
+if (AdminSecurity::isValidAdminSession()) {
+    header('Location: /admin/dashboard');
     exit;
 }
 
-$error_message = '';
+$error_message = $_GET['error'] ?? '';
 
+// Handle login form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once '../config/database.php';
-    
-    $username = trim($_POST['username']);
-    $password = $_POST['password'];
-    
-    if ($username && $password) {
-        try {
-            $stmt = $pdo->prepare("SELECT id, username, email, password_hash, first_name, last_name FROM admin_users WHERE username = ? AND is_active = 1");
-            $stmt->execute([$username]);
-            $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired. Please try again.';
+    } else {
+        $username = trim($_POST['username'] ?? '');
+        $password = $_POST['password'] ?? '';
+        
+        if (!empty($username) && !empty($password)) {
+            $result = AdminSecurity::authenticateAdmin($pdo, $username, $password);
             
-            if ($admin && password_verify($password, $admin['password_hash'])) {
-                // Set admin session
-                $_SESSION['admin_id'] = $admin['id'];
-                $_SESSION['admin_username'] = $admin['username'];
-                $_SESSION['admin_email'] = $admin['email'];
-                $_SESSION['first_name'] = $admin['first_name'];
-                $_SESSION['last_name'] = $admin['last_name'];
-                $_SESSION['is_admin'] = true;
+            if ($result['success']) {
+                // Start admin session
+                AdminSecurity::startAdminSession($result['admin']);
                 
-                // Update last login
-                $stmt = $pdo->prepare("UPDATE admin_users SET last_login = CURRENT_TIMESTAMP WHERE id = ?");
-                $stmt->execute([$admin['id']]);
-                
-                header('Location: /admin/newsletter');
+                // Redirect to dashboard or requested page
+                $redirect = $_GET['redirect'] ?? '/admin/dashboard';
+                header('Location: ' . $redirect);
                 exit;
             } else {
-                $error_message = 'Invalid username or password';
+                $error_message = $result['error'];
             }
-        } catch (PDOException $e) {
-            $error_message = 'Login failed. Please try again.';
-            error_log("Admin login error: " . $e->getMessage());
+        } else {
+            $error_message = 'Please enter both username and password.';
         }
-    } else {
-        $error_message = 'Please enter both username and password';
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,150 +48,296 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Tennessee Golf Courses</title>
     <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
     <style>
         body {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Inter', sans-serif;
         }
         
         .admin-login-container {
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
+            position: relative;
+        }
+        
+        .admin-login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #2c5234, #ea580c);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .admin-header {
             text-align: center;
+            margin-bottom: 2.5rem;
         }
         
-        .admin-logo {
-            color: var(--primary-color);
-            font-size: 24px;
+        .admin-header h1 {
+            color: #1f2937;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
         
-        .admin-subtitle {
-            color: var(--text-gray);
-            margin-bottom: 32px;
+        .admin-header .subtitle {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+        
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #f0fdf4;
+            color: #15803d;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .security-badge i {
+            margin-right: 0.5rem;
         }
         
         .form-group {
-            margin-bottom: 20px;
-            text-align: left;
+            margin-bottom: 1.5rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
+            color: #374151;
             font-weight: 600;
-            color: var(--text-dark);
+            font-size: 0.9rem;
         }
         
         .form-group input {
             width: 100%;
-            padding: 12px 16px;
+            padding: 1rem;
             border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
         
         .form-group input:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: #2c5234;
+            box-shadow: 0 0 0 3px rgba(44, 82, 52, 0.1);
         }
         
-        .admin-btn {
+        .totp-input {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .login-btn {
             width: 100%;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #2c5234, #1f3a26);
             color: white;
-            padding: 14px;
+            padding: 1rem;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
         }
         
-        .admin-btn:hover {
-            background: var(--secondary-color);
+        .login-btn:hover {
+            background: linear-gradient(135deg, #1f3a26, #163020);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(44, 82, 52, 0.3);
+        }
+        
+        .login-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
         
         .error-message {
             background: #fee2e2;
             color: #dc2626;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #fecaca;
+            font-weight: 500;
+        }
+        
+        .error-message i {
+            margin-right: 0.5rem;
+        }
+        
+        .security-info {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
+        
+        .security-info h4 {
+            color: #374151;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .security-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        
+        .security-info li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .security-info li i {
+            margin-right: 0.5rem;
+            color: #22c55e;
+            width: 12px;
         }
         
         .back-link {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 2rem;
         }
         
         .back-link a {
-            color: var(--primary-color);
+            color: #6b7280;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
         
         .back-link a:hover {
-            text-decoration: underline;
+            color: #2c5234;
         }
         
-        .default-creds {
-            background: #f0f9ff;
-            border: 1px solid #0ea5e9;
+        .totp-help {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1rem;
             border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            border: 1px solid #fde68a;
         }
         
-        .default-creds strong {
-            color: var(--primary-color);
+        @media (max-width: 768px) {
+            .admin-login-container {
+                margin: 1rem;
+                padding: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="admin-login-container">
-        <div class="admin-logo">🏌️ Admin Panel</div>
-        <div class="admin-subtitle">Tennessee Golf Courses</div>
-        
-        <div class="default-creds">
-            <strong>Default Login:</strong><br>
-            Username: <code>admin</code><br>
-            Password: <code>admin123</code><br>
-            <small>If login fails, <a href="/admin/create-admin">create admin user</a></small>
+        <div class="admin-header">
+            <h1><i class="fas fa-shield-alt"></i> Admin Portal</h1>
+            <p class="subtitle">Tennessee Golf Courses</p>
+            <div class="security-badge">
+                <i class="fas fa-lock"></i>
+                Secure Admin Access
+            </div>
         </div>
         
         <?php if ($error_message): ?>
-            <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+            <div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <?php echo htmlspecialchars($error_message); ?>
+            </div>
         <?php endif; ?>
         
-        <form method="POST">
+        <form method="POST" action="">
+            <?php echo CSRFProtection::getTokenField(); ?>
+            
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>">
+                <label for="username">
+                    <i class="fas fa-user"></i>
+                    Username
+                </label>
+                <input type="text" id="username" name="username" 
+                       required autocomplete="username"
+                       value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>">
             </div>
             
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                    Password
+                </label>
+                <input type="password" id="password" name="password" 
+                       required autocomplete="current-password">
             </div>
             
-            <button type="submit" class="admin-btn">Login to Admin Panel</button>
+            <button type="submit" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i>
+                Secure Login
+            </button>
         </form>
         
+        <div class="security-info">
+            <h4><i class="fas fa-info-circle"></i> Security Features</h4>
+            <ul>
+                <li><i class="fas fa-check"></i> Encrypted connections (HTTPS)</li>
+                <li><i class="fas fa-check"></i> Session security</li>
+                <li><i class="fas fa-check"></i> Access logging</li>
+                <li><i class="fas fa-check"></i> CSRF protection</li>
+            </ul>
+        </div>
+        
         <div class="back-link">
-            <a href="/">← Back to Website</a>
+            <a href="/">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Site
+            </a>
         </div>
     </div>
+    
+    <script>
+        // Auto-focus on username field
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('username').focus();
+        });
+        
+        // Disable form submission during processing
+        document.querySelector('form').addEventListener('submit', function() {
+            const btn = document.querySelector('.login-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Authenticating...';
+        });
+    </script>
 </body>
 </html>

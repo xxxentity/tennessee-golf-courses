@@ -1,53 +1,39 @@
 <?php
-session_start();
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
+require_once '../includes/auth-security.php';
 
-$token = $_GET['token'] ?? '';
-$user = null;
-$error = '';
-
-if (empty($token)) {
-    $error = 'Invalid or missing reset token';
-} else {
-    try {
-        // Check if token is valid and not expired
-        $stmt = $pdo->prepare("SELECT id, first_name, email FROM users WHERE password_reset_token = ? AND password_reset_expires > NOW()");
-        $stmt->execute([$token]);
-        $user = $stmt->fetch();
-        
-        if (!$user) {
-            $error = 'Invalid or expired reset token';
-        }
-    } catch (PDOException $e) {
-        $error = 'Database error occurred';
-    }
+// Simple navigation for reset password page
+function renderSimpleNav() {
+    echo '
+    <nav style="background: var(--primary-color); padding: 1rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;">
+            <a href="/" style="color: white; text-decoration: none; font-weight: 600; font-size: 1.2rem;">
+                Tennessee Golf Courses
+            </a>
+            <div>
+                <a href="/login" style="color: white; text-decoration: none; margin-left: 1rem;">Login</a>
+                <a href="/register" style="color: white; text-decoration: none; margin-left: 1rem;">Register</a>
+            </div>
+        </div>
+    </nav>';
 }
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user) {
-    $new_password = $_POST['new_password'] ?? '';
-    $confirm_password = $_POST['confirm_password'] ?? '';
-    
-    if (empty($new_password) || empty($confirm_password)) {
-        $error = 'Please enter both password fields';
-    } elseif (strlen($new_password) < 6) {
-        $error = 'Password must be at least 6 characters long';
-    } elseif ($new_password !== $confirm_password) {
-        $error = 'Passwords do not match';
-    } else {
-        try {
-            // Update password and clear reset token
-            $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("UPDATE users SET password_hash = ?, password_reset_token = NULL, password_reset_expires = NULL, login_attempts = 0, account_locked_until = NULL WHERE id = ?");
-            $stmt->execute([$password_hash, $user['id']]);
-            
-            header('Location: login.php?success=' . urlencode('Password reset successfully. You can now login with your new password.'));
-            exit;
-            
-        } catch (PDOException $e) {
-            $error = 'Failed to update password. Please try again.';
-        }
-    }
+$token = $_GET['token'] ?? '';
+$error_message = $_GET['error'] ?? '';
+$success_message = $_GET['success'] ?? '';
+
+// Validate token
+if (empty($token)) {
+    header('Location: /password-reset?error=' . urlencode('Invalid or missing reset token.'));
+    exit;
+}
+
+// Check if token is valid
+$resetData = AuthSecurity::validatePasswordResetToken($pdo, $token);
+if (!$resetData) {
+    header('Location: /password-reset?error=' . urlencode('Invalid or expired reset token. Please request a new password reset.'));
+    exit;
 }
 ?>
 
@@ -233,65 +219,168 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user) {
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="../index.php" class="logo">Tennessee Golf Courses</a>
-            <ul class="nav-menu">
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php renderSimpleNav(); ?>
 
     <main class="auth-page">
         <div class="auth-container">
             <div class="auth-header">
                 <h2>Set New Password</h2>
-                <p>Enter your new password below</p>
+                <p>Create a strong, secure password for your account</p>
             </div>
             
             <div class="auth-body">
-                <?php if ($error): ?>
+                <?php if ($error_message): ?>
                     <div class="alert alert-error">
                         <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
-                        <?php echo htmlspecialchars($error); ?>
+                        <?php echo htmlspecialchars($error_message); ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if ($user): ?>
-                    <div class="user-info">
-                        <i class="fas fa-user" style="margin-right: 8px;"></i>
-                        Resetting password for: <strong><?php echo htmlspecialchars($user['email']); ?></strong>
-                    </div>
-
-                    <form method="POST">
-                        <div class="form-group">
-                            <label for="new_password">New Password</label>
-                            <input type="password" id="new_password" name="new_password" required minlength="6" placeholder="Enter new password">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" id="confirm_password" name="confirm_password" required minlength="6" placeholder="Confirm new password">
-                        </div>
-
-                        <button type="submit" class="btn-primary">Update Password</button>
-                    </form>
-                <?php else: ?>
-                    <div class="alert alert-error">
-                        <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
-                        This password reset link is invalid or has expired. Please request a new one.
+                <?php if ($success_message): ?>
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                        <?php echo htmlspecialchars($success_message); ?>
                     </div>
                 <?php endif; ?>
+
+                <div class="user-info">
+                    <i class="fas fa-user" style="margin-right: 8px;"></i>
+                    Resetting password for: <strong><?php echo htmlspecialchars($resetData['email']); ?></strong>
+                </div>
+
+                <form action="/reset-password-process" method="POST" id="resetForm">
+                    <?php echo CSRFProtection::getTokenField(); ?>
+                    <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
+                    
+                    <div class="form-group">
+                        <label for="password">New Password</label>
+                        <input type="password" id="password" name="password" required 
+                               placeholder="Enter your new password">
+                        
+                        <div id="passwordStrength" class="password-strength" style="display: none; margin-top: 10px; padding: 10px; border-radius: 8px; font-size: 0.9rem;">
+                            <div id="strengthText"></div>
+                            <ul id="requirementsList" style="margin: 5px 0 0 0; padding-left: 0; list-style: none; font-size: 0.85rem;">
+                                <li id="req-length">At least 8 characters</li>
+                                <li id="req-uppercase">One uppercase letter</li>
+                                <li id="req-lowercase">One lowercase letter</li>
+                                <li id="req-number">One number</li>
+                                <li id="req-special">One special character</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required 
+                               placeholder="Confirm your new password">
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary" disabled>Update Password</button>
+                </form>
             </div>
             
             <div class="auth-footer">
-                <p><a href="login.php">Back to Login</a> | <a href="forgot-password.php">Request New Reset Link</a></p>
+                <p><a href="/login">Back to Login</a> | <a href="/password-reset">Request New Reset Link</a></p>
             </div>
         </div>
     </main>
 
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmInput = document.getElementById('confirm_password');
+        const strengthDiv = document.getElementById('passwordStrength');
+        const strengthText = document.getElementById('strengthText');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        const requirements = {
+            length: { element: document.getElementById('req-length'), regex: /.{8,}/ },
+            uppercase: { element: document.getElementById('req-uppercase'), regex: /[A-Z]/ },
+            lowercase: { element: document.getElementById('req-lowercase'), regex: /[a-z]/ },
+            number: { element: document.getElementById('req-number'), regex: /[0-9]/ },
+            special: { element: document.getElementById('req-special'), regex: /[^A-Za-z0-9]/ }
+        };
+        
+        function checkPasswordStrength() {
+            const password = passwordInput.value;
+            const confirmPassword = confirmInput.value;
+            
+            if (password.length === 0) {
+                strengthDiv.style.display = 'none';
+                submitBtn.disabled = true;
+                return;
+            }
+            
+            strengthDiv.style.display = 'block';
+            
+            let score = 0;
+            let metRequirements = 0;
+            
+            for (const [key, req] of Object.entries(requirements)) {
+                if (req.regex.test(password)) {
+                    req.element.style.color = '#16a34a';
+                    req.element.innerHTML = '✓ ' + req.element.textContent.replace('✓ ', '').replace('✗ ', '');
+                    score += 20;
+                    metRequirements++;
+                } else {
+                    req.element.style.color = '#dc2626';
+                    req.element.innerHTML = '✗ ' + req.element.textContent.replace('✓ ', '').replace('✗ ', '');
+                }
+            }
+            
+            // Additional scoring
+            if (password.length >= 12) score += 10;
+            
+            let strengthLevel = 'weak';
+            let strengthClass = 'rgba(239, 68, 68, 0.1)';
+            let textColor = '#dc2626';
+            
+            if (score >= 90) {
+                strengthLevel = 'very strong';
+                strengthClass = 'rgba(34, 197, 94, 0.1)';
+                textColor = '#16a34a';
+            } else if (score >= 70) {
+                strengthLevel = 'strong';
+                strengthClass = 'rgba(34, 197, 94, 0.1)';
+                textColor = '#16a34a';
+            } else if (score >= 50) {
+                strengthLevel = 'medium';
+                strengthClass = 'rgba(245, 158, 11, 0.1)';
+                textColor = '#d97706';
+            }
+            
+            strengthDiv.style.background = strengthClass;
+            strengthDiv.style.color = textColor;
+            strengthDiv.style.border = `1px solid ${strengthClass}`;
+            strengthText.textContent = `Password strength: ${strengthLevel} (${score}/100)`;
+            
+            // Enable submit button only if password is strong enough and passwords match
+            const passwordsMatch = password === confirmPassword && confirmPassword.length > 0;
+            const strongEnough = score >= 80;
+            
+            submitBtn.disabled = !(strongEnough && passwordsMatch);
+        }
+        
+        passwordInput.addEventListener('input', checkPasswordStrength);
+        confirmInput.addEventListener('input', checkPasswordStrength);
+        
+        // Form submission validation
+        document.getElementById('resetForm').addEventListener('submit', function(e) {
+            const password = passwordInput.value;
+            const confirmPassword = confirmInput.value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match. Please check your passwords and try again.');
+                return;
+            }
+            
+            if (password.length < 8) {
+                e.preventDefault();
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+        });
+    </script>
     <script src="../script.js"></script>
 </body>
 </html>

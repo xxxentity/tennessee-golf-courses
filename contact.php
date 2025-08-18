@@ -1,6 +1,8 @@
 <?php
 require_once 'includes/init.php';
 require_once 'includes/csrf.php';
+require_once 'includes/input-validation.php';
+require_once 'includes/output-security.php';
 
 // Handle form submission
 $success_message = '';
@@ -12,55 +14,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please try again.';
     } else {
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $inquiry_type = $_POST['inquiry_type'];
-    $subject = trim($_POST['subject']);
-    $message = trim($_POST['message']);
-    
-    // Validation
-    $errors = [];
-    
-    if (empty($name)) {
-        $errors[] = "Name is required";
-    }
-    
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Valid email is required";
-    }
-    
-    if (empty($inquiry_type)) {
-        $errors[] = "Please select an inquiry type";
-    }
-    
-    if (empty($subject)) {
-        $errors[] = "Subject is required";
-    }
-    
-    if (empty($message)) {
-        $errors[] = "Message is required";
-    }
+        // Enhanced input validation for contact form
+        $formData = [
+            'name' => $_POST['name'] ?? '',
+            'email' => $_POST['email'] ?? '',
+            'subject' => $_POST['subject'] ?? '',
+            'message' => $_POST['message'] ?? ''
+        ];
+        
+        $validationRules = [
+            'name' => ['type' => 'name', 'name_type' => 'full'],
+            'email' => ['type' => 'email', 'check_dns' => false],
+            'subject' => ['type' => 'text', 'min_length' => 5, 'max_length' => 200, 'allow_html' => false],
+            'message' => ['type' => 'text', 'min_length' => 20, 'max_length' => 2000, 'allow_html' => false]
+        ];
+        
+        $validation = InputValidator::validateArray($formData, $validationRules);
+        $errors = [];
+        
+        // Extract validated data
+        $name = $validation['data']['name'];
+        $email = $validation['data']['email'];
+        $subject = $validation['data']['subject'];
+        $message = $validation['data']['message'];
+        $inquiry_type = InputValidator::sanitizeString($_POST['inquiry_type'] ?? '', ['max_length' => 50]);
+        
+        // Collect validation errors
+        if (!$validation['valid']) {
+            foreach ($validation['errors'] as $field => $fieldErrors) {
+                $errors = array_merge($errors, $fieldErrors);
+            }
+        }
+        
+        // Validate inquiry type
+        $allowedInquiryTypes = ['General Inquiry', 'Course Information', 'Event Planning', 'Technical Support', 'Feedback', 'Partnership'];
+        if (empty($inquiry_type) || !in_array($inquiry_type, $allowedInquiryTypes)) {
+            $errors[] = "Please select a valid inquiry type";
+        }
+        
+        // Additional security checks
+        if (InputValidator::containsXSS($message) || InputValidator::containsSQLInjection($message)) {
+            $errors[] = "Message contains invalid content";
+            error_log("Suspicious contact form submission from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+        }
     
     if (empty($errors)) {
-        // Send email
+        // Send email with sanitized content
         $to = "info@tennesseegolfcourses.com";
-        $email_subject = "[$inquiry_type] $subject";
+        $email_subject = "[" . InputValidator::safeOutput($inquiry_type) . "] " . InputValidator::safeOutput($subject);
         
         $email_message = "
 New contact form submission from Tennessee Golf Courses website:
 
-Inquiry Type: $inquiry_type
-Name: $name
-Email: $email
-Subject: $subject
+Inquiry Type: " . InputValidator::safeOutput($inquiry_type) . "
+Name: " . InputValidator::safeOutput($name) . "
+Email: " . InputValidator::safeOutput($email) . "
+Subject: " . InputValidator::safeOutput($subject) . "
 
 Message:
-$message
+" . InputValidator::safeOutput($message) . "
 
 ---
-Submitted from: " . $_SERVER['HTTP_HOST'] . "
-IP Address: " . $_SERVER['REMOTE_ADDR'] . "
-User Agent: " . $_SERVER['HTTP_USER_AGENT'] . "
+Submitted from: " . InputValidator::safeOutput($_SERVER['HTTP_HOST'] ?? 'unknown') . "
+IP Address: " . InputValidator::safeOutput($_SERVER['REMOTE_ADDR'] ?? 'unknown') . "
+User Agent: " . InputValidator::safeOutput($_SERVER['HTTP_USER_AGENT'] ?? 'unknown') . "
 Time: " . date('Y-m-d H:i:s');
 
         $headers = "From: $email\r\n";
@@ -368,14 +385,14 @@ Time: " . date('Y-m-d H:i:s');
                 <?php if ($success_message): ?>
                     <div class="alert alert-success">
                         <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
-                        <?php echo htmlspecialchars($success_message); ?>
+                        <?php echo esc($success_message); ?>
                     </div>
                 <?php endif; ?>
                 
                 <?php if ($error_message): ?>
                     <div class="alert alert-error">
                         <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
-                        <?php echo htmlspecialchars($error_message); ?>
+                        <?php echo esc($error_message); ?>
                     </div>
                 <?php endif; ?>
 
@@ -383,12 +400,12 @@ Time: " . date('Y-m-d H:i:s');
                     <?php echo CSRFProtection::getTokenField(); ?>
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
+                        <input type="text" id="name" name="name" required value="<?php echo isset($_POST['name']) ? esc_attr($_POST['name']) : ''; ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                        <input type="email" id="email" name="email" required value="<?php echo isset($_POST['email']) ? esc_attr($_POST['email']) : ''; ?>">
                     </div>
 
                     <div class="form-group">
@@ -405,12 +422,12 @@ Time: " . date('Y-m-d H:i:s');
 
                     <div class="form-group">
                         <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required value="<?php echo isset($_POST['subject']) ? htmlspecialchars($_POST['subject']) : ''; ?>">
+                        <input type="text" id="subject" name="subject" required value="<?php echo isset($_POST['subject']) ? esc_attr($_POST['subject']) : ''; ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."><?php echo isset($_POST['message']) ? htmlspecialchars($_POST['message']) : ''; ?></textarea>
+                        <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."><?php echo isset($_POST['message']) ? esc($_POST['message']) : ''; ?></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">

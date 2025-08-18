@@ -2,6 +2,8 @@
 require_once '../includes/session-security.php';
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
+require_once '../includes/auth-security.php';
+require_once '../includes/input-validation.php';
 
 // Start secure session
 try {
@@ -24,13 +26,31 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Get form data
-$username = trim($_POST['username']);
-$password = $_POST['password'];
+// Get and validate form data
+$username = InputValidator::sanitizeString($_POST['username'] ?? '', ['max_length' => 254]);
+$password = $_POST['password'] ?? '';
+$clientIP = AuthSecurity::getClientIP();
 
-// Validation
+// Basic validation
 if (empty($username) || empty($password)) {
     header('Location: /login?error=' . urlencode('Please enter both username and password'));
+    exit;
+}
+
+// Additional security checks
+if (InputValidator::containsXSS($username) || InputValidator::containsSQLInjection($username)) {
+    // Log suspicious login attempt
+    error_log("Suspicious login attempt from IP: $clientIP with username: " . substr($username, 0, 50));
+    header('Location: /login?error=' . urlencode('Invalid login credentials'));
+    exit;
+}
+
+// Check for suspicious activity from this IP
+$suspiciousActivity = AuthSecurity::analyzeSuspiciousActivity($pdo, $clientIP);
+if ($suspiciousActivity['should_block']) {
+    AuthSecurity::recordLoginAttempt($pdo, $username, false, $clientIP);
+    error_log("Blocked login attempt from suspicious IP: $clientIP");
+    header('Location: /login?error=' . urlencode('Too many failed login attempts. Please try again later.'));
     exit;
 }
 
@@ -65,29 +85,44 @@ try {
         exit;
     }
     
-    // Verify password
-    if (!password_verify($password, $user['password_hash'])) {
+    // Verify password using enhanced authentication
+    if (!AuthSecurity::verifyPassword($password, $user['password_hash'])) {
+        // Record failed login attempt
+        AuthSecurity::recordLoginAttempt($pdo, $username, false, $clientIP);
+        
         // Increment login attempts
         $newAttempts = $user['login_attempts'] + 1;
         
-        if ($newAttempts >= 5) {
-            // Lock account for 1 hour
-            $lockUntil = (new DateTime())->add(new DateInterval('PT1H'))->format('Y-m-d H:i:s');
+        if ($newAttempts >= AuthSecurity::MAX_LOGIN_ATTEMPTS) {
+            // Lock account
+            $lockUntil = (new DateTime())->add(new DateInterval('PT' . AuthSecurity::LOCKOUT_DURATION . 'S'))->format('Y-m-d H:i:s');
             $stmt = $pdo->prepare("UPDATE users SET login_attempts = ?, account_locked_until = ? WHERE id = ?");
-            $stmt->execute([5, $lockUntil, $user['id']]);
-            header('Location: /login?error=' . urlencode('Account locked due to 5 failed login attempts. Please reset your password or try again in 1 hour.'));
+            $stmt->execute([$newAttempts, $lockUntil, $user['id']]);
+            
+            error_log("Account locked for user ID {$user['id']} due to failed login attempts from IP: $clientIP");
+            header('Location: /login?error=' . urlencode('Account locked due to too many failed login attempts. Please reset your password or try again later.'));
         } else {
             $stmt = $pdo->prepare("UPDATE users SET login_attempts = ? WHERE id = ?");
             $stmt->execute([$newAttempts, $user['id']]);
-            $remaining = 5 - $newAttempts;
+            $remaining = AuthSecurity::MAX_LOGIN_ATTEMPTS - $newAttempts;
             header('Location: /login?error=' . urlencode('Invalid username or password. ' . $remaining . ' attempts remaining before account lock.'));
         }
         exit;
     }
     
-    // Login successful - reset login attempts and create session
-    $stmt = $pdo->prepare("UPDATE users SET login_attempts = 0, account_locked_until = NULL WHERE id = ?");
+    // Check if password needs rehashing (security upgrade)
+    if (AuthSecurity::needsRehash($user['password_hash'])) {
+        $newHash = AuthSecurity::hashPassword($password);
+        $stmt = $pdo->prepare("UPDATE users SET password_hash = ?, password_changed_at = NOW() WHERE id = ?");
+        $stmt->execute([$newHash, $user['id']]);
+    }
+    
+    // Login successful - reset login attempts and update last login
+    $stmt = $pdo->prepare("UPDATE users SET login_attempts = 0, account_locked_until = NULL, last_login = NOW() WHERE id = ?");
     $stmt->execute([$user['id']]);
+    
+    // Record successful login attempt
+    AuthSecurity::recordLoginAttempt($pdo, $username, true, $clientIP);
     
     // Use secure session login method
     SecureSession::login($user['id'], $user['username']);
@@ -96,6 +131,9 @@ try {
     SecureSession::set('email', $user['email']);
     SecureSession::set('first_name', $user['first_name']);
     SecureSession::set('last_name', $user['last_name']);
+    
+    // Log successful login for security audit
+    error_log("Successful login for user ID {$user['id']} from IP: $clientIP");
     
     // Redirect to homepage or requested page
     $redirect = isset($_GET['redirect']) ? $_GET['redirect'] : '/';

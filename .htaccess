@@ -174,7 +174,10 @@ RewriteRule ^login-process/?$ auth/login-process.php [L]
 RewriteRule ^logout/?$ auth/logout.php [L]
 RewriteRule ^forgot-password/?$ auth/forgot-password.php [L]
 RewriteRule ^forgot-password-process/?$ auth/forgot-password-process.php [L]
+RewriteRule ^password-reset/?$ auth/password-reset.php [L]
+RewriteRule ^password-reset-process/?$ auth/password-reset-process.php [L]
 RewriteRule ^reset-password/?$ auth/reset-password.php [L]
+RewriteRule ^reset-password-process/?$ auth/reset-password-process.php [L]
 RewriteRule ^verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^debug-register/?$ auth/debug-register.php [L]
 RewriteRule ^debug-login/?$ auth/debug-login.php [L]
@@ -182,6 +185,7 @@ RewriteRule ^debug-login/?$ auth/debug-login.php [L]
 # Handle user pages (clean URLs without /user/ prefix)
 RewriteRule ^profile/?$ user/profile.php [L]
 RewriteRule ^edit-profile/?$ user/edit-profile.php [L]
+RewriteRule ^security-dashboard/?$ user/security-dashboard.php [L]
 
 # Handle newsletter pages
 RewriteRule ^newsletter-subscribe/?$ newsletter-subscribe.php [L]
@@ -191,6 +195,11 @@ RewriteRule ^newsletter-test/?$ newsletter-test.php [L]
 # Handle admin pages
 RewriteRule ^admin/login/?$ admin/login.php [L]
 RewriteRule ^admin/logout/?$ admin/logout.php [L]
+RewriteRule ^admin/dashboard/?$ admin/dashboard.php [L]
+RewriteRule ^admin/users/?$ admin/users.php [L]
+RewriteRule ^admin/security/?$ admin/security.php [L]
+RewriteRule ^admin/logs/?$ admin/logs.php [L]
+RewriteRule ^admin/settings/?$ admin/settings.php [L]
 RewriteRule ^admin/newsletter/?$ admin/newsletter-admin.php [L]
 RewriteRule ^admin/create-admin/?$ admin/create-admin.php [L]
 RewriteRule ^admin/change-password/?$ admin/change-password.php [L]
@@ -200,6 +209,15 @@ RewriteRule ^admin/fix-login/?$ admin/fix-login.php [L]
 RewriteRule ^admin/test-hash/?$ admin/test-hash.php [L]
 RewriteRule ^admin/check-registrations/?$ admin/check-registrations.php [L]
 RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
+
+# Handle API routes
+RewriteRule ^api/?$ api/v1/index.php [L]
+RewriteRule ^api/v1/?$ api/v1/index.php [L]
+RewriteRule ^api/v1/courses/?$ api/v1/courses.php [L]
+RewriteRule ^api/v1/courses/([0-9]+)/?$ api/v1/courses.php?id=$1 [L]
+RewriteRule ^api/v1/auth/?$ api/v1/auth.php [L]
+RewriteRule ^api/v1/user/?$ api/v1/user.php [L]
+RewriteRule ^api/v1/newsletter/?$ api/v1/newsletter.php [L]
 
 # General clean URL rewriting (internal)
 RewriteCond %{REQUEST_FILENAME} !-f
