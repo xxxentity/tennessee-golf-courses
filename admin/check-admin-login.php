@@ -64,6 +64,29 @@ echo '<input type="password" name="new_password" placeholder="New password">';
 echo '<button type="submit" name="create_new">Update Admin Password</button>';
 echo '</form>';
 
+// Test AdminSecurity authentication
+echo '<h3>Test AdminSecurity Authentication</h3>';
+if (isset($_POST['test_admin_auth'])) {
+    require_once '../includes/admin-security-simple.php';
+    
+    $test_username = $_POST['test_username'] ?? '';
+    $test_password = $_POST['test_password_auth'] ?? '';
+    
+    if (!empty($test_username) && !empty($test_password)) {
+        echo "<p><strong>Testing AdminSecurity::authenticateAdmin()...</strong></p>";
+        $result = AdminSecurity::authenticateAdmin($pdo, $test_username, $test_password);
+        
+        echo "<p><strong>Result:</strong></p>";
+        echo "<pre>" . print_r($result, true) . "</pre>";
+    }
+}
+
+echo '<form method="POST">';
+echo '<input type="text" name="test_username" placeholder="Username" value="admin">';
+echo '<input type="password" name="test_password_auth" placeholder="Password">';
+echo '<button type="submit" name="test_admin_auth">Test AdminSecurity Auth</button>';
+echo '</form>';
+
 // Handle new password creation
 if (isset($_POST['create_new']) && isset($_POST['new_password'])) {
     $new_password = $_POST['new_password'];

@@ -55,14 +55,8 @@ class AdminSecurity {
                 ];
             }
             
-            // Success - update last login
-            try {
-                $stmt = $pdo->prepare("UPDATE admin_users SET last_login = NOW() WHERE id = ?");
-                $stmt->execute([$admin['id']]);
-            } catch (PDOException $e) {
-                // Don't fail login if we can't update last_login
-                error_log("Failed to update last_login for admin: " . $e->getMessage());
-            }
+            // Success - skip last_login update since column may not exist
+            // TODO: Add last_login column to admin_users table if needed
             
             // Log successful login
             error_log("Admin login successful: '$username' from IP: $clientIP");
