@@ -672,7 +672,6 @@ try {
                 <p>Experience the beauty of Druid Hills Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/druid-hills-golf-club/1.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/druid-hills-golf-club/2.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/druid-hills-golf-club/3.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/druid-hills-golf-club/4.jpeg');"></div>

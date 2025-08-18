@@ -669,7 +669,6 @@ try {
                 <p>Experience the beauty of Dead Horse Lake Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/1.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/2.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/3.jpeg');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/4.jpeg');"></div>
