@@ -49,10 +49,76 @@ $strengthColor = $strengthColors[$securityStatus['level']] ?? '#6b7280';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <style>
+        /* Weather Bar Styles */
+        .weather-bar {
+            background: linear-gradient(135deg, #2c5234, #1a3d26);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .weather-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .weather-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .current-time, .weather-widget {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .weather-location {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-left: 5px;
+        }
+        
+        .golf-conditions {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .condition-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .weather-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .weather-info, .golf-conditions {
+                gap: 1rem;
+            }
+        }
+        
         .security-dashboard {
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 2rem;
+            margin-top: 100px; /* Account for weather bar */
         }
         
         .dashboard-header {
@@ -215,6 +281,33 @@ $strengthColor = $strengthColors[$securityStatus['level']] ?? '#6b7280';
     </style>
 </head>
 <body>
+    <!-- Weather Bar -->
+    <div class="weather-bar">
+        <div class="weather-container">
+            <div class="weather-info">
+                <div class="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time">Loading...</span>
+                </div>
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span id="weather-temp">Perfect Golf Weather</span>
+                    <span class="weather-location">Nashville, TN</span>
+                </div>
+            </div>
+            <div class="golf-conditions">
+                <div class="condition-item">
+                    <i class="fas fa-wind"></i>
+                    <span>Light Breeze</span>
+                </div>
+                <div class="condition-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Clear</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
@@ -330,5 +423,16 @@ $strengthColor = $strengthColors[$securityStatus['level']] ?? '#6b7280';
 
     <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
+    
+    <script src="../script.js"></script>
+    <script src="../weather.js"></script>
+    <script>
+        // Initialize weather widget
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.WeatherWidget) {
+                WeatherWidget.init();
+            }
+        });
+    </script>
 </body>
 </html>

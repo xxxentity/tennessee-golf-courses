@@ -378,11 +378,17 @@ try {
     </main>
 
     <script src="../script.js"></script>
+    <script src="../weather.js"></script>
     <script>
         // Profile page specific functionality
         document.addEventListener('DOMContentLoaded', function() {
             // CSS already handles hover animations, no additional JS needed
             console.log('Profile page loaded successfully');
+            
+            // Initialize weather widget
+            if (window.WeatherWidget) {
+                WeatherWidget.init();
+            }
         });
     </script>
 </body>

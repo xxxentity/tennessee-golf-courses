@@ -565,5 +565,14 @@ try {
     </script>
     
     <script src="../script.js"></script>
+    <script src="../weather.js"></script>
+    <script>
+        // Initialize weather widget
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.WeatherWidget) {
+                WeatherWidget.init();
+            }
+        });
+    </script>
 </body>
 </html>
