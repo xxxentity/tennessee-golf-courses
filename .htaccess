@@ -207,6 +207,7 @@ RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
 RewriteRule ^admin/check-admin-login/?$ admin/check-admin-login.php [L]
 RewriteRule ^admin/reset-admin-password/?$ admin/reset-admin-password.php [L]
 RewriteRule ^admin/check-user-login/?$ admin/check-user-login.php [L]
+RewriteRule ^admin/debug-user-login/?$ admin/debug-user-login.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
