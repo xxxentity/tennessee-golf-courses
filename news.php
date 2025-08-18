@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead',
+        'slug' => 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead',
+        'date' => '2025-08-16',
+        'time' => '8:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre overcomes hostile crowd and brutal pin placements to maintain four-shot lead over Scottie Scheffler after BMW Championship third round.',
+        'image' => '/images/news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship',
         'slug' => 'macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship',
         'date' => '2025-08-15',
