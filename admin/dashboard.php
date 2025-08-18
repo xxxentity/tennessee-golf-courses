@@ -166,6 +166,8 @@ try {
         .icon-logs { background: linear-gradient(135deg, #f59e0b, #d97706); }
         .icon-settings { background: linear-gradient(135deg, #6b7280, #4b5563); }
         .icon-newsletter { background: linear-gradient(135deg, #10b981, #059669); }
+        .icon-performance { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-seo { background: linear-gradient(135deg, #06b6d4, #0891b2); }
         
         .card-description {
             color: #6b7280;
@@ -423,6 +425,38 @@ try {
                 </p>
                 <div class="card-action">
                     <span class="action-text">Manage Newsletter</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </a>
+            
+            <a href="/admin/performance-monitor" class="admin-card">
+                <div class="card-header">
+                    <h3 class="card-title">Performance Monitor</h3>
+                    <div class="card-icon icon-performance">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Monitor site performance, cache statistics, database queries, and execution metrics.
+                </p>
+                <div class="card-action">
+                    <span class="action-text">View Performance</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </a>
+            
+            <a href="/admin/seo-manager" class="admin-card">
+                <div class="card-header">
+                    <h3 class="card-title">SEO Manager</h3>
+                    <div class="card-icon icon-seo">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Manage SEO optimization, meta tags, sitemaps, and search engine visibility.
+                </p>
+                <div class="card-action">
+                    <span class="action-text">Manage SEO</span>
                     <i class="fas fa-arrow-right action-arrow"></i>
                 </div>
             </a>
