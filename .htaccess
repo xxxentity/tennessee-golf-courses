@@ -210,6 +210,7 @@ RewriteRule ^admin/test-hash/?$ admin/test-hash.php [L]
 RewriteRule ^admin/check-registrations/?$ admin/check-registrations.php [L]
 RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
 RewriteRule ^admin/users-simple/?$ admin/users-simple.php [L]
+RewriteRule ^admin/login-simple/?$ admin/login-simple.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
