@@ -1,6 +1,10 @@
 <?php
-// Enhanced performance with caching and optimization
+// Enhanced performance with caching and optimization plus SEO
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for courses page
+SEO::setupCoursesPage();
 
 // Get filters from URL parameters
 $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
@@ -1523,9 +1527,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf Courses in Tennessee - Find Your Perfect Course</title>
-    <meta name="description" content="Discover the best golf courses in Tennessee. Browse by location, price, difficulty and amenities. Read reviews and book tee times.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -2624,5 +2626,6 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <?php endif; ?>
     
     <?php echo Performance::getPerformanceScript(); ?>
+    <?php echo SEO::generateStructuredData(); ?>
 </body>
 </html>

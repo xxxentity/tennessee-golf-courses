@@ -1,6 +1,16 @@
 User-agent: *
 Allow: /
 
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
 # Important pages
 Allow: /courses
 Allow: /reviews
@@ -16,14 +26,20 @@ Allow: /courses/*
 Allow: /news/*
 Allow: /reviews/*
 
-# Disallow admin and auth areas
+# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /auth/
 Disallow: /user/
 Disallow: /config/
 Disallow: /database/
 Disallow: /includes/
+Disallow: /cache/
 Disallow: /uploads/
+
+# Disallow search result pages with query parameters
+Disallow: /*?search=*
+Disallow: /*?debug=*
+Disallow: /*?page=*
 
 # Disallow utility files
 Disallow: *.php$
@@ -33,6 +49,7 @@ Disallow: /newsletter-subscribe.php
 Disallow: /setup_course_comments.php
 Disallow: /debug_db.php
 Disallow: /deploy.php
+Disallow: /sitemap-generator.php
 
 # Allow CSS, JS, and images
 Allow: /styles.css
@@ -42,3 +59,6 @@ Allow: /images/
 
 # Sitemap location
 Sitemap: https://tennesseegolfcourses.com/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1

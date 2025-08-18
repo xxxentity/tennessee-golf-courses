@@ -1,15 +1,16 @@
 <?php
-// Load security headers
-require_once 'includes/security-headers.php';
+// Enhanced SEO and performance initialization
+require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for homepage
+SEO::setupHomepage();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennessee Golf Courses - Discover Premier Golf in Tennessee</title>
-    <!-- DEPLOYMENT TEST: Git deployment without .cpanel.yml -->
-    <meta name="description" content="Discover the best golf courses in Tennessee. Reviews, course information, tee times, and the latest golf news from across the state.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="styles.css?v=9">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -481,5 +482,7 @@ require_once 'includes/security-headers.php';
             }
         });
     </script>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </body>
 </html>
