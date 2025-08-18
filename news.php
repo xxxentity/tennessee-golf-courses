@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round',
+        'slug' => 'macintyre-explodes-for-62-leads-bmw-championship',
+        'date' => '2025-08-14',
+        'time' => '8:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre fires career-low 62 with six straight closing birdies to take three-shot lead over Tommy Fleetwood after BMW Championship first round.',
+        'image' => '/images/news/macintyre-explodes-for-62-leads-bmw-championship/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'FedEx St. Jude Championship 2025: Complete Tournament Recap and Community Impact',
         'slug' => 'fedex-st-jude-championship-2025-complete-recap-community-impact',
         'date' => '2025-08-11',
