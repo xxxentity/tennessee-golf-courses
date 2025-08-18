@@ -210,16 +210,13 @@ try {
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .gallery-item:hover {
             transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         
         .view-all-btn {
