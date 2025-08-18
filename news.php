@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Scheffler Delivers Stunning Comeback to Win BMW Championship',
+        'slug' => 'scheffler-delivers-stunning-comeback-wins-bmw-championship',
+        'date' => '2025-08-17',
+        'time' => '9:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Scottie Scheffler erases four-shot deficit with miraculous chip-in on 17th to defeat Robert MacIntyre and claim fifth victory of 2025 season.',
+        'image' => '/images/news/scheffler-delivers-stunning-comeback-wins-bmw-championship/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead',
         'slug' => 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead',
         'date' => '2025-08-16',
