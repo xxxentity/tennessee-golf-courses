@@ -1,14 +1,14 @@
 <?php
-session_start();
+require_once '../includes/init.php';
 require_once '../config/database.php';
 
-// Check if user is logged in
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+// Check if user is logged in using the proper session system
+if (!$is_logged_in) {
     header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
 
-$user_id = $_SESSION['user_id'];
+// Use the user_id from init.php which uses SecureSession
 
 // Get user details
 try {
