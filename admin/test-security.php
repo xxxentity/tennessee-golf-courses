@@ -1,5 +1,6 @@
 <?php
 require_once '../includes/admin-security-simple.php';
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
 // Require admin authentication

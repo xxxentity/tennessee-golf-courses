@@ -76,6 +76,48 @@ CREATE TABLE IF NOT EXISTS api_security_logs (
     FOREIGN KEY (admin_id) REFERENCES admin_users(id) ON DELETE SET NULL
 );
 
+-- API request tracking
+CREATE TABLE IF NOT EXISTS api_requests (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    request_id VARCHAR(32) NOT NULL UNIQUE,
+    endpoint VARCHAR(500) NOT NULL,
+    method VARCHAR(10) NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    user_agent TEXT,
+    user_id INT NULL,
+    admin_id INT NULL,
+    status_code INT NOT NULL,
+    response_time_ms INT,
+    request_data JSON,
+    response_data JSON,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_request_id (request_id),
+    INDEX idx_endpoint (endpoint),
+    INDEX idx_ip_address (ip_address),
+    INDEX idx_user_id (user_id),
+    INDEX idx_admin_id (admin_id),
+    INDEX idx_created_at (created_at),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
+    FOREIGN KEY (admin_id) REFERENCES admin_users(id) ON DELETE SET NULL
+);
+
+-- API blacklist for blocking malicious IPs/tokens
+CREATE TABLE IF NOT EXISTS api_blacklist (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type ENUM('ip', 'user_agent', 'token') NOT NULL,
+    value VARCHAR(500) NOT NULL,
+    reason VARCHAR(255) NOT NULL,
+    added_by INT NULL COMMENT 'Admin who added this entry',
+    expires_at TIMESTAMP NULL COMMENT 'NULL for permanent ban',
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_type_value (type, value),
+    INDEX idx_is_active (is_active),
+    INDEX idx_expires_at (expires_at),
+    FOREIGN KEY (added_by) REFERENCES admin_users(id) ON DELETE SET NULL
+);
+
 -- API request analytics (optional, for monitoring)
 CREATE TABLE IF NOT EXISTS api_analytics (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,

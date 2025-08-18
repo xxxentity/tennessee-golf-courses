@@ -212,6 +212,7 @@ RewriteRule ^admin/check-registrations/?$ admin/check-registrations.php [L]
 RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
 RewriteRule ^admin/run-all-migrations/?$ admin/run-all-migrations.php [L]
 RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
+RewriteRule ^admin/fix-api-tables/?$ admin/fix-api-tables.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
