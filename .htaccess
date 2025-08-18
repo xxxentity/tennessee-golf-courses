@@ -211,6 +211,7 @@ RewriteRule ^admin/check-registrations/?$ admin/check-registrations.php [L]
 RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
 RewriteRule ^admin/debug-users/?$ admin/debug-users.php [L]
 RewriteRule ^admin/users-simple/?$ admin/users-simple.php [L]
+RewriteRule ^admin/check-users-table/?$ admin/check-users-table.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]

@@ -70,7 +70,8 @@ $countStmt->execute($params);
 $totalUsers = $countStmt->fetchColumn();
 
 // Get users (LIMIT and OFFSET cannot be parameterized)
-$sql = "SELECT id, username, email, first_name, last_name, is_active, created_at, last_login 
+// Note: Removed last_login since it may not exist in all setups
+$sql = "SELECT id, username, email, first_name, last_name, is_active, created_at 
         FROM users $whereClause 
         ORDER BY created_at DESC 
         LIMIT $limit OFFSET $offset";
@@ -434,8 +435,7 @@ $totalPages = ceil($totalUsers / $limit);
                         <th>User</th>
                         <th>Email</th>
                         <th>Status</th>
-                        <th>Joined</th>
-                        <th>Last Login</th>
+                        <th>Member Since</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -458,14 +458,7 @@ $totalPages = ceil($totalUsers / $limit);
                                     <?php echo $user['is_active'] ? 'Active' : 'Inactive'; ?>
                                 </span>
                             </td>
-                            <td><?php echo date('M j, Y', strtotime($user['created_at'])); ?></td>
-                            <td>
-                                <?php if ($user['last_login']): ?>
-                                    <?php echo date('M j, Y g:i A', strtotime($user['last_login'])); ?>
-                                <?php else: ?>
-                                    <span style="color: #6b7280;">Never</span>
-                                <?php endif; ?>
-                            </td>
+                            <td><?php echo date('M j, Y g:i A', strtotime($user['created_at'])); ?></td>
                             <td>
                                 <div class="actions">
                                     <form method="POST" style="display: inline;">
