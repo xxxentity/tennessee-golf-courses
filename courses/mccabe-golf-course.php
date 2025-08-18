@@ -864,7 +864,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/mccabe-golf-course/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/mccabe-golf-course/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/mccabe-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

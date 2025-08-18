@@ -1053,7 +1053,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/the-club-at-gettysvue/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-gettysvue/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-gettysvue/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

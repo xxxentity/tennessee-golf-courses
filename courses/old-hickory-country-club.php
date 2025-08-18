@@ -819,7 +819,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/old-hickory-country-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/old-hickory-country-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/old-hickory-country-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

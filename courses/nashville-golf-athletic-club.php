@@ -937,7 +937,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/nashville-golf-athletic-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/nashville-golf-athletic-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/nashville-golf-athletic-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

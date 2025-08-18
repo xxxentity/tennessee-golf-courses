@@ -954,7 +954,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/springhouse-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/springhouse-golf-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/springhouse-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             

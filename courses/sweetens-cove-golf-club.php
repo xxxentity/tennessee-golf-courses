@@ -968,7 +968,7 @@ try {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/sweetens-cove-golf-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/sweetens-cove-golf-club/${i}.webp`, '_blank');
+                galleryItem.onclick = () => window.open(`../images/courses/sweetens-cove-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
