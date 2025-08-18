@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once 'config/database.php';
+// Enhanced performance with caching and optimization
+require_once 'includes/init.php';
 
 // Get filters from URL parameters
 $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
@@ -2612,5 +2612,17 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             });
         });
     </script>
+    
+    <!-- Performance monitoring (development mode) -->
+    <?php if (isset($_GET['debug']) && $_GET['debug'] === 'performance'): ?>
+        <?php $finalMetrics = Performance::getMetrics(); ?>
+        <div style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 12px; z-index: 9999;">
+            <div>Load Time: <?php echo round($finalMetrics['execution_time'] * 1000, 2); ?>ms</div>
+            <div>Memory: <?php echo $finalMetrics['memory_current_mb']; ?>MB</div>
+            <div>Peak: <?php echo $finalMetrics['memory_peak_mb']; ?>MB</div>
+        </div>
+    <?php endif; ?>
+    
+    <?php echo Performance::getPerformanceScript(); ?>
 </body>
 </html>

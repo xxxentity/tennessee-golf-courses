@@ -204,6 +204,7 @@ RewriteRule ^admin/change-password/?$ admin/change-password.php [L]
 RewriteRule ^admin/set-new-password/?$ admin/set-new-password.php [L]
 RewriteRule ^admin/run-all-migrations/?$ admin/run-all-migrations.php [L]
 RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
+RewriteRule ^admin/performance-monitor/?$ admin/performance-monitor.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
