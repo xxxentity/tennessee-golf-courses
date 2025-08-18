@@ -151,6 +151,7 @@ RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landin
 RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/macintyre-explodes-for-62-leads-bmw-championship/?$ news/macintyre-explodes-for-62-leads-bmw-championship.php [L]
 RewriteRule ^news/fedex-st-jude-championship-2025-complete-recap-community-impact/?$ news/fedex-st-jude-championship-2025-complete-recap-community-impact.php [L]
 RewriteRule ^news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/?$ news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak.php [L]
 RewriteRule ^news/fleetwood-maintains-narrow-lead-scheffler-charges/?$ news/fleetwood-maintains-narrow-lead-scheffler-charges.php [L]
