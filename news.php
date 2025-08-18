@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship',
+        'slug' => 'macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship',
+        'date' => '2025-08-15',
+        'time' => '7:30 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre fires bogey-free 64 to extend lead to five shots over Scottie Scheffler after BMW Championship second round at Caves Valley Golf Club.',
+        'image' => '/images/news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round',
         'slug' => 'macintyre-explodes-for-62-leads-bmw-championship',
         'date' => '2025-08-14',
