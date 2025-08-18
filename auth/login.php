@@ -1,3 +1,18 @@
+<?php
+require_once '../includes/session-security.php';
+require_once '../includes/csrf.php';
+
+// Start secure session for CSRF protection
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // If session fails, continue but log the error
+    error_log("Session start failed in login.php: " . $e->getMessage());
+}
+
+// Generate CSRF token
+$csrf_token = CSRFProtection::generateToken();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,7 +220,9 @@
                 }
                 ?>
 
-                <form action="login-process-simple" method="POST">
+                <form action="login-process" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+                    
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" required placeholder="Enter username or email">

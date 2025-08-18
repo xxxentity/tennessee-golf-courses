@@ -11,8 +11,21 @@ class CSRFProtection {
      * @return string The generated token
      */
     public static function generateToken() {
+        // Ensure session is started (compatible with SecureSession)
         if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+            try {
+                // Try to use SecureSession if available
+                if (class_exists('SecureSession')) {
+                    SecureSession::start();
+                } else {
+                    session_start();
+                }
+            } catch (Exception $e) {
+                // Fallback to regular session
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+            }
         }
         
         $token = bin2hex(random_bytes(32));
@@ -27,8 +40,19 @@ class CSRFProtection {
      * @return string The current token
      */
     public static function getToken() {
+        // Ensure session is started (compatible with SecureSession)
         if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+            try {
+                if (class_exists('SecureSession')) {
+                    SecureSession::start();
+                } else {
+                    session_start();
+                }
+            } catch (Exception $e) {
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+            }
         }
         
         // Generate new token if doesn't exist or is expired (1 hour)
@@ -47,8 +71,19 @@ class CSRFProtection {
      * @return bool True if valid, false otherwise
      */
     public static function validateToken($token) {
+        // Ensure session is started (compatible with SecureSession)
         if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+            try {
+                if (class_exists('SecureSession')) {
+                    SecureSession::start();
+                } else {
+                    session_start();
+                }
+            } catch (Exception $e) {
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+            }
         }
         
         // Check if token exists and is not expired

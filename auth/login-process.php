@@ -113,12 +113,12 @@ try {
     // Check if password needs rehashing (security upgrade)
     if (AuthSecurity::needsRehash($user['password_hash'])) {
         $newHash = AuthSecurity::hashPassword($password);
-        $stmt = $pdo->prepare("UPDATE users SET password_hash = ?, password_changed_at = NOW() WHERE id = ?");
+        $stmt = $pdo->prepare("UPDATE users SET password_hash = ? WHERE id = ?");
         $stmt->execute([$newHash, $user['id']]);
     }
     
-    // Login successful - reset login attempts and update last login
-    $stmt = $pdo->prepare("UPDATE users SET login_attempts = 0, account_locked_until = NULL, last_login = NOW() WHERE id = ?");
+    // Login successful - reset login attempts (remove last_login since column may not exist)
+    $stmt = $pdo->prepare("UPDATE users SET login_attempts = 0, account_locked_until = NULL WHERE id = ?");
     $stmt->execute([$user['id']]);
     
     // Record successful login attempt

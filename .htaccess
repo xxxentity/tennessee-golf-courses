@@ -213,6 +213,7 @@ RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
 RewriteRule ^admin/run-all-migrations/?$ admin/run-all-migrations.php [L]
 RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
 RewriteRule ^admin/fix-api-tables/?$ admin/fix-api-tables.php [L]
+RewriteRule ^admin/test-login/?$ admin/test-login.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
