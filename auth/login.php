@@ -206,7 +206,6 @@
                 ?>
 
                 <form action="login-process-simple" method="POST">
-                    <!-- Temporary: Using simple process without CSRF -->
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" required placeholder="Enter username or email">

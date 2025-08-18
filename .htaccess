@@ -181,7 +181,6 @@ RewriteRule ^reset-password-process/?$ auth/reset-password-process.php [L]
 RewriteRule ^verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^debug-register/?$ auth/debug-register.php [L]
 RewriteRule ^debug-login/?$ auth/debug-login.php [L]
-RewriteRule ^login-simple/?$ auth/login-simple.php [L]
 RewriteRule ^login-process-simple/?$ auth/login-process-simple.php [L]
 
 # Handle user pages (clean URLs without /user/ prefix)
@@ -211,8 +210,6 @@ RewriteRule ^admin/fix-login/?$ admin/fix-login.php [L]
 RewriteRule ^admin/test-hash/?$ admin/test-hash.php [L]
 RewriteRule ^admin/check-registrations/?$ admin/check-registrations.php [L]
 RewriteRule ^admin/run-migration/?$ admin/run-migration.php [L]
-RewriteRule ^admin/users-simple/?$ admin/users-simple.php [L]
-RewriteRule ^admin/login-simple/?$ admin/login-simple.php [L]
 
 # Handle API routes
 RewriteRule ^api/?$ api/v1/index.php [L]
