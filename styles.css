@@ -161,10 +161,12 @@ a[href^="www."]:not(.social-links a)::after {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     height: 70px;
+    overflow: hidden;
+    position: relative;
 }
 
 .nav-logo {
@@ -1031,6 +1033,19 @@ a[href^="www."]:not(.social-links a)::after {
     color: #cccccc;
 }
 
+/* Navigation overflow protection for medium screens */
+@media screen and (max-width: 1100px) {
+    .nav-container {
+        padding: 0 12px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .nav-container {
+        padding: 0 8px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     /* Improved Weather Bar for Mobile - Simplified */
@@ -1089,6 +1104,7 @@ a[href^="www."]:not(.social-links a)::after {
     .nav-container {
         justify-content: space-between;
         position: relative;
+        padding: 0 16px;
     }
     
     .nav-logo {

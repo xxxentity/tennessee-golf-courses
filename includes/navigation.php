@@ -137,11 +137,12 @@ $is_main_page = (
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     margin-left: auto;
-    margin-right: 8px;
+    margin-right: 16px;
     flex-wrap: nowrap;
-    max-width: 400px;
+    min-width: 0;
+    flex-shrink: 0;
 }
 
 .user-welcome {
@@ -153,15 +154,16 @@ $is_main_page = (
 .welcome-text {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 16px;
-    padding: 8px 16px;
+    font-size: 14px;
+    padding: 6px 12px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
     border-radius: 8px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
-    max-width: 200px;
+    max-width: 160px;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-shrink: 1;
 }
 
 .login-btn {
@@ -170,13 +172,14 @@ $is_main_page = (
     color: var(--primary-color) !important;
     border-radius: 8px;
     transition: all 0.3s ease;
-    padding: 8px 16px !important;
-    font-size: 16px;
+    padding: 6px 12px !important;
+    font-size: 14px;
     font-weight: 500;
     width: auto;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .login-btn:hover {
@@ -191,13 +194,14 @@ $is_main_page = (
     border-radius: 8px;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-light);
-    padding: 8px 16px !important;
-    font-size: 16px;
+    padding: 6px 12px !important;
+    font-size: 14px;
     font-weight: 500;
     width: auto;
     text-align: center;
     line-height: 1.2;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .register-btn:hover {
@@ -209,12 +213,14 @@ $is_main_page = (
 .logout-link {
     color: var(--gold-color) !important;
     font-weight: 500;
-    padding: 8px 16px !important;
-    font-size: 16px;
+    padding: 6px 12px !important;
+    font-size: 14px;
     border-radius: 8px;
     min-width: auto;
     text-align: center;
     line-height: 1.2;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .logout-link:hover {
@@ -223,12 +229,33 @@ $is_main_page = (
 }
 
 .nav-auth .nav-link {
-    padding: 8px 16px !important;
-    font-size: 16px;
+    padding: 6px 12px !important;
+    font-size: 14px;
     border-radius: 8px;
     min-width: auto;
     text-align: center;
     line-height: 1.2;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Medium screen adjustments */
+@media screen and (max-width: 1024px) {
+    .welcome-text {
+        font-size: 13px;
+        padding: 5px 10px;
+        max-width: 140px;
+    }
+    
+    .nav-auth .nav-link {
+        padding: 5px 10px !important;
+        font-size: 13px;
+    }
+    
+    .nav-auth {
+        gap: 6px;
+        margin-right: 12px;
+    }
 }
 
 /* Mobile responsiveness for user navigation */
