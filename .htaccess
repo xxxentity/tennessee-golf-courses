@@ -181,6 +181,7 @@ RewriteRule ^reset-password-process/?$ auth/reset-password-process.php [L]
 RewriteRule ^verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^debug-register/?$ auth/debug-register.php [L]
 RewriteRule ^debug-login/?$ auth/debug-login.php [L]
+RewriteRule ^login-simple/?$ auth/login-simple.php [L]
 
 # Handle user pages (clean URLs without /user/ prefix)
 RewriteRule ^profile/?$ user/profile.php [L]
