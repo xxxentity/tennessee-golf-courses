@@ -199,24 +199,44 @@ try {
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
             margin-top: 2rem;
         }
         
         .gallery-item {
-            aspect-ratio: 4/3;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            height: 250px;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
         .gallery-item:hover {
             transform: scale(1.05);
+        }
+        
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
         }
         
         .view-all-btn {
@@ -649,6 +669,7 @@ try {
                 <p>Experience the beauty of Dead Horse Lake Golf Course</p>
             </div>
             <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/1.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/2.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/3.webp');"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/dead-horse-lake-golf-course/4.webp');"></div>
