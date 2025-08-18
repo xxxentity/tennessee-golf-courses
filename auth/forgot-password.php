@@ -185,16 +185,8 @@ session_start();
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">Tennessee Golf Courses</a>
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="login" class="active">Login</a></li>
-                <li><a href="register">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
 
     <main class="auth-page">
         <div class="auth-container">

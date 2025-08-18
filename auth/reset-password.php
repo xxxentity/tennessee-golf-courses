@@ -3,21 +3,6 @@ require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/auth-security.php';
 
-// Simple navigation for reset password page
-function renderSimpleNav() {
-    echo '
-    <nav style="background: var(--primary-color); padding: 1rem 0;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;">
-            <a href="/" style="color: white; text-decoration: none; font-weight: 600; font-size: 1.2rem;">
-                Tennessee Golf Courses
-            </a>
-            <div>
-                <a href="/login" style="color: white; text-decoration: none; margin-left: 1rem;">Login</a>
-                <a href="/register" style="color: white; text-decoration: none; margin-left: 1rem;">Register</a>
-            </div>
-        </div>
-    </nav>';
-}
 
 $token = $_GET['token'] ?? '';
 $error_message = $_GET['error'] ?? '';
@@ -219,7 +204,8 @@ if (!$resetData) {
     </style>
 </head>
 <body>
-    <?php renderSimpleNav(); ?>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
 
     <main class="auth-page">
         <div class="auth-container">
