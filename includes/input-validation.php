@@ -31,12 +31,13 @@ class InputValidator {
     ];
     
     const SQL_PATTERNS = [
-        '/(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|UNION|SCRIPT)\b)/i',
+        '/(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|UNION|SCRIPT)\s)/i',
         '/(\b(OR|AND)\s+[\'"]*\d+[\'"]*\s*=\s*[\'"]*\d+[\'"]*)/i',
         '/([\'"]\s*(OR|AND)\s+[\'"]\w+[\'"]\s*=\s*[\'"]\w+[\'"]\s*)/i',
-        '/(\-\-|\#|\/*|\*\/)/i',
+        '/(\-\-\s|\/\*.*\*\/|\#\s)/i', // More specific: require space after -- or # 
         '/(char\s*\(\s*\d+\s*\))/i',
-        '/(0x[0-9a-f]+)/i'
+        '/(0x[0-9a-f]+)/i',
+        '/([\'"].*[\'"].*=.*[\'"])/i' // Quote-based injection patterns
     ];
     
     /**

@@ -37,8 +37,8 @@ if (empty($username) || empty($password)) {
     exit;
 }
 
-// Additional security checks
-if (InputValidator::containsXSS($username) || InputValidator::containsSQLInjection($username)) {
+// Additional security checks (skip SQL injection check for usernames as they're used in prepared statements)
+if (InputValidator::containsXSS($username)) {
     // Log suspicious login attempt
     error_log("Suspicious login attempt from IP: $clientIP with username: " . substr($username, 0, 50));
     header('Location: /login?error=' . urlencode('Invalid login credentials'));
