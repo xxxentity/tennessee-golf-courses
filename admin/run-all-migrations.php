@@ -77,7 +77,7 @@ function runSQLFile($pdo, $filename, $description) {
 // Define migrations to run in order
 $migrations = [
     ['file' => 'enhance_auth_security.sql', 'description' => 'Enhanced Authentication Security'],
-    ['file' => 'admin-security-schema.sql', 'description' => 'Admin Security Tables'],
+    ['file' => 'fix-admin-security-schema.sql', 'description' => 'Admin Security Tables (Fixed)'],
     ['file' => 'api-security-schema.sql', 'description' => 'API Security Tables'],
     ['file' => 'add_login_security.sql', 'description' => 'Login Security Features'],
     ['file' => 'add_email_verification.sql', 'description' => 'Email Verification System']
