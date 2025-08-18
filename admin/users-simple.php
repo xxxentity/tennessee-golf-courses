@@ -38,13 +38,11 @@ try {
     $countStmt->execute($params);
     $totalUsers = $countStmt->fetchColumn();
 
-    // Get users
+    // Get users (LIMIT and OFFSET cannot be parameterized)
     $sql = "SELECT id, username, email, first_name, last_name, is_active, created_at, last_login 
             FROM users $whereClause 
             ORDER BY created_at DESC 
-            LIMIT ? OFFSET ?";
-    $params[] = $limit;
-    $params[] = $offset;
+            LIMIT $limit OFFSET $offset";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
     $users = $stmt->fetchAll();
