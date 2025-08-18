@@ -1,8 +1,17 @@
 <?php
 // Simple user login without complex CSRF for debugging
-session_start();
-
 require_once '../config/database.php';
+require_once '../includes/session-security.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Continue with basic session
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
 
 $error_message = '';
 
@@ -19,20 +28,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = $stmt->fetch();
             
             if ($user && password_verify($password, $user['password_hash'])) {
-                // Set session variables for compatibility
-                $_SESSION['is_logged_in'] = true;
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['first_name'] = $user['first_name'];
-                $_SESSION['last_name'] = $user['last_name'];
-                
-                // Update last login (if column exists)
+                // Use the proper SecureSession login method
                 try {
-                    $stmt = $pdo->prepare("UPDATE users SET last_login = NOW() WHERE id = ?");
-                    $stmt->execute([$user['id']]);
-                } catch (PDOException $e) {
-                    // Column might not exist, that's okay
+                    SecureSession::login($user['id'], $user['username']);
+                    
+                    // Set additional user data
+                    SecureSession::set('email', $user['email']);
+                    SecureSession::set('first_name', $user['first_name']);
+                    SecureSession::set('last_name', $user['last_name']);
+                } catch (Exception $e) {
+                    // Fallback to manual session setting
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['last_name'] = $user['last_name'];
                 }
                 
                 header('Location: /');
