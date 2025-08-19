@@ -26,11 +26,68 @@ session_start();
       gtag('config', 'G-7VPNPCDTBP');
     </script>
     
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    
     <style>
         .maps-page {
             padding-top: 90px;
             min-height: 80vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 70vh;
+            border-radius: 15px;
+            box-shadow: var(--shadow-large);
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        #tennessee-golf-map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .mapboxgl-popup-content {
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .popup-course-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .popup-address {
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+        
+        .popup-phone {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+        
+        .popup-link {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
         }
         
         .maps-hero {
@@ -240,91 +297,36 @@ session_start();
             <p>Discover golf courses across Tennessee with interactive maps and regional guides</p>
         </div>
         
-        <!-- Maps Content -->
+        <!-- Interactive Map -->
         <div class="maps-content">
-            <!-- Maps Sections -->
-            <div class="maps-sections">
-                <div class="maps-section">
-                    <div class="icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h2>Interactive Map</h2>
-                    <p>Explore all Tennessee golf courses on our interactive map. Filter by location, course type, difficulty level, and amenities to find the perfect course for your next round.</p>
-                    <a href="#" class="maps-btn" onclick="showComingSoon('Interactive Map')">
-                        <i class="fas fa-map"></i>
-                        Launch Map
-                    </a>
-                </div>
-                
-                <div class="maps-section">
-                    <div class="icon">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h2>Course Directions</h2>
-                    <p>Get turn-by-turn directions to any Tennessee golf course. Integrated with Google Maps for the most accurate routing and real-time traffic updates.</p>
-                    <a href="#" class="maps-btn secondary" onclick="showComingSoon('Course Directions')">
-                        <i class="fas fa-directions"></i>
-                        Get Directions
-                    </a>
-                </div>
+            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem;">Interactive Tennessee Golf Course Map</h2>
+                <p style="color: var(--text-gray); font-size: 1.2rem;">Click on any course marker to view details and get directions</p>
             </div>
             
-            <!-- Coming Soon Section -->
-            <div class="coming-soon-section">
-                <div class="icon" style="font-size: 6rem; color: var(--primary-color); margin-bottom: 2rem;">
-                    <i class="fas fa-hammer"></i>
-                </div>
-                <h3>Coming Soon: Interactive Maps</h3>
-                <p>We're developing comprehensive mapping features to help you discover and navigate to Tennessee's best golf courses. Our interactive maps will include course locations, driving directions, nearby amenities, and much more.</p>
-                
-                <!-- Region Preview -->
-                <div class="region-preview">
-                    <div class="region-card">
-                        <div class="icon">
-                            <i class="fas fa-city"></i>
-                        </div>
-                        <h4>Nashville Area</h4>
-                        <p>Middle Tennessee's golf hub with premier public and private courses</p>
-                        <span class="course-count">25+ Courses</span>
-                    </div>
-                    
-                    <div class="region-card">
-                        <div class="icon">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <h4>East Tennessee</h4>
-                        <p>Mountain golf with scenic views in Knoxville and Gatlinburg areas</p>
-                        <span class="course-count">30+ Courses</span>
-                    </div>
-                    
-                    <div class="region-card">
-                        <div class="icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <h4>West Tennessee</h4>
-                        <p>Memphis area courses featuring river views and challenging layouts</p>
-                        <span class="course-count">20+ Courses</span>
-                    </div>
-                    
-                    <div class="region-card">
-                        <div class="icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <h4>Middle Tennessee</h4>
-                        <p>Rolling hills and tree-lined fairways in Tennessee's heartland</p>
-                        <span class="course-count">35+ Courses</span>
-                    </div>
-                </div>
+            <!-- Map Container -->
+            <div class="map-container">
+                <div id="tennessee-golf-map"></div>
             </div>
             
-            <!-- Current Access -->
-            <div class="maps-section" style="text-align: center; grid-column: 1 / -1;">
-                <h3 style="color: var(--primary-color); margin-bottom: 2rem;">In the Meantime</h3>
-                <p style="margin-bottom: 2rem;">While we build our interactive mapping features, you can still find course locations and get directions from individual course pages.</p>
-                <a href="/courses" class="maps-btn">
-                    <i class="fas fa-golf-ball"></i>
-                    Browse All Courses
-                </a>
+            <!-- Map Legend -->
+            <div style="display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; background: #4CAF50; border-radius: 50%;"></div>
+                    <span>Public Courses</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; background: #2196F3; border-radius: 50%;"></div>
+                    <span>Municipal Courses</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; background: #FF9800; border-radius: 50%;"></div>
+                    <span>Private Courses</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 16px; height: 16px; background: #9C27B0; border-radius: 50%;"></div>
+                    <span>Semi-Private Courses</span>
+                </div>
             </div>
         </div>
     </div>
@@ -332,10 +334,145 @@ session_start();
     <!-- Dynamic Footer -->
     <?php include 'includes/footer.php'; ?>
     
+    <!-- Mapbox JavaScript -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    
     <script>
-        function showComingSoon(feature) {
-            alert(`${feature} feature is coming soon! We're working hard to bring you the best golf course mapping experience in Tennessee.`);
-        }
+        // Initialize Mapbox map
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajN4MnFmMDk0YjJrb2NjNnpuNG11NiJ9.F6spXsBwVWg4LY2iFk0frw';
+        
+        const map = new mapboxgl.Map({
+            container: 'tennessee-golf-map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v12', // Satellite view to show golf courses
+            center: [-86.7816, 36.1627], // Center of Tennessee
+            zoom: 6.5,
+            pitch: 0,
+            bearing: 0
+        });
+        
+        // Golf course data with complete information
+        const golfCourses = [
+            {
+                name: "Avalon Golf & Country Club",
+                address: "1299 Oak Chase Blvd, Lenoir City, TN 37772",
+                phone: "(865) 986-4653",
+                type: "Semi-Private",
+                coordinates: [-84.2689, 35.7923],
+                slug: "avalon-golf-country-club"
+            },
+            {
+                name: "Bear Trace at Tims Ford",
+                address: "570 Bear Trace Drive, Winchester, TN 37398", 
+                phone: "(931) 962-4653",
+                type: "Public",
+                coordinates: [-86.1122, 35.1856],
+                slug: "bear-trace-at-tims-ford"
+            },
+            {
+                name: "Bear Trace at Cumberland Mountain",
+                address: "407 Wild Plum Lane, Crossville, TN 38572",
+                phone: "(931) 707-1640", 
+                type: "Public",
+                coordinates: [-85.0269, 35.9489],
+                slug: "bear-trace-at-cumberland-mountain"
+            },
+            {
+                name: "Bear Trace at Harrison Bay",
+                address: "8919 Harrison Bay Road, Harrison, TN 37341",
+                phone: "(423) 326-0885",
+                type: "Public", 
+                coordinates: [-85.1355, 35.1178],
+                slug: "bear-trace-at-harrison-bay"
+            },
+            {
+                name: "Belle Acres Golf Course",
+                address: "901 E Broad St, Cookeville, TN",
+                phone: "(931) 310-0645",
+                type: "Public",
+                coordinates: [-85.4808, 36.1628],
+                slug: "belle-acres-golf-course"
+            },
+            {
+                name: "Belle Meade Country Club", 
+                address: "815 Belle Meade Blvd, Nashville, TN 37205",
+                phone: "(615) 385-0150",
+                type: "Private",
+                coordinates: [-86.8611, 36.1044],
+                slug: "belle-meade-country-club"
+            },
+            {
+                name: "Bluegrass Yacht & Country Club",
+                address: "550 Johnny Cash Parkway, Hendersonville, TN 37075", 
+                phone: "(615) 824-6566",
+                type: "Private",
+                coordinates: [-86.6200, 36.3047],
+                slug: "bluegrass-yacht-country-club"
+            },
+            {
+                name: "Brainerd Golf Course",
+                address: "5203 Old Mission Road, Chattanooga, TN 37411",
+                phone: "(423) 855-2692",
+                type: "Municipal",
+                coordinates: [-85.2872, 35.0356],
+                slug: "brainerd-golf-course"
+            },
+            {
+                name: "Brown Acres Golf Course", 
+                address: "406 Brown Road, Chattanooga, TN 37421",
+                phone: "(423) 855-2680",
+                type: "Municipal",
+                coordinates: [-85.1791, 35.0061],
+                slug: "brown-acres-golf-course"
+            },
+            {
+                name: "Cumberland Cove Golf Course",
+                address: "16941 Highway 70 N, Monterey, TN 38574",
+                phone: "(931) 839-3313", 
+                type: "Public",
+                coordinates: [-85.2669, 36.1489],
+                slug: "cumberland-cove-golf-course"
+            }
+        ];
+        
+        // Color scheme for different course types
+        const courseColors = {
+            'Public': '#4CAF50',     // Green
+            'Municipal': '#2196F3',   // Blue  
+            'Private': '#FF9800',     // Orange
+            'Semi-Private': '#9C27B0' // Purple
+        };
+        
+        // Add markers to map
+        map.on('load', function() {
+            golfCourses.forEach(function(course) {
+                // Create popup content
+                const popupContent = `
+                    <div class="popup-course-name">${course.name}</div>
+                    <div class="popup-address">${course.address}</div>
+                    <div class="popup-phone">${course.phone}</div>
+                    <a href="/courses/${course.slug}" class="popup-link">View Course Details</a>
+                `;
+                
+                // Create popup
+                const popup = new mapboxgl.Popup({
+                    offset: 25
+                }).setHTML(popupContent);
+                
+                // Create marker
+                const marker = new mapboxgl.Marker({
+                    color: courseColors[course.type] || '#4CAF50'
+                })
+                .setLngLat(course.coordinates)
+                .setPopup(popup)
+                .addTo(map);
+            });
+        });
+        
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+        
+        // Add fullscreen control  
+        map.addControl(new mapboxgl.FullscreenControl());
     </script>
 </body>
 </html>
