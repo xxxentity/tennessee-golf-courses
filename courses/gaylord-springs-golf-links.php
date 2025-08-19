@@ -427,9 +427,9 @@ try {
                 <p>Experience the beauty of Gaylord Springs Golf Links</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/gaylord-springs-golf-links/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -586,8 +586,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/gaylord-springs-golf-links/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/gaylord-springs-golf-links/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/gaylord-springs-golf-links/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/gaylord-springs-golf-links/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
