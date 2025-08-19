@@ -563,7 +563,7 @@ try {
                     <div class="liv-highlight">
                         <i class="fas fa-trophy"></i>
                         <h3>HISTORIC INAUGURAL EVENT</h3>
-                        <p>Record 60,000+ attendance • Munoz's maiden victory • Rahm's championship defense</p>
+                        <p style="color: white;">Record 60,000+ attendance • Munoz's maiden victory • Rahm's championship defense</p>
                     </div>
                     
                     <h2>Three Days of Championship Drama</h2>
