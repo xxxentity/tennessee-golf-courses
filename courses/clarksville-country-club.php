@@ -197,7 +197,7 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero" style="
         height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/clarksville-country-club/1.jpeg'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/clarksville-country-club/1.webp'); 
         background-size: cover; 
         background-position: center; 
         display: flex; 
@@ -375,9 +375,9 @@ try {
                 <p>Experience the beauty of Clarksville Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/clarksville-country-club/3.webp');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -531,8 +531,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/clarksville-country-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/clarksville-country-club/${i}.jpeg`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/clarksville-country-club/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/clarksville-country-club/${i}.webp`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
