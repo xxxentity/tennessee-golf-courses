@@ -261,6 +261,73 @@ try {
             background: #3d6249;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
         .view-all-btn {
             background: #4a7c59;
             color: white;
@@ -631,9 +698,9 @@ try {
                 <p>Experience the beauty of Blackthorn Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -778,12 +845,13 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images
+            // Generate all 25 images (using The Grove images as placeholders)
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/blackthorn-club/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/blackthorn-club/${i}.webp`, '_blank');
+                const imageNum = ((i - 1) % 10) + 1; // Cycle through 1-10
+                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${imageNum}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${imageNum}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
