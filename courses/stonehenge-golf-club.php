@@ -66,8 +66,8 @@ try {
     <link rel="stylesheet" href="../mobile-course-styles.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=3">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>

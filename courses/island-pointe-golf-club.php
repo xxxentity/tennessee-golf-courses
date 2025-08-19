@@ -65,8 +65,8 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=3">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
