@@ -1026,8 +1026,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 7 images
-            for (let i = 1; i <= 7; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/richland-country-club/${i}.jpeg')`;
