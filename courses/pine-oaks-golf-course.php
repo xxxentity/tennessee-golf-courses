@@ -199,27 +199,21 @@ try {
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
         }
         
         .gallery-item {
-            aspect-ratio: 4/3;
-            border-radius: 10px;
-            overflow: hidden;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
         
         .gallery-item:hover {
             transform: scale(1.05);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         
         .view-all-btn {
@@ -236,6 +230,95 @@ try {
         
         .view-all-btn:hover {
             background: #3d6249;
+        }
+        
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.05);
         }
         
         .reviews-section {
@@ -360,7 +443,7 @@ try {
             }
             
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
             
             .course-hero-content h1 {
