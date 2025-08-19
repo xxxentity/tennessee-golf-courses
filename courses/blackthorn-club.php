@@ -694,9 +694,9 @@ try {
                 <p>Experience the beauty of Blackthorn Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -841,13 +841,12 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images (using The Grove images as placeholders)
+            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                const imageNum = ((i - 1) % 10) + 1; // Cycle through 1-10
-                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${imageNum}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${imageNum}.jpeg`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/blackthorn-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/blackthorn-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
