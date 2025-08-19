@@ -116,7 +116,7 @@ $courses_static = [
         'location' => 'Chattanooga, TN',
         'region' => 'Chattanooga Area',
         'description' => 'Historic Donald Ross designed municipal course since 1926. Classic 18-hole layout featuring traditional Ross characteristics with small elevated greens, strategic bunkering, and tree-lined fairways in East Chattanooga',
-        'image' => '/images/courses/brainerd-golf-course/1.jpeg',
+        'image' => '/images/courses/brainerd-golf-course/1.webp',
         'price_range' => '$25-35',
         'difficulty' => 'Intermediate',
         'holes' => 18,
@@ -1533,8 +1533,8 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
