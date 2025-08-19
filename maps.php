@@ -341,7 +341,7 @@ session_start();
         // Initialize Mapbox map with error handling
         console.log('Starting Mapbox initialization...');
         
-        mapboxgl.accessToken = 'pk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajN4MnFmMDk0YjJrb2NjNnpuNG11NiJ9.F6spXsBwVWg4LY2iFk0frw';
+        mapboxgl.accessToken = 'sk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajVjM3RyMGFoMzJwbjF5cjRjMG4xeSJ9.6RNQfd1LsRouqnsFzXMOsg';
         
         try {
             const map = new mapboxgl.Map({
