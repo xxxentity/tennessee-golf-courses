@@ -416,9 +416,9 @@ try {
                 <p>Experience the beauty of Chattanooga Golf & Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -513,23 +513,23 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999;">
-        <span onclick="closeGallery()" style="position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer;">&times;</span>
-        <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
-            <img id="galleryImage" src="" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Chattanooga Golf & Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
         </div>
-        <button id="prevBtn" onclick="changeImage(-1)" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 30px; padding: 10px 20px; cursor: pointer;">&#10094;</button>
-        <button id="nextBtn" onclick="changeImage(1)" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 30px; padding: 10px 20px; cursor: pointer;">&#10095;</button>
     </div>
 
     <?php include '../includes/footer.php'; ?>
 
     <script>
         let currentRating = 0;
-        let currentImageIndex = 1;
-        const totalImages = 25;
-
         function highlightStars(rating) {
             const stars = document.querySelectorAll('.rating-select i');
             stars.forEach((star, index) => {
@@ -559,34 +559,45 @@ try {
             highlightStars(rating);
         }
 
+        // Gallery Modal Functions
         function openGallery() {
-            document.getElementById('galleryModal').style.display = 'block';
-            currentImageIndex = 1;
-            showImage(currentImageIndex);
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images (using placeholder images)
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                const imageNum = ((i - 1) % 10) + 1; // Cycle through 1-10
+                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${imageNum}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${imageNum}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
         function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex > totalImages) currentImageIndex = 1;
-            if (currentImageIndex < 1) currentImageIndex = totalImages;
-            showImage(currentImageIndex);
-        }
-
-        function showImage(index) {
-            const img = document.getElementById('galleryImage');
-            img.src = `../images/courses/chattanooga-golf-country-club/${index}.webp`;
-        }
-
-        // Keyboard navigation for gallery
-        document.addEventListener('keydown', function(e) {
-            if (document.getElementById('galleryModal').style.display === 'block') {
-                if (e.key === 'ArrowLeft') changeImage(-1);
-                if (e.key === 'ArrowRight') changeImage(1);
-                if (e.key === 'Escape') closeGallery();
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
             }
         });
     </script>
