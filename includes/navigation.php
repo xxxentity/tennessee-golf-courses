@@ -20,6 +20,7 @@ $is_main_page = (
     strpos($current_page, '/reviews') === 0 ||
     strpos($current_page, '/news') === 0 ||
     strpos($current_page, '/events') === 0 ||
+    strpos($current_page, '/community') === 0 ||
     strpos($current_page, '/about') === 0 ||
     strpos($current_page, '/contact') === 0
 );
@@ -77,8 +78,16 @@ $is_main_page = (
             <li><a href="/reviews" class="nav-link">Reviews</a></li>
             <li><a href="/news" class="nav-link">News</a></li>
             <li><a href="/events" class="nav-link">Events</a></li>
-            <li><a href="/about" class="nav-link">About</a></li>
-            <li><a href="/contact" class="nav-link">Contact</a></li>
+            <li><a href="/community" class="nav-link">Community</a></li>
+            <li class="nav-dropdown">
+                <a href="/about" class="nav-link dropdown-toggle">
+                    About <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/about" class="dropdown-link">About Us</a></li>
+                    <li><a href="/contact" class="dropdown-link">Contact</a></li>
+                </ul>
+            </li>
             
             <!-- Mobile Auth Links -->
             <li class="mobile-auth-divider"></li>
@@ -333,4 +342,95 @@ body {
     height: 0 !important;
 }
 <?php endif; ?>
+
+/* Dropdown Navigation Styles */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    min-width: 160px;
+    box-shadow: var(--shadow-medium);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    border-radius: 0;
+}
+
+.dropdown-link:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    padding-left: 1.5rem;
+}
+
+/* Mobile dropdown styles */
+@media (max-width: 768px) {
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin-left: 1rem;
+    }
+    
+    .dropdown-toggle i {
+        display: none;
+    }
+    
+    .dropdown-link {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        color: var(--text-gray);
+    }
+    
+    .dropdown-link:hover {
+        padding-left: 0;
+        color: var(--primary-color);
+    }
+}
 </style>
