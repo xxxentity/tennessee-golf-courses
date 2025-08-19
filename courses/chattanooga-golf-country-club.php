@@ -74,48 +74,7 @@ try {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-7VPNPCDTBP');
-    
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/chattanooga-golf-country-club/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/chattanooga-golf-country-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });\n    </script>
+      gtag('config', 'G-7VPNPCDTBP');\n    </script>
     
     <style>
         .photo-gallery {
