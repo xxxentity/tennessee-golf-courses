@@ -17,6 +17,7 @@ $current_page = $_SERVER['REQUEST_URI'];
 $is_main_page = (
     $current_page === '/' ||
     strpos($current_page, '/courses') === 0 ||
+    strpos($current_page, '/media') === 0 ||
     strpos($current_page, '/reviews') === 0 ||
     strpos($current_page, '/news') === 0 ||
     strpos($current_page, '/events') === 0 ||
@@ -75,8 +76,16 @@ $is_main_page = (
         <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/courses" class="nav-link">Courses</a></li>
-            <li><a href="/reviews" class="nav-link">Reviews</a></li>
-            <li><a href="/news" class="nav-link">News</a></li>
+            <li class="nav-dropdown">
+                <a href="/media" class="nav-link dropdown-toggle">
+                    Media <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/media" class="dropdown-link">Media Hub</a></li>
+                    <li><a href="/news" class="dropdown-link">News</a></li>
+                    <li><a href="/reviews" class="dropdown-link">Reviews</a></li>
+                </ul>
+            </li>
             <li class="nav-dropdown">
                 <a href="/community" class="nav-link dropdown-toggle">
                     Community <i class="fas fa-chevron-down"></i>
