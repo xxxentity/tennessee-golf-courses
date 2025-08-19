@@ -336,7 +336,7 @@ class APISecurity {
         // Set security headers
         header('Content-Type: application/json; charset=UTF-8');
         header('X-Content-Type-Options: nosniff');
-        header('X-Frame-Options: DENY');
+        // header('X-Frame-Options: DENY'); // Disabled to allow Google Maps iframes
         header('X-XSS-Protection: 1; mode=block');
         header('Referrer-Policy: strict-origin-when-cross-origin');
         

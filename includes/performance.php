@@ -111,7 +111,7 @@ class Performance {
         
         // Security headers for performance
         header('X-Content-Type-Options: nosniff');
-        header('X-Frame-Options: SAMEORIGIN');
+        // header('X-Frame-Options: SAMEORIGIN'); // Disabled to allow Google Maps iframes
         
         // Performance timing header
         if (self::$startTime) {
