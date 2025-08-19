@@ -1,19 +1,11 @@
 <?php
 session_start();
-require_once 'includes/security-headers.php';
+// TEMPORARILY DISABLE CSP FOR TESTING - DO NOT USE IN PRODUCTION
+// Comment out the security headers include to test if CSP is the only issue
+// require_once 'includes/security-headers.php';
 
-// Additional CSP for Mapbox on maps page
-$mapbox_csp = "default-src 'self'; " .
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://api.mapbox.com; " .
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://api.mapbox.com; " .
-              "img-src 'self' data: https: https://api.mapbox.com https://*.tiles.mapbox.com; " .
-              "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
-              "connect-src 'self' https://www.google-analytics.com https://api.mapbox.com https://*.tiles.mapbox.com https://events.mapbox.com; " .
-              "frame-src 'self' https://maps.google.com https://www.google.com; " .
-              "object-src 'none'; " .
-              "base-uri 'self';";
-
-header("Content-Security-Policy: $mapbox_csp");
+// Temporarily allow all sources for testing
+header("Content-Security-Policy: default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data:; font-src *; connect-src *; frame-src *;");
 ?>
 
 <!DOCTYPE html>
