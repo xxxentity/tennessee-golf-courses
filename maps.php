@@ -1,11 +1,6 @@
 <?php
 session_start();
-// TEMPORARILY DISABLE CSP FOR TESTING - DO NOT USE IN PRODUCTION
-// Comment out the security headers include to test if CSP is the only issue
-// require_once 'includes/security-headers.php';
-
-// Temporarily allow all sources for testing
-header("Content-Security-Policy: default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data:; font-src *; connect-src *; frame-src *;");
+// Security headers are now properly configured in .htaccess
 ?>
 
 <!DOCTYPE html>
