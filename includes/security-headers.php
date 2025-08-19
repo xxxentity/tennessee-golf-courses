@@ -23,7 +23,7 @@ $csp = "default-src 'self'; " .
        "img-src 'self' data: https:; " .
        "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
        "connect-src 'self' https://www.google-analytics.com; " .
-       "frame-src 'self' https://maps.google.com; " .
+       "frame-src 'self' https://maps.google.com https://www.google.com; " .
        "object-src 'none'; " .
        "base-uri 'self';";
 
