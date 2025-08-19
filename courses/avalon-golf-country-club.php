@@ -72,8 +72,8 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=6">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=6">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=7">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=7">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
