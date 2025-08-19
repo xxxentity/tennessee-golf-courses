@@ -359,6 +359,11 @@ body {
 }
 <?php endif; ?>
 
+/* Override nav-container overflow for dropdowns */
+.nav-container {
+    overflow: visible !important;
+}
+
 /* Dropdown Navigation Styles */
 .nav-dropdown {
     position: relative;
@@ -392,7 +397,7 @@ body {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1001;
+    z-index: 9999;
     list-style: none;
     padding: 0.5rem 0;
     margin: 0;
