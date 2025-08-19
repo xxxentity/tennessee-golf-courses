@@ -77,8 +77,15 @@ $is_main_page = (
             <li><a href="/courses" class="nav-link">Courses</a></li>
             <li><a href="/reviews" class="nav-link">Reviews</a></li>
             <li><a href="/news" class="nav-link">News</a></li>
-            <li><a href="/events" class="nav-link">Events</a></li>
-            <li><a href="/community" class="nav-link">Community</a></li>
+            <li class="nav-dropdown">
+                <a href="/community" class="nav-link dropdown-toggle">
+                    Community <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/community" class="dropdown-link">Community</a></li>
+                    <li><a href="/events" class="dropdown-link">Events</a></li>
+                </ul>
+            </li>
             <li class="nav-dropdown">
                 <a href="/about" class="nav-link dropdown-toggle">
                     About <i class="fas fa-chevron-down"></i>
