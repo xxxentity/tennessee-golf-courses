@@ -853,12 +853,12 @@ try {
                 <p>Experience the beauty of The Grove</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (12+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
@@ -1071,22 +1071,14 @@ try {
             // Clear existing content
             grid.innerHTML = '';
             
-            // Add photos dynamically
-            const photos = [
-                '../images/courses/the-grove/1.jpeg',
-                '../images/courses/the-grove/2.jpeg',
-                '../images/courses/the-grove/3.jpeg',
-                '../images/courses/the-grove/4.jpeg',
-                '../images/courses/the-grove/5.jpeg',
-                '../images/courses/the-grove/6.jpeg'
-            ];
-            
-            photos.forEach(photo => {
-                const item = document.createElement('div');
-                item.className = 'full-gallery-item';
-                item.style.backgroundImage = `url('${photo}')`;
-                grid.appendChild(item);
-            });
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${i}.jpeg`, '_blank');
+                grid.appendChild(galleryItem);
+            }
             
             modal.style.display = 'block';
         }
