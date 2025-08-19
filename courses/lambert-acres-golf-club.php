@@ -238,6 +238,28 @@ try {
             background: #3d6249;
         }
         
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
         .reviews-section {
             padding: 4rem 0;
         }
@@ -638,9 +660,9 @@ try {
                 <p>Experience the beauty of Lambert Acres Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/4.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/lambert-acres-golf-club/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -790,8 +812,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/lambert-acres-golf-club/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/lambert-acres-golf-club/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/lambert-acres-golf-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/lambert-acres-golf-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
