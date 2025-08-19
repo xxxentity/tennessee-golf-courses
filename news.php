@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
+        'slug' => 'bmw-championship-2025-complete-tournament-recap-community-impact',
+        'date' => '2025-08-18',
+        'time' => '8:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of the 2025 BMW Championship featuring Scottie Scheffler\'s miraculous comeback victory and the tournament\'s extraordinary community impact for the Evans Scholars Foundation.',
+        'image' => '/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Scheffler Delivers Stunning Comeback to Win BMW Championship',
         'slug' => 'scheffler-delivers-stunning-comeback-wins-bmw-championship',
         'date' => '2025-08-17',

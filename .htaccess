@@ -151,6 +151,7 @@ RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landin
 RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/bmw-championship-2025-complete-tournament-recap-community-impact/?$ news/bmw-championship-2025-complete-tournament-recap-community-impact.php [L]
 RewriteRule ^news/scheffler-delivers-stunning-comeback-wins-bmw-championship/?$ news/scheffler-delivers-stunning-comeback-wins-bmw-championship.php [L]
 RewriteRule ^news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead/?$ news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead.php [L]
 RewriteRule ^news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship/?$ news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship.php [L]
