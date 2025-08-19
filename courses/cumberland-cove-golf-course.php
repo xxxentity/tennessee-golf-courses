@@ -65,8 +65,8 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=6">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=6">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -500,6 +500,24 @@ try {
             </div>
         </div>
 
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Cumberland Cove Golf Course</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/1.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/3.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+            </div>
+        </div>
+    </section>
+
         <!-- Reviews Section -->
         <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
             <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
@@ -570,24 +588,6 @@ try {
                 <?php endif; ?>
             </div>
         </section>
-    </section>
-
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Cumberland Cove Golf Course</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cumberland-cove-golf-course/3.webp');"></div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
-            </div>
-        </div>
     </section>
 
     <!-- Full Gallery Modal -->
