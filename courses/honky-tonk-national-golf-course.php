@@ -513,22 +513,23 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999;">
-        <span onclick="closeGallery()" style="position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer;">&times;</span>
-        <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
-            <img id="galleryImage" src="" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Honky Tonk National Golf Course - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
         </div>
-        <button id="prevBtn" onclick="changeImage(-1)" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 30px; padding: 10px 20px; cursor: pointer;">&#10094;</button>
-        <button id="nextBtn" onclick="changeImage(1)" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); border: none; color: white; font-size: 30px; padding: 10px 20px; cursor: pointer;">&#10095;</button>
     </div>
 
     <?php include '../includes/footer.php'; ?>
 
     <script>
         let currentRating = 0;
-        let currentImageIndex = 1;
-        const totalImages = 25;
 
         function highlightStars(rating) {
             const stars = document.querySelectorAll('.rating-select i');
@@ -559,34 +560,44 @@ try {
             highlightStars(rating);
         }
 
+        // Gallery Modal Functions
         function openGallery() {
-            document.getElementById('galleryModal').style.display = 'block';
-            currentImageIndex = 1;
-            showImage(currentImageIndex);
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/honky-tonk-national-golf-course/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/honky-tonk-national-golf-course/${i}.webp`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
         function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex > totalImages) currentImageIndex = 1;
-            if (currentImageIndex < 1) currentImageIndex = totalImages;
-            showImage(currentImageIndex);
-        }
-
-        function showImage(index) {
-            const img = document.getElementById('galleryImage');
-            img.src = `../images/courses/honky-tonk-national-golf-course/${index}.webp`;
-        }
-
-        // Keyboard navigation for gallery
-        document.addEventListener('keydown', function(e) {
-            if (document.getElementById('galleryModal').style.display === 'block') {
-                if (e.key === 'ArrowLeft') changeImage(-1);
-                if (e.key === 'ArrowRight') changeImage(1);
-                if (e.key === 'Escape') closeGallery();
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
             }
         });
     </script>
