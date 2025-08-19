@@ -81,7 +81,6 @@ $is_main_page = (
                     Media <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/media" class="dropdown-link">Media Hub</a></li>
                     <li><a href="/news" class="dropdown-link">News</a></li>
                     <li><a href="/reviews" class="dropdown-link">Reviews</a></li>
                 </ul>
@@ -91,7 +90,6 @@ $is_main_page = (
                     Community <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/community" class="dropdown-link">Community</a></li>
                     <li><a href="/events" class="dropdown-link">Events</a></li>
                 </ul>
             </li>
