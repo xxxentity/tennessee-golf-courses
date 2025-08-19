@@ -941,6 +941,7 @@ try {
                 const item = document.createElement('div');
                 item.className = 'full-gallery-item';
                 item.style.backgroundImage = `url('../images/courses/stonehenge-golf-club/${i}.webp')`;
+                item.onclick = () => window.open(`../images/courses/stonehenge-golf-club/${i}.webp`, '_blank');
                 grid.appendChild(item);
             }
             
