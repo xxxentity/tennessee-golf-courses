@@ -1,5 +1,9 @@
 <?php
-session_start();
+// Start session first
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once '../config/database.php';
 require_once '../includes/rate-limiter.php';
 require_once '../includes/csrf.php';
@@ -8,8 +12,27 @@ require_once '../includes/input-validation.php';
 
 // Validate CSRF token first
 $csrf_token = $_POST['csrf_token'] ?? '';
+
+// Debug information (remove after testing)
 if (!CSRFProtection::validateToken($csrf_token)) {
-    header('Location: /register?error=' . urlencode('Security token expired. Please refresh the page and try again.'));
+    $session_token = $_SESSION['csrf_token'] ?? 'none';
+    $token_time = $_SESSION['csrf_token_time'] ?? 'none';
+    $current_time = time();
+    $session_id = session_id();
+    $age = is_numeric($token_time) ? ($current_time - $token_time) : 'unknown';
+    
+    $debug_info = "CSRF Validation Failed - " .
+                  "Session ID: $session_id | " .
+                  "Session token: $session_token | " .
+                  "Form token: $csrf_token | " .
+                  "Token time: $token_time | " .
+                  "Current time: $current_time | " .
+                  "Token age: $age seconds | " .
+                  "Tokens match: " . ($session_token === $csrf_token ? 'yes' : 'no');
+    
+    error_log($debug_info);
+    
+    header('Location: /register?error=' . urlencode('Security token expired. Please refresh the page and try again. Debug: Check error log.'));
     exit;
 }
 
