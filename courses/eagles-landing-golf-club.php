@@ -85,6 +85,79 @@ try {
     </script>
     
     <style>
+        /* Course Closure Modal Styles */
+        .course-modal {
+            display: flex;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .modal-header h2 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .modal-body p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-stay {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-stay:hover {
+            background: #5a6268;
+        }
+        
+        .btn-new-course {
+            background: #4a7c59;
+            color: white;
+        }
+        
+        .btn-new-course:hover {
+            background: #2c5234;
+        }
         .course-hero {
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/eagles-landing-golf-club/1.jpeg');
@@ -556,6 +629,27 @@ try {
     </style>
 </head>
 <body>
+    <!-- Course Closure Modal -->
+    <div id="closureModal" class="course-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-info-circle"></i> Course Update</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Eagle's Landing Golf Club</strong> has permanently closed, but it has reopened under a new name and management.</p>
+                <p>The course is now operating as <strong>Sevierville Golf Club</strong> with updated facilities and amenities.</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-stay" onclick="closeModal()">
+                    <i class="fas fa-eye"></i> View Historical Info
+                </button>
+                <a href="/courses/sevierville-golf-club" class="modal-btn btn-new-course">
+                    <i class="fas fa-golf-ball"></i> Visit New Course Page
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
@@ -899,6 +993,24 @@ try {
                     });
                 }
             }
+        });
+        
+        // Course Closure Modal functionality
+        function closeModal() {
+            document.getElementById('closureModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('closureModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Show modal on page load
+        window.addEventListener('load', function() {
+            document.getElementById('closureModal').style.display = 'flex';
         });
     </script>
 </body>
