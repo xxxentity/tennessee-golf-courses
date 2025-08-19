@@ -506,6 +506,7 @@ session_start();
             console.error('Error initializing map:', error);
             document.getElementById('tennessee-golf-map').innerHTML = '<div style="padding: 20px; text-align: center; color: red;">Error: ' + error.message + '</div>';
         }
+        }
     </script>
 </body>
 </html>
