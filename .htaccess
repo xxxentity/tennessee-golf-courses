@@ -151,6 +151,7 @@ RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landin
 RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/?$ news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment.php [L]
 RewriteRule ^news/bmw-championship-2025-complete-tournament-recap-community-impact/?$ news/bmw-championship-2025-complete-tournament-recap-community-impact.php [L]
 RewriteRule ^news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/?$ news/tennessee-herrington-historic-run-125th-us-amateur-runner-up.php [L]
 RewriteRule ^news/scheffler-delivers-stunning-comeback-wins-bmw-championship/?$ news/scheffler-delivers-stunning-comeback-wins-bmw-championship.php [L]

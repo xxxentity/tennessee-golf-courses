@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
+        'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
+        'date' => '2025-08-18',
+        'time' => '7:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz\'s maiden victory, Jon Rahm\'s Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.',
+        'image' => '/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
         'slug' => 'bmw-championship-2025-complete-tournament-recap-community-impact',
         'date' => '2025-08-18',
