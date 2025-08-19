@@ -500,13 +500,76 @@ try {
             </div>
         </div>
 
-        
-                            <p style="color: #555; line-height: 1.5; margin: 0;"><?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
+        <!-- Reviews Section -->
+        <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
+                
+                <?php if ($is_logged_in): ?>
+                    <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
+                        
+                        <?php if (isset($success_message)): ?>
+                            <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
+                        <?php endif; ?>
+                        
+                        <?php if (isset($error_message)): ?>
+                            <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
+                        <?php endif; ?>
+                        
+                        <form method="POST" class="comment-form">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
+                                <div class="star-rating" style="display: flex; gap: 5px;">
+                                    <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                    <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                    <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                    <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                    <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                    <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                    <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                    <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                    <input type="radio" name="rating" value="1" id="star1" style="display: none;">
+                                    <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
+                                <textarea name="comment_text" placeholder="Share your thoughts about Cumberland Cove Golf Course..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
+                            </div>
+                            <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
+                        </form>
+                    </div>
+                <?php else: ?>
+                    <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
+                        <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Cumberland Cove Golf Course</p>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if (count($comments) > 0): ?>
+                    <?php foreach ($comments as $comment): ?>
+                        <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
+                            </div>
+                            <div style="color: #ffd700; margin-bottom: 1rem;">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
+                                <?php endfor; ?>
+                            </div>
+                            <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
                         </div>
                     <?php endforeach; ?>
+                <?php else: ?>
+                    <div style="text-align: center; padding: 3rem; color: #666;">
+                        <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                        <h3>No reviews yet</h3>
+                        <p>Be the first to share your experience at Cumberland Cove Golf Course!</p>
+                    </div>
                 <?php endif; ?>
             </div>
-        </div>
+        </section>
     </section>
 
     <!-- Full Gallery Modal -->
@@ -543,64 +606,57 @@ try {
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        let currentImageIndex = 1;
-        const totalImages = 25;
-
-        function openGallery(imageIndex) {
-            currentImageIndex = imageIndex;
-            document.getElementById('galleryImage').src = `../images/courses/cumberland-cove-golf-course/${imageIndex}.jpeg`;
-            document.getElementById('galleryModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        // Star rating functionality
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                const stars = document.querySelectorAll('.star-rating label');
+                stars.forEach((star, starIndex) => {
+                    if (starIndex >= (5 - this.value)) {
+                        star.style.color = '#ffd700';
+                    } else {
+                        star.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+        
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+            
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+            
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.style.backgroundImage = `url('../images/courses/cumberland-cove-golf-course/${i}.webp')`;
+                galleryItem.onclick = () => window.open(`../images/courses/cumberland-cove-golf-course/${i}.webp`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
-
+        
         function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
-
-        function nextImage() {
-            currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
-            document.getElementById('galleryImage').src = `../images/courses/cumberland-cove-golf-course/${currentImageIndex}.jpeg`;
-        }
-
-        function prevImage() {
-            currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : totalImages;
-            document.getElementById('galleryImage').src = `../images/courses/cumberland-cove-golf-course/${currentImageIndex}.jpeg`;
-        }
-
-        function showReviewForm() {
-            document.getElementById('reviewForm').style.display = 'block';
-        }
-
-        function hideReviewForm() {
-            document.getElementById('reviewForm').style.display = 'none';
-        }
-
-        function highlightStars(rating) {
-            for (let i = 1; i <= 5; i++) {
-                const star = document.querySelector(`label[for="rating${i}"]`);
-                star.style.color = i <= rating ? '#ffd700' : '#ddd';
-            }
-        }
-
-        function selectRating(rating) {
-            document.getElementById(`rating${rating}`).checked = true;
-            for (let i = 1; i <= 5; i++) {
-                const star = document.querySelector(`label[for="rating${i}"]`);
-                star.style.color = i <= rating ? '#ffd700' : '#ddd';
-            }
-        }
-
-        // Close gallery with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+        
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
                 closeGallery();
             }
         });
-
-        // Close gallery when clicking outside image
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) {
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
                 closeGallery();
             }
         });

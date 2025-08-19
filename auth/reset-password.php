@@ -33,8 +33,8 @@ if (!$resetData) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="../images/logos/tab-logo.webp?v=4">
-    <link rel="shortcut icon" href="../images/logos/tab-logo.webp?v=4">
+    <link rel="icon" type="image/webp" href="../images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="../images/logos/tab-logo.webp?v=5">
     <style>
         body {
             background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
