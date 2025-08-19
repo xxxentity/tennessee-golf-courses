@@ -14,6 +14,16 @@ $articles = [
         'featured' => true
     ],
     [
+        'title' => 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations',
+        'slug' => 'tennessee-herrington-historic-run-125th-us-amateur-runner-up',
+        'date' => '2025-08-17',
+        'time' => '9:30 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
+        'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Scheffler Delivers Stunning Comeback to Win BMW Championship',
         'slug' => 'scheffler-delivers-stunning-comeback-wins-bmw-championship',
         'date' => '2025-08-17',
