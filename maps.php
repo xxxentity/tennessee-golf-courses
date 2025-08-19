@@ -338,12 +338,36 @@ session_start();
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     
     <script>
-        // Initialize Mapbox map with error handling
-        console.log('Starting Mapbox initialization...');
+        // Debug Mapbox loading
+        console.log('1. Script starting...');
+        console.log('2. Mapbox GL JS loaded:', typeof mapboxgl !== 'undefined');
         
-        mapboxgl.accessToken = 'sk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajVjM3RyMGFoMzJwbjF5cjRjMG4xeSJ9.6RNQfd1LsRouqnsFzXMOsg';
-        
-        try {
+        // Check if Mapbox GL JS is loaded
+        if (typeof mapboxgl === 'undefined') {
+            document.getElementById('tennessee-golf-map').innerHTML = '<div style="padding: 20px; text-align: center; color: red;">Error: Mapbox GL JS failed to load. Check internet connection.</div>';
+        } else {
+            console.log('3. Setting access token...');
+            
+            // WARNING: The token you provided starts with 'sk.' which is a SECRET key
+            // For client-side maps, you need a PUBLIC key that starts with 'pk.'
+            // Secret keys should never be used in client-side code!
+            
+            console.error('CRITICAL: You provided a SECRET token (sk.) instead of PUBLIC token (pk.)');
+            console.error('Secret tokens cannot be used in client-side code for security reasons');
+            
+            document.getElementById('tennessee-golf-map').innerHTML = `
+                <div style="padding: 20px; text-align: center; color: red; background: #ffebee; border: 2px solid red; border-radius: 10px;">
+                    <h3>⚠️ Token Error</h3>
+                    <p><strong>You provided a SECRET token (starts with 'sk.')</strong></p>
+                    <p>For client-side maps, you need a <strong>PUBLIC token</strong> that starts with <strong>'pk.'</strong></p>
+                    <p>Please go back to Mapbox and copy your <strong>Default Public Token</strong> instead.</p>
+                    <p>Secret tokens are for server-side use only and cannot work in browsers!</p>
+                </div>
+            `;
+            
+            return; // Stop execution
+            
+            try {
             const map = new mapboxgl.Map({
                 container: 'tennessee-golf-map',
                 style: 'mapbox://styles/mapbox/streets-v12', // Using basic streets first to test
