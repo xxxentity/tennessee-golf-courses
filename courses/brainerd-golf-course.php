@@ -78,18 +78,7 @@ try {
     </script>
     
     <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/brainerd-golf-course/1.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
+        /* Removed course-hero from here - using inline styles instead */
         
         .course-hero-content h1 {
             font-size: 3.5rem;
@@ -553,13 +542,24 @@ try {
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Brainerd Golf Course</h1>
-            <p>Donald Ross Design • Chattanooga, Tennessee</p>
-            <div class="course-rating">
+    <section class="course-hero" style="
+        height: 60vh; 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/brainerd-golf-course/1.webp'); 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        color: white;
+        margin-top: 20px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Brainerd Golf Course</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Donald Ross Design • Chattanooga, Tennessee</p>
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
                         <?php 
                         $full_stars = floor($avg_rating);
                         $half_star = ($avg_rating - $full_stars) >= 0.5;
@@ -575,7 +575,7 @@ try {
                         }
                         ?>
                     </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
                         <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
