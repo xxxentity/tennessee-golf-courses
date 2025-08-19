@@ -1,3 +1,19 @@
+<?php
+require_once '../includes/session-security.php';
+require_once '../includes/csrf.php';
+
+// Start secure session for CSRF protection
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // If secure session fails, fallback to regular session
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    error_log("Session start failed in register.php: " . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -337,11 +353,7 @@
                 ?>
 
                 <form action="register-process" method="POST">
-                    <?php 
-                    session_start(); 
-                    require_once '../includes/csrf.php'; 
-                    echo CSRFProtection::getTokenField(); 
-                    ?>
+                    <?php echo CSRFProtection::getTokenField(); ?>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div class="form-icon">
@@ -421,5 +433,23 @@
     </main>
 
     <script src="../script.js"></script>
+    <script>
+        // Auto-refresh CSRF token every 3 hours to prevent expiration
+        setInterval(function() {
+            fetch('/auth/refresh-csrf-token.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.token) {
+                        const csrfInput = document.querySelector('input[name="csrf_token"]');
+                        if (csrfInput) {
+                            csrfInput.value = data.token;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('CSRF token refresh failed:', error);
+                });
+        }, 3 * 60 * 60 * 1000); // 3 hours
+    </script>
 </body>
 </html>

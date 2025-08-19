@@ -18,11 +18,15 @@ class SecureSession {
         // Set secure session parameters before starting
         $currentCookieParams = session_get_cookie_params();
         
+        // Check if we're on HTTPS or localhost for development
+        $isSecure = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+        $isLocalhost = in_array($_SERVER['SERVER_NAME'] ?? '', ['localhost', '127.0.0.1', '::1']);
+        
         session_set_cookie_params([
             'lifetime' => 0,                    // Session cookie (expires on browser close)
             'path' => '/',
             'domain' => '',                     // Current domain only
-            'secure' => true,                   // HTTPS only
+            'secure' => $isSecure && !$isLocalhost, // HTTPS only (except localhost)
             'httponly' => true,                 // Prevent JavaScript access
             'samesite' => 'Strict'             // CSRF protection
         ]);

@@ -9,7 +9,7 @@ require_once '../includes/input-validation.php';
 // Validate CSRF token first
 $csrf_token = $_POST['csrf_token'] ?? '';
 if (!CSRFProtection::validateToken($csrf_token)) {
-    header('Location: /register?error=' . urlencode('Security token expired or invalid. Please try again.'));
+    header('Location: /register?error=' . urlencode('Security token expired. Please refresh the page and try again.'));
     exit;
 }
 
