@@ -16,8 +16,8 @@ SEO::setupHomepage();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/logos/tab-logo.webp?v=2">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=2">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=3">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=3">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
