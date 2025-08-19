@@ -338,20 +338,36 @@ session_start();
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     
     <script>
-        // Initialize Mapbox map
+        // Initialize Mapbox map with error handling
+        console.log('Starting Mapbox initialization...');
+        
         mapboxgl.accessToken = 'pk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajN4MnFmMDk0YjJrb2NjNnpuNG11NiJ9.F6spXsBwVWg4LY2iFk0frw';
         
-        const map = new mapboxgl.Map({
-            container: 'tennessee-golf-map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v12', // Satellite view to show golf courses
-            center: [-86.7816, 36.1627], // Center of Tennessee
-            zoom: 6.5,
-            pitch: 0,
-            bearing: 0
-        });
-        
-        // Golf course data with complete information
-        const golfCourses = [
+        try {
+            const map = new mapboxgl.Map({
+                container: 'tennessee-golf-map',
+                style: 'mapbox://styles/mapbox/streets-v12', // Using basic streets first to test
+                center: [-86.7816, 36.1627], // Center of Tennessee
+                zoom: 6.5,
+                pitch: 0,
+                bearing: 0
+            });
+            
+            console.log('Map initialized successfully');
+            
+            // Add error event listener
+            map.on('error', function(e) {
+                console.error('Mapbox error:', e);
+                document.getElementById('tennessee-golf-map').innerHTML = '<div style="padding: 20px; text-align: center; color: red;">Map failed to load. Check console for errors.</div>';
+            });
+            
+            // Test if map loads
+            map.on('load', function() {
+                console.log('Map loaded successfully');
+            });
+            
+            // Golf course data with complete information
+            const golfCourses = [
             {
                 name: "Avalon Golf & Country Club",
                 address: "1299 Oak Chase Blvd, Lenoir City, TN 37772",
@@ -432,47 +448,54 @@ session_start();
                 coordinates: [-85.2669, 36.1489],
                 slug: "cumberland-cove-golf-course"
             }
-        ];
-        
-        // Color scheme for different course types
-        const courseColors = {
-            'Public': '#4CAF50',     // Green
-            'Municipal': '#2196F3',   // Blue  
-            'Private': '#FF9800',     // Orange
-            'Semi-Private': '#9C27B0' // Purple
-        };
-        
-        // Add markers to map
-        map.on('load', function() {
-            golfCourses.forEach(function(course) {
-                // Create popup content
-                const popupContent = `
-                    <div class="popup-course-name">${course.name}</div>
-                    <div class="popup-address">${course.address}</div>
-                    <div class="popup-phone">${course.phone}</div>
-                    <a href="/courses/${course.slug}" class="popup-link">View Course Details</a>
-                `;
-                
-                // Create popup
-                const popup = new mapboxgl.Popup({
-                    offset: 25
-                }).setHTML(popupContent);
-                
-                // Create marker
-                const marker = new mapboxgl.Marker({
-                    color: courseColors[course.type] || '#4CAF50'
-                })
-                .setLngLat(course.coordinates)
-                .setPopup(popup)
-                .addTo(map);
+            ];
+            
+            // Color scheme for different course types
+            const courseColors = {
+                'Public': '#4CAF50',     // Green
+                'Municipal': '#2196F3',   // Blue  
+                'Private': '#FF9800',     // Orange
+                'Semi-Private': '#9C27B0' // Purple
+            };
+            
+            // Add markers when map loads
+            map.on('load', function() {
+                console.log('Adding course markers...');
+                golfCourses.forEach(function(course) {
+                    // Create popup content
+                    const popupContent = `
+                        <div class="popup-course-name">${course.name}</div>
+                        <div class="popup-address">${course.address}</div>
+                        <div class="popup-phone">${course.phone}</div>
+                        <a href="/courses/${course.slug}" class="popup-link">View Course Details</a>
+                    `;
+                    
+                    // Create popup
+                    const popup = new mapboxgl.Popup({
+                        offset: 25
+                    }).setHTML(popupContent);
+                    
+                    // Create marker
+                    const marker = new mapboxgl.Marker({
+                        color: courseColors[course.type] || '#4CAF50'
+                    })
+                    .setLngLat(course.coordinates)
+                    .setPopup(popup)
+                    .addTo(map);
+                });
+                console.log('Course markers added successfully');
             });
-        });
-        
-        // Add navigation controls
-        map.addControl(new mapboxgl.NavigationControl());
-        
-        // Add fullscreen control  
-        map.addControl(new mapboxgl.FullscreenControl());
+            
+            // Add navigation controls
+            map.addControl(new mapboxgl.NavigationControl());
+            
+            // Add fullscreen control  
+            map.addControl(new mapboxgl.FullscreenControl());
+            
+        } catch (error) {
+            console.error('Error initializing map:', error);
+            document.getElementById('tennessee-golf-map').innerHTML = '<div style="padding: 20px; text-align: center; color: red;">Error: ' + error.message + '</div>';
+        }
     </script>
 </body>
 </html>
