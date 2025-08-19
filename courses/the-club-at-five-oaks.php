@@ -413,9 +413,9 @@ try {
                 <p>Experience the beauty of The Club at Five Oaks</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-five-oaks/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -535,8 +535,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/the-club-at-five-oaks/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-five-oaks/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/the-club-at-five-oaks/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-five-oaks/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
