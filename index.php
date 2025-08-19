@@ -1,23 +1,111 @@
 <?php
-// Enhanced SEO and performance initialization
+// Enhanced SEO and performance initialization - UPDATED: Featured Reviews Section
 require_once 'includes/init.php';
 require_once 'includes/seo.php';
 
 // Set up SEO for homepage
 SEO::setupHomepage();
+
+// Get latest 3 news articles
+$latest_articles = [
+    [
+        'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
+        'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
+        'date' => '2025-08-18',
+        'time' => '7:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz\'s maiden victory, Jon Rahm\'s Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.',
+        'image' => '/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp'
+    ],
+    [
+        'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
+        'slug' => 'bmw-championship-2025-complete-tournament-recap-community-impact',
+        'date' => '2025-08-18',
+        'time' => '8:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of the 2025 BMW Championship featuring Scottie Scheffler\'s miraculous comeback victory and the tournament\'s extraordinary community impact for the Evans Scholars Foundation.',
+        'image' => '/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp'
+    ],
+    [
+        'title' => 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations',
+        'slug' => 'tennessee-herrington-historic-run-125th-us-amateur-runner-up',
+        'date' => '2025-08-17',
+        'time' => '9:30 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
+        'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp'
+    ]
+];
+
+// Get latest 3 featured courses
+$featured_courses = [
+    [
+        'name' => 'Belle Meade Country Club',
+        'location' => 'Nashville, TN',
+        'description' => 'Historic Donald Ross design since 1921 in exclusive Belle Meade neighborhood',
+        'image' => '/images/courses/belle-meade-country-club/1.jpeg',
+        'features' => ['18 Holes', 'Par 72', 'Donald Ross'],
+        'slug' => 'belle-meade-country-club'
+    ],
+    [
+        'name' => 'The Grove',
+        'location' => 'College Grove, TN',
+        'description' => 'Award-winning Fred Couples design with stunning natural beauty',
+        'image' => '/images/courses/the-grove/1.jpeg',
+        'features' => ['18 Holes', 'Par 72', 'Fred Couples'],
+        'slug' => 'the-grove'
+    ],
+    [
+        'name' => 'Vanderbilt Legends Club',
+        'location' => 'Franklin, TN',
+        'description' => 'Championship course designed by Fuzzy Zoeller and Clyde Johnston',
+        'image' => '/images/courses/vanderbilt-legends-club/1.jpeg',
+        'features' => ['18 Holes', 'Par 72', 'Championship'],
+        'slug' => 'vanderbilt-legends-club'
+    ]
+];
+
+// Get latest featured review articles (equipment reviews)
+$featured_reviews = [
+    [
+        'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
+        'slug' => 'top-5-golf-balls-2025',
+        'date' => '2025-08-11',
+        'time' => '2:45 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
+        'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
+        'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
+        'slug' => 'top-10-putters-2025-amazon-guide',
+        'date' => '2025-08-06',
+        'time' => '4:30 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
+        'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ]
+    // Third review article will be added here when available
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <?php echo SEO::generateMetaTags(); ?>
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -100,6 +188,137 @@ SEO::setupHomepage();
             position: relative;
             z-index: 1;
         }
+        
+        /* Featured Reviews Styles */
+        .featured-reviews {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .review-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .review-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .review-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .review-card:hover .review-image img {
+            transform: scale(1.05);
+        }
+        
+        .review-content {
+            padding: 1.5rem;
+        }
+        
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .review-date {
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .review-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .review-time {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+        
+        .review-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .review-title:hover {
+            color: var(--secondary-color);
+        }
+        
+        .review-excerpt {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .review-author {
+            margin-bottom: 1.5rem;
+        }
+        
+        .author-name {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--primary-color);
+            gap: 0.75rem;
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -160,62 +379,26 @@ SEO::setupHomepage();
                 <p>Discover premium golf destinations across Tennessee</p>
             </div>
             <div class="courses-grid">
+                <?php foreach ($featured_courses as $course): ?>
                 <div class="course-card">
-                    <a href="courses/belle-meade-country-club" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="/images/courses/belle-meade-country-club/1.jpeg" alt="Belle Meade Country Club">
+                    <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="course-image clickable-image" style="text-decoration: none;">
+                        <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
                     </a>
                     <div class="course-content">
-                        <a href="courses/belle-meade-country-club" style="text-decoration: none;">
-                            <h3 class="clickable-title">Belle Meade Country Club</h3>
+                        <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" style="text-decoration: none;">
+                            <h3 class="clickable-title"><?php echo htmlspecialchars($course['name']); ?></h3>
                         </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Nashville, TN</p>
-                        <p class="course-description">Historic Donald Ross design since 1921 in exclusive Belle Meade neighborhood</p>
+                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($course['location']); ?></p>
+                        <p class="course-description"><?php echo htmlspecialchars($course['description']); ?></p>
                         <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Donald Ross</span>
+                            <?php foreach ($course['features'] as $feature): ?>
+                            <span class="feature-tag"><?php echo htmlspecialchars($feature); ?></span>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="courses/belle-meade-country-club" class="btn-primary">View Details</a>
+                        <a href="courses/<?php echo htmlspecialchars($course['slug']); ?>" class="btn-primary">View Details</a>
                     </div>
                 </div>
-
-                <div class="course-card">
-                    <a href="courses/the-grove" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="/images/courses/the-grove/1.jpeg" alt="The Grove">
-                    </a>
-                    <div class="course-content">
-                        <a href="courses/the-grove" style="text-decoration: none;">
-                            <h3 class="clickable-title">The Grove</h3>
-                        </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> College Grove, TN</p>
-                        <p class="course-description">Award-winning Fred Couples design with stunning natural beauty</p>
-                        <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Fred Couples</span>
-                        </div>
-                        <a href="courses/the-grove" class="btn-primary">View Details</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <a href="courses/vanderbilt-legends-club" class="course-image clickable-image" style="text-decoration: none;">
-                        <img src="/images/courses/vanderbilt-legends-club/1.jpeg" alt="Vanderbilt Legends Club">
-                    </a>
-                    <div class="course-content">
-                        <a href="courses/vanderbilt-legends-club" style="text-decoration: none;">
-                            <h3 class="clickable-title">Vanderbilt Legends Club</h3>
-                        </a>
-                        <p class="course-location"><i class="fas fa-map-marker-alt"></i> Franklin, TN</p>
-                        <p class="course-description">Championship course designed by Fuzzy Zoeller and Clyde Johnston</p>
-                        <div class="course-features">
-                            <span class="feature-tag">18 Holes</span>
-                            <span class="feature-tag">Par 72</span>
-                            <span class="feature-tag">Championship</span>
-                        </div>
-                        <a href="courses/vanderbilt-legends-club" class="btn-primary">View Details</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
             <div class="section-footer">
@@ -233,67 +416,68 @@ SEO::setupHomepage();
                 <p>Stay updated with the latest happenings in golf worldwide</p>
             </div>
             <div class="news-grid">
+                <?php foreach ($latest_articles as $article): ?>
                 <article class="news-card">
                     <div class="news-image">
-                        <img src="/images/news/open-championship-final-2025/scottie-final-round.png" alt="Scottie Scheffler with Claret Jug">
+                        <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" style="text-decoration: none;">
+                            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
+                        </a>
                     </div>
                     <div class="news-content">
                         <div class="news-meta">
-                            <span class="news-date">July 21, 2025</span>
-                            <span class="news-category">Major Championship</span>
+                            <span class="news-date"><?php echo date('M j, Y', strtotime($article['date'])); ?></span>
+                            <span class="news-category"><?php echo htmlspecialchars($article['category']); ?></span>
                         </div>
-                        <h3>Scheffler Captures First Claret Jug with Dominant Victory</h3>
-                        <p>World No. 1 completes commanding four-shot triumph at Royal Portrush to claim his fourth major championship...</p>
-                        <a href="news/scheffler-wins-2025-british-open-final-round" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" style="text-decoration: none;">
+                            <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                        </a>
+                        <p><?php echo htmlspecialchars($article['excerpt']); ?></p>
+                        <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-
-                <article class="news-card">
-                    <div class="news-image">
-                        <img src="/images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler celebrating with family">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date">July 19, 2025</span>
-                            <span class="news-category">Major Championship</span>
-                        </div>
-                        <h3>Scheffler Extends Lead to Four Shots with Bogey-Free 67</h3>
-                        <p>World No. 1 Scottie Scheffler fires a bogey-free 67 in Round 3 at Royal Portrush to extend his lead to four shots...</p>
-                        <a href="news/scheffler-extends-lead-open-championship-round-3" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <div class="news-image">
-                        <img src="/images/news/open-championship-round-2/scheffler-64.jpg" alt="Scottie Scheffler during second round">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date">July 18, 2025</span>
-                            <span class="news-category">Major Championship</span>
-                        </div>
-                        <h3>Scheffler Seizes Control with Career-Best 64</h3>
-                        <p>World No. 1 delivers masterclass performance with 7-under 64 to take Open Championship lead at Royal Portrush...</p>
-                        <a href="news/scheffler-seizes-control-open-championship-round-2" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+                <?php endforeach; ?>
             </div>
             <div class="section-footer">
-                <button class="btn-secondary">View All News</button>
+                <a href="news" class="btn-secondary">View All News</a>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews-section" style="padding: 80px 0; background: var(--bg-light);">
+    <!-- Featured Reviews -->
+    <section id="reviews" class="featured-reviews">
         <div class="container">
             <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers across Tennessee's premier courses</p>
+                <h2>Featured Reviews</h2>
+                <p>In-depth reviews and buying guides for golf equipment and accessories</p>
             </div>
-            <div style="text-align: center; padding: 60px 0;">
-                <p style="font-size: 18px; color: var(--text-gray);">Be the first to share your experience! Visit any course page to leave a review.</p>
-                <a href="courses" class="btn-primary" style="margin-top: 20px;">Browse Courses</a>
+            <div class="reviews-grid">
+                <?php foreach ($featured_reviews as $review): ?>
+                <article class="review-card">
+                    <div class="review-image">
+                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                            <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
+                        </a>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-meta">
+                            <span class="review-date"><?php echo date('M j, Y', strtotime($review['date'])); ?></span>
+                            <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
+                            <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
+                        </div>
+                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                            <h3 class="review-title"><?php echo htmlspecialchars($review['title']); ?></h3>
+                        </a>
+                        <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
+                        <div class="review-author">
+                            <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
+                        </div>
+                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">Read Full Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <?php endforeach; ?>
+            </div>
+            <div class="section-footer">
+                <a href="reviews" class="btn-secondary">View All Reviews</a>
             </div>
         </div>
     </section>
