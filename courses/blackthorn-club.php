@@ -210,6 +210,9 @@ try {
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .gallery-item:hover {
