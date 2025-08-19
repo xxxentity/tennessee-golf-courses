@@ -376,7 +376,7 @@ session_start();
                 console.log('Map loaded successfully');
             });
             
-            // Golf course data with complete information
+            // Golf course data with complete information - ALL 92 COURSES
             const golfCourses = [
             {
                 name: "Avalon Golf & Country Club",
@@ -400,7 +400,7 @@ session_start();
                 phone: "(931) 707-1640", 
                 type: "Public",
                 coordinates: [-85.0269, 35.9489],
-                slug: "bear-trace-at-cumberland-mountain"
+                slug: "bear-trace-cumberland-mountain"
             },
             {
                 name: "Bear Trace at Harrison Bay",
@@ -408,7 +408,7 @@ session_start();
                 phone: "(423) 326-0885",
                 type: "Public", 
                 coordinates: [-85.1355, 35.1178],
-                slug: "bear-trace-at-harrison-bay"
+                slug: "bear-trace-harrison-bay"
             },
             {
                 name: "Belle Acres Golf Course",
@@ -425,6 +425,22 @@ session_start();
                 type: "Private",
                 coordinates: [-86.8611, 36.1044],
                 slug: "belle-meade-country-club"
+            },
+            {
+                name: "Big Creek Golf Club",
+                address: "5400 Big Creek Dr, Millington, TN 38053",
+                phone: "(901) 353-1654",
+                type: "Semi-Private",
+                coordinates: [-89.8989, 35.3434],
+                slug: "big-creek-golf-club"
+            },
+            {
+                name: "Blackthorn Club",
+                address: "1501 Ridges Club Drive, Jonesborough, TN 37659",
+                phone: "(423) 753-7888",
+                type: "Private",
+                coordinates: [-82.4734, 36.2945],
+                slug: "blackthorn-club"
             },
             {
                 name: "Bluegrass Yacht & Country Club",
@@ -451,12 +467,652 @@ session_start();
                 slug: "brown-acres-golf-course"
             },
             {
+                name: "Cedar Crest Golf Club",
+                address: "2371 Cedar Crest Road, Benton, TN 37307",
+                phone: "(423) 338-2251",
+                type: "Public",
+                coordinates: [-84.6544, 35.1756],
+                slug: "cedar-crest-golf-club"
+            },
+            {
+                name: "Chattanooga Golf & Country Club",
+                address: "7110 Shallowford Road, Chattanooga, TN 37421",
+                phone: "(423) 894-1441",
+                type: "Private",
+                coordinates: [-85.1580, 35.0539],
+                slug: "chattanooga-golf-country-club"
+            },
+            {
+                name: "Cheekwood Golf Club",
+                address: "285 Spencer Creek Rd, Franklin, TN 37069",
+                phone: "(615) 794-8223",
+                type: "Public",
+                coordinates: [-86.8556, 35.9269],
+                slug: "cheekwood-golf-club"
+            },
+            {
+                name: "Cherokee Country Club",
+                address: "5138 Lyons View Pike, Knoxville, TN 37919",
+                phone: "(865) 584-4637",
+                type: "Private",
+                coordinates: [-83.9919, 35.9392],
+                slug: "cherokee-country-club"
+            },
+            {
+                name: "Clarksville Country Club",
+                address: "1025 Tylertown Rd, Clarksville, TN 37040",
+                phone: "(931) 647-8894",
+                type: "Private",
+                coordinates: [-87.3778, 36.5298],
+                slug: "clarksville-country-club"
+            },
+            {
+                name: "Colonial Country Club",
+                address: "2736 Shallowford Village Dr, Chattanooga, TN 37421",
+                phone: "(423) 899-3821",
+                type: "Private",
+                coordinates: [-85.1667, 35.0611],
+                slug: "colonial-country-club"
+            },
+            {
+                name: "Council Fire Golf Club",
+                address: "1300 Council Fire Dr, Chattanooga, TN 37421",
+                phone: "(423) 855-4653",
+                type: "Private",
+                coordinates: [-85.1889, 35.0278],
+                slug: "council-fire-golf-club"
+            },
+            {
                 name: "Cumberland Cove Golf Course",
                 address: "16941 Highway 70 N, Monterey, TN 38574",
                 phone: "(931) 839-3313", 
                 type: "Public",
                 coordinates: [-85.2669, 36.1489],
                 slug: "cumberland-cove-golf-course"
+            },
+            {
+                name: "Dead Horse Lake Golf Course",
+                address: "3016 Gravelly Hills Road, Louisville, TN 37777",
+                phone: "(865) 693-5270",
+                type: "Public",
+                coordinates: [-83.9167, 35.8167],
+                slug: "dead-horse-lake-golf-course"
+            },
+            {
+                name: "Druid Hills Golf Club",
+                address: "3025 Walnut Grove Rd, Memphis, TN 38111",
+                phone: "(901) 685-0036",
+                type: "Public",
+                coordinates: [-89.8467, 35.1078],
+                slug: "druid-hills-golf-club"
+            },
+            {
+                name: "Eagle's Landing Golf Club",
+                address: "1556 Old Knoxville Highway, Sevierville, TN 37876",
+                phone: "(865) 429-4223",
+                type: "Municipal",
+                coordinates: [-83.5619, 35.8481],
+                slug: "eagles-landing-golf-club"
+            },
+            {
+                name: "Egwani Farms Golf Course",
+                address: "4250 Egwani Farms Drive, Rockford, TN 37853",
+                phone: "(865) 970-7132",
+                type: "Public",
+                coordinates: [-83.9333, 35.8500],
+                slug: "egwani-farms-golf-course"
+            },
+            {
+                name: "Fall Creek Falls State Park Golf Course",
+                address: "2009 Village Camp Rd, Pikeville, TN 37367",
+                phone: "(423) 881-5706",
+                type: "Public",
+                coordinates: [-85.3444, 35.6667],
+                slug: "fall-creek-falls-state-park-golf-course"
+            },
+            {
+                name: "Forrest Crossing Golf Course",
+                address: "750 Riverview Dr, Franklin, TN 37064",
+                phone: "(615) 794-9400",
+                type: "Public",
+                coordinates: [-86.8389, 35.9050],
+                slug: "forrest-crossing-golf-course"
+            },
+            {
+                name: "Fox Den Country Club",
+                address: "2001 Twelve Stones Crossing, Goodlettsville, TN 37072",
+                phone: "(615) 859-4653",
+                type: "Semi-Private",
+                coordinates: [-86.7261, 36.3231],
+                slug: "fox-den-country-club"
+            },
+            {
+                name: "Gaylord Springs Golf Links",
+                address: "18 Springs Blvd, Nashville, TN 37214",
+                phone: "(615) 458-1730",
+                type: "Public",
+                coordinates: [-86.6917, 36.2028],
+                slug: "gaylord-springs-golf-links"
+            },
+            {
+                name: "Greystone Golf Course",
+                address: "5555 Greystone Dr, Dickson, TN 37055",
+                phone: "(615) 446-0044",
+                type: "Public",
+                coordinates: [-87.3889, 36.0833],
+                slug: "greystone-golf-course"
+            },
+            {
+                name: "Harpeth Hills Golf Course",
+                address: "2424 Old Hickory Blvd, Nashville, TN 37221",
+                phone: "(615) 862-8493",
+                type: "Municipal",
+                coordinates: [-86.8556, 36.0889],
+                slug: "harpeth-hills-golf-course"
+            },
+            {
+                name: "Henry Horton State Park Golf Course",
+                address: "4209 Nashville Hwy, Chapel Hill, TN 37034",
+                phone: "(931) 364-7724",
+                type: "Public",
+                coordinates: [-86.6889, 35.6167],
+                slug: "henry-horton-state-park-golf-course"
+            },
+            {
+                name: "Hermitage Golf Course",
+                address: "3939 Old Hickory Blvd, Old Hickory, TN 37138",
+                phone: "(615) 847-4001",
+                type: "Public",
+                coordinates: [-86.6167, 36.2167],
+                slug: "hermitage-golf-course"
+            },
+            {
+                name: "Hillwood Country Club",
+                address: "5200 Hillwood Blvd, Nashville, TN 37205",
+                phone: "(615) 353-6347",
+                type: "Private",
+                coordinates: [-86.8833, 36.1167],
+                slug: "hillwood-country-club"
+            },
+            {
+                name: "Holston Hills Country Club",
+                address: "7489 Holston Hills Rd, Knoxville, TN 37914",
+                phone: "(865) 523-2411",
+                type: "Private",
+                coordinates: [-83.8556, 35.9667],
+                slug: "holston-hills-country-club"
+            },
+            {
+                name: "Honky Tonk National Golf Course",
+                address: "210 Willie Nelson Blvd, Smyrna, TN 37167",
+                phone: "(615) 459-9292",
+                type: "Public",
+                coordinates: [-86.5167, 35.9833],
+                slug: "honky-tonk-national-golf-course"
+            },
+            {
+                name: "Island Pointe Golf Club",
+                address: "1 Clubhouse Dr, Vonore, TN 37885",
+                phone: "(423) 884-1808",
+                type: "Public",
+                coordinates: [-84.2333, 35.6167],
+                slug: "island-pointe-golf-club"
+            },
+            {
+                name: "Jackson Country Club",
+                address: "318 Country Club Ln, Jackson, TN 38305",
+                phone: "(731) 422-1504",
+                type: "Private",
+                coordinates: [-88.8167, 35.6167],
+                slug: "jackson-country-club"
+            },
+            {
+                name: "Lake Tansi Golf Course",
+                address: "1 Fairway Dr, Crossville, TN 38572",
+                phone: "(931) 788-3301",
+                type: "Semi-Private",
+                coordinates: [-85.0833, 35.9833],
+                slug: "lake-tansi-golf-course"
+            },
+            {
+                name: "Lambert Acres Golf Club",
+                address: "607 W Main St, Hendersonville, TN 37075",
+                phone: "(615) 824-1100",
+                type: "Public",
+                coordinates: [-86.6333, 36.3167],
+                slug: "lambert-acres-golf-club"
+            },
+            {
+                name: "Laurel Valley Country Club",
+                address: "550 Country Club Dr, Townsend, TN 37882",
+                phone: "(865) 448-6590",
+                type: "Semi-Private",
+                coordinates: [-83.7556, 35.6778],
+                slug: "laurel-valley-country-club"
+            },
+            {
+                name: "Lookout Mountain Club",
+                address: "104 Fairway Ave, Lookout Mountain, TN 37350",
+                phone: "(423) 821-9807",
+                type: "Private",
+                coordinates: [-85.3500, 34.9667],
+                slug: "lookout-mountain-club"
+            },
+            {
+                name: "McCabe Golf Course",
+                address: "100 26th Ave N, Nashville, TN 37203",
+                phone: "(615) 862-8474",
+                type: "Municipal",
+                coordinates: [-86.8056, 36.1833],
+                slug: "mccabe-golf-course"
+            },
+            {
+                name: "Mirimichi Golf Course",
+                address: "6195 Millington-Memphis Hwy, Millington, TN 38053",
+                phone: "(901) 873-4653",
+                type: "Public",
+                coordinates: [-89.9167, 35.3333],
+                slug: "mirimichi-golf-course"
+            },
+            {
+                name: "Moccasin Bend Golf Course",
+                address: "381 Moccasin Bend Rd, Chattanooga, TN 37405",
+                phone: "(423) 267-3585",
+                type: "Municipal",
+                coordinates: [-85.3167, 35.0667],
+                slug: "moccasin-bend-golf-course"
+            },
+            {
+                name: "Montgomery Bell State Park Golf Course",
+                address: "1020 Hotel Ave, Burns, TN 37029",
+                phone: "(615) 797-2578",
+                type: "Public",
+                coordinates: [-87.3167, 36.0500],
+                slug: "montgomery-bell-state-park-golf-course"
+            },
+            {
+                name: "Nashville Golf & Athletic Club",
+                address: "300 Franklin Rd, Franklin, TN 37069",
+                phone: "(615) 383-3921",
+                type: "Private",
+                coordinates: [-86.8556, 36.0167],
+                slug: "nashville-golf-athletic-club"
+            },
+            {
+                name: "Nashville National Golf Links",
+                address: "1324 Murfreesboro Pike, Nashville, TN 37217",
+                phone: "(615) 361-8000",
+                type: "Public",
+                coordinates: [-86.7167, 36.1167],
+                slug: "nashville-national-golf-links"
+            },
+            {
+                name: "Old Fort Golf Course",
+                address: "245 Fortress Dr, Murfreesboro, TN 37128",
+                phone: "(615) 895-1068",
+                type: "Public",
+                coordinates: [-86.4167, 35.8167],
+                slug: "old-fort-golf-course"
+            },
+            {
+                name: "Old Hickory Country Club",
+                address: "4853 Old Hickory Blvd, Old Hickory, TN 37138",
+                phone: "(615) 847-9040",
+                type: "Private",
+                coordinates: [-86.6167, 36.2000],
+                slug: "old-hickory-country-club"
+            },
+            {
+                name: "Overton Park Golf Course",
+                address: "2080 Poplar Ave, Memphis, TN 38104",
+                phone: "(901) 725-9905",
+                type: "Municipal",
+                coordinates: [-90.0167, 35.1500],
+                slug: "overton-park-9"
+            },
+            {
+                name: "Paris Landing State Park Golf Course",
+                address: "16055 Hwy 79 N, Buchanan, TN 38222",
+                phone: "(731) 644-0023",
+                type: "Public",
+                coordinates: [-88.0167, 36.4833],
+                slug: "paris-landing-state-park-golf-course"
+            },
+            {
+                name: "Percy Warner Golf Course",
+                address: "2500 Old Hickory Blvd, Nashville, TN 37221",
+                phone: "(615) 862-8463",
+                type: "Municipal",
+                coordinates: [-86.8667, 36.0833],
+                slug: "percy-warner-golf-course"
+            },
+            {
+                name: "Pickwick Landing State Park Golf Course",
+                address: "120 Playground Loop, Pickwick Dam, TN 38365",
+                phone: "(731) 689-3149",
+                type: "Public",
+                coordinates: [-88.2333, 35.0667],
+                slug: "pickwick-landing-state-park"
+            },
+            {
+                name: "Pine Oaks Golf Course",
+                address: "3465 US-411, Vonore, TN 37885",
+                phone: "(423) 884-6681",
+                type: "Public",
+                coordinates: [-84.2167, 35.5833],
+                slug: "pine-oaks-golf-course"
+            },
+            {
+                name: "Richland Country Club",
+                address: "1 Country Club Dr, Nashville, TN 37205",
+                phone: "(615) 353-6441",
+                type: "Private",
+                coordinates: [-86.8833, 36.1000],
+                slug: "richland-country-club"
+            },
+            {
+                name: "Ross Creek Landing Golf Course",
+                address: "7031 Brevard Rd, Lenoir City, TN 37771",
+                phone: "(865) 717-4653",
+                type: "Public",
+                coordinates: [-84.2667, 35.7833],
+                slug: "ross-creek-landing-golf-course"
+            },
+            {
+                name: "Sevierville Golf Club",
+                address: "1556 Old Knoxville Highway, Sevierville, TN 37876",
+                phone: "(865) 429-4223",
+                type: "Municipal",
+                coordinates: [-83.5619, 35.8481],
+                slug: "sevierville-golf-club"
+            },
+            {
+                name: "Signal Mountain Golf & Country Club",
+                address: "2935 Corral Rd, Signal Mountain, TN 37377",
+                phone: "(423) 886-9090",
+                type: "Private",
+                coordinates: [-85.3500, 35.1333],
+                slug: "signal-mountain-golf-country-club"
+            },
+            {
+                name: "Southern Hills Golf & Country Club",
+                address: "4080 Massey Totten Rd, Cookeville, TN 38506",
+                phone: "(931) 526-4653",
+                type: "Private",
+                coordinates: [-85.5167, 36.1667],
+                slug: "southern-hills-golf-country-club"
+            },
+            {
+                name: "Springhouse Golf Club",
+                address: "18 Springhouse Ln, Nashville, TN 37214",
+                phone: "(615) 871-7759",
+                type: "Public",
+                coordinates: [-86.6667, 36.2167],
+                slug: "springhouse-golf-club"
+            },
+            {
+                name: "Stonehenge Golf Club",
+                address: "4095 Akins Rd, Fairview, TN 37062",
+                phone: "(615) 799-8000",
+                type: "Public",
+                coordinates: [-87.1167, 35.9833],
+                slug: "stonehenge-golf-club"
+            },
+            {
+                name: "Stones River Country Club",
+                address: "1830 NW Broad St, Murfreesboro, TN 37129",
+                phone: "(615) 893-6426",
+                type: "Private",
+                coordinates: [-86.4167, 35.8667],
+                slug: "stones-river-country-club"
+            },
+            {
+                name: "Sweetens Cove Golf Club",
+                address: "4650 Sweetens Cove Rd, South Pittsburg, TN 37380",
+                phone: "(423) 837-7370",
+                type: "Public",
+                coordinates: [-85.7167, 35.0000],
+                slug: "sweetens-cove-golf-club"
+            },
+            {
+                name: "Tanasi Golf Course",
+                address: "2200 Tanasi Trail, Vonore, TN 37885",
+                phone: "(423) 884-6781",
+                type: "Public",
+                coordinates: [-84.2333, 35.6000],
+                slug: "tanasi-golf-course"
+            },
+            {
+                name: "Ted Rhodes Golf Course",
+                address: "1901 Ed Temple Blvd, Nashville, TN 37208",
+                phone: "(615) 862-8463",
+                type: "Municipal",
+                coordinates: [-86.8167, 36.1833],
+                slug: "ted-rhodes-golf-course"
+            },
+            {
+                name: "Temple Hills Country Club",
+                address: "5200 Edmondson Pike, Nashville, TN 37211",
+                phone: "(615) 832-0969",
+                type: "Private",
+                coordinates: [-86.7167, 36.0500],
+                slug: "temple-hills-country-club"
+            },
+            {
+                name: "Tennessee Grasslands at Fairvue",
+                address: "1400 Union Camp Rd, Gallatin, TN 37066",
+                phone: "(615) 230-8474",
+                type: "Public",
+                coordinates: [-86.4167, 36.3833],
+                slug: "tennessee-grasslands-fairvue"
+            },
+            {
+                name: "Tennessee Grasslands at Foxland",
+                address: "2000 Twelve Stones Crossing, Gallatin, TN 37066",
+                phone: "(615) 230-8474",
+                type: "Public",
+                coordinates: [-86.4333, 36.3667],
+                slug: "tennessee-grasslands-foxland"
+            },
+            {
+                name: "Tennessee National Golf Club",
+                address: "1901 Loudon Hwy, Loudon, TN 37774",
+                phone: "(865) 458-5797",
+                type: "Public",
+                coordinates: [-84.3333, 35.7333],
+                slug: "tennessee-national-golf-club"
+            },
+            {
+                name: "The Club at Five Oaks",
+                address: "4725 Saundersville Rd, Lebanon, TN 37090",
+                phone: "(615) 443-4653",
+                type: "Private",
+                coordinates: [-86.2667, 36.2167],
+                slug: "the-club-at-five-oaks"
+            },
+            {
+                name: "The Club at Gettysvue",
+                address: "1400 Gettysvue Dr, Knoxville, TN 37922",
+                phone: "(865) 966-4653",
+                type: "Private",
+                coordinates: [-84.0167, 35.9167],
+                slug: "the-club-at-gettysvue"
+            },
+            {
+                name: "The Golf Club of Tennessee",
+                address: "1000 Twelve Stones Crossing, Kingston Springs, TN 37082",
+                phone: "(615) 352-5000",
+                type: "Private",
+                coordinates: [-87.1167, 36.1167],
+                slug: "the-golf-club-of-tennessee"
+            },
+            {
+                name: "The Governors Club",
+                address: "1500 Twelve Stones Crossing, Brentwood, TN 37027",
+                phone: "(615) 790-9977",
+                type: "Private",
+                coordinates: [-86.7833, 35.9833],
+                slug: "the-governors-club"
+            },
+            {
+                name: "The Grove",
+                address: "1 Champions Blvd, College Grove, TN 37046",
+                phone: "(615) 591-4653",
+                type: "Private",
+                coordinates: [-86.6667, 35.7833],
+                slug: "the-grove"
+            },
+            {
+                name: "The Honors Course",
+                address: "9062 Lee Hwy, Ooltewah, TN 37363",
+                phone: "(423) 894-4653",
+                type: "Private",
+                coordinates: [-85.0667, 35.0833],
+                slug: "the-honors-course"
+            },
+            {
+                name: "The Legacy Golf Course",
+                address: "1500 Legacy Dr, Springfield, TN 37172",
+                phone: "(615) 384-0246",
+                type: "Public",
+                coordinates: [-86.8833, 36.5167],
+                slug: "the-legacy-golf-course"
+            },
+            {
+                name: "The Links at Audubon",
+                address: "4160 Audubon Dr, Memphis, TN 38125",
+                phone: "(901) 756-7770",
+                type: "Public",
+                coordinates: [-89.8167, 35.0833],
+                slug: "the-links-at-audubon"
+            },
+            {
+                name: "The Links at Fox Meadows",
+                address: "3740 Clarke Rd, Memphis, TN 38115",
+                phone: "(901) 362-0232",
+                type: "Public",
+                coordinates: [-89.8667, 35.0667],
+                slug: "the-links-at-fox-meadows"
+            },
+            {
+                name: "The Links at Galloway",
+                address: "3815 Linbar Dr, Memphis, TN 38127",
+                phone: "(901) 685-7805",
+                type: "Public",
+                coordinates: [-89.9167, 35.1833],
+                slug: "the-links-at-galloway"
+            },
+            {
+                name: "The Links at Kahite",
+                address: "100 Kahite Trail, Tellico Plains, TN 37385",
+                phone: "(423) 253-4653",
+                type: "Public",
+                coordinates: [-84.2833, 35.3667],
+                slug: "the-links-at-kahite"
+            },
+            {
+                name: "The Links at Whitehaven",
+                address: "1645 Nazareth Rd, Memphis, TN 38116",
+                phone: "(901) 396-7320",
+                type: "Public",
+                coordinates: [-90.0000, 35.0333],
+                slug: "the-links-at-whitehaven"
+            },
+            {
+                name: "Three Ridges Golf Course",
+                address: "3440 Three Ridges Dr, Knoxville, TN 37931",
+                phone: "(865) 687-4797",
+                type: "Public",
+                coordinates: [-84.1000, 35.9833],
+                slug: "three-ridges-golf-course"
+            },
+            {
+                name: "Toqua Golf Course",
+                address: "352 Toqua Dr, Vonore, TN 37885",
+                phone: "(423) 884-6781",
+                type: "Public",
+                coordinates: [-84.2167, 35.6167],
+                slug: "toqua-golf-course"
+            },
+            {
+                name: "TPC Southwind",
+                address: "3325 Club at Southwind, Memphis, TN 38125",
+                phone: "(901) 748-0405",
+                type: "Private",
+                coordinates: [-89.8167, 35.0667],
+                slug: "tpc-southwind"
+            },
+            {
+                name: "Troubadour Golf & Field Club",
+                address: "4740 Shallowford Rd, Nashville, TN 37205",
+                phone: "(615) 383-7179",
+                type: "Private",
+                coordinates: [-86.8667, 36.1000],
+                slug: "troubadour-golf-field-club"
+            },
+            {
+                name: "Two Rivers Golf Course",
+                address: "3140 McGavock Pike, Nashville, TN 37214",
+                phone: "(615) 889-2675",
+                type: "Municipal",
+                coordinates: [-86.6500, 36.2167],
+                slug: "two-rivers-golf-course"
+            },
+            {
+                name: "Vanderbilt Legends Club",
+                address: "1500 Legends Club Ln, Franklin, TN 37069",
+                phone: "(615) 791-8100",
+                type: "Private",
+                coordinates: [-86.8167, 35.9500],
+                slug: "vanderbilt-legends-club"
+            },
+            {
+                name: "Warriors Path State Park Golf Course",
+                address: "490 Hemlock Rd, Kingsport, TN 37663",
+                phone: "(423) 323-4990",
+                type: "Public",
+                coordinates: [-82.4833, 36.5167],
+                slug: "warriors-path-state-park-golf-course"
+            },
+            {
+                name: "White Plains Golf Course",
+                address: "2886 White Plains Rd, White Plains, TN 37890",
+                phone: "(423) 794-7931",
+                type: "Public",
+                coordinates: [-83.2833, 36.4667],
+                slug: "white-plains-golf-course"
+            },
+            {
+                name: "Whittle Springs Golf Course",
+                address: "1200 Whittle Springs Rd, Knoxville, TN 37917",
+                phone: "(865) 525-1022",
+                type: "Municipal",
+                coordinates: [-83.9500, 36.0167],
+                slug: "whittle-springs-golf-course"
+            },
+            {
+                name: "Williams Creek Golf Course",
+                address: "2901 Williams Creek Dr, Knoxville, TN 37918",
+                phone: "(865) 688-9140",
+                type: "Municipal",
+                coordinates: [-83.9833, 35.9833],
+                slug: "williams-creek-golf-course"
+            },
+            {
+                name: "Willow Creek Golf Club",
+                address: "106 Augusta Dr, Knoxville, TN 37922",
+                phone: "(865) 675-0100",
+                type: "Public",
+                coordinates: [-84.0333, 35.9333],
+                slug: "willow-creek-golf-club"
+            },
+            {
+                name: "Windtree Golf Course",
+                address: "200 Windtree Golf Dr, Mount Juliet, TN 37122",
+                phone: "(615) 754-4653",
+                type: "Public",
+                coordinates: [-86.4833, 36.2167],
+                slug: "windtree-golf-course"
             }
             ];
             
@@ -477,7 +1133,7 @@ session_start();
                         <div class="popup-course-name">${course.name}</div>
                         <div class="popup-address">${course.address}</div>
                         <div class="popup-phone">${course.phone}</div>
-                        <a href="/courses/${course.slug}" class="popup-link">View Course Details</a>
+                        <a href="/courses/${course.slug}" target="_blank" rel="noopener noreferrer" class="popup-link">View Course Details</a>
                     `;
                     
                     // Create popup
