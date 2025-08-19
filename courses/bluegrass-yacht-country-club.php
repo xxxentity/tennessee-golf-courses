@@ -397,9 +397,9 @@ try {
                 <p>Experience the beauty of Bluegrass Yacht & Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bluegrass-yacht-country-club/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bluegrass-yacht-country-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bluegrass-yacht-country-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -517,12 +517,13 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images
+            // Generate all 25 images (using The Grove images as placeholders)
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/bluegrass-yacht-country-club/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/bluegrass-yacht-country-club/${i}.webp`, '_blank');
+                const imageNum = ((i - 1) % 10) + 1; // Cycle through 1-10
+                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${imageNum}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${imageNum}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
