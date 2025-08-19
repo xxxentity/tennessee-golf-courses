@@ -198,7 +198,7 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero" style="
         height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/the-grove/1.jpeg'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cherokee-country-club/1.jpeg'); 
         background-size: cover; 
         background-position: center; 
         display: flex; 
@@ -397,9 +397,9 @@ try {
                 <p>Experience the beauty of Cherokee Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-grove/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/1.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/cherokee-country-club/3.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -521,9 +521,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                const imageNum = ((i - 1) % 10) + 1; // Cycle through 1-10
-                galleryItem.style.backgroundImage = `url('../images/courses/the-grove/${imageNum}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-grove/${imageNum}.jpeg`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/cherokee-country-club/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/cherokee-country-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
