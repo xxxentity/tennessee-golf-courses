@@ -4,8 +4,8 @@
  * Add essential security headers to protect against common web vulnerabilities
  */
 
-// Prevent clickjacking attacks
-header('X-Frame-Options: DENY');
+// Prevent clickjacking attacks while allowing Google Maps
+header('X-Frame-Options: SAMEORIGIN');
 
 // Prevent MIME type sniffing
 header('X-Content-Type-Options: nosniff');
