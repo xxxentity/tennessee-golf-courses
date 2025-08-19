@@ -65,8 +65,8 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -716,7 +716,7 @@ try {
                             <p><i class="fas fa-phone"></i> (865) 675-0100</p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=12003+Kingston+Pike,+Knoxville,+TN+37934" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://maps.google.com/maps?q=12003+Kingston+Pike,+Knoxville,+TN+37934&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=12003+Kingston+Pike,+Knoxville,+TN+37934" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>

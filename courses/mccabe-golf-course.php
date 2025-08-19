@@ -75,8 +75,8 @@ try {
     </script>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=4">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=4">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <style>
         .course-hero {
@@ -650,7 +650,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=100+46th+Avenue+North,+Nashville,+TN+37209&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=100+46th+Avenue+North,+Nashville,+TN+37209" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
