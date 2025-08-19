@@ -348,24 +348,9 @@ session_start();
         } else {
             console.log('3. Setting access token...');
             
-            // WARNING: The token you provided starts with 'sk.' which is a SECRET key
-            // For client-side maps, you need a PUBLIC key that starts with 'pk.'
-            // Secret keys should never be used in client-side code!
-            
-            console.error('CRITICAL: You provided a SECRET token (sk.) instead of PUBLIC token (pk.)');
-            console.error('Secret tokens cannot be used in client-side code for security reasons');
-            
-            document.getElementById('tennessee-golf-map').innerHTML = `
-                <div style="padding: 20px; text-align: center; color: red; background: #ffebee; border: 2px solid red; border-radius: 10px;">
-                    <h3>⚠️ Token Error</h3>
-                    <p><strong>You provided a SECRET token (starts with 'sk.')</strong></p>
-                    <p>For client-side maps, you need a <strong>PUBLIC token</strong> that starts with <strong>'pk.'</strong></p>
-                    <p>Please go back to Mapbox and copy your <strong>Default Public Token</strong> instead.</p>
-                    <p>Secret tokens are for server-side use only and cannot work in browsers!</p>
-                </div>
-            `;
-            
-            return; // Stop execution
+            // Use your default public token - replace with your actual pk. token
+            mapboxgl.accessToken = 'pk.eyJ1IjoidGdjYWRtaW4iLCJhIjoiY21lajN4MnFmMDk0YjJrb2NjNnpuNG11NiJ9.F6spXsBwVWg4LY2iFk0frw';
+            console.log('4. Token set, creating map...');
             
             try {
             const map = new mapboxgl.Map({

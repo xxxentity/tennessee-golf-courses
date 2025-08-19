@@ -18,11 +18,11 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 
 // Content Security Policy - Basic policy, can be customized based on needs
 $csp = "default-src 'self'; " .
-       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; " .
-       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; " .
+       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://api.mapbox.com; " .
+       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://api.mapbox.com; " .
        "img-src 'self' data: https:; " .
        "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
-       "connect-src 'self' https://www.google-analytics.com; " .
+       "connect-src 'self' https://www.google-analytics.com https://api.mapbox.com https://*.tiles.mapbox.com; " .
        "frame-src 'self' https://maps.google.com https://www.google.com; " .
        "object-src 'none'; " .
        "base-uri 'self';";
