@@ -238,7 +238,7 @@ try {
     <!-- Course Hero Section -->
     <section class="course-hero" style="
         height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cumberland-cove-golf-course/1.jpeg'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cumberland-cove-golf-course/1.webp'); 
         background-size: cover; 
         background-position: center; 
         display: flex; 
@@ -572,18 +572,6 @@ try {
         </section>
     </section>
 
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Cumberland Cove Golf Course - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
     <!-- Photo Gallery -->
     <section class="photo-gallery">
         <div class="container">
@@ -601,6 +589,19 @@ try {
             </div>
         </div>
     </section>
+
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cumberland Cove Golf Course - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
