@@ -649,7 +649,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=1201+Fleetwood+Drive,+Lookout+Mountain,+GA+30750" 
+                            src="https://maps.google.com/maps?q=1201+Fleetwood+Drive,+Lookout+Mountain,+GA+30750&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 

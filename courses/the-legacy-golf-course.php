@@ -339,7 +339,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=100+Ray+Floyd+Drive,+Springfield,+TN+37172" 
+                            src="https://maps.google.com/maps?q=100+Ray+Floyd+Drive,+Springfield,+TN+37172&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 

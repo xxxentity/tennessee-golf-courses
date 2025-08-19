@@ -716,7 +716,7 @@ try {
                             <p><i class="fas fa-phone"></i> (865) 675-0100</p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=12003+Kingston+Pike,+Knoxville,+TN+37934" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=12003+Kingston+Pike,+Knoxville,+TN+37934" 
+                        <iframe src="https://maps.google.com/maps?q=12003+Kingston+Pike,+Knoxville,+TN+37934&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>

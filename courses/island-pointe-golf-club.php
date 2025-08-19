@@ -717,7 +717,7 @@ try {
                             <p><i class="fas fa-globe"></i> <a href="https://www.islandpointegc.com" target="_blank">islandpointegc.com</a></p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=9610+Kodak+Road,+Kodak,+TN+37764" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=9610+Kodak+Road,+Kodak,+TN+37764" 
+                        <iframe src="https://maps.google.com/maps?q=9610+Kodak+Road,+Kodak,+TN+37764&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>

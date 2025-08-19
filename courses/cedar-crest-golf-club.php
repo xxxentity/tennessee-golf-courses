@@ -723,7 +723,7 @@ try {
                             <p><i class="fas fa-globe"></i> <a href="https://www.cedarcrestgolfclub.com" target="_blank">cedarcrestgolfclub.com</a></p>
                             <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129" target="_blank">Get Directions</a></p>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBokugMWbWJvSkdv3Op_d7MKs8eEGIhkCw&q=7972+Mona+Rd,+Murfreesboro,+TN+37129" 
+                        <iframe src="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                 width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
                         </iframe>
                     </div>
