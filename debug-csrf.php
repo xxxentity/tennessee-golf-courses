@@ -37,4 +37,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <hr>
-<p><a href="auth/register.php">Go to Registration Form</a></p>
+<p><a href="/register">Go to Registration Form</a></p>
+<p><em>Note: Use clean URLs without /auth/ prefix - the server redirects these automatically.</em></p>
