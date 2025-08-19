@@ -192,9 +192,8 @@ try {
             width: 20px;
         }
         
-        .gallery-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
+        .photo-gallery {
+            margin: 4rem 0;
         }
         
         .section-header {
@@ -215,20 +214,17 @@ try {
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
         }
         
         .gallery-item {
-            aspect-ratio: 4/3;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            height: 250px;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
         .gallery-item:hover {
@@ -691,7 +687,7 @@ try {
     </section>
 
     <!-- Photo Gallery -->
-    <section class="gallery-section">
+    <section class="photo-gallery">
         <div class="container">
             <div class="section-header">
                 <h2>Course Gallery</h2>
