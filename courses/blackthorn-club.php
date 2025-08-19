@@ -197,6 +197,22 @@ try {
             padding: 4rem 0;
         }
         
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c5234;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -223,6 +239,26 @@ try {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-gallery:hover {
+            background: #3d6249;
         }
         
         .view-all-btn {
