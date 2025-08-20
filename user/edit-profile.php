@@ -1,14 +1,23 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
-// Check if user is logged in
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - redirect to login
     header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
 
-$user_id = $_SESSION['user_id'];
+// Check if user is logged in using secure session
+if (!SecureSession::isLoggedIn()) {
+    header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    exit;
+}
+
+$user_id = SecureSession::get('user_id');
 $error = '';
 $success = '';
 
@@ -17,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name = trim($_POST['first_name']);
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
+    $display_real_name = isset($_POST['display_real_name']) ? 1 : 0;
     $current_password = $_POST['current_password'] ?? '';
     $new_password = $_POST['new_password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
@@ -35,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = 'This email address is already in use by another account.';
             } else {
                 // Start building the update query
-                $update_fields = ['first_name = ?', 'last_name = ?', 'email = ?'];
-                $update_values = [$first_name, $last_name, $email];
+                $update_fields = ['first_name = ?', 'last_name = ?', 'email = ?', 'display_real_name = ?'];
+                $update_values = [$first_name, $last_name, $email, $display_real_name];
                 
                 // Handle password change if requested
                 if (!empty($new_password)) {
@@ -69,10 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute($update_values);
                     
-                    // Update session data
-                    $_SESSION['first_name'] = $first_name;
-                    $_SESSION['last_name'] = $last_name;
-                    $_SESSION['email'] = $email;
+                    // Update secure session data
+                    SecureSession::set('first_name', $first_name);
+                    SecureSession::set('last_name', $last_name);
+                    SecureSession::set('email', $email);
                     
                     $success = 'Profile updated successfully!';
                 }
@@ -85,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Get current user data
 try {
-    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name FROM users WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name, display_real_name FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
     
@@ -469,6 +479,14 @@ try {
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
                         <input type="text" id="last_name" name="last_name" value="<?php echo htmlspecialchars($user['last_name'] ?? ''); ?>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="display_real_name">Privacy</label>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <input type="checkbox" id="display_real_name" name="display_real_name" <?php echo $user['display_real_name'] ? 'checked' : ''; ?> style="width: auto; height: auto;">
+                            <span style="color: var(--text-gray); font-size: 14px;">Show my real name on my public profile</span>
+                        </div>
                     </div>
 
                     <div class="password-section">

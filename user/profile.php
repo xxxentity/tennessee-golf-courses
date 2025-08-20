@@ -294,8 +294,18 @@ try {
                     <i class="fas fa-user"></i>
                 <?php endif; ?>
             </div>
-            <h1 class="profile-name"><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h1>
-            <p class="profile-email"><?php echo htmlspecialchars($user['email']); ?></p>
+            <h1 class="profile-name">
+                <?php if ($user['display_real_name']): ?>
+                    <?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?>
+                <?php else: ?>
+                    <?php echo htmlspecialchars($user['username']); ?>
+                <?php endif; ?>
+            </h1>
+            <?php if ($user['display_real_name']): ?>
+                <p class="profile-email"><?php echo htmlspecialchars($user['email']); ?></p>
+            <?php else: ?>
+                <p class="profile-email" style="opacity: 0.7;">Email hidden for privacy</p>
+            <?php endif; ?>
             <p style="opacity: 0.8; margin-top: 12px;">
                 Member since <?php echo date('F Y', strtotime($user['created_at'])); ?>
             </p>
