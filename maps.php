@@ -520,7 +520,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "council-fire-golf-club",
-                coordinates: [-85.1889, 35.0278]
+                coordinates: [-85.1656, 34.9863]
             },
             {
                 name: "Cumberland Cove Golf Course",
