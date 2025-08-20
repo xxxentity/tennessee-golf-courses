@@ -540,7 +540,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25 Photos) - Updated</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
             </div>
         </div>
     </section>
@@ -665,18 +665,14 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
+            // Generate all 25 images (starting from 2.jpeg to 25.jpeg = 24 images)
+            for (let i = 2; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/windtree-golf-course/${i}.jpeg')`;
                 galleryItem.onclick = () => window.open(`../images/courses/windtree-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
-            
-            // Debug: count actual items
-            console.log('Total gallery items created:', galleryGrid.children.length);
-            alert('Gallery loaded with ' + galleryGrid.children.length + ' images');
             
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
