@@ -512,7 +512,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "colonial-country-club",
-                coordinates: [-89.77620, 35.15565]
+                coordinates: [-89.778759, 35.196525]
             },
             {
                 name: "Council Fire Golf Club",
