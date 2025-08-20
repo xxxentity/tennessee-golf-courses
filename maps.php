@@ -408,7 +408,7 @@ session_start();
                 phone: "(423) 326-0885",
                 type: "Public",
                 slug: "bear-trace-harrison-bay",
-                coordinates: [-85.1358, 35.1171]
+                coordinates: [-85.1347, 35.1195]
             },
             {
                 name: "Belle Acres Golf Course",
@@ -480,7 +480,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "chattanooga-golf-country-club",
-                coordinates: [-85.2860, 35.0730]
+                coordinates: [-85.2860, 35.0731]
             },
             {
                 name: "Cheekwood Golf Club",
@@ -968,7 +968,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "the-honors-course",
-                coordinates: [-85.05674, 35.07793]
+                coordinates: [-85.0472, 35.0876]
             },
             {
                 name: "The Legacy Golf Course",
