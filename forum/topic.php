@@ -135,6 +135,21 @@ Would appreciate any feedback or other recommendations!',
 // Get the requested topic
 $topic = isset($topics_data[$topic_id]) ? $topics_data[$topic_id] : null;
 
+// If not found in mock data, check session storage
+if (!$topic && isset($_SESSION['forum_topics'][$topic_id])) {
+    $topic = $_SESSION['forum_topics'][$topic_id];
+    // Get category name
+    $categories = [
+        1 => 'Course Reviews & Discussions',
+        2 => 'Equipment Talk',
+        3 => 'Tournament & Events',
+        4 => 'Tips & Instruction',
+        5 => 'General Golf Chat',
+        6 => 'Site Feedback'
+    ];
+    $topic['category_name'] = $categories[$topic['category_id']] ?? 'Unknown Category';
+}
+
 // Mock replies data (replace with database queries later)
 $replies_data = [
     1 => [], // No replies for forum rules (locked)

@@ -131,6 +131,16 @@ $all_topics = [
 // Get topics for this category
 $topics = isset($all_topics[$category_id]) ? $all_topics[$category_id] : [];
 
+// Add session-stored topics for this category
+if (isset($_SESSION['forum_topics'])) {
+    foreach ($_SESSION['forum_topics'] as $topic) {
+        if ($topic['category_id'] == $category_id) {
+            // Add to beginning of array so new topics appear first
+            array_unshift($topics, $topic);
+        }
+    }
+}
+
 // Filter topics by category (in real implementation, this would be a database query)
 $category_topics = $topics;
 

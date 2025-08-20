@@ -121,8 +121,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Record the topic creation for rate limiting
         ForumRateLimit::recordTopicCreated($current_user_id);
         
-        // In real implementation, this would save to database
-        // For now, redirect to the category page with success message
+        // Create a new topic with a unique ID
+        $new_topic_id = time() . '_' . $current_user_id; // Temporary ID generation
+        
+        // Initialize session topics array if not exists
+        if (!isset($_SESSION['forum_topics'])) {
+            $_SESSION['forum_topics'] = [];
+        }
+        
+        // Add the new topic to session storage
+        $_SESSION['forum_topics'][$new_topic_id] = [
+            'id' => $new_topic_id,
+            'title' => $title,
+            'content' => $content,
+            'author' => $current_user_name,
+            'author_id' => $current_user_id,
+            'created_at' => date('Y-m-d H:i:s'),
+            'category_id' => $category_id,
+            'view_count' => 0,
+            'reply_count' => 0,
+            'last_reply_at' => null,
+            'last_reply_author' => null,
+            'is_pinned' => false,
+            'is_locked' => false
+        ];
+        
         $_SESSION['forum_success'] = 'Your topic has been created successfully!';
         
         // Redirect to the category page
