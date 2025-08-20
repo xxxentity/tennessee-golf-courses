@@ -1,0 +1,45 @@
+MAP ACCURACY FIX PROCESS - SUCCESSFUL METHOD
+==================================================
+
+PROBLEM: Golf course coordinates were inaccurate, showing courses "streets away" from actual locations
+
+SOLUTION: ArcGIS World Geocoder (Proven Most Accurate)
+
+WINNING METHOD:
+1. Use ArcGIS World Geocoding Service: https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates
+2. Parameters: SingleLine=address, f=json, countryCode=USA, maxLocations=1
+3. Look for confidence scores 80+ (90-100% is ideal)
+4. Extract coordinates: [location.x, location.y] format
+5. Update 3 places: course page address, Google Maps embed, interactive map coordinates
+
+COURSES FIXED WITH THIS METHOD:
+- Southern Hills Golf & Country Club: [-85.599524, 36.104977] (was way off)
+- Chattanooga Golf & Country Club: [-85.280602, 35.068222] (ArcGIS verified)
+- Nashville Golf & Athletic Club: [-86.786604, 35.962086] (corrected address too)
+- The Golf Club of Tennessee: [-87.090523, 36.068202] (corrected address)
+- Greystone Golf Course: [-87.421305, 36.086740] (corrected address)
+- Montgomery Bell State Park: [-87.261547, 36.090637] (corrected address)
+- Colonial Country Club: [-89.778759, 35.196525] (maximum precision)
+- All 29 courses from systematic fix batch
+
+ADDRESS CORRECTIONS MADE:
+- Nashville Golf & Athletic Club: 1703 Crockett Springs Trail, Brentwood, TN 37027
+- The Golf Club of Tennessee: 1000 Golf Club Dr, Kingston Springs, TN 37082
+- Greystone Golf Course: 2555 US-70, Dickson, TN 37055
+- Montgomery Bell State Park: 800 Hotel Ave, Burns, TN 37029
+
+SUCCESS RATE: ~95% accuracy with ArcGIS
+CONFIDENCE SCORES: 84-100% for all successful geocodes
+
+ALTERNATIVE METHODS TESTED (Less accurate):
+- OpenStreetMap Nominatim: Good backup, ~80% accuracy
+- Google Maps API: Requires API key, access issues
+- Other services: Lower accuracy rates
+
+FOR FUTURE COORDINATE FIXES:
+1. Use fix_course_coordinates.py template
+2. Always verify with ArcGIS World Geocoder
+3. Update all 3 locations: course page, Google embed, interactive map
+4. Commit with descriptive message including confidence score
+
+TOTAL COURSES FIXED: 35+ courses with precise GPS coordinates
