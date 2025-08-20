@@ -369,11 +369,6 @@ session_start();
         
         <!-- Interactive Map -->
         <div class="maps-content">
-            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
-                <h2 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem;">Interactive Tennessee Golf Course Map</h2>
-                <p style="color: var(--text-gray); font-size: 1.2rem;">Search courses by name or filter by type</p>
-            </div>
-            
             <!-- Search and Filter Controls -->
             <div class="map-controls" style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: var(--shadow-medium); margin-bottom: 2rem;">
                 <div style="display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;">
