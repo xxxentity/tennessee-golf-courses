@@ -226,7 +226,7 @@ try {
             transform: translateY(-2px);
         }
         
-        /* Gallery Modal Styles */
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -235,17 +235,14 @@ try {
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            overflow-y: auto;
+            background-color: rgba(0,0,0,0.9);
         }
         
-        .modal .modal-content {
-            background-color: white;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 15px;
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
             max-width: 1200px;
-            width: 95%;
             position: relative;
         }
         
@@ -254,36 +251,33 @@ try {
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 1rem;
+            color: white;
         }
         
-        .modal-header .modal-title {
-            font-size: 1.8rem;
-            color: #2c5234;
+        .modal-title {
+            font-size: 2rem;
             margin: 0;
-            font-weight: 700;
         }
         
         .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
             background: none;
             border: none;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #999;
-            cursor: pointer;
-            padding: 0;
-            line-height: 1;
         }
         
         .close:hover {
-            color: #333;
+            color: #ccc;
         }
         
         .full-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
         }
         
         .full-gallery-item {
@@ -292,13 +286,12 @@ try {
             background-position: center;
             border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
         .full-gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+        }
         }
         
         @media (max-width: 768px) {
