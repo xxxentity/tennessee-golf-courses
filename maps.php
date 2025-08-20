@@ -384,7 +384,7 @@ session_start();
                 phone: "(865) 986-4653",
                 type: "Semi-Private",
                 slug: "avalon-golf-country-club",
-                coordinates: [-84.308721, 35.797543]
+                coordinates: [-84.255204, 35.861214]
             },
             {
                 name: "Bear Trace at Tims Ford",
@@ -392,7 +392,7 @@ session_start();
                 phone: "(931) 962-4653",
                 type: "Public",
                 slug: "bear-trace-at-tims-ford",
-                coordinates: [-86.111389, 35.206111]
+                coordinates: [-86.117914, 35.180015]
             },
             {
                 name: "Bear Trace at Cumberland Mountain",
@@ -432,7 +432,7 @@ session_start();
                 phone: "(901) 353-1654",
                 type: "Semi-Private",
                 slug: "big-creek-golf-club",
-                coordinates: [-89.874722, 35.344167]
+                coordinates: [-89.990123, 35.296543]
             },
             {
                 name: "Blackthorn Club",
@@ -440,7 +440,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "blackthorn-club",
-                coordinates: [-82.473611, 36.294444]
+                coordinates: [-82.465408, 36.346201]
             },
             {
                 name: "Bluegrass Yacht & Country Club",
@@ -448,7 +448,7 @@ session_start();
                 phone: "(615) 824-6566",
                 type: "Private",
                 slug: "bluegrass-yacht-country-club",
-                coordinates: [-86.620278, 36.304444]
+                coordinates: [-86.575879, 36.320936]
             },
             {
                 name: "Brainerd Golf Course",
@@ -840,7 +840,7 @@ session_start();
                 phone: "(931) 432-5149",
                 type: "Public",
                 slug: "southern-hills-golf-country-club",
-                coordinates: [-85.501944, 36.162778]
+                coordinates: [-85.599524, 36.104977]
             },
             {
                 name: "Springhouse Golf Club",
