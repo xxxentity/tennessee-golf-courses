@@ -46,8 +46,11 @@ $reviewFiles = scanDirectory(__DIR__ . '/reviews', 'reviews');
 $mainPages = [
     ['url' => '', 'name' => 'Home', 'file' => __DIR__ . '/index.php', 'priority' => '1.0', 'changefreq' => 'weekly'],
     ['url' => 'courses', 'name' => 'Golf Courses', 'file' => __DIR__ . '/courses.php', 'priority' => '0.9', 'changefreq' => 'weekly'],
-    ['url' => 'reviews', 'name' => 'Reviews', 'file' => __DIR__ . '/reviews.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
+    ['url' => 'maps', 'name' => 'Maps', 'file' => __DIR__ . '/maps.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
+    ['url' => 'media', 'name' => 'Media', 'file' => __DIR__ . '/media.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
     ['url' => 'news', 'name' => 'News', 'file' => __DIR__ . '/news.php', 'priority' => '0.8', 'changefreq' => 'daily'],
+    ['url' => 'reviews', 'name' => 'Reviews', 'file' => __DIR__ . '/reviews.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
+    ['url' => 'community', 'name' => 'Community', 'file' => __DIR__ . '/community.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
     ['url' => 'events', 'name' => 'Events', 'file' => __DIR__ . '/events.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
     ['url' => 'about', 'name' => 'About', 'file' => __DIR__ . '/about.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => 'contact', 'name' => 'Contact', 'file' => __DIR__ . '/contact.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
