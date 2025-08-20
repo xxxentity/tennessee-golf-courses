@@ -135,7 +135,7 @@ If you see content that violates these rules, please contact the moderators.
 Thank you for helping us maintain a great community for Tennessee golfers!
 
 **Questions?** Contact us through the Site Feedback category.',
-    'author' => 'Forum Admin',
+    'author' => 'admin',
     'author_id' => 1,
     'created_at' => '2025-01-20 12:00:00',
     'category_id' => 6,

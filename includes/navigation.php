@@ -10,6 +10,7 @@ try {
 
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
+$username = $is_logged_in ? SecureSession::get('username', '') : '';
 $first_name = $is_logged_in ? SecureSession::get('first_name', '') : '';
 
 // Determine if this is a main site page (should show weather bar)
@@ -111,7 +112,7 @@ $is_main_page = (
             <!-- Mobile Auth Links -->
             <li class="mobile-auth-divider"></li>
             <?php if ($is_logged_in): ?>
-                <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span></li>
+                <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($username); ?>!</span></li>
                 <li class="mobile-auth-item"><a href="/profile" class="nav-link">My Profile</a></li>
                 <li class="mobile-auth-item"><a href="/logout" class="nav-link logout-link">Logout</a></li>
             <?php else: ?>
@@ -124,7 +125,7 @@ $is_main_page = (
             <?php if ($is_logged_in): ?>
                 <!-- Logged in navigation -->
                 <div class="user-welcome">
-                    <span class="welcome-text">Welcome, <?php echo htmlspecialchars($first_name); ?>!</span>
+                    <span class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
                 </div>
                 <a href="/profile" class="nav-link">My Profile</a>
                 <a href="/logout" class="nav-link logout-link">Logout</a>

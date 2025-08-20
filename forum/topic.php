@@ -22,7 +22,7 @@ $topic_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 $current_user_id = $is_logged_in ? SecureSession::get('user_id') : null;
-$current_user_name = $is_logged_in ? (SecureSession::get('first_name', '') . ' ' . SecureSession::get('last_name', '')) : '';
+$current_user_name = $is_logged_in ? SecureSession::get('username', 'Anonymous') : '';
 
 // Check rate limits for posting
 $can_create_post = ForumRateLimit::canCreatePost($current_user_id);
@@ -76,7 +76,7 @@ If you see content that violates these rules, please contact the moderators.
 Thank you for helping us maintain a great community for Tennessee golfers!
 
 **Questions?** Contact us through the Site Feedback category.',
-        'author' => 'Forum Admin',
+        'author' => 'admin',
         'author_id' => 1,
         'created_at' => '2025-01-20 12:00:00',
         'category_id' => 6,
@@ -100,7 +100,7 @@ What are your favorite courses in the Nashville area and why? Looking for course
 - Not too crowded on weekends
 
 Thanks in advance for your recommendations!',
-        'author' => 'John Golfer',
+        'author' => 'johngolfer',
         'author_id' => 2,
         'created_at' => '2025-01-20 14:30:00',
         'category_id' => 1,
@@ -120,7 +120,7 @@ Has anyone tried the new TaylorMade Qi10 or the Callaway Paradym Ai Smoke?
 My swing speed is around 95-100mph and I tend to have a slight fade. Budget is around $400-600.
 
 Would appreciate any feedback or other recommendations!',
-        'author' => 'Mike Tennessee',
+        'author' => 'miketenn',
         'author_id' => 3,
         'created_at' => '2025-01-20 16:45:00',
         'category_id' => 2,
@@ -157,7 +157,7 @@ $replies_data = [
         [
             'id' => 1,
             'topic_id' => 2,
-            'author' => 'Sarah Pro',
+            'author' => 'sarahpro',
             'author_id' => 4,
             'content' => 'Welcome to Nashville! You\'ve already mentioned two great courses. Here are my top recommendations:
 
@@ -173,7 +173,7 @@ For practice facilities, Hermitage has the best range in the area. Let me know i
         [
             'id' => 2,
             'topic_id' => 2,
-            'author' => 'Tom Scratch',
+            'author' => 'tomscratch',
             'author_id' => 5,
             'content' => 'I second the Greystone recommendation! Played there last weekend and the greens were in fantastic shape. Very affordable too - around $45 with cart on weekends.
 
@@ -184,7 +184,7 @@ Also check out Ted Rhodes if you want something closer to downtown. Historic cou
         [
             'id' => 3,
             'topic_id' => 2,
-            'author' => 'Local Golfer',
+            'author' => 'localgolfer',
             'author_id' => 6,
             'content' => 'Don\'t overlook McCabe Golf Course! It\'s a hidden gem - never too crowded and they have great twilight rates. The back nine has some really interesting holes along the river.
 
@@ -197,7 +197,7 @@ For practice, Golf House Tennessee has an amazing facility if you\'re willing to
         [
             'id' => 4,
             'topic_id' => 3,
-            'author' => 'Pro Shop Guy',
+            'author' => 'proshopguy',
             'author_id' => 7,
             'content' => 'With your swing speed and fade tendency, I\'d definitely look at the Callaway Paradym Ai Smoke. The draw-biased model could help straighten out that fade.
 
@@ -208,7 +208,7 @@ We\'ve been fitting a lot of players in your speed range and seeing great result
         [
             'id' => 5,
             'topic_id' => 3,
-            'author' => 'Equipment Junkie',
+            'author' => 'equipjunkie',
             'author_id' => 8,
             'content' => 'I just switched from the Qi10 to the Paradym and couldn\'t be happier. The Qi10 is longer but less forgiving on mishits.
 

@@ -28,7 +28,7 @@ if (!$is_logged_in) {
 }
 
 $current_user_id = SecureSession::get('user_id');
-$current_user_name = SecureSession::get('first_name', '') . ' ' . SecureSession::get('last_name', '');
+$current_user_name = SecureSession::get('username', 'Anonymous');
 
 // Check rate limits
 $can_create_topic = ForumRateLimit::canCreateTopic($current_user_id);

@@ -85,13 +85,13 @@ $all_topics = [
         [
             'id' => 2,
             'title' => 'Best Golf Courses in Nashville Area',
-            'author' => 'John Golfer',
+            'author' => 'johngolfer',
             'author_id' => 2,
             'created_at' => '2025-01-20 14:30:00',
             'reply_count' => 3,
             'view_count' => 42,
             'last_reply_at' => '2025-01-20 18:45:00',
-            'last_reply_author' => 'Sarah Pro',
+            'last_reply_author' => 'sarahpro',
             'is_pinned' => false,
             'is_locked' => false
         ]
@@ -100,13 +100,13 @@ $all_topics = [
         [
             'id' => 3,
             'title' => 'New Driver Recommendations - 2025 Models',
-            'author' => 'Mike Tennessee',
+            'author' => 'miketenn',
             'author_id' => 3,
             'created_at' => '2025-01-20 16:45:00',
             'reply_count' => 5,
             'view_count' => 28,
             'last_reply_at' => '2025-01-20 19:30:00',
-            'last_reply_author' => 'Pro Shop Guy',
+            'last_reply_author' => 'proshopguy',
             'is_pinned' => false,
             'is_locked' => false
         ]
@@ -115,7 +115,7 @@ $all_topics = [
         [
             'id' => 1,
             'title' => '📋 Forum Rules & Community Guidelines - READ FIRST',
-            'author' => 'Forum Admin',
+            'author' => 'admin',
             'author_id' => 1,
             'created_at' => '2025-01-20 12:00:00',
             'reply_count' => 0,
