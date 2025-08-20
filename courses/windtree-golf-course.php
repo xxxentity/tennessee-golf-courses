@@ -573,9 +573,9 @@ try {
                 <p>Experience the beauty of Windtree Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/2.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/3.jpeg');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -707,8 +707,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/windtree-golf-course/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/windtree-golf-course/${i}.webp`, '_blank');
+                galleryItem.style.backgroundImage = `url('../images/courses/windtree-golf-course/${i}.jpeg')`;
+                galleryItem.onclick = () => window.open(`../images/courses/windtree-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
