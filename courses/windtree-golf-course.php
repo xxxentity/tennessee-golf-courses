@@ -181,40 +181,14 @@ try {
             z-index: 3;
         }
         
-        /* Gallery Styles */
         .photo-gallery {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .photo-gallery .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
         }
         
         .gallery-item {
@@ -223,13 +197,11 @@ try {
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
         .gallery-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .gallery-button {
@@ -243,18 +215,15 @@ try {
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .btn-gallery:hover {
             background: #2c5234;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Gallery Modal Styles */
