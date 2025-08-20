@@ -8,7 +8,7 @@ class ForumRateLimit {
     private static $limits = [
         'topics_per_day' => 5,
         'posts_per_day' => 10,
-        'min_time_between_posts' => 30 // seconds
+        'min_time_between_posts' => 5 // seconds (reduced for testing)
     ];
     
     /**
@@ -186,6 +186,18 @@ class ForumRateLimit {
         // In real implementation, check database for bans
         // For now, just return false
         return false;
+    }
+    
+    /**
+     * Clear rate limit timers (for testing/debugging)
+     */
+    public static function clearRateLimits($user_id = null) {
+        unset($_SESSION['last_post_time']);
+        
+        // Clear daily counters
+        $today = date('Y-m-d');
+        unset($_SESSION["topics_created_$today"]);
+        unset($_SESSION["posts_created_$today"]);
     }
 }
 
