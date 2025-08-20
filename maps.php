@@ -707,7 +707,7 @@ session_start();
                 phone: "(615) 441-8888",
                 type: "Public",
                 slug: "greystone-golf-course",
-                coordinates: [-87.421305, 36.086740]
+                coordinates: [-87.421304687189, 36.086740277427]
             },
             {
                 name: "Harpeth Hills Golf Course",
@@ -763,7 +763,7 @@ session_start();
                 phone: "",
                 type: "Public",
                 slug: "island-pointe-golf-club",
-                coordinates: [-83.64381, 35.97019]
+                coordinates: [-83.675039207411, 35.959641773235]
             },
             {
                 name: "Jackson Country Club",
@@ -1027,7 +1027,7 @@ session_start();
                 phone: "",
                 type: "Semi-Private",
                 slug: "tennessee-national-golf-club",
-                coordinates: [-83.95363, 35.82506]
+                coordinates: [-84.410337640164, 35.757483763507]
             },
             {
                 name: "The Club at Five Oaks",
@@ -1211,7 +1211,7 @@ session_start();
                 phone: "(865) 675-0100",
                 type: "Public",
                 slug: "willow-creek-golf-club",
-                coordinates: [-83.94678, 35.95154]
+                coordinates: [-84.182627985339, 35.87170299416]
             },
             {
                 name: "Windtree Golf Course",

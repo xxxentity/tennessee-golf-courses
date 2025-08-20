@@ -17,9 +17,12 @@ COURSES FIXED WITH THIS METHOD:
 - Chattanooga Golf & Country Club: [-85.280602, 35.068222] (ArcGIS verified)
 - Nashville Golf & Athletic Club: [-86.786604, 35.962086] (corrected address too)
 - The Golf Club of Tennessee: [-87.090523, 36.068202] (corrected address)
-- Greystone Golf Course: [-87.421305, 36.086740] (corrected address)
+- Greystone Golf Course: [-87.421304687189, 36.086740277427] (99.54% confidence - UPDATED)
 - Montgomery Bell State Park: [-87.261547, 36.090637] (corrected address)
 - Colonial Country Club: [-89.778759, 35.196525] (maximum precision)
+- Willow Creek Golf Club: [-84.182627985339, 35.87170299416] (99.9% confidence - UPDATED)
+- Island Pointe Golf Club: [-83.675039207411, 35.959641773235] (100% confidence - UPDATED)
+- Tennessee National Golf Club: [-84.410337640164, 35.757483763507] (100% confidence - UPDATED)
 - All 29 courses from systematic fix batch
 
 ADDRESS CORRECTIONS MADE:
@@ -42,4 +45,10 @@ FOR FUTURE COORDINATE FIXES:
 3. Update all 3 locations: course page, Google embed, interactive map
 4. Commit with descriptive message including confidence score
 
-TOTAL COURSES FIXED: 35+ courses with precise GPS coordinates
+TOTAL COURSES FIXED: 39+ courses with precise GPS coordinates
+
+LATEST FIXES (Aug 2025):
+- Greystone Golf Course: Pin accuracy improved (99.54% confidence)
+- Willow Creek Golf Club: Pin accuracy improved (99.9% confidence) 
+- Island Pointe Golf Club: Pin accuracy improved (100% confidence)
+- Tennessee National Golf Club: Pin accuracy improved (100% confidence)
