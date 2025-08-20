@@ -1,0 +1,35 @@
+{
+  "The Honors Course": {
+    "address": "9603 Lee Highway, Ooltewah, TN 37363",
+    "coordinates": [
+      -85.0463648,
+      35.0876423
+    ],
+    "source": "OpenStreetMap Nominatim",
+    "display_name": "The Honors Course, 9603, Lee Highway, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37363, United States"
+  },
+  "Chattanooga Golf & Country Club": {
+    "address": "1511 Riverview Road, Chattanooga, TN 37405",
+    "coordinates": [
+      -85.2859625,
+      35.0730178
+    ],
+    "source": "OpenStreetMap Nominatim",
+    "display_name": "1511, Riverview Road, Riverview, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37405, United States"
+  },
+  "Bear Trace at Harrison Bay": {
+    "address": "8919 Harrison Bay Road, Harrison, TN 37341",
+    "coordinates": null,
+    "source": "Failed",
+    "display_name": null
+  },
+  "Council Fire Golf Club": {
+    "address": "1400 Council Fire Drive, Chattanooga, TN 37421",
+    "coordinates": [
+      -85.1656249,
+      34.986288
+    ],
+    "source": "OpenStreetMap Nominatim",
+    "display_name": "Council Fire Drive, Liles Addition, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37421, United States"
+  }
+}

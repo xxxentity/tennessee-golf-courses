@@ -480,7 +480,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "chattanooga-golf-country-club",
-                coordinates: [-85.2860, 35.0731]
+                coordinates: [-85.285962, 35.073018]
             },
             {
                 name: "Cheekwood Golf Club",
@@ -520,7 +520,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "council-fire-golf-club",
-                coordinates: [-85.1656, 34.9863]
+                coordinates: [-85.165625, 34.986288]
             },
             {
                 name: "Cumberland Cove Golf Course",
@@ -968,7 +968,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "the-honors-course",
-                coordinates: [-85.0472, 35.0876]
+                coordinates: [-85.046365, 35.087642]
             },
             {
                 name: "The Legacy Golf Course",
