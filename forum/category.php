@@ -141,6 +141,9 @@ if (isset($_SESSION['forum_topics'])) {
     }
 }
 
+// Update the category topic count to include session topics
+$category['topics'] = count($topics);
+
 // Filter topics by category (in real implementation, this would be a database query)
 $category_topics = $topics;
 
@@ -479,19 +482,26 @@ $category_topics = $topics;
                     <?php endif; ?>
                 </div>
                 
-                <?php if (empty($category_topics)): ?>
+                <?php if (empty($topics)): ?>
                     <div class="no-topics">
                         <i class="fas fa-comments"></i>
                         <h3>No topics yet</h3>
                         <p>Be the first to start a discussion in this category!</p>
-                        <a href="/forum/new-topic?category=<?php echo $category_id; ?>" class="new-topic-btn" style="margin-top: 1rem;">
-                            <i class="fas fa-plus"></i>
-                            Start the Conversation
-                        </a>
+                        <?php if ($is_logged_in): ?>
+                            <a href="/forum/new-topic?category=<?php echo $category_id; ?>" class="new-topic-btn" style="margin-top: 1rem;">
+                                <i class="fas fa-plus"></i>
+                                Start the Conversation
+                            </a>
+                        <?php else: ?>
+                            <a href="/login?redirect=/forum/new-topic?category=<?php echo $category_id; ?>" class="new-topic-btn" style="margin-top: 1rem;">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login to Start Discussion
+                            </a>
+                        <?php endif; ?>
                     </div>
                 <?php else: ?>
                     <ul class="topic-list">
-                        <?php foreach ($category_topics as $topic): ?>
+                        <?php foreach ($topics as $topic): ?>
                         <li class="topic-item">
                             <div class="topic-row">
                                 <div class="topic-main">

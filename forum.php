@@ -89,6 +89,27 @@ $forum_categories = [
     ]
 ];
 
+// Count session-stored topics for each category
+if (isset($_SESSION['forum_topics'])) {
+    foreach ($_SESSION['forum_topics'] as $topic) {
+        $category_id = $topic['category_id'];
+        // Find the category and increment topic count
+        foreach ($forum_categories as &$category) {
+            if ($category['id'] == $category_id) {
+                $category['topics']++;
+                $category['posts']++; // Each topic counts as one post
+                
+                // Update last post info
+                $category['last_post'] = [
+                    'author' => $topic['author'],
+                    'date' => date('M j, Y', strtotime($topic['created_at']))
+                ];
+                break;
+            }
+        }
+    }
+}
+
 // Add a sticky forum rules post to Site Feedback category
 $forum_rules_post = [
     'id' => 1,
@@ -429,6 +450,15 @@ Thank you for helping us maintain a great community for Tennessee golfers!
         <!-- Forum Content -->
         <div class="forum-content">
             <!-- Forum Stats -->
+            <?php
+            // Calculate total topics and posts
+            $total_topics = 0;
+            $total_posts = 0;
+            foreach ($forum_categories as $category) {
+                $total_topics += $category['topics'];
+                $total_posts += $category['posts'];
+            }
+            ?>
             <div class="forum-stats">
                 <div class="stat-card">
                     <div class="stat-icon">
@@ -441,14 +471,14 @@ Thank you for helping us maintain a great community for Tennessee golfers!
                     <div class="stat-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <div class="stat-number">0</div>
+                    <div class="stat-number"><?php echo $total_topics; ?></div>
                     <div class="stat-label">Topics</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-comment"></i>
                     </div>
-                    <div class="stat-number">0</div>
+                    <div class="stat-number"><?php echo $total_posts; ?></div>
                     <div class="stat-label">Posts</div>
                 </div>
                 <div class="stat-card">
