@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship',
+        'slug' => 'etsu-gavin-tiernan-amateur-championship-runner-up',
+        'date' => '2025-08-20',
+        'time' => '2:30 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'East Tennessee State University men\'s golfer Gavin Tiernan finished as runner-up at The 130th Amateur Championship at Royal St. George\'s in England this past June.',
+        'image' => '/images/news/gavin-tiernan-amateur/tiernan-amateur-championship.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
         'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
         'date' => '2025-08-18',
