@@ -92,7 +92,7 @@ try {
             align-items: center;
         }
         
-        .modal-content {
+        .course-modal .modal-content {
             background-color: white;
             padding: 2rem;
             border-radius: 15px;
