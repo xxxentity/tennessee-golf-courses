@@ -1,0 +1,194 @@
+Processing 92 course files...
+ 1/92: avalon-golf-country-club.php
+     ✗ Failed: 1299 Oak Chase Blvd, Lenoir City, TN 37772
+ 2/92: bear-trace-at-tims-ford.php
+     ✗ Failed: 570 Bear Trace Drive, Winchester, TN 37398
+ 3/92: bear-trace-cumberland-mountain.php
+     ✓ 407 Wild Plum Lane, Crossville, TN 38572 -> [-85.01106, 35.89133]
+ 4/92: bear-trace-harrison-bay.php
+     ✗ Failed: 8919 Harrison Bay Road, Harrison, TN 37341
+ 5/92: belle-acres-golf-course.php
+     ✓ 901 E Broad St, Cookeville, TN -> [-85.48702, 36.16332]
+ 6/92: belle-meade-country-club.php
+     ✓ 815 Belle Meade Blvd, Nashville, TN 37205 -> [-86.86211, 36.09526]
+ 7/92: big-creek-golf-club.php
+     ✗ Failed: 6195 Woodstock Cuba Rd Millington TN 38053
+ 8/92: blackthorn-club.php
+     ✗ Failed: 1501 Ridges Club Drive, Jonesborough, TN 37659
+ 9/92: bluegrass-yacht-country-club.php
+     ✗ Failed: 550 Johnny Cash Parkway, Hendersonville, TN 37075
+10/92: brainerd-golf-course.php
+     ✓ 5203 Old Mission Road, Chattanooga, TN 37411 -> [-85.22019, 35.01866]
+11/92: brown-acres-golf-course.php
+     ✓ 406 Brown Road, Chattanooga, TN 37421 -> [-85.19782, 35.01204]
+12/92: cedar-crest-golf-club.php
+     ✓ 7972 Mona Rd, Murfreesboro, TN 37129 -> [-86.41485, 36.00529]
+13/92: chattanooga-golf-country-club.php
+     ✓ Chattanooga, TN 37405 -> [-85.30949, 35.04572]
+14/92: cheekwood-golf-club.php
+     ✓ 285 Spencer Creek Rd, Franklin, TN 37069 -> [-86.87283, 35.95067]
+15/92: cherokee-country-club.php
+     ✓ 5138 Lyons View Pike, Knoxville, TN 37919 -> [-83.98489, 35.93483]
+16/92: clarksville-country-club.php
+     ✓ Clarksville, TN 37043 -> [-87.35887, 36.52776]
+17/92: colonial-country-club.php
+     ✓ Cordova, TN 38016 -> [-89.77620, 35.15565]
+18/92: council-fire-golf-club.php
+     ✓ Chattanooga, TN 37421 -> [-85.30949, 35.04572]
+19/92: cumberland-cove-golf-course.php
+     ✗ Failed: 16941 Highway 70 N, Monterey, TN 38574
+20/92: dead-horse-lake-golf-course.php
+     ✗ Failed: 3016 Gravelly Hills Road, Louisville, TN 37777
+21/92: druid-hills-golf-club.php
+     ✓ 433 Lakeview Drive, Fairfield Glade, TN 38558 -> [-84.88907, 36.00125]
+22/92: eagles-landing-golf-club.php
+     ✓ 1556 Old Knoxville Highway, Sevierville, TN 37876 -> [-83.59206, 35.90818]
+23/92: egwani-farms-golf-course.php
+     ✓ 3920 S Singleton Station Road, Rockford, TN 37853 -> [-83.95204, 35.83056]
+24/92: fall-creek-falls-state-park-golf-course.php
+     ✗ Failed: 626 Golf Course Road, Spencer, TN 38585
+25/92: forrest-crossing-golf-course.php
+     ✓ 750 Riverview Dr, Franklin, TN 37064 -> [-86.84227, 35.89344]
+26/92: fox-den-country-club.php
+     ✗ Failed: 6000 Fox Den Drive, Knoxville, TN 37918
+27/92: gaylord-springs-golf-links.php
+     ✗ Failed: 18 Springs Blvd, Nashville, TN 37214
+28/92: greystone-golf-course.php
+     ✗ Failed: 1 Greystone Drive, Dickson, TN 37055
+29/92: harpeth-hills-golf-course.php
+     ✓ 2424 Old Hickory Blvd, Nashville, TN 37221 -> [-86.88270, 36.05643]
+30/92: henry-horton-state-park-golf-course.php
+     ✓ 4358 Nashville Highway, Chapel Hill, TN 37034 -> [-86.69965, 35.59916]
+31/92: hermitage-golf-course.php
+     ✓ 3939 Old Hickory Blvd, Old Hickory, TN 37138 -> [-86.63997, 36.22812]
+32/92: hillwood-country-club.php
+     ✓ 6201 Hickory Valley Road, Nashville, TN 37205 -> [-86.86980, 36.12134]
+33/92: holston-hills-country-club.php
+     ✓ 5801 Lyons View Pike, Knoxville, TN 37919 -> [-83.99170, 35.92751]
+34/92: honky-tonk-national-golf-course.php
+     ✓ Sparta, TN 38583 -> [-85.46413, 35.92589]
+35/92: island-pointe-golf-club.php
+     ✓ 9610 Kodak Road, Kodak, TN 37764 -> [-83.64381, 35.97019]
+36/92: jackson-country-club.php
+     ✓ Jackson, TN 38305 -> [-88.81774, 35.61444]
+37/92: lake-tansi-golf-course.php
+     ✗ Failed: 2476 Dunbar Road, Crossville, TN 38572
+38/92: lambert-acres-golf-club.php
+     ✓ 3402 Tuckaleechee Pike, Maryville, TN 37803 -> [-83.92451, 35.74997]
+39/92: laurel-valley-country-club.php
+     ✗ Failed: 702 Country Club Drive, Townsend, TN 37882
+40/92: lookout-mountain-club.php
+     ✓ 1201 Fleetwood Drive -> [-86.87837, 36.13489]
+41/92: mccabe-golf-course.php
+     ✓ 100 46th Avenue North, Nashville, TN 37209 -> [-86.84533, 36.13875]
+42/92: mirimichi-golf-course.php
+     ✗ Failed: 6195 Woodstock Cuba Rd, Millington, TN 38053
+43/92: moccasin-bend-golf-course.php
+     ✓ 381 Moccasin Bend Rd, Chattanooga, TN 37405 -> [-85.33341, 35.04597]
+44/92: montgomery-bell-state-park-golf-course.php
+     ✗ Failed: 1020 Jackson Hill Road, Burns, TN 37029
+45/92: nashville-golf-athletic-club.php
+     ✗ Failed: 1101 Golf Club Lane, Belle Meade, TN 37205
+46/92: nashville-national-golf-links.php
+     ✓ 1725 New Hope Road, Nashville, TN 37080 -> [-86.58177, 36.18286]
+47/92: old-fort-golf-course.php
+     ✓ 1028 Golf Lane, Murfreesboro, TN 37129 -> [-86.41077, 35.85126]
+48/92: old-hickory-country-club.php
+     ✓ 1000 Old Hickory Blvd, Old Hickory, TN 37138 -> [-86.65257, 36.26653]
+49/92: overton-park-9.php
+     ✓ 2080 Poplar Ave, Memphis, TN 38104 -> [-89.99145, 35.14196]
+50/92: paris-landing-state-park-golf-course.php
+     ✗ Failed: 285 Golf Course Lane, Buchanan, TN 38222
+51/92: percy-warner-golf-course.php
+     ✓ 1221 Forrest Park Dr, Nashville, TN 37205 -> [-86.87222, 36.08344]
+52/92: pickwick-landing-state-park.php
+     ✗ Failed: 60 Winfield Dunn Lane, Pickwick Dam, TN 38365
+53/92: pine-oaks-golf-course.php
+     ✓ 1709 Buffalo Road, Johnson City, TN 37604 -> [-82.34772, 36.30041]
+54/92: richland-country-club.php
+     ✗ Failed: 116 Richland Country Club Drive, Nashville, TN 37205
+55/92: ross-creek-landing-golf-course.php
+     ✗ Failed: 110 Airport Rd, Clifton, TN 38425
+56/92: sevierville-golf-club.php
+     ✓ 1444 Old Knoxville Highway, Sevierville, TN 37876 -> [-83.58705, 35.89824]
+57/92: signal-mountain-golf-country-club.php
+     ✓ 809 James Boulevard, Signal Mountain, TN 37377 -> [-85.34448, 35.12781]
+58/92: southern-hills-golf-country-club.php
+     ✗ Failed: 4770 Ben Jared Rd, Cookeville, TN 38506
+59/92: springhouse-golf-club.php
+     ✓ 18 Springhouse Ln Nashville TN 37214 -> [-86.68045, 36.21909]
+60/92: stonehenge-golf-club.php
+     ✓ 222 Fairfield Blvd, Fairfield Glade, TN 38558 -> [-84.88010, 36.00925]
+61/92: stones-river-country-club.php
+     ✓ 1830 NW Broad Street, Murfreesboro, TN 37129 -> [-86.40386, 35.85607]
+62/92: sweetens-cove-golf-club.php
+     ✓ 2040 Sweetens Cove Road, South Pittsburg, TN 37380 -> [-85.72304, 35.05254]
+63/92: tanasi-golf-course.php
+     ✗ Failed: 450 Clubhouse Point, Loudon, TN 37774
+64/92: ted-rhodes-golf-course.php
+     ✓ 1901 Ed Temple Blvd, Nashville, TN 37208 -> [-86.82412, 36.17531]
+65/92: temple-hills-country-club.php
+     ✗ Failed: 6376 Temple Road, Franklin, TN 37069
+66/92: tennessee-grasslands-fairvue.php
+     ✓ Gallatin, TN 37066 -> [-86.44759, 36.38830]
+67/92: tennessee-grasslands-foxland.php
+     ✓ Gallatin, TN 37066 -> [-86.44759, 36.38830]
+68/92: tennessee-national-golf-club.php
+     ✓ 8301 Tennessee National Dr -> [-83.95363, 35.82506]
+69/92: the-club-at-five-oaks.php
+     ✓ 621 Five Oaks Blvd, Lebanon, TN 37087 -> [-86.37271, 36.25101]
+70/92: the-club-at-gettysvue.php
+     ✓ 9317 Linksvue Drive Knoxville TN 37922 -> [-84.08193, 35.88971]
+71/92: the-golf-club-of-tennessee.php
+     ✗ Failed: 1 Sneed Road West, Kingston Springs, TN 37082
+72/92: the-governors-club.php
+     ✗ Failed: 1500 Governors Club Drive, Brentwood, TN 37027
+73/92: the-grove.php
+     ✗ Failed: 7165 Nolensville Road, College Grove, TN 37046
+74/92: the-honors-course.php
+     ✓ Ooltewah, TN 37363 -> [-85.05674, 35.07793]
+75/92: the-legacy-golf-course.php
+     ✗ Failed: 100 Ray Floyd Drive, Springfield, TN 37172
+76/92: the-links-at-audubon.php
+     ✓ 4160 Park Avenue, Memphis, TN 38117 -> [-89.92145, 35.10967]
+77/92: the-links-at-fox-meadows.php
+     ✓ 3064 Clarke Road, Memphis, TN 38115 -> [-89.87283, 35.06470]
+78/92: the-links-at-galloway.php
+     ✓ 3815 Walnut Grove Road, Memphis, TN 38111 -> [-89.93614, 35.12908]
+79/92: the-links-at-kahite.php
+     ✗ Failed: 100 Kahite Trail, Vonore, TN 37885
+80/92: the-links-at-whitehaven.php
+     ✓ 750 E Holmes Road, Memphis, TN 38109 -> [-90.03993, 35.01085]
+81/92: three-ridges-golf-course.php
+     ✗ Failed: 6601 Ridgewood Drive, Knoxville, TN 37921
+82/92: toqua-golf-course.php
+     ✓ 200 Toqua Club Way, Loudon, TN 37774 -> [-84.25925, 35.67931]
+83/92: tpc-southwind.php
+     ✓ 3325 Club at Southwind, Memphis, TN 38125 -> [-89.78579, 35.05459]
+84/92: troubadour-golf-field-club.php
+     ✗ Failed: 7230 Harlow Dr, College Grove, TN 37046
+85/92: two-rivers-golf-course.php
+     ✓ 3140 McGavock Pike, Nashville, TN 37214 -> [-86.67589, 36.18622]
+86/92: vanderbilt-legends-club.php
+     ✓ 1500 Legends Club Lane, Franklin, TN 37069 -> [-86.84892, 35.95011]
+87/92: warriors-path-state-park-golf-course.php
+     ✓ 490 Hemlock Road, Kingsport, TN 37663 -> [-82.49697, 36.49784]
+88/92: white-plains-golf-course.php
+     ✓ 4000 Plantation Dr, Cookeville, TN 38506 -> [-85.42979, 36.18251]
+89/92: whittle-springs-golf-course.php
+     ✓ 3113 Valley View Dr Knoxville TN 37917 -> [-83.91252, 36.01673]
+90/92: williams-creek-golf-course.php
+     ✓ 2351 Dandridge Ave, Knoxville, TN 37915 -> [-83.88508, 35.97125]
+91/92: willow-creek-golf-club.php
+     ✓ 12003 Kingston Pike, Knoxville, TN 37934 -> [-83.94678, 35.95154]
+92/92: windtree-golf-course.php
+     ✓ 810 Nonaville Rd, Mount Juliet, TN 37122 -> [-86.52802, 36.24273]
+
+============================================================
+EXTRACTION COMPLETE
+============================================================
+Total courses: 92
+Successfully geocoded: 61
+Failed geocoding: 31
+Success rate: 66.3%
+Results saved to: /Users/entity./TGC LLC/golf_course_data_final.json
