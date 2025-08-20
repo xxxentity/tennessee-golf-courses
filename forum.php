@@ -1,4 +1,7 @@
 <?php
+// Check forum access before anything else
+require_once 'includes/forum-auth.php';
+
 session_start();
 
 // Include rate limiting functionality
