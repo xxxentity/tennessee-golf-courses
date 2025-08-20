@@ -50,12 +50,24 @@ $mainPages = [
     ['url' => 'media', 'name' => 'Media', 'file' => __DIR__ . '/media.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
     ['url' => 'news', 'name' => 'News', 'file' => __DIR__ . '/news.php', 'priority' => '0.8', 'changefreq' => 'daily'],
     ['url' => 'reviews', 'name' => 'Reviews', 'file' => __DIR__ . '/reviews.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
+    ['url' => 'forum', 'name' => 'Forum', 'file' => __DIR__ . '/forum.php', 'priority' => '0.8', 'changefreq' => 'daily'],
     ['url' => 'community', 'name' => 'Community', 'file' => __DIR__ . '/community.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
     ['url' => 'events', 'name' => 'Events', 'file' => __DIR__ . '/events.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
     ['url' => 'about', 'name' => 'About', 'file' => __DIR__ . '/about.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => 'contact', 'name' => 'Contact', 'file' => __DIR__ . '/contact.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => 'privacy-policy', 'name' => 'Privacy Policy', 'file' => __DIR__ . '/privacy-policy.php', 'priority' => '0.3', 'changefreq' => 'yearly'],
     ['url' => 'terms-of-service', 'name' => 'Terms of Service', 'file' => __DIR__ . '/terms-of-service.php', 'priority' => '0.3', 'changefreq' => 'yearly']
+];
+
+// Forum pages with categories
+$forumPages = [
+    ['url' => 'forum/category/1', 'name' => 'Course Reviews & Discussions', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/category/2', 'name' => 'Equipment Talk', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/category/3', 'name' => 'Tournament & Events', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/category/4', 'name' => 'Tips & Instruction', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/category/5', 'name' => 'General Golf Chat', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/category/6', 'name' => 'Site Feedback', 'priority' => '0.7', 'changefreq' => 'daily'],
+    ['url' => 'forum/new-topic', 'name' => 'Create New Topic', 'priority' => '0.6', 'changefreq' => 'weekly']
 ];
 
 if ($isHuman) {
@@ -257,11 +269,34 @@ if ($isHuman) {
                 </div>
             </div>
 
+            <!-- Forum Section -->
+            <div class="sitemap-section">
+                <button class="section-header" onclick="toggleSection('forum')">
+                    <h3 class="section-title">
+                        <i class="fas fa-comments"></i> Forum
+                    </h3>
+                    <div class="section-meta">
+                        <span class="count"><?php echo count($forumPages); ?></span>
+                        <i class="fas fa-chevron-down arrow" id="forum-arrow"></i>
+                    </div>
+                </button>
+                <div class="section-content" id="forum-content">
+                    <ul class="sitemap-links">
+                        <?php foreach ($forumPages as $forumPage): ?>
+                        <li><a href="<?php echo $baseUrl . '/' . $forumPage['url']; ?>">
+                            <i class="fas fa-comment"></i>
+                            <?php echo $forumPage['name']; ?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+
             <div class="xml-link">
                 <p><strong>For search engines:</strong> <a href="<?php echo $baseUrl; ?>/sitemap.xml?format=xml">XML Sitemap</a></p>
                 <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
                     This sitemap automatically updates when new content is added. 
-                    Total pages: <?php echo count($mainPages) + count($courseFiles) + count($newsFiles) + count($reviewFiles); ?>
+                    Total pages: <?php echo count($mainPages) + count($courseFiles) + count($newsFiles) + count($reviewFiles) + count($forumPages); ?>
                 </p>
             </div>
         </div>
@@ -327,6 +362,15 @@ if ($isHuman) {
         <lastmod><?php echo $review['modified']; ?></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <?php endforeach; ?>
+
+    <?php foreach ($forumPages as $forumPage): ?>
+    <url>
+        <loc><?php echo $baseUrl . '/' . $forumPage['url']; ?></loc>
+        <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+        <changefreq><?php echo $forumPage['changefreq']; ?></changefreq>
+        <priority><?php echo $forumPage['priority']; ?></priority>
     </url>
     <?php endforeach; ?>
 </urlset>
