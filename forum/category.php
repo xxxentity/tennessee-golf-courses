@@ -133,6 +133,9 @@ $topics = isset($all_topics[$category_id]) ? $all_topics[$category_id] : [];
 
 // Filter topics by category (in real implementation, this would be a database query)
 $category_topics = $topics;
+
+// Debug - uncomment to see what's happening
+// echo "<!-- Category ID: $category_id, Topics found: " . count($category_topics) . " -->";
 ?>
 
 <!DOCTYPE html>
@@ -160,8 +163,15 @@ $category_topics = $topics;
     <style>
         .forum-page {
             padding-top: 90px;
-            min-height: 80vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, var(--bg-light), var(--bg-white));
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .category-header {
@@ -452,7 +462,6 @@ $category_topics = $topics;
                     <?php endif; ?>
                 </div>
                 
-                <!-- Debug: Topics count = <?php echo count($category_topics); ?> -->
                 <?php if (empty($category_topics)): ?>
                     <div class="no-topics">
                         <i class="fas fa-comments"></i>
@@ -511,6 +520,11 @@ $category_topics = $topics;
                 <?php endif; ?>
             </div>
         </div>
+    </div>
+    
+    <!-- Test output to verify page is rendering completely -->
+    <div style="padding: 20px; text-align: center; color: #666;">
+        <p>Page rendered at <?php echo date('Y-m-d H:i:s'); ?> - Category: <?php echo $category_id; ?> - Topics: <?php echo count($category_topics); ?></p>
     </div>
     
     <!-- Dynamic Footer -->
