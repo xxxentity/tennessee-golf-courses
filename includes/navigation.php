@@ -22,6 +22,8 @@ $is_main_page = (
     strpos($current_page, '/news') === 0 ||
     strpos($current_page, '/events') === 0 ||
     strpos($current_page, '/community') === 0 ||
+    strpos($current_page, '/forum') === 0 ||
+    strpos($current_page, '/maps') === 0 ||
     strpos($current_page, '/about') === 0 ||
     strpos($current_page, '/contact') === 0
 );

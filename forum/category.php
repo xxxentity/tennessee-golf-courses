@@ -188,7 +188,7 @@ $category_topics = $topics;
             padding: 1.5rem 2rem;
             border-bottom: 1px solid rgba(0,0,0,0.1);
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: center;
         }
         

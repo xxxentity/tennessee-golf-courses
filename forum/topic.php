@@ -3,6 +3,7 @@ session_start();
 
 // Include rate limiting functionality
 require_once '../includes/forum-rate-limit.php';
+require_once '../includes/csrf.php';
 
 // Get topic ID from URL parameter
 $topic_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -85,21 +86,25 @@ if (!$topic) {
 
 // Handle reply submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in && isset($_POST['reply_content'])) {
-    $reply_content = trim($_POST['reply_content']);
-    
-    if (!empty($reply_content) && !$topic['is_locked']) {
-        // Check rate limits
-        if ($can_create_post['allowed']) {
-            // Check for spam
-            $spam_check = ForumRateLimit::isSpamContent($reply_content);
-            if (!$spam_check['is_spam']) {
-                // Record the post creation for rate limiting
-                ForumRateLimit::recordPostCreated($current_user_id);
-                
-                // In real implementation, save to database
-                // For now, just redirect to prevent form resubmission
-                header('Location: /forum/topic/' . $topic_id . '#latest');
-                exit;
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (CSRFProtection::validateToken($csrf_token)) {
+        $reply_content = trim($_POST['reply_content']);
+        
+        if (!empty($reply_content) && !$topic['is_locked']) {
+            // Check rate limits
+            if ($can_create_post['allowed']) {
+                // Check for spam
+                $spam_check = ForumRateLimit::isSpamContent($reply_content);
+                if (!$spam_check['is_spam']) {
+                    // Record the post creation for rate limiting
+                    ForumRateLimit::recordPostCreated($current_user_id);
+                    
+                    // In real implementation, save to database
+                    // For now, just redirect to prevent form resubmission
+                    header('Location: /forum/topic/' . $topic_id . '#latest');
+                    exit;
+                }
             }
         }
     }
@@ -548,6 +553,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in && isset($_POST['repl
                     </div>
                     <?php if ($can_create_post['allowed']): ?>
                         <form method="POST" class="reply-form">
+                            <?php echo CSRFProtection::getTokenField(); ?>
                             <textarea name="reply_content" class="reply-textarea" placeholder="Write your reply here..." required></textarea>
                             <div class="reply-actions">
                                 <div class="form-note">

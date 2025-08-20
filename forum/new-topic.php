@@ -3,6 +3,7 @@ session_start();
 
 // Include rate limiting functionality
 require_once '../includes/forum-rate-limit.php';
+require_once '../includes/csrf.php';
 
 // Check if user is logged in (using existing session system)
 $is_logged_in = isset($_SESSION['user_id']);
@@ -62,11 +63,17 @@ $errors = [];
 $success = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validate CSRF token first
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $errors[] = 'Security token expired or invalid. Please try again.';
+    }
+    
     $title = trim($_POST['title'] ?? '');
     $content = trim($_POST['content'] ?? '');
     $category_id = (int)($_POST['category_id'] ?? 0);
     
-    // Check rate limits first
+    // Check rate limits
     if (!$can_create_topic['allowed']) {
         $errors[] = $can_create_topic['reason'];
     }
@@ -438,6 +445,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
                 
                 <form method="POST" class="topic-form">
+                    <?php echo CSRFProtection::getTokenField(); ?>
                     <div class="form-group">
                         <label for="category_id">
                             <i class="fas fa-folder"></i>
