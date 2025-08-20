@@ -334,6 +334,25 @@ session_start();
             <!-- Map Container -->
             <div class="map-container">
                 <div id="tennessee-golf-map"></div>
+                
+                <!-- Regional Zoom Buttons -->
+                <div class="regional-zoom-controls" style="position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 0.5rem; z-index: 1000;">
+                    <button class="region-btn" data-region="nashville" style="background: rgba(255,255,255,0.95); border: 2px solid var(--primary-color); border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--primary-color); transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        Nashville
+                    </button>
+                    <button class="region-btn" data-region="memphis" style="background: rgba(255,255,255,0.95); border: 2px solid var(--primary-color); border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--primary-color); transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        Memphis
+                    </button>
+                    <button class="region-btn" data-region="knoxville" style="background: rgba(255,255,255,0.95); border: 2px solid var(--primary-color); border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--primary-color); transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        Knoxville
+                    </button>
+                    <button class="region-btn" data-region="chattanooga" style="background: rgba(255,255,255,0.95); border: 2px solid var(--primary-color); border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--primary-color); transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        Chattanooga
+                    </button>
+                    <button class="region-btn" data-region="tennessee" style="background: rgba(255,255,255,0.95); border: 2px solid var(--secondary-color); border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--secondary-color); transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        View All TN
+                    </button>
+                </div>
             </div>
             
             <!-- Map Legend -->
@@ -1282,6 +1301,67 @@ session_start();
                     // Update filter and apply
                     currentFilter = this.dataset.filter;
                     filterMarkers();
+                });
+            });
+            
+            // Regional zoom functionality
+            const regionCoordinates = {
+                nashville: {
+                    center: [-86.7816, 36.1627],
+                    zoom: 9.5
+                },
+                memphis: {
+                    center: [-90.0490, 35.1495], 
+                    zoom: 9.5
+                },
+                knoxville: {
+                    center: [-83.9207, 35.9606],
+                    zoom: 9.5
+                },
+                chattanooga: {
+                    center: [-85.3097, 35.0456],
+                    zoom: 9.5
+                },
+                tennessee: {
+                    center: [-86.7816, 36.1627],
+                    zoom: 6.5
+                }
+            };
+            
+            // Add click handlers for regional zoom buttons
+            document.querySelectorAll('.region-btn').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const region = this.dataset.region;
+                    const coords = regionCoordinates[region];
+                    
+                    if (coords) {
+                        map.flyTo({
+                            center: coords.center,
+                            zoom: coords.zoom,
+                            duration: 1500,
+                            essential: true
+                        });
+                    }
+                });
+                
+                // Add hover effects
+                button.addEventListener('mouseenter', function() {
+                    if (this.dataset.region === 'tennessee') {
+                        this.style.background = 'var(--secondary-color)';
+                        this.style.color = 'white';
+                    } else {
+                        this.style.background = 'var(--primary-color)';
+                        this.style.color = 'white';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(255,255,255,0.95)';
+                    if (this.dataset.region === 'tennessee') {
+                        this.style.color = 'var(--secondary-color)';
+                    } else {
+                        this.style.color = 'var(--primary-color)';
+                    }
                 });
             });
             
