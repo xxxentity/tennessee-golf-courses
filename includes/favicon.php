@@ -17,5 +17,6 @@ $favicon_url = $favicon_path . '?t=' . $favicon_version;
 ?>
 <!-- Favicon with automatic cache busting -->
 <link rel="icon" type="image/webp" href="<?php echo $favicon_url; ?>">
+<link rel="icon" type="image/x-icon" href="<?php echo $favicon_url; ?>">
 <link rel="shortcut icon" href="<?php echo $favicon_url; ?>">
 <link rel="apple-touch-icon" href="<?php echo $favicon_url; ?>">

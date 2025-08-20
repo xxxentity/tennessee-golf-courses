@@ -84,7 +84,7 @@ if ($category_id == 6) {
         'last_reply_at' => null,
         'last_reply_author' => null,
         'is_pinned' => true,
-        'is_locked' => false
+        'is_locked' => true
     ];
 }
 
@@ -377,7 +377,7 @@ $category_topics = $topics;
             </div>
             
             <!-- Topics Container -->
-            <div class="topics-container">
+            <div class="topics-container" style="background: white; border: 1px solid #ddd; min-height: 200px;">
                 <div class="topics-header">
                     <h2>Discussion Topics</h2>
                     <?php if ($is_logged_in): ?>
@@ -404,6 +404,7 @@ $category_topics = $topics;
                     <?php endif; ?>
                 </div>
                 
+                <!-- Debug: Category ID = <?php echo $category_id; ?>, Topics count = <?php echo count($category_topics); ?> -->
                 <?php if (empty($category_topics)): ?>
                     <div class="no-topics">
                         <i class="fas fa-comments"></i>
