@@ -796,7 +796,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/willow-creek-golf-club/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
@@ -958,8 +958,8 @@ try {
             // Clear existing content
             galleryGrid.innerHTML = '';
             
-            // Generate all 25 images (starting from 2.jpeg to 25.jpeg = 24 images)
-            for (let i = 2; i <= 25; i++) {
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
                 galleryItem.style.backgroundImage = `url('../images/courses/willow-creek-golf-club/${i}.jpeg')`;
