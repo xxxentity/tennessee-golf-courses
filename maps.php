@@ -408,7 +408,7 @@ session_start();
                 phone: "(423) 326-0885",
                 type: "Public",
                 slug: "bear-trace-harrison-bay",
-                coordinates: [-85.1347, 35.1195]
+                coordinates: [-85.108416, 35.197242]
             },
             {
                 name: "Belle Acres Golf Course",
@@ -504,7 +504,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "clarksville-country-club",
-                coordinates: [-87.35887, 36.52776]
+                coordinates: [-87.290493, 36.527844]
             },
             {
                 name: "Colonial Country Club",
@@ -520,7 +520,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "council-fire-golf-club",
-                coordinates: [-85.165625, 34.986288]
+                coordinates: [-85.165604, 34.986292]
             },
             {
                 name: "Cumberland Cove Golf Course",
@@ -528,7 +528,7 @@ session_start();
                 phone: "(931) 839-3313",
                 type: "Public",
                 slug: "cumberland-cove-golf-course",
-                coordinates: [-85.268889, 36.148889]
+                coordinates: [-85.227703, 36.085046]
             },
             {
                 name: "Dead Horse Lake Golf Course",
@@ -568,7 +568,7 @@ session_start();
                 phone: "(423) 881-5706",
                 type: "State Park",
                 slug: "fall-creek-falls-state-park-golf-course",
-                coordinates: [-85.467222, 35.746111]
+                coordinates: [-85.355354, 35.646341]
             },
             {
                 name: "Forrest Crossing Golf Course",
@@ -648,7 +648,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "honky-tonk-national-golf-course",
-                coordinates: [-85.46413, 35.92589]
+                coordinates: [-85.687164, 35.957130]
             },
             {
                 name: "Island Pointe Golf Club",
@@ -664,7 +664,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "jackson-country-club",
-                coordinates: [-88.81774, 35.61444]
+                coordinates: [-88.831846, 35.674460]
             },
             {
                 name: "Lake Tansi Golf Course",
@@ -776,7 +776,7 @@ session_start();
                 phone: "(731) 642-2555",
                 type: "Public",
                 slug: "paris-landing-state-park-golf-course",
-                coordinates: [-88.196944, 36.491667]
+                coordinates: [-88.084932, 36.433310]
             },
             {
                 name: "Percy Warner Golf Course",

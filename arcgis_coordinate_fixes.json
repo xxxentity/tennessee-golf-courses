@@ -1,0 +1,74 @@
+{
+  "Bear Trace at Harrison Bay": {
+    "address": "8919 Harrison Bay Road, Harrison, TN 37341",
+    "coordinates": [
+      -85.108416483322,
+      35.197242174855
+    ],
+    "formatted_address": "8919 Harrison Bay Rd, Harrison, Tennessee, 37341",
+    "confidence_score": 100
+  },
+  "Council Fire Golf Club": {
+    "address": "1400 Council Fire Drive, Chattanooga, TN 37421",
+    "coordinates": [
+      -85.165603694094,
+      34.986291675669
+    ],
+    "formatted_address": "Council Fire Dr, Chattanooga, Tennessee, 37421",
+    "confidence_score": 96.32
+  },
+  "Clarksville Country Club": {
+    "address": "334 Fairway Dr, Clarksville, TN 37043",
+    "coordinates": [
+      -87.290493094963,
+      36.527844158247
+    ],
+    "formatted_address": "334 Fairway Dr, Clarksville, Tennessee, 37043",
+    "confidence_score": 100
+  },
+  "Jackson Country Club": {
+    "address": "31 Jackson Country Club Ln, Jackson, TN 38305",
+    "coordinates": [
+      -88.831846466675,
+      35.674460048636
+    ],
+    "formatted_address": "31 Jackson Country Club Ln, Jackson, Tennessee, 38305",
+    "confidence_score": 100
+  },
+  "Honky Tonk National Golf Course": {
+    "address": "235 Harbour Greens Place, Sparta, TN 38583",
+    "coordinates": [
+      -85.687164434086,
+      35.95712996831
+    ],
+    "formatted_address": "235 Harbour Greens Pl, Sparta, Tennessee, 38583",
+    "confidence_score": 100
+  },
+  "Cumberland Cove Golf Course": {
+    "address": "16941 Highway 70 N, Monterey, TN 38574",
+    "coordinates": [
+      -85.227702867811,
+      36.085045689757
+    ],
+    "formatted_address": "16941 Highway 70 N, Monterey, Tennessee, 38574",
+    "confidence_score": 100
+  },
+  "Fall Creek Falls State Park Golf Course": {
+    "address": "626 Golf Course Road, Spencer, TN 38585",
+    "coordinates": [
+      -85.355353553479,
+      35.646340775139
+    ],
+    "formatted_address": "626 Golf Course Rd, Pikeville, Tennessee, 37367",
+    "confidence_score": 97.13
+  },
+  "Paris Landing State Park Golf Course": {
+    "address": "285 Golf Course Lane, Buchanan, TN 38222",
+    "coordinates": [
+      -88.084932499072,
+      36.433309957817
+    ],
+    "formatted_address": "285 Golf Course Ln, Buchanan, Tennessee, 38222",
+    "confidence_score": 100
+  }
+}
