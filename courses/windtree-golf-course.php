@@ -276,7 +276,7 @@ try {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
-            max-height: 70vh;
+            max-height: 80vh;
             overflow-y: auto;
         }
         
@@ -673,6 +673,9 @@ try {
                 galleryItem.onclick = () => window.open(`../images/courses/windtree-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
+            
+            // Debug: count actual items
+            console.log('Total gallery items created:', galleryGrid.children.length);
             
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
