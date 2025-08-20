@@ -732,11 +732,11 @@ session_start();
             },
             {
                 name: "Nashville Golf & Athletic Club",
-                address: "1101 Golf Club Lane, Belle Meade, TN 37205",
+                address: "1703 Crockett Springs Trail, Brentwood, TN 37027",
                 phone: "(615) 356-8580",
                 type: "Private Club",
                 slug: "nashville-golf-athletic-club",
-                coordinates: [-86.816589, 36.118662]
+                coordinates: [-86.786604, 35.962086]
             },
             {
                 name: "Nashville National Golf Links",

@@ -679,8 +679,8 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    1101 Golf Club Lane<br>
-                    Belle Meade, TN 37205</p>
+                    1703 Crockett Springs Trail<br>
+                    Brentwood, TN 37027</p>
                     
                     <p><strong>Phone:</strong><br>
                     (615) 356-8580</p>
@@ -690,7 +690,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=1101+Golf+Club+Lane,+Belle+Meade,+TN+37205&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=1703+Crockett+Springs+Trail,+Brentwood,+TN+37027&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 

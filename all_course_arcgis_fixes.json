@@ -1,0 +1,263 @@
+{
+  "Southern Hills Golf & Country Club": {
+    "address": "4770 Ben Jared Rd, Cookeville, TN 38506",
+    "coordinates": [
+      -85.59952358976,
+      36.104977310684
+    ],
+    "formatted_address": "4770 Ben Jared Rd, Cookeville, Tennessee, 38506",
+    "confidence_score": 100
+  },
+  "Avalon Golf & Country Club": {
+    "address": "1299 Oak Chase Blvd, Lenoir City, TN 37772",
+    "coordinates": [
+      -84.255203699812,
+      35.861213964345
+    ],
+    "formatted_address": "1299 Oak Chase Blvd, Lenoir City, Tennessee, 37772",
+    "confidence_score": 100
+  },
+  "Bear Trace at Tims Ford": {
+    "address": "570 Bear Trace Drive, Winchester, TN 37398",
+    "coordinates": [
+      -86.117914126636,
+      35.18001537729
+    ],
+    "formatted_address": "Trade St, Winchester, Tennessee, 37398",
+    "confidence_score": 84.22
+  },
+  "Big Creek Golf Club": {
+    "address": "6195 Woodstock Cuba Rd, Millington, TN 38053",
+    "coordinates": [
+      -89.99012347776,
+      35.296542791322
+    ],
+    "formatted_address": "6195 Woodstock Cuba Rd, Millington, Tennessee, 38053",
+    "confidence_score": 100
+  },
+  "Blackthorn Club": {
+    "address": "1501 Ridges Club Drive, Jonesborough, TN 37659",
+    "coordinates": [
+      -82.46540811959,
+      36.346201233727
+    ],
+    "formatted_address": "1501 Ridges Club Dr, Jonesborough, Tennessee, 37659",
+    "confidence_score": 100
+  },
+  "Bluegrass Yacht & Country Club": {
+    "address": "550 Johnny Cash Parkway, Hendersonville, TN 37075",
+    "coordinates": [
+      -86.575878592928,
+      36.320936282167
+    ],
+    "formatted_address": "550 Johnny Cash Blvd, Hendersonville, Tennessee, 37075",
+    "confidence_score": 98.04
+  },
+  "Dead Horse Lake Golf Course": {
+    "address": "3016 Gravelly Hills Road, Louisville, TN 37777",
+    "coordinates": [
+      -84.132187776773,
+      35.831069662992
+    ],
+    "formatted_address": "Gravelly Hills Rd, Louisville, Tennessee, 37777",
+    "confidence_score": 96.32
+  },
+  "Fox Den Country Club": {
+    "address": "6000 Fox Den Drive, Knoxville, TN 37918",
+    "coordinates": [
+      -84.186416443743,
+      35.869828965171
+    ],
+    "formatted_address": "Fox Den Dr, Farragut, Tennessee, 37934",
+    "confidence_score": 89.74
+  },
+  "Gaylord Springs Golf Links": {
+    "address": "18 Springs Blvd, Nashville, TN 37214",
+    "coordinates": [
+      -86.765695921836,
+      36.174064035087
+    ],
+    "formatted_address": "18 Spring St, Nashville, Tennessee, 37206",
+    "confidence_score": 91.08
+  },
+  "Greystone Golf Course": {
+    "address": "1 Greystone Drive, Dickson, TN 37055",
+    "coordinates": [
+      -87.392718,
+      36.073113
+    ],
+    "formatted_address": "37055, Dickson, Tennessee",
+    "confidence_score": 84
+  },
+  "Lake Tansi Golf Course": {
+    "address": "2476 Dunbar Road, Crossville, TN 38572",
+    "coordinates": [
+      -85.057297016055,
+      35.87605999125
+    ],
+    "formatted_address": "2476 Dunbar Rd, Crossville, Tennessee, 38572",
+    "confidence_score": 100
+  },
+  "Laurel Valley Country Club": {
+    "address": "702 Country Club Drive, Townsend, TN 37882",
+    "coordinates": [
+      -83.809948956505,
+      35.669213102976
+    ],
+    "formatted_address": "702 Country Club Dr, Townsend, Tennessee, 37882",
+    "confidence_score": 100
+  },
+  "Mirimichi Golf Course": {
+    "address": "6195 Woodstock Cuba Rd, Millington, TN 38053",
+    "coordinates": [
+      -89.99012347776,
+      35.296542791322
+    ],
+    "formatted_address": "6195 Woodstock Cuba Rd, Millington, Tennessee, 38053",
+    "confidence_score": 100
+  },
+  "Montgomery Bell State Park Golf Course": {
+    "address": "1020 Jackson Hill Road, Burns, TN 37029",
+    "coordinates": [
+      -87.285070338885,
+      36.100962379063
+    ],
+    "formatted_address": "1020 Jackson Hill Rd, Burns, Tennessee, 37029",
+    "confidence_score": 100
+  },
+  "Nashville Golf & Athletic Club": {
+    "address": "1101 Golf Club Lane, Belle Meade, TN 37205",
+    "coordinates": [
+      -86.816589474846,
+      36.118662440531
+    ],
+    "formatted_address": "Golf Club Ln, Nashville, Tennessee, 37215",
+    "confidence_score": 92.07
+  },
+  "Pickwick Landing State Park Golf Course": {
+    "address": "60 Winfield Dunn Lane, Pickwick Dam, TN 38365",
+    "coordinates": [
+      -88.243919577563,
+      35.051569852536
+    ],
+    "formatted_address": "60 Winfield Dunn Ln, Counce, Tennessee, 38326",
+    "confidence_score": 97.13
+  },
+  "Richland Country Club": {
+    "address": "116 Richland Country Club Drive, Nashville, TN 37205",
+    "coordinates": [
+      -86.822876,
+      36.049882
+    ],
+    "formatted_address": "Richland Country Club",
+    "confidence_score": 85.5
+  },
+  "Ross Creek Landing Golf Course": {
+    "address": "110 Airport Rd, Clifton, TN 38425",
+    "coordinates": [
+      -87.969744088713,
+      35.387625223377
+    ],
+    "formatted_address": "110 Airport Rd, Clifton, Tennessee, 38425",
+    "confidence_score": 100
+  },
+  "Tanasi Golf Course": {
+    "address": "450 Clubhouse Point, Loudon, TN 37774",
+    "coordinates": [
+      -84.258651763321,
+      35.730054739737
+    ],
+    "formatted_address": "450 Club House Pt, Loudon, Tennessee, 37774",
+    "confidence_score": 100
+  },
+  "Temple Hills Country Club": {
+    "address": "6376 Temple Road, Franklin, TN 37069",
+    "coordinates": [
+      -86.953033482168,
+      36.013915644034
+    ],
+    "formatted_address": "6376 Temple Rd, Franklin, Tennessee, 37069",
+    "confidence_score": 100
+  },
+  "The Golf Club of Tennessee": {
+    "address": "1 Sneed Road West, Kingston Springs, TN 37082",
+    "coordinates": [
+      -87.157514430588,
+      36.11566379463
+    ],
+    "formatted_address": "Sneed Rd, Kingston Springs, Tennessee, 37082",
+    "confidence_score": 96.87
+  },
+  "The Governors Club": {
+    "address": "1500 Governors Club Drive, Brentwood, TN 37027",
+    "coordinates": [
+      -86.819823277144,
+      36.051228940311
+    ],
+    "formatted_address": "Club Dr, Nashville, Tennessee, 37215",
+    "confidence_score": 84.64
+  },
+  "The Grove": {
+    "address": "7165 Nolensville Road, College Grove, TN 37046",
+    "coordinates": [
+      -86.658550424291,
+      35.859149453551
+    ],
+    "formatted_address": "Nolensville Rd, College Grove, Tennessee, 37046",
+    "confidence_score": 96.32
+  },
+  "The Legacy Golf Course": {
+    "address": "100 Ray Floyd Drive, Springfield, TN 37172",
+    "coordinates": [
+      -86.840562926065,
+      36.484869302476
+    ],
+    "formatted_address": "100 Ray Floyd Dr, Springfield, Tennessee, 37172",
+    "confidence_score": 100
+  },
+  "The Links at Kahite": {
+    "address": "100 Kahite Trail, Vonore, TN 37885",
+    "coordinates": [
+      -84.252778731404,
+      35.564067617787
+    ],
+    "formatted_address": "100 Kahite Trl, Vonore, Tennessee, 37885",
+    "confidence_score": 100
+  },
+  "Three Ridges Golf Course": {
+    "address": "6601 Ridgewood Drive, Knoxville, TN 37921",
+    "coordinates": [
+      -83.90306901512,
+      35.90379655624
+    ],
+    "formatted_address": "Ridgewood Dr, Knoxville, Tennessee, 37920",
+    "confidence_score": 90.74
+  },
+  "Troubadour Golf & Field Club": {
+    "address": "7230 Harlow Dr, College Grove, TN 37046",
+    "coordinates": [
+      -86.676633016521,
+      35.826545490803
+    ],
+    "formatted_address": "7230 Harlow Dr, College Grove, Tennessee, 37046",
+    "confidence_score": 100
+  },
+  "Windtree Golf Course": {
+    "address": "810 Nonaville Rd, Mount Juliet, TN 37122",
+    "coordinates": [
+      -86.518127623255,
+      36.2424891378
+    ],
+    "formatted_address": "810 Nonaville Rd, Mount Juliet, Tennessee, 37122",
+    "confidence_score": 100
+  },
+  "White Plains Golf Course": {
+    "address": "4000 Plantation Dr, Cookeville, TN 38506",
+    "coordinates": [
+      -85.43149342082,
+      36.179041651161
+    ],
+    "formatted_address": "4000 Plantation Dr, Cookeville, Tennessee, 38506",
+    "confidence_score": 100
+  }
+}
