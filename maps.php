@@ -536,7 +536,7 @@ session_start();
                 phone: "(865) 693-5270",
                 type: "Public",
                 slug: "dead-horse-lake-golf-course",
-                coordinates: [-83.918889, 35.831944]
+                coordinates: [-84.132188, 35.831070]
             },
             {
                 name: "Druid Hills Golf Club",
@@ -584,7 +584,7 @@ session_start();
                 phone: "(865) 922-3035",
                 type: "Private",
                 slug: "fox-den-country-club",
-                coordinates: [-83.915278, 35.996111]
+                coordinates: [-84.186416, 35.869829]
             },
             {
                 name: "Gaylord Springs Golf Links",
@@ -592,7 +592,7 @@ session_start();
                 phone: "(615) 458-1730",
                 type: "Resort Public",
                 slug: "gaylord-springs-golf-links",
-                coordinates: [-86.677222, 36.208333]
+                coordinates: [-86.765696, 36.174064]
             },
             {
                 name: "Greystone Golf Course",
@@ -600,7 +600,7 @@ session_start();
                 phone: "(615) 441-8888",
                 type: "Public",
                 slug: "greystone-golf-course",
-                coordinates: [-87.388889, 36.077222]
+                coordinates: [-87.392718, 36.073113]
             },
             {
                 name: "Harpeth Hills Golf Course",
@@ -672,7 +672,7 @@ session_start();
                 phone: "(931) 788-3301",
                 type: "Public",
                 slug: "lake-tansi-golf-course",
-                coordinates: [-85.048611, 35.944444]
+                coordinates: [-85.057297, 35.876060]
             },
             {
                 name: "Lambert Acres Golf Club",
@@ -688,7 +688,7 @@ session_start();
                 phone: "(865) 738-3134",
                 type: "Public",
                 slug: "laurel-valley-country-club",
-                coordinates: [-83.754167, 35.676944]
+                coordinates: [-83.809949, 35.669213]
             },
             {
                 name: "Lookout Mountain Club",
@@ -712,7 +712,7 @@ session_start();
                 phone: "(901) 259-3800",
                 type: "Public",
                 slug: "mirimichi-golf-course",
-                coordinates: [-89.874722, 35.344167]
+                coordinates: [-89.990123, 35.296543]
             },
             {
                 name: "Moccasin Bend Golf Course",
@@ -728,7 +728,7 @@ session_start();
                 phone: "",
                 type: "State Park",
                 slug: "montgomery-bell-state-park-golf-course",
-                coordinates: [-87.311944, 36.058333]
+                coordinates: [-87.285070, 36.100962]
             },
             {
                 name: "Nashville Golf & Athletic Club",
@@ -736,7 +736,7 @@ session_start();
                 phone: "(615) 356-8580",
                 type: "Private Club",
                 slug: "nashville-golf-athletic-club",
-                coordinates: [-86.866944, 36.103889]
+                coordinates: [-86.816589, 36.118662]
             },
             {
                 name: "Nashville National Golf Links",
@@ -792,7 +792,7 @@ session_start();
                 phone: "(731) 689-3149",
                 type: "Public",
                 slug: "pickwick-landing-state-park",
-                coordinates: [-88.246111, 35.058889]
+                coordinates: [-88.243920, 35.051570]
             },
             {
                 name: "Pine Oaks Golf Course",
@@ -808,7 +808,7 @@ session_start();
                 phone: "(615) 352-4444",
                 type: "Private Club",
                 slug: "richland-country-club",
-                coordinates: [-86.870556, 36.091667]
+                coordinates: [-86.822876, 36.049882]
             },
             {
                 name: "Ross Creek Landing Golf Course",
@@ -816,7 +816,7 @@ session_start();
                 phone: "(931) 676-3174",
                 type: "Public",
                 slug: "ross-creek-landing-golf-course",
-                coordinates: [-87.988889, 35.388889]
+                coordinates: [-87.969744, 35.387625]
             },
             {
                 name: "Sevierville Golf Club",
@@ -880,7 +880,7 @@ session_start();
                 phone: "",
                 type: "Resort/Private",
                 slug: "tanasi-golf-course",
-                coordinates: [-84.335278, 35.732222]
+                coordinates: [-84.258652, 35.730055]
             },
             {
                 name: "Ted Rhodes Golf Course",
@@ -896,7 +896,7 @@ session_start();
                 phone: "(615) 646-4785",
                 type: "Private",
                 slug: "temple-hills-country-club",
-                coordinates: [-86.868333, 35.925556]
+                coordinates: [-86.953033, 36.013916]
             },
             {
                 name: "Tennessee Grasslands Golf & CC - Fairvue",
@@ -944,7 +944,7 @@ session_start();
                 phone: "(615) 370-4653",
                 type: "Private",
                 slug: "the-golf-club-of-tennessee",
-                coordinates: [-87.108889, 36.113333]
+                coordinates: [-87.157514, 36.115664]
             },
             {
                 name: "The Governors Club",
@@ -952,7 +952,7 @@ session_start();
                 phone: "(615) 370-0707",
                 type: "Private Club",
                 slug: "the-governors-club",
-                coordinates: [-86.787222, 35.998889]
+                coordinates: [-86.819823, 36.051229]
             },
             {
                 name: "The Grove",
@@ -960,7 +960,7 @@ session_start();
                 phone: "",
                 type: "Private Club Community",
                 slug: "the-grove",
-                coordinates: [-86.901944, 35.853889]
+                coordinates: [-86.658550, 35.859149]
             },
             {
                 name: "The Honors Course",
@@ -976,7 +976,7 @@ session_start();
                 phone: "(615) 384-4653",
                 type: "Public",
                 slug: "the-legacy-golf-course",
-                coordinates: [-86.885278, 36.509167]
+                coordinates: [-86.840563, 36.484869]
             },
             {
                 name: "The Links at Audubon",
@@ -1008,7 +1008,7 @@ session_start();
                 phone: "",
                 type: "Resort/Private",
                 slug: "the-links-at-kahite",
-                coordinates: [-84.237222, 35.606111]
+                coordinates: [-84.252779, 35.564068]
             },
             {
                 name: "The Links at Whitehaven",
@@ -1024,7 +1024,7 @@ session_start();
                 phone: "(865) 525-4653",
                 type: "Municipal Public",
                 slug: "three-ridges-golf-course",
-                coordinates: [-83.990278, 35.963889]
+                coordinates: [-83.903069, 35.903797]
             },
             {
                 name: "Toqua Golf Course",
@@ -1048,7 +1048,7 @@ session_start();
                 phone: "(615) 436-6850",
                 type: "Private",
                 slug: "troubadour-golf-field-club",
-                coordinates: [-86.901944, 35.853889]
+                coordinates: [-86.676633, 35.826545]
             },
             {
                 name: "Two Rivers Golf Course",
@@ -1080,7 +1080,7 @@ session_start();
                 phone: "(931) 526-3306",
                 type: "Semi-Private",
                 slug: "white-plains-golf-course",
-                coordinates: [-85.42979, 36.18251]
+                coordinates: [-85.431493, 36.179042]
             },
             {
                 name: "Whittle Springs Golf Course",
@@ -1112,7 +1112,7 @@ session_start();
                 phone: "(615) 754-4653 (Disconnected)",
                 type: "",
                 slug: "windtree-golf-course",
-                coordinates: [-86.52802, 36.24273]
+                coordinates: [-86.518128, 36.242489]
             }
             ];
             
