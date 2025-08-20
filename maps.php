@@ -78,12 +78,6 @@ session_start();
             letter-spacing: 0.5px;
         }
         
-        .popup-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
         
         .popup-address {
             color: var(--text-gray);
@@ -1238,19 +1232,11 @@ session_start();
                 allMarkers = [];
                 
                 golfCourses.forEach(function(course) {
-                    // Generate placeholder rating (4.0-4.8 stars)
-                    const rating = (4.0 + Math.random() * 0.8).toFixed(1);
-                    const stars = '★'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '☆' : '');
-                    
-                    // Create enhanced popup content
+                    // Create enhanced popup content (no fake ratings - only real data)
                     const popupContent = `
                         <div class="enhanced-popup">
                             <div class="popup-course-name">${course.name}</div>
-                            <div class="popup-type" style="color: ${courseColors[course.type] || '#4CAF50'}; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">${course.type}</div>
-                            <div class="popup-rating" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                <span style="color: #ffd700; font-size: 1rem;">${stars}</span>
-                                <span style="color: var(--text-gray); font-size: 0.9rem;">${rating} rating</span>
-                            </div>
+                            <div class="popup-type" style="color: ${courseColors[course.type] || '#4CAF50'}; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">${course.type}</div>
                             <div class="popup-address" style="margin-bottom: 0.5rem;">${course.address}</div>
                             ${course.phone ? `<div class="popup-phone" style="margin-bottom: 1rem;">${course.phone}</div>` : '<div style="margin-bottom: 1rem;"></div>'}
                             <div class="popup-buttons" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
