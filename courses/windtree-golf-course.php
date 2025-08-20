@@ -540,7 +540,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25 Photos) - Updated</button>
             </div>
         </div>
     </section>
@@ -676,6 +676,7 @@ try {
             
             // Debug: count actual items
             console.log('Total gallery items created:', galleryGrid.children.length);
+            alert('Gallery loaded with ' + galleryGrid.children.length + ' images');
             
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
