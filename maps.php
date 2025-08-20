@@ -52,43 +52,98 @@ session_start();
         }
         
         .mapboxgl-popup-content {
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: var(--shadow-medium);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-large);
+            min-width: 280px;
+        }
+        
+        .enhanced-popup {
+            font-family: 'Inter', sans-serif;
         }
         
         .popup-course-name {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .popup-type {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .popup-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         
         .popup-address {
             color: var(--text-gray);
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
         
         .popup-phone {
             color: var(--text-gray);
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
         
         .popup-link {
             background: var(--primary-color);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 16px;
+            border-radius: 25px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
             display: inline-block;
             transition: all 0.3s ease;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
         }
         
         .popup-link:hover {
             background: var(--secondary-color);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .popup-directions {
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .popup-directions:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .maps-hero {
@@ -1183,12 +1238,26 @@ session_start();
                 allMarkers = [];
                 
                 golfCourses.forEach(function(course) {
-                    // Create popup content
+                    // Generate placeholder rating (4.0-4.8 stars)
+                    const rating = (4.0 + Math.random() * 0.8).toFixed(1);
+                    const stars = '★'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '☆' : '');
+                    
+                    // Create enhanced popup content
                     const popupContent = `
-                        <div class="popup-course-name">${course.name}</div>
-                        <div class="popup-address">${course.address}</div>
-                        <div class="popup-phone">${course.phone}</div>
-                        <a href="/courses/${course.slug}" target="_blank" rel="noopener noreferrer" class="popup-link">View Course Details</a>
+                        <div class="enhanced-popup">
+                            <div class="popup-course-name">${course.name}</div>
+                            <div class="popup-type" style="color: ${courseColors[course.type] || '#4CAF50'}; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">${course.type}</div>
+                            <div class="popup-rating" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span style="color: #ffd700; font-size: 1rem;">${stars}</span>
+                                <span style="color: var(--text-gray); font-size: 0.9rem;">${rating} rating</span>
+                            </div>
+                            <div class="popup-address" style="margin-bottom: 0.5rem;">${course.address}</div>
+                            ${course.phone ? `<div class="popup-phone" style="margin-bottom: 1rem;">${course.phone}</div>` : '<div style="margin-bottom: 1rem;"></div>'}
+                            <div class="popup-buttons" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <a href="/courses/${course.slug}" target="_blank" rel="noopener noreferrer" class="popup-link" style="flex: 1; min-width: 120px; text-align: center;">Course Details</a>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(course.address)}" target="_blank" rel="noopener noreferrer" class="popup-directions" style="background: var(--secondary-color); color: white; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-block; transition: all 0.3s ease; flex: 1; min-width: 120px; text-align: center;">Get Directions</a>
+                            </div>
+                        </div>
                     `;
                     
                     // Create popup
