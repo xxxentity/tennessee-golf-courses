@@ -180,7 +180,7 @@ $category_topics = $topics;
             background: var(--bg-white);
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            overflow: hidden;
+            overflow: visible;
         }
         
         .topics-header {
@@ -217,12 +217,17 @@ $category_topics = $topics;
             list-style: none;
             padding: 0;
             margin: 0;
+            display: block;
+            visibility: visible;
         }
         
         .topic-item {
             padding: 1.5rem 2rem;
             border-bottom: 1px solid var(--bg-light);
             transition: background 0.3s ease;
+            display: block;
+            visibility: visible;
+            min-height: 80px;
         }
         
         .topic-item:hover {
@@ -377,7 +382,7 @@ $category_topics = $topics;
             </div>
             
             <!-- Topics Container -->
-            <div class="topics-container" style="background: white; border: 1px solid #ddd; min-height: 200px;">
+            <div class="topics-container">
                 <div class="topics-header">
                     <h2>Discussion Topics</h2>
                     <?php if ($is_logged_in): ?>
@@ -404,7 +409,7 @@ $category_topics = $topics;
                     <?php endif; ?>
                 </div>
                 
-                <!-- Debug: Category ID = <?php echo $category_id; ?>, Topics count = <?php echo count($category_topics); ?> -->
+                <!-- Debug: Topics count = <?php echo count($category_topics); ?> -->
                 <?php if (empty($category_topics)): ?>
                     <div class="no-topics">
                         <i class="fas fa-comments"></i>
