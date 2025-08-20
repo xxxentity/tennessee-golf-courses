@@ -97,7 +97,9 @@ $is_main_page = (
                     Community <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a href="/forum" class="dropdown-link">Forum</a></li>
                     <li><a href="/events" class="dropdown-link">Events</a></li>
+                    <li><a href="/contests" class="dropdown-link">Contests</a></li>
                 </ul>
             </li>
             <li class="nav-dropdown">

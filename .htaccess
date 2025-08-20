@@ -55,6 +55,15 @@ RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 RewriteRule ^search-courses.php$ search-courses.php [L]
 
+# Handle forum pages (clean URLs)
+RewriteRule ^forum/?$ forum.php [L]
+RewriteRule ^forum/category/([0-9]+)/?$ forum/category.php?id=$1 [L]
+RewriteRule ^forum/topic/([0-9]+)/?$ forum/topic.php?id=$1 [L]
+RewriteRule ^forum/new-topic/?$ forum/new-topic.php [L]
+RewriteRule ^community/?$ community.php [L]
+RewriteRule ^media/?$ media.php [L]
+RewriteRule ^maps/?$ maps.php [L]
+
 # Handle course pages (in subdirectory - alphabetical order)
 RewriteRule ^courses/bear-trace-harrison-bay/?$ courses/bear-trace-harrison-bay.php [L]
 RewriteRule ^courses/avalon-golf-country-club/?$ courses/avalon-golf-country-club.php [L]
