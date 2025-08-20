@@ -540,7 +540,7 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/windtree-golf-course/4.jpeg');"></div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (24+)</button>
             </div>
         </div>
     </section>
