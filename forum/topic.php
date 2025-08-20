@@ -16,8 +16,8 @@ try {
 require_once '../includes/forum-rate-limit.php';
 require_once '../includes/csrf.php';
 
-// Get topic ID from URL parameter
-$topic_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+// Get topic ID from URL parameter (can be numeric or alphanumeric for session-stored topics)
+$topic_id = isset($_GET['id']) ? $_GET['id'] : '';
 
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
@@ -133,7 +133,11 @@ Would appreciate any feedback or other recommendations!',
 ];
 
 // Get the requested topic
-$topic = isset($topics_data[$topic_id]) ? $topics_data[$topic_id] : null;
+// First check if it's a numeric ID for static topics
+$topic = null;
+if (is_numeric($topic_id)) {
+    $topic = isset($topics_data[(int)$topic_id]) ? $topics_data[(int)$topic_id] : null;
+}
 
 // If not found in mock data, check session storage
 if (!$topic && isset($_SESSION['forum_topics'][$topic_id])) {
