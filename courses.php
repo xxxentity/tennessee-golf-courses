@@ -7,6 +7,7 @@ require_once 'includes/seo.php';
 SEO::setupCoursesPage();
 
 // Get filters from URL parameters
+$search_query = isset($_GET['search']) ? trim($_GET['search']) : '';
 $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
 $price_filter = isset($_GET['price']) ? $_GET['price'] : '';
 $difficulty_filter = isset($_GET['difficulty']) ? $_GET['difficulty'] : '';
@@ -1432,6 +1433,17 @@ foreach ($courses_static as $course) {
 // Apply filters to courses
 $filtered_courses = [];
 foreach ($courses as $course) {
+    // Search filter (check name and location)
+    if ($search_query) {
+        $search_term = strtolower($search_query);
+        $course_name = strtolower($course['name']);
+        $course_location = strtolower($course['location']);
+        
+        if (strpos($course_name, $search_term) === false && strpos($course_location, $search_term) === false) {
+            continue;
+        }
+    }
+    
     // Region filter
     if ($region_filter && $course['region'] !== $region_filter) {
         continue;
@@ -2188,10 +2200,13 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             <!-- Filters Sidebar -->
             <aside class="filters-sidebar">
                 <form method="GET" id="filters-form">
+                    <!-- Hidden search parameter to preserve search when filtering -->
+                    <input type="hidden" name="search" id="hidden-search" value="<?php echo htmlspecialchars($search_query); ?>">
+                    
                     <!-- Search Bar -->
                     <div class="search-bar-container">
                         <div class="search-bar-wrapper">
-                            <input type="text" class="search-bar" id="courses-search" placeholder="Search courses..." autocomplete="off">
+                            <input type="text" class="search-bar" id="courses-search" placeholder="Search courses..." autocomplete="off" value="<?php echo htmlspecialchars($search_query); ?>">
                             <i class="fas fa-search search-bar-icon"></i>
                             <div class="search-results" id="courses-search-results"></div>
                         </div>
@@ -2602,14 +2617,18 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 }
             });
 
+            // Sync search input with hidden field
+            coursesSearchInput.addEventListener('input', function() {
+                document.getElementById('hidden-search').value = this.value;
+            });
+
             // Handle Enter key in search input
             coursesSearchInput.addEventListener('keypress', function(event) {
                 if (event.key === 'Enter') {
                     event.preventDefault();
                     const query = this.value.trim();
-                    if (query) {
-                        window.location.href = `/courses?search=${encodeURIComponent(query)}`;
-                    }
+                    document.getElementById('hidden-search').value = query;
+                    document.getElementById('filters-form').submit();
                 }
             });
         });
