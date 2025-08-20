@@ -940,11 +940,11 @@ session_start();
             },
             {
                 name: "The Golf Club of Tennessee",
-                address: "1 Sneed Road West, Kingston Springs, TN 37082",
+                address: "1000 Golf Club Dr, Kingston Springs, TN 37082",
                 phone: "(615) 370-4653",
                 type: "Private",
                 slug: "the-golf-club-of-tennessee",
-                coordinates: [-87.157514, 36.115664]
+                coordinates: [-87.090523, 36.068202]
             },
             {
                 name: "The Governors Club",
