@@ -480,7 +480,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "chattanooga-golf-country-club",
-                coordinates: [-85.285962, 35.073018]
+                coordinates: [-85.280602, 35.068222]
             },
             {
                 name: "Cheekwood Golf Club",
