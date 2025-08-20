@@ -250,7 +250,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in && isset($_POST['repl
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($topic['title']); ?> - Golf Forum - Tennessee Golf Courses</title>
     <meta name="description" content="<?php echo htmlspecialchars(substr(strip_tags($topic['content']), 0, 160)); ?>... - Tennessee Golf Community Forum">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     

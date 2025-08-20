@@ -145,7 +145,7 @@ $category_topics = $topics;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($category['name']); ?> - Golf Forum - Tennessee Golf Courses</title>
     <meta name="description" content="<?php echo htmlspecialchars($category['description']); ?> - Tennessee Golf Community Forum">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
@@ -520,11 +520,6 @@ $category_topics = $topics;
                 <?php endif; ?>
             </div>
         </div>
-    </div>
-    
-    <!-- Test output to verify page is rendering completely -->
-    <div style="padding: 20px; text-align: center; color: #666;">
-        <p>Page rendered at <?php echo date('Y-m-d H:i:s'); ?> - Category: <?php echo $category_id; ?> - Topics: <?php echo count($category_topics); ?></p>
     </div>
     
     <!-- Dynamic Footer -->
