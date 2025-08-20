@@ -596,11 +596,11 @@ session_start();
             },
             {
                 name: "Greystone Golf Course",
-                address: "1 Greystone Drive, Dickson, TN 37055",
+                address: "2555 US-70, Dickson, TN 37055",
                 phone: "(615) 441-8888",
                 type: "Public",
                 slug: "greystone-golf-course",
-                coordinates: [-87.392718, 36.073113]
+                coordinates: [-87.421305, 36.086740]
             },
             {
                 name: "Harpeth Hills Golf Course",
@@ -724,11 +724,11 @@ session_start();
             },
             {
                 name: "Montgomery Bell State Park Golf Course",
-                address: "1020 Jackson Hill Road, Burns, TN 37029",
+                address: "800 Hotel Ave, Burns, TN 37029",
                 phone: "",
                 type: "State Park",
                 slug: "montgomery-bell-state-park-golf-course",
-                coordinates: [-87.285070, 36.100962]
+                coordinates: [-87.261547, 36.090637]
             },
             {
                 name: "Nashville Golf & Athletic Club",

@@ -676,7 +676,7 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    1020 Jackson Hill Road<br>
+                    800 Hotel Ave<br>
                     Burns, TN 37029</p>
                     
                     <p><strong>Pro Shop:</strong><br>
@@ -692,7 +692,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=1020+Jackson+Hill+Road,+Burns,+TN+37029&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=800+Hotel+Ave,+Burns,+TN+37029&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
