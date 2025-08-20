@@ -1,5 +1,62 @@
 <?php
 session_start();
+
+// Get latest 3 news articles (same as homepage)
+$latest_news = [
+    [
+        'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
+        'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
+        'date' => '2025-08-18',
+        'time' => '7:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz\'s maiden victory, Jon Rahm\'s Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.',
+        'image' => '/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp'
+    ],
+    [
+        'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
+        'slug' => 'bmw-championship-2025-complete-tournament-recap-community-impact',
+        'date' => '2025-08-18',
+        'time' => '8:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of the 2025 BMW Championship featuring Scottie Scheffler\'s miraculous comeback victory and the tournament\'s extraordinary community impact for the Evans Scholars Foundation.',
+        'image' => '/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp'
+    ],
+    [
+        'title' => 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations',
+        'slug' => 'tennessee-herrington-historic-run-125th-us-amateur-runner-up',
+        'date' => '2025-08-17',
+        'time' => '9:30 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
+        'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp'
+    ]
+];
+
+// Get latest 3 featured reviews
+$featured_reviews = [
+    [
+        'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
+        'slug' => 'top-5-golf-balls-2025',
+        'date' => '2025-08-11',
+        'time' => '2:45 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
+        'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
+        'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
+        'slug' => 'top-10-putters-2025-amazon-guide',
+        'date' => '2025-08-06',
+        'time' => '4:30 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
+        'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ]
+];
 ?>
 
 <!DOCTYPE html>
@@ -193,6 +250,136 @@ session_start();
             line-height: 1.8;
         }
         
+        .featured-section {
+            margin-bottom: 4rem;
+        }
+        
+        .featured-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .featured-card {
+            background: var(--bg-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .featured-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-card:hover .featured-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-card-content {
+            padding: 1.5rem;
+        }
+        
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .featured-date {
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .featured-category {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .featured-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .featured-title:hover {
+            color: var(--secondary-color);
+        }
+        
+        .featured-excerpt {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more-btn {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more-btn:hover {
+            color: var(--primary-color);
+            gap: 1rem;
+        }
+        
+        .view-all-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .view-all-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
         @media (max-width: 768px) {
             .media-hero h1 {
                 font-size: 2.5rem;
@@ -235,66 +422,73 @@ session_start();
         
         <!-- Media Content -->
         <div class="media-content">
-            <!-- Media Sections -->
-            <div class="media-sections">
-                <div class="media-section">
-                    <div class="icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h2>Golf News</h2>
-                    <p>Stay up-to-date with the latest news from Tennessee's golf scene. Tournament results, course updates, professional news, and everything happening in the Volunteer State's golf community.</p>
-                    <a href="/news" class="media-btn">
-                        <i class="fas fa-arrow-right"></i>
-                        Browse News
-                    </a>
+            <!-- Featured News Section -->
+            <div class="featured-section">
+                <h2><i class="fas fa-newspaper" style="margin-right: 1rem;"></i>Latest Golf News</h2>
+                <div class="featured-grid">
+                    <?php foreach ($latest_news as $article): ?>
+                    <article class="featured-card">
+                        <div class="featured-image">
+                            <img src="<?php echo $article['image']; ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" loading="lazy">
+                        </div>
+                        <div class="featured-card-content">
+                            <div class="featured-meta">
+                                <span class="featured-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <?php echo date('M j, Y', strtotime($article['date'])); ?>
+                                </span>
+                                <span class="featured-category"><?php echo $article['category']; ?></span>
+                            </div>
+                            <h3 class="featured-title">
+                                <a href="/news/<?php echo $article['slug']; ?>" style="text-decoration: none; color: inherit;">
+                                    <?php echo htmlspecialchars($article['title']); ?>
+                                </a>
+                            </h3>
+                            <p class="featured-excerpt"><?php echo htmlspecialchars($article['excerpt']); ?></p>
+                            <a href="/news/<?php echo $article['slug']; ?>" class="read-more-btn">
+                                Read Full Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <?php endforeach; ?>
                 </div>
-                
-                <div class="media-section">
-                    <div class="icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h2>Course Reviews</h2>
-                    <p>Read honest reviews from fellow golfers about Tennessee's best courses. Share your own experiences and help others discover their next favorite place to play.</p>
-                    <a href="/reviews" class="media-btn secondary">
-                        <i class="fas fa-arrow-right"></i>
-                        Read Reviews
-                    </a>
-                </div>
+                <a href="/news" class="view-all-btn">View All News</a>
             </div>
-            
-            <!-- Stats Section -->
-            <div class="stats-section">
-                <h3>Tennessee Golf by the Numbers</h3>
-                <p>Discover the scope of golf content we cover across the Volunteer State</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">90+</span>
-                        <span class="stat-label">Golf Courses</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Course Reviews</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">News Articles</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1000+</span>
-                        <span class="stat-label">Photos</span>
-                    </div>
+
+            <!-- Featured Reviews Section -->
+            <div class="featured-section">
+                <h2><i class="fas fa-star" style="margin-right: 1rem;"></i>Featured Reviews</h2>
+                <div class="featured-grid">
+                    <?php foreach ($featured_reviews as $review): ?>
+                    <article class="featured-card">
+                        <div class="featured-image">
+                            <img src="<?php echo $review['image']; ?>" alt="<?php echo htmlspecialchars($review['title']); ?>" loading="lazy">
+                        </div>
+                        <div class="featured-card-content">
+                            <div class="featured-meta">
+                                <span class="featured-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <?php echo date('M j, Y', strtotime($review['date'])); ?>
+                                </span>
+                                <span class="featured-category"><?php echo $review['category']; ?></span>
+                            </div>
+                            <h3 class="featured-title">
+                                <a href="/reviews/<?php echo $review['slug']; ?>" style="text-decoration: none; color: inherit;">
+                                    <?php echo htmlspecialchars($review['title']); ?>
+                                </a>
+                            </h3>
+                            <p class="featured-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <a href="/reviews/<?php echo $review['slug']; ?>" class="read-more-btn">
+                                    Read Review <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <span style="color: var(--text-gray); font-size: 0.9rem;"><?php echo $review['read_time']; ?></span>
+                            </div>
+                        </div>
+                    </article>
+                    <?php endforeach; ?>
                 </div>
-            </div>
-            
-            <!-- Featured Content -->
-            <div class="featured-content">
-                <h3>Share Your Story</h3>
-                <p>Have a great golf story, course recommendation, or news tip? We'd love to hear from you! Join our community of Tennessee golf enthusiasts and help us share the best of what the Volunteer State has to offer.</p>
-                <a href="/contact" class="media-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    Get in Touch
-                </a>
+                <a href="/reviews" class="view-all-btn">View All Reviews</a>
             </div>
         </div>
     </div>
