@@ -1150,163 +1150,56 @@ session_start();
                 'Semi-Private': '#9C27B0' // Purple
             };
             
-            // Store filtered courses for search/filter functionality
-            let filteredCourses = golfCourses;
+            // Store all markers for filtering
+            let allMarkers = [];
             let currentFilter = 'all';
             let currentSearch = '';
             
-            // Convert courses to GeoJSON format for clustering
-            function createGeoJSONData(courses) {
-                return {
-                    type: 'FeatureCollection',
-                    features: courses.map(course => ({
-                        type: 'Feature',
-                        properties: {
-                            name: course.name,
-                            address: course.address,
-                            phone: course.phone,
-                            type: course.type,
-                            slug: course.slug,
-                            color: courseColors[course.type] || '#4CAF50'
-                        },
-                        geometry: {
-                            type: 'Point',
-                            coordinates: course.coordinates
-                        }
-                    }))
-                };
-            }
-            
             // Add markers when map loads
             map.on('load', function() {
-                console.log('Adding course markers with clustering...');
+                console.log('Adding course markers...');
                 
-                // Add source for golf courses
-                map.addSource('golf-courses', {
-                    type: 'geojson',
-                    data: createGeoJSONData(golfCourses),
-                    cluster: true,
-                    clusterMaxZoom: 12, // Max zoom to cluster points on
-                    clusterRadius: 50 // Radius of each cluster when clustering points
-                });
+                // Clear existing markers
+                allMarkers.forEach(marker => marker.remove());
+                allMarkers = [];
                 
-                // Add cluster layer
-                map.addLayer({
-                    id: 'clusters',
-                    type: 'circle',
-                    source: 'golf-courses',
-                    filter: ['has', 'point_count'],
-                    paint: {
-                        'circle-color': [
-                            'step',
-                            ['get', 'point_count'],
-                            '#51bbd6', // Color for smaller clusters
-                            10,
-                            '#f1c40f', // Color for medium clusters
-                            20,
-                            '#e74c3c'  // Color for large clusters
-                        ],
-                        'circle-radius': [
-                            'step',
-                            ['get', 'point_count'],
-                            20, // Radius for smaller clusters
-                            10,
-                            30, // Radius for medium clusters
-                            20,
-                            40  // Radius for large clusters
-                        ]
-                    }
-                });
-                
-                // Add cluster count labels
-                map.addLayer({
-                    id: 'cluster-count',
-                    type: 'symbol',
-                    source: 'golf-courses',
-                    filter: ['has', 'point_count'],
-                    layout: {
-                        'text-field': '{point_count_abbreviated}',
-                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                        'text-size': 12
-                    },
-                    paint: {
-                        'text-color': '#ffffff'
-                    }
-                });
-                
-                // Add individual course markers (non-clustered)
-                map.addLayer({
-                    id: 'unclustered-point',
-                    type: 'circle',
-                    source: 'golf-courses',
-                    filter: ['!', ['has', 'point_count']],
-                    paint: {
-                        'circle-color': ['get', 'color'],
-                        'circle-radius': 8,
-                        'circle-stroke-width': 2,
-                        'circle-stroke-color': '#fff'
-                    }
-                });
-                
-                // Click event for clusters - zoom in
-                map.on('click', 'clusters', function (e) {
-                    const features = map.queryRenderedFeatures(e.point, {
-                        layers: ['clusters']
-                    });
-                    const clusterId = features[0].properties.cluster_id;
-                    map.getSource('golf-courses').getClusterExpansionZoom(
-                        clusterId,
-                        function (err, zoom) {
-                            if (err) return;
-                            map.easeTo({
-                                center: features[0].geometry.coordinates,
-                                zoom: zoom
-                            });
-                        }
-                    );
-                });
-                
-                // Click event for individual course markers - show popup
-                map.on('click', 'unclustered-point', function (e) {
-                    const properties = e.features[0].properties;
-                    const coordinates = e.features[0].geometry.coordinates.slice();
-                    
+                golfCourses.forEach(function(course) {
+                    // Create popup content
                     const popupContent = `
-                        <div class="popup-course-name">${properties.name}</div>
-                        <div class="popup-address">${properties.address}</div>
-                        <div class="popup-phone">${properties.phone}</div>
-                        <a href="/courses/${properties.slug}" target="_blank" rel="noopener noreferrer" class="popup-link">View Course Details</a>
+                        <div class="popup-course-name">${course.name}</div>
+                        <div class="popup-address">${course.address}</div>
+                        <div class="popup-phone">${course.phone}</div>
+                        <a href="/courses/${course.slug}" target="_blank" rel="noopener noreferrer" class="popup-link">View Course Details</a>
                     `;
                     
-                    new mapboxgl.Popup({
+                    // Create popup
+                    const popup = new mapboxgl.Popup({
                         offset: 25
+                    }).setHTML(popupContent);
+                    
+                    // Create marker
+                    const marker = new mapboxgl.Marker({
+                        color: courseColors[course.type] || '#4CAF50'
                     })
-                    .setLngLat(coordinates)
-                    .setHTML(popupContent)
+                    .setLngLat(course.coordinates)
+                    .setPopup(popup)
                     .addTo(map);
+                    
+                    // Store reference to course data on marker for filtering
+                    marker.courseData = course;
+                    allMarkers.push(marker);
                 });
                 
-                // Change cursor on hover
-                map.on('mouseenter', 'clusters', function () {
-                    map.getCanvas().style.cursor = 'pointer';
-                });
-                map.on('mouseleave', 'clusters', function () {
-                    map.getCanvas().style.cursor = '';
-                });
-                map.on('mouseenter', 'unclustered-point', function () {
-                    map.getCanvas().style.cursor = 'pointer';
-                });
-                map.on('mouseleave', 'unclustered-point', function () {
-                    map.getCanvas().style.cursor = '';
-                });
-                
-                console.log('Course markers with clustering added successfully');
+                console.log('Course markers added successfully');
                 updateResultsCounter();
             });
             
-            // Filter courses based on current search and filter
-            function filterCourses() {
-                let filtered = golfCourses.filter(function(course) {
+            // Filter markers based on current search and filter
+            function filterMarkers() {
+                let visibleCount = 0;
+                
+                allMarkers.forEach(function(marker) {
+                    const course = marker.courseData;
                     let shouldShow = true;
                     
                     // Apply type filter
@@ -1325,22 +1218,22 @@ session_start();
                                    course.address.toLowerCase().includes(searchTerm);
                     }
                     
-                    return shouldShow;
+                    // Show or hide marker
+                    if (shouldShow) {
+                        marker.addTo(map);
+                        visibleCount++;
+                    } else {
+                        marker.remove();
+                    }
                 });
                 
-                // Update the map source with filtered data
-                if (map.getSource('golf-courses')) {
-                    map.getSource('golf-courses').setData(createGeoJSONData(filtered));
-                }
-                
-                filteredCourses = filtered;
-                updateResultsCounter(filtered.length);
+                updateResultsCounter(visibleCount);
             }
             
             // Update results counter
             function updateResultsCounter(count = null) {
                 const counter = document.getElementById('resultsCounter');
-                const total = count !== null ? count : golfCourses.length;
+                const total = count !== null ? count : allMarkers.length;
                 
                 if (currentSearch || currentFilter !== 'all') {
                     counter.textContent = `Showing ${total} of 92 golf courses`;
@@ -1352,7 +1245,7 @@ session_start();
             // Search functionality
             document.getElementById('courseSearch').addEventListener('input', function(e) {
                 currentSearch = e.target.value.trim();
-                filterCourses();
+                filterMarkers();
             });
             
             // Filter button functionality
@@ -1388,7 +1281,7 @@ session_start();
                     
                     // Update filter and apply
                     currentFilter = this.dataset.filter;
-                    filterCourses();
+                    filterMarkers();
                 });
             });
             
