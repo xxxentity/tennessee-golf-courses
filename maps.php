@@ -695,11 +695,11 @@ session_start();
             },
             {
                 name: "Gaylord Springs Golf Links",
-                address: "18 Springs Blvd, Nashville, TN 37214",
+                address: "18 Springhouse Ln, Nashville, TN 37214",
                 phone: "(615) 458-1730",
                 type: "Resort Public",
                 slug: "gaylord-springs-golf-links",
-                coordinates: [-86.765696, 36.174064]
+                coordinates: [-86.680223488566, 36.220327846809]
             },
             {
                 name: "Greystone Golf Course",
@@ -863,11 +863,11 @@ session_start();
             },
             {
                 name: "Old Hickory Country Club",
-                address: "1000 Old Hickory Blvd, Old Hickory, TN 37138",
+                address: "1904 Old Hickory Blvd, Old Hickory, TN 37138",
                 phone: "(615) 847-3966",
                 type: "Private",
                 slug: "old-hickory-country-club",
-                coordinates: [-86.65257, 36.26653]
+                coordinates: [-86.645760287831, 36.248610944603]
             },
             {
                 name: "Overton Park 9",
@@ -1111,11 +1111,11 @@ session_start();
             },
             {
                 name: "The Links at Kahite",
-                address: "100 Kahite Trail, Vonore, TN 37885",
+                address: "400 Kahite Trail, Vonore, TN 37885",
                 phone: "",
                 type: "Resort/Private",
                 slug: "the-links-at-kahite",
-                coordinates: [-84.252779, 35.564068]
+                coordinates: [-84.240896964558, 35.56961979045]
             },
             {
                 name: "The Links at Whitehaven",

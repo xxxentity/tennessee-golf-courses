@@ -31,6 +31,9 @@ ADDRESS CORRECTIONS MADE:
 - Greystone Golf Course: 2555 US-70, Dickson, TN 37055
 - Montgomery Bell State Park: 800 Hotel Ave, Burns, TN 37029
 - Holston Hills Country Club: 5200 Holston Hills Rd, Knoxville, TN 37914
+- The Links at Kahite: 400 Kahite Trail, Vonore, TN 37885
+- Old Hickory Country Club: 1904 Old Hickory Blvd, Old Hickory, TN 37138
+- Gaylord Springs Golf Links: 18 Springhouse Ln, Nashville, TN 37214
 
 SUCCESS RATE: ~95% accuracy with ArcGIS
 CONFIDENCE SCORES: 84-100% for all successful geocodes
@@ -54,3 +57,6 @@ LATEST FIXES (Aug 2025):
 - Island Pointe Golf Club: Pin accuracy improved (100% confidence)
 - Tennessee National Golf Club: Pin accuracy improved (100% confidence)
 - Holston Hills Country Club: Address corrected + coordinates updated (100% confidence)
+- The Links at Kahite: Address corrected + coordinates updated (100% confidence)
+- Old Hickory Country Club: Address corrected + coordinates updated (100% confidence)
+- Gaylord Springs Golf Links: Address corrected + coordinates updated (100% confidence)

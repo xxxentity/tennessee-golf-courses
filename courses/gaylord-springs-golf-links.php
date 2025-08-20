@@ -321,7 +321,7 @@ try {
                     <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18 Springs Blvd</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18 Springhouse Ln</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
@@ -339,7 +339,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=18+Springs+Blvd,+Nashville,+TN+37214&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=18+Springhouse+Ln,+Nashville,+TN+37214&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
@@ -349,7 +349,7 @@ try {
                             title="Gaylord Springs Golf Links Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=18+Springs+Blvd,+Nashville,+TN+37214" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=18+Springhouse+Ln,+Nashville,+TN+37214" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">

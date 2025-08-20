@@ -594,7 +594,7 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    1000 Old Hickory Blvd<br>
+                    1904 Old Hickory Blvd<br>
                     Old Hickory, TN 37138</p>
                     
                     <p><strong>Phone:</strong><br>
@@ -605,7 +605,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=1000+Old+Hickory+Blvd,+Old+Hickory,+TN+37138&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=1904+Old+Hickory+Blvd,+Old+Hickory,+TN+37138&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
@@ -615,7 +615,7 @@ try {
                             title="Old Hickory Country Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1000+Old+Hickory+Blvd,+Old+Hickory,+TN+37138" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1904+Old+Hickory+Blvd,+Old+Hickory,+TN+37138" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
