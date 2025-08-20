@@ -121,16 +121,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Record the topic creation for rate limiting
         ForumRateLimit::recordTopicCreated($current_user_id);
         
-        // In real implementation:
-        // 1. Insert into forum_topics table
-        // 2. Update user stats
-        // 3. Send notifications if needed
-        // 4. Redirect to the new topic
+        // In real implementation, this would save to database
+        // For now, redirect to the category page with success message
+        $_SESSION['forum_success'] = 'Your topic has been created successfully!';
         
-        $success = true;
-        // For demonstration, redirect to forum homepage
-        // header('Location: /forum/topic/' . $new_topic_id);
-        // exit;
+        // Redirect to the category page
+        header('Location: /forum/category/' . $category_id);
+        exit;
     }
 }
 ?>
@@ -447,13 +444,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <li><?php echo htmlspecialchars($error); ?></li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-                <?php endif; ?>
-                
-                <?php if ($success): ?>
-                    <div class="success-message">
-                        <strong><i class="fas fa-check-circle"></i> Topic Created Successfully!</strong><br>
-                        Your new discussion topic has been posted and is now live in the forum.
                     </div>
                 <?php endif; ?>
                 

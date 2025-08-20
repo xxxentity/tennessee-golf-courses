@@ -423,6 +423,13 @@ $category_topics = $topics;
                 <strong><?php echo htmlspecialchars($category['name']); ?></strong>
             </nav>
             
+            <?php if (isset($_SESSION['forum_success'])): ?>
+                <div class="success-message" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); border: 1px solid #86efac; color: #166534; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; text-align: center;">
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($_SESSION['forum_success']); ?>
+                </div>
+                <?php unset($_SESSION['forum_success']); ?>
+            <?php endif; ?>
+            
             <!-- Category Header -->
             <div class="category-header">
                 <div class="category-icon" style="background: <?php echo $category['color']; ?>;">
