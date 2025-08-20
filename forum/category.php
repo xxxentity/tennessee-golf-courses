@@ -2,7 +2,15 @@
 // Password protection removed - forum is now public
 // require_once '../includes/forum-auth.php';
 
-session_start();
+// Include session security for consistent session handling
+require_once '../includes/session-security.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
 
 // Include rate limiting functionality
 require_once '../includes/forum-rate-limit.php';
@@ -10,9 +18,9 @@ require_once '../includes/forum-rate-limit.php';
 // Get category ID from URL parameter
 $category_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['user_id']);
-$current_user_id = $is_logged_in ? $_SESSION['user_id'] : null;
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
+$current_user_id = $is_logged_in ? SecureSession::get('user_id') : null;
 
 // Get rate limits for current user
 $rate_limits = ForumRateLimit::getRemainingLimits($current_user_id);

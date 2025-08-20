@@ -2,14 +2,24 @@
 // Password protection removed - forum is now public
 // require_once '../includes/forum-auth.php';
 
-session_start();
+// Include session security for consistent session handling
+require_once '../includes/session-security.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - redirect to login
+    header('Location: /login?redirect=' . urlencode('/forum/new-topic'));
+    exit;
+}
 
 // Include rate limiting functionality
 require_once '../includes/forum-rate-limit.php';
 require_once '../includes/csrf.php';
 
-// Check if user is logged in (using existing session system)
-$is_logged_in = isset($_SESSION['user_id']);
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Redirect to login if not authenticated
 if (!$is_logged_in) {
@@ -17,8 +27,8 @@ if (!$is_logged_in) {
     exit;
 }
 
-$current_user_id = $_SESSION['user_id'];
-$current_user_name = $_SESSION['first_name'] . ' ' . $_SESSION['last_name'];
+$current_user_id = SecureSession::get('user_id');
+$current_user_name = SecureSession::get('first_name', '') . ' ' . SecureSession::get('last_name', '');
 
 // Check rate limits
 $can_create_topic = ForumRateLimit::canCreateTopic($current_user_id);
