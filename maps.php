@@ -743,11 +743,11 @@ session_start();
             },
             {
                 name: "Holston Hills Country Club",
-                address: "5801 Lyons View Pike, Knoxville, TN 37919",
+                address: "5200 Holston Hills Rd, Knoxville, TN 37914",
                 phone: "(865) 584-6230",
                 type: "Private",
                 slug: "holston-hills-country-club",
-                coordinates: [-83.99170, 35.92751]
+                coordinates: [-83.841385452003, 35.995332545599]
             },
             {
                 name: "Honky Tonk National Golf Course",

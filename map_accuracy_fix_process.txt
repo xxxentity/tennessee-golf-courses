@@ -30,6 +30,7 @@ ADDRESS CORRECTIONS MADE:
 - The Golf Club of Tennessee: 1000 Golf Club Dr, Kingston Springs, TN 37082
 - Greystone Golf Course: 2555 US-70, Dickson, TN 37055
 - Montgomery Bell State Park: 800 Hotel Ave, Burns, TN 37029
+- Holston Hills Country Club: 5200 Holston Hills Rd, Knoxville, TN 37914
 
 SUCCESS RATE: ~95% accuracy with ArcGIS
 CONFIDENCE SCORES: 84-100% for all successful geocodes
@@ -52,3 +53,4 @@ LATEST FIXES (Aug 2025):
 - Willow Creek Golf Club: Pin accuracy improved (99.9% confidence) 
 - Island Pointe Golf Club: Pin accuracy improved (100% confidence)
 - Tennessee National Golf Club: Pin accuracy improved (100% confidence)
+- Holston Hills Country Club: Address corrected + coordinates updated (100% confidence)

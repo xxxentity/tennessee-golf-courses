@@ -621,8 +621,8 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    5801 Lyons View Pike<br>
-                    Knoxville, TN 37919</p>
+                    5200 Holston Hills Rd<br>
+                    Knoxville, TN 37914</p>
                     
                     <p><strong>Phone:</strong><br>
                     (865) 584-6230</p>
@@ -632,7 +632,7 @@ try {
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=5801+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=5200+Holston+Hills+Rd,+Knoxville,+TN+37914&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
@@ -642,7 +642,7 @@ try {
                             title="Holston Hills Country Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=5801+Lyons+View+Pike,+Knoxville,+TN+37919" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=5200+Holston+Hills+Rd,+Knoxville,+TN+37914" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
