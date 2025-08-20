@@ -1,6 +1,6 @@
 <?php
-// Check forum access before anything else
-require_once '../includes/forum-auth.php';
+// Password protection removed - forum is now public
+// require_once '../includes/forum-auth.php';
 
 session_start();
 
@@ -21,10 +21,12 @@ $can_create_post = ForumRateLimit::canCreatePost($current_user_id);
 $rate_limits = ForumRateLimit::getRemainingLimits($current_user_id);
 
 // Mock topic data (replace with database queries later)
-$topic = [
-    'id' => 1,
-    'title' => '📋 Forum Rules & Community Guidelines - READ FIRST',
-    'content' => 'Welcome to the Tennessee Golf Community Forum!
+// Define available topics
+$topics_data = [
+    1 => [
+        'id' => 1,
+        'title' => '📋 Forum Rules & Community Guidelines - READ FIRST',
+        'content' => 'Welcome to the Tennessee Golf Community Forum!
 
 Please read and follow these rules to ensure a positive experience for everyone:
 
@@ -66,20 +68,136 @@ If you see content that violates these rules, please contact the moderators.
 Thank you for helping us maintain a great community for Tennessee golfers!
 
 **Questions?** Contact us through the Site Feedback category.',
-    'author' => 'Forum Admin',
-    'author_id' => 1,
-    'created_at' => '2025-01-20 12:00:00',
-    'category_id' => 6,
-    'category_name' => 'Site Feedback',
-    'view_count' => 25,
-    'reply_count' => 0,
-    'is_pinned' => true,
-    'is_locked' => true
+        'author' => 'Forum Admin',
+        'author_id' => 1,
+        'created_at' => '2025-01-20 12:00:00',
+        'category_id' => 6,
+        'category_name' => 'Site Feedback',
+        'view_count' => 25,
+        'reply_count' => 0,
+        'is_pinned' => true,
+        'is_locked' => true
+    ],
+    2 => [
+        'id' => 2,
+        'title' => 'Best Golf Courses in Nashville Area',
+        'content' => 'Hey everyone! I\'m new to the Nashville area and looking for recommendations on the best golf courses around here. 
+
+I\'ve heard great things about Hermitage Golf Course and Gaylord Springs, but would love to hear your thoughts and experiences.
+
+What are your favorite courses in the Nashville area and why? Looking for courses that offer:
+- Good course conditions
+- Fair pricing
+- Nice practice facilities
+- Not too crowded on weekends
+
+Thanks in advance for your recommendations!',
+        'author' => 'John Golfer',
+        'author_id' => 2,
+        'created_at' => '2025-01-20 14:30:00',
+        'category_id' => 1,
+        'category_name' => 'Course Reviews & Discussions',
+        'view_count' => 42,
+        'reply_count' => 3,
+        'is_pinned' => false,
+        'is_locked' => false
+    ],
+    3 => [
+        'id' => 3,
+        'title' => 'New Driver Recommendations - 2025 Models',
+        'content' => 'Time to upgrade my driver! Currently playing a 5-year-old model and looking at the new 2025 releases.
+
+Has anyone tried the new TaylorMade Qi10 or the Callaway Paradym Ai Smoke? 
+
+My swing speed is around 95-100mph and I tend to have a slight fade. Budget is around $400-600.
+
+Would appreciate any feedback or other recommendations!',
+        'author' => 'Mike Tennessee',
+        'author_id' => 3,
+        'created_at' => '2025-01-20 16:45:00',
+        'category_id' => 2,
+        'category_name' => 'Equipment Talk',
+        'view_count' => 28,
+        'reply_count' => 5,
+        'is_pinned' => false,
+        'is_locked' => false
+    ]
 ];
 
+// Get the requested topic
+$topic = isset($topics_data[$topic_id]) ? $topics_data[$topic_id] : null;
+
 // Mock replies data (replace with database queries later)
-// No replies for the locked forum rules post
-$replies = [];
+$replies_data = [
+    1 => [], // No replies for forum rules (locked)
+    2 => [ // Replies for Nashville golf courses topic
+        [
+            'id' => 1,
+            'topic_id' => 2,
+            'author' => 'Sarah Pro',
+            'author_id' => 4,
+            'content' => 'Welcome to Nashville! You\'ve already mentioned two great courses. Here are my top recommendations:
+
+1. **Hermitage Golf Course** - Two great 18-hole courses, excellent conditions year-round
+2. **Gaylord Springs** - Beautiful links-style course, can be pricey but worth it
+3. **Greystone Golf Course** - Great value, well-maintained public course
+4. **Nashville National** - Newer course, challenging but fair
+
+For practice facilities, Hermitage has the best range in the area. Let me know if you need more specific info!',
+            'created_at' => '2025-01-20 15:15:00',
+            'is_edited' => false
+        ],
+        [
+            'id' => 2,
+            'topic_id' => 2,
+            'author' => 'Tom Scratch',
+            'author_id' => 5,
+            'content' => 'I second the Greystone recommendation! Played there last weekend and the greens were in fantastic shape. Very affordable too - around $45 with cart on weekends.
+
+Also check out Ted Rhodes if you want something closer to downtown. Historic course with lots of character.',
+            'created_at' => '2025-01-20 17:30:00',
+            'is_edited' => false
+        ],
+        [
+            'id' => 3,
+            'topic_id' => 2,
+            'author' => 'Local Golfer',
+            'author_id' => 6,
+            'content' => 'Don\'t overlook McCabe Golf Course! It\'s a hidden gem - never too crowded and they have great twilight rates. The back nine has some really interesting holes along the river.
+
+For practice, Golf House Tennessee has an amazing facility if you\'re willing to drive to Franklin.',
+            'created_at' => '2025-01-20 18:45:00',
+            'is_edited' => false
+        ]
+    ],
+    3 => [ // Replies for driver recommendations topic
+        [
+            'id' => 4,
+            'topic_id' => 3,
+            'author' => 'Pro Shop Guy',
+            'author_id' => 7,
+            'content' => 'With your swing speed and fade tendency, I\'d definitely look at the Callaway Paradym Ai Smoke. The draw-biased model could help straighten out that fade.
+
+We\'ve been fitting a lot of players in your speed range and seeing great results. The adjustability is excellent too.',
+            'created_at' => '2025-01-20 17:00:00',
+            'is_edited' => false
+        ],
+        [
+            'id' => 5,
+            'topic_id' => 3,
+            'author' => 'Equipment Junkie',
+            'author_id' => 8,
+            'content' => 'I just switched from the Qi10 to the Paradym and couldn\'t be happier. The Qi10 is longer but less forgiving on mishits.
+
+Have you considered the Ping G430? At your swing speed it might be the best option - super forgiving and still plenty long.',
+            'created_at' => '2025-01-20 17:45:00',
+            'is_edited' => true
+        ]
+    ]
+];
+
+// Get replies for this topic
+$replies = isset($replies_data[$topic_id]) ? $replies_data[$topic_id] : [];
 
 // Check if topic exists
 if (!$topic) {

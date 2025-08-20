@@ -1,6 +1,6 @@
 <?php
-// Check forum access before anything else
-require_once '../includes/forum-auth.php';
+// Password protection removed - forum is now public
+// require_once '../includes/forum-auth.php';
 
 session_start();
 

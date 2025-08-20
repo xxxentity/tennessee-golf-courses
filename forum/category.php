@@ -1,6 +1,6 @@
 <?php
-// Check forum access before anything else
-require_once '../includes/forum-auth.php';
+// Password protection removed - forum is now public
+// require_once '../includes/forum-auth.php';
 
 session_start();
 
@@ -72,24 +72,56 @@ if (!isset($categories[$category_id])) {
 $category = $categories[$category_id];
 
 // Mock topics data (replace with database queries later)
-$topics = [];
+$all_topics = [
+    1 => [ // Course Reviews & Discussions
+        [
+            'id' => 2,
+            'title' => 'Best Golf Courses in Nashville Area',
+            'author' => 'John Golfer',
+            'author_id' => 2,
+            'created_at' => '2025-01-20 14:30:00',
+            'reply_count' => 3,
+            'view_count' => 42,
+            'last_reply_at' => '2025-01-20 18:45:00',
+            'last_reply_author' => 'Sarah Pro',
+            'is_pinned' => false,
+            'is_locked' => false
+        ]
+    ],
+    2 => [ // Equipment Talk
+        [
+            'id' => 3,
+            'title' => 'New Driver Recommendations - 2025 Models',
+            'author' => 'Mike Tennessee',
+            'author_id' => 3,
+            'created_at' => '2025-01-20 16:45:00',
+            'reply_count' => 5,
+            'view_count' => 28,
+            'last_reply_at' => '2025-01-20 19:30:00',
+            'last_reply_author' => 'Pro Shop Guy',
+            'is_pinned' => false,
+            'is_locked' => false
+        ]
+    ],
+    6 => [ // Site Feedback
+        [
+            'id' => 1,
+            'title' => '📋 Forum Rules & Community Guidelines - READ FIRST',
+            'author' => 'Forum Admin',
+            'author_id' => 1,
+            'created_at' => '2025-01-20 12:00:00',
+            'reply_count' => 0,
+            'view_count' => 25,
+            'last_reply_at' => null,
+            'last_reply_author' => null,
+            'is_pinned' => true,
+            'is_locked' => true
+        ]
+    ]
+];
 
-// Add forum rules post to Site Feedback category
-if ($category_id == 6) {
-    $topics[] = [
-        'id' => 1,
-        'title' => '📋 Forum Rules & Community Guidelines - READ FIRST',
-        'author' => 'Forum Admin',
-        'author_id' => 1,
-        'created_at' => '2025-01-20 12:00:00',
-        'reply_count' => 0,
-        'view_count' => 25,
-        'last_reply_at' => null,
-        'last_reply_author' => null,
-        'is_pinned' => true,
-        'is_locked' => true
-    ];
-}
+// Get topics for this category
+$topics = isset($all_topics[$category_id]) ? $all_topics[$category_id] : [];
 
 // Filter topics by category (in real implementation, this would be a database query)
 $category_topics = $topics;
