@@ -58,6 +58,26 @@ session_start();
             min-width: 280px;
         }
         
+        .mapboxgl-popup-close-button {
+            font-size: 24px !important;
+            width: 32px !important;
+            height: 32px !important;
+            line-height: 32px !important;
+            border-radius: 50% !important;
+            background: rgba(0,0,0,0.1) !important;
+            color: #666 !important;
+            font-weight: bold !important;
+            right: 8px !important;
+            top: 8px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .mapboxgl-popup-close-button:hover {
+            background: rgba(0,0,0,0.2) !important;
+            color: #333 !important;
+            transform: scale(1.1) !important;
+        }
+        
         .enhanced-popup {
             font-family: 'Inter', sans-serif;
         }
