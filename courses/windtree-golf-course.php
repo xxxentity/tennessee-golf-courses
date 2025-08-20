@@ -180,6 +180,187 @@ try {
             position: relative;
             z-index: 3;
         }
+        
+        /* Gallery Styles */
+        .photo-gallery {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .photo-gallery .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Gallery Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+        
+        .modal .modal-content {
+            background-color: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 1200px;
+            width: 95%;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 1rem;
+        }
+        
+        .modal-header .modal-title {
+            font-size: 1.8rem;
+            color: #2c5234;
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .full-gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .full-gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .full-gallery-item {
+                height: 150px;
+            }
+            
+            .modal .modal-content {
+                margin: 1rem auto;
+                padding: 1rem;
+                width: 98%;
+            }
+            
+            .modal-header .modal-title {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
