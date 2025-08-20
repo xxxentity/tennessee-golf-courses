@@ -508,10 +508,10 @@ session_start();
             },
             {
                 name: "Colonial Country Club",
-                address: "2736 Shallowford Village Dr, Chattanooga, TN 37421",
-                phone: "(423) 899-3821",
+                address: "9765 Poplar Ave, Cordova, TN 38018",
+                phone: "(901) 754-1775",
                 type: "Private",
-                coordinates: [-85.1667, 35.0611],
+                coordinates: [-89.7833, 35.1667],
                 slug: "colonial-country-club"
             },
             {
