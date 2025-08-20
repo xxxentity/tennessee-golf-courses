@@ -408,7 +408,7 @@ session_start();
                 phone: "(423) 326-0885",
                 type: "Public",
                 slug: "bear-trace-harrison-bay",
-                coordinates: [-85.135833, 35.114167]
+                coordinates: [-85.1358, 35.1171]
             },
             {
                 name: "Belle Acres Golf Course",
@@ -480,7 +480,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "chattanooga-golf-country-club",
-                coordinates: [-85.30949, 35.04572]
+                coordinates: [-85.2860, 35.0730]
             },
             {
                 name: "Cheekwood Golf Club",
@@ -520,7 +520,7 @@ session_start();
                 phone: "",
                 type: "Private",
                 slug: "council-fire-golf-club",
-                coordinates: [-85.30949, 35.04572]
+                coordinates: [-85.1889, 35.0278]
             },
             {
                 name: "Cumberland Cove Golf Course",
@@ -696,7 +696,7 @@ session_start();
                 phone: "(706) 820-1551",
                 type: "Private",
                 slug: "lookout-mountain-club",
-                coordinates: [-86.87837, 36.13489]
+                coordinates: [-85.3480, 34.9789]
             },
             {
                 name: "McCabe Golf Course",
