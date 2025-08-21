@@ -14,6 +14,16 @@ $articles = [
         'featured' => true
     ],
     [
+        'title' => '2025 Tour Championship Atlanta Preview: Scottie Scheffler Favored for Historic Back-to-Back Titles',
+        'slug' => '2025-tour-championship-atlanta-predictions',
+        'date' => '2025-08-20',
+        'time' => '4:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete preview of the 2025 Tour Championship at East Lake Golf Club featuring predictions, betting favorites, and analysis of Scottie Scheffler\'s chances for historic back-to-back titles.',
+        'image' => '/images/news/2025-tour-championship-atlanta-predictions/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship',
         'slug' => 'etsu-gavin-tiernan-amateur-championship-runner-up',
         'date' => '2025-08-20',
