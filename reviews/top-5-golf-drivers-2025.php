@@ -294,7 +294,7 @@ $article = [
                     <div class="driver-details">
                         <div class="detail-item">
                             <span>Price Range:</span>
-                            <span><strong>$299.99 - $349.99</strong></span>
+                            <span><strong>$549.99</strong></span>
                         </div>
                         <div class="detail-item">
                             <span>Type:</span>
@@ -330,7 +330,7 @@ $article = [
                         </div>
                     </div>
                     
-                    <a href="#" class="buy-button" target="_blank" rel="nofollow">
+                    <a href="https://amzn.to/4mBPPQ8" class="buy-button" target="_blank" rel="nofollow">
                         Check Current Price
                     </a>
                 </div>
@@ -385,7 +385,7 @@ $article = [
                         </div>
                     </div>
                     
-                    <a href="#" class="buy-button" target="_blank" rel="nofollow">
+                    <a href="https://amzn.to/45F0t1q" class="buy-button" target="_blank" rel="nofollow">
                         Check Current Price
                     </a>
                 </div>
@@ -440,7 +440,7 @@ $article = [
                         </div>
                     </div>
                     
-                    <a href="#" class="buy-button" target="_blank" rel="nofollow">
+                    <a href="https://amzn.to/45HVGw3" class="buy-button" target="_blank" rel="nofollow">
                         Check Current Price
                     </a>
                 </div>
@@ -495,7 +495,7 @@ $article = [
                         </div>
                     </div>
                     
-                    <a href="#" class="buy-button" target="_blank" rel="nofollow">
+                    <a href="https://amzn.to/4mYNCyl" class="buy-button" target="_blank" rel="nofollow">
                         Check Current Price
                     </a>
                 </div>
@@ -550,7 +550,7 @@ $article = [
                         </div>
                     </div>
                     
-                    <a href="#" class="buy-button" target="_blank" rel="nofollow">
+                    <a href="https://amzn.to/4mulUcS" class="buy-button" target="_blank" rel="nofollow">
                         Check Current Price
                     </a>
                 </div>
