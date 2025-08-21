@@ -562,7 +562,6 @@ $article = [
                     <p>Consider professional fitting to optimize loft, lie angle, and shaft selection for maximum performance. Each driver on this list offers adjustable features to fine-tune your launch conditions and ball flight.</p>
                 </div>
 
-                <h3>Final Thoughts</h3>
                 <p>The <strong>Callaway Elyte Triple Diamond</strong> stands as our top choice, combining award-winning performance with unmatched consistency across all testing metrics.</p>
 
                 <p>For 2025, driver technology has reached new heights with AI-designed faces, ultra-high MOI designs, and advanced materials. Whether you prioritize distance like the TaylorMade Qi35, tour-proven performance like the Titleist GT3, or exceptional value like the Wilson Dynapower Carbon, these five drivers represent the pinnacle of 2025 driver technology.</p>
