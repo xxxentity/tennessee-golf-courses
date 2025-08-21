@@ -72,63 +72,6 @@
     <priority>0.6</priority>
   </url>
   
-  <!-- Forum Pages -->
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/1</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/2</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/3</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/4</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/5</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/category/6</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tennesseegolfcourses.com/forum/new-topic</loc>
-    <lastmod>2025-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
   <!-- Legal Pages -->
   <url>
     <loc>https://tennesseegolfcourses.com/privacy-policy</loc>
@@ -631,15 +574,22 @@
   
   <!-- Review Articles -->
   <url>
-    <loc>https://tennesseegolfcourses.com/reviews/top-10-putters-2025-amazon-guide</loc>
-    <lastmod>2025-08-13</lastmod>
+    <loc>https://tennesseegolfcourses.com/reviews/top-5-golf-drivers-2025</loc>
+    <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://tennesseegolfcourses.com/reviews/top-5-golf-balls-2025</loc>
-    <lastmod>2025-08-13</lastmod>
+    <lastmod>2025-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tennesseegolfcourses.com/reviews/top-10-putters-2025-amazon-guide</loc>
+    <lastmod>2025-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

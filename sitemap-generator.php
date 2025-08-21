@@ -132,8 +132,9 @@ $newsArticles = [
 
 // Review articles  
 $reviewArticles = [
-    'top-10-putters-2025-amazon-guide' => '2025-01-10',
-    'top-5-golf-balls-2025' => '2025-01-05'
+    'top-5-golf-drivers-2025' => '2025-08-21',
+    'top-5-golf-balls-2025' => '2025-08-11',
+    'top-10-putters-2025-amazon-guide' => '2025-08-06'
 ];
 
 // Start XML output
