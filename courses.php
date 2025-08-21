@@ -2180,16 +2180,6 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                 <h1 class="page-title">Tennessee Golf Courses</h1>
                 <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
                 
-                <!-- Under Construction Notice -->
-                <div class="construction-notice">
-                    <div class="construction-content">
-                        <i class="fas fa-tools"></i>
-                        <div class="construction-text">
-                            <strong>Under Construction</strong>
-                            <span>We're actively adding new courses every day! Check back frequently for updates.</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
