@@ -153,6 +153,7 @@ RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landin
 RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/tennessee-four-ball-championship-2025-country-club-morristown/?$ news/tennessee-four-ball-championship-2025-country-club-morristown.php [L]
 RewriteRule ^news/belmont-conner-brown-wins-tennessee-match-play-championship/?$ news/belmont-conner-brown-wins-tennessee-match-play-championship.php [L]
 RewriteRule ^news/etsu-gavin-tiernan-amateur-championship-runner-up/?$ news/etsu-gavin-tiernan-amateur-championship-runner-up.php [L]
 RewriteRule ^news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/?$ news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment.php [L]

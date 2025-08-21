@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => '55th Tennessee Four-Ball Championship Underway at The Country Club in Morristown',
+        'slug' => 'tennessee-four-ball-championship-2025-country-club-morristown',
+        'date' => '2025-08-21',
+        'time' => '2:45 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'The 55th Tennessee Four-Ball Championship kicks off at The Country Club in Morristown with 36 teams competing for the state title through stroke play qualifying and match play rounds.',
+        'image' => '/images/news/tennessee-four-ball-championship-2025-country-club-morristown/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship',
         'slug' => 'etsu-gavin-tiernan-amateur-championship-runner-up',
         'date' => '2025-08-20',
