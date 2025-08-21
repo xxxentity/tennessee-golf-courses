@@ -55,11 +55,6 @@ RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 RewriteRule ^search-courses.php$ search-courses.php [L]
 
-# Handle forum pages (clean URLs)
-RewriteRule ^forum/?$ forum.php [L]
-RewriteRule ^forum/category/([0-9]+)/?$ forum/category.php?id=$1 [L]
-RewriteRule ^forum/topic/([a-zA-Z0-9_-]+)/?$ forum/topic.php?id=$1 [L]
-RewriteRule ^forum/new-topic/?$ forum/new-topic.php [L]
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^media/?$ media.php [L]
 RewriteRule ^maps/?$ maps.php [L]

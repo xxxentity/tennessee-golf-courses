@@ -23,7 +23,6 @@ $is_main_page = (
     strpos($current_page, '/news') === 0 ||
     strpos($current_page, '/events') === 0 ||
     strpos($current_page, '/community') === 0 ||
-    strpos($current_page, '/forum') === 0 ||
     strpos($current_page, '/maps') === 0 ||
     strpos($current_page, '/about') === 0 ||
     strpos($current_page, '/contact') === 0
@@ -94,7 +93,6 @@ $is_main_page = (
                     Community <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="/forum" class="dropdown-link">Forum</a></li>
                     <li><a href="/events" class="dropdown-link">Events</a></li>
                     <li><a href="/contests" class="dropdown-link">Contests</a></li>
                 </ul>
