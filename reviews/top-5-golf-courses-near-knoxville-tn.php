@@ -5,7 +5,7 @@ session_start();
 $article = [
     'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
     'slug' => 'top-5-golf-courses-near-knoxville-tn',
-    'date' => 'Aug 15, 2025',
+    'date' => 'Aug 18, 2025',
     'time' => '2:15 PM',
     'category' => 'Course Reviews',
     'excerpt' => 'Discover the top 5 highest-rated golf courses near Knoxville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
