@@ -4,7 +4,7 @@ session_start();
 // Get all review articles (in order of newest first)
 $reviews = [
     [
-        'title' => 'Top 5 Best Golf Courses in Tennessee: Championship Destinations',
+        'title' => 'Top 5 Best Golf Courses in Tennessee 2025: Championship Destinations',
         'slug' => 'top-5-golf-courses-tennessee',
         'date' => '2025-08-21',
         'time' => '6:45 PM',

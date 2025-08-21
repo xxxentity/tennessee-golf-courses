@@ -3,7 +3,7 @@ session_start();
 
 // Article metadata
 $article = [
-    'title' => 'Top 5 Best Golf Courses in Tennessee: Championship Destinations',
+    'title' => 'Top 5 Best Golf Courses in Tennessee 2025: Championship Destinations',
     'slug' => 'top-5-golf-courses-tennessee',
     'date' => 'Aug 21, 2025',
     'time' => '6:45 PM',
@@ -270,7 +270,7 @@ $article = [
 
             <!-- Article Content -->
             <article class="article-content">
-                <h2>Top 5 Best Golf Courses in Tennessee</h2>
+                <h2>Top 5 Best Golf Courses in Tennessee 2025</h2>
                 <ol style="list-style: none; padding: 0; margin: 2rem 0;">
                     <li style="margin-bottom: 0.75rem;"><a href="#course-5" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">5. Fall Creek Falls State Park Golf Course</a></li>
                     <li style="margin-bottom: 0.75rem;"><a href="#course-4" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">4. TPC Southwind</a></li>
