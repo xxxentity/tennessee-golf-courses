@@ -14,6 +14,16 @@ $articles = [
         'featured' => true
     ],
     [
+        'title' => 'Belmont\'s Conner Brown Captures First TGA Title at Tennessee Match Play Championship',
+        'slug' => 'belmont-conner-brown-wins-tennessee-match-play-championship',
+        'date' => '2025-08-19',
+        'time' => '11:30 AM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Shelbyville native Conner Brown defeats Trenton Johnson 4 & 3 to win his first Tennessee Golf Association title at the 26th Tennessee Match Play Championship at Vanderbilt Legends Club.',
+        'image' => '/images/news/belmont-conner-brown-wins-tennessee-match-play-championship.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
         'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
         'date' => '2025-08-18',
