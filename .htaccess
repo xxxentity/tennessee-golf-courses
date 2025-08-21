@@ -172,6 +172,7 @@ RewriteRule ^news/scheffler-seizes-control-open-championship-round-2/?$ news/sch
 RewriteRule ^news/scheffler-wins-2025-british-open-final-round/?$ news/scheffler-wins-2025-british-open-final-round.php [L]
 
 # Handle review article pages (in subdirectory)
+RewriteRule ^reviews/top-5-golf-courses-near-memphis-tn/?$ reviews/top-5-golf-courses-near-memphis-tn.php [L]
 RewriteRule ^reviews/top-5-golf-courses-near-knoxville-tn/?$ reviews/top-5-golf-courses-near-knoxville-tn.php [L]
 RewriteRule ^reviews/top-5-golf-courses-tennessee/?$ reviews/top-5-golf-courses-tennessee.php [L]
 RewriteRule ^reviews/top-5-golf-drivers-2025/?$ reviews/top-5-golf-drivers-2025.php [L]

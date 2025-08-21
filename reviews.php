@@ -16,6 +16,18 @@ $reviews = [
         'read_time' => '8 min read'
     ],
     [
+        'title' => 'Top 5 Best Golf Courses Near Memphis, Tennessee 2025',
+        'slug' => 'top-5-golf-courses-near-memphis-tn',
+        'date' => '2025-08-19',
+        'time' => '3:45 PM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf courses near Memphis, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
+        'image' => '/images/reviews/top-5-golf-courses-near-memphis-tn/0.webp',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
         'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
         'slug' => 'top-5-golf-courses-near-knoxville-tn',
         'date' => '2025-08-18',
