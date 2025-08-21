@@ -288,7 +288,7 @@ try {
             </header>
 
             <!-- Article Image -->
-            <img src="/images/news/belmont-conner-brown-wins-tennessee-match-play-championship.webp" alt="Conner Brown celebrates his Tennessee Match Play Championship victory at Vanderbilt Legends Club" class="article-image">
+            <img src="/images/news/belmont-conner-brown-wins-tennessee-match-play-championship/main.webp" alt="Conner Brown celebrates his Tennessee Match Play Championship victory at Vanderbilt Legends Club" class="article-image">
 
             <!-- Article Content -->
             <article class="article-content">

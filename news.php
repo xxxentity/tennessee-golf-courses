@@ -20,7 +20,7 @@ $articles = [
         'time' => '11:30 AM',
         'category' => 'Tennessee News',
         'excerpt' => 'Shelbyville native Conner Brown defeats Trenton Johnson 4 & 3 to win his first Tennessee Golf Association title at the 26th Tennessee Match Play Championship at Vanderbilt Legends Club.',
-        'image' => '/images/news/belmont-conner-brown-wins-tennessee-match-play-championship.webp',
+        'image' => '/images/news/belmont-conner-brown-wins-tennessee-match-play-championship/main.webp',
         'featured' => true
     ],
     [
