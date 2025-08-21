@@ -4,6 +4,18 @@ session_start();
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Top 5 Best Golf Drivers of 2025: Maximum Distance and Forgiveness',
+        'slug' => 'top-5-golf-drivers-2025',
+        'date' => '2025-08-21',
+        'time' => '3:15 PM',
+        'category' => 'Equipment Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf drivers of 2025. Based on comprehensive testing, tour performance, and expert reviews from leading golf publications.',
+        'image' => '/images/reviews/top-5-golf-drivers-2025/0.jpeg',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
         'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
         'slug' => 'top-5-golf-balls-2025',
         'date' => '2025-08-11',
