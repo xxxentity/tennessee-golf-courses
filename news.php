@@ -4,6 +4,16 @@ session_start();
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Russell Henley Fires Spectacular 61 to Lead Tour Championship Opening Round',
+        'slug' => 'tour-championship-2025-first-round-henley-leads',
+        'date' => '2025-08-21',
+        'time' => '8:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Russell Henley shoots spectacular 9-under 61 to take two-stroke lead over Scottie Scheffler in opening round of 2025 Tour Championship at East Lake Golf Club in Atlanta.',
+        'image' => '/images/news/tour-championship-2025-first-round-henley-leads/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => '55th Tennessee Four-Ball Championship Underway at The Country Club in Morristown',
         'slug' => 'tennessee-four-ball-championship-2025-country-club-morristown',
         'date' => '2025-08-21',
