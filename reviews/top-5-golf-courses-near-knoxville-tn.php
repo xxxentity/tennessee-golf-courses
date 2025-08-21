@@ -3,13 +3,13 @@ session_start();
 
 // Article metadata
 $article = [
-    'title' => 'Top 5 Best Golf Courses in Tennessee 2025: Championship Destinations',
-    'slug' => 'top-5-golf-courses-tennessee',
+    'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
+    'slug' => 'top-5-golf-courses-near-knoxville-tn',
     'date' => 'Aug 15, 2025',
-    'time' => '4:30 PM',
+    'time' => '2:15 PM',
     'category' => 'Course Reviews',
-    'excerpt' => 'Discover the top 5 highest-rated golf courses in Tennessee. Based on expert rankings, championship pedigree, and architectural excellence from leading golf publications.',
-    'image' => '/images/reviews/top-5-golf-courses-tennessee/0.webp',
+    'excerpt' => 'Discover the top 5 highest-rated golf courses near Knoxville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
+    'image' => '/images/reviews/top-5-golf-courses-near-knoxville-tn/0.webp',
     'featured' => true,
     'author' => 'TGC Editorial Team',
     'read_time' => '8 min read'
@@ -258,7 +258,7 @@ $article = [
         <div class="article-container">
             <!-- Article Header -->
             <header class="article-header">
-                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top Golf Courses Tennessee 2025" class="article-hero-image">
+                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top Golf Courses Near Knoxville Tennessee 2025" class="article-hero-image">
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
@@ -270,42 +270,42 @@ $article = [
 
             <!-- Article Content -->
             <article class="article-content">
-                <h2>Top 5 Best Golf Courses in Tennessee 2025</h2>
+                <h2>Top 5 Best Golf Courses Near Knoxville, Tennessee 2025</h2>
                 <ol style="list-style: none; padding: 0; margin: 2rem 0;">
-                    <li style="margin-bottom: 0.75rem;"><a href="#course-5" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">5. Fall Creek Falls State Park Golf Course</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="#course-4" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">4. TPC Southwind</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="#course-3" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">3. The Golf Club of Tennessee</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="#course-2" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">2. Troubadour Golf & Field Club</a></li>
-                    <li style="margin-bottom: 0.75rem;"><a href="#course-1" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">1. The Honors Course</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="#course-5" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">5. Williams Creek Golf Course</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="#course-4" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">4. Whittle Springs Golf Course</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="#course-3" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">3. WindRiver Golf Club</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="#course-2" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">2. Cherokee Country Club</a></li>
+                    <li style="margin-bottom: 0.75rem;"><a href="#course-1" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">1. Holston Hills Country Club</a></li>
                 </ol>
 
 <!-- #5 Course -->
                 <div class="course-item" id="course-5">
                     <div class="course-rank">#5</div>
-                    <h3 class="course-name">Fall Creek Falls State Park Golf Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/5.webp" alt="Fall Creek Falls State Park Golf Course" class="course-image">
+                    <h3 class="course-name">Williams Creek Golf Course</h3>
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/5.webp" alt="Williams Creek Golf Course" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                        Three-Time Golf Digest Top 100 Public Places to Play
+                        4.51/5 stars (581 reviews)
                     </div>
-                    <p>A three-time selection by Golf Digest as one of the Top 100 Public Places to Play, this Joseph L. Lee design opened in 1972 and remains a challenging championship layout. The course features 6,669 yards of golf from the longest tees with a par of 72, carved through Tennessee's natural landscape with Bermuda grass fairways and greens. The course is a Certified Audubon Cooperative Sanctuary, showcasing exceptional environmental stewardship.</p>
+                    <p>Williams Creek Golf Course stands out as the highest-rated public course in our rankings with an impressive 4.51 out of 5 stars based on 581 reviews. Located off James White Parkway on Dandridge Road, this par-3 course offers golfers an excellent 18-hole experience that can be completed in approximately 2 hours. Recent players consistently praise the course for its excellent fairway and green conditions, making it an ideal choice for both practice and casual rounds.</p>
                     
                     <div class="course-details">
                         <div class="detail-item">
                             <span>Location:</span>
-                            <span><strong>Spencer, TN</strong></span>
+                            <span><strong>Knoxville, TN</strong></span>
                         </div>
                         <div class="detail-item">
-                            <span>Designer:</span>
-                            <span>Joseph L. Lee</span>
+                            <span>Course Type:</span>
+                            <span>Par-3 Public Course</span>
                         </div>
                         <div class="detail-item">
-                            <span>Opened:</span>
-                            <span>1972</span>
+                            <span>Round Time:</span>
+                            <span>Approximately 2 Hours</span>
                         </div>
                         <div class="detail-item">
-                            <span>Yardage:</span>
-                            <span>6,669 yards</span>
+                            <span>Player Rating:</span>
+                            <span>4.51/5 (581 reviews)</span>
                         </div>
                     </div>
 
@@ -313,22 +313,22 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Three-time Golf Digest Top 100 Public Places</li>
-                                <li>Certified Audubon Cooperative Sanctuary</li>
-                                <li>Challenging championship layout</li>
-                                <li>Excellent value for quality golf</li>
+                                <li>Highest rating among public courses (4.51/5)</li>
+                                <li>Excellent fairway and green conditions</li>
+                                <li>Quick 2-hour round perfect for practice</li>
+                                <li>Consistently positive player reviews</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Remote location requires travel</li>
-                                <li>Limited amenities compared to resorts</li>
+                                <li>Par-3 only, limited to short game practice</li>
+                                <li>May not challenge experienced golfers</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <a href="/courses/fall-creek-falls-state-park-golf-course" class="visit-link">
+                    <a href="/courses/williams-creek-golf-course" class="visit-link">
                         <i class="fas fa-golf-ball"></i> View Course Details
                     </a>
                 </div>
@@ -336,30 +336,30 @@ $article = [
 <!-- #4 Course -->
                 <div class="course-item" id="course-4">
                     <div class="course-rank">#4</div>
-                    <h3 class="course-name">TPC Southwind</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/4.webp" alt="TPC Southwind Golf Course" class="course-image">
+                    <h3 class="course-name">Whittle Springs Golf Course</h3>
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/4.webp" alt="Whittle Springs Golf Course" class="course-image">
                     <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Host of FedEx St. Jude Championship
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        Knoxville's First Public Golf Course
                     </div>
-                    <p>Located 30 minutes from downtown Memphis, TPC Southwind hosts the annual FedEx St. Jude Championship and has been a PGA Tour venue since 1989. The Ron Prichard design features consultation from PGA Tour players Hubert Green and Fuzzy Zoeller. This par-70, 7,244-yard championship layout showcases undulating zoysia fairways, champion Bermuda greens, and numerous lakes, streams, and ponds creating strategic challenges throughout.</p>
+                    <p>Whittle Springs Golf Course holds the distinction of being Knoxville's first public golf course and continues to host annual amateur golf tournaments. This 18-hole, par-70 course is operated by Purple Horse Hospitality and ranks as the 6th best golf course in Knoxville according to local rankings. With a rating of 3.86 out of 5 stars based on 398 reviews, Whittle Springs offers golfers a historic and well-maintained golfing experience that has served the community for decades.</p>
                     
                     <div class="course-details">
                         <div class="detail-item">
                             <span>Location:</span>
-                            <span><strong>Memphis, TN</strong></span>
+                            <span><strong>Knoxville, TN</strong></span>
                         </div>
                         <div class="detail-item">
-                            <span>Designer:</span>
-                            <span>Ron Prichard</span>
+                            <span>Course Layout:</span>
+                            <span>18 Holes, Par 70</span>
                         </div>
                         <div class="detail-item">
-                            <span>Tournament:</span>
-                            <span>FedEx St. Jude Championship</span>
+                            <span>Historic Significance:</span>
+                            <span>First Public Course in Knoxville</span>
                         </div>
                         <div class="detail-item">
-                            <span>Yardage:</span>
-                            <span>7,244 yards</span>
+                            <span>Management:</span>
+                            <span>Purple Horse Hospitality</span>
                         </div>
                     </div>
 
@@ -367,22 +367,22 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Annual PGA Tour host since 1989</li>
-                                <li>Championship-level conditioning</li>
-                                <li>Strategic water features throughout</li>
-                                <li>Audubon Cooperative Sanctuary certified</li>
+                                <li>Historic significance as first public course</li>
+                                <li>Hosts annual amateur tournaments</li>
+                                <li>Professional management by Purple Horse</li>
+                                <li>Full 18-hole championship layout</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Premium pricing during tournament season</li>
-                                <li>Extremely challenging for average golfers</li>
+                                <li>Lower rating compared to newer courses</li>
+                                <li>May show age in some facilities</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <a href="/courses/tpc-southwind" class="visit-link">
+                    <a href="/courses/whittle-springs-golf-course" class="visit-link">
                         <i class="fas fa-golf-ball"></i> View Course Details
                     </a>
                 </div>
@@ -390,30 +390,30 @@ $article = [
 <!-- #3 Course -->
                 <div class="course-item" id="course-3">
                     <div class="course-rank">#3</div>
-                    <h3 class="course-name">The Golf Club of Tennessee</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/3.webp" alt="The Golf Club of Tennessee" class="course-image">
+                    <h3 class="course-name">WindRiver Golf Club</h3>
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/3.webp" alt="WindRiver Golf Club" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Golf Digest Second 100 Greatest - 199th Nationally
+                        Bob Cupp Championship Design
                     </div>
-                    <p>Ranked 199th nationally in Golf Digest's Second 100 Greatest courses for 2025-26, this Tom Fazio masterpiece maintains its position as Tennessee's second-ranked course. The Kingston Springs layout showcases Fazio's signature modern design philosophy with excellent variety and strategic options. The course offers nice variety and modern architecture that appeals to golfers seeking a contemporary championship experience in Tennessee.</p>
+                    <p>WindRiver Golf Club is a prestigious private golf club and residential community featuring an 18-hole championship golf course designed by renowned architect Bob Cupp. Located in Lenoir City, this club offers a challenging yet fair course with well-maintained fairways, challenging layout, and true sandy greens. The facility includes comprehensive practice facilities, tennis courts, swimming pools, and dining venues, making it a complete luxury golf destination.</p>
                     
                     <div class="course-details">
                         <div class="detail-item">
                             <span>Location:</span>
-                            <span><strong>Kingston Springs, TN</strong></span>
+                            <span><strong>Lenoir City, TN</strong></span>
                         </div>
                         <div class="detail-item">
                             <span>Designer:</span>
-                            <span>Tom Fazio</span>
+                            <span>Bob Cupp</span>
                         </div>
                         <div class="detail-item">
-                            <span>National Ranking:</span>
-                            <span>199th (Golf Digest)</span>
+                            <span>Course Type:</span>
+                            <span>Private Championship Course</span>
                         </div>
                         <div class="detail-item">
-                            <span>State Ranking:</span>
-                            <span>2nd in Tennessee</span>
+                            <span>Amenities:</span>
+                            <span>Full Resort Facilities</span>
                         </div>
                     </div>
 
@@ -421,22 +421,22 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Top 200 course nationally by Golf Digest</li>
-                                <li>Tom Fazio's signature design excellence</li>
-                                <li>Modern architecture with strategic variety</li>
-                                <li>Consistently excellent course conditioning</li>
+                                <li>Bob Cupp championship design</li>
+                                <li>Well-maintained fairways and greens</li>
+                                <li>Comprehensive resort amenities</li>
+                                <li>Challenging yet fair layout</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Private club with limited access</li>
-                                <li>Premium membership requirements</li>
+                                <li>Private club with membership requirements</li>
+                                <li>Premium pricing for non-members</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <a href="/courses/the-golf-club-of-tennessee" class="visit-link">
+                    <a href="/courses/windtree-golf-course" class="visit-link">
                         <i class="fas fa-golf-ball"></i> View Course Details
                     </a>
                 </div>
@@ -444,30 +444,30 @@ $article = [
 <!-- #2 Course -->
                 <div class="course-item" id="course-2">
                     <div class="course-rank">#2</div>
-                    <h3 class="course-name">Troubadour Golf & Field Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/2.webp" alt="Troubadour Golf & Field Club" class="course-image">
+                    <h3 class="course-name">Cherokee Country Club</h3>
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/2.webp" alt="Cherokee Country Club" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        Ranked 3rd in State as of 2024
+                        #1 Ranked Course in Knoxville (Local Rankings)
                     </div>
-                    <p>This Tom Fazio design enters the state rankings at 3rd as of 2024 and represents modern golf architecture at its finest. Built on elevated tees with panoramic views of central Tennessee foothills, the redesign eliminated previous severity and created more accessible, graceful layouts. The course showcases Fazio's ability to blend challenging golf with stunning natural beauty, making it one of Tennessee's premier modern golf destinations.</p>
+                    <p>Cherokee Country Club stands as the #1 ranked golf course in Knoxville according to local rankings, featuring an 18-hole championship golf course designed by the legendary Donald Ross. This private golf club offers an 18-hole, par-70 course with tree-lined fairways, bluegrass and bent grass greens, plus comprehensive amenities including tennis courts, swimming pool, and dining facilities. The North Course is particularly recognized in state-wide golf rankings alongside other prestigious Tennessee clubs.</p>
                     
                     <div class="course-details">
                         <div class="detail-item">
                             <span>Location:</span>
-                            <span><strong>Nashville Area, TN</strong></span>
+                            <span><strong>Knoxville, TN</strong></span>
                         </div>
                         <div class="detail-item">
                             <span>Designer:</span>
-                            <span>Tom Fazio</span>
+                            <span>Donald Ross</span>
                         </div>
                         <div class="detail-item">
-                            <span>State Ranking:</span>
-                            <span>3rd in Tennessee (2024)</span>
+                            <span>Course Layout:</span>
+                            <span>18 Holes, Par 70</span>
                         </div>
                         <div class="detail-item">
-                            <span>Setting:</span>
-                            <span>Elevated with Panoramic Views</span>
+                            <span>Local Ranking:</span>
+                            <span>#1 in Knoxville</span>
                         </div>
                     </div>
 
@@ -475,22 +475,22 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Tom Fazio's masterful modern design</li>
-                                <li>Spectacular panoramic views</li>
-                                <li>Redesigned for enhanced playability</li>
-                                <li>Premier modern golf destination</li>
+                                <li>#1 ranked course in Knoxville</li>
+                                <li>Classic Donald Ross design</li>
+                                <li>Complete club amenities</li>
+                                <li>Tree-lined fairways and premium greens</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Exclusive private club membership</li>
+                                <li>Private club membership required</li>
                                 <li>Limited public access opportunities</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <a href="/courses/troubadour-golf-field-club" class="visit-link">
+                    <a href="/courses/cherokee-country-club" class="visit-link">
                         <i class="fas fa-golf-ball"></i> View Course Details
                     </a>
                 </div>
@@ -498,30 +498,30 @@ $article = [
 <!-- #1 Course -->
                 <div class="course-item" id="course-1">
                     <div class="course-rank">#1</div>
-                    <h3 class="course-name">The Honors Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/1.webp" alt="The Honors Course" class="course-image">
+                    <h3 class="course-name">Holston Hills Country Club</h3>
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/1.webp" alt="Holston Hills Country Club" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        #1 Tennessee Course Since 1983
+                        #7 Golf Course in Tennessee by Golfweek 2024
                     </div>
-                    <p>The venerable championship layout designed by Pete Dye has been ranked No. 1 in Tennessee since it opened in 1983 and remains a mainstay in the top third of national rankings. Considered radical in the early 1980s with acres of tall native-grass rough, durable zoysia fairways, and terrifying greens perched atop bulkheads of rock, The Honors Course represents a well-preserved example of Pete Dye's death-or-glory architecture that continues to challenge and inspire golfers today.</p>
+                    <p>Holston Hills Country Club represents the pinnacle of Knoxville golf, ranking as the #7 golf course in Tennessee according to Golfweek 2024 rankings and earning recognition as the #1 private golf club in Tennessee by Golfweek for 2022. This historic 18-hole, par-72 course features a Donald Ross design from the 1920s that has remained largely unaltered since its original layout. The course showcases some consider the best-preserved Donald Ross design in the USA, maintaining its classic architecture and strategic challenges.</p>
                     
                     <div class="course-details">
                         <div class="detail-item">
                             <span>Location:</span>
-                            <span><strong>Chattanooga, TN</strong></span>
+                            <span><strong>Knoxville, TN</strong></span>
                         </div>
                         <div class="detail-item">
                             <span>Designer:</span>
-                            <span>Pete Dye</span>
+                            <span>Donald Ross (1920s)</span>
                         </div>
                         <div class="detail-item">
-                            <span>Opened:</span>
-                            <span>1983</span>
+                            <span>State Ranking:</span>
+                            <span>#7 in Tennessee (Golfweek)</span>
                         </div>
                         <div class="detail-item">
-                            <span>Status:</span>
-                            <span>#1 in Tennessee Since Opening</span>
+                            <span>Course Layout:</span>
+                            <span>18 Holes, Par 72</span>
                         </div>
                     </div>
 
@@ -529,22 +529,22 @@ $article = [
                         <div class="pros">
                             <h4>Pros</h4>
                             <ul>
-                                <li>Tennessee's #1 course for over 40 years</li>
-                                <li>Top third of national golf rankings</li>
-                                <li>Iconic Pete Dye death-or-glory design</li>
-                                <li>Well-preserved architectural integrity</li>
+                                <li>#7 course in Tennessee state rankings</li>
+                                <li>Best-preserved Donald Ross design</li>
+                                <li>Historic 1920s layout maintained</li>
+                                <li>Recognized as top private club in state</li>
                             </ul>
                         </div>
                         <div class="cons">
                             <h4>Cons</h4>
                             <ul>
-                                <li>Extremely challenging for average players</li>
-                                <li>Exclusive private club access only</li>
+                                <li>Exclusive private club membership</li>
+                                <li>Extremely limited public access</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <a href="/courses/the-honors-course" class="visit-link">
+                    <a href="/courses/holston-hills-country-club" class="visit-link">
                         <i class="fas fa-golf-ball"></i> View Course Details
                     </a>
                 </div>
@@ -554,23 +554,23 @@ $article = [
                     <h3 style="color: var(--secondary-color); margin-bottom: 1.5rem;"><i class="fas fa-trophy"></i> Honorable Mentions</h3>
                     
                     <div style="margin-bottom: 2rem;">
-                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Sweetens Cove Golf Club</h4>
-                        <img src="/images/reviews/top-5-golf-courses-tennessee/6.webp" alt="Sweetens Cove Golf Club" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
-                        <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> South Pittsburg, TN</p>
-                        <p>The nine-holer 30 miles west of Chattanooga is probably the buzziest nine-hole course in the U.S. Designed by King-Collins with financial backing from Peyton Manning, this inland links layout offers numerous alternative routings and is consistently ranked one of the best Tennessee golf courses and a top 100 golf course in the world. The laidback atmosphere encourages casual dress and even allows dogs on the course.</p>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Avalon Golf & Country Club</h4>
+                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/6.webp" alt="Avalon Golf & Country Club" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Lenoir City, TN</p>
+                        <p>Avalon Golf & Country Club is an 18-hole, par-72 course with an impressive 4.34 out of 5 stars rating based on 671 reviews. This public course offers excellent value and consistently high player satisfaction, making it one of the most popular golf destinations in the greater Knoxville area. The course provides a challenging yet accessible layout suitable for golfers of all skill levels.</p>
                     </div>
                     
                     <div>
-                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Gaylord Springs Golf Links</h4>
-                        <img src="/images/reviews/top-5-golf-courses-tennessee/7.webp" alt="Gaylord Springs Golf Links" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
-                        <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Nashville, TN</p>
-                        <p>Located 10 minutes from Nashville International Airport, this 1991 Jeff Brauer/Larry Nelson design once hosted the Champions Tour from 1994-2003. The course features wetlands, limestone bluffs, and the Cumberland River among its handsome hazards, offering golfers a classic layout that emphasizes accuracy over length for a bold and rewarding adventure.</p>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Dead Horse Lake Golf Course</h4>
+                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/7.webp" alt="Dead Horse Lake Golf Course" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Knoxville, TN</p>
+                        <p>Dead Horse Lake Golf Course ranks as the #1 best public golf course in Knoxville according to local rankings. This 18-hole, par-72 public course offers golfers an excellent championship layout with a 4.25 out of 5 stars rating. The course provides outstanding value for public golf in the Knoxville area, featuring well-maintained conditions and challenging play that attracts both locals and visitors.</p>
                     </div>
                 </div>
 
-                <p>Tennessee's golf landscape showcases exceptional variety, from Pete Dye's intimidating masterpiece at <strong>The Honors Course</strong> to modern Tom Fazio designs and championship PGA Tour venues. Whether seeking the ultimate golf challenge or scenic beauty, these five courses represent the pinnacle of Tennessee golf excellence.</p>
+                <p>The Knoxville area offers exceptional golf diversity, from Donald Ross classics at <strong>Holston Hills Country Club</strong> and <strong>Cherokee Country Club</strong> to modern championship designs and excellent public facilities. Whether seeking prestigious private club experiences or outstanding public golf values, these five courses represent the finest golf destinations within easy reach of Knoxville.</p>
 
-                <p><em>Rankings based on comprehensive analysis from multiple golf publications including Golf Digest, GOLF Magazine, Golfweek, and Top 100 Golf Courses.</em></p>
+                <p><em>Rankings based on comprehensive analysis from Local Golf Spot, GolfPass, Golfweek, Tripadvisor, and multiple local golf publications for 2025.</em></p>
             </article>
         </div>
     </div>

@@ -4,10 +4,22 @@ session_start();
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
+        'slug' => 'top-5-golf-courses-near-knoxville-tn',
+        'date' => '2025-08-15',
+        'time' => '2:15 PM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf courses near Knoxville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
+        'image' => '/images/reviews/top-5-golf-courses-near-knoxville-tn/0.webp',
+        'featured' => true,
+        'author' => 'TGC Editorial Team',
+        'read_time' => '8 min read'
+    ],
+    [
         'title' => 'Top 5 Best Golf Courses in Tennessee 2025: Championship Destinations',
         'slug' => 'top-5-golf-courses-tennessee',
-        'date' => '2025-08-21',
-        'time' => '6:45 PM',
+        'date' => '2025-08-15',
+        'time' => '4:30 PM',
         'category' => 'Course Reviews',
         'excerpt' => 'Discover the top 5 highest-rated golf courses in Tennessee. Based on expert rankings, championship pedigree, and architectural excellence from leading golf publications.',
         'image' => '/images/reviews/top-5-golf-courses-tennessee/0.webp',
