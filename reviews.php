@@ -28,7 +28,7 @@ $reviews = [
         'read_time' => '8 min read'
     ],
     [
-        'title' => 'Top 10 Best Putters of 2025: Amazon\'s Highest Rated Golf Putters',
+        'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
         'slug' => 'top-10-putters-2025-amazon-guide',
         'date' => '2025-08-06',
         'time' => '4:30 PM',
