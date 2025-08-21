@@ -120,8 +120,7 @@ try {
         .article-image {
             width: 100%;
             max-width: 800px;
-            height: 400px;
-            object-fit: cover;
+            height: auto;
             border-radius: 15px;
             margin: 2rem 0;
             box-shadow: var(--shadow-light);

@@ -492,6 +492,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
             transition: transform 0.3s ease;
         }
         
