@@ -146,6 +146,63 @@ $article = [
             margin-bottom: 1rem;
         }
         
+        .scoreboard {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .scoreboard h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .scoreboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .scoreboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .scoreboard-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .player-rank {
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .player-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-black);
+        }
+        
+        .player-score {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
         @media screen and (max-width: 768px) {
             .article-title {
                 font-size: 2rem;
@@ -192,13 +249,45 @@ $article = [
 
             <p>Fleetwood, still seeking his maiden PGA Tour victory, fired a bogey-free 7-under 63 in the second round, featuring eight birdies including back-to-back scores on the 17th and 18th holes. The Englishman has endured recent heartbreak, losing a one-shot lead at the Travelers Championship and being two ahead with three holes to play in Memphis before missing a playoff by one shot.</p>
 
-            <div class="leaderboard-box">
-                <h4>Current Leaderboard After Round 2</h4>
-                <p><strong>T1. Tommy Fleetwood:</strong> -13 (63 in Round 2)<br>
-                <strong>T1. Russell Henley:</strong> -13 (66 in Round 2)<br>
-                <strong>3. Cameron Young:</strong> -11 (62 in Round 2)<br>
-                <strong>T4. Patrick Cantlay:</strong> -8<br>
-                <strong>T4. Scottie Scheffler:</strong> -8</p>
+            <div class="scoreboard">
+                <h3><i class="fas fa-trophy"></i> Leaderboard After Round 2</h3>
+                <ul class="scoreboard-list">
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T1.</span>
+                        <span class="player-name">Tommy Fleetwood</span>
+                        <span class="player-score">-13 (63)</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T1.</span>
+                        <span class="player-name">Russell Henley</span>
+                        <span class="player-score">-13 (66)</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">3.</span>
+                        <span class="player-name">Cameron Young</span>
+                        <span class="player-score">-11 (62)</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T4.</span>
+                        <span class="player-name">Patrick Cantlay</span>
+                        <span class="player-score">-8</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T4.</span>
+                        <span class="player-name">Scottie Scheffler</span>
+                        <span class="player-score">-8</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T6.</span>
+                        <span class="player-name">Shane Lowry</span>
+                        <span class="player-score">-7 (63)</span>
+                    </li>
+                    <li class="scoreboard-item">
+                        <span class="player-rank">T6.</span>
+                        <span class="player-name">Chris Gotterup</span>
+                        <span class="player-score">-7 (63)</span>
+                    </li>
+                </ul>
             </div>
 
             <h2>Cameron Young Posts Low Round of the Day</h2>
