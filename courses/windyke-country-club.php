@@ -98,207 +98,216 @@ try {
         }
         
         .course-hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
         }
         
-        .course-info {
-            background: var(--bg-white);
+        .course-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
             padding: 4rem 0;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .course-overview {
+        .course-info-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
             margin-bottom: 4rem;
         }
         
-        .course-details h2 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+        .course-info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-info-card h3 {
+            color: #2c5234;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .spec-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+        }
+        
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
             padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: var(--text-dark);
+            color: #666;
         }
         
         .spec-value {
-            color: var(--primary-color);
-            font-weight: 500;
+            font-weight: 700;
+            color: #2c5234;
         }
         
-        .course-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-        }
-        
-        .highlights {
-            background: var(--bg-light);
-            padding: 3rem 0;
-        }
-        
-        .highlights h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-        
-        .highlights-grid {
+        .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .highlight-card {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            transition: transform 0.3s ease;
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .highlight-card:hover {
-            transform: translateY(-5px);
+        .amenity-item i {
+            color: #4a7c59;
+            font-size: 1.2rem;
         }
         
-        .highlight-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .highlight-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .course-gallery {
-            padding: 4rem 0;
-            background: var(--bg-white);
-        }
-        
-        .course-gallery h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
+        .photo-gallery {
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
         }
         
         .gallery-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
         
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
         
-        .contact-info {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 0;
+        .gallery-button {
             text-align: center;
+            margin-top: 2rem;
         }
         
-        .contact-info h2 {
+        .btn-gallery {
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 2rem;
-            font-size: 2.5rem;
+            color: white;
         }
         
-        .contact-details {
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .full-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
         }
         
-        .contact-item i {
-            font-size: 1.5rem;
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
-        .contact-item span {
-            font-size: 1.1rem;
-        }
-        
-        .map-section {
-            padding: 4rem 0;
-            background: var(--bg-light);
-        }
-        
-        .map-container {
-            text-align: center;
-        }
-        
-        .map-container h2 {
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .map-frame {
-            border: none;
-            border-radius: 15px;
-            width: 100%;
-            height: 400px;
-            box-shadow: var(--shadow-medium);
+        .full-gallery-item:hover {
+            transform: scale(1.05);
         }
         
         .reviews-section {
-            background: var(--bg-white);
+            background: #f8f9fa;
             padding: 4rem 0;
         }
         
@@ -308,39 +317,22 @@ try {
         }
         
         .reviews-header h2 {
-            color: var(--primary-color);
+            color: #2c5234;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-        }
-        
-        .rating-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            color: var(--text-dark);
-            font-size: 1.1rem;
         }
         
         .review-form {
             max-width: 600px;
             margin: 0 auto 3rem auto;
-            background: var(--bg-light);
+            background: white;
             padding: 2rem;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .review-form h3 {
-            color: var(--primary-color);
+            color: #2c5234;
             margin-bottom: 1.5rem;
             text-align: center;
         }
@@ -352,7 +344,7 @@ try {
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--text-dark);
+            color: #333;
             font-weight: 600;
         }
         
@@ -378,7 +370,7 @@ try {
             width: 100%;
             min-height: 120px;
             padding: 1rem;
-            border: 2px solid var(--border-color);
+            border: 2px solid #e1e5e9;
             border-radius: 8px;
             font-family: inherit;
             resize: vertical;
@@ -386,11 +378,11 @@ try {
         
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: #4a7c59;
         }
         
         .submit-btn {
-            background: var(--primary-color);
+            background: #4a7c59;
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -402,7 +394,7 @@ try {
         }
         
         .submit-btn:hover {
-            background: var(--secondary-color);
+            background: #2c5234;
         }
         
         .success-message {
@@ -424,15 +416,16 @@ try {
         .login-prompt {
             text-align: center;
             padding: 2rem;
-            background: var(--bg-light);
+            background: white;
             border-radius: 15px;
             margin: 0 auto;
             max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .login-btn {
             display: inline-block;
-            background: var(--primary-color);
+            background: #4a7c59;
             color: white;
             padding: 1rem 2rem;
             border-radius: 8px;
@@ -442,7 +435,7 @@ try {
         }
         
         .login-btn:hover {
-            background: var(--secondary-color);
+            background: #2c5234;
         }
         
         .comments-list {
@@ -451,11 +444,11 @@ try {
         }
         
         .comment {
-            background: var(--bg-light);
+            background: white;
             padding: 2rem;
             border-radius: 15px;
             margin-bottom: 2rem;
-            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .comment-header {
@@ -467,7 +460,7 @@ try {
         
         .comment-author {
             font-weight: 600;
-            color: var(--primary-color);
+            color: #2c5234;
         }
         
         .comment-rating {
@@ -475,12 +468,12 @@ try {
         }
         
         .comment-date {
-            color: var(--text-gray);
+            color: #666;
             font-size: 0.9rem;
         }
         
         .comment-text {
-            color: var(--text-dark);
+            color: #333;
             line-height: 1.6;
         }
         
@@ -489,20 +482,12 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-overview {
+            .course-info-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .spec-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .highlights-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-details {
+            .course-specs {
                 grid-template-columns: 1fr;
             }
         }
@@ -510,167 +495,205 @@ try {
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Hero Section -->
+    <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Windyke Country Club</h1>
             <p>Premier Private Golf Facility • Memphis, Tennessee</p>
+            <div class="course-rating">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 
-    <!-- Course Information -->
-    <section class="course-info">
+    <!-- Course Details -->
+    <section class="course-details">
         <div class="container">
-            <div class="course-overview">
-                <div class="course-details">
-                    <h2>About Windyke Country Club</h2>
-                    <div class="course-description">
-                        <p>Windyke Country Club stands as Memphis's premier private golf facility, offering a truly exceptional experience since 1962. Founded by Mr. Dykema with the vision of creating a family-oriented country club that was affordable and inclusive rather than expensive and exclusive, Windyke has remained true to this philosophy for over six decades.</p>
-                        
-                        <p>The club features two championship 18-hole courses - the East Course and West Course - plus an 18-hole Executive par-3 course designed to promote junior golf. With over 1,000 family members, Windyke continues to embody its founding principles as a high-quality, family-oriented recreational facility.</p>
-                        
-                        <p>Both championship courses feature Champion Bermuda grass greens and Tifway 419 Bermuda grass fairways, providing consistent playing conditions year-round. The East Course, designed by John Frazier and built in 1962, offers a challenging 7,211 yards from the back tees with a course rating of 75.0 and slope of 134. The West Course, also designed by John Frazier with contributions from William Amick, plays to 6,813 yards with a course rating of 72.6 and slope of 130.</p>
-                    </div>
-                </div>
-                
-                <div class="course-specs">
-                    <h3>Course Specifications</h3>
-                    <div class="spec-grid">
+            <div class="course-info-grid">
+                <div class="course-info-card">
+                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column">
+                        <div class="spec-item">
+                            <span class="spec-label">Total Holes:</span>
+                            <span class="spec-value">54</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">East Course:</span>
+                            <span class="spec-value">Par 72, 7,211 yards</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">West Course:</span>
+                            <span class="spec-value">Par 72, 6,813 yards</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Executive Course:</span>
+                            <span class="spec-value">18-hole Par-3</span>
+                        </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">John Frazier / William Amick</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
+                            <span class="spec-label">Opened:</span>
                             <span class="spec-value">1962</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
+                            <span class="spec-label">Type:</span>
                             <span class="spec-value">Private</span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-users"></i> Membership</h3>
+                    <p style="color: #666; margin-bottom: 1.5rem;">Windyke Country Club is a private club with over 1,000 family members enjoying regular, executive, or tennis memberships.</p>
+                    
+                    <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">East Course Par:</span>
-                            <span class="spec-value">72</span>
+                            <span class="spec-label">Membership Type:</span>
+                            <span class="spec-value">Private Club</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">East Yardage:</span>
-                            <span class="spec-value">7,211 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">West Course Par:</span>
-                            <span class="spec-value">72</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">West Yardage:</span>
-                            <span class="spec-value">6,813 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">134 (East) / 130 (West)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">75.0 (East) / 72.6 (West)</span>
+                            <span class="spec-label">Family Oriented:</span>
+                            <span class="spec-value">1,000+ Families</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Greens:</span>
                             <span class="spec-value">Champion Bermuda</span>
                         </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Fairways:</span>
+                            <span class="spec-value">Tifway 419 Bermuda</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating (East):</span>
+                            <span class="spec-value">75.0 / Slope 134</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating (West):</span>
+                            <span class="spec-value">72.6 / Slope 130</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
+                    <p><strong>Address:</strong><br>
+                    8535 Winchester Road<br>
+                    Memphis, TN 38125</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (901) 754-7273</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://www.windyke.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">windyke.com</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=8535+Winchester+Road,+Memphis,+TN+38125&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Windyke Country Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=8535+Winchester+Road,+Memphis,+TN+38125" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Highlights -->
-    <section class="highlights">
-        <div class="container">
-            <h2>Club Highlights</h2>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
+            <!-- Course Description -->
+            <div class="course-info-card" style="margin-bottom: 4rem;">
+                <h3><i class="fas fa-golf-ball"></i> About Windyke Country Club</h3>
+                
+                <p>Windyke Country Club stands as Memphis's premier private golf facility, offering a truly exceptional experience since 1962. Founded by Mr. Dykema with the vision of creating a family-oriented country club that was affordable and inclusive rather than expensive and exclusive, Windyke has remained true to this philosophy for over six decades.</p>
+                
+                <p>The club features two championship 18-hole courses - the East Course and West Course - plus an 18-hole Executive par-3 course designed to promote junior golf. Both championship courses feature Champion Bermuda grass greens and Tifway 419 Bermuda grass fairways, providing consistent playing conditions year-round. The East Course offers a challenging 7,211 yards from the back tees, while the West Course plays to 6,813 yards, both providing excellent tests of golf for players of all skill levels.</p>
+
+                <div class="amenities-grid">
+                    <div class="amenity-item">
                         <i class="fas fa-golf-ball"></i>
+                        <span>54 Holes of Golf</span>
                     </div>
-                    <h3>54 Holes of Golf</h3>
-                    <p>Two championship 18-hole courses plus an 18-hole Executive par-3 course perfect for all skill levels and junior golfers.</p>
-                </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
+                    <div class="amenity-item">
                         <i class="fas fa-users"></i>
+                        <span>Family-Oriented Club</span>
                     </div>
-                    <h3>Family-Oriented</h3>
-                    <p>Over 1,000 families enjoy regular, executive, or tennis memberships at this inclusive country club.</p>
-                </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
+                    <div class="amenity-item">
                         <i class="fas fa-swimming-pool"></i>
+                        <span>Swimming Pool</span>
                     </div>
-                    <h3>Complete Amenities</h3>
-                    <p>Swimming pool, tennis courts, dining facilities, pro shops, and banquet spaces for all occasions.</p>
-                </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-award"></i>
+                    <div class="amenity-item">
+                        <i class="fas fa-table-tennis"></i>
+                        <span>Tennis Courts</span>
                     </div>
-                    <h3>Championship Quality</h3>
-                    <p>Two challenging championship courses with Champion Bermuda greens and Tifway 419 Bermuda fairways.</p>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Dining Facilities</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-store"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Championship Courses</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-child"></i>
+                        <span>Junior-Friendly</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Gallery -->
-    <section class="course-gallery">
-        <div class="container">
-            <h2>Course Gallery</h2>
-            <div class="gallery-grid">
-                <?php for ($i = 2; $i <= 13; $i++): ?>
-                    <div class="gallery-item">
-                        <img src="../images/courses/windyke-country-club/<?php echo $i; ?>.webp" alt="Windyke Country Club - Image <?php echo $i; ?>" loading="lazy">
-                    </div>
-                <?php endfor; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Information -->
-    <section class="contact-info">
-        <div class="container">
-            <h2>Visit Windyke Country Club</h2>
-            <div class="contact-details">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>8535 Winchester Road, Memphis, TN 38125</span>
+            <!-- Photo Gallery Preview -->
+            <div class="photo-gallery">
+                <h2 style="text-align: center; color: #2c5234; margin-bottom: 2rem;">Course Gallery</h2>
+                <div class="gallery-grid">
+                    <?php for ($i = 2; $i <= 9; $i++): ?>
+                        <div class="gallery-item" style="background-image: url('../images/courses/windyke-country-club/<?php echo $i; ?>.webp');" onclick="openGallery()"></div>
+                    <?php endfor; ?>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>(901) 754-7273</span>
+                <div class="gallery-button">
+                    <button class="btn-gallery" onclick="openGallery()">
+                        <i class="fas fa-images"></i> View All Photos
+                    </button>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <span>www.windyke.com</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map -->
-    <section class="map-section">
-        <div class="container">
-            <div class="map-container">
-                <h2>Location</h2>
-                <iframe class="map-frame" 
-                    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBi6ARG0UFKBhRGMh51I1GNNcfIyBJ2VQ8&q=Windyke+Country+Club+Memphis+TN" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
             </div>
         </div>
     </section>
@@ -680,24 +703,6 @@ try {
         <div class="container">
             <div class="reviews-header">
                 <h2>Course Reviews</h2>
-                <?php if ($avg_rating): ?>
-                    <div class="rating-display">
-                        <div class="stars">
-                            <?php
-                            for ($i = 1; $i <= 5; $i++) {
-                                if ($i <= floor($avg_rating)) {
-                                    echo '<i class="fas fa-star"></i>';
-                                } elseif ($i <= ceil($avg_rating)) {
-                                    echo '<i class="fas fa-star-half-alt"></i>';
-                                } else {
-                                    echo '<i class="far fa-star"></i>';
-                                }
-                            }
-                            ?>
-                        </div>
-                        <span class="rating-text"><?php echo $avg_rating; ?>/5 based on <?php echo $total_reviews; ?> review<?php echo $total_reviews != 1 ? 's' : ''; ?></span>
-                    </div>
-                <?php endif; ?>
             </div>
 
             <?php if ($is_logged_in): ?>
@@ -741,7 +746,7 @@ try {
             <!-- Comments Display -->
             <div class="comments-list">
                 <?php if (empty($comments)): ?>
-                    <p style="text-align: center; color: var(--text-gray); padding: 2rem;">No reviews yet. Be the first to share your experience!</p>
+                    <p style="text-align: center; color: #666; padding: 2rem;">No reviews yet. Be the first to share your experience!</p>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
                         <div class="comment">
@@ -765,6 +770,21 @@ try {
             </div>
         </div>
     </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Windyke Country Club Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <?php for ($i = 1; $i <= 25; $i++): ?>
+                    <div class="full-gallery-item" style="background-image: url('../images/courses/windyke-country-club/<?php echo $i; ?>.webp');"></div>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -866,6 +886,32 @@ try {
                     s.classList.remove('active');
                 }
             });
+        });
+
+        // Gallery modal functions
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
         });
     </script>
 </body>
