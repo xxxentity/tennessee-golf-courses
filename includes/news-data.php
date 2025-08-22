@@ -3,6 +3,16 @@
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Legion XIII and Crushers GC Advance as LIV Golf Michigan Team Championship Begins',
+        'slug' => 'liv-golf-michigan-team-championship-2025-quarterfinals',
+        'date' => '2025-08-22',
+        'time' => '8:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Six teams advance to semifinals at LIV Golf Michigan Team Championship after dramatic quarterfinal matches. HyFlyers GC stuns 4Aces in biggest upset of the day.',
+        'image' => '/images/news/liv-golf-michigan-team-championship-2025-quarterfinals/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
         'slug' => 'tour-championship-2025-round-2-fleetwood-henley-share-lead',
         'date' => '2025-08-22',
