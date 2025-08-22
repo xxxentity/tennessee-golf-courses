@@ -38,59 +38,74 @@ $article = [
     </script>
     
     <style>
-        .article-header {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('<?php echo htmlspecialchars($article['image']); ?>');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            align-items: end;
-            color: white;
-            position: relative;
+        .article-page {
+            padding-top: 0px;
+            min-height: 100vh;
+            background: var(--bg-light);
         }
         
-        .article-header-content {
-            padding: 3rem 2rem;
-            max-width: 1200px;
+        .article-container {
+            max-width: 1000px;
             margin: 0 auto;
-            width: 100%;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
         }
         
         .article-category {
-            background: var(--secondary-color);
+            display: inline-block;
+            background: var(--primary-color);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border-radius: 25px;
             font-size: 0.9rem;
-            display: inline-block;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
         
         .article-title {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
         
         .article-meta {
             display: flex;
             align-items: center;
             gap: 2rem;
-            font-size: 1rem;
-            opacity: 0.9;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
         
-        .article-date {
+        .article-meta-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
+        .article-featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
         .article-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
             line-height: 1.8;
         }
         
@@ -148,25 +163,31 @@ $article = [
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <article class="news-article">
-        <!-- Article Header -->
-        <header class="article-header">
-            <div class="article-header-content">
+    <div class="article-page">
+        <div class="article-container">
+            <!-- Article Header -->
+            <div class="article-header">
                 <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
-                    <span class="article-date">
+                    <div class="article-meta-item">
                         <i class="fas fa-calendar-alt"></i>
-                        <?php echo date('F j, Y', strtotime($article['date'])); ?> • <?php echo $article['time']; ?>
-                    </span>
-                    <span class="article-author">By <?php echo htmlspecialchars($article['author']); ?></span>
-                    <span class="article-read-time"><?php echo $article['read_time']; ?></span>
+                        <span><?php echo date('F j, Y', strtotime($article['date'])); ?> • <?php echo $article['time']; ?></span>
+                    </div>
+                    <div class="article-meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>By <?php echo htmlspecialchars($article['author']); ?></span>
+                    </div>
+                    <div class="article-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span><?php echo $article['read_time']; ?></span>
+                    </div>
                 </div>
+                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-featured-image">
             </div>
-        </header>
 
-        <!-- Article Content -->
-        <div class="article-content">
+            <!-- Article Content -->
+            <div class="article-content">
             <p><strong>ATLANTA, GA</strong> – Tommy Fleetwood and Russell Henley shared the lead at 13-under par after the second round of the 2025 Tour Championship at East Lake Golf Club on Thursday, setting up an exciting weekend battle for both the tournament title and the $25 million FedExCup prize.</p>
 
             <p>Fleetwood, still seeking his maiden PGA Tour victory, fired a bogey-free 7-under 63 in the second round, featuring eight birdies including back-to-back scores on the 17th and 18th holes. The Englishman has endured recent heartbreak, losing a one-shot lead at the Travelers Championship and being two ahead with three holes to play in Memphis before missing a playoff by one shot.</p>
@@ -205,8 +226,9 @@ $article = [
             <p>With soft conditions expected to continue through the weekend, low scoring should persist at East Lake. Both Fleetwood and Henley are seeking their first PGA Tour victories, while Young continues to build his case for a U.S. Ryder Cup team selection with another strong performance.</p>
 
             <p>The winner of the Tour Championship will earn $4 million from the tournament purse, while the FedExCup champion receives an additional $25 million bonus, making this one of the richest prizes in professional golf.</p>
+            </div>
         </div>
-    </article>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
