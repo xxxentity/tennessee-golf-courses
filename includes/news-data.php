@@ -3,6 +3,16 @@
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
+        'slug' => 'tour-championship-2025-round-2-fleetwood-henley-share-lead',
+        'date' => '2025-08-22',
+        'time' => '7:30 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Tommy Fleetwood fires 63 while Russell Henley posts 66 to tie for the lead at 13-under at East Lake Golf Club. Cameron Young shoots low round of 62 to move into third place.',
+        'image' => '/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Russell Henley Fires Spectacular 61 to Lead Tour Championship Opening Round',
         'slug' => 'tour-championship-2025-first-round-henley-leads',
         'date' => '2025-08-21',

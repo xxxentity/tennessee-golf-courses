@@ -1,0 +1,263 @@
+<?php
+session_start();
+
+$article = [
+    'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
+    'slug' => 'tour-championship-2025-round-2-fleetwood-henley-share-lead',
+    'date' => '2025-08-22',
+    'time' => '7:30 PM',
+    'category' => 'Tournament News',
+    'excerpt' => 'Tommy Fleetwood fires 63 while Russell Henley posts 66 to tie for the lead at 13-under at East Lake Golf Club. Cameron Young shoots low round of 62 to move into third place.',
+    'image' => '/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp',
+    'featured' => true,
+    'author' => 'TGC Editorial Team',
+    'read_time' => '4 min read'
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
+    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <?php include '../includes/favicon.php'; ?>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
+    </script>
+    
+    <style>
+        .article-header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('<?php echo htmlspecialchars($article['image']); ?>');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: end;
+            color: white;
+            position: relative;
+        }
+        
+        .article-header-content {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .article-category {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            line-height: 1.8;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .leaderboard-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .leaderboard-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
+
+    <article class="news-article">
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-header-content">
+                <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
+                <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
+                <div class="article-meta">
+                    <span class="article-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <?php echo date('F j, Y', strtotime($article['date'])); ?> • <?php echo $article['time']; ?>
+                    </span>
+                    <span class="article-author">By <?php echo htmlspecialchars($article['author']); ?></span>
+                    <span class="article-read-time"><?php echo $article['read_time']; ?></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p><strong>ATLANTA, GA</strong> – Tommy Fleetwood and Russell Henley shared the lead at 13-under par after the second round of the 2025 Tour Championship at East Lake Golf Club on Thursday, setting up an exciting weekend battle for both the tournament title and the $25 million FedExCup prize.</p>
+
+            <p>Fleetwood, still seeking his maiden PGA Tour victory, fired a bogey-free 7-under 63 in the second round, featuring eight birdies including back-to-back scores on the 17th and 18th holes. The Englishman has endured recent heartbreak, losing a one-shot lead at the Travelers Championship and being two ahead with three holes to play in Memphis before missing a playoff by one shot.</p>
+
+            <div class="leaderboard-box">
+                <h4>Current Leaderboard After Round 2</h4>
+                <p><strong>T1. Tommy Fleetwood:</strong> -13 (63 in Round 2)<br>
+                <strong>T1. Russell Henley:</strong> -13 (66 in Round 2)<br>
+                <strong>3. Cameron Young:</strong> -11 (62 in Round 2)<br>
+                <strong>T4. Patrick Cantlay:</strong> -8<br>
+                <strong>T4. Scottie Scheffler:</strong> -8</p>
+            </div>
+
+            <h2>Cameron Young Posts Low Round of the Day</h2>
+            
+            <p>Cameron Young stole the spotlight with the lowest round of the tournament so far, carding an 8-under 62 that included 15 one-putt greens. The recent Wyndham Championship winner birdied five of six holes and stuck seven approach shots within 7 feet in his final eight holes.</p>
+
+            <p>"Just hit my wedges great, controlled my distance really well, and the greens were just soft enough that it's not bouncing much of anywhere, but nothing is really spinning much either," Young said after his round.</p>
+
+            <h2>Henley Maintains Lead Despite Slower Start</h2>
+            
+            <p>Russell Henley, who opened with a spectacular 9-under 61 on Wednesday that included 207 feet of putts made – the most in his PGA Tour career – managed to stay tied for the lead despite a more subdued 4-under 66. The American closed with birdies on the 17th and 18th holes to maintain his position atop the leaderboard.</p>
+
+            <h2>Scheffler Struggles in Second Round</h2>
+            
+            <p>World No. 1 Scottie Scheffler, who opened with a 7-under 63 to sit just one shot back, stumbled in the second round and fell to 8-under par, five shots behind the leaders. Patrick Cantlay made a late charge with a back nine 30, including a birdie-birdie-eagle finish to also reach 8-under.</p>
+
+            <h2>Course Conditions and Format</h2>
+            
+            <p>Heavy rain earlier in the week left East Lake Golf Club playing soft, with preferred lies in place. The scoring average through two rounds was 67, with 13 players at 7-under 133 or better, indicating an extremely competitive leaderboard heading into the weekend.</p>
+
+            <p>Tee times for the second round were moved up due to anticipated weather, with play beginning at 8 a.m. local time. The tournament features a new format for 2025, with all 30 FedExCup Playoffs qualifiers starting at even par in a straight 72-hole stroke-play event.</p>
+
+            <h2>Weekend Outlook</h2>
+            
+            <p>With soft conditions expected to continue through the weekend, low scoring should persist at East Lake. Both Fleetwood and Henley are seeking their first PGA Tour victories, while Young continues to build his case for a U.S. Ryder Cup team selection with another strong performance.</p>
+
+            <p>The winner of the Tour Championship will earn $4 million from the tournament purse, while the FedExCup champion receives an additional $25 million bonus, making this one of the richest prizes in professional golf.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/weather.js?v=4"></script>
+    <script src="/script.js?v=4"></script>
+</body>
+</html>
