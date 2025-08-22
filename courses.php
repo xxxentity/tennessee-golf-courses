@@ -1408,6 +1408,21 @@ $courses_static = [
         'designer' => 'Greg Norman & Tad Burnett',
         'amenities' => ['Greg Norman Signature', 'Top 10 Course', '19-Acre Practice Facility', 'TopTracer Range', '25,000 sq ft Clubhouse', 'Semi-Private', 'Lake Views', 'PGA Instruction'],
         'slug' => 'tennessee-national-golf-club'
+    ],
+    [
+        'id' => 103,
+        'name' => 'Windyke Country Club',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Premier private golf facility featuring East Course (7,211 yards), West Course (6,813 yards), and Executive par-3 course. Family-oriented country club since 1962 with Champion Bermuda greens.',
+        'image' => '/images/courses/windyke-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Intermediate',
+        'holes' => 54,
+        'par' => 72,
+        'designer' => 'John Frazier / William Amick',
+        'amenities' => ['Private Club', '54 Holes', 'East Course', 'West Course', 'Executive Course', 'Swimming Pool', 'Tennis Courts', 'Dining', 'Pro Shop', 'Family-Oriented'],
+        'slug' => 'windyke-country-club'
     ]
 ];
 

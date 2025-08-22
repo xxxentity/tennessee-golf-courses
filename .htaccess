@@ -151,6 +151,7 @@ RewriteRule ^courses/lookout-mountain-club/?$ courses/lookout-mountain-club.php 
 RewriteRule ^courses/moccasin-bend-golf-course/?$ courses/moccasin-bend-golf-course.php [L]
 RewriteRule ^courses/ross-creek-landing-golf-course/?$ courses/ross-creek-landing-golf-course.php [L]
 RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
+RewriteRule ^courses/windyke-country-club/?$ courses/windyke-country-club.php [L]
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/liv-golf-michigan-team-championship-2025-quarterfinals/?$ news/liv-golf-michigan-team-championship-2025-quarterfinals.php [L]
