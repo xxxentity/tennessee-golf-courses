@@ -6,36 +6,9 @@ require_once 'includes/seo.php';
 // Set up SEO for homepage
 SEO::setupHomepage();
 
-// Get latest 3 news articles
-$latest_articles = [
-    [
-        'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
-        'slug' => 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment',
-        'date' => '2025-08-18',
-        'time' => '7:45 PM',
-        'category' => 'Tournament News',
-        'excerpt' => 'Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz\'s maiden victory, Jon Rahm\'s Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.',
-        'image' => '/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp'
-    ],
-    [
-        'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
-        'slug' => 'bmw-championship-2025-complete-tournament-recap-community-impact',
-        'date' => '2025-08-18',
-        'time' => '8:00 PM',
-        'category' => 'Tournament News',
-        'excerpt' => 'Complete recap of the 2025 BMW Championship featuring Scottie Scheffler\'s miraculous comeback victory and the tournament\'s extraordinary community impact for the Evans Scholars Foundation.',
-        'image' => '/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp'
-    ],
-    [
-        'title' => 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations',
-        'slug' => 'tennessee-herrington-historic-run-125th-us-amateur-runner-up',
-        'date' => '2025-08-17',
-        'time' => '9:30 PM',
-        'category' => 'Tennessee News',
-        'excerpt' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
-        'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp'
-    ]
-];
+// Get latest 3 news articles dynamically
+require_once 'includes/news-data.php';
+$latest_articles = array_slice($articles, 0, 3);
 
 // Get latest 3 featured courses
 $featured_courses = [
@@ -65,34 +38,9 @@ $featured_courses = [
     ]
 ];
 
-// Get latest featured review articles (equipment reviews)
-$featured_reviews = [
-    [
-        'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
-        'slug' => 'top-5-golf-balls-2025',
-        'date' => '2025-08-11',
-        'time' => '2:45 PM',
-        'category' => 'Equipment Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
-        'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
-        'slug' => 'top-10-putters-2025-amazon-guide',
-        'date' => '2025-08-06',
-        'time' => '4:30 PM',
-        'category' => 'Equipment Reviews',
-        'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
-        'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ]
-    // Third review article will be added here when available
-];
+// Get latest featured review articles dynamically
+require_once 'includes/reviews-data.php';
+$featured_reviews = array_slice($reviews, 0, 3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -460,15 +408,19 @@ $featured_reviews = [
                         <div class="review-meta">
                             <span class="review-date"><?php echo date('M j, Y', strtotime($review['date'])); ?></span>
                             <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
-                            <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
+                            <?php if (isset($review['read_time'])): ?>
+                                <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
+                            <?php endif; ?>
                         </div>
                         <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                             <h3 class="review-title"><?php echo htmlspecialchars($review['title']); ?></h3>
                         </a>
                         <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
-                        <div class="review-author">
-                            <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
-                        </div>
+                        <?php if (isset($review['author'])): ?>
+                            <div class="review-author">
+                                <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
+                            </div>
+                        <?php endif; ?>
                         <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">Read Full Review <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>

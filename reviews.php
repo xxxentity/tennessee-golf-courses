@@ -2,80 +2,7 @@
 session_start();
 
 // Get all review articles (in order of newest first)
-$reviews = [
-    [
-        'title' => 'Top 5 Best Golf Drivers of 2025: Maximum Distance and Forgiveness',
-        'slug' => 'top-5-golf-drivers-2025',
-        'date' => '2025-08-21',
-        'time' => '3:15 PM',
-        'category' => 'Equipment Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf drivers of 2025. Based on comprehensive testing, tour performance, and expert reviews from leading golf publications.',
-        'image' => '/images/reviews/top-5-golf-drivers-2025/0.jpeg',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 5 Best Golf Courses Near Memphis, Tennessee 2025',
-        'slug' => 'top-5-golf-courses-near-memphis-tn',
-        'date' => '2025-08-19',
-        'time' => '3:45 PM',
-        'category' => 'Course Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf courses near Memphis, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
-        'image' => '/images/reviews/top-5-golf-courses-near-memphis-tn/0.webp',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
-        'slug' => 'top-5-golf-courses-near-knoxville-tn',
-        'date' => '2025-08-18',
-        'time' => '2:15 PM',
-        'category' => 'Course Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf courses near Knoxville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
-        'image' => '/images/reviews/top-5-golf-courses-near-knoxville-tn/0.webp',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 5 Best Golf Courses in Tennessee 2025: Championship Destinations',
-        'slug' => 'top-5-golf-courses-tennessee',
-        'date' => '2025-08-15',
-        'time' => '4:30 PM',
-        'category' => 'Course Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf courses in Tennessee. Based on expert rankings, championship pedigree, and architectural excellence from leading golf publications.',
-        'image' => '/images/reviews/top-5-golf-courses-tennessee/0.webp',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
-        'slug' => 'top-5-golf-balls-2025',
-        'date' => '2025-08-11',
-        'time' => '2:45 PM',
-        'category' => 'Equipment Reviews',
-        'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
-        'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ],
-    [
-        'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
-        'slug' => 'top-10-putters-2025-amazon-guide',
-        'date' => '2025-08-06',
-        'time' => '4:30 PM',
-        'category' => 'Equipment Reviews',
-        'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
-        'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
-        'featured' => true,
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
-    ]
-];
+require_once 'includes/reviews-data.php';
 
 // Get search query if provided
 $search_query = isset($_GET['search']) ? trim($_GET['search']) : '';
@@ -95,9 +22,12 @@ if (!empty($category_filter)) {
     });
 }
 
-// Get featured reviews for carousel (latest 3)
+// Re-index the filtered array to start from 0
+$filtered_reviews = array_values($filtered_reviews);
+
+// Get featured reviews for homepage (latest 3)
 $featured_reviews = array_slice(array_filter($reviews, function($review) {
-    return $review['featured'];
+    return isset($review['featured']) && $review['featured'];
 }), 0, 3);
 ?>
 
@@ -107,7 +37,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golf Equipment Reviews - Tennessee Golf Courses</title>
-    <meta name="description" content="In-depth reviews and buying guides for golf equipment, putters, clubs, and accessories. Expert analysis and recommendations.">
+    <meta name="description" content="Read comprehensive reviews of golf equipment, courses, and gear to improve your game. Expert analysis and recommendations.">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -151,135 +81,6 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-        }
-        
-        /* Featured Carousel */
-        .featured-carousel {
-            background: var(--bg-white);
-            border-radius: 15px;
-            box-shadow: var(--shadow-light);
-            margin-bottom: 3rem;
-            overflow: hidden;
-        }
-        
-        .carousel-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .carousel-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .carousel-container {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: end;
-        }
-        
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        
-        .slide-content {
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            width: 100%;
-            padding: 2rem 5rem;
-            color: white;
-        }
-        
-        .slide-category {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .slide-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-        
-        .slide-excerpt {
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-        
-        .slide-meta {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-nav:hover {
-            background: white;
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .carousel-prev {
-            left: 1rem;
-        }
-        
-        .carousel-next {
-            right: 1rem;
-        }
-        
-        .carousel-dots {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background: white;
         }
         
         /* Search and Filter Bar */
@@ -388,6 +189,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
             gap: 1rem;
             margin-bottom: 1rem;
             font-size: 0.9rem;
+            flex-wrap: wrap;
         }
         
         .review-date {
@@ -405,17 +207,37 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
             font-size: 0.8rem;
         }
         
+        .review-time {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+        
         .review-title {
             font-size: 1.3rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
             line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .review-title:hover {
+            color: var(--secondary-color);
         }
         
         .review-excerpt {
             color: var(--text-dark);
             line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .review-author {
             margin-bottom: 1.5rem;
+        }
+        
+        .author-name {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-style: italic;
         }
         
         .read-more {
@@ -494,12 +316,10 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                 grid-template-columns: 1fr;
             }
             
-            .carousel-nav {
-                display: none;
-            }
-            
-            .slide-content {
-                padding: 2rem;
+            .review-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -512,58 +332,15 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Golf Equipment Reviews</h1>
+                <h1 class="page-title">Equipment Reviews</h1>
                 <p class="page-subtitle">In-depth reviews and buying guides for golf equipment and accessories</p>
             </div>
         </section>
 
         <div class="reviews-container">
-            <!-- Featured Carousel -->
-            <?php if (!empty($featured_reviews)): ?>
-            <section class="featured-carousel">
-                <div class="carousel-header">
-                    <h2 class="carousel-title">
-                        <i class="fas fa-star"></i>
-                        Featured Reviews
-                    </h2>
-                </div>
-                <div class="carousel-container">
-                    <?php foreach ($featured_reviews as $index => $review): ?>
-                    <div class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>" 
-                         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('<?php echo htmlspecialchars($review['image']); ?>');">
-                        <div class="slide-content">
-                            <span class="slide-category"><?php echo htmlspecialchars($review['category']); ?></span>
-                            <h3 class="slide-title"><?php echo htmlspecialchars($review['title']); ?></h3>
-                            <p class="slide-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
-                            <div class="slide-meta">
-                                <i class="fas fa-calendar-alt"></i>
-                                <?php echo date('M j, Y', strtotime($review['date'])); ?> • <?php echo $review['read_time']; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                    
-                    <?php if (count($featured_reviews) > 1): ?>
-                    <button class="carousel-nav carousel-prev" onclick="changeSlide(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-nav carousel-next" onclick="changeSlide(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    
-                    <div class="carousel-dots">
-                        <?php foreach ($featured_reviews as $index => $review): ?>
-                        <span class="carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>" onclick="goToSlide(<?php echo $index; ?>)"></span>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-                </div>
-            </section>
-            <?php endif; ?>
-
             <!-- Search and Filter Bar -->
             <div class="search-filter-bar">
-                <form method="GET" class="search-container">
+                <form method="GET" class="search-container" id="search-form">
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" name="search" class="search-input" 
                            placeholder="Search reviews..." 
@@ -574,11 +351,8 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                 <form method="GET">
                     <select name="category" class="category-filter" onchange="this.form.submit()">
                         <option value="">All Categories</option>
-                        <option value="Equipment Reviews" <?php echo $category_filter === 'Equipment Reviews' ? 'selected' : ''; ?>>Equipment</option>
-                        <option value="Putters" <?php echo $category_filter === 'Putters' ? 'selected' : ''; ?>>Putters</option>
-                        <option value="Drivers" <?php echo $category_filter === 'Drivers' ? 'selected' : ''; ?>>Drivers</option>
-                        <option value="Irons" <?php echo $category_filter === 'Irons' ? 'selected' : ''; ?>>Irons</option>
-                        <option value="Accessories" <?php echo $category_filter === 'Accessories' ? 'selected' : ''; ?>>Accessories</option>
+                        <option value="Equipment Reviews" <?php echo $category_filter === 'Equipment Reviews' ? 'selected' : ''; ?>>Equipment Reviews</option>
+                        <option value="Course Reviews" <?php echo $category_filter === 'Course Reviews' ? 'selected' : ''; ?>>Course Reviews</option>
                     </select>
                     <input type="hidden" name="search" value="<?php echo htmlspecialchars($search_query); ?>">
                 </form>
@@ -592,9 +366,14 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
             <section class="reviews-section">
                 <?php if (!empty($filtered_reviews)): ?>
                     <div class="reviews-grid">
+                        <?php 
+                        $reviews_per_page = 6;
+                        $total_reviews = count($filtered_reviews);
+                        $initial_reviews = array_slice($filtered_reviews, 0, $reviews_per_page);
+                        ?>
                         <?php foreach ($filtered_reviews as $index => $review): ?>
-                            <article class="review-card">
-                                <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
+                            <article class="review-card" data-review-index="<?php echo $index; ?>" style="<?php echo $index >= $reviews_per_page ? 'display: none;' : ''; ?>">
+                                <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
                                     <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
                                 </a>
                                 <div class="review-content">
@@ -604,12 +383,20 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                             <?php echo date('M j, Y', strtotime($review['date'])); ?>
                                         </span>
                                         <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
+                                        <?php if (isset($review['read_time'])): ?>
+                                            <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
+                                        <?php endif; ?>
                                     </div>
-                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                                    <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                                         <h3 class="review-title clickable-title"><?php echo htmlspecialchars($review['title']); ?></h3>
                                     </a>
                                     <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
-                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
+                                    <?php if (isset($review['author'])): ?>
+                                        <div class="review-author">
+                                            <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
                                         Read Full Review <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -617,9 +404,9 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                         <?php endforeach; ?>
                     </div>
                     
-                    <!-- Load More Button (when we have more reviews) -->
-                    <?php if (count($filtered_reviews) >= 9): ?>
-                    <div class="load-more-container">
+                    <!-- Load More Button -->
+                    <?php if ($total_reviews > $reviews_per_page): ?>
+                    <div class="load-more-container" id="loadMoreContainer">
                         <button class="load-more-btn" onclick="loadMoreReviews()">
                             <i class="fas fa-plus"></i> Load More Reviews
                         </button>
@@ -665,10 +452,10 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                 <div class="footer-section">
                     <h4>Regions</h4>
                     <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
+                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -689,52 +476,43 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
     <script>
-        // Carousel functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentSlide = index;
-        }
-
-        function changeSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide >= totalSlides) currentSlide = 0;
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-            showSlide(currentSlide);
-        }
-
-        function goToSlide(index) {
-            showSlide(index);
-        }
-
-        // Auto-advance carousel
-        if (totalSlides > 1) {
-            setInterval(() => {
-                changeSlide(1);
-            }, 5000);
-        }
-
         // Search form handling
         document.addEventListener('DOMContentLoaded', function() {
-            const searchForm = document.querySelector('.search-container form');
-            if (searchForm) {
-                searchForm.id = 'search-form';
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        document.getElementById('search-form').submit();
+                    }
+                });
             }
         });
 
-        // Load more functionality (placeholder)
+        // Load more functionality
+        let currentlyShown = <?php echo isset($reviews_per_page) ? $reviews_per_page : 6; ?>;
+        const totalReviews = <?php echo isset($total_reviews) ? $total_reviews : count($filtered_reviews); ?>;
+        const reviewsPerLoad = 3;
+        
         function loadMoreReviews() {
-            // This would load more reviews via AJAX in a real implementation
-            alert('Loading more reviews... (feature coming soon!)');
+            const reviews = document.querySelectorAll('.review-card');
+            const nextBatch = Math.min(currentlyShown + reviewsPerLoad, totalReviews);
+            
+            for (let i = currentlyShown; i < nextBatch; i++) {
+                if (reviews[i]) {
+                    reviews[i].style.display = 'block';
+                }
+            }
+            
+            currentlyShown = nextBatch;
+            
+            // Hide button if all reviews are shown
+            if (currentlyShown >= totalReviews) {
+                const loadMoreContainer = document.getElementById('loadMoreContainer');
+                if (loadMoreContainer) {
+                    loadMoreContainer.style.display = 'none';
+                }
+            }
         }
     </script>
 </body>
