@@ -1,5 +1,168 @@
 <?php
-session_start();
+// Include session security and database
+require_once 'includes/session-security.php';
+require_once 'config/database.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - continue as guest
+}
+
+// Check if user is logged in
+$is_logged_in = SecureSession::isLoggedIn();
+
+// Featured tournaments (manually curated)
+$featured_tournaments = [
+    [
+        'id' => 1,
+        'title' => 'LIV Golf Nashville',
+        'type' => 'professional',
+        'league' => 'LIV',
+        'date_start' => '2025-06-13',
+        'date_end' => '2025-06-15',
+        'venue' => 'The Grove Golf Course',
+        'location' => 'College Grove, TN',
+        'prize_money' => '$25,000,000',
+        'image' => '/images/logos/logo.webp',
+        'status' => 'upcoming'
+    ],
+    [
+        'id' => 2,
+        'title' => 'FedEx St. Jude Championship',
+        'type' => 'professional',
+        'league' => 'PGA',
+        'date_start' => '2025-08-14',
+        'date_end' => '2025-08-17',
+        'venue' => 'TPC Southwind',
+        'location' => 'Memphis, TN',
+        'prize_money' => '$20,000,000',
+        'image' => '/images/logos/logo.webp',
+        'status' => 'upcoming'
+    ],
+    [
+        'id' => 3,
+        'title' => 'Tennessee State Amateur Championship',
+        'type' => 'local',
+        'league' => 'TGA',
+        'date_start' => '2025-07-21',
+        'date_end' => '2025-07-24',
+        'venue' => 'Belle Meade Country Club',
+        'location' => 'Nashville, TN',
+        'prize_money' => null,
+        'image' => '/images/logos/logo.webp',
+        'status' => 'upcoming'
+    ]
+];
+
+// Professional tournaments
+$professional_tournaments = [
+    // LIV Golf Events
+    [
+        'title' => 'LIV Golf Miami',
+        'league' => 'LIV',
+        'date_start' => '2025-04-04',
+        'date_end' => '2025-04-06',
+        'venue' => 'Trump National Doral',
+        'location' => 'Miami, FL'
+    ],
+    [
+        'title' => 'LIV Golf Adelaide',
+        'league' => 'LIV',
+        'date_start' => '2025-04-26',
+        'date_end' => '2025-04-28',
+        'venue' => 'The Grange Golf Club',
+        'location' => 'Adelaide, Australia'
+    ],
+    [
+        'title' => 'LIV Golf Nashville',
+        'league' => 'LIV',
+        'date_start' => '2025-06-13',
+        'date_end' => '2025-06-15',
+        'venue' => 'The Grove Golf Course',
+        'location' => 'College Grove, TN'
+    ],
+    
+    // PGA Tour Events
+    [
+        'title' => 'Masters Tournament',
+        'league' => 'PGA',
+        'date_start' => '2025-04-10',
+        'date_end' => '2025-04-13',
+        'venue' => 'Augusta National Golf Club',
+        'location' => 'Augusta, GA'
+    ],
+    [
+        'title' => 'PGA Championship',
+        'league' => 'PGA',
+        'date_start' => '2025-05-15',
+        'date_end' => '2025-05-18',
+        'venue' => 'Quail Hollow Club',
+        'location' => 'Charlotte, NC'
+    ],
+    [
+        'title' => 'FedEx St. Jude Championship',
+        'league' => 'PGA',
+        'date_start' => '2025-08-14',
+        'date_end' => '2025-08-17',
+        'venue' => 'TPC Southwind',
+        'location' => 'Memphis, TN'
+    ]
+];
+
+// Tennessee local events
+$tennessee_events = [
+    [
+        'title' => 'Tennessee State Amateur Championship',
+        'date_start' => '2025-07-21',
+        'date_end' => '2025-07-24',
+        'venue' => 'Belle Meade Country Club',
+        'location' => 'Nashville, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee Four-Ball Championship',
+        'date_start' => '2025-06-02',
+        'date_end' => '2025-06-04',
+        'venue' => 'The Honors Course',
+        'location' => 'Chattanooga, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Hermitage Classic Charity Tournament',
+        'date_start' => '2025-09-15',
+        'date_end' => '2025-09-15',
+        'venue' => 'Hermitage Golf Course',
+        'location' => 'Nashville, TN',
+        'organizer' => 'Nashville Golf Foundation'
+    ],
+    [
+        'title' => 'Tennessee Mid-Amateur Championship',
+        'date_start' => '2025-08-25',
+        'date_end' => '2025-08-27',
+        'venue' => 'Nashville Golf & Athletic Club',
+        'location' => 'Nashville, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Cheekwood Invitational',
+        'date_start' => '2025-05-10',
+        'date_end' => '2025-05-11',
+        'venue' => 'Cheekwood Golf Club',
+        'location' => 'Nashville, TN',
+        'organizer' => 'Cheekwood Golf Club'
+    ]
+];
+
+// Sort events by date
+usort($professional_tournaments, function($a, $b) {
+    return strtotime($a['date_start']) - strtotime($b['date_start']);
+});
+
+usort($tennessee_events, function($a, $b) {
+    return strtotime($a['date_start']) - strtotime($b['date_start']);
+});
 ?>
 
 <!DOCTYPE html>
@@ -7,8 +170,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf Events & Tournaments - Tennessee Golf Courses</title>
-    <meta name="description" content="Upcoming golf tournaments, charity events, and competitions at Tennessee golf courses. Find local golf events, scrambles, and championship tournaments near you.">
+    <title>Golf Tournaments & Events - Tennessee Golf Courses</title>
+    <meta name="description" content="Complete guide to LIV Golf, PGA Tour, and Tennessee golf tournaments. Find professional and local golf events, championships, and competitions near you.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -30,11 +193,10 @@ session_start();
                         url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            padding: 50px 0 40px;
+            padding: 5rem 0 4rem;
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 0px;
         }
         
         .events-hero h1 {
@@ -51,203 +213,492 @@ session_start();
             margin: 0 auto;
         }
         
-        .coming-soon-section {
-            padding: 40px 0;
+        /* Featured Tournaments */
+        .featured-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .tournament-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tournament-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .tournament-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tournament-image img {
+            max-height: 80px;
+            max-width: 120px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .league-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .league-liv { color: #ff6b35; }
+        .league-pga { color: #1e40af; }
+        .league-tga { color: #059669; }
+        
+        .tournament-content {
+            padding: 2rem;
+        }
+        
+        .tournament-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tournament-dates {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .tournament-venue {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tournament-location {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .prize-money {
+            background: linear-gradient(135deg, var(--gold-color), #d97706);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        /* Professional Tournaments */
+        .professional-section {
+            padding: 4rem 0;
             background: #f8faf9;
         }
         
-        .coming-soon-container {
+        .tournaments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .league-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .league-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .league-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .league-logo.liv { background: #ff6b35; }
+        .league-logo.pga { background: #1e40af; }
+        
+        .league-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .tournament-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tournament-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .tournament-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tournament-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .tournament-info .venue {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .tournament-info .location {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+        
+        .tournament-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        /* Tennessee Events */
+        .tennessee-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .events-list {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
         
-        .coming-soon-icon {
-            font-size: 5rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        .coming-soon-content h2 {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .coming-soon-content p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        
-        .features-preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
+        .event-card {
             background: white;
-            padding: 2rem;
+            border: 2px solid #f0f0f0;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
+            position: relative;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        .event-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--gold-color);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .feature-card p {
-            color: var(--text-gray);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        .notification-signup {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-top: 4rem;
-        }
-        
-        .notification-signup h3 {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-        
-        .notification-form {
+        .event-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
             gap: 1rem;
-            max-width: 500px;
-            margin: 2rem auto 0;
         }
         
-        .notification-form input {
-            flex: 1;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
+        .event-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
         
-        .notification-form button {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+        .event-date {
+            color: var(--primary-color);
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            white-space: nowrap;
         }
         
-        .notification-form button:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
+        .event-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+        }
+        
+        .event-detail i {
+            color: var(--primary-color);
+            width: 16px;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .events-hero h1 {
                 font-size: 2.5rem;
             }
             
-            .events-hero p {
-                font-size: 1.1rem;
+            .featured-grid {
+                grid-template-columns: 1fr;
             }
             
-            .coming-soon-content h2 {
-                font-size: 2rem;
+            .tournaments-grid {
+                grid-template-columns: 1fr;
             }
             
-            .notification-form {
+            .event-header {
                 flex-direction: column;
+                align-items: flex-start;
             }
             
-            .notification-form button {
-                width: 100%;
+            .event-details {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <?php include 'includes/navigation.php'; ?>
 
     <!-- Events Hero Section -->
     <section class="events-hero">
         <div class="container">
-            <h1>Golf Events & Tournaments</h1>
-            <p>Your gateway to Tennessee's premier golf competitions and community events</p>
+            <h1>Tennessee Golf Tournament Central</h1>
+            <p>Complete guide to LIV Golf, PGA Tour, and Tennessee golf tournaments & events</p>
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon-section">
+    <!-- Featured Tournaments -->
+    <section class="featured-section">
         <div class="container">
-            <div class="coming-soon-container">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-calendar-alt"></i>
+            <div class="section-header">
+                <h2>Featured Tournaments</h2>
+                <p>Don't miss these upcoming major tournaments and championship events</p>
+            </div>
+            
+            <div class="featured-grid">
+                <?php foreach ($featured_tournaments as $tournament): ?>
+                <div class="tournament-card">
+                    <div class="tournament-image">
+                        <img src="<?php echo $tournament['image']; ?>" alt="Tournament Logo">
+                        <span class="league-badge league-<?php echo strtolower($tournament['league']); ?>">
+                            <?php echo $tournament['league']; ?>
+                        </span>
+                    </div>
+                    
+                    <div class="tournament-content">
+                        <h3 class="tournament-title"><?php echo htmlspecialchars($tournament['title']); ?></h3>
+                        
+                        <div class="tournament-dates">
+                            <?php 
+                            $start = date('M j', strtotime($tournament['date_start']));
+                            $end = date('j, Y', strtotime($tournament['date_end']));
+                            echo $start . ' - ' . $end;
+                            ?>
+                        </div>
+                        
+                        <div class="tournament-venue">
+                            <i class="fas fa-golf-ball"></i> <?php echo htmlspecialchars($tournament['venue']); ?>
+                        </div>
+                        
+                        <div class="tournament-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <?php echo htmlspecialchars($tournament['location']); ?>
+                        </div>
+                        
+                        <?php if ($tournament['prize_money']): ?>
+                        <div class="prize-money">
+                            Prize Fund: <?php echo $tournament['prize_money']; ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Tournaments -->
+    <section class="professional-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Tournaments</h2>
+                <p>LIV Golf and PGA Tour events to follow</p>
+            </div>
+            
+            <div class="tournaments-grid">
+                <!-- LIV Golf Events -->
+                <div class="league-section">
+                    <div class="league-header">
+                        <div class="league-logo liv">LIV</div>
+                        <div>
+                            <div class="league-title">LIV Golf Events</div>
+                            <p style="color: var(--text-gray); margin: 0;">Professional Golf League</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="tournament-list">
+                        <?php foreach ($professional_tournaments as $tournament): ?>
+                            <?php if ($tournament['league'] === 'LIV'): ?>
+                            <li class="tournament-item">
+                                <div class="tournament-info">
+                                    <h4><?php echo htmlspecialchars($tournament['title']); ?></h4>
+                                    <div class="venue"><?php echo htmlspecialchars($tournament['venue']); ?></div>
+                                    <div class="location"><?php echo htmlspecialchars($tournament['location']); ?></div>
+                                </div>
+                                <div class="tournament-date">
+                                    <?php 
+                                    $start = date('M j', strtotime($tournament['date_start']));
+                                    $end = date('j', strtotime($tournament['date_end']));
+                                    echo $start . '-' . $end;
+                                    ?>
+                                </div>
+                            </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
                 
-                <div class="coming-soon-content">
-                    <h2>Events Calendar Coming Soon</h2>
-                    <p>We're working diligently to bring you Tennessee's most comprehensive golf events platform. Soon, you'll have access to tournaments, charity scrambles, member-guest events, and competitive championships across the Volunteer State.</p>
-                    
-                    <div class="features-preview">
-                        <div class="feature-card">
-                            <i class="fas fa-trophy"></i>
-                            <h3>Tournament Listings</h3>
-                            <p>Browse upcoming amateur and professional tournaments at courses throughout Tennessee</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <i class="fas fa-heart"></i>
-                            <h3>Charity Events</h3>
-                            <p>Find and participate in charity golf scrambles supporting local causes and organizations</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <i class="fas fa-users"></i>
-                            <h3>Social Competitions</h3>
-                            <p>Connect with member-guest events, couples tournaments, and social golf gatherings</p>
+                <!-- PGA Tour Events -->
+                <div class="league-section">
+                    <div class="league-header">
+                        <div class="league-logo pga">PGA</div>
+                        <div>
+                            <div class="league-title">PGA Tour Events</div>
+                            <p style="color: var(--text-gray); margin: 0;">Professional Golfers' Association</p>
                         </div>
                     </div>
                     
-                    <div class="notification-signup">
-                        <h3>Be the First to Know</h3>
-                        <p>Register for updates and we'll notify you when our events calendar launches</p>
-                        <form class="notification-form" onsubmit="handleNotificationSignup(event)">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit">Notify Me</button>
-                        </form>
+                    <ul class="tournament-list">
+                        <?php foreach ($professional_tournaments as $tournament): ?>
+                            <?php if ($tournament['league'] === 'PGA'): ?>
+                            <li class="tournament-item">
+                                <div class="tournament-info">
+                                    <h4><?php echo htmlspecialchars($tournament['title']); ?></h4>
+                                    <div class="venue"><?php echo htmlspecialchars($tournament['venue']); ?></div>
+                                    <div class="location"><?php echo htmlspecialchars($tournament['location']); ?></div>
+                                </div>
+                                <div class="tournament-date">
+                                    <?php 
+                                    $start = date('M j', strtotime($tournament['date_start']));
+                                    $end = date('j', strtotime($tournament['date_end']));
+                                    echo $start . '-' . $end;
+                                    ?>
+                                </div>
+                            </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tennessee Local Events -->
+    <section class="tennessee-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tennessee Golf Events</h2>
+                <p>Local tournaments, championships, and golf events across Tennessee</p>
+            </div>
+            
+            <div class="events-list">
+                <?php foreach ($tennessee_events as $event): ?>
+                <div class="event-card">
+                    <div class="event-header">
+                        <div>
+                            <h3 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h3>
+                            <div class="event-date">
+                                <?php 
+                                if ($event['date_start'] === $event['date_end']) {
+                                    echo date('F j, Y', strtotime($event['date_start']));
+                                } else {
+                                    $start = date('M j', strtotime($event['date_start']));
+                                    $end = date('j, Y', strtotime($event['date_end']));
+                                    echo $start . ' - ' . $end;
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <i class="fas fa-golf-ball"></i>
+                            <span><?php echo htmlspecialchars($event['venue']); ?></span>
+                        </div>
+                        
+                        <div class="event-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><?php echo htmlspecialchars($event['location']); ?></span>
+                        </div>
+                        
+                        <div class="event-detail">
+                            <i class="fas fa-users"></i>
+                            <span><?php echo htmlspecialchars($event['organizer']); ?></span>
+                        </div>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -256,13 +707,5 @@ session_start();
 
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
-    
-    <script>
-        function handleNotificationSignup(event) {
-            event.preventDefault();
-            alert('Thank you for your interest! We\'ll notify you when our events calendar launches.');
-            event.target.reset();
-        }
-    </script>
 </body>
 </html>
