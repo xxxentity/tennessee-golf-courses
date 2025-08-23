@@ -195,7 +195,26 @@ try {
         }
         
         .photo-gallery {
-            margin: 4rem 0;
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #2c5234;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .gallery-grid {
@@ -307,19 +326,8 @@ try {
         }
         
         .reviews-section {
-            background: #f8f9fa;
+            background: #ffffff;
             padding: 4rem 0;
-        }
-        
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
         
         .review-form {
@@ -643,7 +651,21 @@ try {
                 
                 <p>Windyke Country Club stands as Memphis's premier private golf facility, offering a truly exceptional experience since 1962. Founded by Mr. Dykema with the vision of creating a family-oriented country club that was affordable and inclusive rather than expensive and exclusive, Windyke has remained true to this philosophy for over six decades.</p>
                 
-                <p>The club features two championship 18-hole courses - the East Course and West Course - plus an 18-hole Executive par-3 course designed to promote junior golf. Both championship courses feature Champion Bermuda grass greens and Tifway 419 Bermuda grass fairways, providing consistent playing conditions year-round. The East Course offers a challenging 7,211 yards from the back tees, while the West Course plays to 6,813 yards, both providing excellent tests of golf for players of all skill levels.</p>
+                <br>
+                
+                <p>The club features two championship 18-hole courses - the East Course and West Course - plus an 18-hole Executive par-3 course designed to promote junior golf. Both championship courses feature Champion Bermuda grass greens and Tifway 419 Bermuda grass fairways, providing consistent playing conditions year-round.</p>
+                
+                <br>
+                
+                <p>The East Course offers a challenging 7,211 yards from the back tees with a course rating of 75.0 and slope rating of 134, making it one of Memphis's most challenging tests of golf. The West Course plays to 6,813 yards with a course rating of 72.6 and slope rating of 130, providing an excellent balance of challenge and playability for golfers of all skill levels.</p>
+                
+                <br>
+                
+                <p>What truly sets Windyke apart is its unique 54-hole layout and family-first atmosphere. The 18-hole Executive par-3 course serves as an ideal training ground for junior golfers and a perfect option for beginners or those seeking a quicker round. This thoughtful design reflects the club's commitment to developing the next generation of golfers.<br><br></p>
+                
+                <p>Originally designed by John Frazier with later enhancements by William Amick, the courses showcase mature tree-lined fairways and well-maintained playing surfaces that have hosted countless memorable rounds over the decades. The club's dedication to course conditioning and member satisfaction has made it a cornerstone of Memphis golf.<br><br></p>
+                
+                <p>Beyond golf, Windyke offers a complete country club experience with swimming facilities, tennis courts, fine dining, and a vibrant social calendar. With over 1,000 family members, the club maintains its founding principles of inclusivity and community while providing world-class amenities and service that rival any private club in the Mid-South region.</p>
 
                 <div class="amenities-grid">
                     <div class="amenity-item">
@@ -681,28 +703,48 @@ try {
                 </div>
             </div>
 
-            <!-- Photo Gallery Preview -->
-            <div class="photo-gallery">
-                <h2 style="text-align: center; color: #2c5234; margin-bottom: 2rem;">Course Gallery</h2>
-                <div class="gallery-grid">
-                    <?php for ($i = 2; $i <= 9; $i++): ?>
-                        <div class="gallery-item" style="background-image: url('../images/courses/windyke-country-club/<?php echo $i; ?>.webp');" onclick="openGallery()"></div>
-                    <?php endfor; ?>
-                </div>
-                <div class="gallery-button">
-                    <button class="btn-gallery" onclick="openGallery()">
-                        <i class="fas fa-images"></i> View All Photos
-                    </button>
-                </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Course Gallery</h2>
+                <p>Experience the beauty of Windyke Country Club</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../images/courses/windyke-country-club/2.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/windyke-country-club/3.webp');"></div>
+                <div class="gallery-item" style="background-image: url('../images/courses/windyke-country-club/4.webp');"></div>
+            </div>
+            <div class="gallery-button">
+                <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Windyke Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <?php for ($i = 1; $i <= 25; $i++): ?>
+                    <div class="full-gallery-item" style="background-image: url('../images/courses/windyke-country-club/<?php echo $i; ?>.webp');"></div>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-header">
-                <h2>Course Reviews</h2>
+            <div class="section-header">
+                <h2>What Golfers Are Saying</h2>
+                <p>Read reviews from golfers who have experienced Windyke Country Club</p>
             </div>
 
             <?php if ($is_logged_in): ?>
