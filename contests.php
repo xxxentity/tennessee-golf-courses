@@ -1,6 +1,7 @@
 <?php
 // Include session security
 require_once 'includes/session-security.php';
+require_once 'includes/csrf.php';
 
 // Start secure session
 try {
@@ -733,8 +734,11 @@ $days_remaining = $interval->days;
                 </div>
             <?php else: ?>
                 <!-- Logged In and Verified - Show Entry Form -->
-                <form class="entry-form" id="contestForm">
+                <form class="entry-form" id="contestForm" action="/contests-submit" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="contest_id" value="<?php echo $active_contest['id']; ?>">
+                    <?php if (function_exists('CSRFProtection')): ?>
+                    <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::generateToken(); ?>">
+                    <?php endif; ?>
                     
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -1164,21 +1168,52 @@ $days_remaining = $interval->days;
         document.getElementById('contestForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // In production, this would submit to a backend
-            alert('Thank you for entering! We\'ll notify winners via email. Good luck!');
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Reset form
-            this.reset();
+            // Disable submit button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Entry...';
             
-            // Reset file upload label
-            const fileLabel = document.querySelector('.file-upload-label');
-            if (fileLabel) {
-                fileLabel.innerHTML = `
-                    <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
-                    <span>Click to upload or drag and drop</span><br>
-                    <small style="color: var(--text-gray);">JPG, PNG or WEBP (MAX. 5MB)</small>
-                `;
-            }
+            // Create FormData for file upload support
+            const formData = new FormData(form);
+            
+            // Submit form via AJAX
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Success - show message and reset form
+                    alert(data.message);
+                    form.reset();
+                    
+                    // Reset file upload label
+                    const fileLabel = document.querySelector('.file-upload-label');
+                    if (fileLabel) {
+                        fileLabel.innerHTML = `
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                            <span>Click to upload or drag and drop</span><br>
+                            <small style="color: var(--text-gray);">JPG, PNG or WEBP (MAX. 5MB)</small>
+                        `;
+                    }
+                } else {
+                    // Error - show error message
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                alert('An error occurred while submitting your entry. Please try again.');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            });
         });
 
     </script>
