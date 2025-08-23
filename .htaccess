@@ -59,6 +59,7 @@ RewriteRule ^contests-submit/?$ contests-submit.php [L]
 RewriteRule ^test-contest-submit/?$ test-contest-submit.php [L]
 RewriteRule ^clear-test-entries/?$ clear-test-entries.php [L]
 RewriteRule ^test-upload/?$ test-upload.php [L]
+RewriteRule ^debug-photo-upload/?$ debug-photo-upload.php [L]
 RewriteRule ^media/?$ media.php [L]
 RewriteRule ^maps/?$ maps.php [L]
 
