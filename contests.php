@@ -101,7 +101,7 @@ $days_remaining = $interval->days;
     <style>
         /* Contest Hero Section */
         .contest-hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/contests/golf-contest-hero.webp');
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             background-size: cover;
             background-position: center;
             min-height: 85vh;
@@ -734,7 +734,7 @@ $days_remaining = $interval->days;
                 </div>
             <?php else: ?>
                 <!-- Logged In and Verified - Show Entry Form -->
-                <form class="entry-form" id="contestForm" action="/test-contest-submit.php" method="POST" enctype="multipart/form-data">
+                <form class="entry-form" id="contestForm" action="/test-contest-submit" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="contest_id" value="<?php echo $active_contest['id']; ?>">
                     <?php 
                     // Generate CSRF token

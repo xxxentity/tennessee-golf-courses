@@ -56,6 +56,7 @@ RewriteRule ^search-courses.php$ search-courses.php [L]
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^contests/?$ contests.php [L]
 RewriteRule ^contests-submit/?$ contests-submit.php [L]
+RewriteRule ^test-contest-submit/?$ test-contest-submit.php [L]
 RewriteRule ^media/?$ media.php [L]
 RewriteRule ^maps/?$ maps.php [L]
 
