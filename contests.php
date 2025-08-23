@@ -14,7 +14,11 @@ try {
 // Check if user is logged in (verified users only can log in)
 $is_logged_in = SecureSession::isLoggedIn();
 
-// Real contest data - customize this for your active contest
+// Contest configuration - set to null when no active contest
+$active_contest = null; // Set to null when no contest is running
+
+// Example contest data structure for when you want to run a contest:
+/*
 $active_contest = [
     'id' => 1,
     'title' => 'Tennessee Golf Photo Contest',
@@ -22,7 +26,7 @@ $active_contest = [
     'description' => 'Share your best golf course photo from any Tennessee course for a chance to win amazing prizes!',
     'prize' => 'Pro Shop Gift Card',
     'prize_value' => '$250',
-    'end_date' => '2025-12-31', // Update this date when you launch a real contest
+    'end_date' => '2025-12-31',
     'image' => '/images/logos/logo.webp'
 ];
 
@@ -34,6 +38,7 @@ try {
 } catch (Exception $e) {
     $active_contest['entries'] = 0;
 }
+*/
 
 // Get recent winners from database
 $past_winners = [];
@@ -63,11 +68,14 @@ try {
     // Keep empty array if no winners yet
 }
 
-// Calculate days remaining
-$end_date = new DateTime($active_contest['end_date']);
-$today = new DateTime();
-$interval = $today->diff($end_date);
-$days_remaining = $interval->days;
+// Calculate days remaining (only if there's an active contest)
+$days_remaining = 0;
+if ($active_contest) {
+    $end_date = new DateTime($active_contest['end_date']);
+    $today = new DateTime();
+    $interval = $today->diff($end_date);
+    $days_remaining = $interval->days;
+}
 ?>
 
 <!DOCTYPE html>
@@ -616,43 +624,65 @@ $days_remaining = $interval->days;
     <!-- Contest Hero Section -->
     <section class="contest-hero">
         <div class="contest-hero-content">
-            <div class="contest-info">
-                <span class="contest-type"><?php echo $active_contest['type']; ?> Contest</span>
-                <h1><?php echo $active_contest['title']; ?></h1>
-                <p class="contest-description"><?php echo $active_contest['description']; ?></p>
+            <?php if ($active_contest): ?>
+                <div class="contest-info">
+                    <span class="contest-type"><?php echo $active_contest['type']; ?> Contest</span>
+                    <h1><?php echo $active_contest['title']; ?></h1>
+                    <p class="contest-description"><?php echo $active_contest['description']; ?></p>
+                    
+                    <div class="prize-showcase">
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">Grand Prize</p>
+                        <div class="prize-value"><?php echo $active_contest['prize_value']; ?></div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0;"><?php echo $active_contest['prize']; ?></h3>
+                    </div>
+                </div>
                 
-                <div class="prize-showcase">
-                    <p style="opacity: 0.9; margin-bottom: 0.5rem;">Grand Prize</p>
-                    <div class="prize-value"><?php echo $active_contest['prize_value']; ?></div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0;"><?php echo $active_contest['prize']; ?></h3>
-                </div>
-            </div>
-            
-            <div class="countdown-timer">
-                <p class="countdown-label">Contest Ends In</p>
-                <div class="countdown-numbers">
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="days"><?php echo $days_remaining; ?></span>
-                        <span class="countdown-text">Days</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-text">Hours</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-text">Minutes</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-text">Seconds</span>
+                <div class="countdown-timer">
+                    <p class="countdown-label">Contest Ends In</p>
+                    <div class="countdown-numbers">
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="days"><?php echo $days_remaining; ?></span>
+                            <span class="countdown-text">Days</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-text">Hours</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-text">Minutes</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-text">Seconds</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <div class="no-contest-message" style="grid-column: 1 / -1; text-align: center;">
+                    <i class="fas fa-trophy" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.7;"></i>
+                    <h1>No Active Contest</h1>
+                    <p class="contest-description">There are currently no active contests. Check back soon for exciting new opportunities to win amazing prizes!</p>
+                    
+                    <?php if (!$is_logged_in): ?>
+                        <div style="margin-top: 2rem;">
+                            <p style="opacity: 0.9; margin-bottom: 1rem;">Stay ready for the next contest!</p>
+                            <a href="/register" class="btn btn-white" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; transition: all 0.3s ease;">
+                                Create Account
+                            </a>
+                        </div>
+                    <?php else: ?>
+                        <div style="margin-top: 2rem;">
+                            <p style="opacity: 0.9;">You're all set! We'll notify you when the next contest begins.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 
     <!-- Entry Form Section -->
+    <?php if ($active_contest): ?>
     <section class="entry-form-section">
         <div class="entry-form-container">
             <div class="form-header">
@@ -793,6 +823,7 @@ $days_remaining = $interval->days;
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <!-- Past Winners -->
     <section class="winners-section">
@@ -942,6 +973,7 @@ $days_remaining = $interval->days;
         ];
     </script>
     <script>
+        <?php if ($active_contest): ?>
         // Countdown Timer
         function updateCountdown() {
             const endDate = new Date('<?php echo $active_contest['end_date']; ?>T23:59:59').getTime();
@@ -965,6 +997,7 @@ $days_remaining = $interval->days;
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+        <?php endif; ?>
 
         // Toggle Rules
         function toggleRules() {
