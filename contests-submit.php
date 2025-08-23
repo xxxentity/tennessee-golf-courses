@@ -71,35 +71,70 @@ try {
     
     // Handle photo upload if present
     $photo_path = null;
-    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        // Simple secure upload handling
-        $upload_dir = 'uploads/contest_photos/';
-        $allowed_types = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-        $max_size = 5 * 1024 * 1024; // 5MB
+    if (isset($_FILES['photo'])) {
+        error_log("Photo upload attempt - Error code: " . $_FILES['photo']['error']);
+        error_log("Photo upload attempt - File type: " . ($_FILES['photo']['type'] ?? 'unknown'));
+        error_log("Photo upload attempt - File size: " . ($_FILES['photo']['size'] ?? 'unknown'));
         
-        // Validate file type
-        if (!in_array($_FILES['photo']['type'], $allowed_types)) {
-            throw new Exception('Invalid file type. Please upload JPG, PNG, or WEBP images only.');
-        }
-        
-        // Validate file size
-        if ($_FILES['photo']['size'] > $max_size) {
-            throw new Exception('File too large. Maximum size is 5MB.');
-        }
-        
-        // Create upload directory if it doesn't exist
-        if (!is_dir($upload_dir)) {
-            mkdir($upload_dir, 0755, true);
-        }
-        
-        // Generate unique filename
-        $file_ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
-        $filename = 'contest_' . $contest_id . '_' . $user_id . '_' . uniqid() . '.' . $file_ext;
-        $photo_path = $upload_dir . $filename;
-        
-        // Move uploaded file
-        if (!move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path)) {
-            throw new Exception('Failed to save uploaded photo.');
+        if ($_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+            // Simple secure upload handling
+            $upload_dir = 'uploads/contest_photos/';
+            $allowed_types = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+            $max_size = 5 * 1024 * 1024; // 5MB
+            
+            // Validate file type
+            if (!in_array($_FILES['photo']['type'], $allowed_types)) {
+                error_log("Photo upload failed - Invalid file type: " . $_FILES['photo']['type']);
+                throw new Exception('Invalid file type. Please upload JPG, PNG, or WEBP images only.');
+            }
+            
+            // Validate file size
+            if ($_FILES['photo']['size'] > $max_size) {
+                error_log("Photo upload failed - File too large: " . $_FILES['photo']['size']);
+                throw new Exception('File too large. Maximum size is 5MB.');
+            }
+            
+            // Create upload directory if it doesn't exist
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0755, true);
+                error_log("Created upload directory: " . $upload_dir);
+            }
+            
+            // Generate unique filename
+            $file_ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
+            $filename = 'contest_' . $contest_id . '_' . $user_id . '_' . uniqid() . '.' . $file_ext;
+            $photo_path = $upload_dir . $filename;
+            
+            error_log("Attempting to save photo to: " . $photo_path);
+            
+            // Move uploaded file
+            if (!move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path)) {
+                error_log("Photo upload failed - move_uploaded_file returned false");
+                error_log("Source: " . $_FILES['photo']['tmp_name']);
+                error_log("Destination: " . $photo_path);
+                throw new Exception('Failed to save uploaded photo.');
+            } else {
+                error_log("Photo uploaded successfully: " . $photo_path);
+            }
+        } else {
+            // Log upload errors
+            $upload_errors = [
+                UPLOAD_ERR_INI_SIZE => 'File exceeds upload_max_filesize',
+                UPLOAD_ERR_FORM_SIZE => 'File exceeds MAX_FILE_SIZE',
+                UPLOAD_ERR_PARTIAL => 'File was only partially uploaded',
+                UPLOAD_ERR_NO_FILE => 'No file was uploaded',
+                UPLOAD_ERR_NO_TMP_DIR => 'Missing temporary folder',
+                UPLOAD_ERR_CANT_WRITE => 'Failed to write file to disk',
+                UPLOAD_ERR_EXTENSION => 'Upload stopped by extension'
+            ];
+            
+            $error_msg = $upload_errors[$_FILES['photo']['error']] ?? 'Unknown upload error';
+            error_log("Photo upload error: " . $error_msg);
+            
+            // Don't throw exception for no file uploaded, that's optional
+            if ($_FILES['photo']['error'] !== UPLOAD_ERR_NO_FILE) {
+                throw new Exception('Photo upload error: ' . $error_msg);
+            }
         }
     }
     
