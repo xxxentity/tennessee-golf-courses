@@ -249,6 +249,29 @@ foreach ($all_events as $event) {
     }
     $events_by_month[$month_year][$event['type']][] = $event;
 }
+
+// Add empty months for full year view
+$months_2025 = [
+    'January 2025', 'February 2025', 'March 2025', 'April 2025', 
+    'May 2025', 'June 2025', 'July 2025', 'August 2025',
+    'September 2025', 'October 2025', 'November 2025', 'December 2025'
+];
+
+// Ensure all months are represented
+foreach ($months_2025 as $month) {
+    if (!isset($events_by_month[$month])) {
+        $events_by_month[$month] = ['professional' => [], 'local' => []];
+    }
+}
+
+// Sort months chronologically
+$sorted_events = [];
+foreach ($months_2025 as $month) {
+    if (isset($events_by_month[$month])) {
+        $sorted_events[$month] = $events_by_month[$month];
+    }
+}
+$events_by_month = $sorted_events;
 ?>
 
 <!DOCTYPE html>
