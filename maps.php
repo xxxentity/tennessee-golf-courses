@@ -588,6 +588,22 @@ session_start();
                 coordinates: [-83.98489, 35.93483]
             },
             {
+                name: "Chickasaw Country Club",
+                address: "3395 Galloway Ave, Memphis, TN 38122",
+                phone: "(901) 323-6216",
+                type: "Private",
+                slug: "chickasaw-country-club",
+                coordinates: [-89.8472, 35.1217]
+            },
+            {
+                name: "Chickasaw Golf Course",
+                address: "9555 State Route 100 W, Henderson, TN 38340",
+                phone: "(731) 989-3111",
+                type: "Public",
+                slug: "chickasaw-golf-course",
+                coordinates: [-88.6419, 35.4392]
+            },
+            {
                 name: "Clarksville Country Club",
                 address: "334 Fairway Dr, Clarksville, TN 37043",
                 phone: "",
@@ -794,6 +810,14 @@ session_start();
                 type: "Municipal",
                 slug: "mccabe-golf-course",
                 coordinates: [-86.84533, 36.13875]
+            },
+            {
+                name: "Memphis Country Club",
+                address: "600 Goodwyn Street, Memphis, TN 38111",
+                phone: "(901) 452-2131",
+                type: "Private",
+                slug: "memphis-country-club",
+                coordinates: [-89.9011, 35.1195]
             },
             {
                 name: "Mirimichi Golf Course",
@@ -1194,6 +1218,14 @@ session_start();
                 type: "Public",
                 slug: "willow-creek-golf-club",
                 coordinates: [-84.182627985339, 35.87170299416]
+            },
+            {
+                name: "Windyke Country Club",
+                address: "8535 Winchester Road, Memphis, TN 38125",
+                phone: "(901) 754-7273",
+                type: "Private",
+                slug: "windyke-country-club",
+                coordinates: [-89.7778, 35.0364]
             },
             {
                 name: "Windtree Golf Course",
