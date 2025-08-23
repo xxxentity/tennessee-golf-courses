@@ -734,7 +734,7 @@ $days_remaining = $interval->days;
                 </div>
             <?php else: ?>
                 <!-- Logged In and Verified - Show Entry Form -->
-                <form class="entry-form" id="contestForm" action="/contests-submit" method="POST" enctype="multipart/form-data">
+                <form class="entry-form" id="contestForm" action="/test-contest-submit.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="contest_id" value="<?php echo $active_contest['id']; ?>">
                     <?php 
                     // Generate CSRF token
@@ -1226,7 +1226,13 @@ $days_remaining = $interval->days;
             })
             .catch(error => {
                 console.error('Submission error:', error);
-                alert('An error occurred while submitting your entry. Please try again.');
+                console.error('Error details:', error.message);
+                console.error('Form action:', form.action);
+                console.error('FormData contents:');
+                for (let [key, value] of formData.entries()) {
+                    console.log(key + ':', value);
+                }
+                alert('An error occurred while submitting your entry: ' + error.message + '\n\nPlease check the browser console for details and try again.');
             })
             .finally(() => {
                 // Re-enable submit button
