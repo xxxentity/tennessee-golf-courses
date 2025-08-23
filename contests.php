@@ -104,12 +104,13 @@ $days_remaining = $interval->days;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/contests/golf-contest-hero.webp');
             background-size: cover;
             background-position: center;
-            min-height: 70vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             color: white;
             position: relative;
             overflow: hidden;
+            padding-bottom: 3rem;
         }
         
         .contest-hero-content {
@@ -202,7 +203,7 @@ $days_remaining = $interval->days;
             background: white;
             padding: 4rem 0;
             position: relative;
-            margin-top: 0;
+            margin-top: 2rem;
             z-index: 10;
             border-radius: 0;
             box-shadow: none;
