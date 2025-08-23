@@ -584,20 +584,20 @@ try {
                             <span class="spec-value">$49.43</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Greens:</span>
-                            <span class="spec-value">Champion Bermuda</span>
+                            <span class="spec-label">18-Hole Weekday Guest Fee:</span>
+                            <span class="spec-value">$75.00</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Fairways:</span>
-                            <span class="spec-value">Tifway 419 Bermuda</span>
+                            <span class="spec-label">Cart Fee (18 Holes):</span>
+                            <span class="spec-value">$20.00</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Rating (East):</span>
-                            <span class="spec-value">75.0 / Slope 134</span>
+                            <span class="spec-label">Cart Fee (9 Holes):</span>
+                            <span class="spec-value">$12.00</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Course Rating (West):</span>
-                            <span class="spec-value">72.6 / Slope 130</span>
+                            <span class="spec-label">Range Ball Fee:</span>
+                            <span class="spec-value">$7.50</span>
                         </div>
                     </div>
                 </div>
