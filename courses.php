@@ -513,6 +513,24 @@ $courses_static = [
         'slug' => 'mccabe-golf-course'
     ],
     [
+        'id' => 122,
+        'name' => 'Memphis Country Club',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'One of the South\'s most exclusive private clubs since 1905. Donald Ross masterpiece known as "the hardest easy golf course in America." Hosted 4 USGA championships.',
+        'image' => '/images/courses/memphis-country-club/1.webp',
+        'price_range' => 'Call for Pricing',
+        'difficulty' => 'Expert',
+        'holes' => 18,
+        'par' => 70,
+        'yardage' => 6717,
+        'designer' => 'Donald Ross',
+        'course_type' => 'Private',
+        'opened' => 1915,
+        'amenities' => ['Championship Golf', '4 USGA Championships', 'Tennis Courts', 'Pickleball Courts', '1905 Restaurant & Bar', 'Health Facilities', 'Guest Rooms', 'Swimming Pool'],
+        'slug' => 'memphis-country-club'
+    ],
+    [
         'id' => 39,
         'name' => 'Mirimichi Golf Course',
         'location' => 'Millington, TN',

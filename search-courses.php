@@ -41,6 +41,7 @@ $courses = [
     ['name' => 'Island Pointe Golf Club', 'location' => 'Kodak, TN', 'slug' => 'island-pointe-golf-club'],
     ['name' => 'Jackson Country Club', 'location' => 'Jackson, TN', 'slug' => 'jackson-country-club'],
     ['name' => 'McCabe Golf Course', 'location' => 'Nashville, TN', 'slug' => 'mccabe-golf-course'],
+    ['name' => 'Memphis Country Club', 'location' => 'Memphis, TN', 'slug' => 'memphis-country-club'],
     ['name' => 'Mirimichi Golf Course', 'location' => 'Millington, TN', 'slug' => 'mirimichi-golf-course'],
     ['name' => 'Montgomery Bell State Park Golf Course', 'location' => 'Burns, TN', 'slug' => 'montgomery-bell-state-park-golf-course'],
     ['name' => 'Nashville National Golf Links', 'location' => 'Joelton, TN', 'slug' => 'nashville-national-golf-links'],
