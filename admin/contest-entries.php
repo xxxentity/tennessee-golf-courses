@@ -1,9 +1,9 @@
 <?php
-require_once '../includes/admin-security.php';
+require_once '../includes/admin-security-simple.php';
 require_once '../config/database.php';
 
-// Check admin authentication
-AdminSecurity::requireAuth();
+// Require admin authentication
+AdminSecurity::requireAdminAuth();
 
 // Get filters
 $status_filter = $_GET['status'] ?? 'all';
