@@ -3,7 +3,6 @@ require_once 'includes/session-security.php';
 require_once 'config/database.php';
 require_once 'includes/csrf.php';
 require_once 'includes/input-validation.php';
-require_once 'includes/secure-upload.php';
 
 // Start secure session
 try {
@@ -73,18 +72,34 @@ try {
     // Handle photo upload if present
     $photo_path = null;
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        // Validate file
-        $upload_result = SecureUpload::handleImageUpload($_FILES['photo'], [
-            'allowed_types' => ['jpg', 'jpeg', 'png', 'webp'],
-            'max_size' => 5 * 1024 * 1024, // 5MB
-            'destination' => 'uploads/contest_photos/',
-            'prefix' => 'contest_' . $contest_id . '_'
-        ]);
+        // Simple secure upload handling
+        $upload_dir = 'uploads/contest_photos/';
+        $allowed_types = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+        $max_size = 5 * 1024 * 1024; // 5MB
         
-        if ($upload_result['success']) {
-            $photo_path = $upload_result['file_path'];
-        } else {
-            throw new Exception('Photo upload failed: ' . $upload_result['message']);
+        // Validate file type
+        if (!in_array($_FILES['photo']['type'], $allowed_types)) {
+            throw new Exception('Invalid file type. Please upload JPG, PNG, or WEBP images only.');
+        }
+        
+        // Validate file size
+        if ($_FILES['photo']['size'] > $max_size) {
+            throw new Exception('File too large. Maximum size is 5MB.');
+        }
+        
+        // Create upload directory if it doesn't exist
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0755, true);
+        }
+        
+        // Generate unique filename
+        $file_ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
+        $filename = 'contest_' . $contest_id . '_' . $user_id . '_' . uniqid() . '.' . $file_ext;
+        $photo_path = $upload_dir . $filename;
+        
+        // Move uploaded file
+        if (!move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path)) {
+            throw new Exception('Failed to save uploaded photo.');
         }
     }
     

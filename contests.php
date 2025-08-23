@@ -734,7 +734,7 @@ $days_remaining = $interval->days;
                 </div>
             <?php else: ?>
                 <!-- Logged In and Verified - Show Entry Form -->
-                <form class="entry-form" id="contestForm" action="/test-contest-submit" method="POST" enctype="multipart/form-data">
+                <form class="entry-form" id="contestForm" action="/contests-submit" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="contest_id" value="<?php echo $active_contest['id']; ?>">
                     <?php 
                     // Generate CSRF token
