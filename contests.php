@@ -202,10 +202,10 @@ $days_remaining = $interval->days;
             background: white;
             padding: 4rem 0;
             position: relative;
-            margin-top: -50px;
+            margin-top: 0;
             z-index: 10;
-            border-radius: 30px 30px 0 0;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+            border-radius: 0;
+            box-shadow: none;
         }
         
         .entry-form-container {
