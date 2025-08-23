@@ -122,6 +122,8 @@ try {
                 throw new Exception('Failed to save uploaded photo.');
             } else {
                 error_log("Photo uploaded successfully: " . $photo_path);
+                error_log("Photo file exists after upload: " . (file_exists($photo_path) ? 'YES' : 'NO'));
+                error_log("Photo file size after upload: " . filesize($photo_path) . " bytes");
             }
         } else {
             // Log upload errors
@@ -150,6 +152,8 @@ try {
     $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
     
     // Insert contest entry
+    error_log("About to insert entry with photo_path: " . ($photo_path ?? 'NULL'));
+    
     $stmt = $pdo->prepare("
         INSERT INTO contest_entries (
             user_id, contest_id, full_name, email, phone, city, state,
@@ -163,6 +167,8 @@ try {
         $favorite_course, $photo_path, $photo_caption, $newsletter_signup,
         $client_ip, $user_agent
     ]);
+    
+    error_log("Database insert success: " . ($success ? 'YES' : 'NO'));
     
     if (!$success) {
         throw new Exception('Failed to submit contest entry. Please try again.');
