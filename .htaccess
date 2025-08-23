@@ -54,6 +54,7 @@ RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 RewriteRule ^search-courses.php$ search-courses.php [L]
 
 RewriteRule ^community/?$ community.php [L]
+RewriteRule ^contests/?$ contests.php [L]
 RewriteRule ^media/?$ media.php [L]
 RewriteRule ^maps/?$ maps.php [L]
 
