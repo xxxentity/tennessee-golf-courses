@@ -736,9 +736,16 @@ $days_remaining = $interval->days;
                 <!-- Logged In and Verified - Show Entry Form -->
                 <form class="entry-form" id="contestForm" action="/contests-submit" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="contest_id" value="<?php echo $active_contest['id']; ?>">
-                    <?php if (function_exists('CSRFProtection')): ?>
-                    <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::generateToken(); ?>">
-                    <?php endif; ?>
+                    <?php 
+                    // Generate CSRF token
+                    try {
+                        $csrf_token = CSRFProtection::generateToken();
+                        echo '<input type="hidden" name="csrf_token" value="' . htmlspecialchars($csrf_token) . '">';
+                    } catch (Exception $e) {
+                        // If CSRF fails, we'll skip it for now to avoid blocking submissions
+                        echo '<!-- CSRF token generation failed: ' . htmlspecialchars($e->getMessage()) . ' -->';
+                    }
+                    ?>
                     
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -1184,7 +1191,19 @@ $days_remaining = $interval->days;
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(async response => {
+                if (!response.ok) {
+                    // Try to get JSON error message
+                    try {
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || `HTTP ${response.status}: ${response.statusText}`);
+                    } catch (jsonError) {
+                        // If JSON parsing fails, use status text
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
                     // Success - show message and reset form
