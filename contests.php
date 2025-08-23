@@ -9,9 +9,8 @@ try {
     // Session expired or invalid - user not logged in
 }
 
-// Check if user is logged in and verified
+// Check if user is logged in (verified users only can log in)
 $is_logged_in = SecureSession::isLoggedIn();
-$is_verified = $is_logged_in ? SecureSession::get('email_verified', false) : false;
 
 // Sample contest data (in production, this would come from database)
 $active_contest = [
@@ -302,21 +301,6 @@ $days_remaining = $interval->days;
         .btn-register:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        
-        .verify-warning {
-            background: #fff3cd;
-            color: #856404;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .verify-warning i {
-            font-size: 1.5rem;
         }
         
         .entry-form {
@@ -684,24 +668,6 @@ $days_remaining = $interval->days;
                         <a href="/register?redirect=contests" class="btn-auth btn-register">Create Account</a>
                     </div>
                 </div>
-            <?php elseif (!$is_verified): ?>
-                <!-- Logged In but Not Verified -->
-                <div class="auth-gate">
-                    <div class="verify-warning">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <strong>Email Verification Required</strong><br>
-                            Please verify your email address to enter contests. Check your inbox for the verification link.
-                        </div>
-                    </div>
-                    <i class="fas fa-envelope auth-gate-icon"></i>
-                    <h3>Verify Your Email</h3>
-                    <p>Contest entries require a verified email address. This helps us contact winners and ensures fair participation.</p>
-                    <div class="auth-buttons">
-                        <a href="/profile" class="btn-auth btn-login">Go to Profile</a>
-                        <button class="btn-auth btn-register" onclick="resendVerification()">Resend Verification Email</button>
-                    </div>
-                </div>
             <?php else: ?>
                 <!-- Logged In and Verified - Show Entry Form -->
                 <form class="entry-form" id="contestForm">
@@ -954,11 +920,6 @@ $days_remaining = $interval->days;
             }
         });
 
-        // Resend Verification
-        function resendVerification() {
-            // In production, this would call the backend
-            alert('Verification email has been resent. Please check your inbox.');
-        }
     </script>
 </body>
 </html>
