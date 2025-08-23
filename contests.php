@@ -314,6 +314,17 @@ $days_remaining = $interval->days;
             margin-bottom: 2rem;
         }
         
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+        
         .form-group label {
             display: block;
             font-weight: 600;
@@ -367,6 +378,49 @@ $days_remaining = $interval->days;
         
         .file-upload-label:hover {
             background: var(--bg-light);
+        }
+        
+        /* Autocomplete Styling */
+        .autocomplete-wrapper {
+            position: relative;
+        }
+        
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .autocomplete-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+        }
+        
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+        
+        .autocomplete-item:hover,
+        .autocomplete-item.selected {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+        
+        .autocomplete-no-results {
+            padding: 0.75rem 1rem;
+            color: var(--text-gray);
+            font-style: italic;
         }
         
         .submit-btn {
@@ -603,6 +657,15 @@ $days_remaining = $interval->days;
             .btn-auth {
                 width: 100%;
             }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .form-row .form-group {
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -688,9 +751,27 @@ $days_remaining = $interval->days;
                         <input type="tel" id="phone" name="phone">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="location">City, State *</label>
-                        <input type="text" id="location" name="location" placeholder="e.g., Nashville, TN" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" placeholder="Nashville" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <select id="state" name="state" required>
+                                <option value="">Select State</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="GA">Georgia</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="VA">Virginia</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <?php if ($active_contest['type'] === 'photo'): ?>
@@ -714,15 +795,10 @@ $days_remaining = $interval->days;
                     
                     <div class="form-group">
                         <label for="favorite_course">Favorite Tennessee Golf Course</label>
-                        <select id="favorite_course" name="favorite_course">
-                            <option value="">Select a course...</option>
-                            <option value="belle-meade">Belle Meade Country Club</option>
-                            <option value="bear-trace">Bear Trace at Harrison Bay</option>
-                            <option value="gaylord-springs">Gaylord Springs Golf Links</option>
-                            <option value="hermitage">Hermitage Golf Course</option>
-                            <option value="memphis-country-club">Memphis Country Club</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="favorite_course" name="favorite_course" placeholder="Start typing course name..." autocomplete="off">
+                            <div class="autocomplete-dropdown" id="courseDropdown"></div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -847,6 +923,107 @@ $days_remaining = $interval->days;
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
     <script>
+        // Golf Courses for Autocomplete
+        const golfCourses = [
+            'Avalon Golf & Country Club',
+            'Bear Trace at Tims Ford',
+            'Bear Trace at Cumberland Mountain',
+            'Bear Trace at Harrison Bay',
+            'Belle Acres Golf Course',
+            'Belle Meade Country Club',
+            'Big Creek Golf Club',
+            'Blackthorn Club',
+            'Bluegrass Yacht & Country Club',
+            'Brainerd Golf Course',
+            'Brown Acres Golf Course',
+            'Cedar Crest Golf Club',
+            'Chattanooga Golf & Country Club',
+            'Cheekwood Golf Club',
+            'Cherokee Country Club',
+            'Chickasaw Country Club',
+            'Chickasaw Golf Course',
+            'Clarksville Country Club',
+            'Colonial Country Club',
+            'Council Fire Golf Club',
+            'Cumberland Cove Golf Course',
+            'Dead Horse Lake Golf Course',
+            'Druid Hills Golf Club',
+            'Eagle\'s Landing Golf Club',
+            'Egwani Farms Golf Course',
+            'Fall Creek Falls State Park Golf Course',
+            'Forrest Crossing Golf Course',
+            'Fox Den Country Club',
+            'Gaylord Springs Golf Links',
+            'Greystone Golf Course',
+            'Harpeth Hills Golf Course',
+            'Henry Horton State Park Golf Course',
+            'Hermitage Golf Course',
+            'Hillwood Country Club',
+            'Holston Hills Country Club',
+            'Honky Tonk National Golf Course',
+            'Island Pointe Golf Club',
+            'Jackson Country Club',
+            'Lake Tansi Golf Course',
+            'Lambert Acres Golf Club',
+            'Laurel Valley Country Club',
+            'Lookout Mountain Club',
+            'McCabe Golf Course',
+            'Memphis Country Club',
+            'Mirimichi Golf Course',
+            'Moccasin Bend Golf Course',
+            'Montgomery Bell State Park Golf Course',
+            'Nashville Golf & Athletic Club',
+            'Nashville National Golf Links',
+            'Old Fort Golf Course',
+            'Old Hickory Country Club',
+            'Overton Park 9',
+            'Paris Landing State Park Golf Course',
+            'Percy Warner Golf Course',
+            'Pickwick Landing State Park Golf Course',
+            'Pine Oaks Golf Course',
+            'Richland Country Club',
+            'Ross Creek Landing Golf Course',
+            'Sevierville Golf Club',
+            'Signal Mountain Golf & Country Club',
+            'Southern Hills Golf & Country Club',
+            'Springhouse Golf Club',
+            'Stonehenge Golf Club',
+            'Stones River Country Club',
+            'Sweetens Cove Golf Club',
+            'Tanasi Golf Course',
+            'Ted Rhodes Golf Course',
+            'Temple Hills Country Club',
+            'Tennessee Grasslands Golf & CC - Fairvue',
+            'Tennessee Grasslands Golf & CC - Foxland',
+            'Tennessee National Golf Club',
+            'The Club at Five Oaks',
+            'The Club at Gettysvue',
+            'The Golf Club of Tennessee',
+            'The Governors Club',
+            'The Grove',
+            'The Honors Course',
+            'The Legacy Golf Course',
+            'The Links at Audubon',
+            'The Links at Fox Meadows',
+            'The Links at Galloway',
+            'The Links at Kahite',
+            'The Links at Whitehaven',
+            'Three Ridges Golf Course',
+            'Toqua Golf Course',
+            'TPC Southwind',
+            'Troubadour Golf & Field Club',
+            'Two Rivers Golf Course',
+            'Vanderbilt Legends Club',
+            'Warrior\'s Path State Park Golf Course',
+            'White Plains Golf Course',
+            'Whittle Springs Golf Course',
+            'Williams Creek Golf Course',
+            'Willow Creek Golf Club',
+            'Windyke Country Club',
+            'Windtree Golf Course'
+        ];
+    </script>
+    <script>
         // Countdown Timer
         function updateCountdown() {
             const endDate = new Date('<?php echo $active_contest['end_date']; ?>T23:59:59').getTime();
@@ -884,6 +1061,90 @@ $days_remaining = $interval->days;
                 icon.className = 'fas fa-chevron-down';
             }
         }
+
+        // Autocomplete functionality
+        function setupAutocomplete() {
+            const input = document.getElementById('favorite_course');
+            const dropdown = document.getElementById('courseDropdown');
+            let selectedIndex = -1;
+
+            if (!input || !dropdown) return;
+
+            input.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                dropdown.innerHTML = '';
+                selectedIndex = -1;
+
+                if (query.length === 0) {
+                    dropdown.style.display = 'none';
+                    return;
+                }
+
+                const matches = golfCourses.filter(course => 
+                    course.toLowerCase().includes(query)
+                );
+
+                if (matches.length === 0) {
+                    dropdown.innerHTML = '<div class="autocomplete-no-results">No courses found</div>';
+                    dropdown.style.display = 'block';
+                    return;
+                }
+
+                matches.forEach((course, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'autocomplete-item';
+                    item.textContent = course;
+                    item.addEventListener('click', function() {
+                        input.value = course;
+                        dropdown.style.display = 'none';
+                    });
+                    dropdown.appendChild(item);
+                });
+
+                dropdown.style.display = 'block';
+            });
+
+            input.addEventListener('keydown', function(e) {
+                const items = dropdown.querySelectorAll('.autocomplete-item');
+                
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                    updateSelection(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedIndex = Math.max(selectedIndex - 1, -1);
+                    updateSelection(items);
+                } else if (e.key === 'Enter' && selectedIndex >= 0) {
+                    e.preventDefault();
+                    items[selectedIndex].click();
+                } else if (e.key === 'Escape') {
+                    dropdown.style.display = 'none';
+                    selectedIndex = -1;
+                }
+            });
+
+            function updateSelection(items) {
+                items.forEach((item, index) => {
+                    if (index === selectedIndex) {
+                        item.classList.add('selected');
+                    } else {
+                        item.classList.remove('selected');
+                    }
+                });
+            }
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.style.display = 'none';
+                    selectedIndex = -1;
+                }
+            });
+        }
+
+        // Initialize autocomplete when page loads
+        document.addEventListener('DOMContentLoaded', setupAutocomplete);
 
         // File Upload Preview
         document.getElementById('photo')?.addEventListener('change', function(e) {
