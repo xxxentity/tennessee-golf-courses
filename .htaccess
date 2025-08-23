@@ -71,6 +71,7 @@ RewriteRule ^courses/cumberland-cove-golf-course/?$ courses/cumberland-cove-golf
 RewriteRule ^courses/cherokee-country-club/?$ courses/cherokee-country-club.php [L]
 RewriteRule ^courses/chattanooga-golf-country-club/?$ courses/chattanooga-golf-country-club.php [L]
 RewriteRule ^courses/chickasaw-golf-course/?$ courses/chickasaw-golf-course.php [L]
+RewriteRule ^courses/chickasaw-country-club/?$ courses/chickasaw-country-club.php [L]
 RewriteRule ^courses/council-fire-golf-club/?$ courses/council-fire-golf-club.php [L]
 RewriteRule ^courses/cheekwood-golf-club/?$ courses/cheekwood-golf-club.php [L]
 RewriteRule ^courses/cheekwood-golf-club-test/?$ courses/cheekwood-golf-club-test.php [L]

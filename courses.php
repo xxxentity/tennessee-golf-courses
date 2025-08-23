@@ -225,6 +225,24 @@ $courses_static = [
         'slug' => 'chickasaw-golf-course'
     ],
     [
+        'id' => 121,
+        'name' => 'Chickasaw Country Club',
+        'location' => 'Memphis, TN',
+        'region' => 'Memphis Area',
+        'description' => 'Historic William Langford designed private club since 1922. Site where Byron Nelson\'s 11-tournament streak ended in 1945. Recently renovated with TifEagle Bermuda greens.',
+        'image' => '/images/courses/chickasaw-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'yardage' => 6720,
+        'designer' => 'William Langford',
+        'course_type' => 'Private',
+        'opened' => 1924,
+        'amenities' => ['Championship Golf', 'Byron Nelson History', 'Tennis Courts', 'Olympic Pool', 'Fine Dining', 'Fitness Center', 'Massage Services', 'Pro Shop'],
+        'slug' => 'chickasaw-country-club'
+    ],
+    [
         'id' => 75,
         'name' => 'Chattanooga Golf & Country Club',
         'location' => 'Chattanooga, TN',

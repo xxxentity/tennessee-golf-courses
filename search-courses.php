@@ -24,6 +24,7 @@ $courses = [
     ['name' => 'Cumberland Cove Golf Course', 'location' => 'Monterey, TN', 'slug' => 'cumberland-cove-golf-course'],
     ['name' => 'Cherokee Country Club', 'location' => 'Knoxville, TN', 'slug' => 'cherokee-country-club'],
     ['name' => 'Chickasaw Golf Course', 'location' => 'Henderson, TN', 'slug' => 'chickasaw-golf-course'],
+    ['name' => 'Chickasaw Country Club', 'location' => 'Memphis, TN', 'slug' => 'chickasaw-country-club'],
     ['name' => 'Clarksville Country Club', 'location' => 'Clarksville, TN', 'slug' => 'clarksville-country-club'],
     ['name' => 'Colonial Country Club', 'location' => 'Cordova, TN', 'slug' => 'colonial-country-club'],
     ['name' => 'Gaylord Springs Golf Links', 'location' => 'Nashville, TN', 'slug' => 'gaylord-springs-golf-links'],
