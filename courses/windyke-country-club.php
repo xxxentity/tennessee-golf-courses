@@ -571,17 +571,17 @@ try {
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-users"></i> Membership</h3>
-                    <p style="color: #666; margin-bottom: 1.5rem;">Windyke Country Club is a private club with over 1,000 family members enjoying regular, executive, or tennis memberships.</p>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <p style="color: #666; margin-bottom: 1.5rem;">Guest fees and rates for play at Windyke Country Club. Private club membership available for full access.</p>
                     
                     <div class="course-specs single-column">
                         <div class="spec-item">
-                            <span class="spec-label">Membership Type:</span>
-                            <span class="spec-value">Private Club</span>
+                            <span class="spec-label">Weekend Guest Fee:</span>
+                            <span class="spec-value">$91.53</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Family Oriented:</span>
-                            <span class="spec-value">1,000+ Families</span>
+                            <span class="spec-label">9-Hole Weekday Guest Fee:</span>
+                            <span class="spec-value">$49.43</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Greens:</span>
