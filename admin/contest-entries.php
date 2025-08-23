@@ -380,7 +380,7 @@ $total_entries = array_sum($status_counts);
                             <td>Contest #<?php echo $entry['contest_id']; ?></td>
                             <td><?php echo htmlspecialchars($entry['city'] . ', ' . $entry['state']); ?></td>
                             <td>
-                                <?php if (!empty($entry['photo_path']) && file_exists($entry['photo_path'])): ?>
+                                <?php if (!empty($entry['photo_path']) && file_exists('../' . $entry['photo_path'])): ?>
                                     <img src="/<?php echo htmlspecialchars($entry['photo_path']); ?>" 
                                          alt="Entry photo" 
                                          class="photo-thumbnail"

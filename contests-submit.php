@@ -78,10 +78,16 @@ try {
     
     // Handle photo upload if present
     $photo_path = null;
+    error_log("=== PHOTO UPLOAD DEBUG START ===");
+    error_log("_FILES array keys: " . implode(', ', array_keys($_FILES)));
+    error_log("isset(\$_FILES['photo']): " . (isset($_FILES['photo']) ? 'true' : 'false'));
+    
     if (isset($_FILES['photo'])) {
         error_log("Photo upload attempt - Error code: " . $_FILES['photo']['error']);
         error_log("Photo upload attempt - File type: " . ($_FILES['photo']['type'] ?? 'unknown'));
         error_log("Photo upload attempt - File size: " . ($_FILES['photo']['size'] ?? 'unknown'));
+        error_log("Photo upload attempt - File name: " . ($_FILES['photo']['name'] ?? 'unknown'));
+        error_log("Photo upload attempt - Temp name: " . ($_FILES['photo']['tmp_name'] ?? 'unknown'));
         
         if ($_FILES['photo']['error'] === UPLOAD_ERR_OK) {
             // Simple secure upload handling
@@ -145,7 +151,11 @@ try {
                 throw new Exception('Photo upload error: ' . $error_msg);
             }
         }
+    } else {
+        error_log("No photo file in _FILES array");
     }
+    error_log("Final photo_path value: " . ($photo_path ?? 'NULL'));
+    error_log("=== PHOTO UPLOAD DEBUG END ===");
     
     // Get client information
     $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
