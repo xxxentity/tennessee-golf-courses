@@ -1192,14 +1192,22 @@ $days_remaining = $interval->days;
                 body: formData
             })
             .then(async response => {
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
                 if (!response.ok) {
                     // Try to get JSON error message
                     try {
-                        const errorData = await response.json();
+                        const responseText = await response.text();
+                        console.log('Response text:', responseText);
+                        
+                        // Try to parse as JSON
+                        const errorData = JSON.parse(responseText);
                         throw new Error(errorData.message || `HTTP ${response.status}: ${response.statusText}`);
                     } catch (jsonError) {
-                        // If JSON parsing fails, use status text
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                        // If JSON parsing fails, show the raw response
+                        console.error('JSON parse error:', jsonError);
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}. Response: ${responseText || 'No response body'}`);
                     }
                 }
                 return response.json();

@@ -39,9 +39,16 @@ if (!empty($csrf_token) && !CSRFProtection::validateToken($csrf_token)) {
 }
 
 try {
+    // Debug logging
+    error_log("Contest submission received - POST data: " . print_r($_POST, true));
+    error_log("Contest submission received - FILES data: " . print_r($_FILES, true));
+    
     // Get user info from session
     $user_id = SecureSession::get('user_id');
     $user_email = SecureSession::get('email');
+    
+    error_log("User ID from session: " . ($user_id ?? 'null'));
+    error_log("User email from session: " . ($user_email ?? 'null'));
     
     // Validate and sanitize form data
     $contest_id = (int)($_POST['contest_id'] ?? 0);
