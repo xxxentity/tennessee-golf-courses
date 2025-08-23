@@ -389,7 +389,7 @@ session_start();
                 
                 <!-- Results Counter -->
                 <div id="resultsCounter" style="margin-top: 1rem; text-align: center; color: var(--text-gray); font-size: 0.9rem;">
-                    Showing all 92 golf courses
+                    <!-- Will be populated by JavaScript -->
                 </div>
             </div>
             
@@ -1335,11 +1335,12 @@ session_start();
             function updateResultsCounter(count = null) {
                 const counter = document.getElementById('resultsCounter');
                 const total = count !== null ? count : allMarkers.length;
+                const totalCourses = golfCourses.length;
                 
                 if (currentSearch || currentFilter !== 'all') {
-                    counter.textContent = `Showing ${total} of 92 golf courses`;
+                    counter.textContent = `Showing ${total} of ${totalCourses} golf courses`;
                 } else {
-                    counter.textContent = `Showing all 92 golf courses`;
+                    counter.textContent = `Showing all ${totalCourses} golf courses`;
                 }
             }
             
