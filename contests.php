@@ -1186,6 +1186,17 @@ $days_remaining = $interval->days;
             // Create FormData for file upload support
             const formData = new FormData(form);
             
+            // Debug: Check if photo file is included
+            const photoFile = formData.get('photo');
+            console.log('Photo file in FormData:', photoFile);
+            if (photoFile && photoFile.size) {
+                console.log('Photo file size:', photoFile.size);
+                console.log('Photo file type:', photoFile.type);
+                console.log('Photo file name:', photoFile.name);
+            } else {
+                console.log('No photo file selected or file is empty');
+            }
+            
             // Submit form via AJAX
             fetch(form.action, {
                 method: 'POST',
