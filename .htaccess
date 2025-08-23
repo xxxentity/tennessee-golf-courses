@@ -233,6 +233,7 @@ RewriteRule ^admin/run-all-migrations/?$ admin/run-all-migrations.php [L]
 RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
 RewriteRule ^admin/performance-monitor/?$ admin/performance-monitor.php [L]
 RewriteRule ^admin/seo-manager/?$ admin/seo-manager.php [L]
+RewriteRule ^admin/contest-entries/?$ admin/contest-entries.php [L]
 
 # SEO Routes
 RewriteRule ^sitemap\.xml$ sitemap-generator.php [L]

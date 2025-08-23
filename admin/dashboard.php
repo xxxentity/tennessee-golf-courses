@@ -21,6 +21,14 @@ try {
     $stmt = $pdo->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE confirmed = 1");
     $newsletterSubs = $stmt->fetchColumn();
     
+    // Contest entries
+    $stmt = $pdo->query("SELECT COUNT(*) FROM contest_entries");
+    $contestEntries = $stmt->fetchColumn();
+    
+    // Pending contest entries
+    $stmt = $pdo->query("SELECT COUNT(*) FROM contest_entries WHERE status = 'pending'");
+    $pendingEntries = $stmt->fetchColumn();
+    
     // Recent user registrations
     $stmt = $pdo->query("SELECT username, email, created_at FROM users ORDER BY created_at DESC LIMIT 5");
     $recentUsers = $stmt->fetchAll();
@@ -29,6 +37,8 @@ try {
     $totalUsers = 0;
     $newUsers = 0;
     $newsletterSubs = 0;
+    $contestEntries = 0;
+    $pendingEntries = 0;
     $recentUsers = [];
     error_log("Dashboard stats error: " . $e->getMessage());
 }
@@ -170,6 +180,7 @@ try {
         .icon-newsletter { background: linear-gradient(135deg, #10b981, #059669); }
         .icon-performance { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
         .icon-seo { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+        .icon-contests { background: linear-gradient(135deg, #f59e0b, #d97706); }
         
         .card-description {
             color: #6b7280;
@@ -344,8 +355,8 @@ try {
                 <div class="stat-label">Newsletter Subscribers</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value"><?php echo date('H:i'); ?></div>
-                <div class="stat-label">Current Time</div>
+                <div class="stat-value"><?php echo number_format($contestEntries); ?></div>
+                <div class="stat-label">Contest Entries</div>
             </div>
         </div>
         
@@ -443,6 +454,22 @@ try {
                 </p>
                 <div class="card-action">
                     <span class="action-text">View Performance</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </a>
+            
+            <a href="/admin/contest-entries" class="admin-card">
+                <div class="card-header">
+                    <h3 class="card-title">Contest Entries</h3>
+                    <div class="card-icon icon-contests">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+                <p class="card-description">
+                    View and manage contest entries, approve winners, and track submissions.
+                </p>
+                <div class="card-action">
+                    <span class="action-text">Manage Contests</span>
                     <i class="fas fa-arrow-right action-arrow"></i>
                 </div>
             </a>
