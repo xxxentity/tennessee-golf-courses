@@ -430,6 +430,11 @@ foreach ($all_events as $event) {
             color: #2563eb;
         }
         
+        .league-badge.tn {
+            background: #fff7ed;
+            color: #ea580c;
+        }
+        
         .no-events {
             text-align: center;
             color: var(--text-gray);
@@ -563,6 +568,10 @@ foreach ($all_events as $event) {
                                         <div class="tournament-venue"><?php echo htmlspecialchars($tournament['venue']); ?></div>
                                         <div class="tournament-location"><?php echo htmlspecialchars($tournament['location']); ?></div>
                                     </div>
+                                    
+                                    <span class="league-badge tn">
+                                        TN
+                                    </span>
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
