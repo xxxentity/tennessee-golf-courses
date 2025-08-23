@@ -1197,8 +1197,9 @@ $days_remaining = $interval->days;
                 
                 if (!response.ok) {
                     // Try to get JSON error message
+                    let responseText = '';
                     try {
-                        const responseText = await response.text();
+                        responseText = await response.text();
                         console.log('Response text:', responseText);
                         
                         // Try to parse as JSON
