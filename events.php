@@ -15,62 +15,158 @@ $is_logged_in = SecureSession::isLoggedIn();
 
 // Professional tournaments (Major tournaments)
 $professional_tournaments = [
-    // 2026 Events - Updated to future dates
+    // LIV Golf 2025 Season
+    [
+        'title' => 'LIV Golf Riyadh',
+        'league' => 'LIV',
+        'date_start' => '2025-02-06',
+        'date_end' => '2025-02-08',
+        'venue' => 'Riyadh Golf Club',
+        'location' => 'Riyadh, Saudi Arabia'
+    ],
+    [
+        'title' => 'LIV Golf Adelaide',
+        'league' => 'LIV',
+        'date_start' => '2025-02-14',
+        'date_end' => '2025-02-16',
+        'venue' => 'The Grange Golf Club',
+        'location' => 'Adelaide, Australia'
+    ],
+    [
+        'title' => 'LIV Golf Hong Kong',
+        'league' => 'LIV',
+        'date_start' => '2025-03-07',
+        'date_end' => '2025-03-09',
+        'venue' => 'Hong Kong Golf Club at Fanling',
+        'location' => 'Hong Kong'
+    ],
+    [
+        'title' => 'LIV Golf Singapore',
+        'league' => 'LIV',
+        'date_start' => '2025-03-14',
+        'date_end' => '2025-03-16',
+        'venue' => 'Sentosa Golf Club',
+        'location' => 'Singapore'
+    ],
+    [
+        'title' => 'LIV Golf Miami',
+        'league' => 'LIV',
+        'date_start' => '2025-04-04',
+        'date_end' => '2025-04-06',
+        'venue' => 'Trump National Doral',
+        'location' => 'Miami, FL'
+    ],
     [
         'title' => 'Masters Tournament',
         'league' => 'PGA',
-        'date_start' => '2026-04-09',
-        'date_end' => '2026-04-12',
+        'date_start' => '2025-04-10',
+        'date_end' => '2025-04-13',
         'venue' => 'Augusta National Golf Club',
         'location' => 'Augusta, GA'
     ],
     [
+        'title' => 'LIV Golf Mexico City',
+        'league' => 'LIV',
+        'date_start' => '2025-04-25',
+        'date_end' => '2025-04-27',
+        'venue' => 'Club de Golf Chapultepec',
+        'location' => 'Mexico City, Mexico'
+    ],
+    [
+        'title' => 'LIV Golf Korea',
+        'league' => 'LIV',
+        'date_start' => '2025-05-02',
+        'date_end' => '2025-05-04',
+        'venue' => 'Jack Nicklaus Golf Club Korea',
+        'location' => 'Incheon, South Korea'
+    ],
+    [
         'title' => 'PGA Championship',
         'league' => 'PGA',
-        'date_start' => '2026-05-14',
-        'date_end' => '2026-05-17',
-        'venue' => 'Baltusrol Golf Club',
-        'location' => 'Springfield, NJ'
+        'date_start' => '2025-05-15',
+        'date_end' => '2025-05-18',
+        'venue' => 'Quail Hollow Club',
+        'location' => 'Charlotte, NC'
+    ],
+    [
+        'title' => 'LIV Golf Virginia',
+        'league' => 'LIV',
+        'date_start' => '2025-06-06',
+        'date_end' => '2025-06-08',
+        'venue' => 'Robert Trent Jones Golf Club',
+        'location' => 'Virginia, USA'
     ],
     [
         'title' => 'U.S. Open',
         'league' => 'PGA',
-        'date_start' => '2026-06-18',
-        'date_end' => '2026-06-21',
+        'date_start' => '2025-06-19',
+        'date_end' => '2025-06-22',
         'venue' => 'Oakmont Country Club',
         'location' => 'Oakmont, PA'
     ],
     [
-        'title' => 'LIV Golf Nashville',
+        'title' => 'LIV Golf Dallas',
         'league' => 'LIV',
-        'date_start' => '2026-06-12',
-        'date_end' => '2026-06-14',
-        'venue' => 'The Grove Golf Course',
-        'location' => 'College Grove, TN'
+        'date_start' => '2025-06-27',
+        'date_end' => '2025-06-29',
+        'venue' => 'Maridoe Golf Club',
+        'location' => 'Dallas, TX'
+    ],
+    [
+        'title' => 'LIV Golf Andalucia',
+        'league' => 'LIV',
+        'date_start' => '2025-07-11',
+        'date_end' => '2025-07-13',
+        'venue' => 'Real Club Valderrama',
+        'location' => 'Andalucia, Spain'
     ],
     [
         'title' => 'The Open Championship',
         'league' => 'PGA',
-        'date_start' => '2026-07-16',
-        'date_end' => '2026-07-19',
-        'venue' => 'Royal Birkdale',
-        'location' => 'Southport, England'
+        'date_start' => '2025-07-17',
+        'date_end' => '2025-07-20',
+        'venue' => 'Royal Portrush',
+        'location' => 'Northern Ireland'
+    ],
+    [
+        'title' => 'LIV Golf UK',
+        'league' => 'LIV',
+        'date_start' => '2025-07-25',
+        'date_end' => '2025-07-27',
+        'venue' => 'JCB Golf & Country Club',
+        'location' => 'England, UK'
+    ],
+    [
+        'title' => 'LIV Golf Chicago',
+        'league' => 'LIV',
+        'date_start' => '2025-08-08',
+        'date_end' => '2025-08-10',
+        'venue' => 'Bolingbrook Golf Club',
+        'location' => 'Chicago, IL'
     ],
     [
         'title' => 'FedEx St. Jude Championship',
         'league' => 'PGA',
-        'date_start' => '2026-08-13',
-        'date_end' => '2026-08-16',
+        'date_start' => '2025-08-14',
+        'date_end' => '2025-08-17',
         'venue' => 'TPC Southwind',
         'location' => 'Memphis, TN'
     ],
     [
+        'title' => 'LIV Golf Indianapolis',
+        'league' => 'LIV',
+        'date_start' => '2025-08-15',
+        'date_end' => '2025-08-17',
+        'venue' => 'The Club at Chatham Hills',
+        'location' => 'Indianapolis, IN'
+    ],
+    [
         'title' => 'LIV Golf Team Championship',
         'league' => 'LIV',
-        'date_start' => '2026-09-13',
-        'date_end' => '2026-09-15',
-        'venue' => 'TBD',
-        'location' => 'TBD'
+        'date_start' => '2025-08-22',
+        'date_end' => '2025-08-24',
+        'venue' => 'The Cardinal at Saint John\'s',
+        'location' => 'Michigan, USA'
     ]
 ];
 
