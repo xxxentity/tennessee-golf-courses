@@ -1,7 +1,8 @@
 <?php
-// Include session security
+// Include session security and database
 require_once 'includes/session-security.php';
 require_once 'includes/csrf.php';
+require_once 'config/database.php';
 
 // Start secure session
 try {
@@ -13,61 +14,54 @@ try {
 // Check if user is logged in (verified users only can log in)
 $is_logged_in = SecureSession::isLoggedIn();
 
-// Sample contest data (in production, this would come from database)
+// Real contest data - customize this for your active contest
 $active_contest = [
     'id' => 1,
-    'title' => 'Best Golf Shot Photo Contest',
+    'title' => 'Tennessee Golf Photo Contest',
     'type' => 'photo',
-    'description' => 'Share your most incredible golf shot photo for a chance to win a brand new TaylorMade driver!',
-    'prize' => 'TaylorMade Stealth 2 Driver',
-    'prize_value' => '$599',
-    'prize_image' => '/images/contests/taylormade-driver.webp',
-    'end_date' => '2025-09-15',
-    'entries' => 127,
-    'image' => '/images/contests/photo-contest-hero.webp'
+    'description' => 'Share your best golf course photo from any Tennessee course for a chance to win amazing prizes!',
+    'prize' => 'Pro Shop Gift Card',
+    'prize_value' => '$250',
+    'end_date' => '2025-12-31', // Update this date when you launch a real contest
+    'image' => '/images/logos/logo.webp'
 ];
 
-$upcoming_contests = [
-    [
-        'title' => 'PGA Tour Championship Prediction Challenge',
-        'type' => 'prediction',
-        'start_date' => '2025-09-01',
-        'prize' => 'VIP Tournament Tickets'
-    ],
-    [
-        'title' => 'Tennessee Golf Trivia Championship',
-        'type' => 'trivia',
-        'start_date' => '2025-09-10',
-        'prize' => '$500 Pro Shop Credit'
-    ]
-];
+// Get actual entry count for current contest
+try {
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM contest_entries WHERE contest_id = ? AND status != 'rejected'");
+    $stmt->execute([$active_contest['id']]);
+    $active_contest['entries'] = $stmt->fetchColumn();
+} catch (Exception $e) {
+    $active_contest['entries'] = 0;
+}
 
-$past_winners = [
-    [
-        'contest' => 'Summer Hole-in-One Challenge',
-        'winner' => 'Mike Johnson',
-        'location' => 'Nashville, TN',
-        'prize' => 'Callaway Golf Set',
-        'image' => '/images/contests/winner1.webp',
-        'date' => 'August 2025'
-    ],
-    [
-        'contest' => 'Course Photo Contest',
-        'winner' => 'Sarah Davis',
-        'location' => 'Memphis, TN',
-        'prize' => 'Golf Getaway Package',
-        'image' => '/images/contests/winner2.webp',
-        'date' => 'July 2025'
-    ],
-    [
-        'contest' => 'Score Challenge',
-        'winner' => 'Tom Wilson',
-        'location' => 'Knoxville, TN',
-        'prize' => 'Titleist Pro V1 Dozen',
-        'image' => '/images/contests/winner3.webp',
-        'date' => 'June 2025'
-    ]
-];
+// Get recent winners from database
+$past_winners = [];
+try {
+    $stmt = $pdo->prepare("
+        SELECT ce.full_name, ce.city, ce.state, ce.photo_path, ce.created_at,
+               ce.contest_id, ce.photo_caption
+        FROM contest_entries ce 
+        WHERE ce.status = 'winner' 
+        ORDER BY ce.updated_at DESC 
+        LIMIT 6
+    ");
+    $stmt->execute();
+    
+    while ($winner = $stmt->fetch()) {
+        $past_winners[] = [
+            'contest' => 'Tennessee Golf Photo Contest #' . $winner['contest_id'],
+            'winner' => $winner['full_name'],
+            'location' => $winner['city'] . ', ' . $winner['state'],
+            'prize' => 'Contest Prize',
+            'image' => !empty($winner['photo_path']) && file_exists($winner['photo_path']) ? '/' . $winner['photo_path'] : '/images/logos/logo.webp',
+            'date' => date('F Y', strtotime($winner['created_at'])),
+            'caption' => $winner['photo_caption']
+        ];
+    }
+} catch (Exception $e) {
+    // Keep empty array if no winners yet
+}
 
 // Calculate days remaining
 $end_date = new DateTime($active_contest['end_date']);
@@ -497,61 +491,6 @@ $days_remaining = $interval->days;
             color: var(--primary-color);
         }
         
-        /* Upcoming Contests */
-        .upcoming-section {
-            background: var(--bg-light);
-            padding: 4rem 0;
-        }
-        
-        .upcoming-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .upcoming-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .upcoming-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .contest-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .upcoming-card h3 {
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-        
-        .start-date {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .upcoming-prize {
-            color: var(--gold-color);
-            font-weight: 600;
-        }
-        
         /* Past Winners */
         .winners-section {
             padding: 4rem 0;
@@ -855,51 +794,6 @@ $days_remaining = $interval->days;
         </div>
     </section>
 
-    <!-- Upcoming Contests -->
-    <section class="upcoming-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Upcoming Contests</h2>
-                <p>Don't miss out on these exciting opportunities!</p>
-            </div>
-            
-            <div class="upcoming-grid">
-                <?php foreach ($upcoming_contests as $contest): ?>
-                <div class="upcoming-card">
-                    <div class="contest-icon">
-                        <?php
-                        $icon = match($contest['type']) {
-                            'prediction' => 'fa-chart-line',
-                            'trivia' => 'fa-brain',
-                            'score' => 'fa-flag',
-                            'hole-in-one' => 'fa-golf-ball',
-                            default => 'fa-trophy'
-                        };
-                        ?>
-                        <i class="fas <?php echo $icon; ?>"></i>
-                    </div>
-                    <h3><?php echo $contest['title']; ?></h3>
-                    <p class="start-date">Starts: <?php echo date('F j, Y', strtotime($contest['start_date'])); ?></p>
-                    <p class="upcoming-prize">Prize: <?php echo $contest['prize']; ?></p>
-                </div>
-                <?php endforeach; ?>
-                
-                <div class="upcoming-card" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
-                    <div class="contest-icon" style="background: rgba(255,255,255,0.2);">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>Get Notified</h3>
-                    <p style="opacity: 0.9;">Be the first to know about new contests!</p>
-                    <?php if ($is_logged_in): ?>
-                        <button class="btn btn-white" style="margin-top: 1rem;">Sign Up for Alerts</button>
-                    <?php else: ?>
-                        <a href="/register" class="btn btn-white" style="margin-top: 1rem; display: inline-block;">Create Account</a>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Past Winners -->
     <section class="winners-section">
         <div class="container">
@@ -909,21 +803,34 @@ $days_remaining = $interval->days;
             </div>
             
             <div class="winners-grid">
-                <?php foreach ($past_winners as $winner): ?>
-                <div class="winner-card">
-                    <div class="winner-image">
-                        <i class="fas fa-trophy"></i>
-                        <span class="winner-badge">WINNER</span>
+                <?php if (empty($past_winners)): ?>
+                    <div class="no-winners" style="text-align: center; padding: 3rem; color: var(--text-gray);">
+                        <i class="fas fa-trophy" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                        <h3>No Winners Yet</h3>
+                        <p>Be the first to win a contest! Enter our current photo contest above.</p>
                     </div>
-                    <div class="winner-info">
-                        <h3 class="winner-name"><?php echo $winner['winner']; ?></h3>
-                        <p class="winner-location"><i class="fas fa-map-marker-alt"></i> <?php echo $winner['location']; ?></p>
-                        <p class="winner-contest"><?php echo $winner['contest']; ?></p>
-                        <p class="winner-prize">Won: <?php echo $winner['prize']; ?></p>
-                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;"><?php echo $winner['date']; ?></p>
+                <?php else: ?>
+                    <?php foreach ($past_winners as $winner): ?>
+                    <div class="winner-card">
+                        <div class="winner-image" style="background-image: url('<?php echo $winner['image']; ?>'); background-size: cover; background-position: center;">
+                            <?php if (empty($winner['image']) || $winner['image'] === '/images/logos/logo.webp'): ?>
+                                <i class="fas fa-trophy"></i>
+                            <?php endif; ?>
+                            <span class="winner-badge">WINNER</span>
+                        </div>
+                        <div class="winner-info">
+                            <h3 class="winner-name"><?php echo htmlspecialchars($winner['winner']); ?></h3>
+                            <p class="winner-location"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($winner['location']); ?></p>
+                            <p class="winner-contest"><?php echo htmlspecialchars($winner['contest']); ?></p>
+                            <p class="winner-prize">Won: <?php echo htmlspecialchars($winner['prize']); ?></p>
+                            <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;"><?php echo $winner['date']; ?></p>
+                            <?php if (!empty($winner['caption'])): ?>
+                                <p style="font-style: italic; font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-gray);">"<?php echo htmlspecialchars($winner['caption']); ?>"</p>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>

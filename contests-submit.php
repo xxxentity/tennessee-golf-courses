@@ -39,16 +39,9 @@ if (!empty($csrf_token) && !CSRFProtection::validateToken($csrf_token)) {
 }
 
 try {
-    // Debug logging
-    error_log("Contest submission received - POST data: " . print_r($_POST, true));
-    error_log("Contest submission received - FILES data: " . print_r($_FILES, true));
-    
     // Get user info from session
     $user_id = SecureSession::get('user_id');
     $user_email = SecureSession::get('email');
-    
-    error_log("User ID from session: " . ($user_id ?? 'null'));
-    error_log("User email from session: " . ($user_email ?? 'null'));
     
     // Validate and sanitize form data
     $contest_id = (int)($_POST['contest_id'] ?? 0);
@@ -78,16 +71,7 @@ try {
     
     // Handle photo upload if present
     $photo_path = null;
-    error_log("=== PHOTO UPLOAD DEBUG START ===");
-    error_log("_FILES array keys: " . implode(', ', array_keys($_FILES)));
-    error_log("isset(\$_FILES['photo']): " . (isset($_FILES['photo']) ? 'true' : 'false'));
-    
     if (isset($_FILES['photo'])) {
-        error_log("Photo upload attempt - Error code: " . $_FILES['photo']['error']);
-        error_log("Photo upload attempt - File type: " . ($_FILES['photo']['type'] ?? 'unknown'));
-        error_log("Photo upload attempt - File size: " . ($_FILES['photo']['size'] ?? 'unknown'));
-        error_log("Photo upload attempt - File name: " . ($_FILES['photo']['name'] ?? 'unknown'));
-        error_log("Photo upload attempt - Temp name: " . ($_FILES['photo']['tmp_name'] ?? 'unknown'));
         
         if ($_FILES['photo']['error'] === UPLOAD_ERR_OK) {
             // Simple secure upload handling
@@ -118,18 +102,9 @@ try {
             $filename = 'contest_' . $contest_id . '_' . $user_id . '_' . uniqid() . '.' . $file_ext;
             $photo_path = $upload_dir . $filename;
             
-            error_log("Attempting to save photo to: " . $photo_path);
-            
             // Move uploaded file
             if (!move_uploaded_file($_FILES['photo']['tmp_name'], $photo_path)) {
-                error_log("Photo upload failed - move_uploaded_file returned false");
-                error_log("Source: " . $_FILES['photo']['tmp_name']);
-                error_log("Destination: " . $photo_path);
                 throw new Exception('Failed to save uploaded photo.');
-            } else {
-                error_log("Photo uploaded successfully: " . $photo_path);
-                error_log("Photo file exists after upload: " . (file_exists($photo_path) ? 'YES' : 'NO'));
-                error_log("Photo file size after upload: " . filesize($photo_path) . " bytes");
             }
         } else {
             // Log upload errors
@@ -144,26 +119,19 @@ try {
             ];
             
             $error_msg = $upload_errors[$_FILES['photo']['error']] ?? 'Unknown upload error';
-            error_log("Photo upload error: " . $error_msg);
             
             // Don't throw exception for no file uploaded, that's optional
             if ($_FILES['photo']['error'] !== UPLOAD_ERR_NO_FILE) {
                 throw new Exception('Photo upload error: ' . $error_msg);
             }
         }
-    } else {
-        error_log("No photo file in _FILES array");
     }
-    error_log("Final photo_path value: " . ($photo_path ?? 'NULL'));
-    error_log("=== PHOTO UPLOAD DEBUG END ===");
     
     // Get client information
     $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
     $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
     
     // Insert contest entry
-    error_log("About to insert entry with photo_path: " . ($photo_path ?? 'NULL'));
-    
     $stmt = $pdo->prepare("
         INSERT INTO contest_entries (
             user_id, contest_id, full_name, email, phone, city, state,
@@ -177,8 +145,6 @@ try {
         $favorite_course, $photo_path, $photo_caption, $newsletter_signup,
         $client_ip, $user_agent
     ]);
-    
-    error_log("Database insert success: " . ($success ? 'YES' : 'NO'));
     
     if (!$success) {
         throw new Exception('Failed to submit contest entry. Please try again.');
