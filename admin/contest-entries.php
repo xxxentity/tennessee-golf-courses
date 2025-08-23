@@ -283,7 +283,12 @@ $total_entries = array_sum($status_counts);
     <div class="admin-page">
         <div class="admin-header">
             <h1 class="admin-title">Contest Entries</h1>
-            <div>
+            <div style="display: flex; gap: 1rem;">
+                <?php if ($total_entries > 0): ?>
+                <button onclick="deleteAllEntries()" class="btn btn-danger" style="background: #dc3545; color: white;">
+                    <i class="fas fa-trash"></i> Delete All Entries
+                </button>
+                <?php endif; ?>
                 <a href="/admin/dashboard" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Back to Dashboard
                 </a>
@@ -421,6 +426,12 @@ $total_entries = array_sum($status_counts);
                                         <i class="fas fa-trophy"></i>
                                     </button>
                                     <?php endif; ?>
+                                    
+                                    <button onclick="deleteEntry(<?php echo $entry['id']; ?>)" 
+                                            class="btn-sm btn-delete" title="Delete Entry" 
+                                            style="background: #dc3545; color: white; margin-left: 0.5rem;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -458,6 +469,64 @@ $total_entries = array_sum($status_counts);
             .catch(error => {
                 console.error('Error:', error);
                 alert('An error occurred while updating the status.');
+            });
+        }
+        
+        function deleteEntry(entryId) {
+            if (!confirm('Are you sure you want to delete this contest entry? This action cannot be undone!')) {
+                return;
+            }
+            
+            fetch('/admin/delete-contest-entry', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    entry_id: entryId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert('Error deleting entry: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while deleting the entry.');
+            });
+        }
+        
+        function deleteAllEntries() {
+            if (!confirm('Are you sure you want to delete ALL contest entries? This action cannot be undone!')) {
+                return;
+            }
+            
+            if (!confirm('This will permanently delete all contest entries and their photos. Are you absolutely sure?')) {
+                return;
+            }
+            
+            fetch('/admin/delete-all-contest-entries', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('All contest entries deleted successfully.');
+                    location.reload();
+                } else {
+                    alert('Error deleting entries: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while deleting entries.');
             });
         }
     </script>
