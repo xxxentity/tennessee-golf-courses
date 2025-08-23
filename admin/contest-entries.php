@@ -284,9 +284,18 @@ $total_entries = array_sum($status_counts);
         <div class="admin-header">
             <h1 class="admin-title">Contest Entries</h1>
             <div style="display: flex; gap: 1rem;">
-                <?php if ($total_entries > 0): ?>
+                <?php 
+                // Count non-winner entries
+                $non_winner_count = 0;
+                foreach ($entries as $entry) {
+                    if ($entry['status'] !== 'winner') {
+                        $non_winner_count++;
+                    }
+                }
+                ?>
+                <?php if ($non_winner_count > 0): ?>
                 <button onclick="deleteAllEntries()" class="btn btn-danger" style="background: #dc3545; color: white;">
-                    <i class="fas fa-trash"></i> Delete All Entries
+                    <i class="fas fa-trash"></i> Delete All Entries (Keep Winners)
                 </button>
                 <?php endif; ?>
                 <a href="/admin/dashboard" class="btn btn-secondary">
@@ -427,11 +436,18 @@ $total_entries = array_sum($status_counts);
                                     </button>
                                     <?php endif; ?>
                                     
+                                    <?php if ($entry['status'] !== 'winner'): ?>
                                     <button onclick="deleteEntry(<?php echo $entry['id']; ?>)" 
                                             class="btn-sm btn-delete" title="Delete Entry" 
                                             style="background: #dc3545; color: white; margin-left: 0.5rem;">
                                         <i class="fas fa-trash"></i>
                                     </button>
+                                    <?php else: ?>
+                                    <span class="btn-sm" title="Winners cannot be deleted" 
+                                          style="background: #28a745; color: white; margin-left: 0.5rem; cursor: not-allowed; opacity: 0.6;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </span>
+                                    <?php endif; ?>
                                 </div>
                             </td>
                         </tr>
@@ -501,11 +517,11 @@ $total_entries = array_sum($status_counts);
         }
         
         function deleteAllEntries() {
-            if (!confirm('Are you sure you want to delete ALL contest entries? This action cannot be undone!')) {
+            if (!confirm('Are you sure you want to delete all non-winner contest entries? Winners will be preserved. This action cannot be undone!')) {
                 return;
             }
             
-            if (!confirm('This will permanently delete all contest entries and their photos. Are you absolutely sure?')) {
+            if (!confirm('This will permanently delete all pending, approved, and rejected entries (but keep winners). Are you absolutely sure?')) {
                 return;
             }
             
@@ -518,7 +534,7 @@ $total_entries = array_sum($status_counts);
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('All contest entries deleted successfully.');
+                    alert('Non-winner entries deleted successfully. Winners were preserved.');
                     location.reload();
                 } else {
                     alert('Error deleting entries: ' + data.message);

@@ -13,12 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 try {
-    // Get all photo paths before deletion
-    $stmt = $pdo->prepare("SELECT photo_path FROM contest_entries WHERE photo_path IS NOT NULL AND photo_path != ''");
+    // Get photo paths for non-winner entries before deletion
+    $stmt = $pdo->prepare("SELECT photo_path FROM contest_entries WHERE status != 'winner' AND photo_path IS NOT NULL AND photo_path != ''");
     $stmt->execute();
     $photos = $stmt->fetchAll();
     
-    // Delete all photo files
+    // Delete photo files for non-winner entries
     $deleted_photos = 0;
     foreach ($photos as $photo) {
         $photo_path = '../' . $photo['photo_path'];
@@ -29,8 +29,8 @@ try {
         }
     }
     
-    // Delete all contest entries
-    $stmt = $pdo->prepare("DELETE FROM contest_entries");
+    // Delete only non-winner contest entries (preserve winners)
+    $stmt = $pdo->prepare("DELETE FROM contest_entries WHERE status != 'winner'");
     $success = $stmt->execute();
     $deleted_entries = $stmt->rowCount();
     
@@ -39,12 +39,12 @@ try {
     }
     
     // Log the bulk deletion
-    error_log("Admin deleted all contest entries: {$deleted_entries} entries, {$deleted_photos} photos");
+    error_log("Admin deleted non-winner contest entries: {$deleted_entries} entries, {$deleted_photos} photos (winners preserved)");
     
     // Success response
     echo json_encode([
         'success' => true,
-        'message' => "Successfully deleted {$deleted_entries} contest entries and {$deleted_photos} photos.",
+        'message' => "Successfully deleted {$deleted_entries} contest entries and {$deleted_photos} photos. Winners were preserved.",
         'deleted_entries' => $deleted_entries,
         'deleted_photos' => $deleted_photos
     ]);

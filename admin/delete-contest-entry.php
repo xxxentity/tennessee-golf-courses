@@ -31,14 +31,21 @@ if ($entry_id <= 0) {
 }
 
 try {
-    // Get entry details before deletion (for photo cleanup)
-    $stmt = $pdo->prepare("SELECT photo_path FROM contest_entries WHERE id = ?");
+    // Get entry details before deletion (for photo cleanup and status check)
+    $stmt = $pdo->prepare("SELECT photo_path, status FROM contest_entries WHERE id = ?");
     $stmt->execute([$entry_id]);
     $entry = $stmt->fetch();
     
     if (!$entry) {
         http_response_code(404);
         echo json_encode(['success' => false, 'message' => 'Contest entry not found.']);
+        exit;
+    }
+    
+    // Prevent deletion of winner entries
+    if ($entry['status'] === 'winner') {
+        http_response_code(403);
+        echo json_encode(['success' => false, 'message' => 'Cannot delete winner entries. Winners are preserved.']);
         exit;
     }
     
