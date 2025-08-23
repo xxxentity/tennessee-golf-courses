@@ -237,6 +237,8 @@ RewriteRule ^admin/test-security/?$ admin/test-security.php [L]
 RewriteRule ^admin/performance-monitor/?$ admin/performance-monitor.php [L]
 RewriteRule ^admin/seo-manager/?$ admin/seo-manager.php [L]
 RewriteRule ^admin/contest-entries/?$ admin/contest-entries.php [L]
+RewriteRule ^admin/contest-entry-details/?$ admin/contest-entry-details.php [L]
+RewriteRule ^admin/update-contest-status/?$ admin/update-contest-status.php [L]
 
 # SEO Routes
 RewriteRule ^sitemap\.xml$ sitemap-generator.php [L]
