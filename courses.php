@@ -207,6 +207,24 @@ $courses_static = [
         'slug' => 'cherokee-country-club'
     ],
     [
+        'id' => 120,
+        'name' => 'Chickasaw Golf Course',
+        'location' => 'Henderson, TN',
+        'region' => 'West Tennessee',
+        'description' => 'Jack Nicklaus Signature Design set in pristine natural woodland. Former Bear Trace course now independently operated with championship layout through forests.',
+        'image' => '/images/courses/chickasaw-golf-course/1.webp',
+        'price_range' => '$35-40',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'yardage' => 7118,
+        'designer' => 'Jack Nicklaus',
+        'course_type' => 'Public',
+        'opened' => 2000,
+        'amenities' => ['Driving Range', 'Putting Green', 'Pro Shop', 'GPS Carts', 'Dining Area', 'Bar', 'Banquet Hall', 'Pro on Site', 'Log Cabin Clubhouse'],
+        'slug' => 'chickasaw-golf-course'
+    ],
+    [
         'id' => 75,
         'name' => 'Chattanooga Golf & Country Club',
         'location' => 'Chattanooga, TN',
