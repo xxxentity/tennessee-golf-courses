@@ -160,6 +160,8 @@ RewriteRule ^courses/windyke-country-club/?$ courses/windyke-country-club.php [L
 
 # Handle news article pages (in subdirectory)
 RewriteRule ^news/liv-golf-michigan-team-championship-2025-quarterfinals/?$ news/liv-golf-michigan-team-championship-2025-quarterfinals.php [L]
+RewriteRule ^news/tour-championship-2025-final-round-fleetwood-historic-win/?$ news/tour-championship-2025-final-round-fleetwood-historic-win.php [L]
+RewriteRule ^news/tour-championship-2025-round-3-cantlay-fleetwood-tied/?$ news/tour-championship-2025-round-3-cantlay-fleetwood-tied.php [L]
 RewriteRule ^news/tour-championship-2025-round-2-fleetwood-henley-share-lead/?$ news/tour-championship-2025-round-2-fleetwood-henley-share-lead.php [L]
 RewriteRule ^news/tour-championship-2025-first-round-henley-leads/?$ news/tour-championship-2025-first-round-henley-leads.php [L]
 RewriteRule ^news/2025-tour-championship-atlanta-predictions/?$ news/2025-tour-championship-atlanta-predictions.php [L]
