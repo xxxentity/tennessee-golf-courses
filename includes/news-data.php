@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club',
+        'slug' => 'smith-narramore-capture-55th-tennessee-four-ball-championship-morristown',
+        'date' => '2025-08-23',
+        'time' => '9:15 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Jack Smith and Chas Narramore defeated Lawrence Largent and Jack Rhea 4 and 3 in the championship match at The Country Club in Morristown, with Smith claiming his third state title.',
+        'image' => '/images/news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC',
         'slug' => 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory',
         'date' => '2025-08-24',
