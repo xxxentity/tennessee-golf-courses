@@ -159,6 +159,7 @@ RewriteRule ^courses/overton-park-9/?$ courses/overton-park-9.php [L]
 RewriteRule ^courses/windyke-country-club/?$ courses/windyke-country-club.php [L]
 
 # Handle news article pages (in subdirectory)
+RewriteRule ^news/liv-golf-michigan-2025-semifinals-thriller/?$ news/liv-golf-michigan-2025-semifinals-thriller.php [L]
 RewriteRule ^news/liv-golf-michigan-team-championship-2025-quarterfinals/?$ news/liv-golf-michigan-team-championship-2025-quarterfinals.php [L]
 RewriteRule ^news/tour-championship-2025-final-round-fleetwood-historic-win/?$ news/tour-championship-2025-final-round-fleetwood-historic-win.php [L]
 RewriteRule ^news/tour-championship-2025-round-3-cantlay-fleetwood-tied/?$ news/tour-championship-2025-round-3-cantlay-fleetwood-tied.php [L]

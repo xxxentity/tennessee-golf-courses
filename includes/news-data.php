@@ -3,6 +3,16 @@
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
+        'slug' => 'liv-golf-michigan-2025-semifinals-thriller',
+        'date' => '2025-08-23',
+        'time' => '7:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Three teams survived intense semifinals action at The Cardinal at Saint John\'s in Plymouth, Michigan, setting up Sunday\'s stroke-play finale for the $14 million prize.',
+        'image' => '/images/news/liv-golf-michigan-2025-semifinals-thriller/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Fleetwood Captures Historic First PGA Tour Win at Tour Championship',
         'slug' => 'tour-championship-2025-final-round-fleetwood-historic-win',
         'date' => '2025-08-24',
