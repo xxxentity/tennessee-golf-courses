@@ -3,6 +3,16 @@
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Fleetwood Captures Historic First PGA Tour Win at Tour Championship',
+        'slug' => 'tour-championship-2025-final-round-fleetwood-historic-win',
+        'date' => '2025-08-24',
+        'time' => '10:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Tommy Fleetwood wins Tour Championship and FedEx Cup with final round 68 for 18-under total. Englishman claims first PGA Tour victory and $10 million prize at East Lake.',
+        'image' => '/images/news/tour-championship-2025-final-round-fleetwood-historic-win/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
         'slug' => 'tour-championship-2025-round-3-cantlay-fleetwood-tied',
         'date' => '2025-08-23',
