@@ -1,7 +1,7 @@
 <?php
 // News articles data - no session_start() to avoid conflicts
-// Get all news articles (in order of newest first)
-$articles = [
+// Get all news articles (automatically sorted by date and time, newest first)
+$articles_raw = [
     [
         'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
         'slug' => 'liv-golf-michigan-2025-semifinals-thriller',
@@ -133,4 +133,18 @@ $articles = [
         'featured' => true
     ]
 ];
+
+// Automatically sort articles by date and time (newest first)
+// This ensures articles always appear in chronological order regardless of array order
+usort($articles_raw, function($a, $b) {
+    // Convert date and time to comparable timestamps
+    $timestamp_a = strtotime($a['date'] . ' ' . $a['time']);
+    $timestamp_b = strtotime($b['date'] . ' ' . $b['time']);
+    
+    // Sort in descending order (newest first)
+    return $timestamp_b - $timestamp_a;
+});
+
+// Make the sorted array available as $articles (maintains backward compatibility)
+$articles = $articles_raw;
 ?>
