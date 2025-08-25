@@ -165,6 +165,63 @@ $article = [
             border-left: 4px solid var(--primary-color);
         }
         
+        .scoreboard {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .scoreboard h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .scoreboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .scoreboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .scoreboard-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .player-rank {
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .player-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-black);
+        }
+        
+        .player-score {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
         .back-to-news {
             display: inline-block;
             margin-bottom: 2rem;
@@ -288,19 +345,61 @@ $article = [
 
                     <p>For Fleetwood, the victory represents not just the end of a drought but validation of his persistence through years of close calls. His name now joins the list of FedEx Cup champions, and more importantly for him, he can finally call himself a PGA Tour winner.</p>
 
-                    <h3>Final Leaderboard</h3>
-                    <ul>
-                        <li><strong>1. Tommy Fleetwood:</strong> -18 (64-63-67-68)</li>
-                        <li><strong>T2. Russell Henley:</strong> -15 (61-66-69-69)</li>
-                        <li><strong>T2. Patrick Cantlay:</strong> -15 (68-64-64-71)</li>
-                        <li><strong>T4. Corey Conners:</strong> -14 (70-70-70-62)</li>
-                        <li><strong>T4. Scottie Scheffler:</strong> -14 (66-69-67-68)</li>
-                        <li><strong>T4. Cameron Young:</strong> -14 (67-62-73-66)</li>
-                        <li><strong>7. Keegan Bradley:</strong> -13 (70-67-63-70)</li>
-                        <li><strong>T8. Robert MacIntyre:</strong> -11</li>
-                        <li><strong>T8. Shane Lowry:</strong> -11</li>
-                        <li><strong>T8. Rory McIlroy:</strong> -11</li>
-                    </ul>
+                    <div class="scoreboard">
+                        <h3><i class="fas fa-trophy"></i> Final Leaderboard</h3>
+                        <ul class="scoreboard-list">
+                            <li class="scoreboard-item">
+                                <span class="player-rank">1.</span>
+                                <span class="player-name">Tommy Fleetwood</span>
+                                <span class="player-score">-18 (68)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T2.</span>
+                                <span class="player-name">Russell Henley</span>
+                                <span class="player-score">-15 (69)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T2.</span>
+                                <span class="player-name">Patrick Cantlay</span>
+                                <span class="player-score">-15 (71)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T4.</span>
+                                <span class="player-name">Corey Conners</span>
+                                <span class="player-score">-14 (62)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T4.</span>
+                                <span class="player-name">Scottie Scheffler</span>
+                                <span class="player-score">-14 (68)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T4.</span>
+                                <span class="player-name">Cameron Young</span>
+                                <span class="player-score">-14 (66)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">7.</span>
+                                <span class="player-name">Keegan Bradley</span>
+                                <span class="player-score">-13 (70)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Robert MacIntyre</span>
+                                <span class="player-score">-11</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Shane Lowry</span>
+                                <span class="player-score">-11</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Rory McIlroy</span>
+                                <span class="player-score">-11</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </article>
         </div>

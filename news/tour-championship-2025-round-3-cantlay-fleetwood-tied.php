@@ -165,6 +165,63 @@ $article = [
             border-left: 4px solid var(--primary-color);
         }
         
+        .scoreboard {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .scoreboard h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .scoreboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .scoreboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .scoreboard-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .player-rank {
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+        
+        .player-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-black);
+        }
+        
+        .player-score {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
         .back-to-news {
             display: inline-block;
             margin-bottom: 2rem;
@@ -286,19 +343,61 @@ $article = [
 
                     <p>The final pairing of Fleetwood and Cantlay will tee off at 2:50 p.m. ET, with live coverage on Golf Channel and NBC. With the FedEx Cup title and its $10 million prize on the line, expect fireworks at East Lake.</p>
 
-                    <h3>Third Round Leaderboard</h3>
-                    <ul>
-                        <li><strong>T1. Patrick Cantlay:</strong> -16 (68-64-64)</li>
-                        <li><strong>T1. Tommy Fleetwood:</strong> -16 (64-63-67)</li>
-                        <li><strong>3. Russell Henley:</strong> -14 (61-66-69)</li>
-                        <li><strong>4. Keegan Bradley:</strong> -13 (70-67-63)</li>
-                        <li><strong>5. Scottie Scheffler:</strong> -12 (66-69-67)</li>
-                        <li><strong>T6. Cameron Young:</strong> -11 (67-62-73)</li>
-                        <li><strong>T6. Robert MacIntyre:</strong> -11</li>
-                        <li><strong>T8. Rory McIlroy:</strong> -9</li>
-                        <li><strong>T8. Sam Burns:</strong> -9</li>
-                        <li><strong>T8. Shane Lowry:</strong> -9</li>
-                    </ul>
+                    <div class="scoreboard">
+                        <h3><i class="fas fa-trophy"></i> Third Round Leaderboard</h3>
+                        <ul class="scoreboard-list">
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T1.</span>
+                                <span class="player-name">Patrick Cantlay</span>
+                                <span class="player-score">-16 (64)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T1.</span>
+                                <span class="player-name">Tommy Fleetwood</span>
+                                <span class="player-score">-16 (67)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">3.</span>
+                                <span class="player-name">Russell Henley</span>
+                                <span class="player-score">-14 (69)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">4.</span>
+                                <span class="player-name">Keegan Bradley</span>
+                                <span class="player-score">-13 (63)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">5.</span>
+                                <span class="player-name">Scottie Scheffler</span>
+                                <span class="player-score">-12 (67)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T6.</span>
+                                <span class="player-name">Cameron Young</span>
+                                <span class="player-score">-11 (73)</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T6.</span>
+                                <span class="player-name">Robert MacIntyre</span>
+                                <span class="player-score">-11</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Rory McIlroy</span>
+                                <span class="player-score">-9</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Sam Burns</span>
+                                <span class="player-score">-9</span>
+                            </li>
+                            <li class="scoreboard-item">
+                                <span class="player-rank">T8.</span>
+                                <span class="player-name">Shane Lowry</span>
+                                <span class="player-score">-9</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </article>
         </div>
