@@ -157,14 +157,6 @@ $article = [
             left: 0;
         }
         
-        .player-score {
-            background: var(--bg-light);
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 0.5rem;
-            border-left: 4px solid var(--primary-color);
-        }
-        
         .scoreboard {
             background: var(--bg-light);
             padding: 2rem;
