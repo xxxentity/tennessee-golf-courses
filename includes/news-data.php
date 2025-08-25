@@ -3,6 +3,16 @@
 // Get all news articles (in order of newest first)
 $articles = [
     [
+        'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
+        'slug' => 'tour-championship-2025-round-3-cantlay-fleetwood-tied',
+        'date' => '2025-08-23',
+        'time' => '8:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day\'s best 63 while Russell Henley sits two back at East Lake.',
+        'image' => '/images/news/tour-championship-2025-round-3-cantlay-fleetwood-tied/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Legion XIII and Crushers GC Advance as LIV Golf Michigan Team Championship Begins',
         'slug' => 'liv-golf-michigan-team-championship-2025-quarterfinals',
         'date' => '2025-08-22',
