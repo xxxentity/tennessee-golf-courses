@@ -42,7 +42,7 @@ Disallow: /*?debug=*
 Disallow: /*?page=*
 
 # Disallow utility files
-Disallow: *.php$
+# Disallow: *.php$ - REMOVED: This was blocking all PHP files from indexing
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
