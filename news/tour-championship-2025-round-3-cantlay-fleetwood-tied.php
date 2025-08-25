@@ -2,13 +2,13 @@
 session_start();
 
 $article = [
-    'title' => 'Low Scoring Dominates Friday at Tour Championship as Fleetwood, Henley Share Lead',
-    'slug' => 'tour-championship-2025-round-2-low-scoring-friday',
+    'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
+    'slug' => 'tour-championship-2025-round-3-cantlay-fleetwood-tied',
     'date' => '2025-08-23',
     'time' => '8:00 PM',
     'category' => 'Tournament News',
-    'excerpt' => 'Tommy Fleetwood fires brilliant 63 to match Russell Henley at 13-under par. Cameron Young posts day\'s best 62 while Scottie Scheffler struggles to 69 in soft conditions at East Lake.',
-    'image' => '/images/news/tour-championship-2025-round-2-low-scoring-friday/main.webp',
+    'excerpt' => 'Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day\'s best 63 while Russell Henley sits two back at East Lake.',
+    'image' => '/images/news/tour-championship-2025-round-3-cantlay-fleetwood-tied/main.webp',
     'featured' => true,
     'author' => 'TGC Editorial Team',
     'read_time' => '5 min read'
@@ -242,68 +242,62 @@ $article = [
                 <img src="<?php echo $article['image']; ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-featured-image">
 
                 <div class="article-content">
-                    <p><strong>ATLANTA —</strong> Perfect scoring conditions led to a barrage of low scores in Friday's second round of the Tour Championship at East Lake Golf Club, with Tommy Fleetwood's spectacular 63 matching Russell Henley's 36-hole total of 13-under par to share the lead heading into the weekend.</p>
+                    <p><strong>ATLANTA —</strong> Patrick Cantlay delivered a spectacular closing stretch on Saturday at the Tour Championship, carding four birdies in his final five holes to fire a 6-under 64 and join Tommy Fleetwood at the top of the leaderboard at 16-under par heading into Sunday's finale at East Lake Golf Club.</p>
 
-                    <p>The Englishman's bogey-free round featured eight birdies, including a closing flourish with gains on both 17 and 18, demonstrating the kind of ball-striking and putting that has made him one of the tour's most consistent performers. Fleetwood carded six birdies on the back nine alone, taking full advantage of the soft conditions created by earlier weather.</p>
+                    <p>The dramatic third round saw momentum shifts throughout the day, with Fleetwood holding a two-shot lead before a costly mistake at the par-3 15th hole opened the door for Cantlay's late charge. With $10 million on the line for the winner, the stage is set for a thrilling conclusion to the PGA Tour season.</p>
 
-                    <h2>Cameron Young Posts Day's Best</h2>
+                    <h2>Cantlay's Closing Surge</h2>
                     
-                    <p>While Fleetwood grabbed headlines, it was Cameron Young who signed for the day's lowest score, an exceptional 8-under 62 that vaulted him into solo third place at 11-under par. The 28-year-old, fresh off his maiden PGA Tour victory at the Wyndham Championship, continued his hot streak with six birdies on the back nine at East Lake.</p>
+                    <p>Starting the day three shots behind the leaders, Cantlay methodically worked his way up the leaderboard before catching fire down the stretch. His exceptional finish included birdies at 14, 16, 17, and 18, demonstrating the clutch gene that has served him well throughout his career.</p>
 
-                    <p>"My game definitely feels sharp right now," Young said after his round. The performance puts him just two shots off the lead and firmly in contention for both the Tour Championship title and a potential Ryder Cup captain's pick.</p>
+                    <p>The performance puts Cantlay in prime position not only for the FedEx Cup title but also caught the attention of U.S. Ryder Cup captain Keegan Bradley, who is considering his captain's picks for the upcoming matches.</p>
 
-                    <h2>Henley Maintains Position</h2>
+                    <h2>Fleetwood's Rollercoaster Round</h2>
                     
-                    <p>First-round leader Russell Henley couldn't match his opening 61 but did enough with a solid 66 to remain tied at the top. The Georgia native made crucial birdies on his final three holes, including gains at 16, 17, and 18, to ensure he kept pace with the charging Fleetwood.</p>
+                    <p>Tommy Fleetwood's quest for his first PGA Tour victory hit a significant snag at the treacherous 15th hole. After arriving with a two-shot lead, the Englishman's 6-iron found the water, resulting in a double bogey that temporarily handed the lead to Cantlay.</p>
 
-                    <h2>Scheffler Struggles on Moving Day</h2>
+                    <p>Showing tremendous resilience, Fleetwood bounced back immediately with a brilliant pitching wedge from the bunker to 12 feet for birdie on the 16th hole. He would finish with a 67 for the day, maintaining his share of the lead despite the setback.</p>
+
+                    <blockquote>"This marks the third time this season that I'll enter the final round with at least a share of the lead. Tomorrow is another opportunity to get it done," Fleetwood reflected after his round.</blockquote>
+
+                    <h2>Bradley Posts Low Round</h2>
                     
-                    <p>The day's biggest disappointment came from world No. 1 Scottie Scheffler, who could only manage a 1-under 69 after entering the day in second place. The Masters champion struggled with his typically reliable driving, losing 0.77 strokes to the field off the tee after leading that category on Thursday.</p>
+                    <p>The round of the day belonged to Keegan Bradley, who fired a spectacular 7-under 63 to vault himself into contention. The highlight of Bradley's round came at the 6th hole, where he holed out for eagle, igniting a run that saw him close with three consecutive birdies.</p>
 
-                    <blockquote>"My game definitely doesn't feel off, but you look at 18, end up a foot off the fairway. 17, I have to chip out sideways. 14, I felt like I hit a good shot in there and it kicked right into the bunker," Scheffler explained.</blockquote>
+                    <p>Bradley's 63 leaves him in solo fourth place at 13-under par, just three shots off the lead with 18 holes to play. His position as U.S. Ryder Cup captain adds an intriguing subplot as he watches potential picks like Cantlay perform under pressure.</p>
 
-                    <p>Despite a closing birdie on the par-5 18th, Scheffler finds himself five shots adrift at 8-under par, facing an uphill battle over the weekend.</p>
-
-                    <h2>Other Notable Scores</h2>
+                    <h2>Henley Stays in the Hunt</h2>
                     
-                    <p>The soft conditions and preferred lies led to a scoring fest, with multiple players taking advantage:</p>
+                    <p>Russell Henley, who shared the 36-hole lead, couldn't quite match the scoring pace on Saturday but remained firmly in contention. A crucial birdie on the 18th hole salvaged his round and left him alone in third place at 14-under par, just two shots behind the co-leaders.</p>
 
-                    <div class="player-score">
-                        <strong>Shane Lowry and Chris Gotterup:</strong> Both fired impressive 63s to move to 7-under par
-                    </div>
+                    <p>"I didn't have my best stuff today, but finishing with a birdie keeps me right there. Two shots is nothing on Sunday at East Lake," Henley said.</p>
+
+                    <h2>The Treacherous 15th</h2>
                     
-                    <div class="player-score">
-                        <strong>Patrick Cantlay:</strong> Recovered from a slow start with an eagle and two birdies over his final three holes
-                    </div>
+                    <p>The par-3 15th hole proved to be the most challenging on the course Saturday, playing well over par as approximately one-third of the field found the water with their tee shots. The hole's difficulty added drama to the leaderboard and proved pivotal in the day's outcome.</p>
 
-                    <div class="player-score">
-                        <strong>Keegan Bradley and Harry Hall:</strong> Both shot 65s to reach 5-under for the tournament
-                    </div>
-
-                    <h2>Course Conditions Impact Scoring</h2>
+                    <h2>Scheffler Lurking</h2>
                     
-                    <p>The combination of heavy rains earlier in the week and Friday's calm conditions created ideal scoring opportunities. With lift-and-place rules in effect on all fairways, players were able to attack pins with confidence. The course averaged 3.20 strokes under par for the round, significantly lower than its typical Tour Championship setup.</p>
+                    <p>World No. 1 Scottie Scheffler remains within striking distance at 12-under par, four shots off the lead. The Masters champion will need a low round Sunday but has shown the ability to go deep when needed, making him a dangerous presence for the leaders.</p>
 
-                    <p>Tournament officials had moved up tee times earlier in the day due to anticipated weather, with the first group teeing off at 8 a.m. local time. The early start allowed the entire field to complete their rounds before any significant weather arrived.</p>
-
-                    <h2>Weekend Outlook</h2>
+                    <h2>Sunday's Finale</h2>
                     
-                    <p>With 36 holes remaining in the PGA Tour's season finale, the leaderboard remains tightly bunched. Thirteen players sit within five shots of the lead, setting up what promises to be a thrilling weekend at East Lake. The new format, which sees all players starting at even par rather than with staggered scores, has added an extra layer of excitement to the championship.</p>
+                    <p>The new format for 2025, which sees all players start at even par rather than with staggered scores, has created additional drama heading into the final round. With multiple players within realistic striking distance of the lead, Sunday promises to deliver excitement as the PGA Tour crowns its season-long champion.</p>
 
-                    <p>Saturday's third round will see Fleetwood and Henley paired together in the final group, with Cameron Young joining Robert MacIntyre in the penultimate pairing. With $18 million on the line for the winner and the FedEx Cup title at stake, expect more fireworks as the tour's best battle for the season's ultimate prize.</p>
+                    <p>The final pairing of Fleetwood and Cantlay will tee off at 2:50 p.m. ET, with live coverage on Golf Channel and NBC. With the FedEx Cup title and its $10 million prize on the line, expect fireworks at East Lake.</p>
 
-                    <h3>Second Round Leaderboard</h3>
+                    <h3>Third Round Leaderboard</h3>
                     <ul>
-                        <li><strong>T1. Tommy Fleetwood:</strong> -13 (64-63)</li>
-                        <li><strong>T1. Russell Henley:</strong> -13 (61-66)</li>
-                        <li><strong>3. Cameron Young:</strong> -11 (67-62)</li>
-                        <li><strong>T4. Robert MacIntyre:</strong> -9</li>
-                        <li><strong>T4. Patrick Cantlay:</strong> -9</li>
-                        <li><strong>6. Scottie Scheffler:</strong> -8 (66-69)</li>
-                        <li><strong>T7. Shane Lowry:</strong> -7 (69-63)</li>
-                        <li><strong>T7. Chris Gotterup:</strong> -7 (69-63)</li>
-                        <li><strong>T7. Rory McIlroy:</strong> -7</li>
-                        <li><strong>T7. Sam Burns:</strong> -7</li>
+                        <li><strong>T1. Patrick Cantlay:</strong> -16 (68-64-64)</li>
+                        <li><strong>T1. Tommy Fleetwood:</strong> -16 (64-63-67)</li>
+                        <li><strong>3. Russell Henley:</strong> -14 (61-66-69)</li>
+                        <li><strong>4. Keegan Bradley:</strong> -13 (70-67-63)</li>
+                        <li><strong>5. Scottie Scheffler:</strong> -12 (66-69-67)</li>
+                        <li><strong>T6. Cameron Young:</strong> -11 (67-62-73)</li>
+                        <li><strong>T6. Robert MacIntyre:</strong> -11</li>
+                        <li><strong>T8. Rory McIlroy:</strong> -9</li>
+                        <li><strong>T8. Sam Burns:</strong> -9</li>
+                        <li><strong>T8. Shane Lowry:</strong> -9</li>
                     </ul>
                 </div>
             </article>
