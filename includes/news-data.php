@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC',
+        'slug' => 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory',
+        'date' => '2025-08-24',
+        'time' => '11:00 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Jon Rahm\'s Legion XIII defeated Bryson DeChambeau\'s Crushers GC in the first team championship playoff, claiming the $14 million prize at The Cardinal at Saint John\'s in Plymouth, Michigan.',
+        'image' => '/images/news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
         'slug' => 'liv-golf-michigan-2025-semifinals-thriller',
         'date' => '2025-08-23',
