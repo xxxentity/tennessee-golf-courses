@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Article information
 $article = [
     'title' => 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC',
     'slug' => 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory',
@@ -21,86 +20,260 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $article['title']; ?> | Tennessee Golf Courses</title>
+    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
+    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="<?php echo $article['excerpt']; ?>">
-    <meta name="keywords" content="LIV Golf, Team Championship, Legion XIII, Jon Rahm, Bryson DeChambeau, Crushers GC, Michigan golf, playoff">
-    <meta name="author" content="<?php echo $article['author']; ?>">
-    <meta name="robots" content="index, follow">
+    <?php include '../includes/favicon.php'; ?>
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="<?php echo $article['title']; ?>">
-    <meta property="og:description" content="<?php echo $article['excerpt']; ?>">
-    <meta property="og:image" content="https://tennesseegolfcourses.com<?php echo $article['image']; ?>">
-    <meta property="og:url" content="https://tennesseegolfcourses.com/news/<?php echo $article['slug']; ?>">
-    <meta property="og:type" content="article">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo $article['title']; ?>">
-    <meta name="twitter:description" content="<?php echo $article['excerpt']; ?>">
-    <meta name="twitter:image" content="https://tennesseegolfcourses.com<?php echo $article['image']; ?>">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/news.css">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VPNPCDTBP');
     </script>
+    
+    <style>
+        .article-page {
+            padding-top: 0px;
+            min-height: 100vh;
+            background: var(--bg-light);
+        }
+        
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .article-featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-small);
+        }
+        
+        .article-content {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        
+        .scoreboard {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .team-result {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .team-result.champion {
+            border-left-color: #FFD700;
+            background: #FFFBF0;
+        }
+        
+        .team-result.runner-up {
+            border-left-color: #C0C0C0;
+            background: #F8F8F8;
+        }
+        
+        .team-result.third-place {
+            border-left-color: #CD7F32;
+            background: #FFF8F0;
+        }
+        
+        .team-result h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .player-scores {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .player-scores li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1rem;
+        }
+        
+        .player-scores li:last-child {
+            border-bottom: none;
+        }
+        
+        .back-to-news {
+            margin-bottom: 2rem;
+        }
+        
+        .back-to-news a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-news a:hover {
+            color: var(--secondary-color);
+            gap: 0.75rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-header {
+                padding: 2rem;
+            }
+            
+            .article-content {
+                padding: 2rem;
+            }
+            
+            .article-container {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <main class="news-article">
-        <div class="container">
+    <div class="article-page">
+        <div class="article-container">
             <!-- Back to News -->
             <div class="back-to-news">
-                <a href="/news" class="back-link">
+                <a href="/news">
                     <i class="fas fa-arrow-left"></i>
                     Back to News
                 </a>
             </div>
 
             <!-- Article Header -->
-            <header class="article-header">
-                <div class="category-badge tournament-news">Tournament News</div>
-                <h1 class="article-title"><?php echo $article['title']; ?></h1>
+            <div class="article-header">
+                <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
+                <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 
                 <div class="article-meta">
-                    <div class="meta-left">
-                        <span class="author"><?php echo $article['author']; ?></span>
-                        <span class="separator">•</span>
-                        <time datetime="<?php echo $article['date']; ?>T<?php echo date('H:i', strtotime($article['time'])); ?>">
-                            <?php echo date('F j, Y', strtotime($article['date'])); ?> at <?php echo $article['time']; ?>
-                        </time>
+                    <div class="article-meta-item">
+                        <i class="fas fa-user"></i>
+                        <span><?php echo htmlspecialchars($article['author']); ?></span>
                     </div>
-                    <div class="meta-right">
-                        <span class="read-time"><?php echo $article['read_time']; ?></span>
+                    <div class="article-meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><?php echo date('F j, Y', strtotime($article['date'])); ?> at <?php echo $article['time']; ?></span>
+                    </div>
+                    <div class="article-meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span><?php echo $article['read_time']; ?></span>
                     </div>
                 </div>
-            </header>
-
-            <!-- Featured Image -->
-            <div class="featured-image">
-                <img src="<?php echo $article['image']; ?>" alt="Legion XIII celebrates LIV Golf Team Championship victory" loading="lazy">
+                
+                <p style="font-size: 1.2rem; color: var(--text-dark); margin: 0;">
+                    <?php echo htmlspecialchars($article['excerpt']); ?>
+                </p>
             </div>
 
+            <!-- Featured Image -->
+            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="LIV Golf Michigan Team Championship" class="article-featured-image">
+
             <!-- Article Content -->
-            <article class="article-content">
-                <p class="lead">
-                    PLYMOUTH, Mich. — Jon Rahm's Legion XIII captured their first LIV Golf Team Championship in dramatic fashion Sunday, defeating Bryson DeChambeau's Crushers GC in the first playoff in team championship history to claim the $14 million prize at The Cardinal at Saint John's.
+            <div class="article-content">
+                <p>
+                    <strong>PLYMOUTH, Mich.</strong> — Jon Rahm's Legion XIII captured their first LIV Golf Team Championship in dramatic fashion Sunday, defeating Bryson DeChambeau's Crushers GC in the first playoff in team championship history to claim the $14 million prize at The Cardinal at Saint John's.
                 </p>
 
                 <p>
@@ -152,7 +325,7 @@ $article = [
                 </p>
 
                 <blockquote>
-                    "Legion XIII rallied to match the Crushers at 20 under, with Rahm and Tyrrell Hatton each birdying the final two holes of regulation," according to tournament reports.
+                    "Legion XIII rallied to match the Crushers at 20 under, with Rahm and Tyrrell Hatton each birdying the final two holes of regulation."
                 </blockquote>
 
                 <h2>Historic Playoff Drama</h2>
@@ -192,34 +365,60 @@ $article = [
                 <p>
                     The tournament represented the 50th event in LIV Golf history since the league's debut in June 2022, concluding the 2025 season with its most dramatic finish yet.
                 </p>
-
-                <div class="article-footer">
-                    <p class="disclaimer">
-                        <em>Results compiled from official LIV Golf sources, Fox Sports, Golf Digest, Detroit News, and tournament coverage from The Cardinal at Saint John's in Plymouth, Michigan.</em>
-                    </p>
-                </div>
-            </article>
-
-            <!-- Share Buttons -->
-            <div class="share-buttons">
-                <h3>Share this article</h3>
-                <div class="social-share">
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article['title']); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-twitter">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-facebook">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-linkedin">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <?php include '../includes/footer.php'; ?>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
+                    </div>
+                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Regions</h4>
+                    <ul>
+                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
+                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
+                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
+                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="/js/main.js"></script>
+    <script src="/weather.js?v=4"></script>
+    <script src="/script.js?v=4"></script>
 </body>
 </html>
