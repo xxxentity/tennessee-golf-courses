@@ -879,6 +879,21 @@ $courses_static = [
         'slug' => 'ted-rhodes-golf-course'
     ],
     [
+        'id' => 111,
+        'name' => 'The Country Club',
+        'location' => 'Morristown, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'William Langford championship design from 1955. Historic private club hosting Tennessee State PGA Championship with demanding 147 slope rating.',
+        'image' => '/images/courses/the-country-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'William Langford',
+        'amenities' => ['Championship Golf', 'Tennis Court', 'Swimming Pool', 'Full-Service Restaurant', 'Fitness Center', 'Ballroom Events', '20,000 sq ft Clubhouse', 'Tournament Hosting'],
+        'slug' => 'the-country-club'
+    ],
+    [
         'id' => 34,
         'name' => 'The Club at Gettysvue',
         'location' => 'Knoxville, TN',
