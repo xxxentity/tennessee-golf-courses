@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'LIV Golf Michigan 2025: Team Championship Complete Tournament Recap and Playoff Drama',
+        'slug' => 'liv-golf-michigan-2025-team-championship-complete-tournament-recap',
+        'date' => '2025-08-25',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Complete recap of the 2025 LIV Golf Team Championship featuring Legion XIII\'s dramatic playoff victory over Crushers GC and the tournament\'s thrilling match play format at The Cardinal.',
+        'image' => '/images/news/liv-golf-michigan-2025-team-championship-complete-tournament-recap/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club',
         'slug' => 'smith-narramore-capture-55th-tennessee-four-ball-championship-morristown',
         'date' => '2025-08-23',
