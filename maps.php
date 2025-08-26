@@ -1009,7 +1009,7 @@ session_start();
                 phone: "(423) 586-1941",
                 type: "Private",
                 slug: "the-country-club",
-                coordinates: [-83.294421, 36.214658]
+                coordinates: [-83.296100, 36.210600]
             },
             {
                 name: "Temple Hills Country Club",
