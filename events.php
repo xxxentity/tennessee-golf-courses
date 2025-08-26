@@ -172,53 +172,151 @@ $professional_tournaments = [
 
 // Tennessee local events
 $tennessee_events = [
+    // 2025 TGA Championships
+    [
+        'title' => 'Mid-Amateur Four-Ball Championship',
+        'date_start' => '2025-06-07',
+        'date_end' => '2025-06-08',
+        'venue' => 'Sevierville Golf Club - River Course',
+        'location' => 'Sevierville, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Parent-Child Championship',
+        'date_start' => '2025-06-14',
+        'date_end' => '2025-06-15',
+        'venue' => 'Stonehenge Golf Club',
+        'location' => 'Fairfield Glade, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee Junior Amateur Championship',
+        'date_start' => '2025-06-16',
+        'date_end' => '2025-06-18',
+        'venue' => 'GreyStone Golf Club',
+        'location' => 'Dickson, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee Girls Junior Championship',
+        'date_start' => '2025-06-16',
+        'date_end' => '2025-06-18',
+        'venue' => 'GreyStone Golf Club',
+        'location' => 'Dickson, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
     [
         'title' => 'Tennessee State Amateur Championship',
-        'date_start' => '2026-07-20',
-        'date_end' => '2026-07-23',
+        'date_start' => '2025-06-24',
+        'date_end' => '2025-06-27',
+        'venue' => 'Holston Hills Country Club',
+        'location' => 'Knoxville, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee Women\'s Amateur Championship',
+        'date_start' => '2025-07-08',
+        'date_end' => '2025-07-10',
+        'venue' => 'Chattanooga Golf & Country Club',
+        'location' => 'Chattanooga, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee State Open Championship',
+        'date_start' => '2025-07-09',
+        'date_end' => '2025-07-11',
+        'venue' => 'Grasslands Club - Foxland Course',
+        'location' => 'Gallatin, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Senior & Super Senior Match Play',
+        'date_start' => '2025-07-15',
+        'date_end' => '2025-07-18',
+        'venue' => 'Oak Ridge Country Club',
+        'location' => 'Oak Ridge, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Tennessee Women\'s Open Championship',
+        'date_start' => '2025-07-24',
+        'date_end' => '2025-07-26',
+        'venue' => 'Stonehenge Golf Club',
+        'location' => 'Fairfield Glade, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Senior & Super Senior Amateur Championship',
+        'date_start' => '2025-08-05',
+        'date_end' => '2025-08-07',
         'venue' => 'Belle Meade Country Club',
         'location' => 'Nashville, TN',
         'organizer' => 'Tennessee Golf Association'
     ],
     [
-        'title' => 'Tennessee Four-Ball Championship',
-        'date_start' => '2026-06-01',
-        'date_end' => '2026-06-03',
-        'venue' => 'The Honors Course',
-        'location' => 'Chattanooga, TN',
+        'title' => 'Women\'s Senior & Mid-Amateur Championship',
+        'date_start' => '2025-08-12',
+        'date_end' => '2025-08-13',
+        'venue' => 'Johnson City Country Club',
+        'location' => 'Johnson City, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    [
+        'title' => 'Men\'s Match Play Championship',
+        'date_start' => '2025-08-12',
+        'date_end' => '2025-08-15',
+        'venue' => 'Vanderbilt Legends Club - South Course',
+        'location' => 'Franklin, TN',
         'organizer' => 'Tennessee Golf Association'
     ],
     [
         'title' => 'Tennessee Mid-Amateur Championship',
-        'date_start' => '2026-08-24',
-        'date_end' => '2026-08-26',
-        'venue' => 'Nashville Golf & Athletic Club',
-        'location' => 'Nashville, TN',
+        'date_start' => '2025-08-25',
+        'date_end' => '2025-08-27',
+        'venue' => 'Tennessee National Golf Club',
+        'location' => 'Loudon, TN',
         'organizer' => 'Tennessee Golf Association'
     ],
     [
-        'title' => 'Hermitage Classic Charity Tournament',
-        'date_start' => '2026-09-12',
-        'date_end' => '2026-09-12',
-        'venue' => 'Hermitage Golf Course',
-        'location' => 'Nashville, TN',
-        'organizer' => 'Nashville Golf Foundation'
+        'title' => '57th TN PGA Professional Championship',
+        'date_start' => '2025-08-25',
+        'date_end' => '2025-08-27',
+        'venue' => 'Links at Kahite',
+        'location' => 'Vonore, TN',
+        'organizer' => 'Tennessee PGA'
     ],
     [
-        'title' => 'Tennessee Junior Championship',
-        'date_start' => '2026-07-06',
-        'date_end' => '2026-07-08',
-        'venue' => 'Stones River Country Club',
+        'title' => 'Women\'s Four-Ball Championship',
+        'date_start' => '2025-08-27',
+        'date_end' => '2025-08-28',
+        'venue' => 'Hermitage Golf Course - General\'s Retreat',
+        'location' => 'Old Hickory, TN',
+        'organizer' => 'Tennessee Golf Association'
+    ],
+    // Junior Golf Events (Sneds Tour)
+    [
+        'title' => 'Elite @ Old Fort Junior Tournament',
+        'date_start' => '2025-09-06',
+        'date_end' => '2025-09-07',
+        'venue' => 'Old Fort Golf Course',
         'location' => 'Murfreesboro, TN',
-        'organizer' => 'Tennessee Golf Association'
+        'organizer' => 'Sneds Tour / Tennessee Golf Foundation'
     ],
     [
-        'title' => 'Cheekwood Invitational',
-        'date_start' => '2026-05-09',
-        'date_end' => '2026-05-10',
-        'venue' => 'Cheekwood Golf Club',
-        'location' => 'Nashville, TN',
-        'organizer' => 'Cheekwood Golf Club'
+        'title' => 'Tennessee Junior Cup',
+        'date_start' => '2025-09-27',
+        'date_end' => '2025-09-28',
+        'venue' => 'The Grove',
+        'location' => 'College Grove, TN',
+        'organizer' => 'Sneds Tour / Tennessee Golf Foundation'
+    ],
+    [
+        'title' => 'Open @ Montgomery Bell Junior Tournament',
+        'date_start' => '2025-10-04',
+        'date_end' => '2025-10-05',
+        'venue' => 'Montgomery Bell State Park Golf Course',
+        'location' => 'Burns, TN',
+        'organizer' => 'Sneds Tour / Tennessee Golf Foundation'
     ]
 ];
 
