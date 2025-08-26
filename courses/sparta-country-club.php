@@ -737,7 +737,6 @@ try {
                 <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/2.webp');" onclick="openGallery()"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/3.webp');" onclick="openGallery()"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/4.webp');" onclick="openGallery()"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/5.webp');" onclick="openGallery()"></div>
             </div>
             
             <div class="gallery-button">
