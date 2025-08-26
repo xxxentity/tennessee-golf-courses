@@ -1004,6 +1004,14 @@ session_start();
                 coordinates: [-86.82412, 36.17531]
             },
             {
+                name: "The Country Club",
+                address: "1686 Doyal Drive, Morristown, TN 37814",
+                phone: "(423) 586-1941",
+                type: "Private",
+                slug: "the-country-club",
+                coordinates: [-83.294421, 36.214658]
+            },
+            {
                 name: "Temple Hills Country Club",
                 address: "6376 Temple Road, Franklin, TN 37069",
                 phone: "(615) 646-4785",
