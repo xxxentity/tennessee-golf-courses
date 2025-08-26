@@ -59,14 +59,14 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whittle Springs Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Whittle Springs Golf Course - Knoxville's first public golf course since 1932. Historic municipal course designed by Morton and Sweetser with unique bunker-free layout.">
+    <meta name="description" content="Whittle Springs Golf Course - Knoxville's historic municipal golf course since 1932. Experience the unique bunker-free layout designed by Morton and Sweetser.">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=6">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=6">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -80,7 +80,7 @@ try {
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/whittle-springs-golf-course/1.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/whittle-springs-golf-course/1.jpeg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -100,32 +100,35 @@ try {
         .course-hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .hero-stats {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stat {
+        .course-rating {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
         
-        .course-info-section {
+        .rating-stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .course-details {
             padding: 4rem 0;
-            background: #f8f9fa;
         }
         
-        .course-info-cards {
+        .course-info-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 3rem;
             margin-bottom: 4rem;
         }
         
@@ -133,211 +136,111 @@ try {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .course-info-card h3 {
             color: #2c5234;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .course-info-card h3 i {
-            color: #4a7c59;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         .course-specs {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+        }
+        
+        .course-specs.single-column {
+            grid-template-columns: 1fr;
         }
         
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-item:last-child {
-            border-bottom: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .spec-label {
             font-weight: 600;
-            color: #2c5234;
+            color: #666;
         }
         
         .spec-value {
-            color: #666;
-            font-weight: 500;
+            font-weight: 700;
+            color: #2c5234;
         }
         
-        .location-info {
-            text-align: left;
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-items: center;
         }
         
-        .location-details p {
-            margin-bottom: 0.8rem;
+        .amenity-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .location-details i {
-            color: #4a7c59;
-            width: 16px;
-        }
-        
-        .location-details a {
-            color: #4a7c59;
-            text-decoration: none;
-        }
-        
-        .location-details a:hover {
-            text-decoration: underline;
-        }
-        
-        .course-description {
-            padding: 4rem 0;
-            background: white;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-        
-        .tee-info-section {
-            padding: 4rem 0;
+            gap: 0.75rem;
+            padding: 1rem;
             background: #f8f9fa;
+            border-radius: 10px;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .tee-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tee-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .tee-card h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-        }
-        
-        .tee-card.black h3 { border-left: 4px solid #000; padding-left: 1rem; }
-        .tee-card.white h3 { border-left: 4px solid #6c757d; padding-left: 1rem; }
-        .tee-card.red h3 { border-left: 4px solid #dc3545; padding-left: 1rem; }
-        
-        .tee-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .tee-stat {
-            text-align: center;
-        }
-        
-        .tee-stat-label {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-        
-        .tee-stat-value {
+        .amenity-item i {
+            color: #4a7c59;
             font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c5234;
         }
         
         .photo-gallery {
-            padding: 4rem 0;
-            background: white;
+            margin: 4rem 0;
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
         
         .gallery-item {
-            height: 250px;
+            height: 300px;
             background-size: cover;
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
         
         .gallery-button {
             text-align: center;
+            margin-top: 2rem;
         }
         
         .btn-gallery {
-            background: #4a7c59;
+            background: linear-gradient(135deg, #2c5234, #4a7c59);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44,82,52,0.3);
         }
         
         .btn-gallery:hover {
-            background: #2c5234;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(44,82,52,0.4);
         }
         
         .reviews-section {
@@ -552,36 +455,20 @@ try {
             transform: scale(1.05);
         }
         
-        .unique-features {
-            background: #e8f5e8;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #4a7c59;
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
-        .unique-features h3 {
+        .section-header h2 {
             color: #2c5234;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
-        .unique-features ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .unique-features li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .unique-features li i {
-            color: #4a7c59;
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
         }
         
         @media (max-width: 768px) {
@@ -589,21 +476,13 @@ try {
                 font-size: 2.5rem;
             }
             
-            .course-info-cards {
+            .course-info-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            .tee-cards {
+            .gallery-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .hero-stats {
-                gap: 15px;
-            }
-            
-            .hero-stat {
-                font-size: 1rem;
             }
         }
     </style>
