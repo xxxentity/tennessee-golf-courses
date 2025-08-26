@@ -606,6 +606,14 @@ try {
                             <span class="spec-value">6,921</span>
                         </div>
                         <div class="spec-item">
+                            <span class="spec-label">Course Rating:</span>
+                            <span class="spec-value">73.9</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">147</span>
+                        </div>
+                        <div class="spec-item">
                             <span class="spec-label">Designer:</span>
                             <span class="spec-value">William Langford</span>
                         </div>
@@ -616,14 +624,6 @@ try {
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
                             <span class="spec-value">Private</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">73.9</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">147</span>
                         </div>
                     </div>
                 </div>
