@@ -1,7 +1,7 @@
 TENNESSEE GOLF COURSES - COMPREHENSIVE DATABASE (REORGANIZED)
 ================================================================
-Updated: August 2025 (Cleaned & Reorganized Edition)
-Total Verified Courses: 270+ Statewide | Database Focus: 95+ Major Facilities
+Updated: August 2025 (Status Verified Against Live Website)
+Total Verified Courses: 270+ Statewide | Database Focus: 105+ Major Facilities
 
 STATUS LEGEND:
 ✓ = Course page created and live on website
@@ -11,58 +11,84 @@ STATUS LEGEND:
 
 ================================================================
 
-INCOMPLETE COURSES - NEED COURSE PAGES (PRIORITY ORDER)
-=======================================================
+MISSING COURSES - NEED PAGES CREATED (COMPREHENSIVE LIST)
+==========================================================
 
-MEMPHIS MUNICIPAL COURSES (MAJOR PUBLIC ACCESS)
-----------------------------------------------
+SMALL TOWN/RURAL COURSES (HIGH PRIORITY - FOUND BY RESEARCH)
+------------------------------------------------------------
 
-1. Davy Crockett Golf Course - 4380 Range Line Rd, Memphis 38127 [NEEDS WORK] - Municipal
-2. Edmondson Golf Course - 8548 Douglass Ave, Memphis 38108 [NEEDS WORK] - Municipal
-3. Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [NEEDS WORK] - Municipal
-4. Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [NEEDS WORK] - Municipal
+1. Sparta Golf & Country Club - 129 Lester Flat Rd, Sparta 38583 [NEEDS WORK] - Public (9-hole, Par 35, White County)
+2. RiverWatch Golf Club - Sparta [NEEDS WORK] - Public/Resort (Near Center Hill Lake)
+3. Graysburg Hills Golf Course - Chuckey [NEEDS WORK] - Public (27-hole, Rees Jones design)
+4. The Crossings Golf Club - Jonesborough [NEEDS WORK] - Public
+5. Johnson City Country Club - Johnson City [NEEDS WORK] - Private (A.W. Tillinghast design)
 
-KNOXVILLE AREA MAJOR COURSES
----------------------------
+MEMPHIS MUNICIPAL COURSES (HIGH PRIORITY - PUBLIC ACCESS)
+----------------------------------------------------------
 
-5. Fairfield Glade Resort - 100 Fairfield Blvd, Fairfield Glade 38558 [NEEDS WORK] - Resort (3 courses)
+6. Davy Crockett Golf Course - 4380 Range Line Rd, Memphis 38127 [NEEDS WORK] - Municipal
+7. Edmondson Golf Course - 8548 Douglass Ave, Memphis 38108 [NEEDS WORK] - Municipal
+8. Goodwin Golf Course - 1300 Goodwin Dr, Memphis 38111 [NEEDS WORK] - Municipal
+9. Pickering Golf Course - 3216 Steele Rd, Memphis 38127 [NEEDS WORK] - Municipal
+10. The Links at Pine Hill - 1005 Alice Ave, Memphis [NEEDS WORK] - Municipal
+11. The Links at Riverside - 465 S. Parkway West, Memphis [NEEDS WORK] - Municipal (9-hole)
 
-CHATTANOOGA AREA PRIORITY
-------------------------
+FAIRFIELD GLADE/CROSSVILLE AREA COURSES
+---------------------------------------
+
+12. Fairfield Glade Resort - 100 Fairfield Blvd, Fairfield Glade 38558 [NEEDS WORK] - Resort (Multiple courses)
+13. Heatherhurst Brae - Fairfield Glade [NEEDS WORK] - Resort
+14. Heatherhurst Crag - Fairfield Glade [NEEDS WORK] - Resort 
+15. Dorchester Golf Club - Fairfield Glade [NEEDS WORK] - Resort
+16. Deer Creek Golf Course - Crossville [NEEDS WORK] - Public
+
+MILITARY/SPECIALTY COURSES
+--------------------------
+
+17. Arnold AFB Golf Course - Arnold AFB [NEEDS WORK] - Military (9-hole, Par 35)
+18. Glenn Eagle Golf Course - Naval Support Activity Mid-South, Millington [NEEDS WORK] - Military
+19. The Course at Sewanee - Sewanee, University of the South [NEEDS WORK] - University (9-hole, Gil Hanse redesign)
+20. Knoxville Municipal Golf Course - 3925 Schaad Rd, Knoxville [NEEDS WORK] - Municipal
 
 UNIVERSITY COURSES
------------------
+------------------
 
-7. Middle Tennessee State University Golf Course - 1848 Old Fort Pkwy, Murfreesboro 37132 [NEEDS WORK] - University
-8. University of Tennessee at Martin Golf Course - 1900 E Wood St, Martin 38237 [NEEDS WORK] - University
-9. Tennessee State University Golf Course - 3500 John A Merritt Blvd, Nashville 37209 [NEEDS WORK] - University
+21. Middle Tennessee State University Golf Course - 1848 Old Fort Pkwy, Murfreesboro 37132 [NEEDS WORK] - University
+22. University of Tennessee at Martin Golf Course - 1900 E Wood St, Martin 38237 [NEEDS WORK] - University
+23. Tennessee State University Golf Course - 3500 John A Merritt Blvd, Nashville 37209 [NEEDS WORK] - University
 
-OTHER PRIORITY COURSES
----------------------
+ADDITIONAL MAJOR PRIVATE COURSES
+--------------------------------
 
-10. Bear Trace at Ross Creek - 1000 Bear Trace Dr, Clifton 38425 [NEEDS WORK] - State Park (Jack Nicklaus)
-11. Sewanee Golf Course - 1100 Country Club Dr, Sewanee 37375 [NEEDS WORK] - Semi-Private (University of the South)
-12. Mason Rudolph Golf Course CLOSED - 1514 Golf Club Ln, Clarksville 37043 [NEEDS WORK] - Municipal (Named after PGA Tour pro)
-13. T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [NEEDS WORK] - State Park
+24. Memphis National Golf Club - Collierville [NEEDS WORK] - Private
+25. Brentwood Country Club - Nashville [NEEDS WORK] - Private
+26. Westhaven Golf Club - Franklin [NEEDS WORK] - Private
+27. The Colonial - Cordova [NEEDS WORK] - Private (36 holes)
 
-LOWER PRIORITY COURSES
----------------------
+STATE PARK/MUNICIPAL COURSES
+----------------------------
 
-14. Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [NEEDS WORK] - Municipal
+28. Bear Trace at Ross Creek - 1000 Bear Trace Dr, Clifton 38425 [NEEDS WORK] - State Park (Jack Nicklaus)
+29. T.O. Fuller State Park Golf Course - 1500 Mitchell Rd, Memphis 38109 [NEEDS WORK] - State Park
+30. Mason Rudolph Golf Course - 1514 Golf Club Ln, Clarksville 37043 [NEEDS WORK] [CLOSED] - Municipal (Named after PGA Tour pro)
+31. Miller Golf Course - 8955 Old Hickory Blvd, Nashville 37221 [NEEDS WORK] - Municipal
+32. VinnyLinks Golf Course - Nashville [NEEDS WORK] - Municipal
+33. Shelby Golf Course - Nashville [NEEDS WORK] - Municipal
+34. Tri-Cities Golf Club - Blountville [NEEDS WORK] - Public (27 holes)
 
 ================================================================
 
-COMPLETED COURSES - PAGES CREATED AND LIVE
-==========================================
+COMPLETED COURSES - PAGES CREATED AND LIVE (ALPHABETICAL)
+==========================================================
 
 ✓ Avalon Golf & Country Club - 1 Avalon Blvd, Lenoir City 37772 - Semi-Private
 ✓ Bear Trace at Cumberland Mountain - 407 Wild Plum Ln, Crossville 38572 - State Park (Jack Nicklaus)
-✓ Bear Trace at Harrison Bay - 8175 Harrison Bay Rd, Harrison 37341 - Public/Resort (Jack Nicklaus)
+✓ Bear Trace at Harrison Bay - 8175 Harrison Bay Rd, Harrison 37341 - Public/Resort (Jack Nicklaus) 
 ✓ Bear Trace at Tims Ford - 570 Tims Ford Dr, Winchester 37398 - State Park (Jack Nicklaus)
 ✓ Belle Acres Golf Course - 901 E Broad St, Cookeville 38501 - Public (9-hole, par 35)
 ✓ Belle Meade Country Club - 4025 Harding Pike, Nashville 37205 - Private (Donald Ross)
 ✓ Big Creek Golf Club - 6294 Elmore Rd, Millington 38053 - Public [PERMANENTLY CLOSED]
-✓ Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 - Private
+✓ Blackthorn Club - 4951 Pea Ridge Rd, Maryville 37804 - Private  
 ✓ Bluegrass Yacht & Country Club - 550 Johnny Cash Parkway, Hendersonville 37075 - Private
 ✓ Brainerd Golf Course - 4019 Ringgold Rd, Chattanooga 37412 - Municipal (Donald Ross, 1926)
 ✓ Brown Acres Golf Course - 3894 Harrison Pike, Chattanooga 37416 - Municipal (Gary Weller, 1965)
@@ -70,13 +96,15 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Chattanooga Golf & Country Club - 5158 Conner St, Chattanooga 37411 - Private
 ✓ Cheekwood Golf Club - 1200 Forrest Park Dr, Nashville 37205 - Private
 ✓ Cherokee Country Club - 5138 Lyons View Pike, Knoxville 37919 - Private (Donald Ross)
+✓ Chickasaw Country Club - Memphis, TN - Private
+✓ Chickasaw Golf Course - Henderson, TN - Public
 ✓ Clarksville Country Club - 1 Country Club Dr, Clarksville 37040 - Private (George Cobb)
 ✓ Colonial Country Club - 2736 Countrywood Parkway, Cordova 38016 - Private (Joe Finger)
 ✓ Council Fire Golf Club - 1400 Council Fire Dr, Chattanooga 37421 - Private
 ✓ Cumberland Cove Golf Course - 16941 Highway 70 N, Monterey 38574 - Public
 ✓ Dead Horse Lake Golf Course - 3016 Gravelly Hills Rd, Louisville 37777 - Public
 ✓ Druid Hills Golf Club - 3300 Asbury Rd, Knoxville 37914 - Private
-✓ Eagles Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 - Public
+✓ Eagle's Landing Golf Club - 1556 Old Knoxville Hwy, Sevierville 37876 - Public
 ✓ Egwani Farms Golf Course - 3543 Sevierville Pike, Knoxville 37920 - Public
 ✓ Fall Creek Falls State Park Golf Course - 2009 Village Camp Rd, Pikeville 37367 - State Park
 ✓ Forrest Crossing Golf Course - 750 Riverview Dr, Franklin 37064 - Public
@@ -96,6 +124,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Laurel Valley Country Club - 5964 Laurel Valley Dr, Townsend 37882 - Public
 ✓ Lookout Mountain Club - 1001 Scenic Hwy, Lookout Mountain 37350 - Private
 ✓ McCabe Golf Course - 100 46th Ave N, Nashville 37209 - Municipal
+✓ Memphis Country Club - 600 Goodwyn Street, Memphis, TN - Private
 ✓ Mirimichi Golf Course - 6195 Woodstock Cuba Rd, Millington 38053 - Public
 ✓ Moccasin Bend Golf Course - 381 Moccasin Bend Rd, Chattanooga 37405 - Municipal
 ✓ Montgomery Bell State Park Golf Course - 1020 Hotel Ave, Burns 37029 - State Park
@@ -125,6 +154,7 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Tennessee National Golf Club - 1340 Clubhouse Dr, Loudon 37774 - Semi-Private
 ✓ The Club at Five Oaks - 3945 Five Oaks Dr, Lebanon 37087 - Semi-Private
 ✓ The Club at Gettysvue - 1300 Gettysvue Dr, Knoxville 37922 - Private
+✓ The Country Club - 1686 Doyal Drive, Morristown, TN 37814 - Private (William Langford, 1955)
 ✓ The Golf Club of Tennessee - 1620 Carters Creek Pike, Franklin 37064 - Private (Tom Fazio)
 ✓ The Governors Club - 1601 Governors Club Dr, Brentwood 37027 - Private
 ✓ The Grove - 7770 Bakers Bridge Ave, College Grove 37046 - Private
@@ -141,12 +171,13 @@ COMPLETED COURSES - PAGES CREATED AND LIVE
 ✓ Troubadour Golf & Field Club - 4600 Murfreesboro Rd, College Grove 37046 - Private (Ranked #3 in Tennessee)
 ✓ Two Rivers Golf Course - 3140 McGavock Pike, Nashville 37214 - Municipal
 ✓ Vanderbilt Legends Club - 1500 Legends Club Ln, Franklin 37069 - Private (University-affiliated)
-✓ Warriors Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 - State Park (George Cobb)
+✓ Warrior's Path State Park Golf Course - 490 Hemlock Rd, Kingsport 37663 - State Park (George Cobb)
 ✓ White Plains Golf Course - 4000 Plantation Drive, Cookeville 38506 - Semi-Private
 ✓ Whittle Springs Golf Course - 3708 Whittle Springs Rd, Knoxville 37917 - Municipal
 ✓ Williams Creek Golf Course - 1901 Williams Creek Dr, Knoxville 37932 - Public
 ✓ Willow Creek Golf Club - 106 Willow Creek Dr, Lebanon 37087 - Semi-Private
 ✓ Windtree Golf Course - 600 Windtree Ln, Mount Juliet 37122 - Public
+✓ Windyke Country Club - Memphis, TN - Private
 
 ================================================================
 
@@ -168,10 +199,12 @@ Windover Farms Golf Course - Clarksville [PERMANENTLY CLOSED 2020] - Was Public 
 ================================================================
 
 SUMMARY STATISTICS:
-- Completed Course Pages: 94
-- High Priority Missing: 13
-- Total Focus Database: 95+ major Tennessee courses
-- Estimated Total Tennessee Courses: 270+
+- Completed Course Pages: 97 (verified against courses.php)
+- High Priority Missing: 34 courses need pages created (comprehensive research)  
+- Total Focus Database: 131+ major Tennessee courses
+- Estimated Total Tennessee Courses: 350+ (includes small town/rural courses)
+- Note: Sitemap needs updating (only shows 60/97 courses)
+- Research Source: Comprehensive search including TGA directory, county databases, military/university courses
 
 RESEARCH SOURCES VERIFIED:
 - Tennessee Golf Association
@@ -183,5 +216,5 @@ RESEARCH SOURCES VERIFIED:
 - PGA Tour Venue Directory
 - Golf Course Review Sites
 
-Last Updated: August 2025 (Reorganized & Research-Verified Edition)
-Next Priority: Create pages for Top 14 missing courses
+Last Updated: August 26, 2025 (Status Verified Against Live Website)
+Next Priority: Create pages for Top 13 missing courses (Memphis Municipal & University courses)
