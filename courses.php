@@ -1329,6 +1329,21 @@ $courses_static = [
         'slug' => 'southern-hills-golf-country-club'
     ],
     [
+        'id' => 123,
+        'name' => 'Sparta Country Club',
+        'location' => 'Sparta, TN',
+        'region' => 'Upper Cumberland',
+        'description' => 'Historic 9-hole golf course established in 1960, offering a classic small-town golf experience in White County. Features 2,759 yards with a 33.3 course rating and friendly atmosphere.',
+        'image' => '/images/courses/sparta-country-club/1.webp',
+        'price_range' => 'Call for Rates',
+        'difficulty' => 'Beginner/Intermediate',
+        'holes' => 9,
+        'par' => 35,
+        'designer' => 'N/A',
+        'amenities' => ['Food Service', 'Friendly Atmosphere', 'Small Town Golf', 'Classic Course Design'],
+        'slug' => 'sparta-country-club'
+    ],
+    [
         'id' => 53,
         'name' => 'Blackthorn Club',
         'location' => 'Jonesborough, TN',
