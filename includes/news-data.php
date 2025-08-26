@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Tour Championship 2025: Complete Atlanta Tournament Recap and Tommy Fleetwood\'s Historic First Win',
+        'slug' => 'tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win',
+        'date' => '2025-08-25',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Complete recap of the 2025 Tour Championship featuring Tommy Fleetwood\'s long-awaited first PGA Tour victory and FedEx Cup triumph at East Lake Golf Club in Atlanta.',
+        'image' => '/images/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'LIV Golf Michigan 2025: Team Championship Complete Tournament Recap and Playoff Drama',
         'slug' => 'liv-golf-michigan-2025-team-championship-complete-tournament-recap',
         'date' => '2025-08-25',
