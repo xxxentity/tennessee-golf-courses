@@ -189,11 +189,11 @@ try {
             color: #2c5234;
         }
         
-        .gallery-section {
+        .photo-gallery {
             padding: 4rem 0;
         }
         
-        .gallery-section h2 {
+        .photo-gallery h2 {
             text-align: center;
             margin-bottom: 3rem;
             color: #2c5234;
@@ -729,10 +729,10 @@ try {
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
         <div class="container">
-            <h2>Course Gallery</h2>
+            <h2>Photo Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/2.webp');" onclick="openGallery()"></div>
                 <div class="gallery-item" style="background-image: url('../images/courses/sparta-country-club/3.webp');" onclick="openGallery()"></div>
@@ -741,9 +741,7 @@ try {
             </div>
             
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">
-                    <i class="fas fa-images"></i> View All Photos
-                </button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
@@ -752,7 +750,7 @@ try {
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Sparta Country Club Photo Gallery</h2>
+                <h2 class="modal-title">Sparta Country Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
             
