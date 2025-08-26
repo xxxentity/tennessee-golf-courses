@@ -260,6 +260,10 @@ try {
             color: white;
         }
         
+        .liv-highlight p {
+            color: white;
+        }
+        
         .tournament-timeline {
             background: var(--bg-light);
             padding: 2rem;
@@ -292,6 +296,10 @@ try {
         .team-impact h3 {
             color: white;
             margin-bottom: 1rem;
+        }
+        
+        .team-impact p {
+            color: white;
         }
         
         .impact-stats {
