@@ -617,6 +617,14 @@ try {
                             <span class="spec-label">Type:</span>
                             <span class="spec-value">Private</span>
                         </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Course Rating:</span>
+                            <span class="spec-value">73.9</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Slope Rating:</span>
+                            <span class="spec-value">147</span>
+                        </div>
                     </div>
                 </div>
 
@@ -646,14 +654,6 @@ try {
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">(423) 586-1941</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Course Rating:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">73.9</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope Rating:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">147</span>
                         </div>
                     </div>
                     
