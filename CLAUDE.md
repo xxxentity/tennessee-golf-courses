@@ -1,5 +1,14 @@
 # Tennessee Golf Courses Project - Development Guidelines
 
+## ⚠️ CRITICAL: ALWAYS PUSH TO GITHUB ⚠️
+
+**MANDATORY RULE:** After ANY file change, update, or creation:
+1. **git add [files]**
+2. **git commit -m "descriptive message"** 
+3. **git push**
+
+**NO EXCEPTIONS!** This must be done automatically without being reminded.
+
 ## Critical Workflow Requirements
 
 ### 1. Git Workflow - ALWAYS Push After Updates
