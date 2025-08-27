@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once '../includes/init.php';
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
@@ -7,7 +11,7 @@ require_once '../includes/secure-upload.php';
 // Check if user is logged in
 if (!$is_logged_in) {
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'Not logged in']);
+    echo json_encode(['success' => false, 'error' => 'Not logged in', 'debug' => 'User not authenticated']);
     exit;
 }
 
@@ -15,13 +19,30 @@ if (!$is_logged_in) {
 $csrf_token = $_POST['csrf_token'] ?? '';
 if (!CSRFProtection::validateToken($csrf_token)) {
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'Security token expired or invalid. Please refresh the page.']);
+    echo json_encode([
+        'success' => false, 
+        'error' => 'Security token expired or invalid. Please refresh the page.',
+        'debug' => [
+            'token_provided' => !empty($csrf_token),
+            'token_length' => strlen($csrf_token),
+            'csrf_class_exists' => class_exists('CSRFProtection')
+        ]
+    ]);
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_FILES['profile_picture'])) {
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'No file uploaded']);
+    echo json_encode([
+        'success' => false, 
+        'error' => 'No file uploaded',
+        'debug' => [
+            'request_method' => $_SERVER['REQUEST_METHOD'],
+            'files_received' => array_keys($_FILES),
+            'post_data_keys' => array_keys($_POST),
+            'upload_errors' => $_FILES['profile_picture']['error'] ?? 'No file'
+        ]
+    ]);
     exit;
 }
 
