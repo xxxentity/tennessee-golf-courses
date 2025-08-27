@@ -93,22 +93,29 @@ $user_id = SecureSession::get('user_id');
 $error = '';
 $success = '';
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $first_name = trim($_POST['first_name']);
-    $last_name = trim($_POST['last_name']);
-    $email = trim($_POST['email']);
-    $display_real_name = isset($_POST['display_real_name']) ? 1 : 0;
-    $current_password = $_POST['current_password'] ?? '';
-    $new_password = $_POST['new_password'] ?? '';
-    $confirm_password = $_POST['confirm_password'] ?? '';
+// Handle form submission (but not profile picture uploads)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_FILES['profile_picture'])) {
+    require_once '../includes/csrf.php';
     
-    // Validation
-    if (empty($first_name) || empty($last_name) || empty($email)) {
-        $error = 'First name, last name, and email are required.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = 'Please enter a valid email address.';
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error = 'Security token expired. Please refresh the page and try again.';
     } else {
+        $first_name = trim($_POST['first_name']);
+        $last_name = trim($_POST['last_name']);
+        $email = trim($_POST['email']);
+        $display_real_name = isset($_POST['display_real_name']) ? 1 : 0;
+        $current_password = $_POST['current_password'] ?? '';
+        $new_password = $_POST['new_password'] ?? '';
+        $confirm_password = $_POST['confirm_password'] ?? '';
+        
+        // Validation
+        if (empty($first_name) || empty($last_name) || empty($email)) {
+            $error = 'First name, last name, and email are required.';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error = 'Please enter a valid email address.';
+        } else {
         try {
             // Check if email is already taken by another user
             $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ? AND id != ?");
@@ -161,6 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } catch (PDOException $e) {
             $error = 'Update failed. Please try again.';
+        }
         }
     }
 }
@@ -535,6 +543,9 @@ try {
                 </div>
 
                 <form action="edit-profile" method="POST">
+                    <?php require_once '../includes/csrf.php'; ?>
+                    <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::getToken(); ?>">
+                    
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" value="<?php echo htmlspecialchars($user['username'] ?? ''); ?>" disabled class="disabled-field">
@@ -605,9 +616,9 @@ try {
             const currentPicture = document.getElementById('currentPicture');
             
             // Validate file
-            if (!file.type.match(/^image\/(jpeg|jpg|png|gif)$/)) {
+            if (!file.type.match(/^image\/(jpeg|jpg|png|gif|webp)$/)) {
                 statusDiv.className = 'upload-status error';
-                statusDiv.textContent = 'Please select a valid image file (JPG, PNG, or GIF)';
+                statusDiv.textContent = 'Please select a valid image file (JPG, PNG, GIF, or WebP)';
                 return;
             }
             
