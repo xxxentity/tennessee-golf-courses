@@ -201,6 +201,9 @@ RewriteRule ^reviews/top-5-golf-drivers-2025/?$ reviews/top-5-golf-drivers-2025.
 RewriteRule ^reviews/top-5-golf-balls-2025/?$ reviews/top-5-golf-balls-2025.php [L]
 RewriteRule ^reviews/top-10-putters-2025-amazon-guide/?$ reviews/top-10-putters-2025-amazon-guide.php [L]
 
+# Handle profile pages
+RewriteRule ^profile/([a-zA-Z0-9_]+)/?$ profile.php?username=$1 [L]
+
 # Handle auth pages (clean URLs without /auth/ prefix)
 RewriteRule ^login/?$ auth/login.php [L]
 RewriteRule ^register/?$ auth/register.php [L]

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/profile-helpers.php';
 
 $article_slug = 'tennessee-herrington-historic-run-125th-us-amateur-runner-up';
 $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations';
@@ -647,7 +648,7 @@ try {
                         <?php foreach ($comments as $comment): ?>
                             <div class="comment">
                                 <div class="comment-header">
-                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
+                                    <?php echo getCommentAuthorLink($comment); ?>
                                     <span class="comment-date"><?php echo date('M j, Y g:i A', strtotime($comment['created_at'])); ?></span>
                                 </div>
                                 <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
