@@ -336,11 +336,7 @@ try {
                     <?php echo htmlspecialchars($user['username']); ?>
                 <?php endif; ?>
             </h1>
-            <?php if ($user['display_real_name']): ?>
-                <p class="profile-email"><?php echo htmlspecialchars($user['email']); ?></p>
-            <?php else: ?>
-                <p class="profile-email" style="opacity: 0.7;">Email hidden for privacy</p>
-            <?php endif; ?>
+            <p class="profile-email">Verified User (News Editor)</p>
             <p style="opacity: 0.8; margin-top: 12px;">
                 Member since <?php echo date('F Y', strtotime($user['created_at'])); ?>
             </p>
