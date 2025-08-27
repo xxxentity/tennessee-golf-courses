@@ -173,10 +173,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_FILES['profile_picture']))
                 }
             }
         } catch (PDOException $e) {
+            // For debugging - show actual error temporarily
+            $error = 'Update failed: ' . $e->getMessage();
             error_log("Profile update failed for user $user_id: " . $e->getMessage());
             error_log("SQL: " . $sql);
             error_log("Values: " . print_r($update_values, true));
-            $error = 'Update failed. Please try again.';
         }
         }
     }
