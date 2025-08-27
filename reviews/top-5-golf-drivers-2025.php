@@ -271,6 +271,10 @@ $article = [
 
             <!-- Article Content -->
             <article class="article-content">
+                <div style="font-size: 0.85rem; color: #666; font-style: italic; margin-bottom: 1.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; text-align: center;">
+                    <small>This article contains affiliate links. We may earn a commission from purchases at no extra cost to you.</small>
+                </div>
+                
                 <h2>Top 5 Best Golf Drivers of 2025</h2>
                 <ol style="list-style: none; padding: 0; margin: 2rem 0;">
                     <li style="margin-bottom: 0.75rem;"><a href="#driver-5" style="color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">5. Wilson Staff Dynapower Carbon</a></li>

@@ -348,6 +348,10 @@ $article = [
                 </header>
 
                 <div class="article-content">
+                    <div style="font-size: 0.85rem; color: #666; font-style: italic; margin-bottom: 1.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; text-align: center;">
+                        <small>This article contains affiliate links. We may earn a commission from purchases at no extra cost to you.</small>
+                    </div>
+                    
                     <p>Finding the perfect golf ball can dramatically improve your game, whether you're looking for maximum distance off the tee, exceptional spin control around the greens, or the ideal balance of both. After extensive testing, tour feedback, and analysis of the latest 2025 releases, we've identified the top 5 golf balls that deliver tour-level performance for every type of player.</p>
 
                     <p>Our selection process considered multiple factors including compression ratings, spin characteristics, cover technology, and real-world performance data from both professional tours and robot testing. These golf balls represent the pinnacle of current golf ball technology, featuring innovations in core design, cover materials, and aerodynamics.</p>
