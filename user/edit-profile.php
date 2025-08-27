@@ -185,6 +185,18 @@ try {
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
     
+    // Debug - remove after testing
+    if (isset($_GET['debug'])) {
+        echo "Query executed for user_id: $user_id<br>";
+        echo "Query result: " . ($user ? "SUCCESS" : "FAILED") . "<br>";
+        if ($user) {
+            echo "Username: " . $user['username'] . "<br>";
+            echo "Email: " . $user['email'] . "<br>";
+        }
+        echo "Error var: " . ($error ?? 'not set') . "<br>";
+        exit;
+    }
+    
     if (!$user) {
         $error = 'Failed to load user data.';
         $user = [];
