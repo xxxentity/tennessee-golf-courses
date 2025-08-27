@@ -50,6 +50,31 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Tennessee Golf Courses</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tennessee Golf Courses admin dashboard for managing users, content, security, and system settings. Secure administrative interface.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Tennessee Golf Courses">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Admin Dashboard - Tennessee Golf Courses">
+    <meta property="og:description" content="Administrative dashboard for Tennessee Golf Courses website management">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tennesseegolfcourses.com/admin/dashboard">
+    <meta property="og:site_name" content="Tennessee Golf Courses">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Admin Dashboard - Tennessee Golf Courses">
+    <meta name="twitter:description" content="Administrative dashboard for Tennessee Golf Courses website management">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tennesseegolfcourses.com/admin/dashboard">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
