@@ -19,28 +19,11 @@ if (!SecureSession::isLoggedIn()) {
 
 $user_id = SecureSession::get('user_id');
 
-// Debug: Add temporary debugging
-if (isset($_GET['debug'])) {
-    echo "<h2>Profile Debug Information</h2>";
-    echo "User ID from session: " . $user_id . "<br>";
-    echo "Session username: " . SecureSession::get('username') . "<br>";
-    echo "Database connection: " . (isset($pdo) ? "✅ Connected" : "❌ Not connected") . "<br>";
-}
-
 // Get user details
 try {
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
-    
-    if (isset($_GET['debug'])) {
-        echo "User query result: " . ($user ? "✅ Found user" : "❌ No user found") . "<br>";
-        if ($user) {
-            echo "Username from DB: " . $user['username'] . "<br>";
-            echo "User email: " . $user['email'] . "<br>";
-        }
-        echo "<hr>";
-    }
     
     // Get user's reviews count
     $stmt = $pdo->prepare("SELECT COUNT(*) as review_count FROM reviews WHERE user_id = ?");
