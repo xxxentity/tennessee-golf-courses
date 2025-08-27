@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/init.php';
 
 // Get latest 3 news articles (same as homepage)
 $latest_news = [

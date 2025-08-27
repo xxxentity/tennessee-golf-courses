@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/init.php';
 
 // Get all news articles (in order of newest first)
 require_once 'includes/news-data.php';

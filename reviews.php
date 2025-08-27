@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'includes/init.php';
 
 // Get all review articles (in order of newest first)
 require_once 'includes/reviews-data.php';

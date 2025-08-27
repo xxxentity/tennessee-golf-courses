@@ -1,6 +1,5 @@
 <?php
-session_start();
-// Security headers are now properly configured in .htaccess
+require_once 'includes/init.php';
 ?>
 
 <!DOCTYPE html>
