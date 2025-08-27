@@ -1,6 +1,11 @@
 <?php
-require_once '../includes/admin-auth.php';
+require_once '../includes/admin-security-simple.php';
 require_once '../config/database.php';
+
+// Require admin authentication
+AdminSecurity::requireAdminAuth();
+
+$currentAdmin = AdminSecurity::getCurrentAdmin();
 
 // Handle form submission
 $message = '';
