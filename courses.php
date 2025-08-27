@@ -1089,6 +1089,21 @@ $courses_static = [
         'slug' => 'vanderbilt-legends-club'
     ],
     [
+        'id' => 124,
+        'name' => 'WindRiver Golf Club',
+        'location' => 'Lenoir City, TN',
+        'region' => 'Knoxville Area',
+        'description' => 'Tennessee\'s first Audubon-certified golf course designed by Bob Cupp. Championship layout overlooking Tellico Lake with Great Smoky Mountains backdrop. Features rolling fairways, undulating greens, and six tee options from 4,146 to 7,453 yards.',
+        'image' => '/images/courses/windriver-golf-club/1.webp',
+        'price_range' => 'Private Club',
+        'difficulty' => 'Advanced',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Bob Cupp',
+        'amenities' => ['Private Club', 'Audubon Certified', 'Championship Golf', 'Lake Views', 'Practice Facility', 'Short Game Area', 'Pro Shop', 'Beverage Cart'],
+        'slug' => 'windriver-golf-club'
+    ],
+    [
         'id' => 70,
         'name' => 'Windtree Golf Course',
         'location' => 'Mount Juliet, TN',

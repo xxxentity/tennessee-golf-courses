@@ -147,6 +147,7 @@ RewriteRule ^courses/two-rivers-golf-course/?$ courses/two-rivers-golf-course.ph
 RewriteRule ^courses/vanderbilt-legends-club/?$ courses/vanderbilt-legends-club.php [L]
 RewriteRule ^courses/willow-creek-golf-club/?$ courses/willow-creek-golf-club.php [L]
 RewriteRule ^courses/williams-creek-golf-course/?$ courses/williams-creek-golf-course.php [L]
+RewriteRule ^courses/windriver-golf-club/?$ courses/windriver-golf-club.php [L]
 RewriteRule ^courses/windtree-golf-course/?$ courses/windtree-golf-course.php [L]
 RewriteRule ^courses/signal-mountain-golf-country-club/?$ courses/signal-mountain-golf-country-club.php [L]
 RewriteRule ^courses/southern-hills-golf-country-club/?$ courses/southern-hills-golf-country-club.php [L]
