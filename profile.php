@@ -53,7 +53,7 @@ try {
     
     // Get recent reviews (public only)
     $stmt = $pdo->prepare("
-        SELECT r.rating, r.review_text, r.created_at, c.name as course_name, c.slug as course_slug
+        SELECT r.rating, r.review_text, r.created_at, c.name as course_name
         FROM reviews r 
         LEFT JOIN courses c ON r.course_id = c.id 
         WHERE r.user_id = ? 
@@ -339,13 +339,7 @@ try {
             <?php foreach ($recent_reviews as $review): ?>
                 <div class="review-item">
                     <div class="review-course">
-                        <?php if ($review['course_slug']): ?>
-                            <a href="/courses/<?php echo htmlspecialchars($review['course_slug']); ?>">
-                                <?php echo htmlspecialchars($review['course_name'] ?: 'Course'); ?>
-                            </a>
-                        <?php else: ?>
-                            <?php echo htmlspecialchars($review['course_name'] ?: 'Course'); ?>
-                        <?php endif; ?>
+                        <?php echo htmlspecialchars($review['course_name'] ?: 'Course'); ?>
                     </div>
                     <div class="review-rating">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
