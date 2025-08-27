@@ -336,7 +336,7 @@ try {
                     <?php echo htmlspecialchars($user['username']); ?>
                 <?php endif; ?>
             </h1>
-            <p class="profile-email">Verified User</p>
+            <p class="profile-email"><?php echo htmlspecialchars($user['user_title'] ?? 'Verified User'); ?></p>
             <p style="opacity: 0.8; margin-top: 12px;">
                 Member since <?php echo date('F Y', strtotime($user['created_at'])); ?>
             </p>

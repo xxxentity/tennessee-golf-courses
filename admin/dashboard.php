@@ -403,6 +403,22 @@ try {
                 </div>
             </a>
             
+            <a href="/admin/manage-user-titles" class="admin-card">
+                <div class="card-header">
+                    <h3 class="card-title">User Titles</h3>
+                    <div class="card-icon icon-users">
+                        <i class="fas fa-user-tag"></i>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Manage user titles and roles (Site Administrator, News Editor, Reviews Editor, etc).
+                </p>
+                <div class="card-action">
+                    <span class="action-text">Manage Titles</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </a>
+            
             <a href="/admin/security" class="admin-card">
                 <div class="card-header">
                     <h3 class="card-title">Security Monitor</h3>
