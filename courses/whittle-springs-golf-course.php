@@ -621,14 +621,22 @@ try {
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-users"></i> Membership</h3>
-                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
-                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div class="course-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Weekday:</span>
+                                <span class="spec-value">$34</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Weekend:</span>
+                                <span class="spec-value">$39</span>
+                            </div>
+                        </div>
                     </div>
                     <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Whittle Springs Golf Course operates as a members-only facility. 
-                        Contact the club directly for membership information and guest policies.
+                        <i class="fas fa-phone" style="color: #4a7c59; margin-right: 0.5rem;"></i>
+                        Call (865) 525-1022 for tee times and current rates
                     </p>
                 </div>
 
@@ -682,7 +690,7 @@ try {
                 
                 <br>
                 
-                <p>Today, Whittle Springs continues to serve as a members-only facility, home to the City Amateur Championship since the 1930s. The course offers exclusive membership access while preserving its historic character and maintaining the traditional values of private club golf in Knoxville.</p>
+                <p>Today, Whittle Springs continues to serve golfers as Knoxville's historic municipal course, home to the City Amateur Championship since the 1930s. The course offers affordable public golf while preserving its historic character and maintaining its tradition as Tennessee's golf pioneer.</p>
             </div>
 
             <!-- Amenities -->
@@ -711,7 +719,7 @@ try {
                     </div>
                     <div class="amenity-item">
                         <i class="fas fa-users"></i>
-                        <span>Private Memberships</span>
+                        <span>Public Access</span>
                     </div>
                 </div>
             </div>
@@ -754,7 +762,7 @@ try {
         <div class="container">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <h2 style="color: #2c5234; font-size: 2.5rem; margin-bottom: 1rem;">What Golfers Are Saying</h2>
-                <p style="color: #666; font-size: 1.1rem;">Read reviews from members who have played Whittle Springs Golf Course</p>
+                <p style="color: #666; font-size: 1.1rem;">Read reviews from golfers who have played Whittle Springs Golf Course</p>
             </div>
             
             <?php if (isset($success_message)): ?>
