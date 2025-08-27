@@ -455,7 +455,7 @@ Time: " . date('Y-m-d H:i:s');
                     </div>
                     <div class="contact-method-info">
                         <h4>Call Us</h4>
-                        <p>(615) 555-GOLF</p>
+                        <p>(615) 697-3866</p>
                     </div>
                 </div>
 
