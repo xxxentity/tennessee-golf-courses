@@ -2,6 +2,77 @@
 require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
+// Handle AJAX profile picture upload
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) {
+    require_once '../includes/csrf.php';
+    require_once '../includes/secure-upload.php';
+    
+    header('Content-Type: application/json');
+    
+    try {
+        SecureSession::start();
+        if (!SecureSession::isLoggedIn()) {
+            echo json_encode(['success' => false, 'error' => 'Not logged in']);
+            exit;
+        }
+        
+        $user_id = SecureSession::get('user_id');
+        
+        // Validate CSRF token
+        $csrf_token = $_POST['csrf_token'] ?? '';
+        if (!CSRFProtection::validateToken($csrf_token)) {
+            echo json_encode(['success' => false, 'error' => 'Security token expired. Please refresh the page.']);
+            exit;
+        }
+        
+        // Configure upload
+        $uploadConfig = [
+            'allowed_mime_types' => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'],
+            'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+            'max_file_size' => 5 * 1024 * 1024, // 5MB
+            'upload_dir' => __DIR__ . '/../uploads/profile_pictures/'
+        ];
+        
+        $uploader = new SecureUpload($uploadConfig);
+        $result = $uploader->handleUpload($_FILES['profile_picture'], 'profile_' . $user_id);
+        
+        if (!$result['success']) {
+            echo json_encode(['success' => false, 'error' => implode('. ', $result['errors'])]);
+            exit;
+        }
+        
+        // Resize image
+        $uploader->resizeImage($result['path'], 300, 300, 85);
+        
+        // Get current profile picture to delete old one
+        $stmt = $pdo->prepare("SELECT profile_picture FROM users WHERE id = ?");
+        $stmt->execute([$user_id]);
+        $user = $stmt->fetch();
+        
+        // Update database
+        $relative_path = 'uploads/profile_pictures/' . $result['filename'];
+        $stmt = $pdo->prepare("UPDATE users SET profile_picture = ? WHERE id = ?");
+        $stmt->execute([$relative_path, $user_id]);
+        
+        // Delete old profile picture if exists
+        if ($user['profile_picture'] && file_exists('../' . $user['profile_picture'])) {
+            @unlink('../' . $user['profile_picture']);
+        }
+        
+        echo json_encode([
+            'success' => true,
+            'message' => 'Profile picture updated successfully',
+            'image_url' => $relative_path,
+            'filename' => $result['filename']
+        ]);
+        exit;
+        
+    } catch (Exception $e) {
+        echo json_encode(['success' => false, 'error' => 'Upload failed: ' . $e->getMessage()]);
+        exit;
+    }
+}
+
 // Start secure session
 try {
     SecureSession::start();
@@ -553,8 +624,8 @@ try {
             formData.append('profile_picture', file);
             formData.append('csrf_token', '<?php require_once "../includes/csrf.php"; echo CSRFProtection::getToken(); ?>');
             
-            // Upload file
-            fetch('/user/upload-profile-picture.php', {
+            // Upload file to same page
+            fetch(window.location.pathname, {
                 method: 'POST',
                 body: formData
             })
