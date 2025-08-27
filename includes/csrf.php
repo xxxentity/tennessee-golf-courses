@@ -55,10 +55,10 @@ class CSRFProtection {
             }
         }
         
-        // Generate new token if doesn't exist or is expired (4 hours)
+        // Generate new token if doesn't exist or is expired (2 hours)
         if (!isset($_SESSION['csrf_token']) || 
             !isset($_SESSION['csrf_token_time']) || 
-            (time() - $_SESSION['csrf_token_time']) > 14400) {
+            (time() - $_SESSION['csrf_token_time']) > 7200) {
             return self::generateToken();
         }
         
@@ -71,6 +71,10 @@ class CSRFProtection {
      * @return bool True if valid, false otherwise
      */
     public static function validateToken($token) {
+        // Empty token is always invalid
+        if (empty($token)) {
+            return false;
+        }
         // Ensure session is started (compatible with SecureSession)
         if (session_status() === PHP_SESSION_NONE) {
             try {
@@ -86,10 +90,10 @@ class CSRFProtection {
             }
         }
         
-        // Check if token exists and is not expired (4 hours)
+        // Check if token exists and is not expired (2 hours)
         if (!isset($_SESSION['csrf_token']) || 
             !isset($_SESSION['csrf_token_time']) || 
-            (time() - $_SESSION['csrf_token_time']) > 14400) {
+            (time() - $_SESSION['csrf_token_time']) > 7200) {
             return false;
         }
         

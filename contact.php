@@ -11,8 +11,12 @@ $error_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate CSRF token first
     $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please try again.';
+    
+    // Debug: Check if token exists at all
+    if (empty($csrf_token)) {
+        $error_message = 'Security token missing. Please refresh the page and try again.';
+    } elseif (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired. Please refresh the page and try again.';
     } else {
         // Enhanced input validation for contact form
         $formData = [
