@@ -2,20 +2,6 @@
 require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
-// Quick debug - remove this after testing
-if (isset($_GET['test'])) {
-    echo "Session test:<br>";
-    try {
-        SecureSession::start();
-        echo "Session started: " . (SecureSession::isLoggedIn() ? "YES" : "NO") . "<br>";
-        echo "User ID: " . SecureSession::get('user_id') . "<br>";
-        echo "Username: " . SecureSession::get('username') . "<br>";
-        exit;
-    } catch (Exception $e) {
-        echo "Session error: " . $e->getMessage() . "<br>";
-        exit;
-    }
-}
 
 // Handle AJAX profile picture upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) {
@@ -181,21 +167,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Get current user data
 try {
-    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name, display_real_name, profile_picture FROM users WHERE id = ?");
+    // Use the same query format as profile.php which works
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
-    
-    // Debug - remove after testing
-    if (isset($_GET['debug'])) {
-        echo "Query executed for user_id: $user_id<br>";
-        echo "Query result: " . ($user ? "SUCCESS" : "FAILED") . "<br>";
-        if ($user) {
-            echo "Username: " . $user['username'] . "<br>";
-            echo "Email: " . $user['email'] . "<br>";
-        }
-        echo "Error var: " . ($error ?? 'not set') . "<br>";
-        exit;
-    }
     
     if (!$user) {
         $error = 'Failed to load user data.';
