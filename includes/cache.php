@@ -7,6 +7,7 @@
 class Cache {
     private static $cacheDir = null;
     private static $defaultTTL = 3600; // 1 hour default
+    private static $enabled = true; // Master enable/disable switch
     
     /**
      * Initialize cache system
@@ -47,52 +48,84 @@ class Cache {
     }
     
     /**
+     * Enable or disable caching globally (EMERGENCY SWITCH)
+     */
+    public static function setEnabled($enabled) {
+        self::$enabled = $enabled;
+    }
+    
+    /**
+     * Check if caching is enabled
+     */
+    public static function isEnabled() {
+        return self::$enabled;
+    }
+    
+    /**
      * Store data in cache
      */
     public static function set($key, $data, $ttl = null) {
-        if ($ttl === null) {
-            $ttl = self::$defaultTTL;
+        if (!self::$enabled) {
+            return false;
         }
         
-        $cacheData = [
-            'data' => $data,
-            'expires' => time() + $ttl,
-            'created' => time()
-        ];
-        
-        $filePath = self::getFilePath($key);
-        return file_put_contents($filePath, serialize($cacheData)) !== false;
+        try {
+            if ($ttl === null) {
+                $ttl = self::$defaultTTL;
+            }
+            
+            $cacheData = [
+                'data' => $data,
+                'expires' => time() + $ttl,
+                'created' => time()
+            ];
+            
+            $filePath = self::getFilePath($key);
+            return file_put_contents($filePath, serialize($cacheData)) !== false;
+        } catch (Exception $e) {
+            error_log("Cache set error: " . $e->getMessage());
+            return false;
+        }
     }
     
     /**
      * Get data from cache
      */
     public static function get($key, $default = null) {
-        $filePath = self::getFilePath($key);
-        
-        if (!file_exists($filePath)) {
+        if (!self::$enabled) {
             return $default;
         }
         
-        $content = file_get_contents($filePath);
-        if ($content === false) {
+        try {
+            $filePath = self::getFilePath($key);
+            
+            if (!file_exists($filePath)) {
+                return $default;
+            }
+            
+            $content = file_get_contents($filePath);
+            if ($content === false) {
+                return $default;
+            }
+            
+            $cacheData = unserialize($content);
+            if ($cacheData === false) {
+                // Invalid cache file, delete it safely
+                @unlink($filePath);
+                return $default;
+            }
+            
+            // Check if expired
+            if (time() > $cacheData['expires']) {
+                @unlink($filePath);
+                return $default;
+            }
+            
+            return $cacheData['data'];
+        } catch (Exception $e) {
+            error_log("Cache get error: " . $e->getMessage());
             return $default;
         }
-        
-        $cacheData = unserialize($content);
-        if ($cacheData === false) {
-            // Invalid cache file, delete it
-            unlink($filePath);
-            return $default;
-        }
-        
-        // Check if expired
-        if (time() > $cacheData['expires']) {
-            unlink($filePath);
-            return $default;
-        }
-        
-        return $cacheData['data'];
     }
     
     /**
@@ -209,8 +242,62 @@ class Cache {
         
         return $result;
     }
+    
+    /**
+     * Safe page caching with output buffering
+     */
+    public static function cachePage($key, $ttl = 7200) { // 2 hours default for pages
+        if (!self::$enabled) {
+            return false;
+        }
+        
+        // Don't cache admin, auth, or dynamic pages
+        $currentPage = $_SERVER['REQUEST_URI'] ?? '';
+        $skipCache = ['/admin/', '/auth/', '/login', '/register', '/profile', '?search=', '?debug='];
+        
+        foreach ($skipCache as $pattern) {
+            if (strpos($currentPage, $pattern) !== false) {
+                return false;
+            }
+        }
+        
+        // Try to get cached version
+        $cached = self::get($key);
+        if ($cached !== null) {
+            echo $cached;
+            return true;
+        }
+        
+        // Start output buffering for new content
+        ob_start();
+        return false; // Indicates we need to generate content
+    }
+    
+    /**
+     * End page caching and store the output
+     */
+    public static function endPageCache($key, $ttl = 7200) {
+        if (!self::$enabled) {
+            return;
+        }
+        
+        $content = ob_get_contents();
+        
+        // Only cache if content looks valid (has reasonable length and HTML)
+        if (strlen($content) > 500 && strpos($content, '</html>') !== false) {
+            self::set($key, $content, $ttl);
+        }
+    }
+    
+    /**
+     * EMERGENCY: Disable all caching (uncomment the line below to disable)
+     */
+    // public static function emergencyDisable() { self::$enabled = false; }
 }
 
 // Initialize cache system
 Cache::init();
+
+// EMERGENCY DISABLE: Uncomment this line to disable all caching immediately
+// Cache::setEnabled(false);
 ?>

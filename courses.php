@@ -2,6 +2,7 @@
 // Enhanced performance with caching and optimization plus SEO
 require_once 'includes/init.php';
 require_once 'includes/seo.php';
+require_once 'includes/cache.php';
 
 // Set up SEO for courses page
 SEO::setupCoursesPage();
@@ -1525,24 +1526,27 @@ $courses_static = [
     ]
 ];
 
-// Get real ratings from database for each course
-$courses = [];
-foreach ($courses_static as $course) {
-    try {
-        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-        $stmt->execute([$course['slug']]);
-        $rating_data = $stmt->fetch();
+// Get real ratings from database for each course (with caching)
+$courses = Cache::remember('courses_with_ratings', function() use ($courses_static, $pdo) {
+    $courses = [];
+    foreach ($courses_static as $course) {
+        try {
+            $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+            $stmt->execute([$course['slug']]);
+            $rating_data = $stmt->fetch();
+            
+            $course['avg_rating'] = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+            $course['review_count'] = $rating_data['total_reviews'] ?: 0;
+            
+        } catch (PDOException $e) {
+            $course['avg_rating'] = null;
+            $course['review_count'] = 0;
+        }
         
-        $course['avg_rating'] = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-        $course['review_count'] = $rating_data['total_reviews'] ?: 0;
-        
-    } catch (PDOException $e) {
-        $course['avg_rating'] = null;
-        $course['review_count'] = 0;
+        $courses[] = $course;
     }
-    
-    $courses[] = $course;
-}
+    return $courses;
+}, 1800); // Cache for 30 minutes
 
 // Apply filters to courses
 $filtered_courses = [];
