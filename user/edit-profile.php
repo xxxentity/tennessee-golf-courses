@@ -110,6 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_FILES['profile_picture']))
         $new_password = $_POST['new_password'] ?? '';
         $confirm_password = $_POST['confirm_password'] ?? '';
         
+        
         // Validation
         if (empty($first_name) || empty($last_name) || empty($email)) {
             $error = 'First name, last name, and email are required.';
@@ -155,6 +156,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_FILES['profile_picture']))
                 if (empty($error)) {
                     $update_values[] = $user_id;
                     $sql = "UPDATE users SET " . implode(', ', $update_fields) . " WHERE id = ?";
+                    
+                    // Debug - show what we're trying to execute
+                    error_log("Executing SQL: $sql");
+                    error_log("With values: " . json_encode($update_values));
+                    
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute($update_values);
                     
@@ -167,6 +173,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_FILES['profile_picture']))
                 }
             }
         } catch (PDOException $e) {
+            error_log("Profile update failed for user $user_id: " . $e->getMessage());
+            error_log("SQL: " . $sql);
+            error_log("Values: " . print_r($update_values, true));
             $error = 'Update failed. Please try again.';
         }
         }
@@ -543,7 +552,6 @@ try {
                 </div>
 
                 <form action="edit-profile" method="POST">
-                    <?php require_once '../includes/csrf.php'; ?>
                     <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::getToken(); ?>">
                     
                     <div class="form-group">
