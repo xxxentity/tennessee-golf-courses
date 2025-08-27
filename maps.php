@@ -1220,6 +1220,14 @@ session_start();
                 coordinates: [-83.88508, 35.97125]
             },
             {
+                name: "WindRiver Golf Club",
+                address: "1800 Oakum Court, Lenoir City, TN 37772",
+                phone: "(865) 988-0370",
+                type: "Private",
+                slug: "windriver-golf-club",
+                coordinates: [-84.25613, 35.81225]
+            },
+            {
                 name: "Willow Creek Golf Club",
                 address: "12003 Kingston Pike, Knoxville, TN 37934",
                 phone: "(865) 675-0100",
