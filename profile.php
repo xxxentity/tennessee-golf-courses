@@ -1,5 +1,9 @@
 <?php
+session_start();
 require_once 'config/database.php';
+
+// Check if user is logged in (but don't require it for public profiles)
+$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
 // Get username from URL parameter
 $username = $_GET['username'] ?? '';
