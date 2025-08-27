@@ -12,13 +12,14 @@ $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     $comment_text = trim($_POST['comment_text']);
+    $parent_id = !empty($_POST['parent_id']) ? (int)$_POST['parent_id'] : null;
     $user_id = $_SESSION['user_id'];
     
     if (!empty($comment_text)) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            $success_message = "Your comment has been posted successfully!";
+            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
+            $success_message = $parent_id ? "Your reply has been posted successfully!" : "Your comment has been posted successfully!";
         } catch (PDOException $e) {
             $error_message = "Error posting comment. Please try again.";
         }
@@ -34,10 +35,25 @@ try {
         FROM news_comments nc 
         JOIN users u ON nc.user_id = u.id 
         WHERE nc.article_slug = ? AND nc.is_approved = TRUE
-        ORDER BY nc.created_at DESC
+        ORDER BY nc.created_at ASC
     ");
     $stmt->execute([$article_slug]);
-    $comments = $stmt->fetchAll();
+    $all_comments = $stmt->fetchAll();
+    
+    // Organize comments into threaded structure
+    $comments = [];
+    $replies = [];
+    
+    foreach ($all_comments as $comment) {
+        if ($comment['parent_id'] === null) {
+            $comments[] = $comment;
+        } else {
+            if (!isset($replies[$comment['parent_id']])) {
+                $replies[$comment['parent_id']] = [];
+            }
+            $replies[$comment['parent_id']][] = $comment;
+        }
+    }
     
 } catch (PDOException $e) {
     $comments = [];
@@ -406,6 +422,106 @@ try {
             line-height: 1.6;
         }
         
+        .comment-actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .reply-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        
+        .reply-btn:hover {
+            background: var(--bg-light);
+        }
+        
+        .reply-form {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-white);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: none;
+        }
+        
+        .reply-form.active {
+            display: block;
+        }
+        
+        .reply-form textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+        }
+        
+        .reply-form .form-actions {
+            margin-top: 0.8rem;
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .reply-form button {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .reply-submit {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .reply-submit:hover {
+            background: var(--secondary-color);
+        }
+        
+        .reply-cancel {
+            background: var(--border-color);
+            color: var(--text-gray);
+        }
+        
+        .reply-cancel:hover {
+            background: var(--text-gray);
+            color: white;
+        }
+        
+        .comment-replies {
+            margin-top: 1.5rem;
+            margin-left: 2rem;
+            border-left: 3px solid var(--border-color);
+            padding-left: 1.5rem;
+        }
+        
+        .comment-reply {
+            padding: 1rem;
+            background: var(--bg-white);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .comment-reply:last-child {
+            margin-bottom: 0;
+        }
+        
         .login-prompt {
             text-align: center;
             padding: 2rem;
@@ -646,12 +762,45 @@ try {
                 <div class="comments-list">
                     <?php if (!empty($comments)): ?>
                         <?php foreach ($comments as $comment): ?>
-                            <div class="comment">
+                            <div class="comment" id="comment-<?php echo $comment['id']; ?>">
                                 <div class="comment-header">
                                     <?php echo getCommentAuthorLink($comment); ?>
                                     <span class="comment-date"><?php echo date('M j, Y g:i A', strtotime($comment['created_at'])); ?></span>
                                 </div>
                                 <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                                
+                                <?php if ($is_logged_in): ?>
+                                <div class="comment-actions">
+                                    <button class="reply-btn" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)">
+                                        <i class="fas fa-reply"></i> Reply
+                                    </button>
+                                </div>
+                                
+                                <div class="reply-form" id="reply-form-<?php echo $comment['id']; ?>">
+                                    <form method="POST" action="">
+                                        <input type="hidden" name="parent_id" value="<?php echo $comment['id']; ?>">
+                                        <textarea name="comment_text" placeholder="Write your reply..." required></textarea>
+                                        <div class="form-actions">
+                                            <button type="submit" class="reply-submit">Post Reply</button>
+                                            <button type="button" class="reply-cancel" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)">Cancel</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php endif; ?>
+                                
+                                <?php if (isset($replies[$comment['id']])): ?>
+                                <div class="comment-replies">
+                                    <?php foreach ($replies[$comment['id']] as $reply): ?>
+                                        <div class="comment-reply" id="comment-<?php echo $reply['id']; ?>">
+                                            <div class="comment-header">
+                                                <?php echo getCommentAuthorLink($reply); ?>
+                                                <span class="comment-date"><?php echo date('M j, Y g:i A', strtotime($reply['created_at'])); ?></span>
+                                            </div>
+                                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($reply['comment_text'])); ?></div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
@@ -663,5 +812,29 @@ try {
     </div>
     
     <?php include '../includes/footer.php'; ?>
+    
+    <script>
+    function toggleReplyForm(commentId) {
+        const form = document.getElementById('reply-form-' + commentId);
+        if (form) {
+            if (form.classList.contains('active')) {
+                form.classList.remove('active');
+            } else {
+                // Hide any other open reply forms
+                const allForms = document.querySelectorAll('.reply-form.active');
+                allForms.forEach(f => f.classList.remove('active'));
+                
+                // Show this form
+                form.classList.add('active');
+                
+                // Focus on the textarea
+                const textarea = form.querySelector('textarea');
+                if (textarea) {
+                    textarea.focus();
+                }
+            }
+        }
+    }
+    </script>
 </body>
 </html>
