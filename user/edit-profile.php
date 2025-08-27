@@ -552,6 +552,7 @@ try {
                 </div>
 
                 <form action="edit-profile" method="POST">
+                    <?php require_once '../includes/csrf.php'; ?>
                     <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::getToken(); ?>">
                     
                     <div class="form-group">
