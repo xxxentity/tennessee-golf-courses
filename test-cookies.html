@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Consent Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c5234;
+        }
+        .cookie-status {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        button {
+            background: #4a7c59;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2c5234;
+        }
+        .cookie-list {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🍪 Cookie Consent Test Page</h1>
+        
+        <div class="cookie-status">
+            <h2>Current Cookie Status:</h2>
+            <p><strong>Consent Status:</strong> <span id="consentStatus">Not Set</span></p>
+            <p><strong>Cookie Preferences:</strong></p>
+            <ul id="preferences">
+                <li>Essential: <span id="essentialStatus">N/A</span></li>
+                <li>Analytics: <span id="analyticsStatus">N/A</span></li>
+                <li>Functional: <span id="functionalStatus">N/A</span></li>
+            </ul>
+        </div>
+        
+        <h3>Test Actions:</h3>
+        <button onclick="clearAllCookies()">Clear All Cookies</button>
+        <button onclick="reloadPage()">Reload Page</button>
+        <button onclick="showAllCookies()">Show All Cookies</button>
+        
+        <div class="cookie-list" id="cookieList" style="display:none;">
+            <h4>All Cookies:</h4>
+            <div id="allCookies"></div>
+        </div>
+        
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Click "Clear All Cookies" to reset the consent state</li>
+            <li>Click "Reload Page" to see the cookie banner</li>
+            <li>Test the different options:
+                <ul>
+                    <li>"Accept All" - Should allow all cookies</li>
+                    <li>"Decline" - Should block analytics and functional cookies</li>
+                    <li>"Cookie Settings" - Should open preferences modal</li>
+                </ul>
+            </li>
+            <li>Check the status display to verify cookies are set correctly</li>
+        </ol>
+    </div>
+    
+    <script>
+        // Helper functions
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        function clearAllCookies() {
+            document.cookie.split(";").forEach(function(c) { 
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+            alert('All cookies cleared! Reload the page to see the cookie banner.');
+            updateStatus();
+        }
+        
+        function reloadPage() {
+            window.location.reload();
+        }
+        
+        function showAllCookies() {
+            const cookieList = document.getElementById('cookieList');
+            const allCookies = document.getElementById('allCookies');
+            
+            if (cookieList.style.display === 'none') {
+                cookieList.style.display = 'block';
+                allCookies.textContent = document.cookie || 'No cookies set';
+            } else {
+                cookieList.style.display = 'none';
+            }
+        }
+        
+        function updateStatus() {
+            // Check consent status
+            const consent = getCookie('tn_golf_cookie_consent');
+            const consentStatus = document.getElementById('consentStatus');
+            
+            if (consent) {
+                consentStatus.textContent = consent.charAt(0).toUpperCase() + consent.slice(1);
+                consentStatus.style.color = consent === 'accepted' ? 'green' : consent === 'declined' ? 'red' : 'orange';
+            } else {
+                consentStatus.textContent = 'Not Set';
+                consentStatus.style.color = 'gray';
+            }
+            
+            // Check preferences
+            const prefs = getCookie('tn_golf_cookie_preferences');
+            if (prefs) {
+                try {
+                    const preferences = JSON.parse(decodeURIComponent(prefs));
+                    document.getElementById('essentialStatus').textContent = preferences.essential ? '✅ Allowed' : '❌ Blocked';
+                    document.getElementById('analyticsStatus').textContent = preferences.analytics ? '✅ Allowed' : '❌ Blocked';
+                    document.getElementById('functionalStatus').textContent = preferences.functional ? '✅ Allowed' : '❌ Blocked';
+                } catch (e) {
+                    console.error('Error parsing preferences:', e);
+                }
+            } else {
+                document.getElementById('essentialStatus').textContent = 'N/A';
+                document.getElementById('analyticsStatus').textContent = 'N/A';
+                document.getElementById('functionalStatus').textContent = 'N/A';
+            }
+        }
+        
+        // Update status on page load
+        updateStatus();
+        
+        // Update status every second to catch changes
+        setInterval(updateStatus, 1000);
+    </script>
+</body>
+</html>

@@ -143,6 +143,11 @@ $is_main_page = (
     </nav>
 </header>
 
+<?php
+// Include cookie consent banner
+require_once __DIR__ . '/cookie-consent.php';
+?>
+
 <style>
 /* Logo image styling */
 .logo-image {
