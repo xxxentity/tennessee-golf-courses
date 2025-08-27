@@ -1,14 +1,23 @@
 <?php
-require_once '../includes/init.php';
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
-// Check if user is logged in using the proper session system
-if (!$is_logged_in) {
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - redirect to login
     header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
 
-// Use the user_id from init.php which uses SecureSession
+// Check if user is logged in using secure session
+if (!SecureSession::isLoggedIn()) {
+    header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    exit;
+}
+
+$user_id = SecureSession::get('user_id');
 
 // Get user details
 try {
@@ -38,8 +47,13 @@ try {
     $stmt->execute([$user_id]);
     $recent_reviews = $stmt->fetchAll();
     
+    if (!$user) {
+        $error = "Failed to load user data.";
+    }
+    
 } catch (PDOException $e) {
-    $error = "Error loading profile data.";
+    error_log("Profile page database error: " . $e->getMessage());
+    $error = "Failed to load user data.";
 }
 ?>
 
@@ -286,6 +300,15 @@ try {
     <?php include '../includes/navigation.php'; ?>
 
     <main class="profile-container">
+        <?php if (isset($error)): ?>
+            <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin: 2rem; text-align: center;">
+                <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error); ?>
+            </div>
+        <?php elseif (!$user): ?>
+            <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin: 2rem; text-align: center;">
+                <i class="fas fa-exclamation-triangle"></i> Failed to load user data.
+            </div>
+        <?php else: ?>
         <div class="profile-header">
             <div class="profile-avatar">
                 <?php if (!empty($user['profile_picture']) && file_exists('../' . $user['profile_picture'])): ?>
@@ -385,6 +408,7 @@ try {
                 Edit Profile
             </a>
         </div>
+        <?php endif; ?>
     </main>
 
     <script src="../script.js"></script>
