@@ -171,8 +171,11 @@ try {
     $user = $stmt->fetch();
     
     if (!$user) {
-        header('Location: /logout');
-        exit;
+        error_log("Edit-profile: No user found for user_id $user_id");
+        $error = 'Failed to load user data. User not found.';
+        $user = [];
+    } else {
+        error_log("Edit-profile: Successfully loaded user data for user_id $user_id, username: " . $user['username']);
     }
 } catch (PDOException $e) {
     error_log("Failed to load user data for user_id $user_id: " . $e->getMessage());
