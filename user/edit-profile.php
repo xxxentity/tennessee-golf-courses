@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) 
         // Get current profile picture to delete old one
         $stmt = $pdo->prepare("SELECT profile_picture FROM users WHERE id = ?");
         $stmt->execute([$user_id]);
-        $user = $stmt->fetch();
+        $current_user = $stmt->fetch();
         
         // Update database
         $relative_path = 'uploads/profile_pictures/' . $result['filename'];
@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) 
         $stmt->execute([$relative_path, $user_id]);
         
         // Delete old profile picture if exists
-        if ($user['profile_picture'] && file_exists('../' . $user['profile_picture'])) {
-            @unlink('../' . $user['profile_picture']);
+        if ($current_user['profile_picture'] && file_exists('../' . $current_user['profile_picture'])) {
+            @unlink('../' . $current_user['profile_picture']);
         }
         
         echo json_encode([
@@ -131,9 +131,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Verify current password
                         $stmt = $pdo->prepare("SELECT password_hash FROM users WHERE id = ?");
                         $stmt->execute([$user_id]);
-                        $user = $stmt->fetch();
+                        $password_check = $stmt->fetch();
                         
-                        if (!password_verify($current_password, $user['password_hash'])) {
+                        if (!password_verify($current_password, $password_check['password_hash'])) {
                             $error = 'Current password is incorrect.';
                         } else {
                             // Add password to update
@@ -171,11 +171,8 @@ try {
     $user = $stmt->fetch();
     
     if (!$user) {
-        error_log("Edit-profile: No user found for user_id $user_id");
-        $error = 'Failed to load user data. User not found.';
+        $error = 'Failed to load user data.';
         $user = [];
-    } else {
-        error_log("Edit-profile: Successfully loaded user data for user_id $user_id, username: " . $user['username']);
     }
 } catch (PDOException $e) {
     error_log("Failed to load user data for user_id $user_id: " . $e->getMessage());
