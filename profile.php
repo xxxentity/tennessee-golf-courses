@@ -20,16 +20,7 @@ if (!SecureSession::isLoggedIn()) {
 // Get username from URL parameter
 $username = $_GET['username'] ?? '';
 
-// Debug - temporary
-if (isset($_GET['debug'])) {
-    echo "Debug - Username received: '" . htmlspecialchars($username) . "'<br>";
-    echo "Debug - GET params: " . print_r($_GET, true) . "<br>";
-}
-
 if (empty($username)) {
-    if (isset($_GET['debug'])) {
-        echo "Debug - Username is empty, showing 404<br>";
-    }
     header('HTTP/1.1 404 Not Found');
     include '404.php';
     exit;
@@ -81,7 +72,7 @@ try {
     
 } catch (PDOException $e) {
     error_log("Public profile error for username '$username': " . $e->getMessage());
-    $error = "Database error: " . $e->getMessage();
+    $error = "Failed to load profile.";
 }
 ?>
 
