@@ -426,6 +426,22 @@ try {
                 </div>
             </a>
             
+            <a href="/admin/cache" class="admin-card">
+                <div class="card-header">
+                    <h3 class="card-title">Cache Manager</h3>
+                    <div class="card-icon icon-cache">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+                <p class="card-description">
+                    Monitor cache performance, clear cached data, and manage caching settings.
+                </p>
+                <div class="card-action">
+                    <span class="action-text">Manage Cache</span>
+                    <i class="fas fa-arrow-right action-arrow"></i>
+                </div>
+            </a>
+            
             <a href="/admin/newsletter" class="admin-card">
                 <div class="card-header">
                     <h3 class="card-title">Newsletter Admin</h3>
