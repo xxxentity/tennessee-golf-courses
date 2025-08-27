@@ -18,42 +18,53 @@ if (!SecureSession::isLoggedIn()) {
 }
 
 $user_id = SecureSession::get('user_id');
+$error = '';
+$user = null;
+$review_stats = null;
+$comment_stats = null;
+$recent_reviews = [];
 
 // Get user details
 try {
+    // First, get the user data
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
     
-    // Get user's reviews count
-    $stmt = $pdo->prepare("SELECT COUNT(*) as review_count FROM reviews WHERE user_id = ?");
-    $stmt->execute([$user_id]);
-    $review_stats = $stmt->fetch();
-    
-    // Get user's comments count
-    $stmt = $pdo->prepare("SELECT COUNT(*) as comment_count FROM comments WHERE user_id = ?");
-    $stmt->execute([$user_id]);
-    $comment_stats = $stmt->fetch();
-    
-    // Get recent reviews
-    $stmt = $pdo->prepare("
-        SELECT r.*, c.name as course_name 
-        FROM reviews r 
-        LEFT JOIN courses c ON r.course_id = c.id 
-        WHERE r.user_id = ? 
-        ORDER BY r.created_at DESC 
-        LIMIT 5
-    ");
-    $stmt->execute([$user_id]);
-    $recent_reviews = $stmt->fetchAll();
-    
     if (!$user) {
         $error = "Failed to load user data.";
+    } else {
+        // Only proceed with other queries if user exists
+        
+        // Get user's reviews count
+        $stmt = $pdo->prepare("SELECT COUNT(*) as review_count FROM reviews WHERE user_id = ?");
+        $stmt->execute([$user_id]);
+        $review_stats = $stmt->fetch();
+        if (!$review_stats) $review_stats = ['review_count' => 0];
+        
+        // Get user's comments count  
+        $stmt = $pdo->prepare("SELECT COUNT(*) as comment_count FROM comments WHERE user_id = ?");
+        $stmt->execute([$user_id]);
+        $comment_stats = $stmt->fetch();
+        if (!$comment_stats) $comment_stats = ['comment_count' => 0];
+        
+        // Get recent reviews
+        $stmt = $pdo->prepare("
+            SELECT r.*, c.name as course_name 
+            FROM reviews r 
+            LEFT JOIN courses c ON r.course_id = c.id 
+            WHERE r.user_id = ? 
+            ORDER BY r.created_at DESC 
+            LIMIT 5
+        ");
+        $stmt->execute([$user_id]);
+        $recent_reviews = $stmt->fetchAll();
     }
     
 } catch (PDOException $e) {
-    error_log("Profile page database error: " . $e->getMessage());
+    error_log("Profile page database error for user_id $user_id: " . $e->getMessage());
     $error = "Failed to load user data.";
+    $user = null;
 }
 ?>
 
