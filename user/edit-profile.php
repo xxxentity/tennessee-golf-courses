@@ -554,12 +554,26 @@ try {
             formData.append('csrf_token', '<?php require_once "../includes/csrf.php"; echo CSRFProtection::getToken(); ?>');
             
             // Upload file
-            fetch('upload-profile-picture.php', {
+            fetch('/user/upload-profile-picture.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
+            .then(response => {
+                console.log('Upload response status:', response.status);
+                return response.text();
+            })
+            .then(text => {
+                console.log('Upload response text:', text);
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    console.error('JSON parse error:', e);
+                    statusDiv.className = 'upload-status error';
+                    statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Server response error: ' + text.substring(0, 100);
+                    return;
+                }
+                
                 if (data.success) {
                     statusDiv.className = 'upload-status success';
                     statusDiv.innerHTML = '<i class="fas fa-check"></i> ' + data.message;
@@ -574,11 +588,15 @@ try {
                 } else {
                     statusDiv.className = 'upload-status error';
                     statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + data.error;
+                    if (data.debug) {
+                        console.error('Upload debug info:', data.debug);
+                    }
                 }
             })
             .catch(error => {
+                console.error('Upload error:', error);
                 statusDiv.className = 'upload-status error';
-                statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Upload failed. Please try again.';
+                statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Upload failed: ' + error.message;
             });
         });
     </script>

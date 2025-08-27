@@ -1,7 +1,5 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Clean upload handler
 
 require_once '../includes/init.php';
 require_once '../config/database.php';
@@ -60,7 +58,7 @@ $uploadConfig = [
     'allowed_mime_types' => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'],
     'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp'],
     'max_file_size' => 5 * 1024 * 1024, // 5MB
-    'upload_dir' => '../uploads/profile_pictures/'
+    'upload_dir' => __DIR__ . '/../uploads/profile_pictures/'
 ];
 
 $uploader = new SecureUpload($uploadConfig);
@@ -98,11 +96,14 @@ try {
     // Log successful upload
     error_log("Profile picture uploaded successfully for user ID: $user_id");
     
+    // Calculate proper relative path from web root
+    $relative_path = 'uploads/profile_pictures/' . $result['filename'];
+    
     header('Content-Type: application/json');
     echo json_encode([
         'success' => true,
         'message' => 'Profile picture updated successfully',
-        'image_url' => '/' . $result['relative_path'],
+        'image_url' => $relative_path,
         'filename' => $result['filename']
     ]);
     
