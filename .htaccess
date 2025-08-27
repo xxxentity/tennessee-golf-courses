@@ -221,6 +221,9 @@ RewriteRule ^profile/?$ user/profile.php [L]
 RewriteRule ^edit-profile/?$ user/edit-profile.php [L]
 RewriteRule ^security-dashboard/?$ user/security-dashboard.php [L]
 
+# Allow direct access to user directory files (for AJAX endpoints)
+RewriteRule ^user/(.+\.php)$ user/$1 [L]
+
 # Handle newsletter pages
 RewriteRule ^newsletter-subscribe/?$ newsletter-subscribe.php [L]
 RewriteRule ^newsletter-unsubscribe/?$ newsletter-unsubscribe.php [L]
