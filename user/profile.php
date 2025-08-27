@@ -311,13 +311,14 @@ try {
     <?php include '../includes/navigation.php'; ?>
 
     <main class="profile-container">
-        <?php if (isset($error)): ?>
+        <?php if (!empty($error)): ?>
             <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin: 2rem; text-align: center;">
                 <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error); ?>
             </div>
-        <?php elseif (!$user): ?>
+        <?php elseif (!$user || empty($user)): ?>
             <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin: 2rem; text-align: center;">
                 <i class="fas fa-exclamation-triangle"></i> Failed to load user data.
+                <br><small>Debug: User ID = <?php echo $user_id; ?>, User exists = <?php echo $user ? 'Yes' : 'No'; ?></small>
             </div>
         <?php else: ?>
         <div class="profile-header">
