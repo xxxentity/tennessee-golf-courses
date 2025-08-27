@@ -1,7 +1,21 @@
 <?php
+require_once 'includes/session-security.php';
 require_once 'config/database.php';
 
-// Don't start session here - navigation.php will handle it
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - redirect to login
+    header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    exit;
+}
+
+// Check if user is logged in using secure session
+if (!SecureSession::isLoggedIn()) {
+    header('Location: /login?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+    exit;
+}
 
 // Get username from URL parameter
 $username = $_GET['username'] ?? '';
