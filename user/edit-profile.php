@@ -2,6 +2,21 @@
 require_once '../includes/session-security.php';
 require_once '../config/database.php';
 
+// Quick debug - remove this after testing
+if (isset($_GET['test'])) {
+    echo "Session test:<br>";
+    try {
+        SecureSession::start();
+        echo "Session started: " . (SecureSession::isLoggedIn() ? "YES" : "NO") . "<br>";
+        echo "User ID: " . SecureSession::get('user_id') . "<br>";
+        echo "Username: " . SecureSession::get('username') . "<br>";
+        exit;
+    } catch (Exception $e) {
+        echo "Session error: " . $e->getMessage() . "<br>";
+        exit;
+    }
+}
+
 // Handle AJAX profile picture upload
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) {
     require_once '../includes/csrf.php';
