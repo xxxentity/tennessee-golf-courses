@@ -168,14 +168,7 @@ session_start();
 
             <div class="legal-section">
                 <h2>Description of Service</h2>
-                <p>Tennessee Golf Courses is a platform that provides:</p>
-                <ul>
-                    <li>Information about golf courses in Tennessee</li>
-                    <li>User-generated reviews and ratings</li>
-                    <li>Golf course discovery and comparison tools</li>
-                    <li>Community features for golf enthusiasts</li>
-                    <li>News and updates about Tennessee golf</li>
-                </ul>
+                <p>Tennessee Golf Courses is a platform that provides information about golf courses in Tennessee, user-generated reviews and ratings, golf course discovery and comparison tools, community features for golf enthusiasts, and news and updates about Tennessee golf.</p>
                 <p>Our service is provided "as is" and we reserve the right to modify or discontinue features at any time.</p>
             </div>
 
@@ -183,64 +176,28 @@ session_start();
                 <h2>User Accounts and Registration</h2>
                 
                 <h3>Account Creation</h3>
-                <ul>
-                    <li>You must provide accurate and complete information when creating an account</li>
-                    <li>You are responsible for maintaining the security of your account credentials</li>
-                    <li>You must be at least 13 years old to create an account</li>
-                    <li>One person may not maintain multiple accounts</li>
-                </ul>
+                <p>You must provide accurate and complete information when creating an account, maintain the security of your account credentials, be at least 13 years old to create an account, and one person may not maintain multiple accounts.</p>
                 
                 <h3>Account Responsibilities</h3>
-                <ul>
-                    <li>You are responsible for all activities that occur under your account</li>
-                    <li>Notify us immediately of any unauthorized use of your account</li>
-                    <li>We are not liable for any loss or damage from unauthorized account access</li>
-                </ul>
+                <p>You are responsible for all activities that occur under your account and must notify us immediately of any unauthorized use of your account. We are not liable for any loss or damage from unauthorized account access.</p>
             </div>
 
             <div class="legal-section">
                 <h2>User Content and Reviews</h2>
                 
                 <h3>Content Guidelines</h3>
-                <p>When submitting reviews, comments, or other content, you agree to:</p>
-                <ul>
-                    <li>Provide honest, accurate, and helpful information</li>
-                    <li>Base reviews on your actual experience at the golf course</li>
-                    <li>Respect others and maintain a civil tone</li>
-                    <li>Avoid inappropriate, offensive, or illegal content</li>
-                    <li>Not submit fake or misleading reviews</li>
-                    <li>Not include personal information of others without consent</li>
-                </ul>
+                <p>When submitting reviews, comments, or other content, you agree to provide honest, accurate, and helpful information, base reviews on your actual experience at the golf course, respect others and maintain a civil tone, avoid inappropriate, offensive, or illegal content, not submit fake or misleading reviews, and not include personal information of others without consent.</p>
                 
                 <h3>Prohibited Content</h3>
-                <p>The following types of content are strictly prohibited:</p>
-                <ul>
-                    <li>Hate speech, discrimination, or harassment</li>
-                    <li>Spam, advertising, or promotional content</li>
-                    <li>False or misleading information</li>
-                    <li>Copyrighted material without permission</li>
-                    <li>Personal attacks on individuals or businesses</li>
-                    <li>Content that violates any applicable laws</li>
-                </ul>
+                <p>The following types of content are strictly prohibited: hate speech, discrimination, or harassment; spam, advertising, or promotional content; false or misleading information; copyrighted material without permission; personal attacks on individuals or businesses; and content that violates any applicable laws.</p>
                 
                 <h3>Content Ownership and Rights</h3>
-                <ul>
-                    <li>You retain ownership of content you submit</li>
-                    <li>You grant us a non-exclusive license to use, display, and distribute your content</li>
-                    <li>We may edit or remove content that violates these terms</li>
-                    <li>You represent that you have the right to submit the content</li>
-                </ul>
+                <p>You retain ownership of content you submit but grant us a non-exclusive license to use, display, and distribute your content. We may edit or remove content that violates these terms, and you represent that you have the right to submit the content.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Content Moderation</h2>
-                <p>We reserve the right to:</p>
-                <ul>
-                    <li>Monitor and review user-generated content</li>
-                    <li>Remove content that violates our guidelines</li>
-                    <li>Suspend or terminate accounts for policy violations</li>
-                    <li>Report illegal activity to appropriate authorities</li>
-                </ul>
+                <p>We reserve the right to monitor and review user-generated content, remove content that violates our guidelines, suspend or terminate accounts for policy violations, and report illegal activity to appropriate authorities.</p>
                 <p>We are not obligated to monitor content but may do so to maintain platform quality and safety.</p>
             </div>
 
@@ -248,32 +205,15 @@ session_start();
                 <h2>Acceptable Use</h2>
                 
                 <h3>Permitted Uses</h3>
-                <ul>
-                    <li>Browse and search golf course information</li>
-                    <li>Submit genuine reviews based on your experiences</li>
-                    <li>Share the platform with other golf enthusiasts</li>
-                    <li>Use the platform for personal, non-commercial purposes</li>
-                </ul>
+                <p>You may browse and search golf course information, submit genuine reviews based on your experiences, share the platform with other golf enthusiasts, and use the platform for personal, non-commercial purposes.</p>
                 
                 <h3>Prohibited Uses</h3>
-                <ul>
-                    <li>Attempting to hack, compromise, or damage the platform</li>
-                    <li>Using automated tools to scrape or download content</li>
-                    <li>Impersonating others or creating fake accounts</li>
-                    <li>Interfering with other users' access to the platform</li>
-                    <li>Using the platform for commercial purposes without permission</li>
-                </ul>
+                <p>You may not attempt to hack, compromise, or damage the platform; use automated tools to scrape or download content; impersonate others or create fake accounts; interfere with other users' access to the platform; or use the platform for commercial purposes without permission.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Intellectual Property</h2>
-                <p>The Tennessee Golf Courses platform, including its design, logos, text, graphics, and functionality, is protected by copyright and other intellectual property laws.</p>
-                <ul>
-                    <li>You may not copy, reproduce, or distribute our content without permission</li>
-                    <li>Our trademarks and logos may not be used without written consent</li>
-                    <li>User-generated content remains the property of its creators</li>
-                    <li>Golf course information may be subject to third-party rights</li>
-                </ul>
+                <p>The Tennessee Golf Courses platform, including its design, logos, text, graphics, and functionality, is protected by copyright and other intellectual property laws. You may not copy, reproduce, or distribute our content without permission, and our trademarks and logos may not be used without written consent. User-generated content remains the property of its creators, and golf course information may be subject to third-party rights.</p>
             </div>
 
             <div class="legal-section">
@@ -286,19 +226,10 @@ session_start();
                 <h2>Disclaimers and Limitations</h2>
                 
                 <h3>Service Availability</h3>
-                <ul>
-                    <li>We strive for 24/7 availability but cannot guarantee uninterrupted service</li>
-                    <li>Planned maintenance may temporarily limit access</li>
-                    <li>We are not responsible for technical issues beyond our control</li>
-                </ul>
+                <p>We strive for 24/7 availability but cannot guarantee uninterrupted service. Planned maintenance may temporarily limit access, and we are not responsible for technical issues beyond our control.</p>
                 
                 <h3>Information Accuracy</h3>
-                <ul>
-                    <li>Golf course information is provided for convenience and may not be current</li>
-                    <li>User reviews represent individual opinions and experiences</li>
-                    <li>We recommend verifying information directly with golf courses</li>
-                    <li>We are not responsible for decisions based on platform information</li>
-                </ul>
+                <p>Golf course information is provided for convenience and may not be current. User reviews represent individual opinions and experiences. We recommend verifying information directly with golf courses, and we are not responsible for decisions based on platform information.</p>
                 
                 <h3>Limitation of Liability</h3>
                 <p>To the fullest extent permitted by law, Tennessee Golf Courses shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform.</p>
@@ -308,20 +239,10 @@ session_start();
                 <h2>Account Termination</h2>
                 
                 <h3>Termination by You</h3>
-                <ul>
-                    <li>You may delete your account at any time through your account settings</li>
-                    <li>Account deletion will remove your personal information but may retain anonymized reviews</li>
-                    <li>Some data may be retained for legal or security purposes</li>
-                </ul>
+                <p>You may delete your account at any time through your account settings. Account deletion will remove your personal information but may retain anonymized reviews, and some data may be retained for legal or security purposes.</p>
                 
                 <h3>Termination by Us</h3>
-                <p>We may suspend or terminate your account if you:</p>
-                <ul>
-                    <li>Violate these Terms of Service or our community guidelines</li>
-                    <li>Engage in fraudulent or illegal activity</li>
-                    <li>Abuse the platform or other users</li>
-                    <li>Fail to respond to communications regarding policy violations</li>
-                </ul>
+                <p>We may suspend or terminate your account if you violate these Terms of Service or our community guidelines, engage in fraudulent or illegal activity, abuse the platform or other users, or fail to respond to communications regarding policy violations.</p>
             </div>
 
             <div class="legal-section">
@@ -331,12 +252,7 @@ session_start();
 
             <div class="legal-section">
                 <h2>Changes to Terms</h2>
-                <p>We reserve the right to modify these Terms of Service at any time. We will notify users of material changes by:</p>
-                <ul>
-                    <li>Posting updated terms on our website</li>
-                    <li>Updating the "Last Updated" date</li>
-                    <li>Sending email notifications for significant changes (if subscribed)</li>
-                </ul>
+                <p>We reserve the right to modify these Terms of Service at any time. We will notify users of material changes by posting updated terms on our website, updating the "Last Updated" date, and sending email notifications for significant changes (if subscribed).</p>
                 <p>Your continued use of the platform after changes constitutes acceptance of the new terms.</p>
             </div>
 

@@ -164,84 +164,44 @@ session_start();
                 <h2>Information We Collect</h2>
                 
                 <h3>Personal Information</h3>
-                <p>When you create an account or interact with our website, we may collect:</p>
-                <ul>
-                    <li>Name and email address</li>
-                    <li>Profile information you choose to provide</li>
-                    <li>Golf course reviews and ratings you submit</li>
-                    <li>Comments and feedback you share</li>
-                    <li>Communication preferences</li>
-                </ul>
+                <p>When you create an account or interact with our website, we may collect your name and email address, profile information you choose to provide, golf course reviews and ratings you submit, comments and feedback you share, and your communication preferences.</p>
                 
                 <h3>Automatically Collected Information</h3>
-                <p>We automatically collect certain information when you visit our website:</p>
-                <ul>
-                    <li>IP address and browser information</li>
-                    <li>Pages visited and time spent on our site</li>
-                    <li>Device type and operating system</li>
-                    <li>Referral source (how you found our website)</li>
-                </ul>
+                <p>We automatically collect certain information when you visit our website, including your IP address and browser information, pages visited and time spent on our site, device type and operating system, and referral source (how you found our website).</p>
             </div>
 
             <div class="legal-section">
                 <h2>How We Use Your Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Provide and improve our golf course review platform</li>
-                    <li>Process and display your reviews and ratings</li>
-                    <li>Send you updates about new courses and features (if subscribed)</li>
-                    <li>Respond to your questions and provide customer support</li>
-                    <li>Prevent fraud and ensure platform security</li>
-                    <li>Analyze website usage to improve user experience</li>
-                    <li>Comply with legal obligations</li>
-                </ul>
+                <p>We use the information we collect to provide and improve our golf course review platform, process and display your reviews and ratings, send you updates about new courses and features (if subscribed), respond to your questions and provide customer support, prevent fraud and ensure platform security, analyze website usage to improve user experience, and comply with legal obligations.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Information Sharing</h2>
-                <p>We respect your privacy and do not sell your personal information. We may share information in these limited circumstances:</p>
-                <ul>
-                    <li><strong>Public Reviews:</strong> Reviews and ratings you submit are displayed publicly with your chosen username</li>
-                    <li><strong>Service Providers:</strong> We may use third-party services for hosting, analytics, and email delivery</li>
-                    <li><strong>Legal Requirements:</strong> We may disclose information if required by law or to protect our rights</li>
-                    <li><strong>Business Transfers:</strong> Information may be transferred if our business is acquired or merged</li>
-                </ul>
+                <p>We respect your privacy and do not sell your personal information. We may share information in these limited circumstances: <strong>Public Reviews</strong> - Reviews and ratings you submit are displayed publicly with your chosen username. <strong>Service Providers</strong> - We may use third-party services for hosting, analytics, and email delivery. <strong>Legal Requirements</strong> - We may disclose information if required by law or to protect our rights. <strong>Business Transfers</strong> - Information may be transferred if our business is acquired or merged.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>Affiliate Link Disclosure</h2>
+                <p>Tennessee Golf Courses participates in affiliate programs with various golf equipment retailers and service providers. When you click on certain links on our website and make a purchase, we may receive a small commission at no additional cost to you.</p>
+                <p>These affiliate relationships help support our platform and allow us to continue providing free golf course reviews and information to our users. All product recommendations are based on our honest opinions and editorial judgment. The presence of affiliate links does not influence our review content or course ratings.</p>
+                <p>Affiliate links are clearly identified where possible, and we are committed to transparency in our partnerships. Your support through these links helps us maintain and improve our services for the Tennessee golf community.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Cookies and Tracking</h2>
-                <p>We use cookies and similar technologies to:</p>
-                <ul>
-                    <li>Remember your login status and preferences</li>
-                    <li>Analyze website traffic and user behavior</li>
-                    <li>Improve website functionality and performance</li>
-                    <li>Provide personalized content recommendations</li>
-                </ul>
+                <p>We use cookies and similar technologies to remember your login status and preferences, analyze website traffic and user behavior, improve website functionality and performance, and provide personalized content recommendations.</p>
                 <p>You can control cookies through your browser settings, but some features may not work properly if you disable them.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Data Security</h2>
-                <p>We implement appropriate security measures to protect your personal information, including:</p>
-                <ul>
-                    <li>Secure data transmission using SSL encryption</li>
-                    <li>Regular security updates and monitoring</li>
-                    <li>Access controls and authentication requirements</li>
-                    <li>Regular data backups and recovery procedures</li>
-                </ul>
+                <p>We implement appropriate security measures to protect your personal information, including secure data transmission using SSL encryption, regular security updates and monitoring, access controls and authentication requirements, and regular data backups and recovery procedures.</p>
                 <p>While we strive to protect your information, no method of transmission over the internet is 100% secure.</p>
             </div>
 
             <div class="legal-section">
                 <h2>Your Rights and Choices</h2>
-                <p>You have the following rights regarding your personal information:</p>
-                <ul>
-                    <li><strong>Access:</strong> Request copies of your personal information</li>
-                    <li><strong>Correction:</strong> Update or correct inaccurate information</li>
-                    <li><strong>Deletion:</strong> Request deletion of your account and associated data</li>
-                    <li><strong>Newsletter:</strong> Unsubscribe from email communications at any time</li>
-                    <li><strong>Review Management:</strong> Edit or delete reviews you've submitted</li>
-                </ul>
+                <p>You have the following rights regarding your personal information: <strong>Access</strong> - Request copies of your personal information. <strong>Correction</strong> - Update or correct inaccurate information. <strong>Deletion</strong> - Request deletion of your account and associated data. <strong>Newsletter</strong> - Unsubscribe from email communications at any time. <strong>Review Management</strong> - Edit or delete reviews you've submitted.</p>
                 <p>To exercise these rights, please contact us using the information below.</p>
             </div>
 
@@ -252,12 +212,7 @@ session_start();
 
             <div class="legal-section">
                 <h2>Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify users of significant changes by:</p>
-                <ul>
-                    <li>Posting the updated policy on our website</li>
-                    <li>Updating the "Last Updated" date</li>
-                    <li>Sending email notifications for material changes (if you're subscribed)</li>
-                </ul>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify users of significant changes by posting the updated policy on our website, updating the "Last Updated" date, and sending email notifications for material changes (if you're subscribed).</p>
                 <p>Your continued use of our website after changes indicates your acceptance of the updated policy.</p>
             </div>
 
