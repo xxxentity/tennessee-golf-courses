@@ -200,24 +200,21 @@ try {
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
         }
         
         .gallery-item {
-            height: 300px;
+            height: 250px;
             background-size: cover;
             background-position: center;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transform: scale(1.05);
         }
         
         .gallery-button {
@@ -226,164 +223,20 @@ try {
         }
         
         .btn-gallery {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(44,82,52,0.3);
-        }
-        
-        .btn-gallery:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(44,82,52,0.4);
-        }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 1rem;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: #ddd;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover,
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .btn-submit {
             background: #4a7c59;
             color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #2c5234;
-        }
-        
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
             text-decoration: none;
-            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .btn-gallery:hover {
+            background: #2c5234;
+            transform: translateY(-2px);
         }
         
         /* Modal Styles */
@@ -426,8 +279,6 @@ try {
             cursor: pointer;
             background: none;
             border: none;
-            padding: 0;
-            line-height: 1;
         }
         
         .close:hover {
@@ -455,39 +306,248 @@ try {
             transform: scale(1.05);
         }
         
-        .section-header {
+        .reviews-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .booking-section {
+            background: linear-gradient(135deg, #2c5234, #4a7c59);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .booking-content h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .booking-content p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .booking-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-book {
+            background: #ffd700;
+            color: #2c5234;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-book:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-contact {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-contact:hover {
+            background: white;
+            color: #2c5234;
+        }
+        
+        /* Comment System Styles */
+        .comment-form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form-container h3 {
+            color: #2c5234;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c5234;
+        }
+        
+        .star-rating {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+        
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .star-rating label:hover {
+            color: #ffd700;
+        }
+        
+        .star-rating label.active {
+            color: #ffd700;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #2c5234;
+        }
+        
+        .btn-submit {
+            background: #2c5234;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background: #1e3f26;
+            transform: translateY(-1px);
+        }
+        
+        .login-prompt {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
             margin-bottom: 3rem;
         }
         
-        .section-header h2 {
+        .login-prompt a {
             color: #2c5234;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            text-decoration: none;
         }
         
-        .section-header p {
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
             color: #666;
-            font-size: 1.1rem;
+        }
+        
+        .no-comments i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Responsive Design for Course Info Grid */
+        @media (max-width: 1024px) {
+            .course-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
             .course-info-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .course-details {
+                padding: 2rem 0;
+            }
+            
+            .course-info-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
@@ -496,45 +556,43 @@ try {
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Whittle Springs Golf Course</h1>
-            <p>Knoxville's First Public Golf Course • Since 1932</p>
-            <div class="hero-stats">
-                <?php if ($avg_rating): ?>
-                    <div class="hero-stat">
-                        <i class="fas fa-star" style="color: #ffd700;"></i>
-                        <span><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
+            <p>Knoxville's First Public Course • Since 1932</p>
+            <div class="course-rating">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
+                        }
+                        ?>
+                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
+                <?php else: ?>
+                    <div class="no-rating">
+                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
-                <div class="hero-stat">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Knoxville, TN</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-ruler"></i>
-                    <span>5,729 yards</span>
-                </div>
-                <div class="hero-stat">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Since 1932</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Information Cards -->
-    <section class="course-info-section">
+    <!-- Course Details -->
+    <section class="course-details">
         <div class="container">
-            <div class="course-info-cards">
+            <div class="course-info-grid">
                 <div class="course-info-card">
                     <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Designers:</span>
-                            <span class="spec-value">Morton & Sweetser</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
-                            <span class="spec-value">1932</span>
-                        </div>
+                    <div class="course-specs single-column">
                         <div class="spec-item">
                             <span class="spec-label">Holes:</span>
                             <span class="spec-value">18</span>
@@ -544,164 +602,116 @@ try {
                             <span class="spec-value">70</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Length:</span>
-                            <span class="spec-value">5,729 yards</span>
+                            <span class="spec-label">Yardage:</span>
+                            <span class="spec-value">5,729</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Designer:</span>
+                            <span class="spec-value">Morton & Sweetser</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Opened:</span>
+                            <span class="spec-value">1932</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Type:</span>
                             <span class="spec-value">Municipal Public</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Distinction:</span>
-                            <span class="spec-value">Knoxville's First Public Course</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Access & Fees</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Public Municipal</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Tee Times:</span>
-                            <span class="spec-value">Available</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Mobile App:</span>
-                            <span class="spec-value">Yes</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Memberships:</span>
-                            <span class="spec-value">Available</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Golf Specials:</span>
-                            <span class="spec-value">Offered</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Historic Events:</span>
-                            <span class="spec-value">City Amateur Since 1930s</span>
-                        </div>
+                    <h3><i class="fas fa-users"></i> Membership</h3>
+                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
+                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
                     </div>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Whittle Springs Golf Course operates as a members-only facility. 
+                        Contact the club directly for membership information and guest policies.
+                    </p>
                 </div>
 
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 3113 Valley View Dr, Knoxville, TN 37917</p>
-                            <p><i class="fas fa-phone"></i> (865) 525-1022</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.golfwhittlesprings.com" target="_blank">golfwhittlesprings.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=3113+Valley+View+Dr+Knoxville+TN+37917" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=3113+Valley+View+Dr+Knoxville+TN+37917&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                    <p><strong>Address:</strong><br>
+                    3113 Valley View Dr<br>
+                    Knoxville, TN 37917</p>
+                    
+                    <p><strong>Phone:</strong><br>
+                    (865) 525-1022</p>
+                    
+                    <p><strong>Website:</strong><br>
+                    <a href="https://www.golfwhittlesprings.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">golfwhittlesprings.com</a></p>
+                    
+                    <div class="course-map" style="margin-top: 1.5rem;">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=3113+Valley+View+Dr,+Knoxville,+TN+37917&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Whittle Springs Golf Course Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=3113+Valley+View+Dr,+Knoxville,+TN+37917" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Knoxville's Historic Golf Pioneer</h2>
-                <p>Whittle Springs Golf Course holds the distinguished honor of being Knoxville's first public golf course, opening its doors in 1932. Designed by Morton and Sweetser, this historic municipal course has undergone many incarnations over its storied 75-plus year history, evolving with the times while maintaining its accessible, public golf mission.</p>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Whittle Springs Golf Course</h3>
+                <p>Whittle Springs Golf Course holds the distinguished honor of being Knoxville's first public golf course, opening its doors in 1932. Designed by Morton and Sweetser, this historic municipal course has evolved over 90+ years while maintaining its unique character as a bunker-free layout that challenges golfers with strategic play.</p>
                 
-                <p>What makes Whittle Springs truly unique is its distinctive design philosophy - the course is wide open with no sand bunkers, creating a pure golf experience that relies on strategic play rather than hazard avoidance. At less than 5,900 yards, the course may appear forgiving, but don't be deceived - the challenge lies in the small, fast greens that test precision and putting skills.</p>
+                <br>
                 
-                <p>The course's rich history includes a glorious past as part of a historic resort complete with a grand hotel and swimming pool. During its heyday, Whittle Springs hosted events featuring golf legends including Ben Hogan, Byron Nelson, and Dow Finsterwald, cementing its place in Tennessee golf history.</p>
+                <p>What makes Whittle Springs truly distinctive is its wide-open design philosophy with no sand bunkers. At 5,729 yards and par 70, the course may appear forgiving, but the challenge lies in the small, fast greens that demand precision and exceptional putting skills from golfers of all abilities.</p>
                 
-                <div class="unique-features">
-                    <h3><i class="fas fa-star"></i> Unique Features</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> No sand bunkers - unique wide-open design</li>
-                        <li><i class="fas fa-check-circle"></i> Small, fast greens providing ultimate putting challenge</li>
-                        <li><i class="fas fa-check-circle"></i> Historic resort heritage with grand hotel past</li>
-                        <li><i class="fas fa-check-circle"></i> Host to golf legends: Hogan, Nelson, Finsterwald</li>
-                        <li><i class="fas fa-check-circle"></i> Home to Knoxville City Amateur Championship since 1930s</li>
-                    </ul>
-                </div>
+                <br>
+                
+                <p>The course's storied history includes its origins as part of a historic resort featuring a grand hotel and swimming pool. During its golden era, Whittle Springs hosted events with golf legends including Ben Hogan, Byron Nelson, and Dow Finsterwald, securing its place in Tennessee golf history.</p>
+                
+                <br>
+                
+                <p>Today, Whittle Springs continues to serve as a members-only facility, home to the City Amateur Championship since the 1930s. The course offers exclusive membership access while preserving its historic character and maintaining the traditional values of private club golf in Knoxville.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Tee Information Section -->
-    <section class="tee-info-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Tee Information</h2>
-                <p>Multiple tees for golfers of all skill levels</p>
-            </div>
-            <div class="tee-cards">
-                <div class="tee-card black">
-                    <h3>Black Tees (Championship)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">5,729</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">67.4</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">113</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">70</div>
-                        </div>
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>18-Hole Course</span>
                     </div>
-                </div>
-                
-                <div class="tee-card white">
-                    <h3>White Tees (Regular)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">5,391</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">65.9</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">111</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">70</div>
-                        </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Pro Shop</span>
                     </div>
-                </div>
-                
-                <div class="tee-card red">
-                    <h3>Red Tees (Women's/Forward)</h3>
-                    <div class="tee-stats">
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Yardage</div>
-                            <div class="tee-stat-value">4,781</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Course Rating</div>
-                            <div class="tee-stat-value">67.6</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Slope Rating</div>
-                            <div class="tee-stat-value">112</div>
-                        </div>
-                        <div class="tee-stat">
-                            <div class="tee-stat-label">Par</div>
-                            <div class="tee-stat-value">71</div>
-                        </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Golf Lessons</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Restaurant</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Tournaments</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-users"></i>
+                        <span>Private Memberships</span>
                     </div>
                 </div>
             </div>
@@ -711,9 +721,9 @@ try {
     <!-- Photo Gallery -->
     <section class="photo-gallery">
         <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the unique beauty of Whittle Springs Golf Course</p>
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #2c5234; font-size: 2.5rem; margin-bottom: 1rem;">Course Gallery</h2>
+                <p style="color: #666; font-size: 1.1rem;">Experience the historic beauty of Whittle Springs Golf Course</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/2.jpeg');"></div>
@@ -742,9 +752,9 @@ try {
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have played Whittle Springs Golf Course</p>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: #2c5234; font-size: 2.5rem; margin-bottom: 1rem;">What Golfers Are Saying</h2>
+                <p style="color: #666; font-size: 1.1rem;">Read reviews from members who have played Whittle Springs Golf Course</p>
             </div>
             
             <?php if (isset($success_message)): ?>
@@ -795,26 +805,28 @@ try {
             <!-- Display Comments -->
             <div class="comments-container">
                 <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
+                    <div class="no-comments">
+                        <i class="fas fa-comments"></i>
+                        <h3>No reviews yet</h3>
+                        <p>Be the first to share your experience!</p>
                     </div>
                 <?php else: ?>
                     <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
+                                <div class="review-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
                             </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            <div style="margin-bottom: 1rem;">
+                                <?php for ($i = 1; $i <= 5; $i++): ?>
+                                    <?php if ($i <= $comment['rating']): ?>
+                                        <i class="fas fa-star" style="color: #ffd700;"></i>
+                                    <?php else: ?>
+                                        <i class="far fa-star" style="color: #ddd;"></i>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                            </div>
+                            <div style="color: #555; line-height: 1.6;"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
