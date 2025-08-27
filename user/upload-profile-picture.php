@@ -8,10 +8,19 @@ require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/secure-upload.php';
 
-// Check if user is logged in
-if (!$is_logged_in) {
+// Check if user is logged in using SecureSession
+require_once '../includes/session-security.php';
+try {
+    SecureSession::start();
+    if (!SecureSession::isLoggedIn()) {
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false, 'error' => 'Not logged in', 'debug' => 'SecureSession not authenticated']);
+        exit;
+    }
+    $user_id = SecureSession::get('user_id');
+} catch (Exception $e) {
     header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'Not logged in', 'debug' => 'User not authenticated']);
+    echo json_encode(['success' => false, 'error' => 'Session error', 'debug' => $e->getMessage()]);
     exit;
 }
 

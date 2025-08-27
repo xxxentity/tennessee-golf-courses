@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Get current user data
 try {
-    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name, display_real_name FROM users WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT username, email, first_name, last_name, display_real_name, profile_picture FROM users WHERE id = ?");
     $stmt->execute([$user_id]);
     $user = $stmt->fetch();
     
@@ -104,6 +104,7 @@ try {
         exit;
     }
 } catch (PDOException $e) {
+    error_log("Failed to load user data for user_id $user_id: " . $e->getMessage());
     $error = 'Failed to load user data.';
     $user = [];
 }
