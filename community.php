@@ -210,7 +210,14 @@ require_once 'includes/init.php';
         </div>
         
         <!-- Dynamic Community Events and Contests -->
-        <?php include 'includes/community-events.php'; ?>
+        <?php 
+        echo '<div style="padding: 2rem; background: white; margin: 2rem; border-radius: 10px;">';
+        echo '<h2>Testing PHP...</h2>';
+        echo '<p>Current date: ' . date('F j, Y') . '</p>';
+        echo '</div>';
+        
+        include 'includes/community-events.php'; 
+        ?>
     </div>
     
     <!-- Dynamic Footer -->
