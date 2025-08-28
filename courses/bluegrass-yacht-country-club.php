@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Bluegrass Yacht & Country Club',
+    'location' => 'Hendersonville, TN',
+    'description' => 'Robert Bruce Harris designed championship golf course in Hendersonville, TN. Private club featuring yacht marina and comprehensive amenities since 1951.',
+    'image' => '/images/courses/bluegrass-yacht-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Robert Bruce Harris',
+    'year_built' => 1951,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'bluegrass-yacht-country-club';
 $course_name = 'Bluegrass Yacht & Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluegrass Yacht & Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Bluegrass Yacht & Country Club - Robert Bruce Harris designed championship golf course in Hendersonville, TN. Private club featuring yacht marina and comprehensive amenities since 1951.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
