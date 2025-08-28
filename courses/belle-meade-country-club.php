@@ -1,9 +1,25 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
 
 $course_slug = 'belle-meade-country-club';
 $course_name = 'Belle Meade Country Club';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Belle Meade Country Club',
+    'location' => 'Nashville, TN',
+    'description' => 'Historic Donald Ross designed golf course in Nashville, TN. One of Tennessee\'s most prestigious private clubs since 1921.',
+    'slug' => 'belle-meade-country-club',
+    'image' => '/images/courses/belle-meade-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Donald Ross'
+];
+
+// Set up SEO for this course page
+SEO::setupCoursePage($course_data);
 
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
@@ -57,9 +73,8 @@ try {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belle Meade Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Belle Meade Country Club - Historic Donald Ross designed golf course in Nashville, TN. One of Tennessee's most prestigious private clubs since 1921.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['Belle Meade Country Club', 'Nashville golf', 'Donald Ross', 'private club', 'Tennessee golf', 'historic golf']); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -190,6 +205,8 @@ try {
             transform: scale(1.05);
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->
