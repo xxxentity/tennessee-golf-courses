@@ -1,5 +1,9 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for media page
+SEO::setupMediaPage();
 
 // Get latest 3 news articles (same as homepage)
 $latest_news = [
@@ -61,9 +65,8 @@ $featured_reviews = [
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media - Tennessee Golf Courses</title>
-    <meta name="description" content="Tennessee Golf Courses Media Hub - Your source for golf news, course reviews, and media content covering golf across the Volunteer State.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf media', 'Tennessee', 'golf news', 'coverage', 'journalism', 'reviews', 'volunteer state']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -403,6 +406,8 @@ $featured_reviews = [
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 
 <body>

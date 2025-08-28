@@ -480,6 +480,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for media page
+     */
+    public static function setupMediaPage() {
+        self::setTitle('Media - Tennessee Golf Courses');
+        self::setDescription('Tennessee Golf Courses Media Hub - Your source for golf news, course reviews, and media content covering golf across the Volunteer State.');
+        self::setKeywords([
+            'Tennessee golf media',
+            'golf news Tennessee',
+            'Tennessee golf coverage',
+            'volunteer state golf news',
+            'golf media hub Tennessee',
+            'Tennessee golf reviews',
+            'golf content Tennessee',
+            'Tennessee golf journalism'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/media');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Media');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
