@@ -360,6 +360,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for contact page
+     */
+    public static function setupContactPage() {
+        self::setTitle('Contact Us - Tennessee Golf Courses');
+        self::setDescription('Get in touch with Tennessee Golf Courses. Contact us about course suggestions, partnerships, technical issues, media inquiries, or general questions.');
+        self::setKeywords([
+            'contact Tennessee golf courses',
+            'golf course submissions Tennessee',
+            'Tennessee golf partnerships',
+            'golf course suggestions',
+            'Tennessee golf community contact',
+            'golf course directory contact',
+            'media inquiries golf Tennessee',
+            'golf course feedback'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/contact');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Contact Us');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {

@@ -1,8 +1,12 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
 require_once 'includes/csrf.php';
 require_once 'includes/input-validation.php';
 require_once 'includes/output-security.php';
+
+// Set up SEO for contact page
+SEO::setupContactPage();
 
 // Handle form submission
 $success_message = '';
@@ -106,9 +110,8 @@ Time: " . date('Y-m-d H:i:s');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Tennessee Golf Courses</title>
-    <meta name="description" content="Get in touch with Tennessee Golf Courses. Contact us about course suggestions, partnerships, technical issues, media inquiries, or general questions.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['contact', 'Tennessee', 'golf', 'courses', 'partnerships', 'community']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -364,6 +367,8 @@ Time: " . date('Y-m-d H:i:s');
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->
