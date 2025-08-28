@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 require_once '../config/database.php';
 
 $article_slug = 'belmont-conner-brown-wins-tennessee-match-play-championship';
@@ -427,5 +428,7 @@ try {
 
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
+    <?php include "../includes/threaded-comments.php"; ?>
+    
 </body>
 </html>

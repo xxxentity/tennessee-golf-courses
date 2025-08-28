@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 require_once '../config/database.php';
 
 $article_slug = 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead';
@@ -678,6 +679,6 @@ try {
         </div>
     </div>
     
-    <?php include '../includes/footer.php'; ?>
+    <?<?php include "../includes/threaded-comments.php"; ?>php include '../includes/footer.php'; ?>
 </body>
 </html>

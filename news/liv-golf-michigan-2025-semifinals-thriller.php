@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 
 // Article information
 $article = [
@@ -214,7 +215,7 @@ $article = [
         </div>
     </main>
 
-    <?php include '../includes/footer.php'; ?>
+    <?<?php include "../includes/threaded-comments.php"; ?>php include '../includes/footer.php'; ?>
 
     <script src="/js/main.js"></script>
 </body>

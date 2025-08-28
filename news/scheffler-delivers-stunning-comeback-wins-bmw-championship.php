@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 require_once '../config/database.php';
 
 $article_slug = 'scheffler-delivers-stunning-comeback-wins-bmw-championship';
@@ -682,6 +683,6 @@ try {
         </div>
     </div>
     
-    <?php include '../includes/footer.php'; ?>
+    <?<?php include "../includes/threaded-comments.php"; ?>php include '../includes/footer.php'; ?>
 </body>
 </html>

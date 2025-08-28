@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 
 $article = [
     'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
@@ -395,7 +396,7 @@ $article = [
         </div>
     </div>
 
-    <?php include '../includes/footer.php'; ?>
+    <?<?php include "../includes/threaded-comments.php"; ?>php include '../includes/footer.php'; ?>
 
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>

@@ -418,6 +418,8 @@ $article = [
         </div>
     </footer>
 
+    <?php include '../includes/threaded-comments.php'; ?>
+    
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
 </body>

@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 
 $article = [
     'title' => 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club',
@@ -371,5 +372,7 @@ $article = [
 
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
+    <?php include "../includes/threaded-comments.php"; ?>
+    
 </body>
 </html>

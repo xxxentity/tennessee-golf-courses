@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 require_once '../config/database.php';
 
 $article_slug = 'liv-golf-michigan-team-championship-2025-quarterfinals';
@@ -680,5 +681,7 @@ try {
 
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
+    <?php include "../includes/threaded-comments.php"; ?>
+    
 </body>
 </html>

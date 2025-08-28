@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
 require_once '../config/database.php';
 
 $article_slug = 'scheffler-extends-lead-open-championship-round-3';
@@ -467,5 +468,7 @@ try {
     </footer>
 
     <script src="../script.js"></script>
+    <?php include "../includes/threaded-comments.php"; ?>
+    
 </body>
 </html>
