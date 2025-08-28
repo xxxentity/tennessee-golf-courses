@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Chickasaw Country Club',
+    'location' => 'Memphis, TN',
+    'description' => 'Historic William Langford designed private golf course in Memphis, TN. Prestigious country club since 1922 with Byron Nelson tournament history.',
+    'image' => '/images/courses/chickasaw-country-club/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'William Langford',
+    'year_built' => 1922,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'chickasaw-country-club';
 $course_name = 'Chickasaw Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chickasaw Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Chickasaw Country Club - Historic William Langford designed private golf course in Memphis, TN. Prestigious country club since 1922 with Byron Nelson tournament history.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
