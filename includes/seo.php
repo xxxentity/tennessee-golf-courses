@@ -432,6 +432,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for handicap page
+     */
+    public static function setupHandicapPage() {
+        self::setTitle('Golf Handicap Calculator & Guide - Tennessee Golf Courses');
+        self::setDescription('Learn about golf handicaps and calculate your handicap index. Complete guide to the USGA handicap system with interactive calculator for Tennessee golfers.');
+        self::setKeywords([
+            'golf handicap calculator',
+            'USGA handicap system',
+            'Tennessee golf handicap',
+            'golf handicap index calculator',
+            'how to calculate golf handicap',
+            'golf scoring Tennessee',
+            'handicap index guide',
+            'USGA rules handicap'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/handicap');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Handicap Calculator');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {

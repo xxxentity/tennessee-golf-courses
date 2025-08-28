@@ -1,14 +1,17 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for handicap page
+SEO::setupHandicapPage();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf Handicap Calculator & Guide - Tennessee Golf Courses</title>
-    <meta name="description" content="Learn about golf handicaps and calculate your handicap index. Complete guide to the USGA handicap system with interactive calculator for Tennessee golfers.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf handicap', 'USGA', 'calculator', 'Tennessee', 'golf scoring', 'handicap index', 'golf rules']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -281,6 +284,8 @@ require_once 'includes/init.php';
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 
 <body>
