@@ -1,19 +1,18 @@
 <?php
-session_start();
-require_once '../config/database.php';
+require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
 $article_slug = 'tennessee-herrington-historic-run-125th-us-amateur-runner-up';
 $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     $comment_text = trim($_POST['comment_text']);
     $parent_id = !empty($_POST['parent_id']) ? (int)$_POST['parent_id'] : null;
-    $user_id = $_SESSION['user_id'];
+    $user_id = SecureSession::getUserId();
     
     if (!empty($comment_text)) {
         try {
