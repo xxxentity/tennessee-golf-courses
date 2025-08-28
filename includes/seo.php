@@ -326,7 +326,7 @@ class SEO {
             'Tennessee golf directory'
         ]);
         self::setCanonicalUrl(self::SITE_URL);
-        self::setOgImage('/images/logos/logo.webp');
+        self::setOgImage('/images/logos/tab-logo.webp');
         
         self::generateWebsiteStructuredData();
         self::generateOrganizationStructuredData();
