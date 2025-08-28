@@ -52,6 +52,7 @@ $mainPages = [
     ['url' => 'reviews', 'name' => 'Reviews', 'file' => __DIR__ . '/reviews.php', 'priority' => '0.8', 'changefreq' => 'weekly'],
     ['url' => 'community', 'name' => 'Community', 'file' => __DIR__ . '/community.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
     ['url' => 'events', 'name' => 'Events', 'file' => __DIR__ . '/events.php', 'priority' => '0.7', 'changefreq' => 'weekly'],
+    ['url' => 'handicap', 'name' => 'Handicap Calculator', 'file' => __DIR__ . '/handicap.php', 'priority' => '0.7', 'changefreq' => 'monthly'],
     ['url' => 'about', 'name' => 'About', 'file' => __DIR__ . '/about.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => 'contact', 'name' => 'Contact', 'file' => __DIR__ . '/contact.php', 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => 'privacy-policy', 'name' => 'Privacy Policy', 'file' => __DIR__ . '/privacy-policy.php', 'priority' => '0.3', 'changefreq' => 'yearly'],
