@@ -26,11 +26,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     
     if (!empty($comment_text)) {
         try {
+            // Debug the SQL query and values
+            if (isset($_GET['debug']) && $_GET['debug'] === '1') {
+                echo "<pre>SQL Debug:\n";
+                echo "Query: INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)\n";
+                echo "Values: [" . implode(', ', [$user_id, $article_slug, $article_title, $comment_text, $parent_id]) . "]\n";
+                echo "</pre>";
+            }
+            
             $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
-            $success_message = $parent_id ? "Your reply has been posted successfully! (Parent: $parent_id)" : "Your comment has been posted successfully!";
+            $result = $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
+            
+            if ($result) {
+                $success_message = $parent_id ? "Your reply has been posted successfully! (Parent: $parent_id)" : "Your comment has been posted successfully!";
+                // Force page reload to show new comment
+                if (!isset($_GET['debug'])) {
+                    header("Location: " . $_SERVER['REQUEST_URI']);
+                    exit;
+                }
+            } else {
+                $error_message = "Failed to insert comment - no database error but insert returned false";
+            }
         } catch (PDOException $e) {
-            $error_message = "Error posting comment: " . $e->getMessage();
+            $error_message = "Error posting comment: " . $e->getMessage() . " (Code: " . $e->getCode() . ")";
         }
     } else {
         $error_message = "Please write a comment.";
