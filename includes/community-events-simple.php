@@ -60,52 +60,6 @@ $seasonal_message = getSeasonalMessage($current_month);
         </div>
     </div>
 
-    <!-- Active Contests -->
-    <div style="margin-bottom: 3rem;">
-        <h3 style="color: #2c5530; font-size: 1.8rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-gift"></i> Active Contests & Challenges
-        </h3>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-            <div style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #2c5530;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap;">
-                    <h5 style="color: #2c5530; font-size: 1.2rem; margin-bottom: 0.5rem;">Tennessee Course Review Challenge</h5>
-                    <span style="background: #28a745; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Active</span>
-                </div>
-                <p style="color: #666; margin-bottom: 1rem;">Review 5 different Tennessee courses this year and win prizes</p>
-                <div style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-clock" style="color: #2c5530;"></i>
-                        <span>Deadline: December 31, <?php echo $current_year; ?></span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-gift" style="color: #2c5530;"></i>
-                        <span>Free round at premium Tennessee course</span>
-                    </div>
-                </div>
-                <a href="/contact" style="background: #2c5530; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem;">How to Participate</a>
-            </div>
-            
-            <div style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #2c5530;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap;">
-                    <h5 style="color: #2c5530; font-size: 1.2rem; margin-bottom: 0.5rem;">Best Course Photo Contest</h5>
-                    <span style="background: #28a745; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Active</span>
-                </div>
-                <p style="color: #666; margin-bottom: 1rem;">Submit your best Tennessee golf course photography</p>
-                <div style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-clock" style="color: #2c5530;"></i>
-                        <span>Deadline: End of each quarter</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-gift" style="color: #2c5530;"></i>
-                        <span>Golf equipment prizes and website feature</span>
-                    </div>
-                </div>
-                <a href="/contact" style="background: #2c5530; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; font-size: 0.9rem;">How to Participate</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Community Stats -->
     <div>
