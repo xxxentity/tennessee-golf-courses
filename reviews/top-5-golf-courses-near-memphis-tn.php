@@ -261,7 +261,7 @@ $article = [
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
-                    <span><img src="/images/authors/michael-travers.webp" alt="Michael Travers" style="width: 24px; height: 24px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> <?php echo htmlspecialchars($article['author']); ?></span>
+                    <span><a href="/profile?username=michael-travers" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/michael-travers.webp" alt="Michael Travers" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;"><?php echo htmlspecialchars($article['author']); ?></span></a></span>
                     <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article['category']); ?></span>
                 </div>
             </header>
