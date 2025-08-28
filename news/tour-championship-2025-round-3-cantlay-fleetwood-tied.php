@@ -5,18 +5,6 @@ require_once '../includes/profile-helpers.php';
 $article_slug = 'tour-championship-2025-round-3-cantlay-fleetwood-tied';
 $article_title = 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round';
 
-$article = [
-    'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
-    'slug' => 'tour-championship-2025-round-3-cantlay-fleetwood-tied',
-    'date' => '2025-08-23',
-    'time' => '8:00 PM',
-    'category' => 'Tournament News',
-    'excerpt' => 'Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day\'s best 63 while Russell Henley sits two back at East Lake.',
-    'image' => '/images/news/tour-championship-2025-round-3-cantlay-fleetwood-tied/main.webp',
-    'featured' => true,
-    'author' => 'TGC Editorial Team',
-    'read_time' => '5 min read'
-];
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +12,8 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
-    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <title>Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round - Tennessee Golf Courses</title>
+    <meta name="description" content="Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day's best 63 while Russell Henley sits two back at East Lake.">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -269,29 +257,16 @@ $article = [
 
             <article>
                 <div class="article-header">
-                    <span class="article-category"><?php echo $article['category']; ?></span>
-                    <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
+                    <span class="article-category">Tournament News</span>
+                    <h1 class="article-title">Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round</h1>
                     <div class="article-meta">
-                        <div class="article-meta-item">
-                            <i class="far fa-calendar"></i>
-                            <span><?php echo date('F j, Y', strtotime($article['date'])); ?></span>
-                        </div>
-                        <div class="article-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span><?php echo $article['time']; ?></span>
-                        </div>
-                        <div class="article-meta-item">
-                            <i class="far fa-user"></i>
-                            <span><?php echo $article['author']; ?></span>
-                        </div>
-                        <div class="article-meta-item">
-                            <i class="far fa-eye"></i>
-                            <span><?php echo $article['read_time']; ?></span>
-                        </div>
+                        <span><i class="far fa-calendar"></i> August 23, 2025</span>
+                        <span><i class="far fa-clock"></i> 8:00 PM</span>
+                        <span><i class="far fa-user"></i> TGC Editorial Team</span>
                     </div>
                 </div>
 
-                <img src="<?php echo $article['image']; ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-featured-image">
+                <img src="/images/news/tour-championship-2025-round-3-cantlay-fleetwood-tied/main.webp" alt="Tour Championship Third Round Cantlay Fleetwood" class="article-featured-image">
 
                 <div class="article-content">
                     <p><strong>ATLANTA —</strong> Patrick Cantlay delivered a spectacular closing stretch on Saturday at the Tour Championship, carding four birdies in his final five holes to fire a 6-under 64 and join Tommy Fleetwood at the top of the leaderboard at 16-under par heading into Sunday's finale at East Lake Golf Club.</p>
