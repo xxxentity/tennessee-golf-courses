@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Brainerd Golf Course',
+    'location' => 'Chattanooga, TN',
+    'description' => 'Donald Ross designed classic course in Chattanooga, TN. Historic 6,470-yard layout with rolling terrain and mature trees since 1926.',
+    'image' => '/images/courses/brainerd-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Donald Ross',
+    'year_built' => 1926,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'brainerd-golf-course';
 $course_name = 'Brainerd Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brainerd Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Brainerd Golf Course - Donald Ross designed classic course in Chattanooga, TN. Historic 6,470-yard layout with rolling terrain and mature trees since 1926.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
