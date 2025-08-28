@@ -209,63 +209,8 @@ require_once 'includes/init.php';
             <p>Connecting golfers across the Volunteer State</p>
         </div>
         
-        <!-- Construction Content -->
-        <div class="construction-content">
-            <div class="construction-icon">
-                <i class="fas fa-tools"></i>
-            </div>
-            
-            <div class="construction-message">
-                <h2>Under Construction</h2>
-                <p>We're working hard to build something amazing for the Tennessee golf community. Our new Community section will be the hub for golfers to connect, share experiences, and discover new opportunities across the state.</p>
-                <p>Stay tuned for exciting features that will enhance your golfing experience in Tennessee!</p>
-            </div>
-            
-            <!-- Coming Soon Features -->
-            <div class="coming-soon-features">
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Golfer Connections</h3>
-                    <p>Connect with fellow golfers in your area and find playing partners for your next round.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Events & Tournaments</h3>
-                    <p>Discover local tournaments, golf events, and community gatherings across Tennessee.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Course Discussions</h3>
-                    <p>Share tips, course reviews, and engage in discussions about your favorite Tennessee courses.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Achievements</h3>
-                    <p>Track your golf achievements and see how you stack up against other Tennessee golfers.</p>
-                </div>
-            </div>
-            
-            <!-- Notification Section -->
-            <div class="notify-section">
-                <h3>Be the First to Know</h3>
-                <p>Want to be notified when our Community features launch? Sign up for our newsletter to stay updated.</p>
-                <a href="/newsletter-subscribe.php" class="notify-btn">
-                    <i class="fas fa-bell"></i>
-                    Get Notified
-                </a>
-            </div>
-        </div>
+        <!-- Dynamic Community Events and Contests -->
+        <?php include 'includes/community-events.php'; ?>
     </div>
     
     <!-- Dynamic Footer -->
