@@ -504,6 +504,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for news listing page
+     */
+    public static function setupNewsPage() {
+        self::setTitle('Golf News - Tennessee Golf Courses');
+        self::setDescription('Stay updated with the latest golf news, tournament coverage, and insights from around the world of golf.');
+        self::setKeywords([
+            'golf news',
+            'tournament coverage',
+            'PGA Tour news',
+            'LIV Golf news',
+            'Tennessee golf news',
+            'professional golf',
+            'golf tournaments',
+            'golf updates'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/news');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Golf News');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {

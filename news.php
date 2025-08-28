@@ -1,5 +1,9 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for news page
+SEO::setupNewsPage();
 
 // Get all news articles (in order of newest first)
 require_once 'includes/news-data.php';
@@ -35,9 +39,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf News - Tennessee Golf Courses</title>
-    <meta name="description" content="Stay updated with the latest golf news, tournament coverage, and insights from around the world of golf.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf news', 'tournament coverage', 'PGA Tour', 'LIV Golf', 'Tennessee', 'professional golf', 'sports']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -434,6 +437,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->
