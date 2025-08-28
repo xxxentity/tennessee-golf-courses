@@ -1,7 +1,11 @@
 <?php
 // Include session security and database
 require_once 'includes/session-security.php';
+require_once 'includes/seo.php';
 require_once 'config/database.php';
+
+// Set up SEO for events page
+SEO::setupEventsPage();
 
 // Start secure session
 try {
@@ -376,9 +380,8 @@ $events_by_month = $sorted_events;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf Tournaments & Events - Tennessee Golf Courses</title>
-    <meta name="description" content="Complete guide to LIV Golf, PGA Tour, and Tennessee golf tournaments. Find professional and local golf events, championships, and competitions near you.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf tournaments', 'LIV Golf', 'PGA Tour', 'Tennessee', 'events', 'championships', 'sports']); ?>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -593,6 +596,8 @@ $events_by_month = $sorted_events;
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 
 <body>

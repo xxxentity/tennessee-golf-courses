@@ -408,6 +408,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for events page
+     */
+    public static function setupEventsPage() {
+        self::setTitle('Golf Tournaments & Events - Tennessee Golf Courses');
+        self::setDescription('Complete guide to LIV Golf, PGA Tour, and Tennessee golf tournaments. Find professional and local golf events, championships, and competitions near you.');
+        self::setKeywords([
+            'Tennessee golf tournaments',
+            'LIV Golf events',
+            'PGA Tour tournaments',
+            'golf events Tennessee',
+            'professional golf tournaments',
+            'Tennessee golf championships',
+            'golf competitions Tennessee',
+            'tournament schedule golf'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/events');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Tournaments & Events');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
