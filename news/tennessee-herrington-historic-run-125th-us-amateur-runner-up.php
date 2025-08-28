@@ -12,15 +12,26 @@ $is_logged_in = SecureSession::isLoggedIn();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     $comment_text = trim($_POST['comment_text']);
     $parent_id = !empty($_POST['parent_id']) ? (int)$_POST['parent_id'] : null;
-    $user_id = SecureSession::getUserId();
+    $user_id = SecureSession::get('user_id');
     
     if (!empty($comment_text)) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
+            // Check if parent_id column exists, if not, use old format
+            $stmt = $pdo->prepare("SHOW COLUMNS FROM news_comments LIKE 'parent_id'");
+            $stmt->execute();
+            $has_parent_id = $stmt->fetch();
+            
+            if ($has_parent_id) {
+                $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
+            } else {
+                // Fallback to old format if parent_id doesn't exist
+                $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
+                $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
+            }
             $success_message = $parent_id ? "Your reply has been posted successfully!" : "Your comment has been posted successfully!";
         } catch (PDOException $e) {
-            $error_message = "Error posting comment. Please try again.";
+            $error_message = "Error posting comment: " . $e->getMessage();
         }
     } else {
         $error_message = "Please write a comment.";
