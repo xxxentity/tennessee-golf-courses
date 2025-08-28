@@ -14,6 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     $parent_id = !empty($_POST['parent_id']) ? (int)$_POST['parent_id'] : null;
     $user_id = SecureSession::get('user_id');
     
+    // Debug output for POST data
+    if (isset($_GET['debug']) && $_GET['debug'] === '1') {
+        echo "<pre>POST Debug:\n";
+        echo "comment_text: " . $_POST['comment_text'] . "\n";
+        echo "parent_id raw: '" . ($_POST['parent_id'] ?? 'not set') . "'\n";
+        echo "parent_id processed: " . ($parent_id ?? 'null') . "\n";
+        echo "user_id: " . ($user_id ?? 'null') . "\n";
+        echo "</pre>";
+    }
+    
     if (!empty($comment_text)) {
         try {
             $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
