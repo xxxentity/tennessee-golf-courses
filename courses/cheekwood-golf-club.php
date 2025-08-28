@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Cheekwood Golf Club',
+    'location' => 'Franklin, TN',
+    'description' => 'Executive 9-hole golf course in Franklin, TN. Par 33 layout with 4 par-4s, 4 par-3s, and 1 par-5 in beautifully wooded setting.',
+    'image' => '/images/courses/cheekwood-golf-club/1.jpeg',
+    'holes' => 9,
+    'par' => 33,
+    'designer' => 'N/A',
+    'year_built' => 1990,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'cheekwood-golf-club';
 $course_name = 'Cheekwood Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheekwood Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Cheekwood Golf Club - Executive 9-hole golf course in Franklin, TN. Par 33 layout with 4 par-4s, 4 par-3s, and 1 par-5 in beautifully wooded setting.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
