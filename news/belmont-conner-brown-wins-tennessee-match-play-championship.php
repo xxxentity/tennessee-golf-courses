@@ -328,30 +328,13 @@ try {
                 <p>The victory positions Brown well for future competitive opportunities and demonstrates the high level of play being produced by Tennessee's golf programs. As he continues his collegiate career at Belmont University, this TGA title serves as validation of his potential and competitive abilities at the highest amateur levels.</p>
             </article>
 
-            <!-- Comments Section -->
-            <section class="comments-section">
-                <div class="comments-header">
-                    <i class="fas fa-comments"></i>
-                    <span>Comments (<?php echo count($comments); ?>)</span>
-                </div>
-
-                <?php if (isset($success_message)): ?>
-                    <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <?php echo htmlspecialchars($success_message); ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php if (isset($error_message)): ?>
-                    <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <?php echo htmlspecialchars($error_message); ?>
-                    </div>
-                <?php endif; ?>
-
-            </article>
+            <!-- Comments System -->
+            <?php 
+            require_once '../includes/profile-helpers.php';
+            include '../includes/threaded-comments.php'; 
+            ?>
         </div>
     </div>
-    
-    <!-- Comments handled inline above -->
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>
