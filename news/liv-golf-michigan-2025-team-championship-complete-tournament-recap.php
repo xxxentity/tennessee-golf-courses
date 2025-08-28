@@ -1,47 +1,9 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
-require_once '../config/database.php';
 
 $article_slug = 'liv-golf-michigan-2025-team-championship-complete-tournament-recap';
-$article_title = 'LIV Golf Michigan 2025: Team Championship Complete Tournament Recap and Playoff Drama';
-
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if (!empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            $success_message = "Your comment has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting comment. Please try again.";
-        }
-    } else {
-        $error_message = "Please write a comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT nc.*, u.username 
-        FROM news_comments nc 
-        JOIN users u ON nc.user_id = u.id 
-        WHERE nc.article_slug = ? AND nc.is_approved = TRUE
-        ORDER BY nc.created_at DESC
-    ");
-    $stmt->execute([$article_slug]);
-    $comments = $stmt->fetchAll();
-    
-} catch (PDOException $e) {
-    $comments = [];
-}
+$article_title = 'Liv Golf Michigan 2025 Team Championship Complete Tournament Recap';
 ?>
 
 <!DOCTYPE html>
