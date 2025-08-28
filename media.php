@@ -42,7 +42,7 @@ $featured_reviews = [
         'category' => 'Equipment Reviews',
         'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
         'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
@@ -52,7 +52,7 @@ $featured_reviews = [
         'category' => 'Equipment Reviews',
         'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
         'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ]
 ];
 ?>

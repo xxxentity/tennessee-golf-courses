@@ -11,7 +11,7 @@ $reviews = [
         'excerpt' => 'Discover the top 5 highest-rated golf drivers of 2025. Based on comprehensive testing, tour performance, and expert reviews from leading golf publications.',
         'image' => '/images/reviews/top-5-golf-drivers-2025/0.jpeg',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 5 Best Golf Courses Near Memphis, Tennessee 2025',
@@ -22,7 +22,7 @@ $reviews = [
         'excerpt' => 'Discover the top 5 highest-rated golf courses near Memphis, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
         'image' => '/images/reviews/top-5-golf-courses-near-memphis-tn/0.webp',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 5 Best Golf Courses Near Knoxville, Tennessee 2025',
@@ -33,7 +33,7 @@ $reviews = [
         'excerpt' => 'Discover the top 5 highest-rated golf courses near Knoxville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
         'image' => '/images/reviews/top-5-golf-courses-near-knoxville-tn/0.webp',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 5 Best Golf Courses in Tennessee: Hidden Gems and Championship Venues',
@@ -44,7 +44,7 @@ $reviews = [
         'excerpt' => 'Discover the top 5 highest-rated golf courses in Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
         'image' => '/images/reviews/top-5-golf-courses-tennessee/0.webp',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 5 Best Golf Balls of 2025: Tour-Level Performance Guide',
@@ -55,7 +55,7 @@ $reviews = [
         'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
         'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ],
     [
         'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
@@ -66,7 +66,7 @@ $reviews = [
         'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
         'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
         'featured' => true,
-        'author' => 'TGC Editorial Team'
+        'author' => 'Michael Travers'
     ]
 ];
 ?>

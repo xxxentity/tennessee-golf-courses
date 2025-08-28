@@ -11,7 +11,7 @@ $article = [
     'excerpt' => 'Discover the top 5 highest-rated golf drivers of 2025. Based on comprehensive testing, tour performance, and expert reviews from leading golf publications.',
     'image' => '/images/reviews/top-5-golf-drivers-2025/0.jpeg',
     'featured' => true,
-    'author' => 'TGC Editorial Team',
+    'author' => 'Michael Travers',
 ];
 ?>
 
@@ -262,7 +262,7 @@ $article = [
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
-                    <span><i class="far fa-user"></i> <?php echo htmlspecialchars($article['author']); ?></span>
+                    <span><img src="/images/authors/michael-travers.webp" alt="Michael Travers" style="width: 24px; height: 24px; border-radius: 50%; margin-right: 8px; vertical-align: middle;"> <?php echo htmlspecialchars($article['author']); ?></span>
                     <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article['category']); ?></span>
                 </div>
             </header>
