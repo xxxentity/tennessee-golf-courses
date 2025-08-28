@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Brown Acres Golf Course',
+    'location' => 'Chattanooga, TN',
+    'description' => 'Gary Weller designed municipal course in Chattanooga, TN. 6,742-yard championship layout with wide fairways and challenging terrain near Hamilton Place Mall.',
+    'image' => '/images/courses/brown-acres-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Gary Weller',
+    'year_built' => 1977,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'brown-acres-golf-course';
 $course_name = 'Brown Acres Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brown Acres Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Brown Acres Golf Course - Gary Weller designed municipal course in Chattanooga, TN. 6,742-yard championship layout with wide fairways and challenging terrain near Hamilton Place Mall.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
