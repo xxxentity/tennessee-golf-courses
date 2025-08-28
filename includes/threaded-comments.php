@@ -24,9 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in && isset($_POST['comm
             
             if ($result) {
                 $success_message = $parent_id ? "Your reply has been posted successfully!" : "Your comment has been posted successfully!";
-                // Force page reload to show new comment
-                header("Location: " . $_SERVER['REQUEST_URI']);
-                exit;
+                // Don't redirect - let comment appear immediately
             } else {
                 $error_message = "Failed to post comment. Please try again.";
             }
