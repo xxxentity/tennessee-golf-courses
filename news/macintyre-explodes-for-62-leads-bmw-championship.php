@@ -616,6 +616,8 @@ try {
         </div>
     </div>
     
-    <?<?php include "../includes/threaded-comments.php"; ?>php include '../includes/footer.php'; ?>
+    <?php include '../includes/threaded-comments.php'; ?>
+    
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>
