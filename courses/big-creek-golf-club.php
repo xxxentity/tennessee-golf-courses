@@ -2,6 +2,22 @@
 session_start();
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Big Creek Golf Club',
+    'location' => 'Millington, TN',
+    'description' => 'Historic B.G. Mitchell design from 1976 in Millington, TN. Course permanently closed but information preserved for historical reference.',
+    'image' => '/images/courses/big-creek-golf-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'B.G. Mitchell',
+    'year_built' => 1976,
+    'course_type' => 'Public (Closed)'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'big-creek-golf-club';
 $course_name = 'Big Creek Golf Club';
@@ -65,8 +81,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Creek Golf Club - Tennessee Golf Courses (Permanently Closed)</title>
-    <meta name="description" content="Big Creek Golf Club - Historic B.G. Mitchell design from 1976 in Millington, TN. Course permanently closed but information preserved for historical reference.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
