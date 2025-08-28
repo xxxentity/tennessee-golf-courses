@@ -383,9 +383,6 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                             <?php echo date('M j, Y', strtotime($review['date'])); ?>
                                         </span>
                                         <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
-                                        <?php if (isset($review['read_time'])): ?>
-                                            <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
-                                        <?php endif; ?>
                                     </div>
                                     <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                                         <h3 class="review-title clickable-title"><?php echo htmlspecialchars($review['title']); ?></h3>
