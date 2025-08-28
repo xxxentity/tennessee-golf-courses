@@ -2,6 +2,22 @@
 session_start();
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Belle Acres Golf Course',
+    'location' => 'Cookeville, TN',
+    'description' => 'Cookeville\'s oldest golf course since 1930. Dr. J.P. Terry designed 9-hole par 35 course with bent grass greens and largest practice facility in the area.',
+    'image' => '/images/courses/belle-acres-golf-course/1.jpeg',
+    'holes' => 9,
+    'par' => 35,
+    'designer' => 'Dr. J.P. Terry',
+    'year_built' => 1930,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'belle-acres-golf-course';
 $course_name = 'Belle Acres Golf Course';
@@ -65,8 +81,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belle Acres Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Belle Acres Golf Course - Cookeville's oldest golf course since 1930. Dr. J.P. Terry designed 9-hole par 35 course with bent grass greens and largest practice facility in the area.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
