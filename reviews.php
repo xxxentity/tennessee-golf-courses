@@ -1,5 +1,9 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for reviews page
+SEO::setupReviewsPage();
 
 // Get all review articles (in order of newest first)
 require_once 'includes/reviews-data.php';
@@ -35,9 +39,8 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golf Equipment Reviews - Tennessee Golf Courses</title>
-    <meta name="description" content="Read comprehensive reviews of golf equipment, courses, and gear to improve your game. Expert analysis and recommendations.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf equipment', 'reviews', 'golf gear', 'putters', 'drivers', 'golf balls', 'equipment guide', 'golf clubs']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -323,6 +326,8 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->

@@ -528,6 +528,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for reviews listing page
+     */
+    public static function setupReviewsPage() {
+        self::setTitle('Golf Equipment Reviews - Tennessee Golf Courses');
+        self::setDescription('Read comprehensive reviews of golf equipment, courses, and gear to improve your game. Expert analysis and recommendations.');
+        self::setKeywords([
+            'golf equipment reviews',
+            'golf gear reviews',
+            'golf club reviews',
+            'golf ball reviews',
+            'putter reviews',
+            'driver reviews',
+            'golf course reviews',
+            'golf equipment guide'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/reviews');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Equipment Reviews');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
