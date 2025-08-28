@@ -1,47 +1,10 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
-require_once '../config/database.php';
 
 $article_slug = '2025-tour-championship-atlanta-predictions';
 $article_title = '2025 Tour Championship Atlanta Preview: Scottie Scheffler Favored for Historic Back-to-Back Titles';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if (!empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            $success_message = "Your comment has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting comment. Please try again.";
-        }
-    } else {
-        $error_message = "Please write a comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT nc.*, u.username 
-        FROM news_comments nc 
-        JOIN users u ON nc.user_id = u.id 
-        WHERE nc.article_slug = ? AND nc.is_approved = TRUE
-        ORDER BY nc.created_at DESC
-    ");
-    $stmt->execute([$article_slug]);
-    $comments = $stmt->fetchAll();
-    
-} catch (PDOException $e) {
-    $comments = [];
-}
 ?>
 
 <!DOCTYPE html>
@@ -591,56 +554,15 @@ try {
                 <div class="share-section">
                     <h3 class="share-title">Share This Article</h3>
                     <div class="share-buttons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-button facebook">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/news/2025-tour-championship-atlanta-predictions" target="_blank" class="share-button facebook">
                             <i class="fab fa-facebook-f"></i> Share on Facebook
                         </a>
-                        <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_title); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-button twitter">
+                        <a href="https://twitter.com/intent/tweet?text=2025+Tour+Championship+Atlanta+Preview&url=https://tennesseegolfcourses.com/news/2025-tour-championship-atlanta-predictions" target="_blank" class="share-button twitter">
                             <strong>𝕏</strong> Share on X
                         </a>
-                        <a href="mailto:?subject=<?php echo urlencode($article_title); ?>&body=<?php echo urlencode('Check out this article: https://tennesseegolfcourses.com/news/' . $article_slug); ?>" class="share-button email">
+                        <a href="mailto:?subject=2025+Tour+Championship+Atlanta+Preview&body=Check+out+this+article:+https://tennesseegolfcourses.com/news/2025-tour-championship-atlanta-predictions" class="share-button email">
                             <i class="far fa-envelope"></i> Share via Email
                         </a>
-                    </div>
-                </div>
-                
-                <div class="comments-section">
-                    <h2 class="comments-header">Comments</h2>
-                    
-                    <?php if ($is_logged_in): ?>
-                        <div class="comment-form">
-                            <h3>Leave a Comment</h3>
-                            <?php if (isset($success_message)): ?>
-                                <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
-                            <?php endif; ?>
-                            <?php if (isset($error_message)): ?>
-                                <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
-                            <?php endif; ?>
-                            <form method="POST" action="">
-                                <textarea name="comment_text" class="comment-textarea" placeholder="Share your predictions for the Tour Championship..." required></textarea>
-                                <button type="submit" class="comment-submit">Post Comment</button>
-                            </form>
-                        </div>
-                    <?php else: ?>
-                        <div class="login-prompt">
-                            <p>Please log in to leave a comment.</p>
-                            <a href="/login" class="login-button">Log In</a>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <div class="comments-list">
-                        <?php if (empty($comments)): ?>
-                            <p style="text-align: center; color: var(--text-gray); padding: 2rem;">No comments yet. Be the first to share your thoughts!</p>
-                        <?php else: ?>
-                            <?php foreach ($comments as $comment): ?>
-                                <div class="comment">
-                                    <div class="comment-header">
-                                        <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
-                                        <span class="comment-date"><?php echo date('M j, Y \a\t g:i A', strtotime($comment['created_at'])); ?></span>
-                                    </div>
-                                    <p class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                                </div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
                     </div>
                 </div>
             </article>
