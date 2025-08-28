@@ -428,7 +428,7 @@ $article_title = 'Legion XIII and Crushers GC Advance as LIV Golf Michigan Team 
                     </div>
                     <div class="article-meta-item">
                         <i class="fas fa-user"></i>
-                        <span>By TGC Editorial Team</span>
+                        <span>By Cole Harrington</span>
                     </div>
                     <div class="article-meta-item">
                         <i class="fas fa-clock"></i>

@@ -14,7 +14,7 @@ $article = [
     'excerpt' => 'Tommy Fleetwood wins Tour Championship and FedEx Cup with final round 68 for 18-under total. Englishman claims first PGA Tour victory and $10 million prize at East Lake.',
     'image' => '/images/news/tour-championship-2025-final-round-fleetwood-historic-win/main.webp',
     'featured' => true,
-    'author' => 'TGC Editorial Team',
+    'author' => 'Cole Harrington',
     'read_time' => '6 min read'
 ];
 ?>

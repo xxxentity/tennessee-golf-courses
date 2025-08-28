@@ -468,7 +468,7 @@ $article_title = 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers M
                     <div class="article-meta">
                         <span><i class="far fa-calendar"></i> August 10, 2025</span>
                         <span><i class="far fa-clock"></i> 8:15 PM</span>
-                        <span><i class="far fa-user"></i> TGC Editorial Team</span>
+                        <span><a href="/profile?username=cole-harrington" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;">Cole Harrington</span></a></span>
                     </div>
                 </header>
                 

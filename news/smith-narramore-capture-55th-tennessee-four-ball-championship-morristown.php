@@ -14,7 +14,7 @@ $article = [
     'excerpt' => 'Jack Smith and Chas Narramore defeated Lawrence Largent and Jack Rhea 4 and 3 in the championship match at The Country Club in Morristown, with Smith claiming his third state title.',
     'image' => '/images/news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown/main.webp',
     'featured' => true,
-    'author' => 'TGC Editorial Team',
+    'author' => 'Cole Harrington',
     'read_time' => '4 min read'
 ];
 ?>

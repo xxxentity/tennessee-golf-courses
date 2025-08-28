@@ -13,7 +13,7 @@ $article = [
     'excerpt' => 'Jon Rahm\'s Legion XIII defeated Bryson DeChambeau\'s Crushers GC in the first team championship playoff, claiming the $14 million prize at The Cardinal at Saint John\'s in Plymouth, Michigan.',
     'image' => '/images/news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory/main.webp',
     'featured' => true,
-    'author' => 'TGC Editorial Team',
+    'author' => 'Cole Harrington',
     'read_time' => '6 min read'
 ];
 ?>

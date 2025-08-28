@@ -15,7 +15,7 @@ $article = [
     'excerpt' => 'Three teams survived intense semifinals action at The Cardinal at Saint John\'s in Plymouth, Michigan, setting up Sunday\'s stroke-play finale for the $14 million prize.',
     'image' => '/images/news/liv-golf-michigan-2025-semifinals-thriller/main.webp',
     'featured' => true,
-    'author' => 'TGC Editorial Team',
+    'author' => 'Cole Harrington',
     'read_time' => '5 min read'
 ];
 ?>

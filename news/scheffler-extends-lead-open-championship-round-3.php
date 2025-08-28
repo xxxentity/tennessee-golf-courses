@@ -209,7 +209,7 @@ $article_title = 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Roy
                 <h1 class="article-title">Scheffler Extends Lead to Four Shots with Bogey-Free 67</h1>
                 <div class="article-meta">
                     <span><i class="fas fa-calendar-alt"></i> July 19, 2025</span>
-                    <span><i class="fas fa-user"></i> TGC Editorial Team</span>
+                    <span><i class="fas fa-user"></i> Cole Harrington</span>
                     <span><i class="fas fa-clock"></i> 5 min read</span>
                 </div>
             </div>
