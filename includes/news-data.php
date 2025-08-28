@@ -171,6 +171,46 @@ $articles_raw = [
         'excerpt' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
         'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp',
         'featured' => true
+    ],
+    [
+        'title' => 'Scheffler Delivers Stunning Comeback to Win BMW Championship',
+        'slug' => 'scheffler-delivers-stunning-comeback-wins-bmw-championship',
+        'date' => '2025-08-17',
+        'time' => '9:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Scottie Scheffler erases four-shot deficit with miraculous chip-in on 17th to defeat Robert MacIntyre and claim fifth victory of 2025 season.',
+        'image' => '/images/news/scheffler-delivers-stunning-comeback-wins-bmw-championship/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead',
+        'slug' => 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead',
+        'date' => '2025-08-16',
+        'time' => '8:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre overcomes hostile crowd and brutal pin placements to maintain four-shot lead over Scottie Scheffler after BMW Championship third round.',
+        'image' => '/images/news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship',
+        'slug' => 'macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship',
+        'date' => '2025-08-15',
+        'time' => '7:30 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre fires bogey-free 64 to extend lead to five shots over Scottie Scheffler after BMW Championship second round at Caves Valley Golf Club.',
+        'image' => '/images/news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round',
+        'slug' => 'macintyre-explodes-for-62-leads-bmw-championship',
+        'date' => '2025-08-14',
+        'time' => '8:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Robert MacIntyre fires career-low 62 with six straight closing birdies to take three-shot lead over Tommy Fleetwood after BMW Championship first round.',
+        'image' => '/images/news/macintyre-explodes-for-62-leads-bmw-championship/main.webp',
+        'featured' => true
     ]
 ];
 
