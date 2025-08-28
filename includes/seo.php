@@ -384,6 +384,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for community page
+     */
+    public static function setupCommunityPage() {
+        self::setTitle('Community - Tennessee Golf Courses');
+        self::setDescription('Join the Tennessee Golf Courses community - connect with fellow golfers, share experiences, and discover new courses across the Volunteer State.');
+        self::setKeywords([
+            'Tennessee golf community',
+            'golf community Tennessee',
+            'Tennessee golfers network',
+            'volunteer state golf community',
+            'golf course discussions Tennessee',
+            'Tennessee golf events',
+            'golf club community',
+            'Tennessee golf experiences'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/community');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Community');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
