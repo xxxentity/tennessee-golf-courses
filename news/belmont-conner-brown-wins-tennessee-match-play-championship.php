@@ -255,6 +255,104 @@ try {
             text-decoration: underline;
         }
         
+        .comments-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .comment-form {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .comment-form h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .comment-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .comment-submit {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .comment-submit:hover {
+            background: var(--secondary-color);
+        }
+        
+        .comment {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .comment-date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        
+        .comment-text {
+            line-height: 1.6;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-success {
+            background: #d1fae5;
+            color: #047857;
+            border: 1px solid #10b981;
+        }
+        
+        .alert-error {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #ef4444;
+        }
+
         @media screen and (max-width: 768px) {
             .article-title {
                 font-size: 1.8rem;
@@ -328,11 +426,49 @@ try {
                 <p>The victory positions Brown well for future competitive opportunities and demonstrates the high level of play being produced by Tennessee's golf programs. As he continues his collegiate career at Belmont University, this TGA title serves as validation of his potential and competitive abilities at the highest amateur levels.</p>
             </article>
 
-            <!-- Comments System -->
-            <?php 
-            require_once '../includes/profile-helpers.php';
-            include '../includes/threaded-comments.php'; 
-            ?>
+            <section class="comments-section">
+                <h2 class="comments-header"><i class="fas fa-comments"></i> Discussion</h2>
+                
+                <?php if (isset($success_message)): ?>
+                    <div class="alert alert-success"><?php echo $success_message; ?></div>
+                <?php endif; ?>
+                
+                <?php if (isset($error_message)): ?>
+                    <div class="alert alert-error"><?php echo $error_message; ?></div>
+                <?php endif; ?>
+                
+                <?php if ($is_logged_in): ?>
+                    <div class="comment-form">
+                        <h3>Join the Discussion</h3>
+                        <form method="POST">
+                            <textarea name="comment_text" class="comment-textarea" placeholder="Share your thoughts on Conner Brown's championship victory..." required></textarea>
+                            <button type="submit" class="comment-submit">
+                                <i class="fas fa-paper-plane"></i> Post Comment
+                            </button>
+                        </form>
+                    </div>
+                <?php else: ?>
+                    <div class="login-prompt">
+                        <p><strong>Join the conversation!</strong> <a href="/login">Login</a> or <a href="/register">create an account</a> to share your thoughts.</p>
+                    </div>
+                <?php endif; ?>
+                
+                <div class="comments-list">
+                    <?php if (!empty($comments)): ?>
+                        <?php foreach ($comments as $comment): ?>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
+                                    <span class="comment-date"><?php echo date('M j, Y g:i A', strtotime($comment['created_at'])); ?></span>
+                                </div>
+                                <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p style="text-align: center; color: var(--text-gray); font-style: italic;">Be the first to comment!</p>
+                    <?php endif; ?>
+                </div>
+            </section>
         </div>
     </div>
     <?php include '../includes/footer.php'; ?>
