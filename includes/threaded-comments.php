@@ -4,8 +4,27 @@
  * Usage: include this file in any news article after setting $article_slug and $article_title
  */
 
+// Fallback to extract slug from URL if not provided
 if (!isset($article_slug) || !isset($article_title)) {
-    die('Error: article_slug and article_title must be set before including threaded-comments.php');
+    $request_uri = $_SERVER['REQUEST_URI'];
+    $path_parts = explode('/', trim($request_uri, '/'));
+    
+    // Extract slug from URL (assumes /news/slug format)
+    if (count($path_parts) >= 2 && $path_parts[0] === 'news') {
+        $article_slug = $path_parts[1];
+        
+        // Try to get title from database if available
+        try {
+            $stmt = $pdo->prepare("SELECT article_title FROM news_comments WHERE article_slug = ? LIMIT 1");
+            $stmt->execute([$article_slug]);
+            $result = $stmt->fetch();
+            $article_title = $result ? $result['article_title'] : ucfirst(str_replace('-', ' ', $article_slug));
+        } catch (Exception $e) {
+            $article_title = ucfirst(str_replace('-', ' ', $article_slug));
+        }
+    } else {
+        die('Error: article_slug and article_title must be set before including threaded-comments.php, and could not extract from URL');
+    }
 }
 
 // Check if user is logged in using secure session
