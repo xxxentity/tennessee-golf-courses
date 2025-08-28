@@ -367,6 +367,7 @@ class SEO {
         self::setDescription('Browse all golf courses in Tennessee. Filter by region, price, and difficulty. Comprehensive directory with reviews and detailed course information.');
         self::setKeywords(['Tennessee golf directory', 'golf courses Tennessee', 'Tennessee golf guide', 'golf course finder']);
         self::setCanonicalUrl(self::SITE_URL . '/courses');
+        self::setOgImage('/images/logos/tab-logo.webp');
         
         self::addBreadcrumb('Home', '/');
         self::addBreadcrumb('Golf Courses');
