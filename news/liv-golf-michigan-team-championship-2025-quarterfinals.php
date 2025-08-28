@@ -550,12 +550,11 @@ $article_title = 'Legion XIII and Crushers GC Advance as LIV Golf Michigan Team 
                 </a>
             </div>
         </div>
-        
-        <div class="comments-section">
-            <h2 class="comments-header">Comments</h2>
-            
-            <?php if ($is_logged_in): ?>
-                </article><?php include '../includes/threaded-comments.php'; ?>
+            </article>
+        </div>
+    </div>
+    
+    <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>

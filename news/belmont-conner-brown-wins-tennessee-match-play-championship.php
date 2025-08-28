@@ -310,8 +310,11 @@ $article_title = 'Belmont's Conner Brown Captures First TGA Title at Tennessee M
                     </div>
                 <?php endif; ?>
 
-                <?php if ($is_logged_in): ?>
-                    </article><?php include '../includes/threaded-comments.php'; ?>
+            </article>
+        </div>
+    </div>
+    
+    <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>
