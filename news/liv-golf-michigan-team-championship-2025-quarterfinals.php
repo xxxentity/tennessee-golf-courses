@@ -427,8 +427,7 @@ $article_title = 'Legion XIII and Crushers GC Advance as LIV Golf Michigan Team 
                         <span>August 22, 2025 • 8:15 PM</span>
                     </div>
                     <div class="article-meta-item">
-                        <i class="fas fa-user"></i>
-                        <span>By Cole Harrington</span>
+                        <a href="/profile?username=cole-harrington" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;">Cole Harrington</span></a>
                     </div>
                     <div class="article-meta-item">
                         <i class="fas fa-clock"></i>
