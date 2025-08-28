@@ -214,7 +214,7 @@ $article = [
         </div>
     </main>
 
-    <?<?
+    
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>

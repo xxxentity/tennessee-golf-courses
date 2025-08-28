@@ -698,7 +698,7 @@ try {
     </div>
 
 
-    <?<?
+    
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
