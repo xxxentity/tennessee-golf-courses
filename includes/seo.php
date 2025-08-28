@@ -456,6 +456,30 @@ class SEO {
     }
     
     /**
+     * Set up SEO for maps page
+     */
+    public static function setupMapsPage() {
+        self::setTitle('Golf Course Maps - Tennessee Golf Courses');
+        self::setDescription('Interactive maps of Tennessee golf courses - find courses by location, region, and proximity to major cities across the Volunteer State.');
+        self::setKeywords([
+            'Tennessee golf course maps',
+            'interactive golf course map',
+            'golf courses near me Tennessee',
+            'Tennessee golf course locations',
+            'golf course finder map',
+            'Nashville golf course map',
+            'Memphis golf course map',
+            'Tennessee golf regions map'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/maps');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('Course Maps');
+        self::generateBreadcrumbStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
