@@ -1,14 +1,17 @@
 <?php
 require_once 'includes/init.php';
+require_once 'includes/seo.php';
+
+// Set up SEO for about page
+SEO::setupAboutPage();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Tennessee Golf Courses</title>
-    <meta name="description" content="Learn about Tennessee Golf Courses - a community-driven platform built by golfers, for golfers to discover the best courses across the Volunteer State.">
+    <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf', 'Tennessee', 'about', 'community', 'courses']); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -390,6 +393,8 @@ require_once 'includes/init.php';
             }
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->

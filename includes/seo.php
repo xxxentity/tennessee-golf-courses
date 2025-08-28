@@ -333,6 +333,33 @@ class SEO {
     }
     
     /**
+     * Set up SEO for about page
+     */
+    public static function setupAboutPage() {
+        self::setTitle('About Us - Tennessee Golf Courses');
+        self::setDescription('Learn about Tennessee Golf Courses - a community-driven platform built by golfers, for golfers to discover the best courses across the Volunteer State.');
+        self::setKeywords([
+            'about Tennessee golf courses',
+            'Tennessee golf community',
+            'golf course directory Tennessee',
+            'Tennessee golf platform',
+            'golf enthusiasts Tennessee',
+            'volunteer state golf',
+            'Tennessee golf reviews',
+            'golf course information'
+        ]);
+        self::setCanonicalUrl(self::SITE_URL . '/about');
+        self::setOgImage('/images/logos/tab-logo.webp');
+        
+        self::addBreadcrumb('Home', '/');
+        self::addBreadcrumb('About Us');
+        self::generateBreadcrumbStructuredData();
+        
+        // Add organization structured data for About page
+        self::generateOrganizationStructuredData();
+    }
+    
+    /**
      * Set up SEO for courses listing page
      */
     public static function setupCoursesPage() {
