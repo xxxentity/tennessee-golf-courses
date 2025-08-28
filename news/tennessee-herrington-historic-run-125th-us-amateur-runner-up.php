@@ -16,20 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     
     if (!empty($comment_text)) {
         try {
-            // Check if parent_id column exists, if not, use old format
-            $stmt = $pdo->prepare("SHOW COLUMNS FROM news_comments LIKE 'parent_id'");
-            $stmt->execute();
-            $has_parent_id = $stmt->fetch();
-            
-            if ($has_parent_id) {
-                $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
-            } else {
-                // Fallback to old format if parent_id doesn't exist
-                $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-                $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            }
-            $success_message = $parent_id ? "Your reply has been posted successfully!" : "Your comment has been posted successfully!";
+            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text, parent_id) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text, $parent_id]);
+            $success_message = $parent_id ? "Your reply has been posted successfully! (Parent: $parent_id)" : "Your comment has been posted successfully!";
         } catch (PDOException $e) {
             $error_message = "Error posting comment: " . $e->getMessage();
         }
@@ -55,7 +44,7 @@ try {
     $replies = [];
     
     foreach ($all_comments as $comment) {
-        if ($comment['parent_id'] === null) {
+        if ($comment['parent_id'] === null || $comment['parent_id'] === '' || $comment['parent_id'] === 0) {
             $comments[] = $comment;
         } else {
             if (!isset($replies[$comment['parent_id']])) {
@@ -63,6 +52,20 @@ try {
             }
             $replies[$comment['parent_id']][] = $comment;
         }
+    }
+    
+    // Debug output (remove after testing)
+    if ($_GET['debug'] === '1') {
+        echo "<pre>Debug Info:\n";
+        echo "Total comments: " . count($all_comments) . "\n";
+        echo "Top-level comments: " . count($comments) . "\n";
+        echo "Replies array: ";
+        print_r($replies);
+        echo "\nAll comments data:\n";
+        foreach ($all_comments as $c) {
+            echo "ID: {$c['id']}, Parent: {$c['parent_id']}, Text: " . substr($c['comment_text'], 0, 50) . "...\n";
+        }
+        echo "</pre>";
     }
     
 } catch (PDOException $e) {
