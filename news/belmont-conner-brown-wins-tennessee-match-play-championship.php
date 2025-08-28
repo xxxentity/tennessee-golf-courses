@@ -3,7 +3,7 @@ session_start();
 require_once '../config/database.php';
 
 $article_slug = 'belmont-conner-brown-wins-tennessee-match-play-championship';
-$article_title = 'Belmont's Conner Brown Captures First TGA Title at Tennessee Match Play Championship';
+$article_title = 'Belmont\'s Conner Brown Captures First TGA Title at Tennessee Match Play Championship';
 
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
