@@ -94,6 +94,7 @@ $is_main_page = (
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="/events" class="dropdown-link">Events</a></li>
+                    <li><a href="/handicap" class="dropdown-link">Handicap</a></li>
                     <li><a href="/contests" class="dropdown-link">Contests</a></li>
                 </ul>
             </li>
