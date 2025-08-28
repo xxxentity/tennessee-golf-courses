@@ -47,6 +47,7 @@ $featured_reviews = array_slice($reviews, 0, 3);
 <head>
     <meta charset="UTF-8">
     <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf', 'Tennessee', 'courses', 'reviews', 'sports', 'Nashville', 'Memphis']); ?>
     <link rel="stylesheet" href="styles.css?v=10">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">

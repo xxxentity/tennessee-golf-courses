@@ -96,7 +96,7 @@ class SEO {
         $ogImage = self::$ogImage ?: self::DEFAULT_IMAGE;
         
         // Make sure image URL is absolute
-        if (!str_starts_with($ogImage, 'http')) {
+        if (strpos($ogImage, 'http') !== 0) {
             $ogImage = self::SITE_URL . $ogImage;
         }
         
@@ -137,7 +137,34 @@ class SEO {
         $html .= '<meta name="author" content="' . htmlspecialchars(self::SITE_NAME) . '">' . "\n";
         $html .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
         
+        // AdSense-friendly meta tags
+        $html .= '<meta name="category" content="Sports">' . "\n";
+        $html .= '<meta name="coverage" content="Local">' . "\n";
+        $html .= '<meta name="distribution" content="Global">' . "\n";
+        $html .= '<meta name="rating" content="General">' . "\n";
+        $html .= '<meta name="language" content="English">' . "\n";
+        
+        // Content freshness and relevance
+        $html .= '<meta name="revised" content="' . date('Y-m-d') . '">' . "\n";
+        $html .= '<meta name="topic" content="Golf Courses Tennessee">' . "\n";
+        
         return $html;
+    }
+    
+    /**
+     * Generate news keywords meta tag for AdSense optimization
+     */
+    public static function generateNewsKeywords($keywords = null) {
+        if ($keywords === null) {
+            // Default news keywords based on content type
+            $keywords = ['golf', 'Tennessee', 'sports', 'courses', 'reviews'];
+        }
+        
+        if (is_array($keywords)) {
+            $keywords = implode(', ', $keywords);
+        }
+        
+        return '<meta name="news_keywords" content="' . htmlspecialchars($keywords) . '">' . "\n";
     }
     
     /**
@@ -286,7 +313,18 @@ class SEO {
     public static function setupHomepage() {
         self::setTitle('Best Golf Courses in Tennessee - Complete Guide & Reviews');
         self::setDescription('Discover Tennessee\'s premier golf courses. Expert reviews, ratings, and complete information for golf enthusiasts. Find your perfect golf experience in Tennessee.');
-        self::setKeywords(['Tennessee golf courses', 'golf in Tennessee', 'best golf courses Tennessee', 'Tennessee golf', 'golf course reviews']);
+        self::setKeywords([
+            'Tennessee golf courses', 
+            'best golf courses Tennessee', 
+            'golf in Tennessee', 
+            'Tennessee golf reviews',
+            'Nashville golf courses',
+            'Memphis golf courses',
+            'public golf courses Tennessee',
+            'private golf clubs Tennessee',
+            'golf course ratings Tennessee',
+            'Tennessee golf directory'
+        ]);
         self::setCanonicalUrl(self::SITE_URL);
         self::setOgImage('/images/tennessee-golf-homepage.jpg');
         
