@@ -42,8 +42,7 @@ $featured_reviews = [
         'category' => 'Equipment Reviews',
         'excerpt' => 'Discover the top 5 highest-rated golf balls of 2025. Based on tour performance, robot testing, and comprehensive analysis of the latest releases.',
         'image' => '/images/reviews/top-5-golf-balls-2025/0.jpeg',
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
+        'author' => 'TGC Editorial Team'
     ],
     [
         'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
@@ -53,8 +52,7 @@ $featured_reviews = [
         'category' => 'Equipment Reviews',
         'excerpt' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
         'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
-        'author' => 'TGC Editorial Team',
-        'read_time' => '8 min read'
+        'author' => 'TGC Editorial Team'
     ]
 ];
 ?>
@@ -480,7 +478,6 @@ $featured_reviews = [
                                 <a href="/reviews/<?php echo $review['slug']; ?>" class="read-more-btn">
                                     Read Review <i class="fas fa-arrow-right"></i>
                                 </a>
-                                <span style="color: var(--text-gray); font-size: 0.9rem;"><?php echo $review['read_time']; ?></span>
                             </div>
                         </div>
                     </article>

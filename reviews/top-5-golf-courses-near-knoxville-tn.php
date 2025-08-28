@@ -12,7 +12,6 @@ $article = [
     'image' => '/images/reviews/top-5-golf-courses-near-knoxville-tn/0.webp',
     'featured' => true,
     'author' => 'TGC Editorial Team',
-    'read_time' => '8 min read'
 ];
 ?>
 
@@ -262,7 +261,6 @@ $article = [
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
-                    <span><i class="far fa-clock"></i> <?php echo htmlspecialchars($article['read_time']); ?></span>
                     <span><i class="far fa-user"></i> <?php echo htmlspecialchars($article['author']); ?></span>
                     <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article['category']); ?></span>
                 </div>
