@@ -1658,6 +1658,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
 <head>
     <meta charset="UTF-8">
     <?php echo SEO::generateMetaTags(); ?>
+    <?php echo SEO::generateNewsKeywords(['golf courses', 'Tennessee', 'directory', 'golf guide', 'Nashville', 'Memphis', 'sports']); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -2286,6 +2287,8 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             color: var(--text-gray);
         }
     </style>
+    
+    <?php echo SEO::generateStructuredData(); ?>
 </head>
 <body>
     <!-- Dynamic Navigation -->
@@ -2751,6 +2754,5 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <?php endif; ?>
     
     <?php echo Performance::getPerformanceScript(); ?>
-    <?php echo SEO::generateStructuredData(); ?>
 </body>
 </html>
