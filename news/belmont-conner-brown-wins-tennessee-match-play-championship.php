@@ -1,47 +1,10 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
-require_once '../config/database.php';
 
 $article_slug = 'belmont-conner-brown-wins-tennessee-match-play-championship';
-$article_title = 'Belmont\'s Conner Brown Captures First TGA Title at Tennessee Match Play Championship';
+$article_title = 'Belmont's Conner Brown Captures First TGA Title at Tennessee Match Play Championship';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if (!empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            $success_message = "Your comment has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting comment. Please try again.";
-        }
-    } else {
-        $error_message = "Please write a comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT nc.*, u.username 
-        FROM news_comments nc 
-        JOIN users u ON nc.user_id = u.id 
-        WHERE nc.article_slug = ? AND nc.is_approved = TRUE
-        ORDER BY nc.created_at DESC
-    ");
-    $stmt->execute([$article_slug]);
-    $comments = $stmt->fetchAll();
-    
-} catch (PDOException $e) {
-    $comments = [];
-}
 ?>
 
 <!DOCTYPE html>
@@ -348,36 +311,7 @@ try {
                 <?php endif; ?>
 
                 <?php if ($is_logged_in): ?>
-                    <div class="comment-form">
-                        <form method="POST">
-                            <textarea name="comment_text" placeholder="Share your thoughts about this article..." required></textarea>
-                            <button type="submit">Post Comment</button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><a href="/login">Login</a> or <a href="/register">register</a> to join the conversation and share your thoughts!</p>
-                    </div>
-                <?php endif; ?>
-
-                <div class="comments-list">
-                    <?php if (empty($comments)): ?>
-                        <p style="text-align: center; color: var(--text-gray); padding: 2rem;">No comments yet. Be the first to share your thoughts!</p>
-                    <?php else: ?>
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="comment">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-date"><?php echo date('M j, Y g:i A', strtotime($comment['created_at'])); ?></div>
-                                <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <?php include '../includes/threaded-comments.php'; ?>
+                    </article><?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>

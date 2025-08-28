@@ -1,47 +1,10 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
-require_once '../config/database.php';
 
 $article_slug = 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead';
 $article_title = 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if (!empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO news_comments (user_id, article_slug, article_title, comment_text) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$user_id, $article_slug, $article_title, $comment_text]);
-            $success_message = "Your comment has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting comment. Please try again.";
-        }
-    } else {
-        $error_message = "Please write a comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT nc.*, u.username 
-        FROM news_comments nc 
-        JOIN users u ON nc.user_id = u.id 
-        WHERE nc.article_slug = ? AND nc.is_approved = TRUE
-        ORDER BY nc.created_at DESC
-    ");
-    $stmt->execute([$article_slug]);
-    $comments = $stmt->fetchAll();
-    
-} catch (PDOException $e) {
-    $comments = [];
-}
 ?>
 
 <!DOCTYPE html>
@@ -645,43 +608,7 @@ try {
                 <?php endif; ?>
                 
                 <?php if ($is_logged_in): ?>
-                    <div class="comment-form">
-                        <h3>Join the Discussion</h3>
-                        <form method="POST">
-                            <textarea name="comment_text" class="comment-textarea" placeholder="Share your thoughts on MacIntyre's confrontation with the crowd..." required></textarea>
-                            <button type="submit" class="comment-submit">
-                                <i class="fas fa-paper-plane"></i> Post Comment
-                            </button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><strong>Join the conversation!</strong> <a href="/login">Login</a> or <a href="/register">create an account</a> to share your thoughts on the BMW Championship drama.</p>
-                    </div>
-                <?php endif; ?>
-                
-                <div class="comments-list">
-                    <?php if (!empty($comments)): ?>
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
-                                    <span class="comment-date"><?php echo date('M j, Y g:i A', strtotime($comment['created_at'])); ?></span>
-                                </div>
-                                <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p style="text-align: center; color: var(--text-gray); font-style: italic;">Be the first to comment on this story!</p>
-                    <?php endif; ?>
-                </div>
-            </section>
-        </div>
-    </div>
-    
-    
-    
-    <?php include '../includes/threaded-comments.php'; ?>
+                    </article><?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
 </body>
 </html>
