@@ -3,6 +3,9 @@ require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
 // Article information
+$article_slug = 'liv-golf-michigan-2025-semifinals-thriller';
+$article_title = 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama';
+
 $article = [
     'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
     'slug' => 'liv-golf-michigan-2025-semifinals-thriller',

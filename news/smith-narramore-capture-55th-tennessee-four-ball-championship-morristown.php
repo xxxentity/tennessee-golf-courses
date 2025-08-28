@@ -2,6 +2,9 @@
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
+$article_slug = 'smith-narramore-capture-55th-tennessee-four-ball-championship-morristown';
+$article_title = 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club';
+
 $article = [
     'title' => 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club',
     'slug' => 'smith-narramore-capture-55th-tennessee-four-ball-championship-morristown',

@@ -2,6 +2,9 @@
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
+$article_slug = 'tour-championship-2025-round-3-cantlay-fleetwood-tied';
+$article_title = 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round';
+
 $article = [
     'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
     'slug' => 'tour-championship-2025-round-3-cantlay-fleetwood-tied',

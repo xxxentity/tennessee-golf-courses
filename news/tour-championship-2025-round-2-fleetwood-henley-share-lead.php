@@ -2,6 +2,9 @@
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
+$article_slug = 'tour-championship-2025-round-2-fleetwood-henley-share-lead';
+$article_title = 'Fleetwood and Henley Share Tour Championship Lead After Second Round';
+
 $article = [
     'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
     'slug' => 'tour-championship-2025-round-2-fleetwood-henley-share-lead',

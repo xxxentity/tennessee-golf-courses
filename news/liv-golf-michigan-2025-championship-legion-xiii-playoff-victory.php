@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$article_slug = 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory';
+$article_title = 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC';
+
 $article = [
     'title' => 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC',
     'slug' => 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory',

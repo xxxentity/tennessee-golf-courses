@@ -2,6 +2,9 @@
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
 
+$article_slug = 'tour-championship-2025-final-round-fleetwood-historic-win';
+$article_title = 'Tommy Fleetwood Captures First PGA Tour Victory in Emotional Tour Championship Triumph';
+
 $article = [
     'title' => 'Fleetwood Captures Historic First PGA Tour Win at Tour Championship',
     'slug' => 'tour-championship-2025-final-round-fleetwood-historic-win',
