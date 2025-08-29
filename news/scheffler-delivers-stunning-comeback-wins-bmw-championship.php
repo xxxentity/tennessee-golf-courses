@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Scheffler Delivers Stunning Comeback to Win BMW Championship',
+    'description' => 'Scottie Scheffler erases four-shot deficit with miraculous chip-in on 17th to defeat Robert MacIntyre and claim fifth victory of 2025 season.',
+    'image' => '/images/news/scheffler-delivers-stunning-comeback-wins-bmw-championship/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-17',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'scheffler-delivers-stunning-comeback-wins-bmw-championship';
 $article_title = 'Scheffler Delivers Stunning Comeback to Win BMW Championship';
@@ -48,8 +63,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheffler Delivers Stunning Comeback to Win BMW Championship - Tennessee Golf Courses</title>
-    <meta name="description" content="Scottie Scheffler erases four-shot deficit with miraculous chip-in on 17th to defeat Robert MacIntyre and claim fifth victory of 2025 season.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
