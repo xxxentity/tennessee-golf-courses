@@ -392,7 +392,7 @@ try {
             <div class="gallery-grid">
                 <img src="../images/courses/chattanooga-golf-country-club/1.webp" alt="Chattanooga Golf & Country Club - Private Golf Course" class="gallery-item">
                 <img src="../images/courses/chattanooga-golf-country-club/2.webp" alt="Chattanooga Golf & Country Club - Scenic Golf Views" class="gallery-item">
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/3.webp');"></div>
+                <img src="../images/courses/chattanooga-golf-country-club/3.webp" alt="Chattanooga Golf & Country Club - Course Landscape" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

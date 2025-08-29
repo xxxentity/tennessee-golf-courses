@@ -235,8 +235,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -709,9 +709,9 @@ try {
                 <p>Experience the beauty of Blackthorn Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/blackthorn-club/3.jpeg');"></div>
+                <img src="../images/courses/blackthorn-club/1.jpeg" alt="Blackthorn Club - Golf Course Overview" class="gallery-item">
+                <img src="../images/courses/blackthorn-club/2.jpeg" alt="Blackthorn Club - Fairway and Green View" class="gallery-item">
+                <img src="../images/courses/blackthorn-club/3.jpeg" alt="Blackthorn Club - Course Landscape" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
