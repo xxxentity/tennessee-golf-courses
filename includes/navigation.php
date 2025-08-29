@@ -480,7 +480,7 @@ body {
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
-<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain' || $course_slug === 'bear-trace-at-tims-ford'): ?>
+<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain' || $course_slug === 'bear-trace-at-tims-ford' || $course_slug === 'bear-trace-harrison-bay'): ?>
 <!-- Course-specific weather for individual course pages -->
 <script src="/course-weather.js"></script>
 <script>
