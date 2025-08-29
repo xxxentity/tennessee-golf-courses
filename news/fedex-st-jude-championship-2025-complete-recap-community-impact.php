@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'FedEx St. Jude Championship 2025: Complete Tournament Recap and Community Impact',
+    'description' => 'Complete recap of the 2025 FedEx St. Jude Championship week featuring Justin Rose\'s playoff victory and the tournament\'s extraordinary community impact for St. Jude Children\'s Research Hospital.',
+    'image' => '/images/news/fedex-st-jude-championship-2025-complete-recap-community-impact/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-19',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'fedex-st-jude-championship-2025-complete-recap-community-impact';
 $article_title = 'FedEx St. Jude Championship 2025: Complete Tournament Recap and Community Impact';
@@ -12,8 +26,7 @@ $article_title = 'FedEx St. Jude Championship 2025: Complete Tournament Recap an
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FedEx St. Jude Championship 2025: Complete Tournament Recap and Community Impact - Tennessee Golf Courses</title>
-    <meta name="description" content="Complete recap of the 2025 FedEx St. Jude Championship week featuring Justin Rose's playoff victory and the tournament's extraordinary community impact for St. Jude Children's Research Hospital.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
