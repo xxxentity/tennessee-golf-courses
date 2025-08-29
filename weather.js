@@ -20,9 +20,10 @@ class WeatherManager {
             return this.weatherData;
         }
 
-        // Fetch new weather data from our API
+        // Fetch new weather data from our API (course-specific or Nashville)
         try {
-            const response = await fetch('/weather-api.php');
+            const apiUrl = window.courseWeatherConfig ? window.courseWeatherConfig.apiUrl : '/weather-api.php';
+            const response = await fetch(apiUrl);
             
             if (!response.ok) {
                 throw new Error('Weather API unavailable');
@@ -34,10 +35,27 @@ class WeatherManager {
                 throw new Error('Weather API returned error');
             }
             
+            // Handle both old Nashville API format and new course API format
+            let temp, precipProb, windSpeed, location;
+            if (result.data) {
+                // Old Nashville API format
+                temp = result.data.temp;
+                precipProb = result.data.precipProb;
+                windSpeed = result.data.windSpeed;
+                location = 'Nashville, TN';
+            } else {
+                // New course API format
+                temp = result.temperature;
+                precipProb = result.precipProb;
+                windSpeed = result.windSpeed;
+                location = result.location;
+            }
+            
             this.weatherData = {
-                temp: result.data.temp,
-                precipProb: result.data.precipProb,
-                windSpeed: result.data.windSpeed,
+                temp: temp,
+                precipProb: precipProb,
+                windSpeed: windSpeed,
+                location: location,
                 timestamp: now
             };
             
@@ -52,6 +70,7 @@ class WeatherManager {
                 temp: 75,
                 precipProb: 20,
                 windSpeed: 10,
+                location: window.courseWeatherConfig && window.courseWeatherConfig.isCourse ? 'Location, TN' : 'Nashville, TN',
                 timestamp: now
             };
             
@@ -94,6 +113,7 @@ class WeatherManager {
         const tempElement = document.getElementById('weather-temp');
         const precipElement = document.getElementById('weather-precip');
         const windElement = document.getElementById('weather-wind');
+        const locationElement = document.getElementById('weather-location');
         
         if (!tempElement) {
             console.log('Weather elements not found on this page');
@@ -116,6 +136,9 @@ class WeatherManager {
         }
         if (windElement) {
             windElement.textContent = `${weather.windSpeed} mph`;
+        }
+        if (locationElement && weather.location) {
+            locationElement.textContent = `${weather.location}:`;
         }
     }
 }
