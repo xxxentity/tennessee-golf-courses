@@ -3,6 +3,17 @@
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable Gems',
+        'slug' => '2025-best-nashville-golf-courses-under-50',
+        'date' => '2025-08-27',
+        'time' => '10:30 AM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover the 6 best affordable golf courses near Nashville, Tennessee under $50 in 2025. From championship designs to municipal gems, find exceptional value and memorable rounds.',
+        'image' => '/images/reviews/2025-best-nashville-golf-courses-under-50/main.webp',
+        'featured' => true,
+        'author' => 'Michael Travers'
+    ],
+    [
         'title' => 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidden Gems & Pro Tips',
         'slug' => 'complete-guide-tennessee-golf-2025',
         'date' => '2025-08-26',
