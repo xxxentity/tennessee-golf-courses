@@ -1,5 +1,19 @@
 <?php
 session_start();
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Top 10 Best Putters of 2025: Highest Rated Golf Putters',
+    'description' => 'Discover the top 10 highest-rated golf putters available on Amazon in 2025. Based on customer reviews, professional testing, and performance data.',
+    'image' => '/images/reviews/top-10-putters-2025/0.jpeg',
+    'type' => 'article',
+    'author' => 'Michael Travers',
+    'date' => '2025-08-06',
+    'category' => 'Equipment Reviews'
+];
+
+SEO::setupArticlePage($article_data);
 
 // Article metadata
 $article = [
@@ -20,8 +34,7 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
-    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
