@@ -1,0 +1,1 @@
+<?php require_once 'includes/reviews-data.php'; echo count($reviews) . " reviews found"; ?>
