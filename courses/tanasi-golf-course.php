@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Tanasi Golf Course',
+    'location' => 'Tellico Village, TN',
+    'description' => 'Ault, Clark & Associates design at Tellico Village, TN. Championship 6,715-yard layout with Tellico Lake views and challenging water carries.',
+    'image' => '/images/courses/tanasi-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Ault, Clark & Associates',
+    'year_built' => 1986,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'tanasi-golf-course';
 $course_name = 'Tanasi Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanasi Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Tanasi Golf Course - Ault, Clark & Associates design at Tellico Village, TN. Championship 6,715-yard layout with Tellico Lake views and challenging water carries.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
