@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Willow Creek Golf Club',
+    'location' => 'Knoxville, TN',
+    'description' => 'Championship 18-hole public course in Knoxville. Par 72, 7,211 yards of upscale golf with Champion Ultra Dwarf Bermuda greens.',
+    'image' => '/images/courses/willow-creek-golf-club/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Bill Oliphant',
+    'year_built' => 2003,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'willow-creek-golf-club';
 $course_name = 'Willow Creek Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willow Creek Golf Club - Bill Oliphant Design | Tennessee Golf Courses</title>
-    <meta name="description" content="Play Willow Creek Golf Club, a championship 18-hole public course in Knoxville. Par 72, 7,211 yards of upscale golf with Champion Ultra Dwarf Bermuda greens.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="canonical" href="https://tennesseegolfcourses.com/courses/willow-creek-golf-club">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
