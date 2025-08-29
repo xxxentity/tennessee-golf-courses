@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Gaylord Springs Golf Links',
+    'location' => 'Nashville, TN',
+    'description' => 'Larry Nelson Scottish links-style design in Nashville, TN. 7,069 yards of championship resort golf with Cumberland River views.',
+    'image' => '/images/courses/gaylord-springs-golf-links/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Larry Nelson',
+    'year_built' => 1990,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'gaylord-springs-golf-links';
 $course_name = 'Gaylord Springs Golf Links';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaylord Springs Golf Links - Tennessee Golf Courses</title>
-    <meta name="description" content="Gaylord Springs Golf Links - Larry Nelson Scottish links-style design in Nashville, TN. 7,069 yards of championship resort golf with Cumberland River views.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
