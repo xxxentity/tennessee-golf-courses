@@ -1160,6 +1160,14 @@ SEO::setupMapsPage();
                 coordinates: [-84.25925, 35.67931]
             },
             {
+                name: "Timber Truss Golf Course",
+                address: "9425 Plantation Road, Olive Branch, MS 38654",
+                phone: "(662) 895-3530",
+                type: "Public",
+                slug: "timber-truss-golf-course",
+                coordinates: [-89.8569, 34.8989]
+            },
+            {
                 name: "TPC Southwind",
                 address: "3325 Club at Southwind, Memphis, TN 38125",
                 phone: "(901) 748-0330",

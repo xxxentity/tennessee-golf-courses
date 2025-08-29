@@ -1015,6 +1015,21 @@ $courses_static = [
         'slug' => 'three-ridges-golf-course'
     ],
     [
+        'id' => 100,
+        'name' => 'Timber Truss Golf Course',
+        'location' => 'Olive Branch, MS',
+        'region' => 'Memphis Area',
+        'description' => 'Championship golf course formerly known as Plantation Golf Club. 180-acre property with modern amenities and GPS-equipped carts.',
+        'image' => '/images/courses/timber-truss-golf-course/1.webp',
+        'price_range' => '$32-75',
+        'par' => 72,
+        'yardage' => '6,773 yards',
+        'rating' => '72.7',
+        'slope' => 125,
+        'amenities' => ['Pro Shop', 'TrackMan Simulator', 'GPS Carts', 'Golf Lessons', 'Snack Bar & Lounge', 'Tournament Hosting'],
+        'slug' => 'timber-truss-golf-course'
+    ],
+    [
         'id' => 23,
         'name' => 'TPC Southwind',
         'location' => 'Memphis, TN',
