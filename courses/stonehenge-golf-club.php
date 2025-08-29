@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Stonehenge Golf Club',
+    'location' => 'Fairfield Glade, TN',
+    'description' => 'Joe Lee championship design from 1984 at Fairfield Glade, TN. #1 resort course in Tennessee with 6,549-yard layout and native stone walls.',
+    'image' => '/images/courses/stonehenge-golf-club/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Joe Lee',
+    'year_built' => 1984,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'stonehenge-golf-club';
 $course_name = 'Stonehenge Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stonehenge Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Stonehenge Golf Club - Joe Lee championship design from 1984 at Fairfield Glade, TN. #1 resort course in Tennessee with 6,549-yard layout and native stone walls.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
