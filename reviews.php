@@ -369,6 +369,13 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
 
             <!-- Reviews Grid -->
             <section class="reviews-section">
+                <!-- Debug info -->
+                <p>Total reviews loaded: <?php echo count($reviews ?? []); ?></p>
+                <p>Filtered reviews: <?php echo count($filtered_reviews ?? []); ?></p>
+                <?php if (isset($reviews) && count($reviews) > 0): ?>
+                    <p>First review title: <?php echo htmlspecialchars($reviews[0]['title'] ?? 'No title'); ?></p>
+                <?php endif; ?>
+                
                 <?php if (!empty($filtered_reviews)): ?>
                     <div class="reviews-grid">
                         <?php 

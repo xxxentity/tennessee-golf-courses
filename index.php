@@ -397,6 +397,10 @@ $featured_reviews = array_slice($reviews, 0, 3);
                 <h2>Featured Reviews</h2>
                 <p>In-depth reviews and buying guides for golf equipment and accessories</p>
             </div>
+            <!-- Debug info -->
+            <p>Total reviews for homepage: <?php echo count($reviews ?? []); ?></p>
+            <p>Featured reviews count: <?php echo count($featured_reviews ?? []); ?></p>
+            
             <div class="reviews-grid">
                 <?php foreach ($featured_reviews as $review): ?>
                 <article class="review-card">
