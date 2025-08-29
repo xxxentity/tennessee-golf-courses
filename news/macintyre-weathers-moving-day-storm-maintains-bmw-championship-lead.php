@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead',
+    'description' => 'Robert MacIntyre overcomes hostile crowd and brutal pin placements to maintain four-shot lead over Scottie Scheffler after BMW Championship third round.',
+    'image' => '/images/news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-16',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead';
 $article_title = 'MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead';
@@ -48,8 +63,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacIntyre Weathers Moving Day Storm to Maintain BMW Championship Lead - Tennessee Golf Courses</title>
-    <meta name="description" content="Robert MacIntyre overcomes hostile crowd and brutal pin placements to maintain four-shot lead over Scottie Scheffler after BMW Championship third round.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
