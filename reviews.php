@@ -337,8 +337,8 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Equipment Reviews</h1>
-                <p class="page-subtitle">In-depth reviews and buying guides for golf equipment and accessories</p>
+                <h1 class="page-title">Golf Reviews</h1>
+                <p class="page-subtitle">In-depth reviews and guides for golf courses, equipment, and accessories</p>
             </div>
         </section>
 
