@@ -478,9 +478,9 @@ body {
 
 <?php if ($is_main_page): ?>
 <!-- Centralized Weather Scripts -->
-<?php if ($course_slug === 'avalon-golf-country-club'): ?>
+<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain'): ?>
 <script>
-    // Course-specific weather ONLY for Avalon Golf & Country Club
+    // Course-specific weather for selected course pages
     window.courseWeatherConfig = {
         isCourse: true,
         courseSlug: '<?php echo htmlspecialchars($course_slug); ?>',
