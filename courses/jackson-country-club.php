@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Jackson Country Club',
+    'location' => 'Jackson, TN',
+    'description' => 'Historic private club in Jackson, TN since 1914. Championship golf with 6,849 yards, host to TGA championships and USGA qualifiers.',
+    'image' => '/images/courses/jackson-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1914,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'jackson-country-club';
 $course_name = 'Jackson Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jackson Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Jackson Country Club - Historic private club in Jackson, TN since 1914. Championship golf with 6,849 yards, host to TGA championships and USGA qualifiers.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
