@@ -39,7 +39,7 @@ $featured_courses = [
 ];
 
 // Get latest featured review articles dynamically
-require_once 'includes/reviews-data-test.php';
+require_once 'includes/reviews-data.php';
 $featured_reviews = array_slice($reviews, 0, 3);
 ?>
 <!DOCTYPE html>

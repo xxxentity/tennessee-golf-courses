@@ -6,7 +6,7 @@ require_once 'includes/seo.php';
 SEO::setupReviewsPage();
 
 // Get all review articles (in order of newest first)
-require_once 'includes/reviews-data-test.php';
+require_once 'includes/reviews-data.php';
 
 // Get search query if provided
 $search_query = isset($_GET['search']) ? trim($_GET['search']) : '';
