@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Links at Fox Meadows',
+    'location' => 'Memphis, TN',
+    'description' => 'Chic Adams designed championship course in Memphis, TN. Historic 1957 municipal course with 6,545-yard layout and tree-lined fairways.',
+    'image' => '/images/courses/the-links-at-fox-meadows/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Chic Adams',
+    'year_built' => 1957,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-links-at-fox-meadows';
 $course_name = 'The Links at Fox Meadows';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Links at Fox Meadows - Tennessee Golf Courses</title>
-    <meta name="description" content="The Links at Fox Meadows - Chic Adams designed championship course in Memphis, TN. Historic 1957 municipal course with 6,545-yard layout and tree-lined fairways.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
