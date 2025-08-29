@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Club at Five Oaks',
+    'location' => 'Lebanon, TN',
+    'description' => 'Neal Carson designed championship golf course in Lebanon, TN. 18-hole par-72 course featuring rolling hills, Zoysia fairways, and Bermuda greens on 500+ acres.',
+    'image' => '/images/courses/the-club-at-five-oaks/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Neal Carson',
+    'year_built' => 2000,
+    'course_type' => 'Semi-Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-club-at-five-oaks';
 $course_name = 'The Club at Five Oaks';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Club at Five Oaks - Tennessee Golf Courses</title>
-    <meta name="description" content="The Club at Five Oaks - Neal Carson designed championship golf course in Lebanon, TN. 18-hole par-72 course featuring rolling hills, Zoysia fairways, and Bermuda greens on 500+ acres.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
