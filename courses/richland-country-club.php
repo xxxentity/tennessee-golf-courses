@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Richland Country Club',
+    'location' => 'Nashville, TN',
+    'description' => 'Historic Nashville country club since 1901 featuring Jack Nicklaus Signature design. Championship course with Byron Nelson and Ben Hogan tournament victories.',
+    'image' => '/images/courses/richland-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Jack Nicklaus Signature',
+    'year_built' => 1901,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'richland-country-club';
 $course_name = 'Richland Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richland Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Richland Country Club - Historic Nashville club since 1901 with Jack Nicklaus Signature design. Byron Nelson and Ben Hogan tournament victories. Bill Bergin renovation 2021.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
