@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Hillwood Country Club',
+    'location' => 'Nashville, TN',
+    'description' => 'Dick Wilson designed championship golf course in Nashville, TN. Private club featuring 7,059 yards of challenging golf since 1957.',
+    'image' => '/images/courses/hillwood-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Dick Wilson',
+    'year_built' => 1957,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'hillwood-country-club';
 $course_name = 'Hillwood Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hillwood Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Hillwood Country Club - Dick Wilson designed championship golf course in Nashville, TN. Private club featuring 7,059 yards of challenging golf since 1957.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
