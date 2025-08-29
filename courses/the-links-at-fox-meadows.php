@@ -221,8 +221,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -794,9 +794,9 @@ try {
                 <p>Experience the beauty of The Links at Fox Meadows</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-fox-meadows/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-fox-meadows/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-fox-meadows/4.webp');"></div>
+                <img src="../images/courses/the-links-at-fox-meadows/2.webp" alt="The Links at Fox Meadows - Links Style Golf Course" class="gallery-item">
+                <img src="../images/courses/the-links-at-fox-meadows/3.webp" alt="The Links at Fox Meadows - Memphis Golf Links" class="gallery-item">
+                <img src="../images/courses/the-links-at-fox-meadows/4.webp" alt="The Links at Fox Meadows - Championship Golf" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

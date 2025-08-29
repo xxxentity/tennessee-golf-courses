@@ -220,8 +220,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -764,9 +764,9 @@ try {
                 <p>Experience the beauty of Laurel Valley Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/laurel-valley-country-club/4.jpeg');"></div>
+                <img src="../images/courses/laurel-valley-country-club/2.jpeg" alt="Laurel Valley Country Club - Prestigious Golf Course" class="gallery-item">
+                <img src="../images/courses/laurel-valley-country-club/3.jpeg" alt="Laurel Valley Country Club - Championship Golf Layout" class="gallery-item">
+                <img src="../images/courses/laurel-valley-country-club/4.jpeg" alt="Laurel Valley Country Club - Private Club Excellence" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

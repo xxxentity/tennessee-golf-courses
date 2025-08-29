@@ -105,8 +105,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -442,9 +442,9 @@ try {
                 <p>Experience the beauty of Nashville National Golf Links</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/nashville-national-golf-links/3.jpeg');"></div>
+                <img src="../images/courses/nashville-national-golf-links/1.jpeg" alt="Nashville National Golf Links - Links Style Golf" class="gallery-item">
+                <img src="../images/courses/nashville-national-golf-links/2.jpeg" alt="Nashville National Golf Links - Championship Course" class="gallery-item">
+                <img src="../images/courses/nashville-national-golf-links/3.jpeg" alt="Nashville National Golf Links - Golf Course Design" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
