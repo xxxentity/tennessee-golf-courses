@@ -30,6 +30,8 @@ $is_main_page = (
     strpos($current_page, '/maps') === 0 ||
     strpos($current_page, '/about') === 0 ||
     strpos($current_page, '/contact') === 0 ||
+    strpos($current_page, '/contests') === 0 ||
+    strpos($current_page, '/handicap') === 0 ||
     strpos($current_page, '/user') === 0  // Include profile pages
 );
 
