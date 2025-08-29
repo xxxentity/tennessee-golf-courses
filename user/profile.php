@@ -282,33 +282,6 @@ try {
     </style>
 </head>
 <body>
-    <!-- Weather Bar -->
-    <div class="weather-bar">
-        <div class="weather-container">
-            <div class="weather-info">
-                <div class="current-time">
-                    <i class="fas fa-clock"></i>
-                    <span id="current-time">Loading...</span>
-                </div>
-                <div class="weather-widget">
-                    <i class="fas fa-cloud-sun"></i>
-                    <span id="weather-temp">Perfect Golf Weather</span>
-                    <span class="weather-location">Nashville, TN</span>
-                </div>
-            </div>
-            <div class="golf-conditions">
-                <div class="condition-item">
-                    <i class="fas fa-wind"></i>
-                    <span>Light Breeze</span>
-                </div>
-                <div class="condition-item">
-                    <i class="fas fa-eye"></i>
-                    <span>Clear</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <?php include '../includes/navigation.php'; ?>
 
     <main class="profile-container">
@@ -420,19 +393,6 @@ try {
         <?php endif; ?>
     </main>
 
-    <script src="../script.js"></script>
-    <script src="../weather.js"></script>
-    <script>
-        // Profile page specific functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // CSS already handles hover animations, no additional JS needed
-            console.log('Profile page loaded successfully');
-            
-            // Initialize weather widget
-            if (window.WeatherWidget) {
-                WeatherWidget.init();
-            }
-        });
-    </script>
+    <!-- Weather scripts now loaded centrally via navigation.php -->
 </body>
 </html>
