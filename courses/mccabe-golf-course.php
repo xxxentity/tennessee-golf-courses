@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'McCabe Golf Course',
+    'location' => 'Nashville, TN',
+    'description' => 'Nashville\'s premier municipal golf course since 1942. 27 holes designed by Gary Roger Baird, voted \'best place to play\' by Nashville Scene magazine.',
+    'image' => '/images/courses/mccabe-golf-course/1.jpeg',
+    'holes' => 27,
+    'par' => 108,
+    'designer' => 'Gary Roger Baird',
+    'year_built' => 1942,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'mccabe-golf-course';
 $course_name = 'McCabe Golf Course';
@@ -58,9 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McCabe Golf Course - Nashville Parks & Recreation | Tennessee Golf Courses</title>
-    <meta name="description" content="McCabe Golf Course - Nashville's premier municipal golf course since 1942. 27 holes designed by Gary Roger Baird, voted 'best place to play' by Nashville Scene magazine.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/mccabe-golf-course">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
