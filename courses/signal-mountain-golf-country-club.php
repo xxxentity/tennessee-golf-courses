@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Signal Mountain Golf & Country Club',
+    'location' => 'Signal Mountain, TN',
+    'description' => 'Historic Donald Ross design from 1922 in Signal Mountain, TN. Private club with championship 6,148-yard layout and spectacular mountain views.',
+    'image' => '/images/courses/signal-mountain-golf-country-club/1.webp',
+    'holes' => 18,
+    'par' => 71,
+    'designer' => 'Donald Ross',
+    'year_built' => 1922,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'signal-mountain-golf-country-club';
 $course_name = 'Signal Mountain Golf & Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signal Mountain Golf & Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Signal Mountain Golf & Country Club - Historic Donald Ross design from 1922 in Signal Mountain, TN. Private club with championship 6,148-yard layout and spectacular mountain views.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
