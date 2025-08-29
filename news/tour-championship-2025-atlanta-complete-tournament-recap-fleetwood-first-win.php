@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Tour Championship 2025: Complete Atlanta Tournament Recap and Tommy Fleetwood\'s Historic First Win',
+    'description' => 'Complete recap of the 2025 Tour Championship featuring Tommy Fleetwood\'s long-awaited first PGA Tour victory and FedEx Cup triumph at East Lake Golf Club in Atlanta.',
+    'image' => '/images/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-25',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win';
 $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and Tommy Fleetwood's Historic First Win';
@@ -12,8 +26,7 @@ $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour Championship 2025: Complete Atlanta Tournament Recap and Tommy Fleetwood's Historic First Win - Tennessee Golf Courses</title>
-    <meta name="description" content="Complete recap of the 2025 Tour Championship featuring Tommy Fleetwood's long-awaited first PGA Tour victory and FedEx Cup triumph at East Lake Golf Club in Atlanta.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
