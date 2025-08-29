@@ -460,7 +460,7 @@ $article_title = 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play';
                     <div class="article-meta">
                         <span><i class="far fa-calendar"></i> August 8, 2025</span>
                         <span><i class="far fa-clock"></i> 6:30 PM</span>
-                        <span><a href="/profile?username=cole-harrington" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;">Cole Harrington</span></a></span>
+                        <span><a href="/profile/ColeH" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;">Cole Harrington</span></a></span>
                     </div>
                 </header>
                 
