@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Royal Portrush',
+    'description' => 'Scottie Scheffler fires a bogey-free 67 in Round 3 at Royal Portrush to extend his lead to four shots, while Rory McIlroy charges with eagle on 12th hole.',
+    'image' => '/images/news/scheffler-extends-lead-open-championship-round-3/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-07-19',
+    'category' => 'Major Championships'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'scheffler-extends-lead-open-championship-round-3';
 $article_title = 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Royal Portrush';
@@ -12,8 +26,7 @@ $article_title = 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Roy
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Royal Portrush - Tennessee Golf Courses</title>
-    <meta name="description" content="Scottie Scheffler fires a bogey-free 67 in Round 3 at Royal Portrush to extend his lead to four shots, while Rory McIlroy charges with eagle on 12th hole.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
