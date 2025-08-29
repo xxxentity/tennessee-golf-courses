@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'TPC Southwind',
+    'location' => 'Memphis, TN',
+    'description' => 'Ron Prichard designed championship golf course in Memphis, TN. Home of the FedEx St. Jude Championship with 7,244 yards of challenging golf.',
+    'image' => '/images/courses/tpc-southwind/1.webp',
+    'holes' => 18,
+    'par' => 70,
+    'designer' => 'Ron Prichard',
+    'year_built' => 1988,
+    'course_type' => 'Semi-Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'tpc-southwind';
 $course_name = 'TPC Southwind';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPC Southwind - Tennessee Golf Courses</title>
-    <meta name="description" content="TPC Southwind - Ron Prichard designed championship golf course in Memphis, TN. Home of the FedEx St. Jude Championship with 7,244 yards of challenging golf.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
