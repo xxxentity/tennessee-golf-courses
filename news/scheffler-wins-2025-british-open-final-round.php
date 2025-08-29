@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Scheffler Captures First Claret Jug with Dominant Victory at Royal Portrush',
+    'description' => 'Scottie Scheffler wins his first British Open title with a commanding four-shot victory at Royal Portrush, completing the third leg of his career Grand Slam.',
+    'image' => '/images/news/scheffler-wins-2025-british-open-final-round/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-07-20',
+    'category' => 'Major Championships'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'scheffler-wins-2025-british-open-final-round';
 $article_title = 'Scheffler Captures First Claret Jug with Dominant Victory at Royal Portrush';
@@ -12,8 +26,7 @@ $article_title = 'Scheffler Captures First Claret Jug with Dominant Victory at R
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheffler Captures First Claret Jug with Dominant Victory at Royal Portrush - Tennessee Golf Courses</title>
-    <meta name="description" content="Scottie Scheffler wins his first British Open title with a commanding four-shot victory at Royal Portrush, completing the third leg of his career Grand Slam.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
