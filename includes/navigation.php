@@ -28,14 +28,6 @@ if ($is_individual_course) {
     }
 }
 
-// DEBUG: Add some debugging info
-error_log("DEBUG WEATHER: current_page = " . $current_page);
-error_log("DEBUG WEATHER: courses check = " . (strpos($current_page, '/courses/') === 0 ? 'true' : 'false'));
-error_log("DEBUG WEATHER: not main courses = " . ($current_page !== '/courses/' ? 'true' : 'false'));
-error_log("DEBUG WEATHER: is_individual_course = " . ($is_individual_course ? 'true' : 'false'));
-error_log("DEBUG WEATHER: course_slug = " . ($course_slug ?: 'null'));
-error_log("DEBUG WEATHER: avalon condition = " . (($course_slug === 'avalon-golf-country-club') ? 'true' : 'false'));
-error_log("DEBUG WEATHER: bear trace condition = " . (($course_slug === 'bear-trace-cumberland-mountain') ? 'true' : 'false'));
 
 // Main pages (including individual course pages) - all show weather bar
 $is_main_page = (
@@ -485,13 +477,6 @@ body {
 }
 </style>
 
-<!-- DEBUG: Always show these debug messages -->
-<script>
-    console.log('DEBUG PHP: current_page =', '<?php echo htmlspecialchars($current_page); ?>');
-    console.log('DEBUG PHP: is_individual_course =', <?php echo $is_individual_course ? 'true' : 'false'; ?>);
-    console.log('DEBUG PHP: course_slug =', '<?php echo htmlspecialchars($course_slug ?: 'null'); ?>');
-    console.log('DEBUG PHP: is_main_page =', <?php echo $is_main_page ? 'true' : 'false'; ?>);
-</script>
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
@@ -499,7 +484,6 @@ body {
 <!-- Course-specific weather for individual course pages -->
 <script src="/course-weather.js"></script>
 <script>
-    console.log('DEBUG: Loading course weather for:', '<?php echo htmlspecialchars($course_slug); ?>');
     document.addEventListener('DOMContentLoaded', function() {
         if (window.initializeCourseWeather) {
             window.initializeCourseWeather('<?php echo htmlspecialchars($course_slug); ?>');

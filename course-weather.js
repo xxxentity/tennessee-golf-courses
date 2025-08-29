@@ -25,9 +25,6 @@ class CourseWeatherManager {
         }
 
         try {
-            console.log('DEBUG COURSE: Fetching weather for course:', this.courseSlug);
-            console.log('DEBUG COURSE: API URL:', this.apiUrl);
-            
             const response = await fetch(this.apiUrl);
             
             if (!response.ok) {
@@ -35,7 +32,6 @@ class CourseWeatherManager {
             }
             
             const result = await response.json();
-            console.log('DEBUG COURSE: API response:', result);
             
             if (!result.success) {
                 throw new Error(result.error || 'API returned error');
@@ -50,7 +46,6 @@ class CourseWeatherManager {
             };
             
             this.lastUpdate = now;
-            console.log('DEBUG COURSE: Final weather data:', this.weatherData);
             
             // Cache the data
             this.cacheWeather(this.weatherData);
@@ -114,7 +109,6 @@ class CourseWeatherManager {
         }
         
         const weather = await this.getWeather();
-        console.log('DEBUG COURSE: Updating display with:', weather);
         
         if (tempElement) {
             tempElement.textContent = `${weather.temp}°F`;
@@ -133,7 +127,6 @@ class CourseWeatherManager {
 
 // This will be initialized by the navigation.php when needed
 window.initializeCourseWeather = function(courseSlug) {
-    console.log('DEBUG COURSE: Initializing course weather for:', courseSlug);
     window.courseWeatherManager = new CourseWeatherManager(courseSlug);
     
     // Update weather immediately
