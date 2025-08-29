@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Whittle Springs Golf Course',
+    'location' => 'Knoxville, TN',
+    'description' => 'Knoxville\'s historic municipal golf course since 1932. Experience the unique bunker-free layout designed by Morton and Sweetser.',
+    'image' => '/images/courses/whittle-springs-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 71,
+    'designer' => 'Morton & Sweetser',
+    'year_built' => 1932,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'whittle-springs-golf-course';
 $course_name = 'Whittle Springs Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whittle Springs Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Whittle Springs Golf Course - Knoxville's historic municipal golf course since 1932. Experience the unique bunker-free layout designed by Morton and Sweetser.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
