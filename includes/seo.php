@@ -593,5 +593,95 @@ class SEO {
         
         self::generateGolfCourseStructuredData($course);
     }
+    
+    /**
+     * Set up SEO for individual article page (news/reviews)
+     */
+    public static function setupArticlePage($article) {
+        self::setTitle($article['title']);
+        self::setDescription($article['description']);
+        
+        // Set keywords based on category
+        $keywords = ['golf', 'Tennessee golf'];
+        if (isset($article['category'])) {
+            switch (strtolower($article['category'])) {
+                case 'tournament news':
+                    $keywords = array_merge($keywords, ['golf tournament', 'professional golf', 'PGA Tour', 'tournament coverage']);
+                    break;
+                case 'major championships':
+                    $keywords = array_merge($keywords, ['major championships', 'golf majors', 'professional golf']);
+                    break;
+                case 'amateur golf':
+                    $keywords = array_merge($keywords, ['amateur golf', 'Tennessee amateur', 'golf championship']);
+                    break;
+                case 'tennessee news':
+                    $keywords = array_merge($keywords, ['Tennessee golf news', 'local golf']);
+                    break;
+                case 'course reviews':
+                    $keywords = array_merge($keywords, ['golf course review', 'course ratings', 'Tennessee golf courses']);
+                    break;
+                case 'equipment reviews':
+                    $keywords = array_merge($keywords, ['golf equipment', 'golf gear', 'equipment review']);
+                    break;
+                default:
+                    $keywords = array_merge($keywords, ['golf news']);
+            }
+        }
+        self::setKeywords($keywords);
+        
+        // Determine if this is a news or review article for URL structure
+        $urlPrefix = '/news/';
+        if (isset($article['category']) && strpos(strtolower($article['category']), 'review') !== false) {
+            $urlPrefix = '/reviews/';
+        }
+        
+        self::setCanonicalUrl(self::SITE_URL . $urlPrefix . basename($_SERVER['PHP_SELF'], '.php'));
+        self::setOgImage($article['image'] ?? self::DEFAULT_IMAGE);
+        self::setPageType('article');
+        
+        // Add breadcrumbs
+        self::addBreadcrumb('Home', '/');
+        if ($urlPrefix === '/reviews/') {
+            self::addBreadcrumb('Reviews', '/reviews');
+        } else {
+            self::addBreadcrumb('Golf News', '/news');
+        }
+        self::addBreadcrumb($article['title']);
+        self::generateBreadcrumbStructuredData();
+        
+        // Add article structured data
+        $articleData = [
+            '@context' => 'https://schema.org',
+            '@type' => 'NewsArticle',
+            'headline' => $article['title'],
+            'description' => $article['description'],
+            'image' => [
+                '@type' => 'ImageObject',
+                'url' => self::SITE_URL . $article['image'],
+                'width' => 1200,
+                'height' => 630
+            ],
+            'datePublished' => $article['date'] . 'T00:00:00Z',
+            'dateModified' => $article['date'] . 'T00:00:00Z',
+            'author' => [
+                '@type' => 'Person',
+                'name' => $article['author'] ?? 'Tennessee Golf Courses'
+            ],
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => self::SITE_NAME,
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => self::SITE_URL . '/images/logos/tab-logo.webp'
+                ]
+            ],
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => self::SITE_URL . $urlPrefix . basename($_SERVER['PHP_SELF'], '.php')
+            ]
+        ];
+        
+        self::addStructuredData($articleData);
+    }
 }
 ?>
