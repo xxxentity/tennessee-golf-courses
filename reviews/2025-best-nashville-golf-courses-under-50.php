@@ -83,6 +83,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
         .course-title {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: white;
         }
         
         .course-details {
@@ -121,20 +122,13 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
         }
         
         .course-link {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            color: var(--primary-color);
             text-decoration: none;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
+            font-weight: 600;
         }
         
         .course-link:hover {
-            background: #4a7c59;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
+            text-decoration: underline;
         }
         
         .intro-section {
