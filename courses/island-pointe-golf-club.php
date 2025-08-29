@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Island Pointe Golf Club',
+    'location' => 'Kodak, TN',
+    'description' => 'Experience Island Pointe Golf Club, an Arthur Hills masterpiece in Kodak. Championship links-style golf with French Broad River island holes and Smoky Mountain views.',
+    'image' => '/images/courses/island-pointe-golf-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Arthur Hills',
+    'year_built' => 2000,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'island-pointe-golf-club';
 $course_name = 'Island Pointe Golf Club';
@@ -58,9 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island Pointe Golf Club - Arthur Hills Design | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Island Pointe Golf Club, an Arthur Hills masterpiece in Kodak. Championship links-style golf with French Broad River island holes and Smoky Mountain views.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/island-pointe-golf-club">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
