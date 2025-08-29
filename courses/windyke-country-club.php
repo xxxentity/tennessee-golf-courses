@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Windyke Country Club',
+    'location' => 'Memphis, TN',
+    'description' => 'Premier private golf facility in Memphis, TN featuring East and West championship courses plus Executive par-3 course. Family-oriented country club since 1962.',
+    'image' => '/images/courses/windyke-country-club/1.webp',
+    'holes' => 36,
+    'par' => 72,
+    'designer' => 'Classic Design',
+    'year_built' => 1962,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'windyke-country-club';
 $course_name = 'Windyke Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windyke Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Windyke Country Club - Premier private golf facility in Memphis, TN featuring East and West championship courses plus Executive par-3 course. Family-oriented country club since 1962.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
