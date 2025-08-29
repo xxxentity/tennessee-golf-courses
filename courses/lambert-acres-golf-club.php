@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Lambert Acres Golf Club',
+    'location' => 'Maryville, TN',
+    'description' => '27-hole Ray Franklin design from 1965 in the foothills of the Great Smoky Mountains. Features three 9-hole courses in scenic Maryville, TN.',
+    'image' => '/images/courses/lambert-acres-golf-club/1.jpeg',
+    'holes' => 27,
+    'par' => 108,
+    'designer' => 'Ray Franklin',
+    'year_built' => 1965,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'lambert-acres-golf-club';
 $course_name = 'Lambert Acres Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lambert Acres Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Lambert Acres Golf Club - 27-hole Ray Franklin design from 1965 in the foothills of the Great Smoky Mountains. Features three 9-hole courses in scenic Maryville, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
