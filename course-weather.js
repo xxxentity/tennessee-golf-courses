@@ -9,13 +9,18 @@ class CourseWeatherManager {
         this.lastUpdate = 0;
         this.updateInterval = 10 * 60 * 1000; // 10 minutes
         this.apiUrl = `/course-weather-api.php?course=${courseSlug}`;
+        // Use course-specific cache keys to avoid conflict with Nashville weather
+        this.storageKey = `course_weather_data_${courseSlug}`;
+        this.storageTimeKey = `course_weather_time_${courseSlug}`;
     }
 
     async getWeather() {
         const now = Date.now();
         
         // Check if we have recent cached data
-        if (this.weatherData && (now - this.lastUpdate < this.updateInterval)) {
+        const cachedData = this.getCachedWeather();
+        if (cachedData && (now - cachedData.timestamp < this.updateInterval)) {
+            this.weatherData = cachedData.data;
             return this.weatherData;
         }
 
@@ -47,6 +52,9 @@ class CourseWeatherManager {
             this.lastUpdate = now;
             console.log('DEBUG COURSE: Final weather data:', this.weatherData);
             
+            // Cache the data
+            this.cacheWeather(this.weatherData);
+            
         } catch (error) {
             console.error('Course weather API error:', error);
             
@@ -59,9 +67,39 @@ class CourseWeatherManager {
                 timestamp: now
             };
             this.lastUpdate = now;
+            
+            // Cache fallback data for shorter time
+            this.cacheWeather(this.weatherData, 5 * 60 * 1000); // 5 minutes
         }
         
         return this.weatherData;
+    }
+
+    getCachedWeather() {
+        try {
+            const cachedData = localStorage.getItem(this.storageKey);
+            const cachedTime = localStorage.getItem(this.storageTimeKey);
+            
+            if (cachedData && cachedTime) {
+                return {
+                    data: JSON.parse(cachedData),
+                    timestamp: parseInt(cachedTime)
+                };
+            }
+        } catch (error) {
+            console.log('Error reading cached course weather:', error);
+        }
+        return null;
+    }
+
+    cacheWeather(data, customDuration = null) {
+        try {
+            const timestamp = customDuration ? Date.now() - this.updateInterval + customDuration : data.timestamp;
+            localStorage.setItem(this.storageKey, JSON.stringify(data));
+            localStorage.setItem(this.storageTimeKey, timestamp.toString());
+        } catch (error) {
+            console.log('Error caching course weather:', error);
+        }
     }
 
     async updateWeatherDisplay() {
