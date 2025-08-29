@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Two Rivers Golf Course',
+    'location' => 'Nashville, TN',
+    'description' => 'Nashville\'s premier municipal 18-hole course since 1973. Leon Howard design at the confluence of Cumberland and Stones Rivers with skyline views.',
+    'image' => '/images/courses/two-rivers-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Leon Howard',
+    'year_built' => 1973,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'two-rivers-golf-course';
 $course_name = 'Two Rivers Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Rivers Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Two Rivers Golf Course - Nashville's premier municipal 18-hole course since 1973. Leon Howard design at the confluence of Cumberland and Stones Rivers with skyline views.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
