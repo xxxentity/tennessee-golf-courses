@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Club at Gettysvue',
+    'location' => 'Knoxville, TN',
+    'description' => 'Premier private golf club in the foothills of the Great Smoky Mountains. Bland Pittman championship design with comprehensive amenities in Knoxville, TN.',
+    'image' => '/images/courses/the-club-at-gettysvue/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Bland Pittman',
+    'year_built' => 1992,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-club-at-gettysvue';
 $course_name = 'The Club at Gettysvue';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Club at Gettysvue - Tennessee Golf Courses</title>
-    <meta name="description" content="The Club at Gettysvue - Premier private golf club in the foothills of the Great Smoky Mountains. Bland Pittman championship design with comprehensive amenities in Knoxville, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
