@@ -221,8 +221,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -803,9 +803,9 @@ try {
                 <p>Experience the beauty of Brainerd Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/brainerd-golf-course/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/brainerd-golf-course/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/brainerd-golf-course/4.webp');"></div>
+                <img src="../images/courses/brainerd-golf-course/2.webp" alt="Brainerd Golf Course - Donald Ross Design" class="gallery-item">
+                <img src="../images/courses/brainerd-golf-course/3.webp" alt="Brainerd Golf Course - Historic Golf Layout" class="gallery-item">
+                <img src="../images/courses/brainerd-golf-course/4.webp" alt="Brainerd Golf Course - Chattanooga Municipal Golf" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
