@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Country Club',
+    'location' => 'Morristown, TN',
+    'description' => 'William Langford designed championship golf course in Morristown, TN. Historic private club since 1955 hosting prestigious tournaments.',
+    'image' => '/images/courses/the-country-club/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'William Langford',
+    'year_built' => 1955,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-country-club';
 $course_name = 'The Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="The Country Club - William Langford designed championship golf course in Morristown, TN. Historic private club since 1955 hosting prestigious tournaments.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
