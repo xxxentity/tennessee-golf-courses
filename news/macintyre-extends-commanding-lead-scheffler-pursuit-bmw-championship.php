@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship',
+    'description' => 'Robert MacIntyre fires bogey-free 64 to extend lead to five shots over Scottie Scheffler after BMW Championship second round at Caves Valley Golf Club.',
+    'image' => '/images/news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-15',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship';
 $article_title = 'MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship';
@@ -48,8 +63,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacIntyre Extends Commanding Lead as Scheffler Remains in Pursuit at BMW Championship - Tennessee Golf Courses</title>
-    <meta name="description" content="Robert MacIntyre fires bogey-free 64 to extend lead to five shots over Scottie Scheffler after BMW Championship second round at Caves Valley Golf Club.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
