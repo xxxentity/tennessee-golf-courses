@@ -28,6 +28,11 @@ if ($is_individual_course) {
     }
 }
 
+// DEBUG: Add some debugging info
+error_log("DEBUG WEATHER: current_page = " . $current_page);
+error_log("DEBUG WEATHER: is_individual_course = " . ($is_individual_course ? 'true' : 'false'));
+error_log("DEBUG WEATHER: course_slug = " . ($course_slug ?: 'null'));
+
 // Main pages (including individual course pages) - all show weather bar
 $is_main_page = (
     $current_page === '/' ||
