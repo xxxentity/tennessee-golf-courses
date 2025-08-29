@@ -70,7 +70,7 @@ class DatabaseCache {
         $sql = strtoupper(trim($sql));
         
         // Only cache SELECT queries
-        if (!str_starts_with($sql, 'SELECT')) {
+        if (strpos($sql, 'SELECT') !== 0) {
             return false;
         }
         
