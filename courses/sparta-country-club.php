@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Sparta Country Club',
+    'location' => 'Sparta, TN',
+    'description' => 'Historic 9-hole golf course in Sparta, TN. Established in 1960, offering a classic golf experience in White County.',
+    'image' => '/images/courses/sparta-country-club/1.webp',
+    'holes' => 9,
+    'par' => 35,
+    'designer' => 'N/A',
+    'year_built' => 1960,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'sparta-country-club';
 $course_name = 'Sparta Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sparta Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Sparta Country Club - Historic 9-hole golf course in Sparta, TN. Established in 1960, offering a classic golf experience in White County.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
