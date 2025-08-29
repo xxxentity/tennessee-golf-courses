@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Stones River Country Club',
+    'location' => 'Murfreesboro, TN',
+    'description' => 'Premier private country club in Murfreesboro since 1949. Championship golf, tennis, pool, and dining along the historic Stones River.',
+    'image' => '/images/courses/stones-river-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Classic Design',
+    'year_built' => 1949,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'stones-river-country-club';
 $course_name = 'Stones River Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stones River Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Stones River Country Club - Premier private country club in Murfreesboro since 1949. Championship golf, tennis, pool, and dining along the historic Stones River.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
