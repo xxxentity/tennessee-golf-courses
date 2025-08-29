@@ -85,21 +85,26 @@ a[href^="www."]:not(.social-links a)::after {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
+    width: 100%;
 }
 
 .weather-info {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: center !important;
+    width: 100%;
+    text-align: center;
 }
 
 .weather-data {
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center !important;
+    flex-wrap: wrap;
 }
 
 .weather-label {
@@ -1080,10 +1085,11 @@ a[href^="www."]:not(.social-links a)::after {
     
     .weather-container {
         flex-direction: row;
-        justify-content: center;
+        justify-content: center !important;
         align-items: center;
         gap: 10px;
         padding: 0;
+        width: 100%;
     }
     
     /* Hide everything except temperature and location on mobile */
@@ -1097,6 +1103,9 @@ a[href^="www."]:not(.social-links a)::after {
         font-size: 14px;
         display: flex;
         align-items: center;
+        justify-content: center !important;
+        width: 100%;
+        text-align: center;
     }
     
     .weather-widget {
