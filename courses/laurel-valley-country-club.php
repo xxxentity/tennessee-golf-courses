@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Laurel Valley Country Club',
+    'location' => 'Townsend, TN',
+    'description' => 'Edmund B. Ault design in the Great Smoky Mountains. Audubon Certified course with mountain views and wildlife in Townsend, TN.',
+    'image' => '/images/courses/laurel-valley-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Edmund B. Ault',
+    'year_built' => 1994,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'laurel-valley-country-club';
 $course_name = 'Laurel Valley Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laurel Valley Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Laurel Valley Country Club (Wild Laurel Golf Course) - Edmund B. Ault design in the Great Smoky Mountains. Audubon Certified course with mountain views and wildlife in Townsend, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
