@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Overton Park 9',
+    'location' => 'Memphis, TN',
+    'description' => 'Historic 9-hole municipal course redesigned by King Collins from 1906 in Memphis, TN. Unique public golf experience through old growth forest with 2,275-yard Par 34 layout.',
+    'image' => '/images/courses/overton-park-9/1.webp',
+    'holes' => 9,
+    'par' => 34,
+    'designer' => 'King Collins',
+    'year_built' => 1906,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'overton-park-9';
 $course_name = 'Overton Park 9';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overton Park 9 - Tennessee Golf Courses</title>
-    <meta name="description" content="Overton Park 9 - Historic 9-hole municipal course redesigned by King Collins from 1906 in Memphis, TN. Unique public golf experience through old growth forest with 2,275-yard Par 34 layout.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
