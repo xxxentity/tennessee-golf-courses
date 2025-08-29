@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Williams Creek Golf Course',
+    'location' => 'Knoxville, TN',
+    'description' => 'Tom Fazio designed par 3 championship course in Knoxville, TN. 18 challenging par 3 holes ranging from 85 to 245 yards with three tee options.',
+    'image' => '/images/courses/williams-creek-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 54,
+    'designer' => 'Tom Fazio',
+    'year_built' => 1987,
+    'course_type' => 'Semi-Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'williams-creek-golf-course';
 $course_name = 'Williams Creek Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Williams Creek Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Williams Creek Golf Course - Tom Fazio designed par 3 championship course in Knoxville, TN. 18 challenging par 3 holes ranging from 85 to 245 yards with three tee options.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
