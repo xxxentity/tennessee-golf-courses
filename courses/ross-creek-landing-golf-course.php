@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Ross Creek Landing Golf Course',
+    'location' => 'Clifton, TN',
+    'description' => 'Jack Nicklaus Signature Design from 2001 in Clifton, TN. Championship 18-hole course featuring 7,131-yard Par 72 layout with challenging slope ratings.',
+    'image' => '/images/courses/ross-creek-landing-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Jack Nicklaus',
+    'year_built' => 2001,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'ross-creek-landing-golf-course';
 $course_name = 'Ross Creek Landing Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ross Creek Landing Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Ross Creek Landing Golf Course - Jack Nicklaus Signature Design from 2001 in Clifton, TN. Championship 18-hole course featuring 7,131-yard Par 72 layout with challenging slope ratings.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
