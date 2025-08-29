@@ -42,9 +42,11 @@ $is_main_page = (
             <div class="weather-data">
                 <span class="weather-label">Nashville, TN:</span>
                 <span id="weather-temp">--°F</span>
-                <span class="weather-separator">|</span>
-                <span class="weather-label">Precip:</span>
-                <span id="weather-precip">--%</span>
+                <span id="weather-precip-section">
+                    <span class="weather-separator">|</span>
+                    <span class="weather-label">Precip:</span>
+                    <span id="weather-precip">--%</span>
+                </span>
                 <span class="weather-separator">|</span>
                 <span class="weather-label">Wind:</span>
                 <span id="weather-wind">-- mph</span>

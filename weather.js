@@ -106,8 +106,13 @@ class WeatherManager {
             tempElement.textContent = `${weather.temp}°F`;
         }
         if (precipElement) {
-            const precipValue = weather.precipProb !== null && weather.precipProb !== undefined ? weather.precipProb : 0;
-            precipElement.textContent = `${precipValue}%`;
+            const precipSection = document.getElementById('weather-precip-section');
+            if (weather.precipProb !== null && weather.precipProb !== undefined) {
+                precipElement.textContent = `${weather.precipProb}%`;
+                if (precipSection) precipSection.style.display = 'inline';
+            } else {
+                if (precipSection) precipSection.style.display = 'none';
+            }
         }
         if (windElement) {
             windElement.textContent = `${weather.windSpeed} mph`;

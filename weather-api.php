@@ -57,13 +57,13 @@ try {
     $forecastUrl = 'https://api.weather.gov/gridpoints/OHX/50,57/forecast/hourly';
     $forecastJson = @file_get_contents($forecastUrl, false, $context);
     
-    $precipProb = 0;
+    $precipProb = null;
     if ($forecastJson !== false) {
         $forecast = json_decode($forecastJson, true);
         if ($forecast && isset($forecast['properties']['periods'][0])) {
             // Get precipitation probability for current hour
             $precipValue = $forecast['properties']['periods'][0]['probabilityOfPrecipitation']['value'] ?? null;
-            $precipProb = $precipValue !== null ? (int)$precipValue : 0;
+            $precipProb = $precipValue !== null ? (int)$precipValue : null;
         }
     }
     
@@ -99,7 +99,7 @@ try {
         'success' => true,
         'data' => [
             'temp' => 75,
-            'precipProb' => 20,
+            'precipProb' => null, // Don't show precip if we don't have real data
             'windSpeed' => 10,
             'timestamp' => time(),
             'location' => 'Nashville, TN'
