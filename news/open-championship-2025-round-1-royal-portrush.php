@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Five Players Share Lead as Royal Portrush Shows Its Teeth in Opening Round',
+    'description' => 'Matt Fitzpatrick among five tied for the lead after a challenging first round at the 2025 Open Championship, while Scottie Scheffler trails by one shot.',
+    'image' => '/images/news/open-championship-2025-round-1-royal-portrush/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-07-17',
+    'category' => 'Major Championships'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'open-championship-2025-round-1-royal-portrush';
 $article_title = 'Five Players Share Lead as Royal Portrush Shows Its Teeth in Opening Round';
@@ -12,8 +26,7 @@ $article_title = 'Five Players Share Lead as Royal Portrush Shows Its Teeth in O
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Five Players Share Lead as Royal Portrush Shows Its Teeth in Opening Round - Tennessee Golf Courses</title>
-    <meta name="description" content="Matt Fitzpatrick among five tied for the lead after a challenging first round at the 2025 Open Championship, while Scottie Scheffler trails by one shot.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
