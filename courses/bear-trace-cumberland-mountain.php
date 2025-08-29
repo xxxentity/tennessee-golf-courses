@@ -228,8 +228,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -856,9 +856,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Cumberland Mountain</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/bear-trace-cumberland-mountain/4.jpeg');"></div>
+                <img src="../images/courses/bear-trace-cumberland-mountain/2.jpeg" alt="Bear Trace at Cumberland Mountain - Golf Course Mountain Views" class="gallery-item">
+                <img src="../images/courses/bear-trace-cumberland-mountain/3.jpeg" alt="Bear Trace at Cumberland Mountain - Championship Fairways" class="gallery-item">
+                <img src="../images/courses/bear-trace-cumberland-mountain/4.jpeg" alt="Bear Trace at Cumberland Mountain - Nicklaus Design Features" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
