@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship',
+    'description' => 'East Tennessee State University men\'s golfer Gavin Tiernan finished as runner-up at The 130th Amateur Championship at Royal St. George\'s in England.',
+    'image' => '/images/news/etsu-gavin-tiernan-amateur-championship-runner-up/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-10',
+    'category' => 'Amateur Golf'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'etsu-gavin-tiernan-amateur-championship-runner-up';
 $article_title = 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship';
@@ -12,8 +26,7 @@ $article_title = 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Am
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Amateur Championship - Tennessee Golf Courses</title>
-    <meta name="description" content="East Tennessee State University men's golfer Gavin Tiernan finished as runner-up at The 130th Amateur Championship at Royal St. George's in England.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
