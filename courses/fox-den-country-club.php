@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Fox Den Country Club',
+    'location' => 'Knoxville, TN',
+    'description' => 'Premier private golf club in Knoxville, TN. Championship 18-hole par 72 course with seven tee options and comprehensive club amenities.',
+    'image' => '/images/courses/fox-den-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1987,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'fox-den-country-club';
 $course_name = 'Fox Den Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fox Den Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Fox Den Country Club - Premier private golf club in Knoxville, TN. Championship 18-hole par 72 course with seven tee options and comprehensive club amenities.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
