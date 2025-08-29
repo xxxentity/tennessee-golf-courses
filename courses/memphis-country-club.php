@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Memphis Country Club',
+    'location' => 'Memphis, TN',
+    'description' => 'Historic Donald Ross designed private golf course in Memphis, TN. One of the South\'s most exclusive clubs since 1905 with USGA championship history.',
+    'image' => '/images/courses/memphis-country-club/1.webp',
+    'holes' => 18,
+    'par' => 70,
+    'designer' => 'Donald Ross',
+    'year_built' => 1905,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'memphis-country-club';
 $course_name = 'Memphis Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memphis Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Memphis Country Club - Historic Donald Ross designed private golf course in Memphis, TN. One of the South's most exclusive clubs since 1905 with USGA championship history.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
