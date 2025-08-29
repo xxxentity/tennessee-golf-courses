@@ -62,7 +62,8 @@ try {
         $forecast = json_decode($forecastJson, true);
         if ($forecast && isset($forecast['properties']['periods'][0])) {
             // Get precipitation probability for current hour
-            $precipProb = $forecast['properties']['periods'][0]['probabilityOfPrecipitation']['value'] ?? 0;
+            $precipValue = $forecast['properties']['periods'][0]['probabilityOfPrecipitation']['value'] ?? null;
+            $precipProb = $precipValue !== null ? (int)$precipValue : 0;
         }
     }
     

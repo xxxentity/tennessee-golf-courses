@@ -106,7 +106,8 @@ class WeatherManager {
             tempElement.textContent = `${weather.temp}°F`;
         }
         if (precipElement) {
-            precipElement.textContent = `${weather.precipProb}%`;
+            const precipValue = weather.precipProb !== null && weather.precipProb !== undefined ? weather.precipProb : 0;
+            precipElement.textContent = `${precipValue}%`;
         }
         if (windElement) {
             windElement.textContent = `${weather.windSpeed} mph`;
