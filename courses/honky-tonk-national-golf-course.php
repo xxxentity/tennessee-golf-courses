@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Honky Tonk National Golf Course',
+    'location' => 'Sparta, TN',
+    'description' => 'Peter Jacobsen & Jim Hardy championship design in Sparta, TN. 6,900 yards overlooking Center Hill Lake.',
+    'image' => '/images/courses/honky-tonk-national-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Peter Jacobsen & Jim Hardy',
+    'year_built' => 2001,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'honky-tonk-national-golf-course';
 $course_name = 'Honky Tonk National Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honky Tonk National Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Honky Tonk National Golf Course - Peter Jacobsen & Jim Hardy championship design in Sparta, TN. 6,900 yards overlooking Center Hill Lake.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
