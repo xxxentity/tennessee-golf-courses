@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Bhatia Blazes to First-Round Lead at FedEx St. Jude Championship',
+    'description' => 'Akshay Bhatia shoots career-best 62 to lead FedEx St. Jude Championship as playoff bubble players battle in Memphis heat.',
+    'image' => '/images/news/fedex-st-jude-first-round-bhatia-leads/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-15',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'fedex-st-jude-first-round-bhatia-leads';
 $article_title = 'Bhatia Blazes to First-Round Lead at FedEx St. Jude Championship';
@@ -12,8 +26,7 @@ $article_title = 'Bhatia Blazes to First-Round Lead at FedEx St. Jude Championsh
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhatia Blazes to First-Round Lead at FedEx St. Jude Championship - Tennessee Golf Courses</title>
-    <meta name="description" content="Akshay Bhatia shoots career-best 62 to lead FedEx St. Jude Championship as playoff bubble players battle in Memphis heat.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
