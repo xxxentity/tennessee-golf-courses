@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => '55th Tennessee Four-Ball Championship Underway at The Country Club in Morristown',
+    'description' => 'The 55th Tennessee Four-Ball Championship kicks off at The Country Club in Morristown with 36 teams competing for the state title through stroke play qualifying and match play rounds.',
+    'image' => '/images/news/tennessee-four-ball-championship-2025-country-club-morristown/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-21',
+    'category' => 'Tennessee News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'tennessee-four-ball-championship-2025-country-club-morristown';
 $article_title = '55th Tennessee Four-Ball Championship Underway at The Country Club in Morristown';
@@ -48,8 +63,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>55th Tennessee Four-Ball Championship Underway at The Country Club in Morristown - Tennessee Golf Courses</title>
-    <meta name="description" content="The 55th Tennessee Four-Ball Championship kicks off at The Country Club in Morristown with 36 teams competing for the state title through stroke play qualifying and match play rounds.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
