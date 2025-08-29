@@ -485,14 +485,16 @@ body {
 }
 </style>
 
-<?php if ($is_main_page): ?>
-<!-- Centralized Weather Scripts -->
+<!-- DEBUG: Always show these debug messages -->
 <script>
-    // DEBUG: Show PHP variables for debugging
     console.log('DEBUG PHP: current_page =', '<?php echo htmlspecialchars($current_page); ?>');
     console.log('DEBUG PHP: is_individual_course =', <?php echo $is_individual_course ? 'true' : 'false'; ?>);
     console.log('DEBUG PHP: course_slug =', '<?php echo htmlspecialchars($course_slug ?: 'null'); ?>');
+    console.log('DEBUG PHP: is_main_page =', <?php echo $is_main_page ? 'true' : 'false'; ?>);
 </script>
+
+<?php if ($is_main_page): ?>
+<!-- Centralized Weather Scripts -->
 <?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain'): ?>
 <script>
     // Course-specific weather for selected course pages
