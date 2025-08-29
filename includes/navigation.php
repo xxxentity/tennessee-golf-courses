@@ -37,27 +37,17 @@ $is_main_page = (
     <div class="weather-container">
         <div class="weather-info">
             <div class="current-time">
-                <i class="fas fa-clock"></i>
-                <span id="current-time">Loading...</span>
+                <span id="current-datetime">Loading...</span>
             </div>
-            <div class="weather-widget">
-                <i class="fas fa-cloud-sun"></i>
-                <span id="weather-temp">Perfect Golf Weather</span>
-                <span class="weather-location">Nashville, TN</span>
-            </div>
-        </div>
-        <div class="golf-conditions">
-            <div class="condition-item">
-                <i class="fas fa-wind"></i>
-                <span>Light Breeze</span>
-            </div>
-            <div class="condition-item">
-                <i class="fas fa-eye"></i>
-                <span>Clear Visibility</span>
-            </div>
-            <div class="condition-item">
-                <i class="fas fa-golf-ball"></i>
-                <span>Great Conditions</span>
+            <div class="weather-data">
+                <span class="weather-label">Nashville, TN:</span>
+                <span id="weather-temp">--°F</span>
+                <span class="weather-separator">|</span>
+                <span class="weather-label">Precip:</span>
+                <span id="weather-precip">--%</span>
+                <span class="weather-separator">|</span>
+                <span class="weather-label">Wind:</span>
+                <span id="weather-wind">-- mph</span>
             </div>
         </div>
     </div>

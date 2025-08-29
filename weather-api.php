@@ -7,25 +7,9 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Simple file-based caching in same directory
+// Simple file-based caching
 $cacheFile = __DIR__ . '/weather_cache.json';
 $cacheTime = 10 * 60; // 10 minutes
-
-// Function to get weather icon
-function getWeatherIcon($condition) {
-    $condition = strtolower($condition);
-    $iconMap = [
-        'sunny' => 'fa-sun', 'clear' => 'fa-sun', 'partly cloudy' => 'fa-cloud-sun',
-        'cloudy' => 'fa-cloud', 'overcast' => 'fa-cloud', 'rain' => 'fa-cloud-rain',
-        'light rain' => 'fa-cloud-rain', 'heavy rain' => 'fa-cloud-rain',
-        'thunderstorms' => 'fa-bolt', 'snow' => 'fa-snowflake', 'fog' => 'fa-smog'
-    ];
-    
-    foreach ($iconMap as $key => $icon) {
-        if (strpos($condition, $key) !== false) return $icon;
-    }
-    return 'fa-cloud';
-}
 
 try {
     // Check cache first
@@ -35,43 +19,65 @@ try {
             echo json_encode([
                 'success' => true,
                 'data' => $cached['data'],
-                'source' => 'cache',
-                'debug' => 'Using cached data from ' . date('H:i:s', $cached['timestamp'])
+                'source' => 'cache'
             ]);
             exit;
         }
     }
     
-    // Fetch fresh data with error handling
-    $apiUrl = 'https://wttr.in/Nashville,TN?format=j1';
+    // Nashville coordinates and NWS grid point
+    // Nashville: 36.1627, -86.7816
+    // Grid: OHX office, point 50,57
+    
+    // Get current observations from Nashville International Airport station
+    $stationUrl = 'https://api.weather.gov/stations/KBNA/observations/latest';
     
     $context = stream_context_create([
         'http' => [
             'timeout' => 15,
-            'user_agent' => 'TennesseeGolfCourses/1.0',
+            'user_agent' => 'TennesseeGolfCourses/1.0 (contact@tennesseegolfcourses.com)',
             'method' => 'GET'
         ]
     ]);
     
-    $weatherJson = @file_get_contents($apiUrl, false, $context);
+    $observationJson = @file_get_contents($stationUrl, false, $context);
     
-    if ($weatherJson === false) {
-        throw new Exception('Failed to fetch from wttr.in API');
+    if ($observationJson === false) {
+        throw new Exception('Failed to fetch current observations');
     }
     
-    $data = json_decode($weatherJson, true);
-    if (!$data || !isset($data['current_condition'][0])) {
-        throw new Exception('Invalid weather data format');
+    $observation = json_decode($observationJson, true);
+    if (!$observation || !isset($observation['properties'])) {
+        throw new Exception('Invalid observation data');
     }
     
-    $current = $data['current_condition'][0];
+    $props = $observation['properties'];
+    
+    // Get forecast for precipitation probability
+    $forecastUrl = 'https://api.weather.gov/gridpoints/OHX/50,57/forecast/hourly';
+    $forecastJson = @file_get_contents($forecastUrl, false, $context);
+    
+    $precipProb = 0;
+    if ($forecastJson !== false) {
+        $forecast = json_decode($forecastJson, true);
+        if ($forecast && isset($forecast['properties']['periods'][0])) {
+            // Get precipitation probability for current hour
+            $precipProb = $forecast['properties']['periods'][0]['probabilityOfPrecipitation']['value'] ?? 0;
+        }
+    }
+    
+    // Convert temperature from Celsius to Fahrenheit
+    $tempC = $props['temperature']['value'];
+    $tempF = round(($tempC * 9/5) + 32);
+    
+    // Convert wind speed from m/s to mph
+    $windMs = $props['windSpeed']['value'] ?? 0;
+    $windMph = round($windMs * 2.237);
     
     $weatherData = [
-        'temp' => (int)$current['temp_F'],
-        'condition' => $current['weatherDesc'][0]['value'],
-        'windSpeed' => (int)$current['windspeedMiles'],
-        'visibility' => (int)$current['visibility'],
-        'icon' => getWeatherIcon($current['weatherDesc'][0]['value']),
+        'temp' => $tempF,
+        'precipProb' => $precipProb,
+        'windSpeed' => $windMph,
         'timestamp' => time(),
         'location' => 'Nashville, TN'
     ];
@@ -83,26 +89,22 @@ try {
     echo json_encode([
         'success' => true,
         'data' => $weatherData,
-        'source' => 'fresh_api',
-        'debug' => 'Fetched fresh data at ' . date('H:i:s')
+        'source' => 'nws_api'
     ]);
     
 } catch (Exception $e) {
-    // Fallback data - but with more accurate current temperature
+    // Fallback data
     echo json_encode([
         'success' => true,
         'data' => [
-            'temp' => 87, // Use the actual current temperature you mentioned
-            'condition' => 'Partly Cloudy',
-            'windSpeed' => 8,
-            'visibility' => 10,
-            'icon' => 'fa-cloud-sun',
+            'temp' => 75,
+            'precipProb' => 20,
+            'windSpeed' => 10,
             'timestamp' => time(),
             'location' => 'Nashville, TN'
         ],
         'source' => 'fallback',
-        'error' => $e->getMessage(),
-        'debug' => 'API failed, using fallback at ' . date('H:i:s')
+        'error' => $e->getMessage()
     ]);
 }
 ?>

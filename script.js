@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Live Time Display
+    // Live Date/Time Display (simplified without icon)
     function updateTime() {
         const now = new Date();
         const options = {
@@ -29,9 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
             timeZone: 'America/Chicago' // Central Time for Tennessee
         };
         const timeString = now.toLocaleDateString('en-US', options);
-        const timeElement = document.getElementById('current-time');
+        const timeElement = document.getElementById('current-datetime');
         if (timeElement) {
             timeElement.textContent = timeString;
+        }
+        // Also check for old ID for backward compatibility
+        const oldTimeElement = document.getElementById('current-time');
+        if (oldTimeElement) {
+            oldTimeElement.textContent = timeString;
         }
     }
 

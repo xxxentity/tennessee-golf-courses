@@ -1,5 +1,5 @@
-// Centralized Weather System for Tennessee Golf Courses
-// This ensures ALL pages show identical weather data
+// Simplified Weather System for Tennessee Golf Courses
+// Uses National Weather Service API
 
 class WeatherManager {
     constructor() {
@@ -20,7 +20,7 @@ class WeatherManager {
             return this.weatherData;
         }
 
-        // Fetch new weather data from our own API
+        // Fetch new weather data from our API
         try {
             const response = await fetch('/weather-api.php');
             
@@ -35,29 +35,23 @@ class WeatherManager {
             }
             
             this.weatherData = {
-                temp: result.data.temp.toString(),
-                condition: result.data.condition,
-                windSpeed: result.data.windSpeed.toString(),
-                visibility: result.data.visibility.toString(),
-                icon: result.data.icon,
+                temp: result.data.temp,
+                precipProb: result.data.precipProb,
+                windSpeed: result.data.windSpeed,
                 timestamp: now
             };
             
             // Cache the data
             this.cacheWeather(this.weatherData);
             
-            console.log('Weather updated with real API data:', this.weatherData, 'Source:', result.source, 'Debug:', result.debug);
-            
         } catch (error) {
-            console.error('Weather API error, using fallback:', error);
+            console.error('Weather API error:', error);
             
-            // Use consistent fallback data with current temperature
+            // Use fallback data
             this.weatherData = {
-                temp: '87',
-                condition: 'Partly Cloudy',
-                windSpeed: '8',
-                visibility: '10',
-                icon: 'fa-cloud-sun',
+                temp: 75,
+                precipProb: 20,
+                windSpeed: 10,
                 timestamp: now
             };
             
@@ -95,58 +89,27 @@ class WeatherManager {
         }
     }
 
-    getWeatherIcon(condition) {
-        const weatherIconMap = {
-            'sunny': 'fa-sun',
-            'clear': 'fa-sun',
-            'partly cloudy': 'fa-cloud-sun',
-            'cloudy': 'fa-cloud',
-            'overcast': 'fa-cloud',
-            'mist': 'fa-smog',
-            'patchy rain possible': 'fa-cloud-rain',
-            'patchy snow possible': 'fa-snowflake',
-            'thundery outbreaks possible': 'fa-bolt',
-            'fog': 'fa-smog',
-            'light drizzle': 'fa-cloud-rain',
-            'light rain': 'fa-cloud-rain',
-            'moderate rain': 'fa-cloud-rain',
-            'heavy rain': 'fa-cloud-rain',
-            'light snow': 'fa-snowflake',
-            'moderate snow': 'fa-snowflake',
-            'heavy snow': 'fa-snowflake',
-            'thunderstorms': 'fa-bolt',
-            'rain': 'fa-cloud-rain',
-            'snow': 'fa-snowflake'
-        };
-        
-        return weatherIconMap[condition] || 'fa-cloud';
-    }
-
     async updateWeatherDisplay() {
         // Check if we're on a page with weather elements
         const tempElement = document.getElementById('weather-temp');
+        const precipElement = document.getElementById('weather-precip');
+        const windElement = document.getElementById('weather-wind');
+        
         if (!tempElement) {
-            console.log('Weather elements not found on this page, skipping weather update');
+            console.log('Weather elements not found on this page');
             return;
         }
         
         const weather = await this.getWeather();
         
-        const windElement = document.getElementById('wind-speed');
-        const visibilityElement = document.getElementById('visibility');
-        const weatherIcon = document.querySelector('.weather-widget i');
-        
         if (tempElement) {
-            tempElement.textContent = `${weather.temp}°F - ${weather.condition}`;
+            tempElement.textContent = `${weather.temp}°F`;
+        }
+        if (precipElement) {
+            precipElement.textContent = `${weather.precipProb}%`;
         }
         if (windElement) {
             windElement.textContent = `${weather.windSpeed} mph`;
-        }
-        if (visibilityElement) {
-            visibilityElement.textContent = `${weather.visibility} mi`;
-        }
-        if (weatherIcon) {
-            weatherIcon.className = `fas ${weather.icon}`;
         }
     }
 }
