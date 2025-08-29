@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Grove',
+    'location' => 'College Grove, TN',
+    'description' => 'Greg Norman Signature Design hosting Korn Ferry Tour and LIV Golf. Championship course in College Grove with tour-level conditioning and 7,438 yards.',
+    'image' => '/images/courses/the-grove/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Greg Norman',
+    'year_built' => 2010,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-grove';
 $course_name = 'The Grove';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Grove - Tennessee Golf Courses</title>
-    <meta name="description" content="The Grove - Greg Norman Signature Design hosting Korn Ferry Tour and LIV Golf. Championship course in College Grove with tour-level conditioning and 7,438 yards.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
