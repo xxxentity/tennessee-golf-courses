@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Lookout Mountain Club',
+    'location' => 'Lookout Mountain, TN',
+    'description' => 'Seth Raynor designed championship course from 1925. Golfweek-ranked classical course featuring 6,702-yard Par 70 layout with multi-state views.',
+    'image' => '/images/courses/lookout-mountain-club/1.webp',
+    'holes' => 18,
+    'par' => 70,
+    'designer' => 'Seth Raynor',
+    'year_built' => 1925,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'lookout-mountain-club';
 $course_name = 'Lookout Mountain Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lookout Mountain Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Lookout Mountain Club - Seth Raynor designed championship course from 1925 in Lookout Mountain, GA. Golfweek-ranked classical course featuring 6,702-yard Par 70 layout with multi-state views.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
