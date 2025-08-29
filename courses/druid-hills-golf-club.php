@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Druid Hills Golf Club',
+    'location' => 'Fairfield Glade, TN',
+    'description' => 'Championship 18-hole course on the highest point in Fairfield Glade with rolling fairways, bent grass greens, and spectacular mountain vistas.',
+    'image' => '/images/courses/druid-hills-golf-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1975,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'druid-hills-golf-club';
 $course_name = 'Druid Hills Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Druid Hills Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Druid Hills Golf Club at Fairfield Glade Resort - Championship 18-hole course on the highest point in Fairfield Glade with rolling fairways, bent grass greens, and spectacular mountain vistas.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
