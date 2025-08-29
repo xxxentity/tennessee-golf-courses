@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Temple Hills Country Club',
+    'location' => 'Franklin, TN',
+    'description' => 'Prestigious 27-hole private club designed by Leon Howard in Franklin, TN. Private members only with championship golf since 1972.',
+    'image' => '/images/courses/temple-hills-country-club/1.webp',
+    'holes' => 27,
+    'par' => 72,
+    'designer' => 'Leon Howard',
+    'year_built' => 1972,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'temple-hills-country-club';
 $course_name = 'Temple Hills Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Hills Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Temple Hills Country Club - Prestigious 27-hole private club designed by Leon Howard in Franklin, TN. Private members only with championship golf since 1972.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="canonical" href="https://tennesseegolfcourses.com/courses/temple-hills-country-club">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
