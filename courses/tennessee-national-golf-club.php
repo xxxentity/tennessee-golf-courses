@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Tennessee National Golf Club',
+    'location' => 'Loudon, TN',
+    'description' => 'Greg Norman and Tad Burnett designed championship course in Loudon, TN. Top 10 Tennessee course featuring 7,393-yard Par 72 layout with 19-acre practice facility.',
+    'image' => '/images/courses/tennessee-national-golf-club/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Greg Norman, Tad Burnett',
+    'year_built' => 2000,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'tennessee-national-golf-club';
 $course_name = 'Tennessee National Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennessee National Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Tennessee National Golf Club - Greg Norman and Tad Burnett designed championship course in Loudon, TN. Top 10 Tennessee course featuring 7,393-yard Par 72 layout with 19-acre practice facility.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
