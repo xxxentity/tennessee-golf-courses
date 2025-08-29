@@ -20,41 +20,25 @@ class WeatherManager {
             return this.weatherData;
         }
 
-        // Fetch new weather data from our API (course-specific or Nashville)
+        // Fetch new weather data from Nashville API
         try {
-            const apiUrl = window.courseWeatherConfig ? window.courseWeatherConfig.apiUrl : '/weather-api.php';
-            console.log('DEBUG: Fetching weather from:', apiUrl);
-            console.log('DEBUG: courseWeatherConfig:', window.courseWeatherConfig);
-            const response = await fetch(apiUrl);
+            const response = await fetch('/weather-api.php');
             
             if (!response.ok) {
-                console.error('DEBUG: API response not OK:', response.status, response.statusText);
                 throw new Error('Weather API unavailable');
             }
             
             const result = await response.json();
-            console.log('DEBUG: API response:', result);
             
             if (!result.success) {
-                console.error('DEBUG: API returned error:', result.error || 'Unknown error');
                 throw new Error('Weather API returned error');
             }
             
-            // Handle both old Nashville API format and new course API format
-            let temp, precipProb, windSpeed, location;
-            if (result.data) {
-                // Old Nashville API format
-                temp = result.data.temp;
-                precipProb = result.data.precipProb;
-                windSpeed = result.data.windSpeed;
-                location = 'Nashville, TN';
-            } else {
-                // New course API format
-                temp = result.temperature;
-                precipProb = result.precipProb;
-                windSpeed = result.windSpeed;
-                location = result.location;
-            }
+            // Nashville API format
+            const temp = result.data.temp;
+            const precipProb = result.data.precipProb;
+            const windSpeed = result.data.windSpeed;
+            const location = 'Nashville, TN';
             
             this.weatherData = {
                 temp: temp,
@@ -63,8 +47,6 @@ class WeatherManager {
                 location: location,
                 timestamp: now
             };
-            
-            console.log('DEBUG: Final weather data:', this.weatherData);
             
             // Cache the data
             this.cacheWeather(this.weatherData);
@@ -77,7 +59,7 @@ class WeatherManager {
                 temp: 75,
                 precipProb: 20,
                 windSpeed: 10,
-                location: window.courseWeatherConfig && window.courseWeatherConfig.isCourse ? 'Location, TN' : 'Nashville, TN',
+                location: 'Nashville, TN',
                 timestamp: now
             };
             
@@ -128,7 +110,6 @@ class WeatherManager {
         }
         
         const weather = await this.getWeather();
-        console.log('DEBUG: Updating display with weather:', weather);
         
         if (tempElement) {
             tempElement.textContent = `${weather.temp}°F`;

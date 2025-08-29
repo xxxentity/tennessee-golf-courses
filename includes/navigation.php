@@ -494,29 +494,21 @@ body {
 </script>
 
 <?php if ($is_main_page): ?>
-<!-- Centralized Weather Scripts -->
+<!-- Weather Scripts -->
 <?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain'): ?>
+<!-- Course-specific weather for individual course pages -->
+<script src="/course-weather.js"></script>
 <script>
-    // Course-specific weather for selected course pages
-    console.log('DEBUG: Course detected:', '<?php echo htmlspecialchars($course_slug); ?>');
-    window.courseWeatherConfig = {
-        isCourse: true,
-        courseSlug: '<?php echo htmlspecialchars($course_slug); ?>',
-        apiUrl: '/course-weather-api.php?course=<?php echo urlencode($course_slug); ?>'
-    };
-    console.log('DEBUG: Course weather config:', window.courseWeatherConfig);
+    console.log('DEBUG: Loading course weather for:', '<?php echo htmlspecialchars($course_slug); ?>');
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.initializeCourseWeather) {
+            window.initializeCourseWeather('<?php echo htmlspecialchars($course_slug); ?>');
+        }
+    });
 </script>
 <?php else: ?>
-<script>
-    // Default Nashville weather for ALL other pages
-    console.log('DEBUG: Using default Nashville weather');
-    window.courseWeatherConfig = {
-        isCourse: false,
-        courseSlug: null,
-        apiUrl: '/weather-api.php'
-    };
-</script>
+<!-- Default Nashville weather for ALL other pages -->
+<script src="/weather.js"></script>
 <?php endif; ?>
-<script src="/weather.js?v=8"></script>
 <script src="/script.js?v=6"></script>
 <?php endif; ?>
