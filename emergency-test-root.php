@@ -1,1 +1,0 @@
-<?php echo "ROOT TEST - PHP WORKS"; ?>

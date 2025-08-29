@@ -1,1 +1,0 @@
-<?php echo "EMERGENCY TEST - PHP WORKS"; ?>
