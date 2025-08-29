@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'White Plains Golf Course',
+    'location' => 'Cookeville, TN',
+    'description' => 'Jeff Jackson designed semi-private golf course in Cookeville, TN. Experience year-round golf with comprehensive amenities and multiple tee options.',
+    'image' => '/images/courses/white-plains-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Jeff Jackson',
+    'year_built' => 2004,
+    'course_type' => 'Semi-Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'white-plains-golf-course';
 $course_name = 'White Plains Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Plains Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="White Plains Golf Course - Jeff Jackson designed semi-private golf course in Cookeville, TN. Experience year-round golf with comprehensive amenities and multiple tee options.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
