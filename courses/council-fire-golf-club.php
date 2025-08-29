@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Council Fire Golf Club',
+    'location' => 'Chattanooga, TN',
+    'description' => 'Bob Cupp designed championship golf course in Chattanooga, TN. Private club featuring 7,186 yards of premier golf with tournament pedigree.',
+    'image' => '/images/courses/council-fire-golf-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Bob Cupp',
+    'year_built' => 1990,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'council-fire-golf-club';
 $course_name = 'Council Fire Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Council Fire Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Council Fire Golf Club - Bob Cupp designed championship golf course in Chattanooga, TN. Private club featuring 7,186 yards of premier golf with tournament pedigree.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
