@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Windtree Golf Course',
+    'location' => 'Mount Juliet, TN',
+    'description' => 'John LaFoy designed course from 1991 in Mount Juliet, TN. Course permanently closed in 2017 but information preserved for historical reference.',
+    'image' => '/images/courses/windtree-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'John LaFoy',
+    'year_built' => 1991,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'windtree-golf-course';
 $course_name = 'Windtree Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windtree Golf Course - Tennessee Golf Courses (Permanently Closed)</title>
-    <meta name="description" content="Windtree Golf Course - John LaFoy designed course from 1991 in Mount Juliet, TN. Course permanently closed in 2017 but information preserved for historical reference.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
