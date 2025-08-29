@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle',
+    'description' => 'Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz\'s maiden victory, Jon Rahm\'s Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.',
+    'image' => '/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-11',
+    'category' => 'LIV Golf'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'liv-golf-indianapolis-2025-complete-tournament-recap-entertainment';
 $article_title = 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle';
@@ -12,8 +26,7 @@ $article_title = 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Ente
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIV Golf Indianapolis 2025: Complete Tournament Recap and Entertainment Spectacle - Tennessee Golf Courses</title>
-    <meta name="description" content="Complete recap of LIV Golf Indianapolis 2025 featuring Sebastian Munoz's maiden victory, Jon Rahm's Individual Championship defense, and spectacular entertainment from Riley Green and Jason Derulo.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
