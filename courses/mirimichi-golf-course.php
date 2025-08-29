@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Mirimichi Golf Course',
+    'location' => 'Millington, TN',
+    'description' => 'Championship 18-hole golf course in Millington, TN. Features over 7,400 yards of challenging golf with elevated greens, deep bunkers, and scenic water features.',
+    'image' => '/images/courses/mirimichi-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1995,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'mirimichi-golf-course';
 $course_name = 'Mirimichi Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirimichi Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Mirimichi Golf Course - Championship 18-hole golf course in Millington, TN. Features over 7,400 yards of challenging golf with elevated greens, deep bunkers, and scenic water features.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
