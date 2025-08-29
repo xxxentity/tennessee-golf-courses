@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round',
+    'description' => 'Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day\'s best 63 while Russell Henley sits two back at East Lake.',
+    'image' => '/images/news/tour-championship-2025-round-3-cantlay-fleetwood-tied/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-23',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'tour-championship-2025-round-3-cantlay-fleetwood-tied';
 $article_title = 'Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round';
@@ -12,8 +26,7 @@ $article_title = 'Cantlay Charges to Share Lead with Fleetwood After Tour Champi
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cantlay Charges to Share Lead with Fleetwood After Tour Championship Third Round - Tennessee Golf Courses</title>
-    <meta name="description" content="Patrick Cantlay fires 64 with late surge to tie Tommy Fleetwood at 16-under. Keegan Bradley posts day's best 63 while Russell Henley sits two back at East Lake.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
