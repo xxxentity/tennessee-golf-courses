@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Belmont\'s Conner Brown Captures First TGA Title at Tennessee Match Play Championship',
+    'description' => 'Shelbyville native Conner Brown defeats Trenton Johnson 4 & 3 to win his first Tennessee Golf Association title at the 26th Tennessee Match Play Championship at Vanderbilt Legends Club.',
+    'image' => '/images/news/belmont-conner-brown-wins-tennessee-match-play-championship/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-20',
+    'category' => 'Amateur Golf'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'belmont-conner-brown-wins-tennessee-match-play-championship';
 $article_title = 'Belmont\'s Conner Brown Captures First TGA Title at Tennessee Match Play Championship';
@@ -49,8 +64,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belmont's Conner Brown Captures First TGA Title at Tennessee Match Play Championship - Tennessee Golf Courses</title>
-    <meta name="description" content="Shelbyville native Conner Brown defeats Trenton Johnson 4 & 3 to win his first Tennessee Golf Association title at the 26th Tennessee Match Play Championship at Vanderbilt Legends Club.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
