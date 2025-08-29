@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Colonial Country Club',
+    'location' => 'Cordova, TN',
+    'description' => 'Premier private club in Cordova, TN with 100+ year history. Rated #4 golf course in Tennessee by Golf Digest, host to 30+ PGA Tour events.',
+    'image' => '/images/courses/colonial-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1913,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'colonial-country-club';
 $course_name = 'Colonial Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colonial Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Colonial Country Club - Premier private club in Cordova, TN with 100+ year history. Rated #4 golf course in Tennessee by Golf Digest, host to 30+ PGA Tour events.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
