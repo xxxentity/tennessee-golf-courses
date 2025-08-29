@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Lake Tansi Golf Course',
+    'location' => 'Crossville, TN',
+    'description' => 'Robert Renaud designed championship course in Crossville, TN. Ranked 9th in Tennessee by Golf Advisor with 6 tee options on 18 holes.',
+    'image' => '/images/courses/lake-tansi-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Robert Renaud',
+    'year_built' => 1972,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'lake-tansi-golf-course';
 $course_name = 'Lake Tansi Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lake Tansi Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Lake Tansi Golf Course - Robert Renaud designed championship course in Crossville, TN. Ranked 9th in Tennessee by Golf Advisor with 6 tee options on 18 holes.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
