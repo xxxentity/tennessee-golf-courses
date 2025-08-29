@@ -405,14 +405,14 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <div class="region-highlight">
                         <h3><i class="fas fa-trophy"></i> The Honors Course - Tennessee's Crown Jewel</h3>
-                        <p><a href="/courses/honors-course">The Honors Course</a> in Ooltewah stands as Tennessee's undisputed number one golf course, earning its place among America's top 100 layouts. Designed by Pete Dye and opened in 1983, this masterpiece has maintained its elite status for over four decades through meticulous conditioning and thoughtful updates by Gil Hanse and Jim Wagner following Dye's passing in 2020.</p>
+                        <p><a href="/courses/the-honors-course">The Honors Course</a> in Ooltewah stands as Tennessee's undisputed number one golf course, earning its place among America's top 100 layouts. Designed by Pete Dye and opened in 1983, this masterpiece has maintained its elite status for over four decades through meticulous conditioning and thoughtful updates by Gil Hanse and Jim Wagner following Dye's passing in 2020.</p>
                         
                         <p>The course demands precision and strategic thinking, with Dye's signature railroad ties, strategic bunkering, and challenging green complexes. Water hazards come into play on multiple holes, while elevation changes and prevailing winds add another layer of complexity. The Honors Course has hosted numerous prestigious tournaments and continues to serve as a benchmark for championship golf in Tennessee.</p>
                     </div>
                     
                     <div class="course-grid">
                         <div class="course-card">
-                            <h4><a href="/courses/sweetens-cove">Sweetens Cove Golf Club</a></h4>
+                            <h4><a href="/courses/sweetens-cove-golf-club">Sweetens Cove Golf Club</a></h4>
                             <div class="location">South Pittsburg, TN</div>
                             <p>This nine-hole King-Collins design has developed a cult-like following and earned recognition as one of America's best nine-hole courses. The routing takes advantage of natural terrain features and offers multiple playing options.</p>
                         </div>
@@ -442,10 +442,10 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         
                         <p><strong>Featured Courses:</strong></p>
                         <ul>
-                            <li><a href="/courses/island-pointe">Island Pointe Golf Club</a> - Arthur Hills' links-style design challenges golfers with a 146 slope rating</li>
+                            <li><a href="/courses/island-pointe-golf-club">Island Pointe Golf Club</a> - Arthur Hills' links-style design challenges golfers with a 146 slope rating</li>
                             <li><a href="/courses/wild-laurel">Wild Laurel Golf Course</a> - Nestled in a Smoky Mountain valley, this Audubon-certified layout offers pristine conditions</li>
-                            <li><a href="/courses/windriver-golf">The Golf Club at WindRiver</a> - Bob Cupp's design overlooks Tellico Lake with mountain backdrops</li>
-                            <li><a href="/courses/three-ridges">Three Ridges Golf Course</a> - Knox County's premier public facility set against the Smokies</li>
+                            <li><a href="/courses/windriver-golf-club">The Golf Club at WindRiver</a> - Bob Cupp's design overlooks Tellico Lake with mountain backdrops</li>
+                            <li><a href="/courses/three-ridges-golf-course">Three Ridges Golf Course</a> - Knox County's premier public facility set against the Smokies</li>
                         </ul>
                     </div>
                     
@@ -456,8 +456,8 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         <p><strong>Premier Nashville Area Courses:</strong></p>
                         <ul>
                             <li><a href="/courses/belle-meade-country-club">Belle Meade Country Club</a> - One of Tennessee's most prestigious private clubs</li>
-                            <li><a href="/courses/gaylord-springs">Gaylord Springs Golf Links</a> - Larry Nelson's design along the Cumberland River</li>
-                            <li><a href="/courses/harpeth-hills">Harpeth Hills Golf Course</a> - Nashville's most popular municipal course with challenging domed greens</li>
+                            <li><a href="/courses/gaylord-springs-golf-links">Gaylord Springs Golf Links</a> - Larry Nelson's design along the Cumberland River</li>
+                            <li><a href="/courses/harpeth-hills-golf-course">Harpeth Hills Golf Course</a> - Nashville's most popular municipal course with challenging domed greens</li>
                             <li><a href="/courses/richland-country-club">Richland Country Club</a> - Jack Nicklaus design in the hill country south of Nashville</li>
                         </ul>
                     </div>
@@ -469,7 +469,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         <p><strong>Memphis Area Highlights:</strong></p>
                         <ul>
                             <li><a href="/courses/memphis-country-club">Memphis Country Club</a> - Donald Ross design showcasing classic architecture</li>
-                            <li><a href="/courses/links-at-audubon">The Links at Audubon</a> - Recent renovation by Bill Bergin earned Golf Digest recognition</li>
+                            <li><a href="/courses/the-links-at-audubon">The Links at Audubon</a> - Recent renovation by Bill Bergin earned Golf Digest recognition</li>
                             <li><a href="/courses/timber-truss">Timber Truss Golf Course</a> - Hidden gem south of Memphis with 35 acres of water hazards</li>
                             <li><a href="/courses/glen-eagle">Glen Eagle Golf Course</a> - Outstanding public facility offering exceptional value</li>
                         </ul>
@@ -483,13 +483,13 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <div class="course-grid">
                         <div class="course-card">
-                            <h4><a href="/courses/fall-creek-falls">Fall Creek Falls Golf Course</a></h4>
+                            <h4><a href="/courses/fall-creek-falls-state-park-golf-course">Fall Creek Falls Golf Course</a></h4>
                             <div class="location">Spencer, TN</div>
                             <p>Joe Lee's 1972 design earned three-time selection by Golf Digest as a Top 100 Public Place to Play. The course features no parallel holes and abundant wildlife sightings, plus Audubon Sanctuary certification.</p>
                         </div>
                         
                         <div class="course-card">
-                            <h4><a href="/courses/montgomery-bell">Montgomery Bell Golf Course</a></h4>
+                            <h4><a href="/courses/montgomery-bell-state-park-golf-course">Montgomery Bell Golf Course</a></h4>
                             <div class="location">Burns, TN</div>
                             <p>Gary Roger Baird's 1988 redesign showcases gently rolling hills through beautiful hardwoods. The course hosts the annual Dogwood Classic and offers year-round playability with Champion Bermuda greens.</p>
                         </div>
@@ -619,19 +619,19 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         </div>
                         
                         <div class="course-card">
-                            <h4><a href="/courses/greystone-golf-club">Greystone Golf Club</a></h4>
+                            <h4><a href="/courses/greystone-golf-course">Greystone Golf Club</a></h4>
                             <div class="location">Dickson, TN</div>
                             <p>Mark McCumber's design features significant elevation changes and strategic mounding. Past host to PGA Tour Q-School and Tennessee State Opens.</p>
                         </div>
                         
                         <div class="course-card">
-                            <h4><a href="/courses/nashville-national">Nashville National Golf Links</a></h4>
+                            <h4><a href="/courses/nashville-national-golf-links">Nashville National Golf Links</a></h4>
                             <div class="location">Goodlettsville, TN</div>
                             <p>Beautiful layout among limestone bluffs with scenic elevation changes and Sycamore Creek winding through the property.</p>
                         </div>
                         
                         <div class="course-card">
-                            <h4><a href="/courses/egwani-farms">Egwani Farms Golf Course</a></h4>
+                            <h4><a href="/courses/egwani-farms-golf-course">Egwani Farms Golf Course</a></h4>
                             <div class="location">Knoxville Area</div>
                             <p>Celebrated for its ideal blend of challenge, playability, and strategic interest. Recent renovations enhanced this already popular East Tennessee destination.</p>
                         </div>
@@ -648,9 +648,9 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     <h3>Major Annual Events</h3>
                     
                     <ul>
-                        <li><strong>Tennessee Four-Ball Championship:</strong> Premier state amateur event typically held at courses like <a href="/courses/country-club-morristown">The Country Club of Morristown</a></li>
-                        <li><strong>Tennessee Match Play Championship:</strong> Elite amateur tournament showcasing the state's top players at venues like <a href="/courses/vanderbilt-legends">Vanderbilt Legends Club</a></li>
-                        <li><strong>Dogwood Classic:</strong> Annual spring tournament at <a href="/courses/montgomery-bell">Montgomery Bell State Park</a>, often serving as the season opener</li>
+                        <li><strong>Tennessee Four-Ball Championship:</strong> Premier state amateur event typically held at courses like <a href="/courses/the-country-club">The Country Club of Morristown</a></li>
+                        <li><strong>Tennessee Match Play Championship:</strong> Elite amateur tournament showcasing the state's top players at venues like <a href="/courses/vanderbilt-legends-club">Vanderbilt Legends Club</a></li>
+                        <li><strong>Dogwood Classic:</strong> Annual spring tournament at <a href="/courses/montgomery-bell-state-park-golf-course">Montgomery Bell State Park</a>, often serving as the season opener</li>
                         <li><strong>Tennessee State Open:</strong> Professional and amateur championship rotating among the state's finest courses</li>
                     </ul>
                     
