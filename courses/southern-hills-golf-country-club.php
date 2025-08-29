@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Southern Hills Golf & Country Club',
+    'location' => 'Cookeville, TN',
+    'description' => 'Perry Maxwell designed public course in Cookeville, TN. Established 1988 with 18 holes and exceptional greens maintained to the highest standards.',
+    'image' => '/images/courses/southern-hills-golf-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Perry Maxwell',
+    'year_built' => 1988,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'southern-hills-golf-country-club';
 $course_name = 'Southern Hills Golf & Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southern Hills Golf & Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Southern Hills Golf & Country Club - Perry Maxwell designed public course in Cookeville, TN. Established 1988 with 18 holes and exceptional greens maintained to the highest standards.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
