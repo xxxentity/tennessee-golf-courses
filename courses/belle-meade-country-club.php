@@ -105,8 +105,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -414,9 +414,9 @@ try {
                 <p>Experience the beauty of Belle Meade Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-meade-country-club/4.jpeg');"></div>
+                <img src="../images/courses/belle-meade-country-club/2.jpeg" alt="Belle Meade Country Club - Historic Golf Course" class="gallery-item">
+                <img src="../images/courses/belle-meade-country-club/3.jpeg" alt="Belle Meade Country Club - Prestigious Fairways" class="gallery-item">
+                <img src="../images/courses/belle-meade-country-club/4.jpeg" alt="Belle Meade Country Club - Championship Layout" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

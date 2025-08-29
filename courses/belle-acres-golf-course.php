@@ -112,8 +112,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -449,9 +449,9 @@ try {
                 <p>Experience the beauty of Belle Acres Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/belle-acres-golf-course/4.jpeg');"></div>
+                <img src="../images/courses/belle-acres-golf-course/2.jpeg" alt="Belle Acres Golf Course - Rolling Fairways" class="gallery-item">
+                <img src="../images/courses/belle-acres-golf-course/3.jpeg" alt="Belle Acres Golf Course - Pristine Greens" class="gallery-item">
+                <img src="../images/courses/belle-acres-golf-course/4.jpeg" alt="Belle Acres Golf Course - Golf Course Views" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
