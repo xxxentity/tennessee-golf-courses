@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Egwani Farms Golf Course',
+    'location' => 'Knoxville, TN',
+    'description' => 'Built in 1991 on former farmland in Knoxville, TN. Extensively renovated in 2016 featuring championship Bermuda greens and river views on 7 holes.',
+    'image' => '/images/courses/egwani-farms-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1991,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'egwani-farms-golf-course';
 $course_name = 'Egwani Farms Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egwani Farms Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Egwani Farms Golf Course - Built in 1991 on former farmland in Knoxville, TN. Extensively renovated in 2016 featuring championship Bermuda greens and river views on 7 holes.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
