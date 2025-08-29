@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Paris Landing State Park Golf Course',
+    'location' => 'Buchanan, TN',
+    'description' => 'Benjamin Wihry designed championship course in Buchanan, TN. Golf Digest 4-star rated course on Kentucky Lake with scenic 6,685-yard layout.',
+    'image' => '/images/courses/paris-landing-state-park-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Benjamin Wihry',
+    'year_built' => 1964,
+    'course_type' => 'State Park'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'paris-landing-state-park-golf-course';
 $course_name = 'Paris Landing State Park Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paris Landing State Park Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Paris Landing State Park Golf Course - Benjamin Wihry designed championship course in Buchanan, TN. Golf Digest 4-star rated course on Kentucky Lake with scenic 6,685-yard layout.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
