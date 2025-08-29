@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Toqua Golf Course',
+    'location' => 'Tellico Village, TN',
+    'description' => 'Ault, Clark & Associates championship design from 1987 at Tellico Village, TN. First course at Tellico Village with 7,049-yard lakeside layout.',
+    'image' => '/images/courses/toqua-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Ault, Clark & Associates',
+    'year_built' => 1987,
+    'course_type' => 'Resort'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'toqua-golf-course';
 $course_name = 'Toqua Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toqua Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Toqua Golf Course - Ault, Clark & Associates championship design from 1987 at Tellico Village, TN. First course at Tellico Village with 7,049-yard lakeside layout.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
