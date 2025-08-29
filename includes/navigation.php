@@ -16,21 +16,22 @@ $first_name = $is_logged_in ? SecureSession::get('first_name', '') : '';
 // Determine if this is a main site page (should show weather bar)
 $current_page = $_SERVER['REQUEST_URI'];
 
-// Check if this is an individual course page and extract slug
+// Check if this is an individual course page (exclude these from main page logic)
 $is_individual_course = (strpos($current_page, '/courses/') === 0 && $current_page !== '/courses/');
+
+// Extract course slug ONLY for individual course pages
 $course_slug = null;
 if ($is_individual_course) {
-    // Extract course slug from URL like /courses/avalon-golf-country-club
     $course_slug = substr($current_page, 9); // Remove '/courses/'
     if (strpos($course_slug, '/') !== false) {
         $course_slug = substr($course_slug, 0, strpos($course_slug, '/')); // Remove any trailing path
     }
 }
 
-// Main pages get Nashville weather, course pages get location-specific weather
-$show_weather_bar = (
+// Main pages (including individual course pages) - all show weather bar
+$is_main_page = (
     $current_page === '/' ||
-    (strpos($current_page, '/courses') === 0 && !$is_individual_course) ||
+    (strpos($current_page, '/courses') === 0) ||  // Include ALL course pages (main + individual)
     strpos($current_page, '/media') === 0 ||
     strpos($current_page, '/reviews') === 0 ||
     strpos($current_page, '/news') === 0 ||
@@ -44,12 +45,8 @@ $show_weather_bar = (
     strpos($current_page, '/user') === 0 ||  // Include user directory pages
     strpos($current_page, '/profile') === 0 ||  // Include profile pages
     strpos($current_page, '/edit-profile') === 0 ||  // Include edit profile
-    strpos($current_page, '/security-dashboard') === 0 ||  // Include security dashboard
-    $is_individual_course  // Include individual course pages
+    strpos($current_page, '/security-dashboard') === 0  // Include security dashboard
 );
-
-// For backward compatibility with existing code
-$is_main_page = $show_weather_bar;
 
 
 ?>
@@ -63,7 +60,7 @@ $is_main_page = $show_weather_bar;
                 <span id="current-datetime">Loading...</span>
             </div>
             <div class="weather-data" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 10px !important; text-align: center !important;">
-                <span class="weather-label" id="weather-location"><?php echo ($is_individual_course && $course_slug) ? 'Loading...' : 'Nashville, TN:'; ?></span>
+                <span class="weather-label" id="weather-location">Nashville, TN:</span>
                 <span id="weather-temp">--°F</span>
                 <span id="weather-precip-section">
                     <span class="weather-separator">|</span>
@@ -479,11 +476,11 @@ body {
 }
 </style>
 
-<?php if ($show_weather_bar): ?>
+<?php if ($is_main_page): ?>
 <!-- Centralized Weather Scripts -->
-<?php if ($is_individual_course && $course_slug): ?>
+<?php if ($course_slug === 'avalon-golf-country-club'): ?>
 <script>
-    // Course-specific weather configuration
+    // Course-specific weather ONLY for Avalon Golf & Country Club
     window.courseWeatherConfig = {
         isCourse: true,
         courseSlug: '<?php echo htmlspecialchars($course_slug); ?>',
@@ -492,7 +489,7 @@ body {
 </script>
 <?php else: ?>
 <script>
-    // Default Nashville weather configuration (for maps, news, reviews, etc.)
+    // Default Nashville weather for ALL other pages
     window.courseWeatherConfig = {
         isCourse: false,
         courseSlug: null,
