@@ -67,12 +67,12 @@ try {
     }
     
     // Convert temperature from Celsius to Fahrenheit
-    $tempC = $props['temperature']['value'];
-    $tempF = round(($tempC * 9/5) + 32);
+    $tempC = $props['temperature']['value'] ?? null;
+    $tempF = $tempC !== null ? round(($tempC * 9/5) + 32) : 75;
     
     // Convert wind speed from m/s to mph
-    $windMs = $props['windSpeed']['value'] ?? 0;
-    $windMph = round($windMs * 2.237);
+    $windMs = $props['windSpeed']['value'] ?? null;
+    $windMph = $windMs !== null ? round($windMs * 2.237) : 10;
     
     $weatherData = [
         'temp' => $tempF,

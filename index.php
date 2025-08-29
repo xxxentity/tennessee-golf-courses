@@ -532,8 +532,8 @@ $featured_reviews = array_slice($reviews, 0, 3);
         </div>
     </footer>
 
-    <script src="/weather.js?v=4"></script>
-    <script src="/script.js?v=4"></script>
+    <script src="/weather.js?v=5"></script>
+    <script src="/script.js?v=5"></script>
     
     <script>
         // Autocomplete functionality for hero search
