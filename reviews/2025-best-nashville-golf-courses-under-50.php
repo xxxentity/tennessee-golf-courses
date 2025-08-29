@@ -81,27 +81,17 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
         }
         
         .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
             background: white;
             border-radius: 15px;
             padding: 1.5rem;
-            margin-bottom: 2rem;
             box-shadow: var(--shadow-light);
             border-left: 4px solid var(--primary-color);
-        }
-        
-        .meta-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
         }
         
         .article-content {
@@ -239,9 +229,10 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                 font-size: 1.5rem;
             }
             
-            .meta-row {
+            .article-meta {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 0.5rem;
+                text-align: center;
             }
         }
     </style>
@@ -259,11 +250,9 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
         
         <div class="article-container">
             <div class="article-meta">
-                <div class="meta-row">
-                    <span><a href="/profile?username=michael-travers" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/michael-travers.webp" alt="Michael Travers" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;"><?php echo htmlspecialchars($article_data['author']); ?></span></a></span>
-                    <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article_data['date']); ?></span>
-                    <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article_data['category']); ?></span>
-                </div>
+                <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article_data['date']); ?></span>
+                <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article_data['category']); ?></span>
+                <span><a href="/profile?username=michael-travers" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/michael-travers.webp" alt="Michael Travers" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;"><?php echo htmlspecialchars($article_data['author']); ?></span></a></span>
             </div>
             
             <div class="article-content">
