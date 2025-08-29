@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Sweetens Cove Golf Club',
+    'location' => 'South Pittsburg, TN',
+    'description' => 'King Collins Dormer Design golf course in South Pittsburg, TN. Experience one of the most audacious and unique 9-hole courses in the Southeast.',
+    'image' => '/images/courses/sweetens-cove-golf-club/1.jpeg',
+    'holes' => 9,
+    'par' => 36,
+    'designer' => 'King Collins Dormer',
+    'year_built' => 2014,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'sweetens-cove-golf-club';
 $course_name = 'Sweetens Cove Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweetens Cove Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Sweetens Cove Golf Club - King Collins Dormer Design golf course in South Pittsburg, TN. Experience one of the most audacious and unique 9-hole courses in the Southeast.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
