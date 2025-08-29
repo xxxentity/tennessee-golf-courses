@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Ted Rhodes Golf Course',
+    'location' => 'Nashville, TN',
+    'description' => 'Historic 1953 municipal golf course honoring golf pioneer Ted Rhodes. 18-hole links-style course on Cumberland River in Nashville, TN.',
+    'image' => '/images/courses/ted-rhodes-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1953,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'ted-rhodes-golf-course';
 $course_name = 'Ted Rhodes Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ted Rhodes Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Ted Rhodes Golf Course - Historic 1953 municipal golf course honoring golf pioneer Ted Rhodes. 18-hole links-style course on Cumberland River in Nashville, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
