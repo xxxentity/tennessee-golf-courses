@@ -2647,8 +2647,8 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=4"></script>
-    <script src="/script.js?v=4"></script>
+    <!-- Weather scripts now loaded centrally via navigation.php -->
+
     <script>
         // Auto-submit form when filters change
         document.addEventListener('DOMContentLoaded', function() {

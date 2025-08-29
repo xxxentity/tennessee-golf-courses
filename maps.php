@@ -1421,7 +1421,7 @@ SEO::setupMapsPage();
         }
     </script>
     
-    <script src="/weather.js?v=4"></script>
-    <script src="/script.js?v=4"></script>
+    <!-- Weather scripts now loaded centrally via navigation.php -->
+
 </body>
 </html>

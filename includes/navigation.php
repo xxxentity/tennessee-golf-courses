@@ -15,9 +15,13 @@ $first_name = $is_logged_in ? SecureSession::get('first_name', '') : '';
 
 // Determine if this is a main site page (should show weather bar)
 $current_page = $_SERVER['REQUEST_URI'];
+
+// Check if this is an individual course page (exclude these)
+$is_individual_course = (strpos($current_page, '/courses/') === 0 && $current_page !== '/courses/');
+
 $is_main_page = (
     $current_page === '/' ||
-    strpos($current_page, '/courses') === 0 ||
+    (strpos($current_page, '/courses') === 0 && !$is_individual_course) ||
     strpos($current_page, '/media') === 0 ||
     strpos($current_page, '/reviews') === 0 ||
     strpos($current_page, '/news') === 0 ||
@@ -25,7 +29,8 @@ $is_main_page = (
     strpos($current_page, '/community') === 0 ||
     strpos($current_page, '/maps') === 0 ||
     strpos($current_page, '/about') === 0 ||
-    strpos($current_page, '/contact') === 0
+    strpos($current_page, '/contact') === 0 ||
+    strpos($current_page, '/user') === 0  // Include profile pages
 );
 
 
