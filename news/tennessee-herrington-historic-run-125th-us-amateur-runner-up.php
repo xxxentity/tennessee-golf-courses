@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations',
+    'description' => 'Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.',
+    'image' => '/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-25',
+    'category' => 'Amateur Golf'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'tennessee-herrington-historic-run-125th-us-amateur-runner-up';
 $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations';
@@ -12,8 +26,7 @@ $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Fin
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennessee's Herrington Makes Historic Run to U.S. Amateur Final, Earns Major Championship Invitations - Tennessee Golf Courses</title>
-    <meta name="description" content="Dickson native Jackson Herrington becomes first Tennessee golfer since 2013 to reach U.S. Amateur final, earning spots in 2026 Masters and U.S. Open while making family history.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
