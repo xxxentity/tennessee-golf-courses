@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Dead Horse Lake Golf Course',
+    'location' => 'Louisville, TN',
+    'description' => 'Family-owned public golf course in Louisville, TN designed by Joe Parker. Features rolling landscape with Dead Horse Lake throughout 18 holes.',
+    'image' => '/images/courses/dead-horse-lake-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Joe Parker',
+    'year_built' => 1992,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'dead-horse-lake-golf-course';
 $course_name = 'Dead Horse Lake Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dead Horse Lake Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Dead Horse Lake Golf Course - Family-owned public golf course in Louisville, TN designed by Joe Parker. Features rolling landscape with Dead Horse Lake throughout 18 holes.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
