@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Vanderbilt Legends Club',
+    'location' => 'Franklin, TN',
+    'description' => 'Premier 36-hole championship facility in Franklin, TN. Tom Kite & Bob Cupp design, home to Vanderbilt golf teams and Korn Ferry Tour events.',
+    'image' => '/images/courses/vanderbilt-legends-club/1.webp',
+    'holes' => 36,
+    'par' => 72,
+    'designer' => 'Tom Kite, Bob Cupp',
+    'year_built' => 1991,
+    'course_type' => 'Semi-Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'vanderbilt-legends-club';
 $course_name = 'Vanderbilt Legends Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanderbilt Legends Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Vanderbilt Legends Club - Premier 36-hole championship facility in Franklin, TN. Tom Kite & Bob Cupp design, home to Vanderbilt golf teams and Korn Ferry Tour events.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
