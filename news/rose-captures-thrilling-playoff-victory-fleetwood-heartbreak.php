@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers More Heartbreak',
+    'description' => 'Justin Rose defeats J.J. Spaun in dramatic three-hole playoff to win FedEx St. Jude Championship as Tommy Fleetwood\'s quest continues.',
+    'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-18',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak';
 $article_title = 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers More Heartbreak';
@@ -12,8 +26,7 @@ $article_title = 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers M
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose Captures Thrilling Playoff Victory as Fleetwood Suffers More Heartbreak - Tennessee Golf Courses</title>
-    <meta name="description" content="Justin Rose defeats J.J. Spaun in dramatic three-hole playoff to win FedEx St. Jude Championship as Tommy Fleetwood's quest continues.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
