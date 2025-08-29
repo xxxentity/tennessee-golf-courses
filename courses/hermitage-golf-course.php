@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Hermitage Golf Course',
+    'location' => 'Old Hickory, TN',
+    'description' => 'Premier dual-course facility in Old Hickory, TN. President\'s Reserve and General\'s Retreat offer two distinct championship golf experiences.',
+    'image' => '/images/courses/hermitage-golf-course/1.jpeg',
+    'holes' => 36,
+    'par' => 144,
+    'designer' => 'Denis Griffiths',
+    'year_built' => 1986,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'hermitage-golf-course';
 $course_name = 'Hermitage Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermitage Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Hermitage Golf Course - Premier dual-course facility in Old Hickory, TN. President's Reserve and General's Retreat offer two distinct championship golf experiences.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
