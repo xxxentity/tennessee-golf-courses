@@ -110,8 +110,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -447,9 +447,9 @@ try {
                 <p>Experience the beauty of Avalon Golf & Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/avalon-golf-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/avalon-golf-country-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/avalon-golf-country-club/4.jpeg');"></div>
+                <img src="../images/courses/avalon-golf-country-club/2.jpeg" alt="Avalon Golf & Country Club - Golf Course Fairway View" class="gallery-item">
+                <img src="../images/courses/avalon-golf-country-club/3.jpeg" alt="Avalon Golf & Country Club - Greens and Clubhouse" class="gallery-item">
+                <img src="../images/courses/avalon-golf-country-club/4.jpeg" alt="Avalon Golf & Country Club - Course Scenic View" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
