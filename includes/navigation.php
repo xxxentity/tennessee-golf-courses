@@ -33,13 +33,13 @@ $is_main_page = (
 
 <?php if ($is_main_page): ?>
 <!-- Weather Bar (only on main site pages) -->
-<div class="weather-bar" style="transition: transform 0.3s ease;">
-    <div class="weather-container">
-        <div class="weather-info">
-            <div class="current-time">
+<div class="weather-bar" style="transition: transform 0.3s ease; text-align: center !important;">
+    <div class="weather-container" style="display: flex !important; justify-content: center !important; align-items: center !important; width: 100% !important; text-align: center !important;">
+        <div class="weather-info" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 20px !important; text-align: center !important;">
+            <div class="current-time" style="text-align: center !important;">
                 <span id="current-datetime">Loading...</span>
             </div>
-            <div class="weather-data">
+            <div class="weather-data" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 10px !important; text-align: center !important;">
                 <span class="weather-label">Nashville, TN:</span>
                 <span id="weather-temp">--°F</span>
                 <span id="weather-precip-section">
