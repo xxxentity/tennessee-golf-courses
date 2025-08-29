@@ -480,7 +480,7 @@ body {
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
-<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain' || $course_slug === 'bear-trace-at-tims-ford' || $course_slug === 'bear-trace-harrison-bay' || $course_slug === 'belle-acres-golf-course' || $course_slug === 'belle-meade-country-club'): ?>
+<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain' || $course_slug === 'bear-trace-at-tims-ford' || $course_slug === 'bear-trace-harrison-bay' || $course_slug === 'belle-acres-golf-course' || $course_slug === 'belle-meade-country-club' || $course_slug === 'big-creek-golf-club' || $course_slug === 'blackthorn-club' || $course_slug === 'bluegrass-yacht-country-club' || $course_slug === 'brainerd-golf-course' || $course_slug === 'brown-acres-golf-course'): ?>
 <!-- Course-specific weather for individual course pages -->
 <script src="/course-weather.js"></script>
 <script>
