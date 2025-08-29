@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Pickwick Landing State Park Golf Course',
+    'location' => 'Counce, TN',
+    'description' => 'Championship 72-par course in Counce, TN. Featuring Champion Bermuda greens, 6,483-yard layout with water on 8 holes near Pickwick Dam.',
+    'image' => '/images/courses/pickwick-landing-state-park/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1976,
+    'course_type' => 'State Park'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'pickwick-landing-state-park';
 $course_name = 'Pickwick Landing State Park Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickwick Landing State Park Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Pickwick Landing State Park Golf Course - Championship 72-par course in Counce, TN. Featuring Champion Bermuda greens, 6,483-yard layout with water on 8 holes near Pickwick Dam.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
