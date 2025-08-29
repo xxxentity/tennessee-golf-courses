@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Fleetwood Maintains Narrow Lead as Scheffler Charges into Contention',
+    'description' => 'Tommy Fleetwood holds one-shot lead entering final round as Scottie Scheffler fires 65 to surge into contention at FedEx St. Jude Championship.',
+    'image' => '/images/news/fleetwood-maintains-narrow-lead-scheffler-charges/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-17',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'fleetwood-maintains-narrow-lead-scheffler-charges';
 $article_title = 'Fleetwood Maintains Narrow Lead as Scheffler Charges into Contention';
@@ -12,8 +26,7 @@ $article_title = 'Fleetwood Maintains Narrow Lead as Scheffler Charges into Cont
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleetwood Maintains Narrow Lead as Scheffler Charges into Contention - Tennessee Golf Courses</title>
-    <meta name="description" content="Tommy Fleetwood holds one-shot lead entering final round as Scottie Scheffler fires 65 to surge into contention at FedEx St. Jude Championship.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
