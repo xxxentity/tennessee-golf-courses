@@ -32,7 +32,10 @@ $is_main_page = (
     strpos($current_page, '/contact') === 0 ||
     strpos($current_page, '/contests') === 0 ||
     strpos($current_page, '/handicap') === 0 ||
-    strpos($current_page, '/user') === 0  // Include profile pages
+    strpos($current_page, '/user') === 0 ||  // Include user directory pages
+    strpos($current_page, '/profile') === 0 ||  // Include profile pages
+    strpos($current_page, '/edit-profile') === 0 ||  // Include edit profile
+    strpos($current_page, '/security-dashboard') === 0  // Include security dashboard
 );
 
 
