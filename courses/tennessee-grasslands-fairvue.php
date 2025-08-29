@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Tennessee Grasslands Golf & CC - Fairvue',
+    'location' => 'Gallatin, TN',
+    'description' => 'Bill Bergin designed championship golf course in Gallatin, TN. Private club with luxury amenities on Old Hickory Lake.',
+    'image' => '/images/courses/tennessee-grasslands-fairvue/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Bill Bergin',
+    'year_built' => 2003,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'tennessee-grasslands-fairvue';
 $course_name = 'Tennessee Grasslands Golf & CC - Fairvue';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennessee Grasslands Golf & CC - Fairvue - Tennessee Golf Courses</title>
-    <meta name="description" content="Tennessee Grasslands Golf & CC - Fairvue - Bill Bergin designed championship golf course in Gallatin, TN. Private club with luxury amenities on Old Hickory Lake.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
