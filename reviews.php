@@ -369,15 +369,6 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
 
             <!-- Reviews Grid -->
             <section class="reviews-section">
-                <!-- URGENT DEBUG - This should show if PHP is working -->
-                <div style="background: red; color: white; padding: 20px; margin: 20px; font-size: 20px;">
-                    <p>🔴 DEBUG MODE ACTIVE</p>
-                    <p>Current time: <?php echo date('Y-m-d H:i:s'); ?></p>
-                    <p>Reviews variable exists: <?php echo isset($reviews) ? 'YES' : 'NO'; ?></p>
-                    <p>Reviews count: <?php echo isset($reviews) ? count($reviews) : 'undefined'; ?></p>
-                    <p>Filtered reviews count: <?php echo isset($filtered_reviews) ? count($filtered_reviews) : 'undefined'; ?></p>
-                </div>
-                
                 <?php if (!empty($filtered_reviews)): ?>
                     <div class="reviews-grid">
                         <?php 
