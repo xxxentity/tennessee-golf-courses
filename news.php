@@ -623,8 +623,7 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=4"></script>
-    <script src="/script.js?v=4"></script>
+    <!-- Weather scripts now loaded centrally via navigation.php -->
     <script>
         // Carousel functionality
         let currentSlide = 0;

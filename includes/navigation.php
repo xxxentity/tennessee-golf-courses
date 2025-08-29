@@ -455,3 +455,9 @@ body {
     }
 }
 </style>
+
+<?php if ($is_main_page): ?>
+<!-- Centralized Weather Scripts -->
+<script src="/weather.js?v=6"></script>
+<script src="/script.js?v=6"></script>
+<?php endif; ?>

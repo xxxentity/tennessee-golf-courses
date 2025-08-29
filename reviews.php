@@ -475,8 +475,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
         </div>
     </footer>
 
-    <script src="/weather.js?v=4"></script>
-    <script src="/script.js?v=4"></script>
+    <!-- Weather scripts now loaded centrally via navigation.php -->
     <script>
         // Search form handling
         document.addEventListener('DOMContentLoaded', function() {

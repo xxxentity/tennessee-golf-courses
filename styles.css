@@ -78,6 +78,7 @@ a[href^="www."]:not(.social-links a)::after {
     margin: 0;
     border: 0;
     transition: transform 0.3s ease;
+    text-align: center !important;
 }
 
 .weather-container {
