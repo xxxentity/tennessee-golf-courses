@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Harpeth Hills Golf Course',
+    'location' => 'Nashville, TN',
+    'description' => 'Nashville\'s premier municipal golf course in Percy Warner Park. 6,899 yards of championship golf with TifEagle greens.',
+    'image' => '/images/courses/harpeth-hills-golf-course/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1965,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'harpeth-hills-golf-course';
 $course_name = 'Harpeth Hills Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harpeth Hills Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Harpeth Hills Golf Course - Nashville's premier municipal golf course in Percy Warner Park. 6,899 yards of championship golf with TifEagle greens.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
