@@ -63,7 +63,7 @@ $is_main_page = $show_weather_bar;
                 <span id="current-datetime">Loading...</span>
             </div>
             <div class="weather-data" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 10px !important; text-align: center !important;">
-                <span class="weather-label" id="weather-location"><?php echo $is_individual_course ? 'Loading...' : 'Nashville, TN:'; ?></span>
+                <span class="weather-label" id="weather-location"><?php echo ($is_individual_course && $course_slug) ? 'Loading...' : 'Nashville, TN:'; ?></span>
                 <span id="weather-temp">--°F</span>
                 <span id="weather-precip-section">
                     <span class="weather-separator">|</span>
@@ -492,7 +492,7 @@ body {
 </script>
 <?php else: ?>
 <script>
-    // Default Nashville weather configuration
+    // Default Nashville weather configuration (for maps, news, reviews, etc.)
     window.courseWeatherConfig = {
         isCourse: false,
         courseSlug: null,
