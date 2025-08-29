@@ -49,49 +49,10 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
             background: var(--bg-light);
         }
         
-        .article-hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/reviews/2025-best-nashville-golf-courses-under-50/main.webp');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-        
         .article-container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-light);
-            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
         }
         
         .article-content {
@@ -238,24 +199,30 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
     </style>
 </head>
 <body>
+    <!-- Dynamic Navigation -->
+    <?php include '../includes/navigation.php'; ?>
+
     <div class="article-page">
-        <?php include '../includes/header.php'; ?>
-        
-        <div class="article-hero">
-            <div class="hero-content">
-                <h1><?php echo htmlspecialchars($article_title); ?></h1>
-                <p class="hero-subtitle">Exceptional Golf Without Breaking the Bank</p>
-            </div>
-        </div>
-        
         <div class="article-container">
-            <div class="article-meta">
-                <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article_data['date']); ?></span>
-                <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article_data['category']); ?></span>
-                <span><a href="/profile?username=michael-travers" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/michael-travers.webp" alt="Michael Travers" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;"><?php echo htmlspecialchars($article_data['author']); ?></span></a></span>
-            </div>
+            <!-- Back to Reviews Link -->
+            <a href="/reviews" class="back-to-reviews" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); text-decoration: none; margin-bottom: 2rem; font-weight: 500;">
+                <i class="fas fa-arrow-left"></i>
+                Back to Reviews
+            </a>
+        
+            <!-- Article Header -->
+            <header class="article-header" style="text-align: center; margin-bottom: 3rem; background: var(--bg-white); padding: 3rem 2rem; border-radius: 20px; box-shadow: var(--shadow-light);">
+                <img src="<?php echo htmlspecialchars($article_data['image']); ?>" alt="<?php echo htmlspecialchars($article_data['title']); ?>" style="width: 100%; max-width: 600px; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
+                <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 700; line-height: 1.2;"><?php echo htmlspecialchars($article_data['title']); ?></h1>
+                <div class="article-meta" style="display: flex; justify-content: center; gap: 2rem; color: var(--text-gray); font-size: 0.95rem; flex-wrap: wrap;">
+                    <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article_data['date']); ?></span>
+                    <span><i class="far fa-folder"></i> <?php echo htmlspecialchars($article_data['category']); ?></span>
+                    <span><a href="/profile?username=michael-travers" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/michael-travers.webp" alt="Michael Travers" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;"><?php echo htmlspecialchars($article_data['author']); ?></span></a></span>
+                </div>
+            </header>
             
-            <div class="article-content">
+            <!-- Article Content -->
+            <article class="article-content" style="background: white; border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-light); line-height: 1.8;">
                 <div class="intro-section">
                     <h2>Golf on a Budget: Nashville's Best Value Courses in 2025</h2>
                     <p>Nashville's golf scene offers incredible diversity, from championship designs by tour professionals to charming municipal layouts that have hosted decades of memorable rounds. While premium private clubs command attention with their exclusivity, the real gems for everyday golfers are the outstanding public courses that deliver exceptional experiences without the hefty price tag.</p>
@@ -529,9 +496,10 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                 <p>The 2025 golf season in Nashville promises exceptional opportunities for affordable, high-quality golf experiences. These six courses represent the pinnacle of value golf in the region, each offering unique rewards for golfers who appreciate both quality and affordability. Whether you're a Nashville native or visiting Music City, these courses provide the foundation for memorable golf experiences that won't strain your budget.</p>
                 
                 <p>Remember that great golf isn't defined by expensive green fees or exclusive access - it's measured by the quality of the experience, the condition of the course, and the memories created during each round. These Nashville-area gems prove that some of Tennessee's finest golf experiences are available to everyone who appreciates the game's enduring appeal and timeless challenges.</p>
-            </div>
+            </article>
         </div>
         
+        <!-- Footer -->
         <?php include '../includes/footer.php'; ?>
     </div>
 </body>
