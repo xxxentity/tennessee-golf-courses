@@ -517,6 +517,6 @@ body {
     };
 </script>
 <?php endif; ?>
-<script src="/weather.js?v=7"></script>
+<script src="/weather.js?v=8"></script>
 <script src="/script.js?v=6"></script>
 <?php endif; ?>
