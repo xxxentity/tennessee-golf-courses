@@ -1,8 +1,21 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 
-// Article information
+// Article data for SEO
+$article_data = [
+    'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
+    'description' => 'Three teams survived intense semifinals action at The Cardinal at Saint John\'s in Plymouth, Michigan, setting up Sunday\'s stroke-play finale for the $14 million prize.',
+    'image' => '/images/news/liv-golf-michigan-2025-semifinals-thriller/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-23',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
+
 $article_slug = 'liv-golf-michigan-2025-semifinals-thriller';
 $article_title = 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama';
 
@@ -25,9 +38,7 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $article['title']; ?> | Tennessee Golf Courses</title>
-    
-    <!-- SEO Meta Tags -->
+    <?php echo SEO::generateMetaTags(); ?>
     <meta name="description" content="<?php echo $article['excerpt']; ?>">
     <meta name="keywords" content="LIV Golf, Michigan Team Championship, Legion XIII, Jon Rahm, Bryson DeChambeau, golf tournaments, Plymouth Michigan">
     <meta name="author" content="<?php echo $article['author']; ?>">
