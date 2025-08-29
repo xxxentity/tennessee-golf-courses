@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Nashville Golf & Athletic Club',
+    'location' => 'Belle Meade, TN',
+    'description' => 'Historic private club in Belle Meade with Donald Ross design heritage dating back to 1901. Premium golf and athletics.',
+    'image' => '/images/courses/nashville-golf-athletic-club/1.jpeg',
+    'holes' => 18,
+    'par' => 70,
+    'designer' => 'Donald Ross',
+    'year_built' => 1901,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'nashville-golf-athletic-club';
 $course_name = 'Nashville Golf & Athletic Club';
@@ -58,9 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nashville Golf & Athletic Club - Donald Ross Heritage | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Nashville Golf & Athletic Club, a historic private club in Belle Meade with Donald Ross design heritage dating back to 1901. Premium golf and athletics.">
-    <link rel="canonical" href="https://tennesseegolfcourses.com/courses/nashville-golf-athletic-club">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
