@@ -21,9 +21,11 @@ $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and 
 
 ?>
 
+<!-- DEBUG: HTML is starting -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- DEBUG: In head section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php echo SEO::generateMetaTags(); ?>
@@ -524,7 +526,12 @@ $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and 
     </style>
 </head>
 <body>
-    <?php include '../includes/navigation.php'; ?>
+    <!-- DEBUG: About to include navigation -->
+    <?php 
+    echo "<!-- DEBUG: Before navigation include -->";
+    include '../includes/navigation.php'; 
+    echo "<!-- DEBUG: After navigation include -->";
+    ?>
 
     <div class="article-page">
         <div class="article-container">
