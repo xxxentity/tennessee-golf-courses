@@ -1,5 +1,20 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC',
+    'description' => 'Jon Rahm\'s Legion XIII defeated Bryson DeChambeau\'s Crushers GC in the first team championship playoff, claiming the $14 million prize at The Cardinal at Saint John\'s in Plymouth, Michigan.',
+    'image' => '/images/news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-24',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'liv-golf-michigan-2025-championship-legion-xiii-playoff-victory';
 $article_title = 'Legion XIII Captures LIV Golf Team Championship in Thrilling Playoff Victory Over Crushers GC';
@@ -23,8 +38,7 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
-    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
