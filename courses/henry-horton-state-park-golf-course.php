@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Henry Horton State Park Golf Course',
+    'location' => 'Chapel Hill, TN',
+    'description' => 'Historic 1962 championship golf course in Chapel Hill, TN. First Tennessee Golf Trail course with challenging 7,066-yard layout designed by Bob Cupp.',
+    'image' => '/images/courses/henry-horton-state-park-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Bob Cupp',
+    'year_built' => 1962,
+    'course_type' => 'State Park'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'henry-horton-state-park-golf-course';
 $course_name = 'Henry Horton State Park Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Horton State Park Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Henry Horton State Park Golf Course - Historic 1962 championship golf course in Chapel Hill, TN. First Tennessee Golf Trail course with challenging 7,066-yard layout designed by Bob Cupp.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
