@@ -39,9 +39,10 @@ class Performance {
      * Enable output compression
      */
     public static function enableCompression() {
-        if (!ob_get_level() && extension_loaded('zlib')) {
-            ob_start('ob_gzhandler');
-        }
+        // Temporarily disabled to debug white screen issue
+        // if (!ob_get_level() && extension_loaded('zlib')) {
+        //     ob_start('ob_gzhandler');
+        // }
     }
     
     /**

@@ -1,28 +1,7 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-echo "Step 1: Starting...\n";
-
-try {
-    echo "Step 2: Loading init.php...\n";
-    require_once '../includes/init.php';
-    echo "Step 3: init.php loaded successfully\n";
-    
-    echo "Step 4: Loading profile-helpers.php...\n";
-    require_once '../includes/profile-helpers.php';
-    echo "Step 5: profile-helpers.php loaded successfully\n";
-    
-    echo "Step 6: Loading seo.php...\n";
-    require_once '../includes/seo.php';
-    echo "Step 7: seo.php loaded successfully\n";
-    
-} catch (Throwable $e) {
-    echo "ERROR at step: " . $e->getMessage() . "\n";
-    echo "File: " . $e->getFile() . " Line: " . $e->getLine() . "\n";
-    die();
-}
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 
 // Article data for SEO
 $article_data = [
