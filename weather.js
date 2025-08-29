@@ -23,15 +23,20 @@ class WeatherManager {
         // Fetch new weather data from our API (course-specific or Nashville)
         try {
             const apiUrl = window.courseWeatherConfig ? window.courseWeatherConfig.apiUrl : '/weather-api.php';
+            console.log('DEBUG: Fetching weather from:', apiUrl);
+            console.log('DEBUG: courseWeatherConfig:', window.courseWeatherConfig);
             const response = await fetch(apiUrl);
             
             if (!response.ok) {
+                console.error('DEBUG: API response not OK:', response.status, response.statusText);
                 throw new Error('Weather API unavailable');
             }
             
             const result = await response.json();
+            console.log('DEBUG: API response:', result);
             
             if (!result.success) {
+                console.error('DEBUG: API returned error:', result.error || 'Unknown error');
                 throw new Error('Weather API returned error');
             }
             
@@ -58,6 +63,8 @@ class WeatherManager {
                 location: location,
                 timestamp: now
             };
+            
+            console.log('DEBUG: Final weather data:', this.weatherData);
             
             // Cache the data
             this.cacheWeather(this.weatherData);
@@ -121,6 +128,7 @@ class WeatherManager {
         }
         
         const weather = await this.getWeather();
+        console.log('DEBUG: Updating display with weather:', weather);
         
         if (tempElement) {
             tempElement.textContent = `${weather.temp}°F`;
