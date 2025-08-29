@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Springhouse Golf Club',
+    'location' => 'Nashville, TN',
+    'description' => 'Nashville golf course permanently closed. Information preserved for historical reference and those searching for this former Tennessee golf course.',
+    'image' => '/images/courses/springhouse-golf-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Unknown',
+    'year_built' => null,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'springhouse-golf-club';
 $course_name = 'Springhouse Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Springhouse Golf Club - Tennessee Golf Courses (Permanently Closed)</title>
-    <meta name="description" content="Springhouse Golf Club - Nashville golf course permanently closed. Information preserved for historical reference and those searching for this former Tennessee golf course.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
