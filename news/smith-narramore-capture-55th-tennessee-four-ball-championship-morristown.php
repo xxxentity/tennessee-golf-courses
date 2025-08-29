@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club',
+    'description' => 'Jack Smith and Chas Narramore defeated Lawrence Largent and Jack Rhea 4 and 3 in the championship match at The Country Club in Morristown, with Smith claiming his third state title.',
+    'image' => '/images/news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-23',
+    'category' => 'Tennessee News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'smith-narramore-capture-55th-tennessee-four-ball-championship-morristown';
 $article_title = 'Smith and Narramore Capture 55th Tennessee Four-Ball Championship at The Country Club';
@@ -24,8 +38,7 @@ $article = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($article['title']); ?> - Tennessee Golf Courses</title>
-    <meta name="description" content="<?php echo htmlspecialchars($article['excerpt']); ?>">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
