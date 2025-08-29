@@ -299,5 +299,5 @@ class Cache {
 Cache::init();
 
 // EMERGENCY DISABLE: Uncomment this line to disable all caching immediately
-// Cache::setEnabled(false);
+Cache::setEnabled(false);
 ?>
