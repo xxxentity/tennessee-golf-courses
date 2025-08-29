@@ -1,6 +1,21 @@
 <?php
-session_start();
+require_once '../includes/init.php';
+require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
 require_once '../config/database.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round',
+    'description' => 'Robert MacIntyre fires career-low 62 with six straight closing birdies to take three-shot lead over Tommy Fleetwood after BMW Championship first round.',
+    'image' => '/images/news/macintyre-explodes-for-62-leads-bmw-championship/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-14',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'macintyre-explodes-for-62-leads-bmw-championship';
 $article_title = 'MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round';
@@ -48,8 +63,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacIntyre Explodes for Career-Low 62 to Lead BMW Championship Opening Round - Tennessee Golf Courses</title>
-    <meta name="description" content="Robert MacIntyre fires career-low 62 with six straight closing birdies to take three-shot lead over Tommy Fleetwood after BMW Championship first round.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
