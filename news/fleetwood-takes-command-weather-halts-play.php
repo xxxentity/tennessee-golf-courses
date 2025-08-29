@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play',
+    'description' => 'Tommy Fleetwood builds commanding lead at FedEx St. Jude Championship before severe weather suspends second round play.',
+    'image' => '/images/news/fleetwood-takes-command-weather-halts-play/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-16',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'fleetwood-takes-command-weather-halts-play';
 $article_title = 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play';
@@ -12,8 +26,7 @@ $article_title = 'Fleetwood Surges to Four-Shot Lead as Weather Halts Play';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleetwood Surges to Four-Shot Lead as Weather Halts Play - Tennessee Golf Courses</title>
-    <meta name="description" content="Tommy Fleetwood builds commanding lead at FedEx St. Jude Championship before severe weather suspends second round play.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
