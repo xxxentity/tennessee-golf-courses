@@ -10,8 +10,8 @@ try {
     error_log("Session start failed in login.php: " . $e->getMessage());
 }
 
-// Generate CSRF token
-$csrf_token = CSRFProtection::generateToken();
+// Get existing CSRF token (don't generate new one to avoid token mismatch)
+$csrf_token = CSRFProtection::getToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">

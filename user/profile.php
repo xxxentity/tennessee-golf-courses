@@ -1,5 +1,6 @@
 <?php
 require_once '../includes/session-security.php';
+require_once '../includes/csrf.php';
 require_once '../config/database.php';
 
 // Start secure session
