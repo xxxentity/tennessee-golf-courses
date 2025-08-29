@@ -364,6 +364,21 @@ $courses_static = [
         'slug' => 'fox-den-country-club'
     ],
     [
+        'id' => 115,
+        'name' => 'Glen Eagle Golf Course',
+        'location' => 'Millington, TN',
+        'region' => 'Memphis Area',
+        'description' => '18-hole championship course at Naval Support Activity Mid-South. Features TifEagle Bermuda greens, 6,895 yards from gold tees, open to military and public.',
+        'image' => '/images/courses/glen-eagle-golf-course/1.webp',
+        'price_range' => '$29-45',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Ault, Clark, & Associates',
+        'amenities' => ['Championship Golf', 'TifEagle Bermuda Greens', 'Driving Range', 'Putting Green', '140-Yard Practice Hole', 'Pro Shop', 'PGA Instruction', 'Club Rentals & Repair'],
+        'slug' => 'glen-eagle-golf-course'
+    ],
+    [
         'id' => 6,
         'name' => 'Greystone Golf Course',
         'location' => 'Dickson, TN',

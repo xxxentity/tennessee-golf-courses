@@ -31,6 +31,7 @@ $courses = [
     ['name' => 'Forrest Crossing Golf Course', 'location' => 'Franklin, TN', 'slug' => 'forrest-crossing-golf-course'],
     ['name' => 'Fall Creek Falls State Park Golf Course', 'location' => 'Spencer, TN', 'slug' => 'fall-creek-falls-state-park-golf-course'],
     ['name' => 'Fox Den Country Club', 'location' => 'Knoxville, TN', 'slug' => 'fox-den-country-club'],
+    ['name' => 'Glen Eagle Golf Course', 'location' => 'Millington, TN', 'slug' => 'glen-eagle-golf-course'],
     ['name' => 'Greystone Golf Course', 'location' => 'Dickson, TN', 'slug' => 'greystone-golf-course'],
     ['name' => 'Harpeth Hills Golf Course', 'location' => 'Nashville, TN', 'slug' => 'harpeth-hills-golf-course'],
     ['name' => 'Hermitage Golf Course', 'location' => 'Old Hickory, TN', 'slug' => 'hermitage-golf-course'],

@@ -696,6 +696,14 @@ SEO::setupMapsPage();
                 coordinates: [-84.186416, 35.869829]
             },
             {
+                name: "Glen Eagle Golf Course",
+                address: "6168 Attu Street extended, Millington, TN 38054",
+                phone: "(901) 874-5168",
+                type: "Public",
+                slug: "glen-eagle-golf-course",
+                coordinates: [-89.938516, 35.344524]
+            },
+            {
                 name: "Gaylord Springs Golf Links",
                 address: "18 Springhouse Ln, Nashville, TN 37214",
                 phone: "(615) 458-1730",
