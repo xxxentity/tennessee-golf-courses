@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Nashville National Golf Links',
+    'location' => 'Joelton, TN',
+    'description' => '18-hole championship course in Joelton featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty. Family owned since 2021.',
+    'image' => '/images/courses/nashville-national-golf-links/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'N/A',
+    'year_built' => 1998,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'nashville-national-golf-links';
 $course_name = 'Nashville National Golf Links';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nashville National Golf Links - Tennessee Golf Courses</title>
-    <meta name="description" content="Nashville National Golf Links - 18-hole championship course in Joelton featuring limestone bluffs, Sycamore Creek, and natural Tennessee beauty. Family owned since 2021.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
