@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Old Hickory Country Club',
+    'location' => 'Old Hickory, TN',
+    'description' => 'Historic 1926 private club originally built by DuPont. Par 71, 6,617 yards of championship golf in Old Hickory, TN.',
+    'image' => '/images/courses/old-hickory-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 71,
+    'designer' => 'N/A',
+    'year_built' => 1926,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'old-hickory-country-club';
 $course_name = 'Old Hickory Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Old Hickory Country Club - Historic 1926 Private Club | Tennessee Golf Courses</title>
-    <meta name="description" content="Experience Old Hickory Country Club, a historic 1926 private club originally built by DuPont. Par 71, 6,617 yards of championship golf in Old Hickory, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
