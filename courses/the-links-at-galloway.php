@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Links at Galloway',
+    'location' => 'Memphis, TN',
+    'description' => 'Kevin Tucker designed municipal course in Memphis, TN. Historic Galloway Golf Course featuring 6,013-yard Par 70 layout with challenging greens.',
+    'image' => '/images/courses/the-links-at-galloway/1.jpeg',
+    'holes' => 18,
+    'par' => 70,
+    'designer' => 'Kevin Tucker',
+    'year_built' => 1925,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-links-at-galloway';
 $course_name = 'The Links at Galloway';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Links at Galloway - Tennessee Golf Courses</title>
-    <meta name="description" content="The Links at Galloway - Kevin Tucker designed municipal course in Memphis, TN. Historic Galloway Golf Course featuring 6,013-yard Par 70 layout with challenging greens.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
