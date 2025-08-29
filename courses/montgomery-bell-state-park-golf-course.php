@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Montgomery Bell State Park Golf Course',
+    'location' => 'Burns, TN',
+    'description' => 'George Cobb/Gary Baird designed championship golf course in Burns, TN. Golf Digest Top 100 Public Places to Play with challenging 6,614-yard layout.',
+    'image' => '/images/courses/montgomery-bell-state-park-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 71,
+    'designer' => 'George Cobb/Gary Baird',
+    'year_built' => 1973,
+    'course_type' => 'State Park'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'montgomery-bell-state-park-golf-course';
 $course_name = 'Montgomery Bell State Park Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montgomery Bell State Park Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Montgomery Bell State Park Golf Course - George Cobb/Gary Baird designed championship golf course in Burns, TN. Golf Digest Top 100 Public Places to Play with challenging 6,614-yard layout.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
