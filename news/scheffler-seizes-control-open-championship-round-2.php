@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'Scheffler Seizes Control with Career-Best 64 at Royal Portrush',
+    'description' => 'World No. 1 Scottie Scheffler fires a stunning 7-under 64 to take the lead at the Open Championship, his lowest round in a major championship.',
+    'image' => '/images/news/scheffler-seizes-control-open-championship-round-2/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-07-18',
+    'category' => 'Major Championships'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'scheffler-seizes-control-open-championship-round-2';
 $article_title = 'Scheffler Seizes Control with Career-Best 64 at Royal Portrush';
@@ -12,8 +26,7 @@ $article_title = 'Scheffler Seizes Control with Career-Best 64 at Royal Portrush
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheffler Seizes Control with Career-Best 64 at Royal Portrush - Tennessee Golf Courses</title>
-    <meta name="description" content="World No. 1 Scottie Scheffler fires a stunning 7-under 64 to take the lead at the Open Championship, his lowest round in a major championship.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
