@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'The Links at Whitehaven',
+    'location' => 'Memphis, TN',
+    'description' => 'Kevin Tucker designed 9-hole municipal course in Memphis, TN. Historic 1973 course featuring 2,460-yard Par 36 layout on 100 acres.',
+    'image' => '/images/courses/the-links-at-whitehaven/1.jpeg',
+    'holes' => 9,
+    'par' => 36,
+    'designer' => 'Kevin Tucker',
+    'year_built' => 1973,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'the-links-at-whitehaven';
 $course_name = 'The Links at Whitehaven';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Links at Whitehaven - Tennessee Golf Courses</title>
-    <meta name="description" content="The Links at Whitehaven - Kevin Tucker designed 9-hole municipal course in Memphis, TN. Historic 1973 course featuring 2,460-yard Par 36 layout on 100 acres.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
