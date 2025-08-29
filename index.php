@@ -405,7 +405,7 @@ $featured_reviews = array_slice($reviews, 0, 3);
                 <?php foreach ($featured_reviews as $review): ?>
                 <article class="review-card">
                     <div class="review-image">
-                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                        <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                             <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
                         </a>
                     </div>
@@ -417,7 +417,7 @@ $featured_reviews = array_slice($reviews, 0, 3);
                                 <span class="review-time"><?php echo htmlspecialchars($review['read_time']); ?></span>
                             <?php endif; ?>
                         </div>
-                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                        <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                             <h3 class="review-title"><?php echo htmlspecialchars($review['title']); ?></h3>
                         </a>
                         <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
@@ -426,7 +426,7 @@ $featured_reviews = array_slice($reviews, 0, 3);
                                 <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
                             </div>
                         <?php endif; ?>
-                        <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">Read Full Review <i class="fas fa-arrow-right"></i></a>
+                        <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">Read Full Review <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 <?php endforeach; ?>

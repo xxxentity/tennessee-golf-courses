@@ -378,7 +378,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                         ?>
                         <?php foreach ($filtered_reviews as $index => $review): ?>
                             <article class="review-card" data-review-index="<?php echo $index; ?>" style="<?php echo $index >= $reviews_per_page ? 'display: none;' : ''; ?>">
-                                <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
+                                <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="review-image clickable-image" style="text-decoration: none;">
                                     <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
                                 </a>
                                 <div class="review-content">
@@ -389,7 +389,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                         </span>
                                         <span class="review-category"><?php echo htmlspecialchars($review['category']); ?></span>
                                     </div>
-                                    <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
+                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
                                         <h3 class="review-title clickable-title"><?php echo htmlspecialchars($review['title']); ?></h3>
                                     </a>
                                     <p class="review-excerpt"><?php echo htmlspecialchars($review['excerpt']); ?></p>
@@ -398,7 +398,7 @@ $featured_reviews = array_slice(array_filter($reviews, function($review) {
                                             <span class="author-name">By <?php echo htmlspecialchars($review['author']); ?></span>
                                         </div>
                                     <?php endif; ?>
-                                    <a href="reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
+                                    <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" class="read-more">
                                         Read Full Review <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
