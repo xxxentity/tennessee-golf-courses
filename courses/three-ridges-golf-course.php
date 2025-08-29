@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Three Ridges Golf Course',
+    'location' => 'Knoxville, TN',
+    'description' => 'Golf Digest Best Places To Play. Municipal course designed by Ault, Clark & Associates in the shadows of the Great Smoky Mountains, Knoxville, TN.',
+    'image' => '/images/courses/three-ridges-golf-course/1.webp',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Ault, Clark & Associates',
+    'year_built' => 1994,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'three-ridges-golf-course';
 $course_name = 'Three Ridges Golf Course';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Ridges Golf Course - Tennessee Golf Courses</title>
-    <meta name="description" content="Three Ridges Golf Course - Golf Digest Best Places To Play. Municipal course designed by Ault, Clark & Associates in the shadows of the Great Smoky Mountains, Knoxville, TN.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
