@@ -481,11 +481,13 @@ body {
 <?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain'): ?>
 <script>
     // Course-specific weather for selected course pages
+    console.log('DEBUG: Course detected:', '<?php echo htmlspecialchars($course_slug); ?>');
     window.courseWeatherConfig = {
         isCourse: true,
         courseSlug: '<?php echo htmlspecialchars($course_slug); ?>',
         apiUrl: '/course-weather-api.php?course=<?php echo urlencode($course_slug); ?>'
     };
+    console.log('DEBUG: Course weather config:', window.courseWeatherConfig);
 </script>
 <?php else: ?>
 <script>
