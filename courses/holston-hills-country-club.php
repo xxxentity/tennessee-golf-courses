@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Holston Hills Country Club',
+    'location' => 'Knoxville, TN',
+    'description' => 'Donald Ross\'s 1927 masterpiece in Knoxville, TN. 6,932 yards of pristine championship golf at Tennessee\'s premier private club.',
+    'image' => '/images/courses/holston-hills-country-club/1.jpeg',
+    'holes' => 18,
+    'par' => 72,
+    'designer' => 'Donald Ross',
+    'year_built' => 1927,
+    'course_type' => 'Private'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'holston-hills-country-club';
 $course_name = 'Holston Hills Country Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holston Hills Country Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Holston Hills Country Club - Donald Ross's 1927 masterpiece in Knoxville, TN. 6,932 yards of pristine championship golf at Tennessee's premier private club.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
