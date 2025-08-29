@@ -1,6 +1,20 @@
 <?php
 require_once '../includes/init.php';
 require_once '../includes/profile-helpers.php';
+require_once '../includes/seo.php';
+
+// Article data for SEO
+$article_data = [
+    'title' => 'BMW Championship 2025: Complete Tournament Recap and Community Impact',
+    'description' => 'Complete recap of the 2025 BMW Championship featuring Scottie Scheffler\'s miraculous comeback victory and the tournament\'s extraordinary community impact for the Evans Scholars Foundation.',
+    'image' => '/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp',
+    'type' => 'article',
+    'author' => 'Cole Harrington',
+    'date' => '2025-08-18',
+    'category' => 'Tournament News'
+];
+
+SEO::setupArticlePage($article_data);
 
 $article_slug = 'bmw-championship-2025-complete-tournament-recap-community-impact';
 $article_title = 'BMW Championship 2025: Complete Tournament Recap and Community Impact';
@@ -12,8 +26,7 @@ $article_title = 'BMW Championship 2025: Complete Tournament Recap and Community
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW Championship 2025: Complete Tournament Recap and Community Impact - Tennessee Golf Courses</title>
-    <meta name="description" content="Complete recap of the 2025 BMW Championship featuring Scottie Scheffler's miraculous comeback victory and the tournament's extraordinary community impact for the Evans Scholars Foundation.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
