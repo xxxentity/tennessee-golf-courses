@@ -1,6 +1,22 @@
 <?php
 session_start();
 require_once '../config/database.php';
+require_once '../includes/seo.php';
+
+// Course data for SEO
+$course_data = [
+    'name' => 'Sevierville Golf Club',
+    'location' => 'Sevierville, TN',
+    'description' => 'Premier championship golf facility in Sevierville, TN. Two 18-hole courses (River & Highlands) in the heart of the Great Smoky Mountains.',
+    'image' => '/images/courses/sevierville-golf-club/1.jpeg',
+    'holes' => 36,
+    'par' => 72,
+    'designer' => 'D.J. DeVictor',
+    'year_built' => 1994,
+    'course_type' => 'Public'
+];
+
+SEO::setupCoursePage($course_data);
 
 $course_slug = 'sevierville-golf-club';
 $course_name = 'Sevierville Golf Club';
@@ -58,8 +74,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sevierville Golf Club - Tennessee Golf Courses</title>
-    <meta name="description" content="Sevierville Golf Club - Premier championship golf facility in Sevierville, TN. Two 18-hole courses (River & Highlands) in the heart of the Great Smoky Mountains.">
+    <?php echo SEO::generateMetaTags(); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
