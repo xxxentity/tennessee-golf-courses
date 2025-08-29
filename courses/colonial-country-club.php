@@ -145,8 +145,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -434,9 +434,9 @@ try {
                 <p>Experience the beauty of Colonial Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/colonial-country-club/3.webp');"></div>
+                <img src="../images/courses/colonial-country-club/1.webp" alt="Colonial Country Club - Memphis Golf Course" class="gallery-item">
+                <img src="../images/courses/colonial-country-club/2.webp" alt="Colonial Country Club - Private Club Amenities" class="gallery-item">
+                <img src="../images/courses/colonial-country-club/3.webp" alt="Colonial Country Club - Championship Golf Layout" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

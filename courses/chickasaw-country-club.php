@@ -240,8 +240,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -713,9 +713,9 @@ try {
                 <p>Experience the beauty of Chickasaw Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/chickasaw-country-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/chickasaw-country-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/chickasaw-country-club/4.webp');"></div>
+                <img src="../images/courses/chickasaw-country-club/2.webp" alt="Chickasaw Country Club - Historic Golf Course" class="gallery-item">
+                <img src="../images/courses/chickasaw-country-club/3.webp" alt="Chickasaw Country Club - Memphis Private Club" class="gallery-item">
+                <img src="../images/courses/chickasaw-country-club/4.webp" alt="Chickasaw Country Club - Championship Golf" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

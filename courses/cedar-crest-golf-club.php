@@ -499,8 +499,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -835,9 +835,9 @@ try {
                 <p>Experience the beauty of Cedar Crest Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/cedar-crest-golf-club/4.jpeg');"></div>
+                <img src="../images/courses/cedar-crest-golf-club/2.jpeg" alt="Cedar Crest Golf Club - Championship Golf Course" class="gallery-item">
+                <img src="../images/courses/cedar-crest-golf-club/3.jpeg" alt="Cedar Crest Golf Club - Murfreesboro Golf Facility" class="gallery-item">
+                <img src="../images/courses/cedar-crest-golf-club/4.jpeg" alt="Cedar Crest Golf Club - Golf Course Scenery" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

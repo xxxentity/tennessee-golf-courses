@@ -104,8 +104,8 @@ try {
         
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -390,8 +390,8 @@ try {
                 <p>Experience the beauty of Chattanooga Golf & Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/1.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/2.webp');"></div>
+                <img src="../images/courses/chattanooga-golf-country-club/1.webp" alt="Chattanooga Golf & Country Club - Private Golf Course" class="gallery-item">
+                <img src="../images/courses/chattanooga-golf-country-club/2.webp" alt="Chattanooga Golf & Country Club - Scenic Golf Views" class="gallery-item">
                 <div class="gallery-item" style="background-image: url('../images/courses/chattanooga-golf-country-club/3.webp');"></div>
             </div>
             <div class="gallery-button">
