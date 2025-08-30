@@ -736,6 +736,14 @@ SEO::setupMapsPage();
                 coordinates: [-86.88270, 36.05643]
             },
             {
+                name: "Heatherhurst Brae Golf Course",
+                address: "421 Stonehenge Dr, Crossville, TN 38558",
+                phone: "(931) 456-2864",
+                type: "Resort",
+                slug: "heatherhurst-brae-golf-course",
+                coordinates: [-85.134521, 36.016483]
+            },
+            {
                 name: "Henry Horton State Park Golf Course",
                 address: "4358 Nashville Highway, Chapel Hill, TN 37034",
                 phone: "(931) 364-2319",

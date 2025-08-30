@@ -34,6 +34,7 @@ $courses = [
     ['name' => 'Glen Eagle Golf Course', 'location' => 'Millington, TN', 'slug' => 'glen-eagle-golf-course'],
     ['name' => 'Greystone Golf Course', 'location' => 'Dickson, TN', 'slug' => 'greystone-golf-course'],
     ['name' => 'Harpeth Hills Golf Course', 'location' => 'Nashville, TN', 'slug' => 'harpeth-hills-golf-course'],
+    ['name' => 'Heatherhurst Brae Golf Course', 'location' => 'Fairfield Glade, TN', 'slug' => 'heatherhurst-brae-golf-course'],
     ['name' => 'Hermitage Golf Course', 'location' => 'Old Hickory, TN', 'slug' => 'hermitage-golf-course'],
     ['name' => 'Henry Horton State Park Golf Course', 'location' => 'Chapel Hill, TN', 'slug' => 'henry-horton-state-park-golf-course'],
     ['name' => 'Hillwood Country Club', 'location' => 'Nashville, TN', 'slug' => 'hillwood-country-club'],

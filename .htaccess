@@ -86,6 +86,7 @@ RewriteRule ^courses/fox-den-country-club/?$ courses/fox-den-country-club.php [L
 RewriteRule ^courses/glen-eagle-golf-course/?$ courses/glen-eagle-golf-course.php [L]
 RewriteRule ^courses/greystone-golf-course/?$ courses/greystone-golf-course.php [L]
 RewriteRule ^courses/harpeth-hills-golf-course/?$ courses/harpeth-hills-golf-course.php [L]
+RewriteRule ^courses/heatherhurst-brae-golf-course/?$ courses/heatherhurst-brae-golf-course.php [L]
 RewriteRule ^courses/henry-horton-state-park-golf-course/?$ courses/henry-horton-state-park-golf-course.php [L]
 RewriteRule ^courses/hermitage-golf-course/?$ courses/hermitage-golf-course.php [L]
 RewriteRule ^courses/hillwood-country-club/?$ courses/hillwood-country-club.php [L]

@@ -409,6 +409,21 @@ $courses_static = [
         'slug' => 'harpeth-hills-golf-course'
     ],
     [
+        'id' => 117,
+        'name' => 'Heatherhurst Brae Golf Course',
+        'location' => 'Crossville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => '18-hole resort course at 2,000 feet elevation on Cumberland Plateau. Part of Fairfield Glade resort with 6,499 yards from blue tees.',
+        'image' => '/images/courses/heatherhurst-brae-golf-course/1.webp',
+        'price_range' => '$28-90',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'N/A',
+        'amenities' => ['Resort Golf', 'Mountain Views', 'Multiple Tees', 'Pro Shop', 'Dining Options', 'Resort Amenities', 'Championship Layout', 'Elevation Golf'],
+        'slug' => 'heatherhurst-brae-golf-course'
+    ],
+    [
         'id' => 8,
         'name' => 'Hermitage Golf Course',
         'location' => 'Old Hickory, TN',

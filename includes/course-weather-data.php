@@ -204,6 +204,12 @@ $courseWeatherData = [
         'state' => 'TN',
         'coordinates' => [-86.88270, 36.05643]
     ],
+    'heatherhurst-brae-golf-course' => [
+        'name' => 'Heatherhurst Brae Golf Course',
+        'city' => 'Crossville',
+        'state' => 'TN',
+        'coordinates' => [-85.134521, 36.016483]
+    ],
     'henry-horton-state-park-golf-course' => [
         'name' => 'Henry Horton State Park Golf Course',
         'city' => 'Chapel Hill',
