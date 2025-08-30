@@ -940,6 +940,7 @@ try {
         </div>
     </footer>
 
+    <script src="/course-weather.js?v=1"></script>
     <script src="/script.js?v=5"></script>
 
     <script>
@@ -1040,6 +1041,15 @@ try {
                         star.classList.remove('active');
                     });
                 }
+            }
+        });
+    </script>
+    
+    <script>
+        // Initialize course-specific weather for Timber Truss Golf Course
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeCourseWeather === 'function') {
+                initializeCourseWeather('timber-truss-golf-course');
             }
         });
     </script>

@@ -522,6 +522,12 @@ $courseWeatherData = [
         'state' => 'TN',
         'coordinates' => [-83.903069, 35.903797]
     ],
+    'timber-truss-golf-course' => [
+        'name' => 'Timber Truss Golf Course',
+        'city' => 'Olive Branch',
+        'state' => 'MS',
+        'coordinates' => [-89.8569, 34.8989]
+    ],
     'toqua-golf-course' => [
         'name' => 'Toqua Golf Course',
         'city' => 'Loudon',
