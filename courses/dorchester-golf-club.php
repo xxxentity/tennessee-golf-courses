@@ -638,7 +638,7 @@ try {
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Course Information</h3>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
                         <p style="color: #666; margin-bottom: 1rem;">Contact the pro shop for current rates and tee time availability.</p>
                         <div class="course-specs">
