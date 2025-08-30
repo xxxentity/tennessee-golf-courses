@@ -95,6 +95,7 @@ $courses = [
     ['name' => 'Lake Tansi Golf Course', 'location' => 'Crossville, TN', 'slug' => 'lake-tansi-golf-course'],
     ['name' => 'Egwani Farms Golf Course', 'location' => 'Knoxville, TN', 'slug' => 'egwani-farms-golf-course'],
     ['name' => 'Dead Horse Lake Golf Course', 'location' => 'Louisville, TN', 'slug' => 'dead-horse-lake-golf-course'],
+    ['name' => 'Dorchester Golf Club', 'location' => 'Fairfield Glade, TN', 'slug' => 'dorchester-golf-club'],
     ['name' => 'Bear Trace at Cumberland Mountain', 'location' => 'Crossville, TN', 'slug' => 'bear-trace-cumberland-mountain'],
     ['name' => 'Bear Trace at Tims Ford', 'location' => 'Winchester, TN', 'slug' => 'bear-trace-at-tims-ford'],
     ['name' => 'Laurel Valley Country Club', 'location' => 'Townsend, TN', 'slug' => 'laurel-valley-country-club'],

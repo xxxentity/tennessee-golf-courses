@@ -138,6 +138,12 @@ $courseWeatherData = [
         'state' => 'TN',
         'coordinates' => [-84.132188, 35.831070]
     ],
+    'dorchester-golf-club' => [
+        'name' => 'Dorchester Golf Club',
+        'city' => 'Fairfield Glade',
+        'state' => 'TN',
+        'coordinates' => [-85.134521, 36.016483]
+    ],
     'druid-hills-golf-club' => [
         'name' => 'Druid Hills Golf Club',
         'city' => 'Fairfield Glade',

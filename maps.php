@@ -648,6 +648,14 @@ SEO::setupMapsPage();
                 coordinates: [-84.132188, 35.831070]
             },
             {
+                name: "Dorchester Golf Club",
+                address: "576 Westchester Dr, Fairfield Glade, TN 38558",
+                phone: "(931) 456-2864",
+                type: "Semi-Private",
+                slug: "dorchester-golf-club",
+                coordinates: [-85.134521, 36.016483]
+            },
+            {
                 name: "Druid Hills Golf Club",
                 address: "433 Lakeview Drive, Fairfield Glade, TN 38558",
                 phone: "(931) 456-2864",

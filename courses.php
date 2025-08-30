@@ -1465,6 +1465,21 @@ $courses_static = [
         'slug' => 'dead-horse-lake-golf-course'
     ],
     [
+        'id' => 116,
+        'name' => 'Dorchester Golf Club',
+        'location' => 'Fairfield Glade, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => '18-hole championship course with bentgrass greens and tree-lined fairways. Features water hazards on 8 holes. Co-hosted Tennessee State Open in 1980s-90s.',
+        'image' => '/images/courses/dorchester-golf-club/1.webp',
+        'price_range' => 'Contact for Rates',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'N/A',
+        'amenities' => ['Championship Golf', 'Bentgrass Greens', 'Driving Range', 'Putting Green', 'Pro Shop', 'Golf Lessons', 'Club Rentals', 'Snack Bar', 'Tournament Host', 'Mountain Views'],
+        'slug' => 'dorchester-golf-club'
+    ],
+    [
         'id' => 46,
         'name' => 'Bear Trace at Cumberland Mountain',
         'location' => 'Crossville, TN',
