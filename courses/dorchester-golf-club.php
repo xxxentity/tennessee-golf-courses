@@ -640,18 +640,39 @@ try {
                 <div class="course-info-card">
                     <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="margin-bottom: 1.5rem;">
-                        <p style="color: #666; margin-bottom: 1rem;">Contact the pro shop for current rates and tee time availability.</p>
-                        <div class="course-specs">
+                        <div class="course-specs single-column">
                             <div class="spec-item">
-                                <span class="spec-label">Preferred Spikes:</span>
-                                <span class="spec-value">Spikeless</span>
+                                <span class="spec-label">18 Hole Guest w/ Member:</span>
+                                <span class="spec-value">$80</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 Hole Guest w/ Member:</span>
+                                <span class="spec-value">$42</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18 Hole Guest After 2:00pm:</span>
+                                <span class="spec-value">$51</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 Hole Guest After 4:00pm:</span>
+                                <span class="spec-value">$28</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18 Hole Unaccompanied:</span>
+                                <span class="spec-value">$90</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">9 Hole Unaccompanied:</span>
+                                <span class="spec-value">$47</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">18 Hole Unaccompanied After 2:00pm:</span>
+                                <span class="spec-value">$51</span>
                             </div>
                         </div>
                     </div>
                     <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
-                        <strong>Aeration Schedule:</strong><br>
-                        February 24-March 2<br>
-                        August 25-27
+                        <strong>Note:</strong> Rates subject to change. Contact pro shop for current pricing.
                     </p>
                 </div>
 
