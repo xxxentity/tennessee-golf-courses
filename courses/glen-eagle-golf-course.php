@@ -935,6 +935,7 @@ try {
         </div>
     </footer>
 
+    <script src="/course-weather.js?v=1"></script>
     <script src="/script.js?v=5"></script>
     <script>
         // Gallery Modal Functions
@@ -1034,6 +1035,15 @@ try {
                         star.classList.remove('active');
                     });
                 }
+            }
+        });
+    </script>
+    
+    <script>
+        // Initialize course-specific weather for Glen Eagle Golf Course
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeCourseWeather === 'function') {
+                initializeCourseWeather('glen-eagle-golf-course');
             }
         });
     </script>

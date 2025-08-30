@@ -174,6 +174,12 @@ $courseWeatherData = [
         'state' => 'TN',
         'coordinates' => [-84.186416, 35.869829]
     ],
+    'glen-eagle-golf-course' => [
+        'name' => 'Glen Eagle Golf Course',
+        'city' => 'Millington',
+        'state' => 'TN',
+        'coordinates' => [-89.938516, 35.344524]
+    ],
     'gaylord-springs-golf-links' => [
         'name' => 'Gaylord Springs Golf Links',
         'city' => 'Nashville',
