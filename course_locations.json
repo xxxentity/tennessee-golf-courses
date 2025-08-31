@@ -352,6 +352,17 @@
     ]
   },
   {
+    "name": "Heatherhurst Crag Golf Course",
+    "address": "421 Stonehenge Dr, Crossville, TN 38558",
+    "phone": "(931) 456-2864",
+    "type": "Semi-Private",
+    "slug": "heatherhurst-crag-golf-course",
+    "coordinates": [
+      -85.134721,
+      36.016283
+    ]
+  },
+  {
     "name": "Henry Horton State Park Golf Course",
     "address": "4358 Nashville Highway, Chapel Hill, TN 37034",
     "phone": "(931) 364-2319",

@@ -210,6 +210,12 @@ $courseWeatherData = [
         'state' => 'TN',
         'coordinates' => [-85.134521, 36.016483]
     ],
+    'heatherhurst-crag-golf-course' => [
+        'name' => 'Heatherhurst Crag Golf Course',
+        'city' => 'Crossville',
+        'state' => 'TN',
+        'coordinates' => [-85.134721, 36.016283]
+    ],
     'henry-horton-state-park-golf-course' => [
         'name' => 'Henry Horton State Park Golf Course',
         'city' => 'Chapel Hill',

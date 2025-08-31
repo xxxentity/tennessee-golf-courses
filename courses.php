@@ -424,6 +424,21 @@ $courses_static = [
         'slug' => 'heatherhurst-brae-golf-course'
     ],
     [
+        'id' => 116,
+        'name' => 'Heatherhurst Crag Golf Course',
+        'location' => 'Crossville, TN',
+        'region' => 'Cumberland Plateau',
+        'description' => '18-hole semi-private course designed by Gary Rogers Baird in 2000. Features 6,171 yards from blue tees with challenging mountain terrain.',
+        'image' => '/images/courses/heatherhurst-crag-golf-course/1.webp',
+        'price_range' => '$28-90',
+        'difficulty' => 'Intermediate',
+        'holes' => 18,
+        'par' => 72,
+        'designer' => 'Gary Rogers Baird',
+        'amenities' => ['Semi-Private', 'Mountain Views', 'Multiple Tees', 'Pro Shop', 'Dining Options', 'Championship Layout', 'Elevation Golf', 'Practice Facilities'],
+        'slug' => 'heatherhurst-crag-golf-course'
+    ],
+    [
         'id' => 8,
         'name' => 'Hermitage Golf Course',
         'location' => 'Old Hickory, TN',
