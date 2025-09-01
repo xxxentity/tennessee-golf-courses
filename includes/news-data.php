@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Ryder Cup 2025: Complete Preview, Team Announcements, and Bethpage Black Preparations',
+        'slug' => 'ryder-cup-2025-complete-preview-team-announcements-bethpage-black',
+        'date' => '2025-08-28',
+        'time' => '9:00 PM',
+        'category' => 'Tournament Preview',
+        'excerpt' => 'Comprehensive coverage of the 2025 Ryder Cup featuring complete team rosters, captain\'s picks drama, Bethpage Black preparations, and the historic matchup between Team USA and Team Europe.',
+        'image' => '/images/news/ryder-cup-2025-complete-preview-team-announcements-bethpage-black/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Tour Championship 2025: Complete Atlanta Tournament Recap and Tommy Fleetwood\'s Historic First Win',
         'slug' => 'tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win',
         'date' => '2025-08-25',
