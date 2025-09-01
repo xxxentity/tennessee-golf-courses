@@ -442,7 +442,7 @@ $article_title = 'Scheffler Captures First Claret Jug with Dominant Victory at R
                     </div>
                 </header>
                 
-                <img src="/images/news/open-championship-final-2025/scottie-final-round.png" alt="Scottie Scheffler Open Championship Final Round" class="article-image">
+                <img src="/images/news/open-championship-final-2025/scottie-final-round.webp" alt="Scottie Scheffler wins British Open 2025 Claret Jug at Royal Portrush golf course" class="article-image">
                 
                 <div class="article-content">
 

@@ -530,7 +530,7 @@ $article_title = 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Ente
                     </div>
                 </header>
                 
-                <img src="/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp" alt="LIV Golf Indianapolis 2025 Complete Recap" class="article-image">
+                <img src="/images/news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment/main.webp" alt="Sebastian Munoz wins LIV Golf Indianapolis 2025 with Riley Green Jason Derulo entertainment" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>WESTFIELD, Ind.</strong> — As the final echoes of Sebastian Munoz's playoff celebration fade away from The Club at Chatham Hills, LIV Golf Indianapolis 2025 stands as one of the most thrilling and entertaining spectacles in the league's history. Beyond Munoz's maiden LIV Golf victory and Jon Rahm's dramatic Individual Championship defense, this inaugural Indianapolis event showcased the perfect fusion of world-class golf and spectacular entertainment that has become LIV Golf's signature formula.</p>

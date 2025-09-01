@@ -227,7 +227,7 @@ $article_title = 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Roy
                 </div>
             </div>
 
-            <img src="/images/news/open-championship-round-3/scheffler-family.jpg" alt="Scottie Scheffler extends lead at Open Championship" class="article-image">
+            <img src="/images/news/open-championship-round-3/scheffler-family.webp" alt="Scottie Scheffler extends lead with bogey-free 67 third round Open Championship Royal Portrush" class="article-image">
 
             <div class="article-content">
 

@@ -557,7 +557,7 @@ $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Fin
                     </div>
                 </header>
                 
-                <img src="/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp" alt="Jackson Herrington U.S. Amateur Runner-Up" class="article-image">
+                <img src="/images/news/tennessee-herrington-historic-run-125th-us-amateur-runner-up/main.webp" alt="Jackson Herrington Tennessee golfer U.S. Amateur runner-up earns Masters US Open invitations" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>SAN FRANCISCO, Calif.</strong> — In one of the most remarkable achievements by a Tennessee golfer in recent memory, University of Tennessee sophomore Jackson Herrington capped off a historic week at the 125th U.S. Amateur Championship with a runner-up finish that has earned him invitations to both the 2026 Masters Tournament and the 2026 U.S. Open. The 19-year-old from Dickson became just the third Vol golfer in program history to reach the championship final, joining an elite group while making his mark on amateur golf's most prestigious stage.</p>
