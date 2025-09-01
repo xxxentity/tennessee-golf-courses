@@ -269,7 +269,7 @@ $articles_raw = [
         'time' => '6:00 PM',
         'category' => 'Major Championship',
         'excerpt' => 'Scottie Scheffler claims his first Open Championship with commanding four-shot victory at Royal Portrush, completing career grand slam.',
-        'image' => '/images/news/scheffler-wins-2025-british-open-final-round/main.webp',
+        'image' => '/images/news/open-championship-final-2025/scottie-final-round.webp',
         'featured' => true
     ],
     [
@@ -279,7 +279,7 @@ $articles_raw = [
         'time' => '5:15 PM',
         'category' => 'Major Championship',
         'excerpt' => 'Scottie Scheffler fires third consecutive bogey-free round to build commanding four-shot lead heading into Open Championship final round.',
-        'image' => '/images/news/scheffler-extends-lead-open-championship-round-3/main.webp',
+        'image' => '/images/news/open-championship-round-3/scheffler-family.webp',
         'featured' => true
     ],
     [
@@ -289,7 +289,7 @@ $articles_raw = [
         'time' => '4:30 PM',
         'category' => 'Major Championship',
         'excerpt' => 'World No. 1 Scottie Scheffler shoots brilliant 65 to take three-shot lead after Open Championship second round at Royal Portrush.',
-        'image' => '/images/news/scheffler-seizes-control-open-championship-round-2/main.webp',
+        'image' => '/images/news/open-championship-round-2/scheffler-64.webp',
         'featured' => true
     ],
     [
@@ -299,7 +299,7 @@ $articles_raw = [
         'time' => '6:45 PM',
         'category' => 'Major Championship',
         'excerpt' => 'Championship lead shared by five players at 4-under as challenging conditions test the field in Open Championship first round.',
-        'image' => '/images/news/open-championship-2025-round-1-royal-portrush/main.webp',
+        'image' => '/images/news/open-championship-2025-round-1/royal-portrush-round1.webp',
         'featured' => true
     ]
 ];
