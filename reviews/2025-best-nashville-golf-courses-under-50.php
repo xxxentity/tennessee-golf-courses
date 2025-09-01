@@ -206,7 +206,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
         
             <!-- Article Header -->
             <header class="article-header" style="text-align: center; margin-bottom: 3rem; background: var(--bg-white); padding: 3rem 2rem; border-radius: 20px; box-shadow: var(--shadow-light);">
-                <img src="<?php echo htmlspecialchars($article_data['image']); ?>" alt="<?php echo htmlspecialchars($article_data['title']); ?>" style="width: 100%; max-width: 600px; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
+                <img src="<?php echo htmlspecialchars($article_data['image']); ?>" alt="Best affordable Nashville golf courses under 50 dollars 2025 top 6 Tennessee gems" style="width: 100%; max-width: 600px; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
                 <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 700; line-height: 1.2;"><?php echo htmlspecialchars($article_data['title']); ?></h1>
                 <div class="article-meta" style="display: flex; justify-content: center; gap: 2rem; color: var(--text-gray); font-size: 0.95rem; flex-wrap: wrap;">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article_data['date']); ?></span>
@@ -260,7 +260,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/6.webp" alt="Montgomery Bell State Park Golf Course" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/6.webp" alt="Montgomery Bell State Park Golf Course Burns Tennessee affordable public golf under 50" class="course-image">
                 
                 <p>Situated in the rolling hills of Dickson County, <a href="/courses/montgomery-bell-state-park-golf-course" class="course-link">Montgomery Bell State Park Golf Course</a> represents one of Tennessee's finest state park golf experiences. This par-72 layout stretches 6,454 yards through beautiful hardwood forests and features Champion Bermuda greens with 419 Bermuda fairways that provide consistent playing conditions throughout the season.</p>
                 
@@ -293,7 +293,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/5.webp" alt="Old Fort Golf Course Murfreesboro" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/5.webp" alt="Old Fort Golf Course Murfreesboro Tennessee affordable championship golf under 50 dollars" class="course-image">
                 
                 <p>Located adjacent to the historic Fortress Rosencrans in Murfreesboro, <a href="/courses/old-fort-golf-course" class="course-link">Old Fort Golf Course</a> combines affordable municipal golf with fascinating Civil War history. This city-owned facility offers one of the most accessible price points in the Nashville area, with green fees ranging from just $11 to $47, making it an exceptional choice for budget-conscious golfers who don't want to sacrifice course quality.</p>
                 
@@ -328,7 +328,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/4.webp" alt="Cedar Crest Golf Club Murfreesboro" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/4.webp" alt="Cedar Crest Golf Club Murfreesboro Tennessee budget friendly golf course under 50" class="course-image">
                 
                 <p>Built on 175 acres of converted farmland in northern Murfreesboro, <a href="/courses/cedar-crest-golf-club" class="course-link">Cedar Crest Golf Club</a> represents modern public golf design that accommodates players of all skill levels. The 6,800-yard, par-72 layout features four distinct tee boxes, allowing golfers to choose distances that match their abilities while still experiencing the full strategic intent of the course design.</p>
                 
@@ -363,7 +363,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/3.webp" alt="The Legacy Golf Course Springfield" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/3.webp" alt="The Legacy Golf Course Springfield Tennessee affordable Nashville area golf under 50" class="course-image">
                 
                 <p>Designed by PGA Hall of Famer Raymond Floyd and opened in 1996, <a href="/courses/the-legacy-golf-course" class="course-link">The Legacy Golf Course</a> in Springfield represents tour-level design accessible to public play. This 6,776-yard championship layout has earned recognition as the 6th best public golf course in Tennessee by GolfPass and consistently ranks in the Top 15 Public Courses in Tennessee by Golf Advisor, including a Number 2 ranking in 2019.</p>
                 
@@ -400,7 +400,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/2.webp" alt="Greystone Golf Course Dickson" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/2.webp" alt="Greystone Golf Course Dickson Tennessee championship layout affordable golf under 50" class="course-image">
                 
                 <p>Designed by 10-time PGA Tour winner Mark McCumber, <a href="/courses/greystone-golf-course" class="course-link">Greystone Golf Course</a> in Dickson represents championship-level golf design at public accessibility. This 6,858-yard layout consistently appears in discussions of Tennessee's finest public golf experiences, earning frequent mentions in golf publications and maintaining a loyal following among Nashville-area golfers.</p>
                 
@@ -437,7 +437,7 @@ $article_title = '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable G
                     </div>
                 </div>
                 
-                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/1.webp" alt="Harpeth Hills Golf Course Nashville" class="course-image">
+                <img src="/images/reviews/2025-best-nashville-golf-courses-under-50/1.webp" alt="Harpeth Hills Golf Course Nashville Tennessee municipal golf course affordable under 50" class="course-image">
                 
                 <p>Consistently regarded as Nashville's most popular public golf course, <a href="/courses/harpeth-hills-golf-course" class="course-link">Harpeth Hills Golf Course</a> represents the gold standard for affordable championship golf in Music City. Located within Percy Warner Park, this 6,899-yard municipal layout combines exceptional value with course conditions and design quality that rival much more expensive facilities.</p>
                 

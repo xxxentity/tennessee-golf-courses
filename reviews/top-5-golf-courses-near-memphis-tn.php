@@ -294,7 +294,7 @@ $article = [
                 <div class="course-item" id="course-5">
                     <div class="course-rank">#5</div>
                     <h3 class="course-name">The Links at Galloway</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/5.webp" alt="The Links at Galloway" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/5.webp" alt="The Links at Galloway Memphis Tennessee public golf course affordable municipal" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         Best Public Golf Course in Memphis
@@ -348,7 +348,7 @@ $article = [
                 <div class="course-item" id="course-4">
                     <div class="course-rank">#4</div>
                     <h3 class="course-name">Windyke Country Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/4.webp" alt="Windyke Country Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/4.webp" alt="Windyke Country Club Memphis Tennessee private golf course championship layout" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.8/5 stars (276 reviews)
@@ -402,7 +402,7 @@ $article = [
                 <div class="course-item" id="course-3">
                     <div class="course-rank">#3</div>
                     <h3 class="course-name">Chickasaw Country Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/3.webp" alt="Chickasaw Country Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/3.webp" alt="Chickasaw Country Club Memphis Tennessee private golf championship course" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Historic Golden Age Design Restored
@@ -456,7 +456,7 @@ $article = [
                 <div class="course-item" id="course-2">
                     <div class="course-rank">#2</div>
                     <h3 class="course-name">Memphis Country Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/2.webp" alt="Memphis Country Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/2.webp" alt="Memphis Country Club Tennessee private championship golf course historic layout" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         1948 U.S. Amateur Championship Host
@@ -510,7 +510,7 @@ $article = [
                 <div class="course-item" id="course-1">
                     <div class="course-rank">#1</div>
                     <h3 class="course-name">TPC Southwind</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/1.webp" alt="TPC Southwind" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/1.webp" alt="TPC Southwind Memphis Tennessee PGA Tour venue FedEx St Jude Championship" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Host of 2025 FedEx St. Jude Championship

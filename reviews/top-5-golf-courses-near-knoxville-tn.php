@@ -294,7 +294,7 @@ $article = [
                 <div class="course-item" id="course-5">
                     <div class="course-rank">#5</div>
                     <h3 class="course-name">Williams Creek Golf Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/5.webp" alt="Williams Creek Golf Course" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/5.webp" alt="Williams Creek Golf Course Knoxville Tennessee public golf course East Tennessee" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.51/5 stars (581 reviews)
@@ -348,7 +348,7 @@ $article = [
                 <div class="course-item" id="course-4">
                     <div class="course-rank">#4</div>
                     <h3 class="course-name">Whittle Springs Golf Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/4.webp" alt="Whittle Springs Golf Course" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/4.webp" alt="Whittle Springs Golf Course Knoxville Tennessee municipal golf affordable East Tennessee" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                         Knoxville's First Public Golf Course
@@ -402,7 +402,7 @@ $article = [
                 <div class="course-item" id="course-3">
                     <div class="course-rank">#3</div>
                     <h3 class="course-name">WindRiver Golf Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/3.webp" alt="WindRiver Golf Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/3.webp" alt="WindRiver Golf Club Lenoir City Tennessee championship golf course near Knoxville" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Bob Cupp Championship Design
@@ -456,7 +456,7 @@ $article = [
                 <div class="course-item" id="course-2">
                     <div class="course-rank">#2</div>
                     <h3 class="course-name">Cherokee Country Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/2.webp" alt="Cherokee Country Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/2.webp" alt="Cherokee Country Club Knoxville Tennessee private golf course East Tennessee championship" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         #1 Ranked Course in Knoxville (Local Rankings)
@@ -510,7 +510,7 @@ $article = [
                 <div class="course-item" id="course-1">
                     <div class="course-rank">#1</div>
                     <h3 class="course-name">Holston Hills Country Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/1.webp" alt="Holston Hills Country Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/1.webp" alt="Holston Hills Country Club Knoxville Tennessee Donald Ross design championship golf course" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         #7 Golf Course in Tennessee by Golfweek 2024

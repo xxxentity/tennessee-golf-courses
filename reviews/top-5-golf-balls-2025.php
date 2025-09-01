@@ -349,7 +349,7 @@ $article = [
         <div class="article-container">
             <article>
                 <header class="article-header">
-                    <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-hero-image">
+                    <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top 5 best golf balls 2025 tour level performance Titleist TaylorMade Callaway comparison" class="article-hero-image">
                     <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                     <div class="article-meta">
                         <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
@@ -381,7 +381,7 @@ $article = [
                     <!-- Product #5 -->
                     <div class="product-card" id="wilson-staff-model">
                         <h3 class="product-title">5. Wilson Staff Model/Model X</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/5.jpeg" alt="Wilson Staff Model golf ball premium tour ball 2025 performance review" loading="lazy">
                         
                         <p>The Wilson Staff Model represents the best value in tour-quality golf balls for 2025. Available in two versions to suit different player preferences, these four-piece urethane balls deliver exceptional performance at a price point significantly below the competition.</p>
 
@@ -437,7 +437,7 @@ $article = [
                     <!-- Product #4 -->
                     <div class="product-card" id="srixon-z-star">
                         <h3 class="product-title">4. Srixon Z-Star 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/4.jpeg" alt="Srixon Z-Star 2025 golf ball tour performance urethane cover spin control" loading="lazy">
                         
                         <p>The ninth generation Srixon Z-Star introduces groundbreaking sustainability features while maintaining its position as the softest tour ball on the market. The new biomass urethane cover derived from corn reduces environmental impact without compromising performance.</p>
 
@@ -493,7 +493,7 @@ $article = [
                     <!-- Product #3 -->
                     <div class="product-card" id="callaway-chrome-soft">
                         <h3 class="product-title">3. Callaway Chrome Soft</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/3.jpeg" alt="Callaway Chrome Soft Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/3.jpeg" alt="Callaway Chrome Soft golf ball distance performance 2025 tour ball review" loading="lazy">
                         
                         <p>The Callaway Chrome Soft continues to be the ideal choice for average swing speed golfers seeking tour-quality performance. With its ultra-low 65 compression and new Hyper Fast Soft Core, this ball delivers exceptional feel without sacrificing distance or control.</p>
 
@@ -549,7 +549,7 @@ $article = [
                     <!-- Product #2 -->
                     <div class="product-card" id="titleist-pro-v1">
                         <h3 class="product-title">2. Titleist Pro V1/Pro V1x 2025</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/2.jpeg" alt="Titleist Pro V1 2025 golf ball number one tour ball professional performance" loading="lazy">
                         
                         <p>Celebrating its 25th anniversary in 2025, the completely overhauled Titleist Pro V1 and Pro V1x continue to dominate professional tours. The new models promise more speed off the tee, better iron control, and increased wedge spin while offering improved feel.</p>
 
@@ -605,7 +605,7 @@ $article = [
                     <!-- Product #1 -->
                     <div class="product-card" id="taylormade-tp5">
                         <h3 class="product-title">1. TaylorMade TP5/TP5x</h3>
-                        <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 Golf Ball" loading="lazy">
+                        <img src="/images/reviews/top-5-golf-balls-2025/1.jpeg" alt="TaylorMade TP5 golf ball five layer construction distance spin 2025 tour performance" loading="lazy">
                         
                         <p>The TaylorMade TP5 and TP5x earn our top spot by delivering the best overall performance for the widest range of skilled golfers. The new 360° ClearPath Alignment and re-engineered core design make these the most complete tour balls available in 2025.</p>
 

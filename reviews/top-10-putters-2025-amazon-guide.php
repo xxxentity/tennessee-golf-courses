@@ -270,7 +270,7 @@ $article = [
         <div class="article-container">
             <!-- Article Header -->
             <header class="article-header">
-                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top Golf Putters 2025" class="article-hero-image">
+                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top 10 best golf putters 2025 highest rated Amazon TaylorMade Odyssey Scotty Cameron" class="article-hero-image">
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
@@ -303,7 +303,7 @@ $article = [
                 <div class="putter-item" id="putter-10">
                     <div class="putter-rank">#10</div>
                     <h3 class="putter-name">Bettinardi QB14 Queen Bee Putter</h3>
-                    <img src="/images/reviews/top-10-putters-2025/10.jpeg" alt="Bettinardi QB14 Queen Bee Putter" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/10.jpeg" alt="Bettinardi QB14 Queen Bee putter precision milled golf putter 2025 review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.6/5 stars (42 reviews)
@@ -357,7 +357,7 @@ $article = [
                 <div class="putter-item" id="putter-9">
                     <div class="putter-rank">#9</div>
                     <h3 class="putter-name">TaylorMade Golf TP Black Putter Palisades</h3>
-                    <img src="/images/reviews/top-10-putters-2025/9.jpeg" alt="TaylorMade Golf TP Black Putter Palisades" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/9.jpeg" alt="TaylorMade Golf TP Black Copper Palisades putter premium golf equipment 2025" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.7/5 stars (21 reviews)
@@ -411,7 +411,7 @@ $article = [
                 <div class="putter-item" id="putter-8">
                     <div class="putter-rank">#8</div>
                     <h3 class="putter-name">Cleveland Golf HB Soft 2 Putter (Model 11)</h3>
-                    <img src="/images/reviews/top-10-putters-2025/8.jpeg" alt="Cleveland Golf HB Soft 2 Putter Model 11" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/8.jpeg" alt="Cleveland Golf HB Soft 2 putter Model 11 affordable golf putter 2025 review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         4.6/5 stars (110 reviews)
@@ -465,7 +465,7 @@ $article = [
                 <div class="putter-item" id="putter-7">
                     <div class="putter-rank">#7</div>
                     <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird Cruiser</h3>
-                    <img src="/images/reviews/top-10-putters-2025/7.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird Cruiser" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/7.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird Cruiser putter AI technology 2025 golf equipment" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         Most Consistent Zero-Torque Putter
@@ -519,7 +519,7 @@ $article = [
                 <div class="putter-item" id="putter-6">
                     <div class="putter-rank">#6</div>
                     <h3 class="putter-name">TaylorMade Spider ZT</h3>
-                    <img src="/images/reviews/top-10-putters-2025/6.jpeg" alt="TaylorMade Spider ZT" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/6.jpeg" alt="TaylorMade Spider ZT mallet putter golf equipment review 2025 stable alignment" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Tour-Proven Winner (Brian Harmon)
@@ -573,7 +573,7 @@ $article = [
                 <div class="putter-item" id="putter-5">
                     <div class="putter-rank">#5</div>
                     <h3 class="putter-name">Scotty Cameron Studio Style Newport 2</h3>
-                    <img src="/images/reviews/top-10-putters-2025/5.jpeg" alt="Scotty Cameron Studio Style Newport 2" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/5.jpeg" alt="Scotty Cameron Studio Style Newport 2 premium golf putter Titleist 2025 review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Today's Golfer Bronze Medal Winner
@@ -627,7 +627,7 @@ $article = [
                 <div class="putter-item" id="putter-4">
                     <div class="putter-rank">#4</div>
                     <h3 class="putter-name">Wilson Infinite Buckingham</h3>
-                    <img src="/images/reviews/top-10-putters-2025/4.jpeg" alt="Wilson Infinite Buckingham" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/4.jpeg" alt="Wilson Infinite Buckingham golf putter affordable best value 2025 equipment review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         2025 MyGolfSpy Most Wanted Mallet Winner
@@ -681,7 +681,7 @@ $article = [
                 <div class="putter-item" id="putter-3">
                     <div class="putter-rank">#3</div>
                     <h3 class="putter-name">Callaway Golf AI-One Cruiser Putter</h3>
-                    <img src="/images/reviews/top-10-putters-2025/3.jpeg" alt="Callaway Golf AI-One Cruiser Putter" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/3.jpeg" alt="Callaway Golf Ai-ONE Cruiser putter artificial intelligence technology 2025 golf equipment" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         4.6/5 stars (89 reviews)
@@ -735,7 +735,7 @@ $article = [
                 <div class="putter-item" id="putter-2">
                     <div class="putter-rank">#2</div>
                     <h3 class="putter-name">Odyssey Ai-ONE Square 2 Square Jailbird</h3>
-                    <img src="/images/reviews/top-10-putters-2025/2.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/2.jpeg" alt="Odyssey Ai-ONE Square 2 Square Jailbird putter golf equipment AI technology 2025 review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Today's Golfer Best Zero-Torque Winner 2025
@@ -789,7 +789,7 @@ $article = [
                 <div class="putter-item" id="putter-1">
                     <div class="putter-rank">#1</div>
                     <h3 class="putter-name">TaylorMade Spider Tour X L-Neck</h3>
-                    <img src="/images/reviews/top-10-putters-2025/1.jpeg" alt="TaylorMade Spider Tour X L-Neck" class="putter-image">
+                    <img src="/images/reviews/top-10-putters-2025/1.jpeg" alt="TaylorMade Spider Tour X L-Neck putter professional golf equipment 2025 best putter review" class="putter-image">
                     <div class="putter-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         2025 Golf Digest Hot List Gold Winner

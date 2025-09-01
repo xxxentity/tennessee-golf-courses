@@ -388,7 +388,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     </div>
                 </div>
 
-                <img src="/images/reviews/complete-guide-tennessee-golf-2025/main.webp" alt="Tennessee Golf Course Landscape" class="article-featured-image">
+                <img src="/images/reviews/complete-guide-tennessee-golf-2025/main.webp" alt="Complete guide to Tennessee golf courses 2025 best courses hidden gems volunteer state" class="article-featured-image">
 
                 <div class="article-content">
                     <p><strong>NASHVILLE, TN —</strong> The Volunteer State stands as one of America's premier golf destinations, offering an extraordinary blend of championship-caliber courses, breathtaking mountain vistas, and Southern hospitality that creates an unforgettable golfing experience. From the rolling hills of East Tennessee to the Mississippi River plains in the west, Tennessee's diverse landscape provides the perfect canvas for world-class golf course design.</p>
@@ -434,7 +434,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <p>Tennessee's golf landscape is best understood through its distinct regions, each offering unique characteristics, course styles, and playing experiences that reflect the local terrain and climate conditions.</p>
                     
-                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/tennessee-golf-regions-map.webp" alt="Tennessee Golf Regions Map" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/tennessee-golf-regions-map.webp" alt="Tennessee golf regions map showing Nashville Memphis Knoxville Chattanooga golf courses" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
                     
                     <div class="region-highlight">
                         <h3><i class="fas fa-mountain"></i> East Tennessee - Mountain Golf Paradise</h3>
@@ -479,7 +479,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <p>The Tennessee Golf Trail represents one of the state's best-kept secrets, offering championship-quality golf at affordable rates within the stunning natural settings of Tennessee State Parks. These courses combine the work of renowned architects with pristine natural environments.</p>
                     
-                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/state-park-golf-scenic.webp" alt="Tennessee State Park Golf Course" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/state-park-golf-scenic.webp" alt="Tennessee state park golf courses scenic affordable public golf Montgomery Bell Paris Landing" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
                     
                     <div class="course-grid">
                         <div class="course-card">
@@ -559,7 +559,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         </ul>
                     </div>
                     
-                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/golf-course-elevation-changes.webp" alt="Tennessee Golf Course Elevation Changes" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/golf-course-elevation-changes.webp" alt="Tennessee golf course elevation changes mountain courses challenging terrain rolling hills" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
                     
                     <h3>Local Knowledge Insights</h3>
                     
@@ -605,7 +605,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <p>Tennessee's diverse playing conditions require thoughtful equipment selection. Humidity-resistant grips perform better during summer months, while layered clothing systems accommodate temperature variations in mountain regions. Quality rain gear proves essential given Tennessee's occasional afternoon thunderstorms, particularly during summer golf seasons.</p>
                     
-                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/golf-equipment-essentials.webp" alt="Tennessee Golf Equipment Essentials" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
+                    <img src="/images/reviews/complete-guide-tennessee-golf-2025/golf-equipment-essentials.webp" alt="Tennessee golf equipment essentials clubs balls tees gear recommendations for volunteer state courses" style="width: 100%; height: auto; border-radius: 10px; margin: 2rem 0;">
                     
                     <h2>Hidden Gems and Value Plays</h2>
                     
