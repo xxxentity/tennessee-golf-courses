@@ -477,7 +477,7 @@ $article_title = 'Ryder Cup 2025: Complete Preview, Team Announcements, and Beth
                     </div>
                 </header>
                 
-                <img src="/images/news/ryder-cup-2025-complete-preview-team-announcements-bethpage-black/main.webp" alt="Ryder Cup 2025 Complete Preview" class="article-image">
+                <img src="/images/news/ryder-cup-2025-complete-preview-team-announcements-bethpage-black/main.webp" alt="Ryder Cup 2025 Team USA vs Team Europe at Bethpage Black golf course with captain picks" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>FARMINGDALE, N.Y.</strong> — As the summer heat gives way to the anticipation of autumn golf, the 45th Ryder Cup at Bethpage Black has transformed from a distant dream into an imminent reality. With both teams now finalized following dramatic captain's pick announcements this week, the stage is set for what promises to be one of the most compelling and contentious matches in the event's storied history.</p>

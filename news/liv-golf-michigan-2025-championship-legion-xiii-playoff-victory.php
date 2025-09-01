@@ -283,7 +283,7 @@ $article = [
             </div>
 
             <!-- Featured Image -->
-            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="LIV Golf Michigan Team Championship" class="article-featured-image">
+            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Jon Rahm Legion XIII defeats Bryson DeChambeau Crushers GC LIV Golf Michigan Team Championship playoff" class="article-featured-image">
 
             <!-- Article Content -->
             <div class="article-content">

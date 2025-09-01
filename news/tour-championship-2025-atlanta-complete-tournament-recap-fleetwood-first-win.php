@@ -159,7 +159,7 @@ $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and 
                     </div>
                 </header>
                 
-                <img src="/images/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win/main.webp" alt="Tour Championship 2025 Complete Atlanta Recap" class="article-image">
+                <img src="/images/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win/main.webp" alt="Tommy Fleetwood wins 2025 Tour Championship at East Lake Golf Club Atlanta FedEx Cup victory" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>ATLANTA, Ga.</strong> — As the sun set over East Lake Golf Club on Sunday evening, Tommy Fleetwood finally had the moment that had eluded him for so long. After 163 PGA Tour starts, 30 top-five finishes, and six runner-up heartbreaks, the Englishman could finally call himself a PGA Tour winner. His victory at the 2025 Tour Championship was more than just a tournament win – it was the culmination of years of perseverance and the crowning achievement of claiming the FedEx Cup and its life-changing $10 million prize.</p>

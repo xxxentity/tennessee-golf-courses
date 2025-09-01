@@ -272,7 +272,7 @@ $article = [
             </div>
 
             <!-- Featured Image -->
-            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Tennessee Four-Ball Championship at The Country Club" class="article-featured-image">
+            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Jack Smith and Chas Narramore win Tennessee Four-Ball Championship at The Country Club Morristown golf" class="article-featured-image">
 
             <!-- Article Content -->
             <div class="article-content">

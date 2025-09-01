@@ -539,7 +539,7 @@ $article_title = 'LIV Golf Michigan 2025: Team Championship Complete Tournament 
                     </div>
                 </header>
                 
-                <img src="/images/news/liv-golf-michigan-2025-team-championship-complete-tournament-recap/main.webp" alt="LIV Golf Michigan 2025 Team Championship Complete Recap" class="article-image">
+                <img src="/images/news/liv-golf-michigan-2025-team-championship-complete-tournament-recap/main.webp" alt="Legion XIII wins LIV Golf Michigan 2025 Team Championship playoff at The Cardinal golf course" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>PLYMOUTH, Mich.</strong> — As the sun set over The Cardinal at Saint John's Resort, Jon Rahm's Legion XIII stood triumphant after one of the most dramatic finishes in LIV Golf history. The 2025 Team Championship delivered four days of spectacular match play and stroke play competition, culminating in a tension-filled playoff that saw Rahm and Tyrrell Hatton outlast Bryson DeChambeau's Crushers GC to claim the $14 million first prize and the coveted Team Championship trophy.</p>

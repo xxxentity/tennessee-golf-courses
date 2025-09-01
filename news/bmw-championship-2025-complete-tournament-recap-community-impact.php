@@ -530,7 +530,7 @@ $article_title = 'BMW Championship 2025: Complete Tournament Recap and Community
                     </div>
                 </header>
                 
-                <img src="/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp" alt="BMW Championship 2025 Complete Recap" class="article-image">
+                <img src="/images/news/bmw-championship-2025-complete-tournament-recap-community-impact/main.webp" alt="Scottie Scheffler wins BMW Championship 2025 with miraculous chip-in at Caves Valley Golf Club" class="article-image">
                 
                 <div class="article-content">
                     <p><strong>OWINGS MILLS, Md.</strong> — As the echoes of Scottie Scheffler's emotional victory celebration fade away from Caves Valley Golf Club, the 2025 BMW Championship stands as one of the most thrilling and impactful tournaments in FedEx Cup Playoffs history. Beyond Scheffler's miraculous comeback victory featuring that unforgettable 81-foot chip-in on the 17th hole, this week showcased the beautiful intersection of world-class golf and meaningful charitable impact that has defined this event for decades.</p>
