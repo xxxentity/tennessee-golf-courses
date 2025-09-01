@@ -489,7 +489,7 @@ $article_title = 'Ryder Cup 2025: Complete Preview, Team Announcements, and Beth
                     <div class="ryder-highlight">
                         <i class="fas fa-flag-usa"></i>
                         <h3>THE STAGE IS SET</h3>
-                        <p>September 26-28, 2025 • Bethpage Black • Farmingdale, New York</p>
+                        <p style="color: white;">September 26-28, 2025 • Bethpage Black • Farmingdale, New York</p>
                     </div>
                     
                     <h2>Complete Team USA Roster: Bradley's Bold Selections</h2>
@@ -879,7 +879,7 @@ $article_title = 'Ryder Cup 2025: Complete Preview, Team Announcements, and Beth
                     
                     <p>The traditional Tuesday team photos and opening ceremonies will officially launch Ryder Cup week, transforming Bethpage Black from a golf course into theater for one of sport's greatest competitions. The energy generated during these events often provides early indicators of team dynamics and confidence levels.</p>
                     
-                    <h2>Conclusion: A Defining Moment for Golf</h2>
+                    <h2>A Defining Moment for Golf</h2>
                     
                     <p>The 2025 Ryder Cup at Bethpage Black represents more than another edition of golf's greatest team competition. It arrives at a pivotal moment for professional golf, with the sport divided between traditional tours and LIV Golf, seeking unity through the shared passion of international team competition.</p>
                     
