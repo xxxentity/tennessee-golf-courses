@@ -320,6 +320,30 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Move dropdowns to body for guaranteed top layer
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+    
+    dropdowns.forEach(menu => {
+        // Store original parent for positioning
+        const parent = menu.parentElement;
+        
+        // Move to body
+        document.body.appendChild(menu);
+        
+        // Update position on hover
+        parent.addEventListener('mouseenter', function() {
+            const rect = parent.getBoundingClientRect();
+            menu.style.position = 'fixed';
+            menu.style.top = (rect.bottom) + 'px';
+            menu.style.left = rect.left + 'px';
+            menu.style.zIndex = '999999';
+        });
+    });
+});
+</script>
+
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
