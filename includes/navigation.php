@@ -84,7 +84,7 @@ $is_main_page = (
             </a>
             
             <!-- Navigation Menu - Centered -->
-            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center; position: relative; z-index: 10002;">
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center; position: relative; z-index: 10002; overflow: visible !important;">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/courses" class="nav-link">Courses</a></li>
                 <li><a href="/maps" class="nav-link">Maps</a></li>
@@ -218,7 +218,7 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
-    z-index: 10000;
+    z-index: 9999 !important;
 }
 
 .dropdown-toggle {
@@ -228,27 +228,28 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: var(--bg-white);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: var(--bg-white) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000;
-    min-width: 160px;
-    padding: 8px 0;
-    list-style: none;
-    margin: 0;
+    z-index: 999999 !important;
+    min-width: 160px !important;
+    padding: 8px 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    transform-style: preserve-3d !important;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) translateZ(999px) !important;
 }
 
 .dropdown-link {
