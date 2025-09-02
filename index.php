@@ -270,16 +270,22 @@ $featured_reviews = array_slice($reviews, 0, 3);
 </head>
 <body>
 
+    <!-- PHP TEST -->
+    <div style="background: yellow; padding: 10px;">PHP TEST: <?php echo "PHP IS WORKING"; ?></div>
+    
     <!-- Dynamic Navigation -->
     <?php 
-    echo "<!-- DEBUG: About to include navigation -->";
+    echo "<div style='background: blue; color: white; padding: 10px;'>DEBUG: About to include navigation</div>";
     if (file_exists('includes/navigation.php')) {
-        echo "<!-- DEBUG: Navigation file exists -->";
-        include 'includes/navigation.php'; 
-        echo "<!-- DEBUG: Navigation included successfully -->";
+        echo "<div style='background: green; color: white; padding: 10px;'>DEBUG: Navigation file exists</div>";
+        try {
+            include 'includes/navigation.php'; 
+            echo "<div style='background: green; color: white; padding: 10px;'>DEBUG: Navigation included successfully</div>";
+        } catch (Exception $e) {
+            echo "<div style='background: red; color: white; padding: 20px;'>ERROR: " . $e->getMessage() . "</div>";
+        }
     } else {
-        echo "<!-- DEBUG: Navigation file does NOT exist -->";
-        echo "<div style='background: red; color: white; padding: 20px;'>NAVIGATION FILE NOT FOUND!</div>";
+        echo "<div style='background: red; color: white; padding: 20px;'>DEBUG: Navigation file does NOT exist</div>";
     }
     ?>
 
