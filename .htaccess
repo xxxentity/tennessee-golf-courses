@@ -53,6 +53,9 @@ RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 RewriteRule ^search-courses.php$ search-courses.php [L]
 
+# Allow direct access to submit-course.php for AJAX calls
+RewriteRule ^submit-course\.php$ submit-course.php [L]
+
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]
 RewriteRule ^contests/?$ contests.php [L]
