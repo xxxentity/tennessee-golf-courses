@@ -171,6 +171,14 @@ $professional_tournaments = [
         'date_end' => '2025-08-24',
         'venue' => 'The Cardinal at Saint John\'s',
         'location' => 'Michigan, USA'
+    ],
+    [
+        'title' => 'Ryder Cup',
+        'league' => 'PGA',
+        'date_start' => '2025-09-26',
+        'date_end' => '2025-09-28',
+        'venue' => 'Bethpage Black',
+        'location' => 'Farmingdale, NY'
     ]
 ];
 
