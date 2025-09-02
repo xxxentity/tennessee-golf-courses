@@ -140,8 +140,10 @@ $is_main_page = (
                         <a href="/logout" class="nav-link compact-btn logout-link" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Logout</a>
                     </div>
                 <?php else: ?>
-                    <a href="/login" class="nav-link login-btn">Login</a>
-                    <a href="/register" class="nav-link register-btn">Register</a>
+                    <div class="auth-buttons" style="display: flex; flex-direction: column; gap: 2px;">
+                        <a href="/login" class="nav-link compact-btn login-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Login</a>
+                        <a href="/register" class="nav-link compact-btn register-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Register</a>
+                    </div>
                 <?php endif; ?>
             </div>
             
