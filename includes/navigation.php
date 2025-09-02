@@ -121,7 +121,7 @@ $is_main_page = (
                 </ul>
             </li>
             
-            <!-- Mobile Auth Links -->
+            <!-- Mobile Auth Links (hidden on desktop) -->
             <li class="mobile-auth-divider"></li>
             <?php if ($is_logged_in): ?>
                 <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($username); ?>!</span></li>
@@ -196,6 +196,12 @@ require_once __DIR__ . '/cookie-consent.php';
 .nav-menu li a {
     display: flex;
     align-items: center;
+}
+
+/* Hide mobile auth items on desktop */
+.mobile-auth-divider,
+.mobile-auth-item {
+    display: none;
 }
 
 .user-welcome {
@@ -345,6 +351,12 @@ require_once __DIR__ . '/cookie-consent.php';
     
     .nav-menu li {
         margin: 8px 0;
+    }
+    
+    /* Show mobile auth items on mobile */
+    .mobile-auth-divider,
+    .mobile-auth-item {
+        display: list-item;
     }
 }
 /* Conditional header positioning */
