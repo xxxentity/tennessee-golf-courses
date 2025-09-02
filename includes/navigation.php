@@ -237,7 +237,7 @@ require_once __DIR__ . '/cookie-consent.php';
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 99999;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
