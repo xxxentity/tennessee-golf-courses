@@ -218,6 +218,7 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
+    z-index: auto;
 }
 
 .dropdown-toggle {
@@ -230,7 +231,7 @@ require_once __DIR__ . '/cookie-consent.php';
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--bg-white);
+    background: white;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
@@ -242,12 +243,14 @@ require_once __DIR__ . '/cookie-consent.php';
     padding: 8px 0;
     list-style: none;
     margin: 0;
+    display: block !important;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
     transform: translateY(0);
+    display: block !important;
 }
 
 .dropdown-link {
