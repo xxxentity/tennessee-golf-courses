@@ -1756,6 +1756,188 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             background: var(--bg-light);
         }
         
+        /* Header content wrapper */
+        .header-content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .title-section {
+            flex: 1;
+        }
+        
+        /* Missing course notification box */
+        .missing-course-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            white-space: nowrap;
+        }
+        
+        .missing-course-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        .missing-course-box i {
+            font-size: 24px;
+        }
+        
+        .missing-course-box span {
+            line-height: 1.3;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: 10% auto;
+            padding: 30px;
+            border: none;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: var(--primary-color);
+        }
+        
+        .modal-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .modal-content p {
+            color: var(--text-gray);
+            margin-bottom: 25px;
+        }
+        
+        .modal-content .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .modal-content input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .modal-content input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .form-message {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .form-message .loading {
+            color: var(--secondary-color);
+        }
+        
+        .form-message .success {
+            color: #16a34a;
+            font-weight: 600;
+        }
+        
+        .form-message .error {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .missing-course-box {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+                padding: 20px;
+            }
+        }
+        
         .page-header {
             background: var(--bg-white);
             padding: 1rem 0;
@@ -2373,9 +2555,16 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Tennessee Golf Courses</h1>
-                <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
-                
+                <div class="header-content-wrapper">
+                    <div class="title-section">
+                        <h1 class="page-title">Tennessee Golf Courses</h1>
+                        <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
+                    </div>
+                    <div class="missing-course-box" onclick="openCourseModal()">
+                        <i class="fas fa-golf-ball"></i>
+                        <span>Is your course missing?<br>Let us know!</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2829,5 +3018,89 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
     <?php endif; ?>
     
     <?php echo Performance::getPerformanceScript(); ?>
+
+    <!-- Missing Course Modal -->
+    <div id="missingCourseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCourseModal()">&times;</span>
+            <h2>Report Missing Course</h2>
+            <p>Help us add your favorite course to our directory!</p>
+            
+            <form id="missingCourseForm" onsubmit="submitCourseForm(event)">
+                <div class="form-group">
+                    <label for="courseName">Course Name *</label>
+                    <input type="text" id="courseName" name="courseName" required placeholder="e.g., Pine Valley Golf Club">
+                </div>
+                
+                <div class="form-group">
+                    <label for="courseLocation">Location *</label>
+                    <input type="text" id="courseLocation" name="courseLocation" required placeholder="e.g., Nashville, TN">
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Course</button>
+            </form>
+            
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </div>
+
+    <script>
+    // Modal functions
+    function openCourseModal() {
+        document.getElementById('missingCourseModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCourseModal() {
+        document.getElementById('missingCourseModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.getElementById('missingCourseForm').reset();
+        document.getElementById('formMessage').innerHTML = '';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        var modal = document.getElementById('missingCourseModal');
+        if (event.target == modal) {
+            closeCourseModal();
+        }
+    }
+
+    // Submit form via AJAX
+    function submitCourseForm(event) {
+        event.preventDefault();
+        
+        var courseName = document.getElementById('courseName').value;
+        var courseLocation = document.getElementById('courseLocation').value;
+        var messageDiv = document.getElementById('formMessage');
+        
+        // Show loading
+        messageDiv.innerHTML = '<p class="loading">Sending...</p>';
+        
+        // Send AJAX request
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/submit-missing-course.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        messageDiv.innerHTML = '<p class="success">Thank you! We\'ll review and add this course soon.</p>';
+                        document.getElementById('missingCourseForm').reset();
+                        setTimeout(closeCourseModal, 2000);
+                    } else {
+                        messageDiv.innerHTML = '<p class="error">Error: ' + response.message + '</p>';
+                    }
+                } else {
+                    messageDiv.innerHTML = '<p class="error">Sorry, there was an error submitting your request.</p>';
+                }
+            }
+        };
+        
+        xhr.send('courseName=' + encodeURIComponent(courseName) + '&courseLocation=' + encodeURIComponent(courseLocation));
+    }
+    </script>
 </body>
 </html>

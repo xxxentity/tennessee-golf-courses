@@ -48,6 +48,7 @@ RewriteRule ^/?$ index.php [L]
 
 # Handle specific pages that conflict with directories
 RewriteRule ^courses/?$ courses.php [L]
+RewriteRule ^submit-missing-course/?$ submit-missing-course.php [L]
 RewriteRule ^news/?$ news.php [L]
 RewriteRule ^events/?$ events.php [L]
 RewriteRule ^about/?$ about.php [L]
