@@ -1,13 +1,4 @@
 <?php
-// Include security headers
-require_once 'includes/security-headers.php';
-require_once 'includes/csrf.php';
-require_once 'includes/input-validation.php';
-require_once 'includes/rate-limiter.php';
-
-// Set security headers
-SecurityHeaders::set();
-
 header('Content-Type: application/json');
 
 // Check if this is a POST request
@@ -17,18 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Rate limiting - allow max 3 submissions per hour per IP
-$rateLimiter = new RateLimiter();
-if (!$rateLimiter->checkRate($_SERVER['REMOTE_ADDR'], 'course_submission', 3, 3600)) {
-    http_response_code(429);
-    echo json_encode(['success' => false, 'message' => 'Too many submissions. Please try again later.']);
-    exit;
-}
-
 try {
-    // Get and validate input
-    $courseName = InputValidation::sanitizeText($_POST['courseName'] ?? '');
-    $courseLocation = InputValidation::sanitizeText($_POST['courseLocation'] ?? '');
+    // Get and validate input (simple sanitization)
+    $courseName = trim(strip_tags($_POST['courseName'] ?? ''));
+    $courseLocation = trim(strip_tags($_POST['courseLocation'] ?? ''));
     
     // Validate required fields
     if (empty($courseName) || empty($courseLocation)) {
@@ -74,34 +57,48 @@ try {
         'Content-Type: text/plain; charset=UTF-8'
     ];
     
+    // Check if mail function exists
+    if (!function_exists('mail')) {
+        error_log("PHP mail function not available");
+        echo json_encode([
+            'success' => false, 
+            'message' => 'Email functionality not available on this server. Please contact us directly at info@tennesseegolfcourses.com'
+        ]);
+        exit;
+    }
+    
     // Send email
     $success = mail($to, $subject, $message, implode("\r\n", $headers));
     
     if ($success) {
         // Log successful submission
-        error_log("Course submission: $courseName in $courseLocation from IP " . $_SERVER['REMOTE_ADDR']);
+        error_log("Course submission SUCCESS: $courseName in $courseLocation from IP " . $_SERVER['REMOTE_ADDR']);
         
         echo json_encode([
             'success' => true, 
             'message' => 'Thank you! Your course submission has been sent successfully. We\'ll review it and add it to our directory.'
         ]);
     } else {
-        // Log error
-        error_log("Failed to send course submission email: $courseName in $courseLocation");
+        // Log error with more details
+        $lastError = error_get_last();
+        error_log("Course submission FAILED: $courseName in $courseLocation - " . ($lastError['message'] ?? 'Unknown error'));
         
         http_response_code(500);
         echo json_encode([
             'success' => false, 
-            'message' => 'Sorry, there was an error sending your submission. Please try again later.'
+            'message' => 'Sorry, there was an error sending your submission. Please contact us directly at info@tennesseegolfcourses.com'
         ]);
     }
     
 } catch (Exception $e) {
-    error_log("Course submission error: " . $e->getMessage());
+    error_log("Course submission EXCEPTION: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine());
     http_response_code(500);
     echo json_encode([
         'success' => false, 
-        'message' => 'An unexpected error occurred. Please try again later.'
+        'message' => 'An unexpected error occurred: ' . $e->getMessage()
     ]);
 }
+
+// Debug info (remove in production)
+error_log("Course submission script accessed - Method: " . $_SERVER['REQUEST_METHOD'] . ", POST data: " . print_r($_POST, true));
 ?>
