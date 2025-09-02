@@ -38,8 +38,9 @@ ServerSignature Off
 </Files>
 
 
-# Remove .php extension from URLs (external redirect)
+# Remove .php extension from URLs (external redirect) - exclude submit-course.php
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteCond %{REQUEST_URI} !^/submit-course\.php$ [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
 
 # Handle specific pages that conflict with directories
@@ -278,10 +279,11 @@ RewriteRule ^api/v1/auth/?$ api/v1/auth.php [L]
 RewriteRule ^api/v1/user/?$ api/v1/user.php [L]
 RewriteRule ^api/v1/newsletter/?$ api/v1/newsletter.php [L]
 
-# General clean URL rewriting (internal)
+# General clean URL rewriting (internal) - exclude submit-course.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteCond %{REQUEST_URI} !^/submit-course$ [NC]
 RewriteRule ^([^/]+)/?$ $1.php [L]
 
 # Security headers
