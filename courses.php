@@ -1963,6 +1963,17 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             gap: 0.5rem;
         }
         
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
         .missing-course-box {
             position: absolute;
             top: 2rem;
@@ -1973,6 +1984,13 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             padding: 1.25rem;
             max-width: 280px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .missing-course-box.header-box {
+            position: static;
+            flex-shrink: 0;
+            max-width: 320px;
+            margin-top: 0.5rem;
         }
         
         .missing-course-box h3 {
@@ -2144,9 +2162,19 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         }
         
         @media screen and (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
             .missing-course-box {
                 position: static;
                 margin: 1.5rem 0;
+                max-width: 100%;
+            }
+            
+            .missing-course-box.header-box {
+                margin-top: 0;
                 max-width: 100%;
             }
             
@@ -2568,9 +2596,22 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">Tennessee Golf Courses</h1>
-                <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
-                
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1 class="page-title">Tennessee Golf Courses</h1>
+                        <p class="page-subtitle">Discover premier golf destinations across the Volunteer State</p>
+                    </div>
+                    
+                    <!-- Missing Course Box -->
+                    <div class="missing-course-box header-box">
+                        <h3><i class="fas fa-question-circle"></i> Is your course missing?</h3>
+                        <p>Help us build the most complete Tennessee golf course directory!</p>
+                        <button class="submit-course-btn" onclick="openCourseModal()">
+                            <i class="fas fa-plus-circle"></i>
+                            Submit a Course
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2702,16 +2743,6 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                         <i class="fas fa-star"></i>
                         Top Rated Courses
                     </h2>
-                    
-                    <!-- Missing Course Box -->
-                    <div class="missing-course-box">
-                        <h3><i class="fas fa-question-circle"></i> Is your course missing?</h3>
-                        <p>Help us build the most complete Tennessee golf course directory!</p>
-                        <button class="submit-course-btn" onclick="openCourseModal()">
-                            <i class="fas fa-plus-circle"></i>
-                            Submit a Course
-                        </button>
-                    </div>
                     
                     <div class="courses-grid">
                         <?php foreach ($featured_courses as $course): ?>
@@ -3093,25 +3124,43 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             
             var courseName = document.getElementById('courseName').value;
             var courseLocation = document.getElementById('courseLocation').value;
+            var submitBtn = this.querySelector('.form-submit-btn');
             
-            // Create mailto link
-            var subject = encodeURIComponent('Missing Course Submission');
-            var body = encodeURIComponent(
-                'Course Name: ' + courseName + '\n' +
-                'Location: ' + courseLocation + '\n\n' +
-                'Submitted via Tennessee Golf Courses website'
-            );
+            // Disable submit button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             
-            var mailtoLink = 'mailto:info@tennesseegolfcourses.com?subject=' + subject + '&body=' + body;
+            // Create form data
+            var formData = new FormData();
+            formData.append('courseName', courseName);
+            formData.append('courseLocation', courseLocation);
             
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Thank you for your submission! Your email client will open with the course information. Please send the email to complete the submission.');
-            
-            // Close modal
-            closeCourseModal();
+            // Send to PHP handler
+            fetch('/submit-course.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    alert(data.message);
+                    // Close modal
+                    closeCourseModal();
+                } else {
+                    // Show error message
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                alert('Sorry, there was an error sending your submission. Please try again later.');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Course';
+            });
         });
     </script>
 </body>
