@@ -98,11 +98,11 @@ class SecureSession {
      * Regenerate session ID (call after login/privilege change)
      */
     public static function regenerate() {
-        // Delete old session
+        // Delete old session but preserve CSRF token
         $oldSession = $_SESSION;
         session_regenerate_id(true);
         
-        // Restore session data
+        // Restore session data (including CSRF token)
         $_SESSION = $oldSession;
         $_SESSION['session_created'] = time();
         $_SESSION['session_user_agent'] = $_SERVER['HTTP_USER_AGENT'] ?? '';

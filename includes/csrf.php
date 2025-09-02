@@ -55,10 +55,10 @@ class CSRFProtection {
             }
         }
         
-        // Generate new token if doesn't exist or is expired (2 hours)
+        // Generate new token if doesn't exist or is expired (4 hours - increased timeout)
         if (!isset($_SESSION['csrf_token']) || 
             !isset($_SESSION['csrf_token_time']) || 
-            (time() - $_SESSION['csrf_token_time']) > 7200) {
+            (time() - $_SESSION['csrf_token_time']) > 14400) {
             return self::generateToken();
         }
         
@@ -90,10 +90,10 @@ class CSRFProtection {
             }
         }
         
-        // Check if token exists and is not expired (2 hours)
+        // Check if token exists and is not expired (4 hours - increased timeout)
         if (!isset($_SESSION['csrf_token']) || 
             !isset($_SESSION['csrf_token_time']) || 
-            (time() - $_SESSION['csrf_token_time']) > 7200) {
+            (time() - $_SESSION['csrf_token_time']) > 14400) {
             return false;
         }
         

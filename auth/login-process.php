@@ -17,7 +17,18 @@ try {
 // Validate CSRF token first
 $csrf_token = $_POST['csrf_token'] ?? '';
 if (!CSRFProtection::validateToken($csrf_token)) {
-    header('Location: /login?error=' . urlencode('Security token expired or invalid. Please try again.'));
+    // More specific error message for debugging
+    $error_msg = 'Security token expired or invalid. Please try again.';
+    if (empty($csrf_token)) {
+        $error_msg = 'Missing security token. Please refresh the page and try again.';
+    } elseif (!isset($_SESSION['csrf_token'])) {
+        $error_msg = 'Session expired. Please refresh the page and try again.';
+    } elseif (!isset($_SESSION['csrf_token_time'])) {
+        $error_msg = 'Session data corrupted. Please refresh the page and try again.';
+    } elseif ((time() - $_SESSION['csrf_token_time']) > 14400) {
+        $error_msg = 'Security token expired after 4 hours. Please refresh the page and try again.';
+    }
+    header('Location: /login?error=' . urlencode($error_msg));
     exit;
 }
 
