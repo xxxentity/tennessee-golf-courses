@@ -74,6 +74,8 @@ $is_main_page = (
 </div>
 <?php endif; ?>
 
+<!-- NAVIGATION FILE IS LOADING - TEST -->
+<div style="background: red; color: white; padding: 10px; font-size: 20px;">NAVIGATION FILE LOADED SUCCESSFULLY</div>
 <!-- Header -->
 <header class="header">
     <nav class="nav">
