@@ -272,10 +272,18 @@ require_once __DIR__ . '/cookie-consent.php';
     isolation: isolate;
 }
 
-/* Force hero section behind nav */
+/* Force hero section and its contents behind nav */
 .hero {
     z-index: 1 !important;
     isolation: isolate;
+}
+
+.hero-content {
+    z-index: 1 !important;
+}
+
+.hero-search {
+    z-index: 1 !important;
 }
 
 /* Hide mobile auth items on desktop */
