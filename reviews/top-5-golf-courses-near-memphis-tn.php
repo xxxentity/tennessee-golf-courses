@@ -566,14 +566,14 @@ $article = [
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">The Links at Audubon</h4>
-                        <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/6.webp" alt="The Links at Audubon" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/6.webp" alt="The Links at Audubon Park Memphis Tennessee municipal golf course affordable public downtown location" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Memphis, TN</p>
                         <p>The Links at Audubon underwent a major overhaul overseen by course designer Bill Bergin in 2023, earning recognition as one of the "Best New or Remodeled Adorable Courses" by leading golf publications for 2025. The reimagined landscape features deep bunkers, enlarged undulating greens, and a newly added 10-acre driving range. Management has maintained exceptional conditions, with greens playing as well as they have in over a decade, making this public course a standout value with greens fees ranging from $18-$45.</p>
                     </div>
                     
                     <div>
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Mirimichi Golf Course</h4>
-                        <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/7.webp" alt="Mirimichi Golf Course" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-near-memphis-tn/7.webp" alt="Mirimichi Golf Course Millington Tennessee Justin Timberlake championship public golf near Memphis" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Millington, TN</p>
                         <p>Mirimichi Golf Course offers a premium public golf experience on a challenging layout less than 15 miles north of Memphis. This former Justin Timberlake-owned course can play over 7,400 yards from the tips, defending itself with meandering streams, deep-faced bunkers, and numerous lakes. The course features five different tee boxes to accommodate all skill levels, velvet fairways, scenic vistas, four waterfalls, and two creeks. Mirimichi holds an Audubon Society seal of approval, demonstrating its commitment to environmental stewardship.</p>
                     </div>

@@ -271,7 +271,7 @@ $article = [
         <div class="article-container">
             <!-- Article Header -->
             <header class="article-header">
-                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Top Golf Drivers 2025" class="article-hero-image">
+                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="Best golf drivers 2025 comprehensive review guide featuring top-rated distance and forgiveness drivers" class="article-hero-image">
                 <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
                 <div class="article-meta">
                     <span><i class="far fa-calendar"></i> <?php echo htmlspecialchars($article['date']); ?></span>
@@ -299,7 +299,7 @@ $article = [
                 <div class="driver-item" id="driver-5">
                     <div class="driver-rank">#5</div>
                     <h3 class="driver-name">Wilson Staff Dynapower Carbon</h3>
-                    <img src="/images/reviews/top-5-golf-drivers-2025/5.jpeg" alt="Wilson Staff Dynapower Carbon Driver" class="driver-image">
+                    <img src="/images/reviews/top-5-golf-drivers-2025/5.jpeg" alt="Wilson Staff Dynapower Carbon Driver 2025 affordable high-performance golf driver review" class="driver-image">
                     <div class="driver-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         Surprise Performer 2025
@@ -354,7 +354,7 @@ $article = [
                 <div class="driver-item" id="driver-4">
                     <div class="driver-rank">#4</div>
                     <h3 class="driver-name">TaylorMade Qi35</h3>
-                    <img src="/images/reviews/top-5-golf-drivers-2025/4.jpeg" alt="TaylorMade Qi35 Driver" class="driver-image">
+                    <img src="/images/reviews/top-5-golf-drivers-2025/4.jpeg" alt="TaylorMade Qi35 Driver 2025 adjustable loft technology maximum distance golf driver" class="driver-image">
                     <div class="driver-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Game Changer - Speed Category
@@ -409,7 +409,7 @@ $article = [
                 <div class="driver-item" id="driver-3">
                     <div class="driver-rank">#3</div>
                     <h3 class="driver-name">Ping G440 LST</h3>
-                    <img src="/images/reviews/top-5-golf-drivers-2025/3.jpeg" alt="Ping G440 LST Driver" class="driver-image">
+                    <img src="/images/reviews/top-5-golf-drivers-2025/3.jpeg" alt="Ping G440 LST Low Spin Technology Driver 2025 tour-level performance golf equipment" class="driver-image">
                     <div class="driver-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Second Most PGA Tour Wins 2025
@@ -464,7 +464,7 @@ $article = [
                 <div class="driver-item" id="driver-2">
                     <div class="driver-rank">#2</div>
                     <h3 class="driver-name">Titleist GT3</h3>
-                    <img src="/images/reviews/top-5-golf-drivers-2025/2.jpeg" alt="Titleist GT3 Driver" class="driver-image">
+                    <img src="/images/reviews/top-5-golf-drivers-2025/2.jpeg" alt="Titleist GT3 Driver 2025 precision engineering adjustable CG track golf driver review" class="driver-image">
                     <div class="driver-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         #1 Driver Winner 2025
@@ -519,7 +519,7 @@ $article = [
                 <div class="driver-item" id="driver-1">
                     <div class="driver-rank">#1</div>
                     <h3 class="driver-name">Callaway Elyte Triple Diamond</h3>
-                    <img src="/images/reviews/top-5-golf-drivers-2025/1.jpeg" alt="Callaway Elyte Triple Diamond Driver" class="driver-image">
+                    <img src="/images/reviews/top-5-golf-drivers-2025/1.jpeg" alt="Callaway Elyte Triple Diamond Driver 2025 tour-proven low spin professional golf driver" class="driver-image">
                     <div class="driver-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Most Wanted Driver 2025 & Gold Medal Winner

@@ -294,7 +294,7 @@ $article = [
                 <div class="course-item" id="course-5">
                     <div class="course-rank">#5</div>
                     <h3 class="course-name">Fall Creek Falls State Park Golf Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/5.webp" alt="Fall Creek Falls State Park Golf Course" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-tennessee/5.webp" alt="Fall Creek Falls State Park Golf Course Tennessee scenic championship public golf mountain views" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                         Three-Time Golf Digest Top 100 Public Places to Play
@@ -348,7 +348,7 @@ $article = [
                 <div class="course-item" id="course-4">
                     <div class="course-rank">#4</div>
                     <h3 class="course-name">TPC Southwind</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/4.webp" alt="TPC Southwind Golf Course" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-tennessee/4.webp" alt="TPC Southwind Golf Course Memphis Tennessee FedEx St. Jude Championship PGA Tour venue" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Host of FedEx St. Jude Championship
@@ -402,7 +402,7 @@ $article = [
                 <div class="course-item" id="course-3">
                     <div class="course-rank">#3</div>
                     <h3 class="course-name">The Golf Club of Tennessee</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/3.webp" alt="The Golf Club of Tennessee" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-tennessee/3.webp" alt="The Golf Club of Tennessee Kingston Springs private championship Tom Fazio design course" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Golf Digest Second 100 Greatest - 199th Nationally
@@ -456,7 +456,7 @@ $article = [
                 <div class="course-item" id="course-2">
                     <div class="course-rank">#2</div>
                     <h3 class="course-name">Troubadour Golf & Field Club</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/2.webp" alt="Troubadour Golf & Field Club" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-tennessee/2.webp" alt="Troubadour Golf & Field Club Nashville Tennessee McConnell private luxury golf course" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         Ranked 3rd in State as of 2024
@@ -510,7 +510,7 @@ $article = [
                 <div class="course-item" id="course-1">
                     <div class="course-rank">#1</div>
                     <h3 class="course-name">The Honors Course</h3>
-                    <img src="/images/reviews/top-5-golf-courses-tennessee/1.webp" alt="The Honors Course" class="course-image">
+                    <img src="/images/reviews/top-5-golf-courses-tennessee/1.webp" alt="The Honors Course Ooltewah Tennessee Pete Dye design private championship golf club" class="course-image">
                     <div class="course-rating">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         #1 Tennessee Course Since 1983
@@ -566,14 +566,14 @@ $article = [
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Sweetens Cove Golf Club</h4>
-                        <img src="/images/reviews/top-5-golf-courses-tennessee/6.webp" alt="Sweetens Cove Golf Club" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-tennessee/6.webp" alt="Sweetens Cove Golf Club South Pittsburg Tennessee 9-hole public golf course phenomenon" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> South Pittsburg, TN</p>
                         <p>The nine-holer 30 miles west of Chattanooga is probably the buzziest nine-hole course in the U.S. Designed by King-Collins with financial backing from Peyton Manning, this inland links layout offers numerous alternative routings and is consistently ranked one of the best Tennessee golf courses and a top 100 golf course in the world. The laidback atmosphere encourages casual dress and even allows dogs on the course.</p>
                     </div>
                     
                     <div>
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Gaylord Springs Golf Links</h4>
-                        <img src="/images/reviews/top-5-golf-courses-tennessee/7.webp" alt="Gaylord Springs Golf Links" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-tennessee/7.webp" alt="Gaylord Springs Golf Links Nashville Tennessee Larry Nelson public championship golf course" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Nashville, TN</p>
                         <p>Located 10 minutes from Nashville International Airport, this 1991 Jeff Brauer/Larry Nelson design once hosted the Champions Tour from 1994-2003. The course features wetlands, limestone bluffs, and the Cumberland River among its handsome hazards, offering golfers a classic layout that emphasizes accuracy over length for a bold and rewarding adventure.</p>
                     </div>

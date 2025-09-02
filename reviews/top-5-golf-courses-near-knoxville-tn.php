@@ -566,14 +566,14 @@ $article = [
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Avalon Golf & Country Club</h4>
-                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/6.webp" alt="Avalon Golf & Country Club" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/6.webp" alt="Avalon Golf & Country Club Lenoir City Tennessee Joseph Lee championship golf course near Knoxville" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Lenoir City, TN</p>
                         <p>Avalon Golf & Country Club is an 18-hole, par-72 course with an impressive 4.34 out of 5 stars rating based on 671 reviews. This public course offers excellent value and consistently high player satisfaction, making it one of the most popular golf destinations in the greater Knoxville area. The course provides a challenging yet accessible layout suitable for golfers of all skill levels.</p>
                     </div>
                     
                     <div>
                         <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Dead Horse Lake Golf Course</h4>
-                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/7.webp" alt="Dead Horse Lake Golf Course" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
+                        <img src="/images/reviews/top-5-golf-courses-near-knoxville-tn/7.webp" alt="Dead Horse Lake Golf Course Knoxville Tennessee affordable public mountain golf challenging layout" style="width: 100%; max-width: 400px; height: 250px; object-fit: contain; background: white; border-radius: 10px; margin: 1rem 0; box-shadow: var(--shadow-light); padding: 1rem;">
                         <p style="margin-bottom: 0.5rem;"><strong>Location:</strong> Knoxville, TN</p>
                         <p>Dead Horse Lake Golf Course ranks as the #1 best public golf course in Knoxville according to local rankings. This 18-hole, par-72 public course offers golfers an excellent championship layout with a 4.25 out of 5 stars rating. The course provides outstanding value for public golf in the Knoxville area, featuring well-maintained conditions and challenging play that attracts both locals and visitors.</p>
                     </div>
