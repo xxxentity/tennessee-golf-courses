@@ -3136,7 +3136,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             formData.append('courseLocation', courseLocation);
             
             // Send to PHP handler
-            fetch('/submit-course.php', {
+            fetch('submit-course.php', {
                 method: 'POST',
                 body: formData
             })
