@@ -77,12 +77,14 @@ $is_main_page = (
 <!-- Header -->
 <header class="header">
     <nav class="nav">
-        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between;">
-            <a href="/" class="nav-logo">
+        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
+            <!-- Logo - Far Left -->
+            <a href="/" class="nav-logo" style="position: absolute; left: 0;">
                 <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
             </a>
             
-            <ul class="nav-menu" id="nav-menu">
+            <!-- Navigation Menu - Centered -->
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center;">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/courses" class="nav-link">Courses</a></li>
                 <li><a href="/maps" class="nav-link">Maps</a></li>
@@ -126,14 +128,16 @@ $is_main_page = (
                 <?php endif; ?>
             </ul>
             
-            <!-- Desktop Auth Section -->
-            <div class="nav-auth">
+            <!-- Desktop Auth Section - Far Right -->
+            <div class="nav-auth" style="position: absolute; right: 0; display: flex; align-items: center; gap: 8px;">
                 <?php if ($is_logged_in): ?>
                     <div class="user-welcome">
-                        <span class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
+                        <span class="welcome-text" style="font-size: 12px; padding: 4px 8px; white-space: nowrap;">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
                     </div>
-                    <a href="/profile" class="nav-link">My Profile</a>
-                    <a href="/logout" class="nav-link logout-link">Logout</a>
+                    <div class="auth-buttons" style="display: flex; flex-direction: column; gap: 2px;">
+                        <a href="/profile" class="nav-link compact-btn" style="font-size: 10px; padding: 2px 6px; line-height: 1.2;">My Profile</a>
+                        <a href="/logout" class="nav-link compact-btn logout-link" style="font-size: 10px; padding: 2px 6px; line-height: 1.2;">Logout</a>
+                    </div>
                 <?php else: ?>
                     <a href="/login" class="nav-link login-btn">Login</a>
                     <a href="/register" class="nav-link register-btn">Register</a>
@@ -170,16 +174,9 @@ require_once __DIR__ . '/cookie-consent.php';
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
-/* Navigation auth section on the right */
+/* Navigation auth section - positioned absolutely right */
 .nav-auth {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    margin-left: auto;
-    flex-wrap: nowrap;
-    min-width: 0;
-    flex-shrink: 0;
+    /* Styles are now inline for precise positioning */
 }
 
 .user-welcome {
@@ -191,16 +188,28 @@ require_once __DIR__ . '/cookie-consent.php';
 .welcome-text {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 14px;
-    padding: 6px 12px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
-    max-width: 160px;
+    max-width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-shrink: 1;
+}
+
+/* Compact auth buttons */
+.compact-btn {
+    background: rgba(6, 78, 59, 0.1);
+    border: 1px solid rgba(6, 78, 59, 0.2);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 60px;
+}
+
+.compact-btn:hover {
+    background: rgba(6, 78, 59, 0.2);
+    transform: none;
 }
 
 /* Navigation dropdown styles */
