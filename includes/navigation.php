@@ -131,8 +131,9 @@ $is_main_page = (
             <!-- Desktop Auth Section - Far Right -->
             <div class="nav-auth" style="position: absolute; right: 0; display: flex; align-items: center; gap: 8px;">
                 <?php if ($is_logged_in): ?>
-                    <div class="user-welcome">
-                        <span class="welcome-text" style="font-size: 20px; padding: 4px 8px; white-space: nowrap;">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
+                    <div class="user-welcome" style="display: flex; flex-direction: column; gap: 2px; text-align: center;">
+                        <span class="welcome-text" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Welcome,</span>
+                        <span class="welcome-text" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;"><?php echo htmlspecialchars($username); ?>!</span>
                     </div>
                     <div class="auth-buttons" style="display: flex; flex-direction: column; gap: 2px;">
                         <a href="/profile" class="nav-link compact-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">My Profile</a>
