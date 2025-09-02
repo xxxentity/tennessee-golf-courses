@@ -3,6 +3,17 @@
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Ultimate Guide to Fairfield Glade Golf Courses: Tennessee\'s Championship Mountain Golf Paradise',
+        'slug' => 'ultimate-guide-fairfield-glade-golf-crossville-tennessee',
+        'date' => '2025-08-29',
+        'time' => '11:00 AM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover all 5 championship golf courses at Fairfield Glade resort in Crossville, Tennessee. Complete guide to Stonehenge, Druid Hills, Dorchester, and Heatherhurst courses on the Cumberland Plateau.',
+        'image' => '/images/reviews/ultimate-guide-fairfield-glade-golf-crossville-tennessee/main.webp',
+        'featured' => true,
+        'author' => 'Michael Travers'
+    ],
+    [
         'title' => '2025 Best Nashville Golf Courses Under $50: Top 6 Affordable Gems',
         'slug' => '2025-best-nashville-golf-courses-under-50',
         'date' => '2025-08-27',
