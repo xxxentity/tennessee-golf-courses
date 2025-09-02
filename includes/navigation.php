@@ -84,7 +84,7 @@ $is_main_page = (
             </a>
             
             <!-- Navigation Menu - Centered -->
-            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center; position: relative; z-index: 10002; overflow: visible !important;">
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center;">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/courses" class="nav-link">Courses</a></li>
                 <li><a href="/maps" class="nav-link">Maps</a></li>
@@ -218,7 +218,6 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
-    z-index: auto;
 }
 
 .dropdown-toggle {
@@ -243,14 +242,12 @@ require_once __DIR__ . '/cookie-consent.php';
     padding: 8px 0;
     list-style: none;
     margin: 0;
-    display: block !important;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
+    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
-    display: block !important;
 }
 
 .dropdown-link {
@@ -267,25 +264,6 @@ require_once __DIR__ . '/cookie-consent.php';
     color: var(--primary-color);
 }
 
-/* Force header to lower stacking context */
-.header {
-    z-index: 1 !important;
-    isolation: isolate;
-}
-
-/* Force hero section and its contents behind nav */
-.hero {
-    z-index: 1 !important;
-    isolation: isolate;
-}
-
-.hero-content {
-    z-index: 1 !important;
-}
-
-.hero-search {
-    z-index: 1 !important;
-}
 
 /* Hide mobile auth items on desktop */
 .mobile-auth-item {
