@@ -77,7 +77,7 @@ $is_main_page = (
 <!-- Header -->
 <header class="header">
     <nav class="nav">
-        <div class="nav-container">
+        <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between;">
             <a href="/" class="nav-logo">
                 <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
             </a>
@@ -177,7 +177,6 @@ require_once __DIR__ . '/cookie-consent.php';
     align-items: center;
     gap: 8px;
     margin-left: auto;
-    margin-right: 16px;
     flex-wrap: nowrap;
     min-width: 0;
     flex-shrink: 0;
@@ -202,6 +201,55 @@ require_once __DIR__ . '/cookie-consent.php';
     overflow: hidden;
     text-overflow: ellipsis;
     flex-shrink: 1;
+}
+
+/* Navigation dropdown styles */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-link:hover {
+    background: rgba(6, 78, 59, 0.05);
+    color: var(--primary-color);
 }
 
 /* Hide mobile auth items on desktop */
