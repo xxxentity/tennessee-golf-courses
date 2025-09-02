@@ -3079,22 +3079,28 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
         
         // Send AJAX request
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/submit-missing-course.php', true);
+        xhr.open('POST', '/submit-missing-course', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.success) {
-                        messageDiv.innerHTML = '<p class="success">Thank you! We\'ll review and add this course soon.</p>';
-                        document.getElementById('missingCourseForm').reset();
-                        setTimeout(closeCourseModal, 2000);
-                    } else {
-                        messageDiv.innerHTML = '<p class="error">Error: ' + response.message + '</p>';
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            messageDiv.innerHTML = '<p class="success">Thank you! We\'ll review and add this course soon.</p>';
+                            document.getElementById('missingCourseForm').reset();
+                            setTimeout(closeCourseModal, 2000);
+                        } else {
+                            messageDiv.innerHTML = '<p class="error">Error: ' + response.message + '</p>';
+                        }
+                    } catch (e) {
+                        console.error('Response:', xhr.responseText);
+                        messageDiv.innerHTML = '<p class="error">Error parsing response. Check console.</p>';
                     }
                 } else {
-                    messageDiv.innerHTML = '<p class="error">Sorry, there was an error submitting your request.</p>';
+                    console.error('Status:', xhr.status, 'Response:', xhr.responseText);
+                    messageDiv.innerHTML = '<p class="error">Sorry, there was an error (Status: ' + xhr.status + ').</p>';
                 }
             }
         };

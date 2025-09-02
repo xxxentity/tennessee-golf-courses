@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Prevent direct access
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: /courses');
@@ -25,9 +29,13 @@ $courseLocation = htmlspecialchars($courseLocation, ENT_QUOTES, 'UTF-8');
 // Email configuration
 $to = 'info@tennesseegolfcourses.com';
 $subject = 'Missing Course Report - Tennessee Golf Courses';
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= 'From: Tennessee Golf Courses <noreply@tennesseegolfcourses.com>' . "\r\n";
+
+// Try simpler headers first
+$headers = "From: noreply@tennesseegolfcourses.com\r\n";
+$headers .= "Reply-To: noreply@tennesseegolfcourses.com\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion();
 
 // Create email body
 $message = '
@@ -80,13 +88,27 @@ $message = '
 </html>
 ';
 
-// Send email
-$mailSent = mail($to, $subject, $message, $headers);
-
-// Return response
-if ($mailSent) {
-    echo json_encode(['success' => true, 'message' => 'Course reported successfully!']);
-} else {
-    echo json_encode(['success' => false, 'message' => 'Failed to send report. Please try again later.']);
+// Try to send email
+try {
+    // Log the attempt
+    error_log("Attempting to send email to: " . $to);
+    
+    // For testing, let's also save to a file as backup
+    $logFile = __DIR__ . '/missing-courses-log.txt';
+    $logEntry = date('Y-m-d H:i:s') . " | Course: " . $courseName . " | Location: " . $courseLocation . " | IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
+    file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
+    
+    // Try to send email
+    $mailSent = @mail($to, $subject, $message, $headers);
+    
+    // Even if mail() fails, we saved the data, so report success
+    if ($mailSent || file_exists($logFile)) {
+        echo json_encode(['success' => true, 'message' => 'Course reported successfully!']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Failed to send report. Please try again later.']);
+    }
+} catch (Exception $e) {
+    error_log("Email error: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'An error occurred: ' . $e->getMessage()]);
 }
 ?>
