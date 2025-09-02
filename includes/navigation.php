@@ -218,16 +218,16 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Simple dropdown styles */
 .nav-dropdown { position: relative; }
 .dropdown-menu { 
-    display: none; 
+    display: block !important; 
     position: absolute; 
     top: 100%; 
     left: 0; 
-    background: white; 
-    border: 1px solid #ccc; 
+    background: red !important; 
+    border: 5px solid blue !important; 
     z-index: 99999;
     min-width: 150px;
     list-style: none;
-    padding: 0;
+    padding: 10px !important;
     margin: 0;
 }
 .nav-dropdown:hover .dropdown-menu { display: block; }
