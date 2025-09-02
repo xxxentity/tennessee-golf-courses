@@ -191,6 +191,13 @@ require_once __DIR__ . '/cookie-consent.php';
     flex-shrink: 0;
 }
 
+/* Ensure all nav items are vertically centered */
+.nav-menu li,
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+}
+
 .user-welcome {
     display: flex;
     align-items: center;
