@@ -136,11 +136,14 @@ $is_main_page = (
         <div class="nav-auth">
             <?php if ($is_logged_in): ?>
                 <!-- Logged in navigation -->
-                <div class="user-welcome">
-                    <span class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
+                <div class="user-welcome-stacked">
+                    <span class="welcome-line">Welcome,</span>
+                    <span class="username-line"><?php echo htmlspecialchars($username); ?></span>
                 </div>
-                <a href="/profile" class="nav-link">My Profile</a>
-                <a href="/logout" class="nav-link logout-link">Logout</a>
+                <div class="auth-buttons-stacked">
+                    <a href="/profile" class="nav-link profile-btn">My Profile</a>
+                    <a href="/logout" class="nav-link logout-btn">Logout</a>
+                </div>
             <?php else: ?>
                 <!-- Logged out navigation -->
                 <a href="/login" class="nav-link login-btn">Login</a>

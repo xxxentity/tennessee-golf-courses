@@ -186,11 +186,12 @@ a[href^="www."]:not(.social-links a)::after {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 70px;
     overflow: hidden;
     position: relative;
@@ -206,6 +207,8 @@ a[href^="www."]:not(.social-links a)::after {
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
+    margin-right: auto;
+    flex-shrink: 0;
 }
 
 .nav-logo:hover {
@@ -229,8 +232,10 @@ a[href^="www."]:not(.social-links a)::after {
     list-style: none;
     gap: 32px;
     align-items: center;
-    margin-left: auto;
-    margin-right: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 .nav-link {
@@ -290,6 +295,70 @@ a[href^="www."]:not(.social-links a)::after {
     cursor: pointer;
     position: relative;
     z-index: 1004;
+}
+
+/* Auth Section Styles */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+/* Stacked Welcome Message */
+.user-welcome-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 15px;
+    line-height: 1.2;
+}
+
+.welcome-line {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+.username-line {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Stacked Auth Buttons */
+.auth-buttons-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-btn, .logout-btn {
+    font-size: 15px !important;
+    padding: 6px 12px !important;
+    text-align: center;
+    min-width: 90px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-white);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.profile-btn:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+.logout-btn {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #dc2626;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+    color: var(--text-light);
+    border-color: #dc2626;
 }
 
 .bar {
