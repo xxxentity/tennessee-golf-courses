@@ -228,21 +228,20 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed !important;
     background: var(--bg-white);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 99999;
+    z-index: 2147483647 !important;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
     margin: 0;
+    border: 2px solid var(--primary-color);
 }
 
 .nav-dropdown:hover .dropdown-menu {
@@ -298,6 +297,26 @@ require_once __DIR__ . '/cookie-consent.php';
     }
 }
 </style>
+
+<!-- Dropdown positioning script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (toggle && menu) {
+            dropdown.addEventListener('mouseenter', function() {
+                const rect = toggle.getBoundingClientRect();
+                menu.style.top = (rect.bottom + window.scrollY) + 'px';
+                menu.style.left = rect.left + 'px';
+            });
+        }
+    });
+});
+</script>
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
