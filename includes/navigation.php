@@ -231,7 +231,7 @@ require_once __DIR__ . '/cookie-consent.php';
     position: fixed !important;
     background: var(--bg-white);
     border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -241,7 +241,6 @@ require_once __DIR__ . '/cookie-consent.php';
     padding: 8px 0;
     list-style: none;
     margin: 0;
-    border: 2px solid var(--primary-color);
 }
 
 .nav-dropdown:hover .dropdown-menu {
