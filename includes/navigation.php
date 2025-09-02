@@ -329,16 +329,51 @@ document.addEventListener('DOMContentLoaded', function() {
         // Store original parent for positioning
         const parent = menu.parentElement;
         
-        // Move to body
-        document.body.appendChild(menu);
+        // Clone the menu and append to body
+        const menuClone = menu.cloneNode(true);
+        document.body.appendChild(menuClone);
         
-        // Update position on hover
+        // Hide original menu
+        menu.style.display = 'none';
+        
+        // Set initial styles for clone
+        menuClone.style.position = 'fixed';
+        menuClone.style.zIndex = '2147483647';
+        menuClone.style.display = 'block';
+        menuClone.style.visibility = 'hidden';
+        menuClone.style.opacity = '0';
+        
+        // Show on parent hover
         parent.addEventListener('mouseenter', function() {
             const rect = parent.getBoundingClientRect();
-            menu.style.position = 'fixed';
-            menu.style.top = (rect.bottom) + 'px';
-            menu.style.left = rect.left + 'px';
-            menu.style.zIndex = '999999';
+            menuClone.style.top = (rect.bottom + 5) + 'px';
+            menuClone.style.left = rect.left + 'px';
+            menuClone.style.visibility = 'visible';
+            menuClone.style.opacity = '1';
+            menuClone.style.transform = 'translateY(0)';
+        });
+        
+        // Hide on parent mouse leave
+        parent.addEventListener('mouseleave', function() {
+            setTimeout(() => {
+                if (!menuClone.matches(':hover')) {
+                    menuClone.style.visibility = 'hidden';
+                    menuClone.style.opacity = '0';
+                    menuClone.style.transform = 'translateY(-10px)';
+                }
+            }, 100);
+        });
+        
+        // Keep visible when hovering menu itself
+        menuClone.addEventListener('mouseenter', function() {
+            menuClone.style.visibility = 'visible';
+            menuClone.style.opacity = '1';
+        });
+        
+        menuClone.addEventListener('mouseleave', function() {
+            menuClone.style.visibility = 'hidden';
+            menuClone.style.opacity = '0';
+            menuClone.style.transform = 'translateY(-10px)';
         });
     });
 });
