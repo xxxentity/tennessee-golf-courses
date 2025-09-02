@@ -43,6 +43,9 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteCond %{REQUEST_URI} !^/submit-course\.php$ [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
 
+# Handle homepage (root URL)
+RewriteRule ^/?$ index.php [L]
+
 # Handle specific pages that conflict with directories
 RewriteRule ^courses/?$ courses.php [L]
 RewriteRule ^news/?$ news.php [L]
