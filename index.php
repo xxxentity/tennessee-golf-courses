@@ -271,7 +271,17 @@ $featured_reviews = array_slice($reviews, 0, 3);
 <body>
 
     <!-- Dynamic Navigation -->
-    <?php include 'includes/navigation.php'; ?>
+    <?php 
+    echo "<!-- DEBUG: About to include navigation -->";
+    if (file_exists('includes/navigation.php')) {
+        echo "<!-- DEBUG: Navigation file exists -->";
+        include 'includes/navigation.php'; 
+        echo "<!-- DEBUG: Navigation included successfully -->";
+    } else {
+        echo "<!-- DEBUG: Navigation file does NOT exist -->";
+        echo "<div style='background: red; color: white; padding: 20px;'>NAVIGATION FILE NOT FOUND!</div>";
+    }
+    ?>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
