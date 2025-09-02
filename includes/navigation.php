@@ -76,7 +76,7 @@ $is_main_page = (
 
 <!-- Header -->
 <header class="header">
-    <nav class="nav">
+    <nav class="nav" style="position: relative; z-index: 999;">
         <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
             <!-- Logo - Far Left -->
             <a href="/" class="nav-logo" style="position: absolute; left: 0;">
@@ -84,7 +84,7 @@ $is_main_page = (
             </a>
             
             <!-- Navigation Menu - Centered -->
-            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center;">
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center; position: relative; z-index: 10002; overflow: visible !important;">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/courses" class="nav-link">Courses</a></li>
                 <li><a href="/maps" class="nav-link">Maps</a></li>
@@ -218,6 +218,7 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
+    z-index: auto;
 }
 
 .dropdown-toggle {
@@ -230,24 +231,26 @@ require_once __DIR__ . '/cookie-consent.php';
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--bg-white);
+    background: white;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 99999;
+    z-index: 999999 !important;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
     margin: 0;
+    display: block !important;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
     transform: translateY(0);
+    display: block !important;
 }
 
 .dropdown-link {
@@ -262,6 +265,26 @@ require_once __DIR__ . '/cookie-consent.php';
 .dropdown-link:hover {
     background: rgba(6, 78, 59, 0.05);
     color: var(--primary-color);
+}
+
+/* Force header to lower stacking context */
+.header {
+    z-index: 1 !important;
+    isolation: isolate;
+}
+
+/* Force hero section and its contents behind nav */
+.hero {
+    z-index: 1 !important;
+    isolation: isolate;
+}
+
+.hero-content {
+    z-index: 1 !important;
+}
+
+.hero-search {
+    z-index: 1 !important;
 }
 
 /* Hide mobile auth items on desktop */
@@ -297,6 +320,8 @@ require_once __DIR__ . '/cookie-consent.php';
     }
 }
 </style>
+
+
 
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
