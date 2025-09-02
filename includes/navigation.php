@@ -75,9 +75,9 @@ $is_main_page = (
 <?php endif; ?>
 
 <!-- Header -->
-<header class="header" style="z-index: 1000;">
-    <nav class="nav">
-        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
+<header class="header" style="z-index: 100;">
+    <nav class="nav" style="position: relative; z-index: 2000;">
+        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%; z-index: 2001;">
             <!-- Logo - Far Left -->
             <a href="/" class="nav-logo" style="position: absolute; left: 0;">
                 <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
@@ -238,7 +238,7 @@ require_once __DIR__ . '/cookie-consent.php';
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 2002;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
