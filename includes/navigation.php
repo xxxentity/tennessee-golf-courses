@@ -218,6 +218,7 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
+    z-index: 10000;
 }
 
 .dropdown-toggle {
@@ -237,7 +238,7 @@ require_once __DIR__ . '/cookie-consent.php';
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 9999;
+    z-index: 10001;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
