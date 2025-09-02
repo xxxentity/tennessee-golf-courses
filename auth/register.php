@@ -1,4 +1,9 @@
 <?php
+// Prevent caching of register page (CloudFlare compatibility)
+header('Cache-Control: no-cache, no-store, must-revalidate, private');
+header('Pragma: no-cache');
+header('Expires: 0');
+
 // Start session first
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

@@ -28,7 +28,6 @@ if ($is_individual_course) {
     }
 }
 
-
 // Main pages (including individual course pages) - all show weather bar
 $is_main_page = (
     $current_page === '/' ||
@@ -48,8 +47,6 @@ $is_main_page = (
     strpos($current_page, '/edit-profile') === 0 ||  // Include edit profile
     strpos($current_page, '/security-dashboard') === 0  // Include security dashboard
 );
-
-
 ?>
 
 <?php if ($is_main_page): ?>
@@ -80,80 +77,82 @@ $is_main_page = (
 <!-- Header -->
 <header class="header">
     <nav class="nav">
-        <div class="nav-container">
-        <?php
-        echo "<!-- Professional Clean URLs Implementation -->";
-        ?>
-        <a href="/" class="nav-logo">
-            <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
-        </a>
-        
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/courses" class="nav-link">Courses</a></li>
-            <li><a href="/maps" class="nav-link">Maps</a></li>
-            <li class="nav-dropdown">
-                <a href="/media" class="nav-link dropdown-toggle">
-                    Media <i class="fas fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/news" class="dropdown-link">News</a></li>
-                    <li><a href="/reviews" class="dropdown-link">Reviews</a></li>
-                </ul>
-            </li>
-            <li class="nav-dropdown">
-                <a href="/community" class="nav-link dropdown-toggle">
-                    Community <i class="fas fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/events" class="dropdown-link">Events</a></li>
-                    <li><a href="/handicap" class="dropdown-link">Handicap</a></li>
-                    <li><a href="/contests" class="dropdown-link">Contests</a></li>
-                </ul>
-            </li>
-            <li class="nav-dropdown">
-                <a href="/about" class="nav-link dropdown-toggle">
-                    About <i class="fas fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/about" class="dropdown-link">About Us</a></li>
-                    <li><a href="/contact" class="dropdown-link">Contact</a></li>
-                </ul>
-            </li>
+        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
+            <!-- Logo - Far Left -->
+            <a href="/" class="nav-logo" style="position: absolute; left: 0;">
+                <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
+            </a>
             
-            <!-- Mobile Auth Links -->
-            <li class="mobile-auth-divider"></li>
-            <?php if ($is_logged_in): ?>
-                <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($username); ?>!</span></li>
-                <li class="mobile-auth-item"><a href="/profile" class="nav-link">My Profile</a></li>
-                <li class="mobile-auth-item"><a href="/logout" class="nav-link logout-link">Logout</a></li>
-            <?php else: ?>
-                <li class="mobile-auth-item"><a href="/login" class="nav-link login-btn">Login</a></li>
-                <li class="mobile-auth-item"><a href="/register" class="nav-link register-btn">Register</a></li>
-            <?php endif; ?>
-        </ul>
-        
-        <div class="nav-auth">
-            <?php if ($is_logged_in): ?>
-                <!-- Logged in navigation -->
-                <div class="user-welcome">
-                    <span class="welcome-text">Welcome, <?php echo htmlspecialchars($username); ?>!</span>
-                </div>
-                <a href="/profile" class="nav-link">My Profile</a>
-                <a href="/logout" class="nav-link logout-link">Logout</a>
-            <?php else: ?>
-                <!-- Logged out navigation -->
-                <a href="/login" class="nav-link login-btn">Login</a>
-                <a href="/register" class="nav-link register-btn">Register</a>
-            <?php endif; ?>
+            <!-- Navigation Menu - Centered -->
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center;">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/courses" class="nav-link">Courses</a></li>
+                <li><a href="/maps" class="nav-link">Maps</a></li>
+                <li class="nav-dropdown">
+                    <a href="/media" class="nav-link dropdown-toggle">
+                        Media <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/news" class="dropdown-link">News</a></li>
+                        <li><a href="/reviews" class="dropdown-link">Reviews</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/community" class="nav-link dropdown-toggle">
+                        Community <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/events" class="dropdown-link">Events</a></li>
+                        <li><a href="/handicap" class="dropdown-link">Handicap</a></li>
+                        <li><a href="/contests" class="dropdown-link">Contests</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/about" class="nav-link dropdown-toggle">
+                        About <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about" class="dropdown-link">About Us</a></li>
+                        <li><a href="/contact" class="dropdown-link">Contact</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Mobile Auth Links (hidden on desktop) -->
+                <?php if ($is_logged_in): ?>
+                    <li class="mobile-auth-item"><span class="nav-link welcome-mobile">Welcome, <?php echo htmlspecialchars($username); ?>!</span></li>
+                    <li class="mobile-auth-item"><a href="/profile" class="nav-link">My Profile</a></li>
+                    <li class="mobile-auth-item"><a href="/logout" class="nav-link logout-link">Logout</a></li>
+                <?php else: ?>
+                    <li class="mobile-auth-item"><a href="/login" class="nav-link login-btn">Login</a></li>
+                    <li class="mobile-auth-item"><a href="/register" class="nav-link register-btn">Register</a></li>
+                <?php endif; ?>
+            </ul>
+            
+            <!-- Desktop Auth Section - Far Right -->
+            <div class="nav-auth" style="position: absolute; right: 0; display: flex; align-items: center; gap: 8px;">
+                <?php if ($is_logged_in): ?>
+                    <div class="user-welcome" style="display: flex; flex-direction: column; gap: 2px; text-align: center;">
+                        <span class="welcome-text" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Welcome,</span>
+                        <span class="welcome-text" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;"><?php echo htmlspecialchars($username); ?>!</span>
+                    </div>
+                    <div class="auth-buttons" style="display: flex; flex-direction: column; gap: 2px;">
+                        <a href="/profile" class="nav-link compact-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">My Profile</a>
+                        <a href="/logout" class="nav-link compact-btn logout-link" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Logout</a>
+                    </div>
+                <?php else: ?>
+                    <div class="auth-buttons" style="display: flex; flex-direction: column; gap: 2px;">
+                        <a href="/login" class="nav-link compact-btn login-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Login</a>
+                        <a href="/register" class="nav-link compact-btn register-btn" style="font-size: 15px; padding: 2px 6px; line-height: 1.2;">Register</a>
+                    </div>
+                <?php endif; ?>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-        
-        <div class="nav-toggle" id="nav-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
     </nav>
 </header>
 
@@ -178,17 +177,9 @@ require_once __DIR__ . '/cookie-consent.php';
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
-/* Navigation auth section on the right */
+/* Navigation auth section - positioned absolutely right */
 .nav-auth {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    margin-left: auto;
-    margin-right: 16px;
-    flex-wrap: nowrap;
-    min-width: 0;
-    flex-shrink: 0;
+    /* Styles are now inline for precise positioning */
 }
 
 .user-welcome {
@@ -200,111 +191,91 @@ require_once __DIR__ . '/cookie-consent.php';
 .welcome-text {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 14px;
-    padding: 6px 12px;
     background: linear-gradient(135deg, rgba(6, 78, 59, 0.1), rgba(234, 88, 12, 0.1));
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid rgba(6, 78, 59, 0.2);
     white-space: nowrap;
-    max-width: 160px;
+    max-width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-shrink: 1;
 }
 
-.login-btn {
-    background: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color) !important;
+/* Compact auth buttons */
+.compact-btn {
+    background: rgba(6, 78, 59, 0.1);
+    border: 1px solid rgba(6, 78, 59, 0.2);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 60px;
+}
+
+.compact-btn:hover {
+    background: rgba(6, 78, 59, 0.2);
+    transform: none;
+}
+
+/* Navigation dropdown styles */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
     transition: all 0.3s ease;
-    padding: 6px 12px !important;
+    z-index: 99999 !important;
+    min-width: 160px;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
-    width: auto;
-    text-align: center;
-    line-height: 1.2;
-    white-space: nowrap;
-    flex-shrink: 0;
+    transition: all 0.2s ease;
 }
 
-.login-btn:hover {
-    background: var(--primary-color);
-    color: var(--text-light) !important;
-    transform: translateY(-1px);
+.dropdown-link:hover {
+    background: rgba(6, 78, 59, 0.05);
+    color: var(--primary-color);
 }
 
-.register-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-light) !important;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-light);
-    padding: 6px 12px !important;
-    font-size: 14px;
-    font-weight: 500;
-    width: auto;
-    text-align: center;
-    line-height: 1.2;
-    white-space: nowrap;
-    flex-shrink: 0;
+/* Force header elements below dropdown */
+.header { z-index: 10 !important; }
+.hero { z-index: 5 !important; }
+.hero-content { z-index: 5 !important; }
+.hero-search { z-index: 5 !important; }
+
+/* Hide mobile auth items on desktop */
+.mobile-auth-item {
+    display: none;
 }
 
-.register-btn:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-medium);
-}
-
-.logout-link {
-    color: var(--gold-color) !important;
-    font-weight: 500;
-    padding: 6px 12px !important;
-    font-size: 14px;
-    border-radius: 8px;
-    min-width: auto;
-    text-align: center;
-    line-height: 1.2;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-.logout-link:hover {
-    background: rgba(234, 88, 12, 0.1);
-    color: var(--gold-color) !important;
-}
-
-.nav-auth .nav-link {
-    padding: 6px 12px !important;
-    font-size: 14px;
-    border-radius: 8px;
-    min-width: auto;
-    text-align: center;
-    line-height: 1.2;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-/* Medium screen adjustments */
-@media screen and (max-width: 1024px) {
-    .welcome-text {
-        font-size: 13px;
-        padding: 5px 10px;
-        max-width: 140px;
-    }
-    
-    .nav-auth .nav-link {
-        padding: 5px 10px !important;
-        font-size: 13px;
-    }
-    
-    .nav-auth {
-        gap: 6px;
-        margin-right: 12px;
-    }
-}
-
-/* Mobile responsiveness for user navigation */
+/* Mobile navigation */
 @media screen and (max-width: 768px) {
     .nav-auth {
         position: fixed;
@@ -325,163 +296,18 @@ require_once __DIR__ . '/cookie-consent.php';
         left: 0;
     }
     
-    .user-welcome {
-        margin-left: 0;
-        margin-top: 12px;
-        justify-content: center;
-    }
-    
-    .welcome-text {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-    
-    .nav-menu li {
+    /* Show mobile auth items on mobile */
+    .mobile-auth-item {
+        display: list-item;
         margin: 8px 0;
-    }
-}
-/* Conditional header positioning */
-.header {
-    position: fixed;
-    top: <?php echo $is_main_page ? '40px' : '0' ?>; /* Adjust based on weather bar presence */
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: var(--bg-white);
-    box-shadow: var(--shadow-light);
-    transition: top 0.3s ease;
-}
-
-/* Body padding adjustment */
-body {
-    padding-top: <?php echo $is_main_page ? '140px' : '100px' ?>; /* Adjust based on weather bar presence */
-}
-
-/* Auth page specific overrides */
-<?php if (!$is_main_page): ?>
-.auth-page .header {
-    position: fixed;
-    top: 0 !important;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: var(--bg-white);
-    box-shadow: var(--shadow-light);
-}
-
-.auth-page {
-    padding-top: 80px !important;
-}
-
-/* Hide weather bar on non-main pages */
-.weather-bar {
-    display: none !important;
-    height: 0 !important;
-}
-<?php endif; ?>
-
-/* Override nav-container overflow for dropdowns */
-.nav-container {
-    overflow: visible !important;
-}
-
-/* Dropdown Navigation Styles */
-.nav-dropdown {
-    position: relative;
-}
-
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.dropdown-toggle i {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.nav-dropdown:hover .dropdown-toggle i {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: var(--bg-white);
-    min-width: 160px;
-    box-shadow: var(--shadow-medium);
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 9999;
-    list-style: none;
-    padding: 0.5rem 0;
-    margin: 0;
-}
-
-.nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-link {
-    display: block;
-    padding: 0.75rem 1.25rem;
-    color: var(--text-dark);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    border-radius: 0;
-}
-
-.dropdown-link:hover {
-    background: var(--bg-light);
-    color: var(--primary-color);
-    padding-left: 1.5rem;
-}
-
-/* Mobile dropdown styles */
-@media (max-width: 768px) {
-    .nav-dropdown .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding: 0;
-        margin-left: 1rem;
-    }
-    
-    .dropdown-toggle i {
-        display: none;
-    }
-    
-    .dropdown-link {
-        padding: 0.5rem 0;
-        font-size: 0.9rem;
-        color: var(--text-gray);
-    }
-    
-    .dropdown-link:hover {
-        padding-left: 0;
-        color: var(--primary-color);
     }
 }
 </style>
 
-
 <?php if ($is_main_page): ?>
 <!-- Weather Scripts -->
-<?php if ($course_slug === 'avalon-golf-country-club' || $course_slug === 'bear-trace-cumberland-mountain' || $course_slug === 'bear-trace-at-tims-ford' || $course_slug === 'bear-trace-harrison-bay' || $course_slug === 'belle-acres-golf-course' || $course_slug === 'belle-meade-country-club' || $course_slug === 'big-creek-golf-club' || $course_slug === 'blackthorn-club' || $course_slug === 'bluegrass-yacht-country-club' || $course_slug === 'brainerd-golf-course' || $course_slug === 'brown-acres-golf-course' || $course_slug === 'cedar-crest-golf-club' || $course_slug === 'chattanooga-golf-country-club' || $course_slug === 'cheekwood-golf-club' || $course_slug === 'cherokee-country-club' || $course_slug === 'chickasaw-country-club' || $course_slug === 'chickasaw-golf-course' || $course_slug === 'clarksville-country-club' || $course_slug === 'colonial-country-club' || $course_slug === 'council-fire-golf-club' || $course_slug === 'cumberland-cove-golf-course' || $course_slug === 'dead-horse-lake-golf-course' || $course_slug === 'druid-hills-golf-club' || $course_slug === 'eagles-landing-golf-club' || $course_slug === 'egwani-farms-golf-course' || $course_slug === 'fall-creek-falls-state-park-golf-course' || $course_slug === 'forrest-crossing-golf-course' || $course_slug === 'fox-den-country-club' || $course_slug === 'gaylord-springs-golf-links' || $course_slug === 'greystone-golf-course' || $course_slug === 'harpeth-hills-golf-course' || $course_slug === 'henry-horton-state-park-golf-course' || $course_slug === 'hermitage-golf-course' || $course_slug === 'hillwood-country-club' || $course_slug === 'holston-hills-country-club' || $course_slug === 'honky-tonk-national-golf-course' || $course_slug === 'island-pointe-golf-club' || $course_slug === 'jackson-country-club' || $course_slug === 'lambert-acres-golf-club' || $course_slug === 'lake-tansi-golf-club' || $course_slug === 'lookout-mountain-golf-club' || $course_slug === 'marriott-golf-club-at-shiloh-falls' || $course_slug === 'memphis-national-golf-club' || $course_slug === 'mirimichi-golf-club' || $course_slug === 'nashville-golf-country-club' || $course_slug === 'old-fort-golf-club' || $course_slug === 'nashville-golf-athletic-club' || $course_slug === 'nashville-national-golf-links' || $course_slug === 'old-fort-golf-course' || $course_slug === 'overland-park-golf-course' || $course_slug === 'paris-landing-state-park-golf-course' || $course_slug === 'pine-oaks-golf-course' || $course_slug === 'president-country-club' || $course_slug === 'quail-ridge-golf-course' || $course_slug === 'richland-country-club' || $course_slug === 'river-islands-golf-club' || $course_slug === 'ross-creek-landing-golf-course' || $course_slug === 'sevierville-golf-club' || $course_slug === 'signal-mountain-golf-country-club' || $course_slug === 'southern-hills-golf-country-club' || $course_slug === 'sparta-country-club' || $course_slug === 'springhouse-golf-club' || $course_slug === 'stonehenge-golf-club' || $course_slug === 'stones-river-country-club' || $course_slug === 'sweetens-cove-golf-club' || $course_slug === 'tanasi-golf-course' || $course_slug === 'ted-rhodes-golf-course' || $course_slug === 'temple-hills-country-club' || $course_slug === 'tennessee-grasslands-fairvue' || $course_slug === 'tennessee-grasslands-foxland' || $course_slug === 'tennessee-national-golf-club' || $course_slug === 'the-club-at-five-oaks' || $course_slug === 'the-club-at-gettysvue' || $course_slug === 'the-country-club' || $course_slug === 'the-golf-club-of-tennessee' || $course_slug === 'the-governors-club' || $course_slug === 'the-grove' || $course_slug === 'the-honors-course' || $course_slug === 'the-legacy-golf-course' || $course_slug === 'the-links-at-audubon' || $course_slug === 'the-links-at-fox-meadows' || $course_slug === 'the-links-at-galloway' || $course_slug === 'the-links-at-kahite' || $course_slug === 'the-links-at-whitehaven' || $course_slug === 'three-ridges-golf-course' || $course_slug === 'toqua-golf-course' || $course_slug === 'tpc-southwind' || $course_slug === 'troubadour-golf-field-club' || $course_slug === 'two-rivers-golf-course' || $course_slug === 'vanderbilt-legends-club' || $course_slug === 'warriors-path-state-park-golf-course' || $course_slug === 'white-plains-golf-course' || $course_slug === 'whittle-springs-golf-course' || $course_slug === 'williams-creek-golf-course' || $course_slug === 'willow-creek-golf-club' || $course_slug === 'windriver-golf-club' || $course_slug === 'windtree-golf-course' || $course_slug === 'windyke-country-club'): ?>
-<!-- Course-specific weather for individual course pages -->
+<?php if ($course_slug): ?>
+<!-- Course-specific weather -->
 <script src="/course-weather.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -491,7 +317,7 @@ body {
     });
 </script>
 <?php else: ?>
-<!-- Default Nashville weather for ALL other pages -->
+<!-- Default Nashville weather -->
 <script src="/weather.js"></script>
 <?php endif; ?>
 <script src="/script.js?v=6"></script>

@@ -38,9 +38,13 @@ ServerSignature Off
 </Files>
 
 
-# Remove .php extension from URLs (external redirect)
+# Remove .php extension from URLs (external redirect) - exclude submit-course.php
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteCond %{REQUEST_URI} !^/submit-course\.php$ [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
+
+# Handle homepage (root URL)
+RewriteRule ^/?$ index.php [L]
 
 # Handle specific pages that conflict with directories
 RewriteRule ^courses/?$ courses.php [L]
@@ -52,6 +56,9 @@ RewriteRule ^reviews/?$ reviews.php [L]
 RewriteRule ^privacy-policy/?$ privacy-policy.php [L]
 RewriteRule ^terms-of-service/?$ terms-of-service.php [L]
 RewriteRule ^search-courses.php$ search-courses.php [L]
+
+# Allow direct access to submit-course.php for AJAX calls
+RewriteRule ^submit-course\.php$ submit-course.php [L]
 
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]
@@ -275,10 +282,11 @@ RewriteRule ^api/v1/auth/?$ api/v1/auth.php [L]
 RewriteRule ^api/v1/user/?$ api/v1/user.php [L]
 RewriteRule ^api/v1/newsletter/?$ api/v1/newsletter.php [L]
 
-# General clean URL rewriting (internal)
+# General clean URL rewriting (internal) - exclude submit-course.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteCond %{REQUEST_URI} !^/submit-course$ [NC]
 RewriteRule ^([^/]+)/?$ $1.php [L]
 
 # Security headers
@@ -306,6 +314,37 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
     
     # HSTS - HTTP Strict Transport Security
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Prevent caching of authentication and dynamic pages
+<IfModule mod_headers.c>
+    # No cache for auth pages
+    <LocationMatch "/(auth|admin|user)/.*\.php$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for clean URL auth pages
+    <LocationMatch "^/(login|register|logout|forgot-password|password-reset|reset-password|profile|edit-profile|security-dashboard)/?$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache" 
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for API endpoints
+    <LocationMatch "/api/.*">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for form submission handlers
+    <LocationMatch "/(submit-course|newsletter-subscribe|contests-submit)\.php$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
 </IfModule>
 
 # Cache static assets
