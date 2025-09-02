@@ -218,7 +218,6 @@ require_once __DIR__ . '/cookie-consent.php';
 /* Navigation dropdown styles */
 .nav-dropdown {
     position: relative;
-    z-index: 9999 !important;
 }
 
 .dropdown-toggle {
@@ -228,28 +227,27 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 
 .dropdown-menu {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    background: var(--bg-white) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 999999 !important;
-    min-width: 160px !important;
-    padding: 8px 0 !important;
-    list-style: none !important;
-    margin: 0 !important;
-    transform-style: preserve-3d !important;
+    min-width: 160px;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) translateZ(999px) !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .dropdown-link {
@@ -320,64 +318,6 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Move dropdowns to body for guaranteed top layer
-    const dropdowns = document.querySelectorAll('.dropdown-menu');
-    
-    dropdowns.forEach(menu => {
-        // Store original parent for positioning
-        const parent = menu.parentElement;
-        
-        // Clone the menu and append to body
-        const menuClone = menu.cloneNode(true);
-        document.body.appendChild(menuClone);
-        
-        // Hide original menu
-        menu.style.display = 'none';
-        
-        // Set initial styles for clone
-        menuClone.style.position = 'fixed';
-        menuClone.style.zIndex = '2147483647';
-        menuClone.style.display = 'block';
-        menuClone.style.visibility = 'hidden';
-        menuClone.style.opacity = '0';
-        
-        // Show on parent hover
-        parent.addEventListener('mouseenter', function() {
-            const rect = parent.getBoundingClientRect();
-            menuClone.style.top = (rect.bottom + 5) + 'px';
-            menuClone.style.left = rect.left + 'px';
-            menuClone.style.visibility = 'visible';
-            menuClone.style.opacity = '1';
-            menuClone.style.transform = 'translateY(0)';
-        });
-        
-        // Hide on parent mouse leave
-        parent.addEventListener('mouseleave', function() {
-            setTimeout(() => {
-                if (!menuClone.matches(':hover')) {
-                    menuClone.style.visibility = 'hidden';
-                    menuClone.style.opacity = '0';
-                    menuClone.style.transform = 'translateY(-10px)';
-                }
-            }, 100);
-        });
-        
-        // Keep visible when hovering menu itself
-        menuClone.addEventListener('mouseenter', function() {
-            menuClone.style.visibility = 'visible';
-            menuClone.style.opacity = '1';
-        });
-        
-        menuClone.addEventListener('mouseleave', function() {
-            menuClone.style.visibility = 'hidden';
-            menuClone.style.opacity = '0';
-            menuClone.style.transform = 'translateY(-10px)';
-        });
-    });
-});
-</script>
 
 
 <?php if ($is_main_page): ?>
