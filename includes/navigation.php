@@ -227,27 +227,30 @@ require_once __DIR__ . '/cookie-consent.php';
 }
 
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: white !important;
+    border: 2px solid red !important;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 999999 !important;
-    min-width: 160px;
-    padding: 8px 0;
-    list-style: none;
-    margin: 0;
+    min-width: 160px !important;
+    padding: 8px 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    display: block !important;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
 }
 
 .dropdown-link {
