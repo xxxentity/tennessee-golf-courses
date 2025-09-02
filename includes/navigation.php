@@ -75,7 +75,7 @@ $is_main_page = (
 <?php endif; ?>
 
 <!-- Header -->
-<header class="header">
+<header class="header" style="z-index: 1000;">
     <nav class="nav">
         <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
             <!-- Logo - Far Left -->
@@ -84,7 +84,7 @@ $is_main_page = (
             </a>
             
             <!-- Navigation Menu - Centered -->
-            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center;">
+            <ul class="nav-menu" id="nav-menu" style="margin: 0 auto; display: flex; list-style: none; gap: 32px; align-items: center; position: relative; z-index: 10002;">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/courses" class="nav-link">Courses</a></li>
                 <li><a href="/maps" class="nav-link">Maps</a></li>
@@ -238,7 +238,7 @@ require_once __DIR__ . '/cookie-consent.php';
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 10001;
+    z-index: 99999;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
