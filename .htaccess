@@ -313,6 +313,37 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
+# Prevent caching of authentication and dynamic pages
+<IfModule mod_headers.c>
+    # No cache for auth pages
+    <LocationMatch "/(auth|admin|user)/.*\.php$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for clean URL auth pages
+    <LocationMatch "^/(login|register|logout|forgot-password|password-reset|reset-password|profile|edit-profile|security-dashboard)/?$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache" 
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for API endpoints
+    <LocationMatch "/api/.*">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for form submission handlers
+    <LocationMatch "/(submit-course|newsletter-subscribe|contests-submit)\.php$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+    </LocationMatch>
+</IfModule>
+
 # Cache static assets
 <IfModule mod_expires.c>
     ExpiresActive On
