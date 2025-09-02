@@ -146,8 +146,10 @@ $is_main_page = (
                 </div>
             <?php else: ?>
                 <!-- Logged out navigation -->
-                <a href="/login" class="nav-link login-btn">Login</a>
-                <a href="/register" class="nav-link register-btn">Register</a>
+                <div class="auth-buttons-stacked">
+                    <a href="/login" class="nav-link login-btn">Login</a>
+                    <a href="/register" class="nav-link register-btn">Register</a>
+                </div>
             <?php endif; ?>
         </div>
         

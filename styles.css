@@ -332,7 +332,7 @@ a[href^="www."]:not(.social-links a)::after {
     gap: 5px;
 }
 
-.profile-btn, .logout-btn {
+.profile-btn, .logout-btn, .login-btn, .register-btn {
     font-size: 15px !important;
     padding: 6px 12px !important;
     text-align: center;
@@ -343,10 +343,22 @@ a[href^="www."]:not(.social-links a)::after {
     border-radius: 6px;
 }
 
-.profile-btn:hover {
+.profile-btn:hover, .login-btn:hover {
     background: var(--primary-color);
     color: var(--text-light);
     border-color: var(--primary-color);
+}
+
+.register-btn {
+    background: rgba(5, 150, 105, 0.1);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.register-btn:hover {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border-color: var(--secondary-color);
 }
 
 .logout-btn {
