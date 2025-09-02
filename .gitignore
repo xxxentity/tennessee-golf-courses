@@ -15,3 +15,12 @@ Thumbs.db
 .DS_Store
 *.png
 images/logos/
+
+# Error logs
+error_log
+*/error_log
+**/error_log
+
+# Cache files
+cache/
+*.cache
