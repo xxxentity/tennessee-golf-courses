@@ -1,0 +1,17 @@
+Top 10 Putters of 2025 - Image File Names Needed:
+
+1. taylormade-spider-tour.jpg - TaylorMade Spider Tour putter (black/white)
+2. lab-golf-df3.jpg - L.A.B. Golf DF3 putter 
+3. odyssey-ai-one-jailbird.jpg - Odyssey Ai-One Square 2 Square Jailbird
+4. toulon-hollywood-h1.jpg - Toulon Hollywood H1 blade putter
+5. wilson-infinite-buckingham.jpg - Wilson Infinite Buckingham mallet
+6. scotty-cameron-newport-2.jpg - Scotty Cameron Studio Style Newport 2
+7. tommy-armour-impact-no2.jpg - Tommy Armour Impact No. 2 blade
+8. ping-scottsdale-tyne4.jpg - PING Scottsdale Prime Tyne 4
+9. taylormade-spider-zt.jpg - TaylorMade Spider ZT putter
+10. cleveland-hb-soft2.jpg - Cleveland HB Soft 2 Black Model 1
+
+Additional files:
+- header-image.jpg (already downloaded - golf putting scene)
+
+Upload these exact file names to /images/reviews/top-10-putters-2025/ folder

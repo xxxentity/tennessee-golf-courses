@@ -2,11 +2,6 @@
 require_once '../includes/session-security.php';
 require_once '../includes/csrf.php';
 
-// Prevent caching of login page (CloudFlare compatibility)
-header('Cache-Control: no-cache, no-store, must-revalidate, private');
-header('Pragma: no-cache');
-header('Expires: 0');
-
 // Start secure session for CSRF protection
 try {
     SecureSession::start();
