@@ -1,0 +1,172 @@
+[28-Aug-2025 22:07:46 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/belmont-conner-brown-wins-tennessee-match-play-championship.php on line 6
+[28-Aug-2025 22:15:09 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/belmont-conner-brown-wins-tennessee-match-play-championship.php on line 6
+[28-Aug-2025 22:15:16 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/belmont-conner-brown-wins-tennessee-match-play-championship.php on line 6
+[28-Aug-2025 22:51:50 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 6
+[28-Aug-2025 22:51:51 UTC] PHP Warning:  session_set_cookie_params(): Session cookie parameters cannot be changed after headers have already been sent in /home/entityadmin/tennesseegolfcourses.com/includes/session-security.php on line 31
+[28-Aug-2025 22:51:51 UTC] PHP Warning:  session_name(): Session name cannot be changed after headers have already been sent in /home/entityadmin/tennesseegolfcourses.com/includes/session-security.php on line 35
+[28-Aug-2025 22:51:51 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/entityadmin/tennesseegolfcourses.com/includes/session-security.php on line 38
+[28-Aug-2025 22:51:57 UTC] PHP Warning:  Undefined variable $pdo in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php on line 41
+[28-Aug-2025 22:51:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php:41
+Stack trace:
+#0 /home/entityadmin/tennesseegolfcourses.com/news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory.php(373): include()
+#1 {main}
+  thrown in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php on line 41
+[28-Aug-2025 23:39:51 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 6
+[28-Aug-2025 23:39:57 UTC] PHP Warning:  Undefined variable $pdo in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php on line 41
+[28-Aug-2025 23:39:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php:41
+Stack trace:
+#0 /home/entityadmin/tennesseegolfcourses.com/news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory.php(373): include()
+#1 {main}
+  thrown in /home/entityadmin/tennesseegolfcourses.com/includes/threaded-comments.php on line 41
+[29-Aug-2025 00:24:23 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 6
+[29-Aug-2025 01:33:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method SEO::setupArticlePage() in /home/entityadmin/tennesseegolfcourses.com/news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/entityadmin/tennesseegolfcourses.com/news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown.php on line 17
+[29-Aug-2025 01:34:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method SEO::setupArticlePage() in /home/entityadmin/tennesseegolfcourses.com/news/liv-golf-michigan-2025-team-championship-complete-tournament-recap.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/entityadmin/tennesseegolfcourses.com/news/liv-golf-michigan-2025-team-championship-complete-tournament-recap.php on line 17
+[29-Aug-2025 03:51:08 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 04:26:31 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 04:29:30 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 05:28:27 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 06:30:15 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 07:09:30 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 07:21:53 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 08:43:10 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 09:11:28 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 10:47:36 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 10:50:42 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 11:23:22 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 11:35:51 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 11:55:30 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 11:55:30 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:35 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:36 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:36 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:37 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:37 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:38 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:39 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 11:55:39 UTC] Warning: Session IP changed from 200.53.21.136 to 5.35.69.6
+[29-Aug-2025 13:38:50 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:42:26 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:46:18 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:53:01 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:53:23 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:54:15 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 13:56:52 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:01:21 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 41
+[29-Aug-2025 14:01:39 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 41
+[29-Aug-2025 14:04:37 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 41
+[29-Aug-2025 14:15:57 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 41
+[29-Aug-2025 14:26:23 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:31:52 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:33:44 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:34:01 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:40:50 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 14:41:37 UTC] PHP Parse error:  syntax error, unexpected identifier "s" in /home/entityadmin/tennesseegolfcourses.com/news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win.php on line 20
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: current_page = /news/tour-championship-2025-final-round-fleetwood-historic-win
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: current_page = /news/smith-narramore-capture-55th-tennessee-four-ball-championship-morristown
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:05 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:06 UTC] DEBUG WEATHER: current_page = /news/tour-championship-2025-round-3-cantlay-fleetwood-tied
+[29-Aug-2025 15:57:06 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:06 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:07 UTC] DEBUG WEATHER: current_page = /news/liv-golf-michigan-2025-semifinals-thriller
+[29-Aug-2025 15:57:07 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:07 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:08 UTC] DEBUG WEATHER: current_page = /news/liv-golf-michigan-team-championship-2025-quarterfinals
+[29-Aug-2025 15:57:08 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:08 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: current_page = /news/tour-championship-2025-round-2-fleetwood-henley-share-lead
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: current_page = /news/tour-championship-2025-first-round-henley-leads
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:09 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:10 UTC] DEBUG WEATHER: current_page = /news/tennessee-four-ball-championship-2025-country-club-morristown
+[29-Aug-2025 15:57:10 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:10 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:11 UTC] DEBUG WEATHER: current_page = /news/2025-tour-championship-atlanta-predictions
+[29-Aug-2025 15:57:11 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:11 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:12 UTC] DEBUG WEATHER: current_page = /news/etsu-gavin-tiernan-amateur-championship-runner-up
+[29-Aug-2025 15:57:12 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:12 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: current_page = /news/belmont-conner-brown-wins-tennessee-match-play-championship
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: current_page = /news/bmw-championship-2025-complete-tournament-recap-community-impact
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:16 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:17 UTC] DEBUG WEATHER: current_page = /news/liv-golf-indianapolis-2025-complete-tournament-recap-entertainment
+[29-Aug-2025 15:57:17 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:17 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:18 UTC] DEBUG WEATHER: current_page = /news/tennessee-herrington-historic-run-125th-us-amateur-runner-up
+[29-Aug-2025 15:57:18 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:18 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:19 UTC] DEBUG WEATHER: current_page = /news/scheffler-delivers-stunning-comeback-wins-bmw-championship
+[29-Aug-2025 15:57:19 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:19 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: current_page = /news/macintyre-weathers-moving-day-storm-maintains-bmw-championship-lead
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: current_page = /news/macintyre-extends-commanding-lead-scheffler-pursuit-bmw-championship
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:20 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:21 UTC] DEBUG WEATHER: current_page = /news/macintyre-explodes-for-62-leads-bmw-championship
+[29-Aug-2025 15:57:21 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:21 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:22 UTC] DEBUG WEATHER: current_page = /news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak
+[29-Aug-2025 15:57:22 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:22 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:23 UTC] DEBUG WEATHER: current_page = /news/fedex-st-jude-championship-2025-complete-recap-community-impact
+[29-Aug-2025 15:57:23 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:23 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:33 UTC] DEBUG WEATHER: current_page = /news/tour-championship-2025-atlanta-complete-tournament-recap-fleetwood-first-win
+[29-Aug-2025 15:57:33 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:33 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:38 UTC] DEBUG WEATHER: current_page = /news/liv-golf-michigan-2025-team-championship-complete-tournament-recap
+[29-Aug-2025 15:57:38 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:38 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:42 UTC] DEBUG WEATHER: current_page = /news/liv-golf-michigan-2025-championship-legion-xiii-playoff-victory
+[29-Aug-2025 15:57:42 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:42 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: current_page = /news/fleetwood-takes-command-weather-halts-play
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: current_page = /news/fleetwood-maintains-narrow-lead-scheffler-charges
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:44 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:45 UTC] DEBUG WEATHER: current_page = /news/fedex-st-jude-first-round-bhatia-leads
+[29-Aug-2025 15:57:45 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:45 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:46 UTC] DEBUG WEATHER: current_page = /news/scheffler-wins-2025-british-open-final-round
+[29-Aug-2025 15:57:46 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:46 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: current_page = /news/scheffler-extends-lead-open-championship-round-3
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: current_page = /news/scheffler-seizes-control-open-championship-round-2
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:47 UTC] DEBUG WEATHER: course_slug = null
+[29-Aug-2025 15:57:48 UTC] DEBUG WEATHER: current_page = /news/open-championship-2025-round-1-royal-portrush
+[29-Aug-2025 15:57:48 UTC] DEBUG WEATHER: is_individual_course = false
+[29-Aug-2025 15:57:48 UTC] DEBUG WEATHER: course_slug = null
+[31-Aug-2025 04:29:29 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:33 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:35 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:40 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:41 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:41 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:42 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:43 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:45 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[31-Aug-2025 04:29:46 UTC] Warning: Session IP changed from 103.159.104.6 to 195.2.81.171
+[01-Sep-2025 01:36:59 UTC] Warning: Session IP changed from 124.41.252.80 to 212.34.154.131
+[01-Sep-2025 01:37:00 UTC] Warning: Session IP changed from 124.41.252.80 to 212.34.154.131
+[01-Sep-2025 01:37:22 UTC] Warning: Session IP changed from 124.41.252.80 to 212.34.154.131

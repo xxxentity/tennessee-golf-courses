@@ -74,8 +74,6 @@ $is_main_page = (
 </div>
 <?php endif; ?>
 
-<!-- NAVIGATION FILE IS LOADING - TEST -->
-<div style="background: red; color: white; padding: 10px; font-size: 20px;">NAVIGATION FILE LOADED SUCCESSFULLY</div>
 <!-- Header -->
 <header class="header">
     <nav class="nav">
@@ -232,14 +230,14 @@ require_once __DIR__ . '/cookie-consent.php';
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--bg-white);
+    background: white;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 99999 !important;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
@@ -265,6 +263,12 @@ require_once __DIR__ . '/cookie-consent.php';
     background: rgba(6, 78, 59, 0.05);
     color: var(--primary-color);
 }
+
+/* Force header elements below dropdown */
+.header { z-index: 10 !important; }
+.hero { z-index: 5 !important; }
+.hero-content { z-index: 5 !important; }
+.hero-search { z-index: 5 !important; }
 
 /* Hide mobile auth items on desktop */
 .mobile-auth-item {
