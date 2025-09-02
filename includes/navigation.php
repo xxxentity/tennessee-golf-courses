@@ -75,9 +75,9 @@ $is_main_page = (
 <?php endif; ?>
 
 <!-- Header -->
-<header class="header" style="z-index: 100;">
-    <nav class="nav" style="position: relative; z-index: 2000;">
-        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%; z-index: 2001;">
+<header class="header">
+    <nav class="nav" style="position: relative; z-index: 999;">
+        <div class="nav-container" style="display: flex; align-items: center; position: relative; width: 100%;">
             <!-- Logo - Far Left -->
             <a href="/" class="nav-logo" style="position: absolute; left: 0;">
                 <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="logo-image">
@@ -238,7 +238,7 @@ require_once __DIR__ . '/cookie-consent.php';
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 2002;
+    z-index: 1000;
     min-width: 160px;
     padding: 8px 0;
     list-style: none;
@@ -265,9 +265,16 @@ require_once __DIR__ . '/cookie-consent.php';
     color: var(--primary-color);
 }
 
-/* Override header z-index to allow dropdowns */
+/* Force header to lower stacking context */
 .header {
-    z-index: 100 !important;
+    z-index: 1 !important;
+    isolation: isolate;
+}
+
+/* Force hero section behind nav */
+.hero {
+    z-index: 1 !important;
+    isolation: isolate;
 }
 
 /* Hide mobile auth items on desktop */
