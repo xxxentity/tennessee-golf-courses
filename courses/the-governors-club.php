@@ -793,3 +793,102 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">The Governors Club Gallery</h2>
+                <span class="close" onclick="closeGallery()">&times;</span>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/1.jpeg');" alt="The Governors Club Brentwood TN - Signature hole with scenic water features and championship golf course design"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/2.jpeg');" alt="The Governors Club Brentwood TN - Panoramic fairway view with strategic bunkers and mature trees"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/3.jpeg');" alt="The Governors Club Brentwood TN - Championship golf course layout showing natural terrain"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/4.jpeg');" alt="The Governors Club Brentwood TN - Golf course entrance with professional landscaping and signage"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/5.jpeg');" alt="The Governors Club Brentwood TN - Challenging par 3 hole with water hazard and elevated green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/6.jpeg');" alt="The Governors Club Brentwood TN - Scenic tee box view overlooking rolling fairway and forest"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/7.jpeg');" alt="The Governors Club Brentwood TN - Well-maintained putting green with flag and surrounding bunkers"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/8.jpeg');" alt="The Governors Club Brentwood TN - Dramatic dogleg hole with creek running alongside fairway"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/9.jpeg');" alt="The Governors Club Brentwood TN - Elevated tee shot over valley to distant green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/10.jpeg');" alt="The Governors Club Brentwood TN - Pristine fairway bunkers and sand traps with raked patterns"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/11.jpeg');" alt="The Governors Club Brentwood TN - Golf course clubhouse exterior with architectural details and landscaping"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/12.jpeg');" alt="The Governors Club Brentwood TN - Multiple tee boxes showing course setup and yardage options"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/13.jpeg');" alt="The Governors Club Brentwood TN - Water feature and fountain near clubhouse entrance"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/14.jpeg');" alt="The Governors Club Brentwood TN - Long par 4 hole with tree-lined fairway and strategic bunkering"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/15.jpeg');" alt="The Governors Club Brentwood TN - Golf cart path winding through natural Tennessee landscape"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/16.jpeg');" alt="The Governors Club Brentwood TN - Practice facility with driving range and target greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/17.jpeg');" alt="The Governors Club Brentwood TN - Scenic bridge crossing over water hazard on golf course"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/18.jpeg');" alt="The Governors Club Brentwood TN - Championship finishing hole with gallery and spectator areas"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/19.jpeg');" alt="The Governors Club Brentwood TN - Golf course maintenance equipment and perfectly manicured grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/20.jpeg');" alt="The Governors Club Brentwood TN - Early morning mist over fairway creating dramatic golf course atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/21.jpeg');" alt="The Governors Club Brentwood TN - Golf course pro shop interior with merchandise and equipment displays"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/22.jpeg');" alt="The Governors Club Brentwood TN - Tournament setup with grandstands and professional golf event atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/23.jpeg');" alt="The Governors Club Brentwood TN - Sunset view over golf course with golden hour lighting on greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/24.jpeg');" alt="The Governors Club Brentwood TN - Wildlife and natural habitat preserved throughout the golf course grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-governors-club/25.jpeg');" alt="The Governors Club Brentwood TN - Award ceremony and trophy presentation at championship golf tournament"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery modal functionality
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality for comment form
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating input[type="radio"]');
+            const labels = document.querySelectorAll('.star-rating label');
+            
+            function updateStars(rating) {
+                labels.forEach((label, index) => {
+                    if (index < rating) {
+                        label.classList.add('active');
+                    } else {
+                        label.classList.remove('active');
+                    }
+                });
+            }
+            
+            labels.forEach((label, index) => {
+                label.addEventListener('mouseover', () => updateStars(index + 1));
+                label.addEventListener('click', () => {
+                    stars[index].checked = true;
+                    updateStars(index + 1);
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+                const checkedStar = document.querySelector('.star-rating input[type="radio"]:checked');
+                if (checkedStar) {
+                    const rating = Array.from(stars).indexOf(checkedStar) + 1;
+                    updateStars(rating);
+                } else {
+                    updateStars(0);
+                }
+            });
+        });
+    </script>
+
+    <?php include '../includes/footer.php'; ?>

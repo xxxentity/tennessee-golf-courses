@@ -528,3 +528,110 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Williams Creek Golf Course Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/1.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/2.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/3.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/4.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/5.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/6.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/7.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/8.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/9.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/10.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/11.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/12.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/13.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/14.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/15.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/16.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/17.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/18.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/19.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/20.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/21.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/22.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/23.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/24.jpeg');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/williams-creek-golf-course/25.jpeg');"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Gallery Modal Functions
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating label');
+            const radioInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', function() {
+                    highlightStars(index + 1);
+                });
+                
+                star.addEventListener('click', function() {
+                    radioInputs[index].checked = true;
+                    highlightStars(index + 1);
+                });
+            });
+            
+            function highlightStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Reset stars on mouse leave
+            const starContainer = document.querySelector('.star-rating');
+            if (starContainer) {
+                starContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = document.querySelector('.star-rating input[type="radio"]:checked');
+                    if (checkedInput) {
+                        const checkedIndex = Array.from(radioInputs).indexOf(checkedInput);
+                        highlightStars(checkedIndex + 1);
+                    } else {
+                        highlightStars(0);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

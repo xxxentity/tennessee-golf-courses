@@ -789,3 +789,205 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Sparta Country Club Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/1.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/2.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/3.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/4.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/5.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/6.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/7.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/8.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/9.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/10.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/11.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/12.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/13.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/14.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/15.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/16.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/17.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/18.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/19.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/20.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/21.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/22.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/23.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/24.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/sparta-country-club/25.webp');"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <div class="comments-container">
+                <div class="comments-header">
+                    <h2>Reviews & Comments</h2>
+                    <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                        <div class="review-summary">
+                            <div class="review-rating"><?php echo $avg_rating; ?></div>
+                            <div>
+                                <div class="review-stars">
+                                    <?php 
+                                    $full_stars = floor($avg_rating);
+                                    $half_star = ($avg_rating - $full_stars) >= 0.5;
+                                    
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= $full_stars) {
+                                            echo '<i class="fas fa-star"></i>';
+                                        } elseif ($i == $full_stars + 1 && $half_star) {
+                                            echo '<i class="fas fa-star-half-alt"></i>';
+                                        } else {
+                                            echo '<i class="far fa-star"></i>';
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <div class="review-count"><?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?></div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <?php if (isset($success_message)): ?>
+                    <div class="success-message"><?php echo $success_message; ?></div>
+                <?php endif; ?>
+
+                <?php if (isset($error_message)): ?>
+                    <div class="error-message"><?php echo $error_message; ?></div>
+                <?php endif; ?>
+
+                <?php if ($is_logged_in): ?>
+                    <div class="comment-form">
+                        <h3>Share Your Experience</h3>
+                        <form method="POST">
+                            <div class="rating-input">
+                                <label>Your Rating:</label>
+                                <div class="star-rating">
+                                    <input type="radio" name="rating" value="5" id="star5">
+                                    <label for="star5">★</label>
+                                    <input type="radio" name="rating" value="4" id="star4">
+                                    <label for="star4">★</label>
+                                    <input type="radio" name="rating" value="3" id="star3">
+                                    <label for="star3">★</label>
+                                    <input type="radio" name="rating" value="2" id="star2">
+                                    <label for="star2">★</label>
+                                    <input type="radio" name="rating" value="1" id="star1">
+                                    <label for="star1">★</label>
+                                </div>
+                            </div>
+                            <textarea name="comment_text" class="comment-textarea" placeholder="Share your thoughts about Sparta Country Club..." required></textarea>
+                            <button type="submit" class="comment-submit">Post Review</button>
+                        </form>
+                    </div>
+                <?php else: ?>
+                    <div class="login-prompt">
+                        <p><a href="../login.php">Log in</a> to share your review of Sparta Country Club</p>
+                    </div>
+                <?php endif; ?>
+
+                <div class="comments-list">
+                    <?php if (count($comments) > 0): ?>
+                        <?php foreach ($comments as $comment): ?>
+                            <div class="comment-item">
+                                <div class="comment-header">
+                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
+                                    <span class="comment-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></span>
+                                </div>
+                                <div class="comment-rating">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
+                                    <?php endfor; ?>
+                                </div>
+                                <p class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="no-comments">
+                            <p>No reviews yet. Be the first to share your experience!</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Gallery Modal Functions
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating label');
+            const radioInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', function() {
+                    highlightStars(index + 1);
+                });
+                
+                star.addEventListener('click', function() {
+                    radioInputs[index].checked = true;
+                    highlightStars(index + 1);
+                });
+            });
+            
+            function highlightStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Reset stars on mouse leave
+            const starContainer = document.querySelector('.star-rating');
+            if (starContainer) {
+                starContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = document.querySelector('.star-rating input[type="radio"]:checked');
+                    if (checkedInput) {
+                        const checkedIndex = Array.from(radioInputs).indexOf(checkedInput);
+                        highlightStars(checkedIndex + 1);
+                    } else {
+                        highlightStars(0);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

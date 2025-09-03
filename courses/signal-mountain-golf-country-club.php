@@ -815,3 +815,110 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Signal Mountain Golf & Country Club Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/1.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/2.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/3.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/4.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/5.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/6.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/7.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/8.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/9.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/10.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/11.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/12.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/13.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/14.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/15.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/16.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/17.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/18.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/19.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/20.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/21.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/22.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/23.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/24.webp');"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/signal-mountain-golf-country-club/25.webp');"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Gallery Modal Functions
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target === modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating label');
+            const radioInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', function() {
+                    highlightStars(index + 1);
+                });
+                
+                star.addEventListener('click', function() {
+                    radioInputs[index].checked = true;
+                    highlightStars(index + 1);
+                });
+            });
+            
+            function highlightStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Reset stars on mouse leave
+            const starContainer = document.querySelector('.star-rating');
+            if (starContainer) {
+                starContainer.addEventListener('mouseleave', function() {
+                    const checkedInput = document.querySelector('.star-rating input[type="radio"]:checked');
+                    if (checkedInput) {
+                        const checkedIndex = Array.from(radioInputs).indexOf(checkedInput);
+                        highlightStars(checkedIndex + 1);
+                    } else {
+                        highlightStars(0);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

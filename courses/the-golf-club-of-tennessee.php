@@ -837,3 +837,102 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">The Golf Club of Tennessee Gallery</h2>
+                <span class="close" onclick="closeGallery()">&times;</span>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/1.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Signature hole with scenic water features and championship golf course design"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/2.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Panoramic fairway view with strategic bunkers and mature trees"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/3.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Championship golf course layout showing natural terrain"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/4.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Golf course entrance with professional landscaping and signage"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/5.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Challenging par 3 hole with water hazard and elevated green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/6.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Scenic tee box view overlooking rolling fairway and forest"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/7.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Well-maintained putting green with flag and surrounding bunkers"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/8.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Dramatic dogleg hole with creek running alongside fairway"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/9.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Elevated tee shot over valley to distant green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/10.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Pristine fairway bunkers and sand traps with raked patterns"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/11.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Golf course clubhouse exterior with architectural details and landscaping"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/12.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Multiple tee boxes showing course setup and yardage options"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/13.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Water feature and fountain near clubhouse entrance"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/14.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Long par 4 hole with tree-lined fairway and strategic bunkering"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/15.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Golf cart path winding through natural Tennessee landscape"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/16.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Practice facility with driving range and target greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/17.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Scenic bridge crossing over water hazard on golf course"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/18.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Championship finishing hole with gallery and spectator areas"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/19.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Golf course maintenance equipment and perfectly manicured grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/20.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Early morning mist over fairway creating dramatic golf course atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/21.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Golf course pro shop interior with merchandise and equipment displays"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/22.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Tournament setup with grandstands and professional golf event atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/23.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Sunset view over golf course with golden hour lighting on greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/24.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Wildlife and natural habitat preserved throughout the golf course grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/the-golf-club-of-tennessee/25.jpeg');" alt="The Golf Club of Tennessee Kingston Springs TN - Award ceremony and trophy presentation at championship golf tournament"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery modal functionality
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality for comment form
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating input[type="radio"]');
+            const labels = document.querySelectorAll('.star-rating label');
+            
+            function updateStars(rating) {
+                labels.forEach((label, index) => {
+                    if (index < rating) {
+                        label.classList.add('active');
+                    } else {
+                        label.classList.remove('active');
+                    }
+                });
+            }
+            
+            labels.forEach((label, index) => {
+                label.addEventListener('mouseover', () => updateStars(index + 1));
+                label.addEventListener('click', () => {
+                    stars[index].checked = true;
+                    updateStars(index + 1);
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+                const checkedStar = document.querySelector('.star-rating input[type="radio"]:checked');
+                if (checkedStar) {
+                    const rating = Array.from(stars).indexOf(checkedStar) + 1;
+                    updateStars(rating);
+                } else {
+                    updateStars(0);
+                }
+            });
+        });
+    </script>
+
+    <?php include '../includes/footer.php'; ?>

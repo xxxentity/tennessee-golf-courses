@@ -867,3 +867,102 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Stonehenge Golf Club Gallery</h2>
+                <span class="close" onclick="closeGallery()">&times;</span>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/1.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Signature hole with scenic water features and championship golf course design"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/2.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Panoramic fairway view with strategic bunkers and mature trees"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/3.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Championship golf course layout showing natural terrain"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/4.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Golf course entrance with professional landscaping and signage"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/5.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Challenging par 3 hole with water hazard and elevated green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/6.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Scenic tee box view overlooking rolling fairway and forest"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/7.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Well-maintained putting green with flag and surrounding bunkers"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/8.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Dramatic dogleg hole with creek running alongside fairway"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/9.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Elevated tee shot over valley to distant green"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/10.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Pristine fairway bunkers and sand traps with raked patterns"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/11.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Golf course clubhouse exterior with architectural details and landscaping"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/12.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Multiple tee boxes showing course setup and yardage options"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/13.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Water feature and fountain near clubhouse entrance"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/14.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Long par 4 hole with tree-lined fairway and strategic bunkering"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/15.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Golf cart path winding through natural Tennessee landscape"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/16.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Practice facility with driving range and target greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/17.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Scenic bridge crossing over water hazard on golf course"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/18.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Championship finishing hole with gallery and spectator areas"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/19.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Golf course maintenance equipment and perfectly manicured grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/20.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Early morning mist over fairway creating dramatic golf course atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/21.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Golf course pro shop interior with merchandise and equipment displays"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/22.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Tournament setup with grandstands and professional golf event atmosphere"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/23.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Sunset view over golf course with golden hour lighting on greens"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/24.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Wildlife and natural habitat preserved throughout the golf course grounds"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/stonehenge-golf-club/25.webp');" alt="Stonehenge Golf Club Fairfield Glade TN - Award ceremony and trophy presentation at championship golf tournament"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery modal functionality
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality for comment form
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating input[type="radio"]');
+            const labels = document.querySelectorAll('.star-rating label');
+            
+            function updateStars(rating) {
+                labels.forEach((label, index) => {
+                    if (index < rating) {
+                        label.classList.add('active');
+                    } else {
+                        label.classList.remove('active');
+                    }
+                });
+            }
+            
+            labels.forEach((label, index) => {
+                label.addEventListener('mouseover', () => updateStars(index + 1));
+                label.addEventListener('click', () => {
+                    stars[index].checked = true;
+                    updateStars(index + 1);
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+                const checkedStar = document.querySelector('.star-rating input[type="radio"]:checked');
+                if (checkedStar) {
+                    const rating = Array.from(stars).indexOf(checkedStar) + 1;
+                    updateStars(rating);
+                } else {
+                    updateStars(0);
+                }
+            });
+        });
+    </script>
+
+    <?php include '../includes/footer.php'; ?>
