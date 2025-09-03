@@ -157,17 +157,33 @@ try {
             $subject = "Verify Your Email - Tennessee Golf Courses";
             $message = "
             <html>
-            <head><title>Verify Your Email - Tennessee Golf Courses</title></head>
-            <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333;'>
-                <div style='max-width: 600px; margin: 0 auto; padding: 20px;'>
+            <head>
+                <title>Verify Your Email - Tennessee Golf Courses</title>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <style>
+                    @media only screen and (max-width: 600px) {
+                        .container { width: 100% !important; padding: 10px !important; }
+                        .content { padding: 15px !important; }
+                        .button { display: block !important; width: 100% !important; margin: 10px 0 !important; }
+                        .button a { display: block !important; padding: 15px !important; }
+                        h1 { font-size: 24px !important; }
+                        .benefits-box { padding: 15px !important; }
+                        ul { padding-left: 20px !important; }
+                        .two-button-row { text-align: center !important; }
+                        .two-button-row a { display: block !important; width: 100% !important; margin: 10px 0 !important; }
+                    }
+                </style>
+            </head>
+            <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0;'>
+                <div class='container' style='max-width: 600px; margin: 0 auto; padding: 20px;'>
                     <div style='text-align: center; margin-bottom: 30px;'>
                         <h1 style='color: #064E3B;'>Welcome to Tennessee Golf Courses, " . htmlspecialchars($first_name) . "!</h1>
                     </div>
                     
                     <p>Thank you for creating an account! Please verify your email address to complete your registration and access all features.</p>
                     
-                    <div style='text-align: center; margin: 30px 0; padding: 20px; background: #f0f9ff; border-radius: 8px;'>
-                        <a href='https://tennesseegolfcourses.com/verify-email?token=" . $email_verification_token . "' style='background: #064E3B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600;'>
+                    <div class='button' style='text-align: center; margin: 30px 0; padding: 20px; background: #f0f9ff; border-radius: 8px;'>
+                        <a href='https://tennesseegolfcourses.com/verify-email?token=" . $email_verification_token . "' style='background: #064E3B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600; display: inline-block;'>
                             Verify My Email Address
                         </a>
                     </div>
@@ -182,9 +198,9 @@ try {
                     
                     <p>Your account has been created with these benefits:</p>
                     
-                    <div style='background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #064E3B;'>
+                    <div class='benefits-box' style='background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #064E3B;'>
                         <h3 style='color: #064E3B; margin-top: 0;'>✅ Your Account Benefits:</h3>
-                        <ul style='margin: 0; padding-left: 20px;'>
+                        <ul style='margin: 0; padding-left: 20px; font-size: 14px;'>
                             <li><strong>Save Favorites:</strong> Bookmark your favorite golf courses</li>
                             <li><strong>Write Reviews:</strong> Share your course experiences</li>
                             <li><strong>Track Visits:</strong> Keep a record of courses you've played</li>
@@ -201,9 +217,9 @@ try {
                         <li>Tips from Tennessee golf pros</li>
                     </ul>
                     
-                    <div style='text-align: center; margin: 30px 0;'>
-                        <a href='https://tennesseegolfcourses.com/profile' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin-right: 16px;'>View My Profile</a>
-                        <a href='https://tennesseegolfcourses.com/courses' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;'>Explore Courses</a>
+                    <div class='two-button-row' style='text-align: center; margin: 30px 0;'>
+                        <a href='https://tennesseegolfcourses.com/profile' style='background: #064E3B; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 8px; display: inline-block;'>View My Profile</a>
+                        <a href='https://tennesseegolfcourses.com/courses' style='background: #EA580C; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; margin: 8px; display: inline-block;'>Explore Courses</a>
                     </div>
                     
                     <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
