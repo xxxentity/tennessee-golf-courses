@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
@@ -19,11 +19,18 @@ $course_data = [
 
 SEO::setupCoursePage($course_data);
 
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
+
 $course_slug = 'belle-acres-golf-course';
 $course_name = 'Belle Acres Golf Course';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
@@ -34,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     } else {
         $rating = (int)$_POST['rating'];
         $comment_text = trim($_POST['comment_text']);
-        $user_id = $_SESSION['user_id'];
+        $user_id = SecureSession::get('user_id');
         
         if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
             try {

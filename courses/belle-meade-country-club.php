@@ -1,6 +1,7 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
 
 $course_slug = 'belle-meade-country-club';
@@ -21,14 +22,26 @@ $course_data = [
 // Set up SEO for this course page
 SEO::setupCoursePage($course_data);
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
+
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
+        $rating = (int)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
     
     if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
         try {
@@ -38,8 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         } catch (PDOException $e) {
             $error_message = "Error posting review. Please try again.";
         }
-    } else {
-        $error_message = "Please provide a valid rating and comment.";
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
     }
 }
 

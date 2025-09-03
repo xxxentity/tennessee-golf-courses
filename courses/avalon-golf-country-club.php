@@ -1,8 +1,15 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
 
 // Course data for SEO
 $course_data = [
@@ -22,8 +29,8 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'avalon-golf-country-club';
 $course_name = 'Avalon Golf & Country Club';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
