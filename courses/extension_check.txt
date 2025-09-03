@@ -1,0 +1,33 @@
+Analyzing files with both preview gallery and JavaScript for extension mismatches:
+
+Checking bear-trace-at-tims-ford.php:
+Preview gallery:
+JavaScript:
+1064-                const galleryItem = document.createElement('div');
+1065-                galleryItem.className = 'full-gallery-item';
+1066:                galleryItem.innerHTML = `<img src="../images/courses/bear-trace-at-tims-ford/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+1067:                galleryItem.onclick = () => window.open(`../images/courses/bear-trace-at-tims-ford/${i}.webp`, '_blank');
+1068-                galleryGrid.appendChild(galleryItem);
+1069-            }
+
+Checking gaylord-springs-golf-links.php:
+Preview gallery:
+JavaScript:
+691-                const galleryItem = document.createElement('div');
+692-                galleryItem.className = 'full-gallery-item';
+693:                galleryItem.innerHTML = `<img src="../images/courses/gaylord-springs-golf-links/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+694:                galleryItem.onclick = () => window.open(`../images/courses/gaylord-springs-golf-links/${i}.jpeg`, '_blank');
+695-                galleryGrid.appendChild(galleryItem);
+696-            }
+
+Checking the-honors-course.php:
+Preview gallery:
+JavaScript:
+169-                const galleryItem = document.createElement('div');
+170-                galleryItem.className = 'full-gallery-item';
+171:                galleryItem.innerHTML = `<img src="../images/courses/the-honors-course/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+172:                galleryItem.onclick = () => window.open(`../images/courses/the-honors-course/${i}.webp`, '_blank');
+173-                galleryGrid.appendChild(galleryItem);
+174-            }
+Files potentially mixing .webp and .jpeg extensions:
+
