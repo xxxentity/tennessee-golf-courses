@@ -620,3 +620,14 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Tennessee Grasslands Golf & CC - Foxland Gallery</h2>
+                <span class="close" onclick="closeGallery()">&times;</span>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Images will be dynamically loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
