@@ -309,8 +309,19 @@ require_once __DIR__ . '/cookie-consent.php';
     }
 }
 
+/* Hide mobile auth items on desktop */
+.mobile-auth-divider,
+.mobile-auth-item {
+    display: none !important;
+}
+
 /* Mobile responsiveness for user navigation */
 @media screen and (max-width: 768px) {
+    .mobile-auth-divider,
+    .mobile-auth-item {
+        display: block !important;
+    }
+    
     .nav-auth {
         position: fixed;
         left: -100%;
