@@ -193,7 +193,7 @@ a[href^="www."]:not(.social-links a)::after {
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 }
 
@@ -236,6 +236,14 @@ a[href^="www."]:not(.social-links a)::after {
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
+    height: 100%;
+    flex-wrap: nowrap;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-link {
