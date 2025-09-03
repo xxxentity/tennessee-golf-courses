@@ -786,9 +786,9 @@ try {
                 <p>Experience the beauty of Heatherhurst Brae Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/heatherhurst-brae-golf-course/2.webp" alt="Heatherhurst Brae Golf Course - Mountain Views" class="gallery-item">
-                <img src="../images/courses/heatherhurst-brae-golf-course/3.webp" alt="Heatherhurst Brae Golf Course - Championship Layout" class="gallery-item">
-                <img src="../images/courses/heatherhurst-brae-golf-course/4.webp" alt="Heatherhurst Brae Golf Course - Cumberland Plateau" class="gallery-item">
+                <img src="../images/courses/heatherhurst-brae-golf-course/2.webp" alt="Heatherhurst Brae Golf Course Fairfield Glade, TN - Championship 18-hole golf course fairway with manicured Bermuda grass, Tennessee resort golf course" class="gallery-item">
+                <img src="../images/courses/heatherhurst-brae-golf-course/3.webp" alt="Heatherhurst Brae Golf Course Fairfield Glade, TN - Pristine putting green with strategic bunkers and mature landscaping, Resort 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/heatherhurst-brae-golf-course/4.webp" alt="Heatherhurst Brae Golf Course Fairfield Glade, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee resort golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

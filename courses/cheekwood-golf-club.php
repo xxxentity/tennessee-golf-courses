@@ -446,8 +446,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/cheekwood-golf-club/1.jpeg" alt="Cheekwood Golf Club - Golf Course Overview" class="gallery-item">
-                <img src="../images/courses/cheekwood-golf-club/2.jpeg" alt="Cheekwood Golf Club - Fairway and Green View" class="gallery-item">
-                <img src="../images/courses/cheekwood-golf-club/3.jpeg" alt="Cheekwood Golf Club - Course Landscape" class="gallery-item">
+                <img src="../images/courses/cheekwood-golf-club/2.jpeg" alt="Cheekwood Golf Club Franklin, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 9-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/cheekwood-golf-club/3.jpeg" alt="Cheekwood Golf Club Franklin, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

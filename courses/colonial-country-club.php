@@ -435,8 +435,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/colonial-country-club/1.webp" alt="Colonial Country Club - Memphis Golf Course" class="gallery-item">
-                <img src="../images/courses/colonial-country-club/2.webp" alt="Colonial Country Club - Private Club Amenities" class="gallery-item">
-                <img src="../images/courses/colonial-country-club/3.webp" alt="Colonial Country Club - Championship Golf Layout" class="gallery-item">
+                <img src="../images/courses/colonial-country-club/2.webp" alt="Colonial Country Club Cordova, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/colonial-country-club/3.webp" alt="Colonial Country Club Cordova, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

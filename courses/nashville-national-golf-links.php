@@ -443,8 +443,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/nashville-national-golf-links/1.jpeg" alt="Nashville National Golf Links - Links Style Golf" class="gallery-item">
-                <img src="../images/courses/nashville-national-golf-links/2.jpeg" alt="Nashville National Golf Links - Championship Course" class="gallery-item">
-                <img src="../images/courses/nashville-national-golf-links/3.jpeg" alt="Nashville National Golf Links - Golf Course Design" class="gallery-item">
+                <img src="../images/courses/nashville-national-golf-links/2.jpeg" alt="Nashville National Golf Links Joelton, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/nashville-national-golf-links/3.jpeg" alt="Nashville National Golf Links Joelton, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

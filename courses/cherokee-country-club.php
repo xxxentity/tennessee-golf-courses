@@ -413,8 +413,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/cherokee-country-club/1.jpeg" alt="Cherokee Country Club - Private Golf Course" class="gallery-item">
-                <img src="../images/courses/cherokee-country-club/2.jpeg" alt="Cherokee Country Club - Knoxville Championship Golf" class="gallery-item">
-                <img src="../images/courses/cherokee-country-club/3.jpeg" alt="Cherokee Country Club - Exclusive Golf Club" class="gallery-item">
+                <img src="../images/courses/cherokee-country-club/2.jpeg" alt="Cherokee Country Club Knoxville, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/cherokee-country-club/3.jpeg" alt="Cherokee Country Club Knoxville, TN - Scenic golf course view featuring Donald Ross architectural design, premium Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

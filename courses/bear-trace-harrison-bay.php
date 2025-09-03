@@ -787,9 +787,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Harrison Bay</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/bear-trace-harrison-bay/2.jpeg" alt="Bear Trace at Harrison Bay - Lakefront Golf Views" class="gallery-item">
-                <img src="../images/courses/bear-trace-harrison-bay/3.jpeg" alt="Bear Trace at Harrison Bay - Championship Golf Course" class="gallery-item">
-                <img src="../images/courses/bear-trace-harrison-bay/4.jpeg" alt="Bear Trace at Harrison Bay - Scenic Golf Holes" class="gallery-item">
+                <img src="../images/courses/bear-trace-harrison-bay/2.jpeg" alt="Bear Trace at Harrison Bay Harrison, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Jack Nicklaus, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-harrison-bay/3.jpeg" alt="Bear Trace at Harrison Bay Harrison, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-harrison-bay/4.jpeg" alt="Bear Trace at Harrison Bay Harrison, TN - Scenic golf course view featuring Jack Nicklaus architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (100+)</button>

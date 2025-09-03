@@ -771,9 +771,9 @@ try {
                 <p>Experience the beauty of Timber Truss Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/timber-truss-golf-course/2.webp" alt="Timber Truss Golf Course - Fairway View" class="gallery-item">
-                <img src="../images/courses/timber-truss-golf-course/3.webp" alt="Timber Truss Golf Course - Green Complex" class="gallery-item">
-                <img src="../images/courses/timber-truss-golf-course/4.webp" alt="Timber Truss Golf Course - Course Layout" class="gallery-item">
+                <img src="../images/courses/timber-truss-golf-course/2.webp" alt="Timber Truss Golf Course Olive Branch, MS - Championship 18-hole golf course fairway with manicured Bermuda grass, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/timber-truss-golf-course/3.webp" alt="Timber Truss Golf Course Olive Branch, MS - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/timber-truss-golf-course/4.webp" alt="Timber Truss Golf Course Olive Branch, MS - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>

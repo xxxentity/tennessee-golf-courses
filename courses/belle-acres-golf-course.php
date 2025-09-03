@@ -449,9 +449,9 @@ try {
                 <p>Experience the beauty of Belle Acres Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/belle-acres-golf-course/2.jpeg" alt="Belle Acres Golf Course - Rolling Fairways" class="gallery-item">
-                <img src="../images/courses/belle-acres-golf-course/3.jpeg" alt="Belle Acres Golf Course - Pristine Greens" class="gallery-item">
-                <img src="../images/courses/belle-acres-golf-course/4.jpeg" alt="Belle Acres Golf Course - Golf Course Views" class="gallery-item">
+                <img src="../images/courses/belle-acres-golf-course/2.jpeg" alt="Belle Acres Golf Course Cookeville, TN - Championship 9-hole golf course fairway with manicured Bermuda grass designed by Dr. J.P. Terry, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/belle-acres-golf-course/3.jpeg" alt="Belle Acres Golf Course Cookeville, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 9-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/belle-acres-golf-course/4.jpeg" alt="Belle Acres Golf Course Cookeville, TN - Scenic golf course view featuring Dr. J.P. Terry architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

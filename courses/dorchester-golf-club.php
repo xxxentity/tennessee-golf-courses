@@ -786,9 +786,9 @@ try {
                 <p>Experience the beauty of Dorchester Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/dorchester-golf-club/2.webp" alt="Dorchester Golf Club - Championship Fairway" class="gallery-item">
-                <img src="../images/courses/dorchester-golf-club/3.webp" alt="Dorchester Golf Club - Bentgrass Greens" class="gallery-item">
-                <img src="../images/courses/dorchester-golf-club/4.webp" alt="Dorchester Golf Club - Tree-lined Fairways" class="gallery-item">
+                <img src="../images/courses/dorchester-golf-club/2.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Championship 18-hole golf course fairway with manicured Bermuda grass, Tennessee semi-private golf course" class="gallery-item">
+                <img src="../images/courses/dorchester-golf-club/3.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Pristine putting green with strategic bunkers and mature landscaping, Semi-Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/dorchester-golf-club/4.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee semi-private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

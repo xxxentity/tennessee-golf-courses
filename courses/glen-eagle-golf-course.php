@@ -766,9 +766,9 @@ try {
                 <p>Experience the beauty of Glen Eagle Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/glen-eagle-golf-course/2.webp" alt="Glen Eagle Golf Course - Championship Fairway" class="gallery-item">
-                <img src="../images/courses/glen-eagle-golf-course/3.webp" alt="Glen Eagle Golf Course - TifEagle Bermuda Greens" class="gallery-item">
-                <img src="../images/courses/glen-eagle-golf-course/4.webp" alt="Glen Eagle Golf Course - Course Layout" class="gallery-item">
+                <img src="../images/courses/glen-eagle-golf-course/2.webp" alt="Glen Eagle Golf Course Millington, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Ault, Clark, & Associates, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/glen-eagle-golf-course/3.webp" alt="Glen Eagle Golf Course Millington, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/glen-eagle-golf-course/4.webp" alt="Glen Eagle Golf Course Millington, TN - Scenic golf course view featuring Ault, Clark, & Associates architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

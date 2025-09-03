@@ -794,9 +794,9 @@ try {
                 <p>Experience the beauty of The Links at Fox Meadows</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/the-links-at-fox-meadows/2.webp" alt="The Links at Fox Meadows - Links Style Golf Course" class="gallery-item">
-                <img src="../images/courses/the-links-at-fox-meadows/3.webp" alt="The Links at Fox Meadows - Memphis Golf Links" class="gallery-item">
-                <img src="../images/courses/the-links-at-fox-meadows/4.webp" alt="The Links at Fox Meadows - Championship Golf" class="gallery-item">
+                <img src="../images/courses/the-links-at-fox-meadows/2.webp" alt="The Links at Fox Meadows Memphis, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Chic Adams, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/the-links-at-fox-meadows/3.webp" alt="The Links at Fox Meadows Memphis, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/the-links-at-fox-meadows/4.webp" alt="The Links at Fox Meadows Memphis, TN - Scenic golf course view featuring Chic Adams architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

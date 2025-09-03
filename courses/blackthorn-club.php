@@ -710,8 +710,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/blackthorn-club/1.jpeg" alt="Blackthorn Club - Golf Course Overview" class="gallery-item">
-                <img src="../images/courses/blackthorn-club/2.jpeg" alt="Blackthorn Club - Fairway and Green View" class="gallery-item">
-                <img src="../images/courses/blackthorn-club/3.jpeg" alt="Blackthorn Club - Course Landscape" class="gallery-item">
+                <img src="../images/courses/blackthorn-club/2.jpeg" alt="Blackthorn Club Jonesborough, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/blackthorn-club/3.jpeg" alt="Blackthorn Club Jonesborough, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

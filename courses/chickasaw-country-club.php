@@ -713,9 +713,9 @@ try {
                 <p>Experience the beauty of Chickasaw Country Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/chickasaw-country-club/2.webp" alt="Chickasaw Country Club - Historic Golf Course" class="gallery-item">
-                <img src="../images/courses/chickasaw-country-club/3.webp" alt="Chickasaw Country Club - Memphis Private Club" class="gallery-item">
-                <img src="../images/courses/chickasaw-country-club/4.webp" alt="Chickasaw Country Club - Championship Golf" class="gallery-item">
+                <img src="../images/courses/chickasaw-country-club/2.webp" alt="Chickasaw Country Club Memphis, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by William Langford, Tennessee private golf course" class="gallery-item">
+                <img src="../images/courses/chickasaw-country-club/3.webp" alt="Chickasaw Country Club Memphis, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/chickasaw-country-club/4.webp" alt="Chickasaw Country Club Memphis, TN - Scenic golf course view featuring William Langford architectural design, premium Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

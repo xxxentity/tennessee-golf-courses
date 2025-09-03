@@ -414,9 +414,9 @@ try {
                 <p>Experience the beauty of Belle Meade Country Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/belle-meade-country-club/2.jpeg" alt="Belle Meade Country Club - Historic Golf Course" class="gallery-item">
-                <img src="../images/courses/belle-meade-country-club/3.jpeg" alt="Belle Meade Country Club - Prestigious Fairways" class="gallery-item">
-                <img src="../images/courses/belle-meade-country-club/4.jpeg" alt="Belle Meade Country Club - Championship Layout" class="gallery-item">
+                <img src="../images/courses/belle-meade-country-club/2.jpeg" alt="Belle Meade Country Club Nashville Tennessee - Historic Donald Ross designed fairway with mature oak trees, private 18-hole championship golf course established 1921" class="gallery-item">
+                <img src="../images/courses/belle-meade-country-club/3.jpeg" alt="Belle Meade Country Club Nashville Tennessee - Pristine Bermuda grass putting green with strategic bunkers, exclusive private country club golf course" class="gallery-item">
+                <img src="../images/courses/belle-meade-country-club/4.jpeg" alt="Belle Meade Country Club Nashville Tennessee - Championship golf course layout featuring Donald Ross architectural design, Tennessee's most prestigious private golf club" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

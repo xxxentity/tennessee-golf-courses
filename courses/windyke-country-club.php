@@ -729,9 +729,9 @@ try {
                 <p>Experience the beauty of Windyke Country Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/windyke-country-club/2.webp" alt="Windyke Country Club - Private Golf Course" class="gallery-item">
-                <img src="../images/courses/windyke-country-club/3.webp" alt="Windyke Country Club - Memphis Championship Golf" class="gallery-item">
-                <img src="../images/courses/windyke-country-club/4.webp" alt="Windyke Country Club - Exclusive Golf Club" class="gallery-item">
+                <img src="../images/courses/windyke-country-club/2.webp" alt="Windyke Country Club Memphis, TN - Championship 36-hole golf course fairway with manicured Bermuda grass designed by Classic Design, Tennessee private golf course" class="gallery-item">
+                <img src="../images/courses/windyke-country-club/3.webp" alt="Windyke Country Club Memphis, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 36-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/windyke-country-club/4.webp" alt="Windyke Country Club Memphis, TN - Scenic golf course view featuring Classic Design architectural design, premium Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

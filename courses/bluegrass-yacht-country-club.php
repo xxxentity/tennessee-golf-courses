@@ -413,8 +413,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/bluegrass-yacht-country-club/1.jpeg" alt="Bluegrass Yacht & Country Club - Golf Course Overview" class="gallery-item">
-                <img src="../images/courses/bluegrass-yacht-country-club/2.jpeg" alt="Bluegrass Yacht & Country Club - Fairway and Green View" class="gallery-item">
-                <img src="../images/courses/bluegrass-yacht-country-club/3.jpeg" alt="Bluegrass Yacht & Country Club - Course Landscape" class="gallery-item">
+                <img src="../images/courses/bluegrass-yacht-country-club/2.jpeg" alt="Bluegrass Yacht & Country Club Hendersonville, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/bluegrass-yacht-country-club/3.jpeg" alt="Bluegrass Yacht & Country Club Hendersonville, TN - Scenic golf course view featuring Robert Bruce Harris architectural design, premium Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

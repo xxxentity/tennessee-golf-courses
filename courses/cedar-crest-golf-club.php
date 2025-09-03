@@ -835,9 +835,9 @@ try {
                 <p>Experience the beauty of Cedar Crest Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/cedar-crest-golf-club/2.jpeg" alt="Cedar Crest Golf Club - Championship Golf Course" class="gallery-item">
-                <img src="../images/courses/cedar-crest-golf-club/3.jpeg" alt="Cedar Crest Golf Club - Murfreesboro Golf Facility" class="gallery-item">
-                <img src="../images/courses/cedar-crest-golf-club/4.jpeg" alt="Cedar Crest Golf Club - Golf Course Scenery" class="gallery-item">
+                <img src="../images/courses/cedar-crest-golf-club/2.jpeg" alt="Cedar Crest Golf Club Murfreesboro, TN - Championship 18-hole golf course fairway with manicured Bermuda grass, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/cedar-crest-golf-club/3.jpeg" alt="Cedar Crest Golf Club Murfreesboro, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/cedar-crest-golf-club/4.jpeg" alt="Cedar Crest Golf Club Murfreesboro, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

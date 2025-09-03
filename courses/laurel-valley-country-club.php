@@ -764,9 +764,9 @@ try {
                 <p>Experience the beauty of Laurel Valley Country Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/laurel-valley-country-club/2.jpeg" alt="Laurel Valley Country Club - Prestigious Golf Course" class="gallery-item">
-                <img src="../images/courses/laurel-valley-country-club/3.jpeg" alt="Laurel Valley Country Club - Championship Golf Layout" class="gallery-item">
-                <img src="../images/courses/laurel-valley-country-club/4.jpeg" alt="Laurel Valley Country Club - Private Club Excellence" class="gallery-item">
+                <img src="../images/courses/laurel-valley-country-club/2.jpeg" alt="Laurel Valley Country Club Townsend, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Edmund B. Ault, Tennessee resort golf course" class="gallery-item">
+                <img src="../images/courses/laurel-valley-country-club/3.jpeg" alt="Laurel Valley Country Club Townsend, TN - Pristine putting green with strategic bunkers and mature landscaping, Resort 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/laurel-valley-country-club/4.jpeg" alt="Laurel Valley Country Club Townsend, TN - Scenic golf course view featuring Edmund B. Ault architectural design, premium Tennessee resort golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

@@ -856,9 +856,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Cumberland Mountain</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/bear-trace-cumberland-mountain/2.jpeg" alt="Bear Trace at Cumberland Mountain - Golf Course Mountain Views" class="gallery-item">
-                <img src="../images/courses/bear-trace-cumberland-mountain/3.jpeg" alt="Bear Trace at Cumberland Mountain - Championship Fairways" class="gallery-item">
-                <img src="../images/courses/bear-trace-cumberland-mountain/4.jpeg" alt="Bear Trace at Cumberland Mountain - Nicklaus Design Features" class="gallery-item">
+                <img src="../images/courses/bear-trace-cumberland-mountain/2.jpeg" alt="Bear Trace at Cumberland Mountain Crossville, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Jack Nicklaus, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-cumberland-mountain/3.jpeg" alt="Bear Trace at Cumberland Mountain Crossville, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-cumberland-mountain/4.jpeg" alt="Bear Trace at Cumberland Mountain Crossville, TN - Scenic golf course view featuring Jack Nicklaus architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

@@ -779,9 +779,9 @@ try {
                 <p>Experience the beauty of Sevierville Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/sevierville-golf-club/2.jpeg" alt="Sevierville Golf Club - Mountain Golf Course" class="gallery-item">
-                <img src="../images/courses/sevierville-golf-club/3.jpeg" alt="Sevierville Golf Club - Smoky Mountain Views" class="gallery-item">
-                <img src="../images/courses/sevierville-golf-club/4.jpeg" alt="Sevierville Golf Club - Tennessee Mountain Golf" class="gallery-item">
+                <img src="../images/courses/sevierville-golf-club/2.jpeg" alt="Sevierville Golf Club Sevierville, TN - Championship 36-hole golf course fairway with manicured Bermuda grass designed by D.J. DeVictor, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/sevierville-golf-club/3.jpeg" alt="Sevierville Golf Club Sevierville, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 36-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/sevierville-golf-club/4.jpeg" alt="Sevierville Golf Club Sevierville, TN - Scenic golf course view featuring D.J. DeVictor architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

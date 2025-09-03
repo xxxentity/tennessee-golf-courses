@@ -803,9 +803,9 @@ try {
                 <p>Experience the beauty of Brainerd Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/brainerd-golf-course/2.webp" alt="Brainerd Golf Course - Donald Ross Design" class="gallery-item">
-                <img src="../images/courses/brainerd-golf-course/3.webp" alt="Brainerd Golf Course - Historic Golf Layout" class="gallery-item">
-                <img src="../images/courses/brainerd-golf-course/4.webp" alt="Brainerd Golf Course - Chattanooga Municipal Golf" class="gallery-item">
+                <img src="../images/courses/brainerd-golf-course/2.webp" alt="Brainerd Golf Course Chattanooga, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Donald Ross, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/brainerd-golf-course/3.webp" alt="Brainerd Golf Course Chattanooga, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/brainerd-golf-course/4.webp" alt="Brainerd Golf Course Chattanooga, TN - Scenic golf course view featuring Donald Ross architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

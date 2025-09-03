@@ -789,9 +789,9 @@ try {
                 <p>Experience the beauty of Bear Trace at Tims Ford</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/bear-trace-at-tims-ford/2.webp" alt="Bear Trace at Tims Ford - Golf Course Fairway View" class="gallery-item">
-                <img src="../images/courses/bear-trace-at-tims-ford/3.webp" alt="Bear Trace at Tims Ford - Greens and Water Features" class="gallery-item">
-                <img src="../images/courses/bear-trace-at-tims-ford/4.webp" alt="Bear Trace at Tims Ford - Course Scenic Landscape" class="gallery-item">
+                <img src="../images/courses/bear-trace-at-tims-ford/2.webp" alt="Bear Trace at Tims Ford Winchester, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Jack Nicklaus, Tennessee public golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-at-tims-ford/3.webp" alt="Bear Trace at Tims Ford Winchester, TN - Pristine putting green with strategic bunkers and mature landscaping, Public 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/bear-trace-at-tims-ford/4.webp" alt="Bear Trace at Tims Ford Winchester, TN - Scenic golf course view featuring Jack Nicklaus architectural design, premium Tennessee public golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

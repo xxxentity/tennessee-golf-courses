@@ -391,8 +391,8 @@ try {
             </div>
             <div class="gallery-grid">
                 <img src="../images/courses/chattanooga-golf-country-club/1.webp" alt="Chattanooga Golf & Country Club - Private Golf Course" class="gallery-item">
-                <img src="../images/courses/chattanooga-golf-country-club/2.webp" alt="Chattanooga Golf & Country Club - Scenic Golf Views" class="gallery-item">
-                <img src="../images/courses/chattanooga-golf-country-club/3.webp" alt="Chattanooga Golf & Country Club - Course Landscape" class="gallery-item">
+                <img src="../images/courses/chattanooga-golf-country-club/2.webp" alt="Chattanooga Golf & Country Club Chattanooga, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/chattanooga-golf-country-club/3.webp" alt="Chattanooga Golf & Country Club Chattanooga, TN - Scenic golf course view featuring Donald Ross architectural design, premium Tennessee private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

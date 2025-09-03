@@ -447,9 +447,9 @@ try {
                 <p>Experience the beauty of Avalon Golf & Country Club</p>
             </div>
             <div class="gallery-grid">
-                <img src="../images/courses/avalon-golf-country-club/2.jpeg" alt="Avalon Golf & Country Club - Golf Course Fairway View" class="gallery-item">
-                <img src="../images/courses/avalon-golf-country-club/3.jpeg" alt="Avalon Golf & Country Club - Greens and Clubhouse" class="gallery-item">
-                <img src="../images/courses/avalon-golf-country-club/4.jpeg" alt="Avalon Golf & Country Club - Course Scenic View" class="gallery-item">
+                <img src="../images/courses/avalon-golf-country-club/2.jpeg" alt="Avalon Golf & Country Club Lenoir City, TN - Championship 18-hole golf course fairway with manicured Bermuda grass designed by Joseph L. Lee, Tennessee semi-private golf course" class="gallery-item">
+                <img src="../images/courses/avalon-golf-country-club/3.jpeg" alt="Avalon Golf & Country Club Lenoir City, TN - Pristine putting green with strategic bunkers and mature landscaping, Semi-Private 18-hole Tennessee golf course" class="gallery-item">
+                <img src="../images/courses/avalon-golf-country-club/4.jpeg" alt="Avalon Golf & Country Club Lenoir City, TN - Scenic golf course view featuring Joseph L. Lee architectural design, premium Tennessee semi-private golf course" class="gallery-item">
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
