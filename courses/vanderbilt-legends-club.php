@@ -641,8 +641,8 @@ try {
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/vanderbilt-legends-club/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/vanderbilt-legends-club/${i}.webp`, '_blank');
+                galleryItem.innerHTML = `<img src="../images/courses/vanderbilt-legends-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+                galleryItem.onclick = () => window.open(`../images/courses/vanderbilt-legends-club/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }
             
