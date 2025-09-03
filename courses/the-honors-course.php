@@ -620,3 +620,14 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">The Honors Course - Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div id="fullGalleryGrid" class="full-gallery-grid">
+                <!-- Gallery items will be dynamically generated -->
+            </div>
+        </div>
+    </div>
