@@ -387,6 +387,7 @@ a[href^="www."]:not(.social-links a)::after {
     background: var(--text-dark);
     margin: 3px 0;
     transition: var(--transition);
+    pointer-events: none; /* Let clicks pass through to parent */
 }
 
 /* Hide mobile auth items on desktop */
@@ -1233,9 +1234,19 @@ a[href^="www."]:not(.social-links a)::after {
     }
     
     .nav-toggle {
-        position: absolute;
-        left: 20px;
+        display: flex !important;
+        position: fixed;
+        left: 15px;
+        top: 50px; /* Position below weather bar */
         margin: 0;
+        padding: 8px;
+        z-index: 1005 !important;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+        cursor: pointer !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
     }
     
     .nav-menu {
@@ -1301,12 +1312,9 @@ a[href^="www."]:not(.social-links a)::after {
         font-weight: 600;
     }
 
-    .nav-toggle {
-        display: flex;
-        padding: 8px;
-        font-size: 24px;
-        position: relative;
-        z-index: 1004;
+    .nav-toggle:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.05);
     }
     
     /* Adjusted Hero Section */
