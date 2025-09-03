@@ -504,80 +504,27 @@ try {
                     <p style="color: #666;">No reviews yet. Be the first to share your experience!</p>
                 </div>
             <?php endif; ?>
+        </div>    <!-- Share This Course Section -->
+    <section class="share-course-section" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
+                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
+                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/the-club-at-five-oaks'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out The Club At Five Oaks in Lebanon, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/the-club-at-five-oaks'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out The Club At Five Oaks'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/the-club-at-five-oaks'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
+
+    </section>
+
     <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">The Club at Five Oaks - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Dynamic Footer -->
-    <?php include '../includes/footer.php'; ?>
-
-    <script>
-        // Star rating functionality
-        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
-            radio.addEventListener('change', function() {
-                const stars = document.querySelectorAll('.star-rating label');
-                stars.forEach((star, starIndex) => {
-                    if (starIndex >= (5 - this.value)) {
-                        star.style.color = '#ffd700';
-                    } else {
-                        star.style.color = '#ddd';
-                    }
-                });
-            });
-        });
-        
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/the-club-at-five-oaks/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-club-at-five-oaks/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
-</body>
-</html>

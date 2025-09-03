@@ -525,96 +525,27 @@ try {
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
+        </div>    <!-- Share This Course Section -->
+    <section class="share-course-section" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
+                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
+                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/tennessee-grasslands-foxland'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Tennessee Grasslands Foxland in designed championship golf course in Gallatin, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/tennessee-grasslands-foxland'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Tennessee Grasslands Foxland'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/tennessee-grasslands-foxland'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
+
+    </section>
+
     <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Tennessee Grasslands - Foxland - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <?php include '../includes/footer.php'; ?>
-
-    <script>
-        let currentRating = 0;
-
-        function highlightStars(rating) {
-            const stars = document.querySelectorAll('.rating-select i');
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.color = '#ffc107';
-                } else {
-                    star.style.color = '#e0e0e0';
-                }
-            });
-        }
-
-        function resetStars() {
-            if (currentRating === 0) {
-                const stars = document.querySelectorAll('.rating-select i');
-                stars.forEach(star => {
-                    star.style.color = '#e0e0e0';
-                });
-            } else {
-                highlightStars(currentRating);
-            }
-        }
-
-        function setRating(rating) {
-            currentRating = rating;
-            const inputs = document.querySelectorAll('input[name="rating"]');
-            inputs[5 - rating].checked = true;
-            highlightStars(rating);
-        }
-
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/tennessee-grasslands-foxland/${i}.webp')`;
-                galleryItem.onclick = () => window.open(`../images/courses/tennessee-grasslands-foxland/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
-</body>
-</html>

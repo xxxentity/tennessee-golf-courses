@@ -829,164 +829,27 @@ try {
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
+        </div>    <!-- Share This Course Section -->
+    <section class="share-course-section" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
+                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
+                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/stonehenge-golf-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Stonehenge Golf Club in Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/stonehenge-golf-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Stonehenge Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/stonehenge-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Stonehenge Golf Club - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Comments Section -->
-    <section class="comments-section-wrapper">
-        <div class="container">
-            <div class="comments-section">
-                <div class="comments-header">
-                    <h2>Course Reviews</h2>
-                </div>
-                
-                <?php if (!empty($comments)): ?>
-                    <div class="review-summary">
-                        <div>
-                            <div class="review-rating"><?php echo $avg_rating; ?></div>
-                            <div class="review-stars">
-                                <?php for ($i = 1; $i <= 3; $i++): ?>
-                                    <?php if ($i <= floor($avg_rating)): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php elseif ($i - 0.5 <= $avg_rating): ?>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="review-count"><?php echo $total_reviews; ?> Reviews</div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                
-                <?php if ($is_logged_in): ?>
-                    <div class="comment-form-container">
-                        <h3>Write a Review</h3>
-                        <?php if (isset($success_message)): ?>
-                            <div class="alert alert-success"><?php echo $success_message; ?></div>
-                        <?php endif; ?>
-                        <?php if (isset($error_message)): ?>
-                            <div class="alert alert-error"><?php echo $error_message; ?></div>
-                        <?php endif; ?>
-                        
-                        <form method="POST" class="comment-form">
-                            <div class="form-group">
-                                <label>Rating</label>
-                                <div class="star-rating">
-                                    <?php for ($i = 5; $i >= 1; $i--): ?>
-                                        <input type="radio" id="star<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>" required>
-                                        <label for="star<?php echo $i; ?>" class="star">★</label>
-                                    <?php endfor; ?>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="comment_text">Your Review</label>
-                                <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience at this course..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn-submit">Post Review</button>
-                        </form>
-                    </div>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><a href="/login">Login</a> or <a href="/register">Register</a> to leave a review</p>
-                    </div>
-                <?php endif; ?>
-                
-                <?php if (!empty($comments)): ?>
-                    <div class="comments-list">
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="comment-item">
-                                <div class="comment-header">
-                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
-                                    <span class="comment-date"><?php echo date('M d, Y', strtotime($comment['created_at'])); ?></span>
-                                </div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
-                                <div class="comment-text">
-                                    <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php else: ?>
-                    <div class="no-comments">
-                        <p>No reviews yet. Be the first to review this course!</p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
+
     </section>
-    
-    <?php include '../includes/footer.php'; ?>
-    
-    <script>
-        // Gallery functionality
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const grid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            grid.innerHTML = '';
-            
-            // Load all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const item = document.createElement('div');
-                item.className = 'full-gallery-item';
-                item.style.backgroundImage = `url('../images/courses/stonehenge-golf-club/${i}.webp')`;
-                item.onclick = () => window.open(`../images/courses/stonehenge-golf-club/${i}.webp`, '_blank');
-                grid.appendChild(item);
-            }
-            
-            modal.style.display = 'block';
-        }
-        
-        function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target == modal) {
-                closeGallery();
-            }
-        }
-        
-        // Star rating functionality
-        document.querySelectorAll('.star-rating label').forEach((star, index, stars) => {
-            star.addEventListener('click', () => {
-                stars.forEach((s, i) => {
-                    if (i >= stars.length - index - 1) {
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+
+    <!-- Full Gallery Modal -->

@@ -799,224 +799,27 @@ try {
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
+        </div>    <!-- Share This Course Section -->
+    <section class="share-course-section" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
+                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
+                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/the-golf-club-of-tennessee'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out The Golf Club Of Tennessee in Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/the-golf-club-of-tennessee'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out The Golf Club Of Tennessee'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/the-golf-club-of-tennessee'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
+
+
     </section>
 
     <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">The Golf Club of Tennessee - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced The Golf Club of Tennessee</p>
-            </div>
-            
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="tgc-rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this prestigious course..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Display Comments -->
-            <div class="comments-container">
-                <?php if (empty($comments)): ?>
-                    <div class="no-comments">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                            </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 3; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section class="booking-section">
-        <div class="container">
-            <div class="booking-content">
-                <h2>Experience Championship Golf</h2>
-                <p>The Golf Club of Tennessee is a private club. Contact the club directly for membership information and guest play opportunities.</p>
-                <div class="booking-buttons">
-                    <a href="tel:(615)370-4653" class="btn-book">Call Pro Shop</a>
-                    <a href="https://www.thegolfcluboftn.com/" target="_blank" class="btn-contact">Visit Website</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <?php include '../includes/footer.php'; ?>
-
-    <script src="/script.js?v=5"></script>
-    <script>
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/the-golf-club-of-tennessee/${i}.jpeg')`;
-                galleryItem.onclick = () => window.open(`../images/courses/the-golf-club-of-tennessee/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for The Golf Club of Tennessee
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('tgc-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
-    </script>
-</body>
-</html>

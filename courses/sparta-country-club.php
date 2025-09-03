@@ -757,212 +757,27 @@ try {
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
+        </div>    <!-- Share This Course Section -->
+    <section class="share-course-section" style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
+                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
+                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/sparta-country-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Sparta Country Club in Sparta, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/sparta-country-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Sparta Country Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/sparta-country-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
+
+
     </section>
 
     <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Sparta Country Club - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            
-            <div class="full-gallery-grid" id="fullGallery">
-                <!-- Gallery images will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Comments Section -->
-    <section class="comments-section">
-        <div class="container">
-            <div class="comments-container">
-                <div class="comments-header">
-                    <h2>Course Reviews & Comments</h2>
-                    <p>Share your experience at Sparta Country Club</p>
-                </div>
-
-                <?php if (isset($success_message)): ?>
-                    <div class="success-message">
-                        <i class="fas fa-check-circle"></i> <?php echo $success_message; ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php if (isset($error_message)): ?>
-                    <div class="error-message">
-                        <i class="fas fa-exclamation-circle"></i> <?php echo $error_message; ?>
-                    </div>
-                <?php endif; ?>
-
-                <?php if ($is_logged_in): ?>
-                    <!-- Comment Form -->
-                    <form method="POST" class="comment-form">
-                        <div class="rating-input">
-                            <label>Rate this course:</label>
-                            <div class="star-rating">
-                                <input type="radio" id="star5" name="rating" value="5" required>
-                                <label for="star5" title="5 stars">★</label>
-                                <input type="radio" id="star4" name="rating" value="4">
-                                <label for="star4" title="4 stars">★</label>
-                                <input type="radio" id="star3" name="rating" value="3">
-                                <label for="star3" title="3 stars">★</label>
-                                <input type="radio" id="star2" name="rating" value="2">
-                                <label for="star2" title="2 stars">★</label>
-                                <input type="radio" id="star1" name="rating" value="1">
-                                <label for="star1" title="1 star">★</label>
-                            </div>
-                        </div>
-                        
-                        <textarea name="comment_text" class="comment-textarea" placeholder="Share your thoughts about Sparta Country Club..." required></textarea>
-                        
-                        <button type="submit" class="comment-submit">
-                            <i class="fas fa-comment"></i> Post Review
-                        </button>
-                    </form>
-                <?php else: ?>
-                    <div class="login-prompt">
-                        <p><a href="/login">Login</a> or <a href="/register">Register</a> to leave a review</p>
-                    </div>
-                <?php endif; ?>
-
-                <!-- Comments List -->
-                <div class="comments-list">
-                    <?php if (!empty($comments)): ?>
-                        <?php foreach ($comments as $comment): ?>
-                            <div class="comment-item">
-                                <div class="comment-header">
-                                    <span class="comment-author">
-                                        <i class="fas fa-user-circle"></i> <?php echo htmlspecialchars($comment['username']); ?>
-                                    </span>
-                                    <span class="comment-date">
-                                        <?php echo date('M d, Y', strtotime($comment['created_at'])); ?>
-                                    </span>
-                                </div>
-                                
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="<?php echo $i <= $comment['rating'] ? 'fas' : 'far'; ?> fa-star"></i>
-                                    <?php endfor; ?>
-                                </div>
-                                
-                                <div class="comment-text">
-                                    <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <div class="no-comments">
-                            <p>No reviews yet. Be the first to review Sparta Country Club!</p>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JavaScript for Gallery and Star Rating -->
-    <script>
-        // Star rating functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const starInputs = document.querySelectorAll('.star-rating input');
-            const starLabels = document.querySelectorAll('.star-rating label');
-            
-            starInputs.forEach((input, index) => {
-                input.addEventListener('change', function() {
-                    updateStars(this.value);
-                });
-            });
-            
-            starLabels.forEach((label, index) => {
-                label.addEventListener('mouseenter', function() {
-                    const value = this.getAttribute('for').replace('star', '');
-                    highlightStars(value);
-                });
-            });
-            
-            document.querySelector('.star-rating').addEventListener('mouseleave', function() {
-                const checkedInput = document.querySelector('.star-rating input:checked');
-                if (checkedInput) {
-                    updateStars(checkedInput.value);
-                } else {
-                    clearStars();
-                }
-            });
-            
-            function updateStars(rating) {
-                starLabels.forEach((label, index) => {
-                    const starValue = 5 - index;
-                    if (starValue <= rating) {
-                        label.classList.add('active');
-                    } else {
-                        label.classList.remove('active');
-                    }
-                });
-            }
-            
-            function highlightStars(rating) {
-                starLabels.forEach((label, index) => {
-                    const starValue = 5 - index;
-                    if (starValue <= rating) {
-                        label.style.color = '#ffd700';
-                    } else {
-                        label.style.color = '#ddd';
-                    }
-                });
-            }
-            
-            function clearStars() {
-                starLabels.forEach(label => {
-                    label.style.color = '#ddd';
-                    label.classList.remove('active');
-                });
-            }
-        });
-
-        // Gallery functionality
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const fullGallery = document.getElementById('fullGallery');
-            
-            // Clear existing content
-            fullGallery.innerHTML = '';
-            
-            // Generate gallery images (1-25.webp)
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/sparta-country-club/${i}.webp')`;
-                galleryItem.onerror = function() {
-                    this.style.display = 'none';
-                };
-                fullGallery.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('galleryModal');
-            if (event.target === modal) {
-                closeGallery();
-            }
-        }
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
-</body>
-</html>
