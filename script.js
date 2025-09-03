@@ -90,26 +90,46 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.addEventListener('scroll', requestScrollUpdate, { passive: true });
     }
-    // Mobile Navigation Toggle
+    // Mobile Navigation Toggle with Debug
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        
-        // Animate hamburger menu
-        const bars = navToggle.querySelectorAll('.bar');
-        bars.forEach((bar, index) => {
-            if (navMenu.classList.contains('active')) {
-                if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                if (index === 1) bar.style.opacity = '0';
-                if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                bar.style.transform = '';
-                bar.style.opacity = '';
-            }
+    console.log('Nav toggle found:', !!navToggle);
+    console.log('Nav menu found:', !!navMenu);
+
+    if (navToggle && navMenu) {
+        // Add touch and click handlers for better mobile support
+        navToggle.addEventListener('click', function(e) {
+            console.log('Nav toggle clicked!');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            navMenu.classList.toggle('active');
+            console.log('Menu active:', navMenu.classList.contains('active'));
+            
+            // Animate hamburger menu
+            const bars = navToggle.querySelectorAll('.bar');
+            console.log('Bars found:', bars.length);
+            bars.forEach((bar, index) => {
+                if (navMenu.classList.contains('active')) {
+                    if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    if (index === 1) bar.style.opacity = '0';
+                    if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    bar.style.transform = '';
+                    bar.style.opacity = '';
+                }
+            });
         });
-    });
+        
+        // Also add touchstart for mobile devices
+        navToggle.addEventListener('touchstart', function(e) {
+            console.log('Nav toggle touched!');
+            e.preventDefault();
+        });
+    } else {
+        console.error('Nav toggle or nav menu not found!');
+    }
 
     // Navigation links - Let browser handle completely naturally
     console.log('Navigation enabled - pure HTML link behavior');
