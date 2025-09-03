@@ -128,8 +128,8 @@ $is_main_page = (
                 <li class="mobile-auth-item"><a href="/profile" class="nav-link">My Profile</a></li>
                 <li class="mobile-auth-item"><a href="/logout" class="nav-link logout-link">Logout</a></li>
             <?php else: ?>
-                <li class="mobile-auth-item"><a href="/login" class="nav-link login-btn">Login</a></li>
-                <li class="mobile-auth-item"><a href="/register" class="nav-link register-btn">Register</a></li>
+                <li class="mobile-auth-item"><a href="/login" class="nav-link">Login</a></li>
+                <li class="mobile-auth-item"><a href="/register" class="nav-link">Register</a></li>
             <?php endif; ?>
         </ul>
         
