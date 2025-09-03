@@ -1250,7 +1250,7 @@ a[href^="www."]:not(.social-links a)::after {
         display: flex !important;
         position: fixed !important;
         left: 20px !important;
-        top: 40px !important;
+        top: 60px !important; /* Moved down to be below weather bar completely */
         margin: 0 !important;
         padding: 10px !important;
         z-index: 99999 !important; /* Even higher z-index */

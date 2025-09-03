@@ -97,39 +97,20 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nav toggle found:', !!navToggle);
     console.log('Nav menu found:', !!navMenu);
 
-    // Create visual debug indicator
-    const debugIndicator = document.createElement('div');
-    debugIndicator.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 10px;
-        background: red;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 10000;
-        font-size: 12px;
-        font-family: monospace;
-        max-width: 200px;
-        word-wrap: break-word;
-    `;
-    debugIndicator.textContent = 'Debug: Loading...';
-    document.body.appendChild(debugIndicator);
+    // Remove debug indicator for production
+    // const debugIndicator = document.createElement('div');
+    // debugIndicator.style.cssText = `...`;
+    // document.body.appendChild(debugIndicator);
 
     if (navToggle && navMenu) {
-        debugIndicator.textContent = 'Debug: Elements found!';
-        
         // Add touch and click handlers for better mobile support
         navToggle.addEventListener('click', function(e) {
-            debugIndicator.textContent = 'Debug: Button clicked!';
             e.preventDefault();
             e.stopPropagation();
             
             const wasActive = navMenu.classList.contains('active');
             navMenu.classList.toggle('active');
             const nowActive = navMenu.classList.contains('active');
-            
-            debugIndicator.textContent = `Debug: Was ${wasActive}, now ${nowActive}`;
             
             // Force the menu to show if active class is present
             if (navMenu.classList.contains('active')) {
@@ -148,16 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     opacity: 1 !important;
                     transform: translateX(0) !important;
                 `;
-                debugIndicator.textContent = 'Debug: Menu forced with cssText!';
-                
-                setTimeout(() => {
-                    const rect = navMenu.getBoundingClientRect();
-                    debugIndicator.textContent = `Debug: Menu at x:${rect.left}, visible:${rect.width > 0}`;
-                }, 100);
             } else {
                 navMenu.style.left = '-100%';
                 navMenu.style.transform = 'translateX(-100%)';
-                debugIndicator.textContent = 'Debug: Menu hidden';
             }
             
             // Animate hamburger menu
@@ -177,14 +151,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add multiple touch event handlers for iOS
         navToggle.addEventListener('touchstart', function(e) {
-            debugIndicator.textContent = 'Debug: Touch START detected!';
             navToggle.style.background = '#f0f0f0';
             e.preventDefault();
             e.stopPropagation();
         });
         
         navToggle.addEventListener('touchend', function(e) {
-            debugIndicator.textContent = 'Debug: Touch END - triggering click!';
             navToggle.style.background = '#ffffff';
             e.preventDefault();
             e.stopPropagation();
@@ -194,8 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const wasActive = navMenu.classList.contains('active');
                 navMenu.classList.toggle('active');
                 const nowActive = navMenu.classList.contains('active');
-                
-                debugIndicator.textContent = `Debug: Manual - Was ${wasActive}, now ${nowActive}`;
                 
                 if (navMenu.classList.contains('active')) {
                     navMenu.style.cssText = `
@@ -212,17 +182,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         opacity: 1 !important;
                         transform: translateX(0) !important;
                     `;
-                    debugIndicator.textContent = 'Debug: Manual menu forced!';
                 } else {
                     navMenu.style.left = '-100%';
                     navMenu.style.transform = 'translateX(-100%)';
-                    debugIndicator.textContent = 'Debug: Manual menu hidden';
                 }
+                
+                // Animate hamburger bars
+                const bars = navToggle.querySelectorAll('.bar');
+                bars.forEach((bar, index) => {
+                    if (navMenu.classList.contains('active')) {
+                        if (index === 0) bar.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        if (index === 1) bar.style.opacity = '0';
+                        if (index === 2) bar.style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                    } else {
+                        bar.style.transform = '';
+                        bar.style.opacity = '';
+                    }
+                });
             }, 50);
         });
-    } else {
-        debugIndicator.textContent = 'Debug: Elements NOT found!';
-        debugIndicator.style.background = 'orange';
     }
 
     // Navigation links - Let browser handle completely naturally
