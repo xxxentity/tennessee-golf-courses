@@ -1,7 +1,15 @@
 <?php
-session_start();
+require_once '../includes/session-security.php';
 require_once '../config/database.php';
+require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
 
 // Course data for SEO
 $course_data = [
