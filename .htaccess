@@ -9,19 +9,9 @@ RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.tennesseegolfcourses\.com$ [NC]
 RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
 
-# Fix Google-indexed 404 URLs
-# Redirect double courses paths to single courses path
-RewriteRule ^courses/courses\?(.*)$ /courses?$1 [R=301,L]
-# Redirect incorrect news/courses paths to courses
-RewriteRule ^news/courses\?(.*)$ /courses?$1 [R=301,L]
-# Block Cloudflare email protection URLs
+# Block system URLs that should never be accessible
 RewriteRule ^cdn-cgi/l/email-protection - [F,L]
-# Redirect non-existent forum to community
-RewriteRule ^forum/(.*)$ /community [R=301,L]
-# Block internal PHP files from external access
 RewriteRule ^auth/refresh-csrf-token\.php$ - [F,L]
-# Redirect backup review files to main review
-RewriteRule ^reviews/top-10-putters-2025-amazon-guide-backup$ /reviews/top-10-putters-2025-amazon-guide [R=301,L]
 
 # Force HTTPS for the main domain
 RewriteCond %{HTTPS} off

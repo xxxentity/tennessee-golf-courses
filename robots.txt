@@ -36,7 +36,7 @@ Disallow: /includes/
 Disallow: /cache/
 Disallow: /uploads/
 
-# Block only truly internal/system URLs (keep redirects indexable)
+# Block only truly internal/system URLs
 Disallow: /cdn-cgi/
 Disallow: /auth/refresh-csrf-token.php
 
