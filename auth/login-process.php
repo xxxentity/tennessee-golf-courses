@@ -86,7 +86,7 @@ try {
     
     // Check if email is verified
     if (!$user['email_verified']) {
-        header('Location: /login?error=' . urlencode('Please verify your email address before logging in. Check your inbox for the verification email.'));
+        header('Location: /login?unverified=' . urlencode($user['username']) . '&error=' . urlencode('Please verify your email address before logging in.'));
         exit;
     }
     

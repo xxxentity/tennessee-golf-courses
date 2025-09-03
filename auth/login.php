@@ -227,6 +227,23 @@ $csrf_token = CSRFProtection::getToken();
                 if (isset($_GET['success'])) {
                     echo '<div class="alert alert-success">' . htmlspecialchars($_GET['success']) . '</div>';
                 }
+                
+                // Show resend verification option for unverified users
+                if (isset($_GET['unverified'])) {
+                    $username = htmlspecialchars($_GET['unverified']);
+                    echo '
+                    <div class="alert alert-warning" style="margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <strong>Email Not Verified</strong><br>
+                                <small>Check your spam/junk folder or resend the verification email.</small>
+                            </div>
+                            <button type="button" onclick="resendVerification(\'' . $username . '\')" class="btn-resend" style="background: #059669; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer;">
+                                <i class="fas fa-envelope"></i> Resend Email
+                            </button>
+                        </div>
+                    </div>';
+                }
                 ?>
 
                 <form action="login-process" method="POST">
@@ -253,6 +270,20 @@ $csrf_token = CSRFProtection::getToken();
         </div>
     </main>
 
+    <!-- Hidden form for resending verification email -->
+    <form id="resendForm" action="resend-verification" method="POST" style="display: none;">
+        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+        <input type="hidden" name="username" id="resendUsername" value="">
+    </form>
+
     <script src="../script.js"></script>
+    <script>
+    function resendVerification(username) {
+        if (confirm('Resend verification email to this account?')) {
+            document.getElementById('resendUsername').value = username;
+            document.getElementById('resendForm').submit();
+        }
+    }
+    </script>
 </body>
 </html>

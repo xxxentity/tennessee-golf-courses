@@ -245,6 +245,7 @@ RewriteRule ^password-reset-process/?$ auth/password-reset-process.php [L]
 RewriteRule ^reset-password/?$ auth/reset-password.php [L]
 RewriteRule ^reset-password-process/?$ auth/reset-password-process.php [L]
 RewriteRule ^verify-email/?$ auth/verify-email.php [L]
+RewriteRule ^resend-verification/?$ auth/resend-verification.php [L]
 
 # Handle user pages (clean URLs without /user/ prefix)
 RewriteRule ^profile/?$ user/profile.php [L]
