@@ -762,3 +762,119 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Troubadour Golf & Field Club - College Grove, TN</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/1.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/1.jpeg', '_blank')" title="Troubadour Golf & Field Club - Course Overview"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/2.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/2.jpeg', '_blank')" title="Troubadour Golf & Field Club - Fairway View"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/3.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/3.jpeg', '_blank')" title="Troubadour Golf & Field Club - Course Layout"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/4.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/4.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 4"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/5.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/5.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 5"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/6.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/6.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 6"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/7.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/7.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 7"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/8.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/8.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 8"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/9.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/9.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 9"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/10.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/10.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 10"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/11.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/11.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 11"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/12.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/12.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 12"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/13.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/13.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 13"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/14.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/14.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 14"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/15.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/15.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 15"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/16.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/16.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 16"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/17.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/17.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 17"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/18.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/18.jpeg', '_blank')" title="Troubadour Golf & Field Club - Hole 18"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/19.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/19.jpeg', '_blank')" title="Troubadour Golf & Field Club - Clubhouse"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/20.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/20.jpeg', '_blank')" title="Troubadour Golf & Field Club - Practice Facilities"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/21.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/21.jpeg', '_blank')" title="Troubadour Golf & Field Club - Pro Shop"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/22.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/22.jpeg', '_blank')" title="Troubadour Golf & Field Club - Tom Fazio Design"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/23.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/23.jpeg', '_blank')" title="Troubadour Golf & Field Club - Championship Course"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/24.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/24.jpeg', '_blank')" title="Troubadour Golf & Field Club - Course Scenic View"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/25.jpeg')" onclick="window.open('../images/courses/troubadour-golf-field-club/25.jpeg', '_blank')" title="Troubadour Golf & Field Club - Course Panoramic View"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <?php include '../includes/footer.php'; ?>
+
+    <script>
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the content
+        window.onclick = function(event) {
+            var modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating label');
+            const inputs = document.querySelectorAll('.star-rating input');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    const rating = inputs.length - index;
+                    inputs[inputs.length - 1 - index].checked = true;
+                    
+                    // Update visual state
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const rating = inputs.length - index;
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', function() {
+                const checkedInput = document.querySelector('.star-rating input:checked');
+                if (checkedInput) {
+                    const rating = parseInt(checkedInput.value);
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                } else {
+                    stars.forEach(s => s.style.color = '#ddd');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

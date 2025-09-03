@@ -875,3 +875,119 @@ try {
     </section>
 
     <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Toqua Golf Course - Vonore, TN</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid">
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/1.webp')" onclick="window.open('../images/courses/toqua-golf-course/1.webp', '_blank')" title="Toqua Golf Course - Course Overview"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/2.webp')" onclick="window.open('../images/courses/toqua-golf-course/2.webp', '_blank')" title="Toqua Golf Course - Fairway View"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/3.webp')" onclick="window.open('../images/courses/toqua-golf-course/3.webp', '_blank')" title="Toqua Golf Course - Course Layout"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/4.webp')" onclick="window.open('../images/courses/toqua-golf-course/4.webp', '_blank')" title="Toqua Golf Course - Hole 4"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/5.webp')" onclick="window.open('../images/courses/toqua-golf-course/5.webp', '_blank')" title="Toqua Golf Course - Hole 5"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/6.webp')" onclick="window.open('../images/courses/toqua-golf-course/6.webp', '_blank')" title="Toqua Golf Course - Hole 6"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/7.webp')" onclick="window.open('../images/courses/toqua-golf-course/7.webp', '_blank')" title="Toqua Golf Course - Hole 7"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/8.webp')" onclick="window.open('../images/courses/toqua-golf-course/8.webp', '_blank')" title="Toqua Golf Course - Hole 8"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/9.webp')" onclick="window.open('../images/courses/toqua-golf-course/9.webp', '_blank')" title="Toqua Golf Course - Hole 9"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/10.webp')" onclick="window.open('../images/courses/toqua-golf-course/10.webp', '_blank')" title="Toqua Golf Course - Hole 10"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/11.webp')" onclick="window.open('../images/courses/toqua-golf-course/11.webp', '_blank')" title="Toqua Golf Course - Hole 11"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/12.webp')" onclick="window.open('../images/courses/toqua-golf-course/12.webp', '_blank')" title="Toqua Golf Course - Hole 12"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/13.webp')" onclick="window.open('../images/courses/toqua-golf-course/13.webp', '_blank')" title="Toqua Golf Course - Hole 13"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/14.webp')" onclick="window.open('../images/courses/toqua-golf-course/14.webp', '_blank')" title="Toqua Golf Course - Hole 14"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/15.webp')" onclick="window.open('../images/courses/toqua-golf-course/15.webp', '_blank')" title="Toqua Golf Course - Hole 15"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/16.webp')" onclick="window.open('../images/courses/toqua-golf-course/16.webp', '_blank')" title="Toqua Golf Course - Hole 16"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/17.webp')" onclick="window.open('../images/courses/toqua-golf-course/17.webp', '_blank')" title="Toqua Golf Course - Hole 17"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/18.webp')" onclick="window.open('../images/courses/toqua-golf-course/18.webp', '_blank')" title="Toqua Golf Course - Hole 18"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/19.webp')" onclick="window.open('../images/courses/toqua-golf-course/19.webp', '_blank')" title="Toqua Golf Course - Clubhouse"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/20.webp')" onclick="window.open('../images/courses/toqua-golf-course/20.webp', '_blank')" title="Toqua Golf Course - Practice Facilities"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/21.webp')" onclick="window.open('../images/courses/toqua-golf-course/21.webp', '_blank')" title="Toqua Golf Course - Pro Shop"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/22.webp')" onclick="window.open('../images/courses/toqua-golf-course/22.webp', '_blank')" title="Toqua Golf Course - Resort Amenities"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/23.webp')" onclick="window.open('../images/courses/toqua-golf-course/23.webp', '_blank')" title="Toqua Golf Course - Lake Views"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/24.webp')" onclick="window.open('../images/courses/toqua-golf-course/24.webp', '_blank')" title="Toqua Golf Course - Course Scenic View"></div>
+                <div class="full-gallery-item" style="background-image: url('../images/courses/toqua-golf-course/25.webp')" onclick="window.open('../images/courses/toqua-golf-course/25.webp', '_blank')" title="Toqua Golf Course - Course Panoramic View"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <?php include '../includes/footer.php'; ?>
+
+    <script>
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the content
+        window.onclick = function(event) {
+            var modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating label');
+            const inputs = document.querySelectorAll('.star-rating input');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    const rating = inputs.length - index;
+                    inputs[inputs.length - 1 - index].checked = true;
+                    
+                    // Update visual state
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const rating = inputs.length - index;
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', function() {
+                const checkedInput = document.querySelector('.star-rating input:checked');
+                if (checkedInput) {
+                    const rating = parseInt(checkedInput.value);
+                    stars.forEach((s, i) => {
+                        if (i >= inputs.length - rating) {
+                            s.style.color = '#ffd700';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                } else {
+                    stars.forEach(s => s.style.color = '#ddd');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
