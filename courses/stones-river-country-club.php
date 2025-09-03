@@ -410,9 +410,15 @@ try {
                 <p>Experience the beauty of Stones River Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/stones-river-country-club/1.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/stones-river-country-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/stones-river-country-club/3.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/stones-river-country-club/1.jpeg" alt="Stones River Country Club Murfreesboro, TN - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/stones-river-country-club/2.jpeg" alt="Stones River Country Club Murfreesboro TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/stones-river-country-club/3.jpeg" alt="Stones River Country Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

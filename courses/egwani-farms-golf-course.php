@@ -696,9 +696,15 @@ try {
                 <p>Experience the beauty of Egwani Farms Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/egwani-farms-golf-course/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/egwani-farms-golf-course/2.jpeg" alt="Egwani Farms Golf Course Knoxville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/egwani-farms-golf-course/3.jpeg" alt="Egwani Farms Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/egwani-farms-golf-course/4.jpeg" alt="Egwani Farms Golf Course Knoxville TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
@@ -865,10 +871,67 @@ try {
             galleryGrid.innerHTML = '';
             
             // Generate all 25 images
+            
+            // Alt text patterns for different image types
+            function getAltText(imageIndex) {
+                const courseName = 'Egwani Farms Golf Course';
+                const location = 'Knoxville, TN';
+                const locationShort = 'Knoxville TN';
+                
+                if (imageIndex <= 5) {
+                    // Course overview shots
+                    const overviewTexts = [
+                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
+                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
+                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
+                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
+                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
+                    ];
+                    return overviewTexts[imageIndex - 1];
+                } else if (imageIndex <= 10) {
+                    // Signature holes
+                    const holes = [6, 8, 12, 15, 18];
+                    const holeIndex = imageIndex - 6;
+                    const holeNum = holes[holeIndex];
+                    const signatures = [
+                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
+                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
+                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
+                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
+                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
+                    ];
+                    return signatures[holeIndex];
+                } else if (imageIndex <= 15) {
+                    // Greens and approaches
+                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
+                } else if (imageIndex <= 20) {
+                    // Course features
+                    const features = [
+                        'Practice facility driving range and putting green area',
+                        'Golf cart fleet and maintenance facilities',
+                        'Professional golf instruction area and practice tees',
+                        'Course landscaping with native Tennessee flora and water features',
+                        'Golf course pro shop and equipment rental facilities'
+                    ];
+                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
+                } else {
+                    // Clubhouse and amenities
+                    const amenities = [
+                        'Golf course clubhouse pro shop and restaurant facilities',
+                        'Clubhouse dining room with scenic Tennessee views',
+                        'Golf course event space and meeting facilities',
+                        'Professional locker room and amenities',
+                        'Golf course entrance and parking facilities'
+                    ];
+                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
+                }
+            }
+            
+            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'full-gallery-item';
-                galleryItem.style.backgroundImage = `url('../images/courses/egwani-farms-golf-course/${i}.jpeg')`;
+                galleryItem.innerHTML = `<img src="../images/courses/egwani-farms-golf-course/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
                 galleryItem.onclick = () => window.open(`../images/courses/egwani-farms-golf-course/${i}.jpeg`, '_blank');
                 galleryGrid.appendChild(galleryItem);
             }

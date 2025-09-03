@@ -724,9 +724,15 @@ try {
                 <p>Experience the beauty of TPC Southwind</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/tpc-southwind/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/tpc-southwind/2.jpeg" alt="TPC Southwind Memphis TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/tpc-southwind/3.jpeg" alt="TPC Southwind Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/tpc-southwind/4.jpeg" alt="TPC Southwind Memphis TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (44+)</button>

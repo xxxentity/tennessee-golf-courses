@@ -748,9 +748,15 @@ try {
                 <p>Experience the elegance of The Governors Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-governors-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-governors-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-governors-club/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-governors-club/2.jpeg" alt="The Governors Club Brentwood TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-governors-club/3.jpeg" alt="The Governors Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-governors-club/4.jpeg" alt="The Governors Club Brentwood TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

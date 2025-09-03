@@ -770,9 +770,15 @@ try {
                 <p>Experience the beauty of The Country Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-country-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-country-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-country-club/4.webp');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-country-club/2.webp" alt="The Country Club Morristown TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-country-club/3.webp" alt="The Country Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-country-club/4.webp" alt="The Country Club Morristown TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View All Photos (25)</button>

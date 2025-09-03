@@ -749,9 +749,15 @@ try {
                 <p style="color: #666; font-size: 1.1rem;">Experience the scenic beauty of WindRiver Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/windriver-golf-club/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/windriver-golf-club/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/windriver-golf-club/4.webp');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/windriver-golf-club/2.webp" alt="WindRiver Golf Club Lenoir City TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/windriver-golf-club/3.webp" alt="WindRiver Golf Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/windriver-golf-club/4.webp" alt="WindRiver Golf Club Lenoir City TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

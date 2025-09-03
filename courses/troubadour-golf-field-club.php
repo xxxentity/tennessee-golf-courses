@@ -717,9 +717,15 @@ try {
                 <p>Experience the beauty of Troubadour Golf & Field Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/troubadour-golf-field-club/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/troubadour-golf-field-club/2.jpeg" alt="Troubadour Golf & Field Club College Grove TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/troubadour-golf-field-club/3.jpeg" alt="Troubadour Golf & Field Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/troubadour-golf-field-club/4.jpeg" alt="Troubadour Golf & Field Club College Grove TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

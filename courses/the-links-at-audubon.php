@@ -787,9 +787,15 @@ try {
                 <p>Experience the beauty of The Links at Audubon</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/2.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/3.webp');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-links-at-audubon/4.webp');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-links-at-audubon/2.webp" alt="The Links at Audubon Memphis TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-links-at-audubon/3.webp" alt="The Links at Audubon Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-links-at-audubon/4.webp" alt="The Links at Audubon Memphis TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

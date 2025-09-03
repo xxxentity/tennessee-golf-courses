@@ -749,9 +749,15 @@ try {
                 <p style="color: #666; font-size: 1.1rem;">Experience the historic beauty of Whittle Springs Golf Course</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/whittle-springs-golf-course/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/whittle-springs-golf-course/2.jpeg" alt="Whittle Springs Golf Course Knoxville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/whittle-springs-golf-course/3.jpeg" alt="Whittle Springs Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/whittle-springs-golf-course/4.jpeg" alt="Whittle Springs Golf Course Knoxville TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>

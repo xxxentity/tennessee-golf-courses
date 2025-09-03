@@ -944,9 +944,15 @@ try {
                 <p>Experience the mountain beauty of The Club at Gettysvue</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/2.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/3.jpeg');"></div>
-                <div class="gallery-item" style="background-image: url('../images/courses/the-club-at-gettysvue/4.jpeg');"></div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-club-at-gettysvue/2.jpeg" alt="The Club at Gettysvue Knoxville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-club-at-gettysvue/3.jpeg" alt="The Club at Gettysvue Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/courses/the-club-at-gettysvue/4.jpeg" alt="The Club at Gettysvue Knoxville TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                </div>
             </div>
             <div class="gallery-button">
                 <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
