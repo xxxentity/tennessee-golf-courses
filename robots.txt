@@ -36,13 +36,9 @@ Disallow: /includes/
 Disallow: /cache/
 Disallow: /uploads/
 
-# Block specific 404 URLs found by Google
+# Block only truly internal/system URLs (keep redirects indexable)
 Disallow: /cdn-cgi/
-Disallow: /forum/
-Disallow: /courses/courses*
-Disallow: /news/courses*
 Disallow: /auth/refresh-csrf-token.php
-Disallow: /*-backup*
 
 # Disallow search result pages with query parameters
 Disallow: /*?search=*
