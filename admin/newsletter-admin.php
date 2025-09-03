@@ -221,9 +221,7 @@ try {
         
         <div class="admin-section">
             <h2>Send Newsletter</h2>
-            <form method="POST">
-                <input type="hidden" name="action" value="send_newsletter">
-                
+            <div id="newsletter-form">
                 <div class="form-group">
                     <label for="subject">Subject Line</label>
                     <input type="text" id="subject" name="subject" required placeholder="e.g., Weekly Golf Course Updates">
@@ -263,10 +261,28 @@ try {
                     </textarea>
                 </div>
                 
-                <button type="submit" class="btn" onclick="return confirm('Send newsletter to all active subscribers?')">
+                <button type="button" id="send-newsletter-btn" class="btn" onclick="sendNewsletter()">
                     Send to <?php echo $total_active ?? 0; ?> Subscribers
                 </button>
-            </form>
+                
+                <div id="sending-progress" style="display: none; margin-top: 20px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #059669;">
+                        <h3 style="color: #059669; margin-top: 0;">📧 Sending Newsletter...</h3>
+                        <div id="progress-bar" style="width: 100%; height: 20px; background: #e5e5e5; border-radius: 10px; overflow: hidden;">
+                            <div id="progress-fill" style="height: 100%; background: linear-gradient(90deg, #059669, #10b981); width: 0%; transition: width 0.3s ease;"></div>
+                        </div>
+                        <div id="progress-text" style="margin-top: 10px; font-weight: 600;">Starting...</div>
+                        <div id="progress-details" style="margin-top: 8px; color: #666; font-size: 14px;">Preparing to send emails...</div>
+                    </div>
+                </div>
+                
+                <div id="sending-complete" style="display: none; margin-top: 20px;">
+                    <div style="background: #d4edda; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745;">
+                        <h3 style="color: #28a745; margin-top: 0;">✅ Newsletter Sent Successfully!</h3>
+                        <div id="complete-message"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
@@ -311,5 +327,143 @@ try {
             </div>
         </div>
     </div>
+
+    <script>
+    function sendNewsletter() {
+        const subject = document.getElementById('subject').value.trim();
+        const content = document.getElementById('content').value.trim();
+        
+        if (!subject || !content) {
+            alert('Please fill in both subject and content fields.');
+            return;
+        }
+        
+        if (!confirm('Send newsletter to all active subscribers? This will send emails in batches to avoid timeouts.')) {
+            return;
+        }
+        
+        // Hide form and show progress
+        document.getElementById('newsletter-form').style.display = 'none';
+        document.getElementById('sending-progress').style.display = 'block';
+        document.getElementById('sending-complete').style.display = 'none';
+        
+        // Start the batch sending process
+        startBatchSending(subject, content);
+    }
+    
+    function startBatchSending(subject, content) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/admin/newsletter-send-batch.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        handleBatchResponse(response, subject, content);
+                    } catch (e) {
+                        showError('Error parsing server response: ' + e.message);
+                    }
+                } else {
+                    showError('Server error: HTTP ' + xhr.status);
+                }
+            }
+        };
+        
+        const params = 'subject=' + encodeURIComponent(subject) + 
+                      '&content=' + encodeURIComponent(content);
+        xhr.send(params);
+        
+        updateProgress(0, 'Creating campaign...', 'Initializing newsletter send process...');
+    }
+    
+    function handleBatchResponse(response, subject, content) {
+        if (response.error) {
+            showError(response.error);
+            return;
+        }
+        
+        if (response.status === 'started') {
+            // Campaign created, continue with first batch
+            continueBatchSending(response.campaign_id, response.offset, response.total);
+        } else if (response.status === 'sending') {
+            // Continue with next batch
+            const sent = response.sent || 0;
+            const total = getTotalFromProgress() || 100; // Fallback
+            const percentage = Math.round((response.offset / total) * 100);
+            
+            updateProgress(percentage, `Sent ${response.offset} emails...`, `Successfully sent ${sent} emails in this batch`);
+            
+            // Continue with next batch
+            setTimeout(() => {
+                continueBatchSending(response.campaign_id, response.offset, total);
+            }, 500); // Small delay between batches
+            
+        } else if (response.status === 'complete') {
+            // All done!
+            showComplete(response.message);
+        }
+    }
+    
+    function continueBatchSending(campaignId, offset, total) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/admin/newsletter-send-batch.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        handleBatchResponse(response);
+                    } catch (e) {
+                        showError('Error parsing server response: ' + e.message);
+                    }
+                } else {
+                    showError('Server error: HTTP ' + xhr.status);
+                }
+            }
+        };
+        
+        const params = 'campaign_id=' + campaignId + '&offset=' + offset;
+        xhr.send(params);
+        
+        const percentage = Math.round((offset / total) * 100);
+        updateProgress(percentage, `Sending batch (${offset}/${total})...`, 'Processing next batch of subscribers...');
+    }
+    
+    function updateProgress(percentage, text, details) {
+        document.getElementById('progress-fill').style.width = percentage + '%';
+        document.getElementById('progress-text').textContent = text;
+        document.getElementById('progress-details').textContent = details;
+    }
+    
+    function showComplete(message) {
+        document.getElementById('sending-progress').style.display = 'none';
+        document.getElementById('sending-complete').style.display = 'block';
+        document.getElementById('complete-message').textContent = message;
+        
+        // Reset form for next use
+        setTimeout(() => {
+            document.getElementById('newsletter-form').style.display = 'block';
+            document.getElementById('sending-complete').style.display = 'none';
+            document.getElementById('subject').value = '';
+            document.getElementById('content').value = document.getElementById('content').defaultValue;
+        }, 5000);
+    }
+    
+    function showError(errorMessage) {
+        document.getElementById('sending-progress').style.display = 'none';
+        document.getElementById('newsletter-form').style.display = 'block';
+        alert('Error sending newsletter: ' + errorMessage);
+    }
+    
+    function getTotalFromProgress() {
+        const text = document.getElementById('progress-text').textContent;
+        const match = text.match(/\/(\d+)/);
+        return match ? parseInt(match[1]) : null;
+    }
+    </script>
 </body>
 </html>
