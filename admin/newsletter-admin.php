@@ -37,7 +37,52 @@ if ($_POST['action'] ?? '' === 'send_newsletter') {
                     $content
                 );
                 
-                if (mail($subscriber['email'], $subject, $personalized_content, $headers)) {
+                // Wrap content in mobile-responsive template
+                $email_html = "<!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>$subject</title>
+                    <style>
+                        body { margin: 0; padding: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                        .email-container { max-width: 600px; margin: 0 auto; }
+                        .email-header { background: linear-gradient(135deg, #064e3b, #059669); padding: 20px; text-align: center; }
+                        .email-header h1 { color: white; margin: 0; font-size: 24px; }
+                        .email-content { padding: 20px; background: white; }
+                        .email-footer { background: #f8f8f8; padding: 20px; text-align: center; font-size: 12px; color: #666; }
+                        img { max-width: 100%; height: auto; }
+                        h2 { color: #064e3b; }
+                        h3 { color: #059669; }
+                        a { color: #059669; }
+                        .button { display: inline-block; padding: 12px 24px; background: #064e3b; color: white !important; text-decoration: none; border-radius: 5px; margin: 10px 5px; }
+                        @media only screen and (max-width: 600px) {
+                            .email-container { width: 100% !important; }
+                            .email-content { padding: 15px !important; }
+                            h1 { font-size: 20px !important; }
+                            h2 { font-size: 18px !important; }
+                            h3 { font-size: 16px !important; }
+                            .button { display: block !important; width: 90% !important; margin: 10px auto !important; text-align: center !important; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class='email-container'>
+                        <div class='email-header'>
+                            <h1>Tennessee Golf Courses</h1>
+                        </div>
+                        <div class='email-content'>
+                            $personalized_content
+                        </div>
+                        <div class='email-footer'>
+                            <p>© " . date('Y') . " Tennessee Golf Courses | <a href='https://tennesseegolfcourses.com'>Visit Our Website</a></p>
+                            <p><a href='https://tennesseegolfcourses.com/unsubscribe?email=" . urlencode($subscriber['email']) . "'>Unsubscribe</a> | <a href='https://tennesseegolfcourses.com/profile'>Update Preferences</a></p>
+                        </div>
+                    </div>
+                </body>
+                </html>";
+                
+                if (mail($subscriber['email'], $subject, $email_html, $headers)) {
                     $sent_count++;
                 }
                 
@@ -192,17 +237,29 @@ try {
 
 <p>Here's what's happening in Tennessee golf this week:</p>
 
-<h3>🏌️ Featured Course</h3>
-<p>Discover Bear Trace at Harrison Bay - Jack Nicklaus design with stunning lakefront views.</p>
+<h3>🏌️ Featured Course of the Week</h3>
+<p>This week we're highlighting <strong>Bear Trace at Harrison Bay</strong> - a stunning Jack Nicklaus Signature Design with breathtaking lakefront views on Chickamauga Lake.</p>
+<p><a href="https://tennesseegolfcourses.com/courses/bear-trace-harrison-bay" class="button">View Course Details</a></p>
 
-<h3>📰 Latest News</h3>
-<p>Tournament updates and local golf news...</p>
+<h3>📰 Latest Golf News</h3>
+<ul>
+    <li>Tennessee PGA announces 2025 tournament schedule</li>
+    <li>New course renovations at TPC Southwind</li>
+    <li>Local junior golfers excel in state championships</li>
+</ul>
+<p><a href="https://tennesseegolfcourses.com/news" class="button">Read All News</a></p>
 
-<h3>💡 Pro Tip</h3>
-<p>This week's tip from our golf professionals...</p>
+<h3>🎯 Pro Tip of the Week</h3>
+<p>Improve your short game by practicing 40-60 yard wedge shots. These "scoring zone" shots can save you 3-5 strokes per round!</p>
 
-<p>Happy golfing!</p>
-<p>The Tennessee Golf Courses Team</p>
+<h3>🏆 Upcoming Events</h3>
+<ul>
+    <li><strong>March 15-17:</strong> Tennessee State Amateur Qualifier</li>
+    <li><strong>March 22:</strong> Spring Scramble at Gaylord Springs</li>
+</ul>
+
+<p>Have a great week on the course!</p>
+<p><em>- The Tennessee Golf Courses Team</em></p>
                     </textarea>
                 </div>
                 
