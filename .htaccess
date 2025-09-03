@@ -9,10 +9,10 @@ RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.tennesseegolfcourses\.com$ [NC]
 RewriteRule ^(.*)$ https://tennesseegolfcourses.com/$1 [R=301,L]
 
-# Block old forum URLs since forum was removed
-RewriteRule ^forum/ - [F,L]
+# Return 410 Gone for old forum URLs since forum was permanently removed
+RewriteRule ^forum/ - [G,L]
 RewriteCond %{QUERY_STRING} redirect=/forum [NC]
-RewriteRule ^login$ - [F,L]
+RewriteRule ^login$ - [G,L]
 
 # Block system URLs that should never be accessible
 RewriteRule ^cdn-cgi/l/email-protection - [F,L]
