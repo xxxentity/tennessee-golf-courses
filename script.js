@@ -97,33 +97,55 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nav toggle found:', !!navToggle);
     console.log('Nav menu found:', !!navMenu);
 
+    // Create visual debug indicator
+    const debugIndicator = document.createElement('div');
+    debugIndicator.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 10px;
+        background: red;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 10000;
+        font-size: 12px;
+        font-family: monospace;
+        max-width: 200px;
+        word-wrap: break-word;
+    `;
+    debugIndicator.textContent = 'Debug: Loading...';
+    document.body.appendChild(debugIndicator);
+
     if (navToggle && navMenu) {
+        debugIndicator.textContent = 'Debug: Elements found!';
+        
         // Add touch and click handlers for better mobile support
         navToggle.addEventListener('click', function(e) {
-            console.log('Nav toggle clicked!');
+            debugIndicator.textContent = 'Debug: Button clicked!';
             e.preventDefault();
             e.stopPropagation();
             
-            console.log('Menu element:', navMenu);
-            console.log('Menu classes before:', navMenu.className);
-            
+            const wasActive = navMenu.classList.contains('active');
             navMenu.classList.toggle('active');
+            const nowActive = navMenu.classList.contains('active');
             
-            console.log('Menu classes after:', navMenu.className);
-            console.log('Menu active:', navMenu.classList.contains('active'));
-            console.log('Menu computed style left:', window.getComputedStyle(navMenu).left);
-            console.log('Menu computed style position:', window.getComputedStyle(navMenu).position);
+            debugIndicator.textContent = `Debug: Was ${wasActive}, now ${nowActive}`;
             
             // Force the menu to show if active class is present
             if (navMenu.classList.contains('active')) {
-                console.log('Forcing menu to show');
                 navMenu.style.left = '0px';
                 navMenu.style.display = 'flex';
                 navMenu.style.visibility = 'visible';
                 navMenu.style.opacity = '1';
+                debugIndicator.textContent = 'Debug: Menu forced to show!';
+                
+                setTimeout(() => {
+                    const computedLeft = window.getComputedStyle(navMenu).left;
+                    debugIndicator.textContent = `Debug: Menu left: ${computedLeft}`;
+                }, 100);
             } else {
-                console.log('Hiding menu');
                 navMenu.style.left = '-100%';
+                debugIndicator.textContent = 'Debug: Menu hidden';
             }
             
             // Animate hamburger menu
@@ -143,11 +165,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Also add touchstart for mobile devices
         navToggle.addEventListener('touchstart', function(e) {
-            console.log('Nav toggle touched!');
+            debugIndicator.textContent = 'Debug: Touch detected!';
             e.preventDefault();
         });
     } else {
-        console.error('Nav toggle or nav menu not found!');
+        debugIndicator.textContent = 'Debug: Elements NOT found!';
+        debugIndicator.style.background = 'orange';
     }
 
     // Navigation links - Let browser handle completely naturally
