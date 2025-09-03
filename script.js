@@ -175,10 +175,50 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Also add touchstart for mobile devices
+        // Add multiple touch event handlers for iOS
         navToggle.addEventListener('touchstart', function(e) {
-            debugIndicator.textContent = 'Debug: Touch detected!';
+            debugIndicator.textContent = 'Debug: Touch START detected!';
+            navToggle.style.background = '#f0f0f0';
             e.preventDefault();
+            e.stopPropagation();
+        });
+        
+        navToggle.addEventListener('touchend', function(e) {
+            debugIndicator.textContent = 'Debug: Touch END - triggering click!';
+            navToggle.style.background = '#ffffff';
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Manually trigger the click logic
+            setTimeout(() => {
+                const wasActive = navMenu.classList.contains('active');
+                navMenu.classList.toggle('active');
+                const nowActive = navMenu.classList.contains('active');
+                
+                debugIndicator.textContent = `Debug: Manual - Was ${wasActive}, now ${nowActive}`;
+                
+                if (navMenu.classList.contains('active')) {
+                    navMenu.style.cssText = `
+                        position: fixed !important;
+                        left: 0px !important;
+                        top: 92px !important;
+                        width: 100% !important;
+                        height: calc(100vh - 92px) !important;
+                        background: white !important;
+                        z-index: 9998 !important;
+                        display: flex !important;
+                        flex-direction: column !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        transform: translateX(0) !important;
+                    `;
+                    debugIndicator.textContent = 'Debug: Manual menu forced!';
+                } else {
+                    navMenu.style.left = '-100%';
+                    navMenu.style.transform = 'translateX(-100%)';
+                    debugIndicator.textContent = 'Debug: Manual menu hidden';
+                }
+            }, 50);
         });
     } else {
         debugIndicator.textContent = 'Debug: Elements NOT found!';
