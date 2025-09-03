@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 navMenu.style.cssText = `
                     position: fixed !important;
                     left: 0px !important;
-                    top: 92px !important;
+                    top: 80px !important;
                     width: 100% !important;
-                    height: calc(100vh - 92px) !important;
+                    height: calc(100vh - 80px) !important;
                     background: white !important;
                     z-index: 9998 !important;
                     display: flex !important;
@@ -171,9 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     navMenu.style.cssText = `
                         position: fixed !important;
                         left: 0px !important;
-                        top: 92px !important;
+                        top: 80px !important;
                         width: 100% !important;
-                        height: calc(100vh - 92px) !important;
+                        height: calc(100vh - 80px) !important;
                         background: white !important;
                         z-index: 9998 !important;
                         display: flex !important;
