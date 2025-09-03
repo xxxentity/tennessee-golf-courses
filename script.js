@@ -104,8 +104,27 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             e.stopPropagation();
             
+            console.log('Menu element:', navMenu);
+            console.log('Menu classes before:', navMenu.className);
+            
             navMenu.classList.toggle('active');
+            
+            console.log('Menu classes after:', navMenu.className);
             console.log('Menu active:', navMenu.classList.contains('active'));
+            console.log('Menu computed style left:', window.getComputedStyle(navMenu).left);
+            console.log('Menu computed style position:', window.getComputedStyle(navMenu).position);
+            
+            // Force the menu to show if active class is present
+            if (navMenu.classList.contains('active')) {
+                console.log('Forcing menu to show');
+                navMenu.style.left = '0px';
+                navMenu.style.display = 'flex';
+                navMenu.style.visibility = 'visible';
+                navMenu.style.opacity = '1';
+            } else {
+                console.log('Hiding menu');
+                navMenu.style.left = '-100%';
+            }
             
             // Animate hamburger menu
             const bars = navToggle.querySelectorAll('.bar');
