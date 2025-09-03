@@ -133,18 +133,30 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Force the menu to show if active class is present
             if (navMenu.classList.contains('active')) {
-                navMenu.style.left = '0px';
-                navMenu.style.display = 'flex';
-                navMenu.style.visibility = 'visible';
-                navMenu.style.opacity = '1';
-                debugIndicator.textContent = 'Debug: Menu forced to show!';
+                // Try multiple approaches to force show
+                navMenu.style.cssText = `
+                    position: fixed !important;
+                    left: 0px !important;
+                    top: 92px !important;
+                    width: 100% !important;
+                    height: calc(100vh - 92px) !important;
+                    background: white !important;
+                    z-index: 9998 !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    transform: translateX(0) !important;
+                `;
+                debugIndicator.textContent = 'Debug: Menu forced with cssText!';
                 
                 setTimeout(() => {
-                    const computedLeft = window.getComputedStyle(navMenu).left;
-                    debugIndicator.textContent = `Debug: Menu left: ${computedLeft}`;
+                    const rect = navMenu.getBoundingClientRect();
+                    debugIndicator.textContent = `Debug: Menu at x:${rect.left}, visible:${rect.width > 0}`;
                 }, 100);
             } else {
                 navMenu.style.left = '-100%';
+                navMenu.style.transform = 'translateX(-100%)';
                 debugIndicator.textContent = 'Debug: Menu hidden';
             }
             

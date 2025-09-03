@@ -510,5 +510,5 @@ body {
 <!-- Default Nashville weather for ALL other pages -->
 <script src="/weather.js"></script>
 <?php endif; ?>
-<script src="/script.js?v=6"></script>
+<script src="/script.js?v=<?php echo time(); ?>"></script>
 <?php endif; ?>
