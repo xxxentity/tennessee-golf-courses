@@ -1179,8 +1179,8 @@ a[href^="www."]:not(.social-links a)::after {
 @media (max-width: 768px) {
     /* Improved Weather Bar for Mobile - Simplified */
     .weather-bar {
-        padding: 4px 0;
-        font-size: 10px;
+        padding: 3px 0;
+        font-size: 8px;
         position: fixed !important;
         top: 0 !important;
         z-index: 1003 !important;
@@ -1202,8 +1202,8 @@ a[href^="www."]:not(.social-links a)::after {
     }
     
     .weather-info {
-        gap: 8px;
-        font-size: 10px;
+        gap: 6px;
+        font-size: 8px;
         display: flex;
         align-items: center;
         justify-content: center !important;
