@@ -77,7 +77,7 @@ try {
                 SELECT cc.*, u.username 
                 FROM course_comments cc 
                 JOIN users u ON cc.user_id = u.id 
-                WHERE cc.parent_comment_id = ?
+                WHERE cc.parent_comment_id = ? AND cc.parent_comment_id IS NOT NULL
                 ORDER BY cc.created_at ASC
             ");
             $stmt->execute([$comment['id']]);
