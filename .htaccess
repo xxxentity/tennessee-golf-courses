@@ -73,11 +73,6 @@ RewriteRule ^submit-course\.php$ submit-course.php [L]
 # Allow access to process-reply for course review replies
 RewriteRule ^courses/process-reply/?$ courses/process-reply.php [L]
 
-# Allow access to test-reply for debugging
-RewriteRule ^courses/test-reply/?$ courses/test-reply.php [L]
-
-# Allow access to database migration script
-RewriteRule ^database/migrate-reply-system/?$ database/migrate-reply-system.php [L]
 
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]

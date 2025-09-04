@@ -67,6 +67,7 @@ try {
             JOIN users u ON cc.user_id = u.id 
             WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
             ORDER BY cc.created_at DESC
+            LIMIT 20
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
@@ -82,9 +83,6 @@ try {
             ");
             $stmt->execute([$comment['id']]);
             $comment['replies'] = $stmt->fetchAll();
-            
-            // Debug: Log reply count for this comment
-            error_log("Comment ID {$comment['id']} has " . count($comment['replies']) . " replies");
         }
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet, get all comments
@@ -94,6 +92,7 @@ try {
             JOIN users u ON cc.user_id = u.id 
             WHERE cc.course_slug = ?
             ORDER BY cc.created_at DESC
+            LIMIT 20
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
@@ -660,6 +659,10 @@ try {
             <?php endif; ?>
             
             <?php if (count($comments) > 0): ?>
+                <div style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 0.9rem;">
+                    <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
+                    Showing the most recent 20 reviews
+                </div>
                 <?php foreach ($comments as $comment): ?>
                     <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
