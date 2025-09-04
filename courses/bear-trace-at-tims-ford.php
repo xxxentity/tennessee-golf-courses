@@ -76,9 +76,15 @@ try {
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-    $stmt->execute([$course_slug]);
+    // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
+    try {
+        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
+        $stmt->execute([$course_slug]);
+    } catch (PDOException $e) {
+        // Fallback: parent_comment_id column doesn't exist yet
+        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
+        $stmt->execute([$course_slug]);
+    }
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
