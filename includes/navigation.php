@@ -520,14 +520,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const authPages = ['/login', '/register', '/profile', '/logout', '/forgot-password', '/reset-password', '/verify-email'];
     const isAuthPage = authPages.some(page => currentPath.startsWith(page));
     
-    // Debug logging
-    console.log('Current path:', currentPath);
-    console.log('Is auth page:', isAuthPage);
-    console.log('Has auth-default element:', !!document.getElementById('auth-default'));
-    
-    // Only use JavaScript on potentially cached pages
+    // Only use JavaScript on potentially cached pages  
     if (!isAuthPage && document.getElementById('auth-default')) {
-        console.log('Fetching login status...');
+        console.log('Home page: Updating login status via JavaScript');
         fetch('/api/login-status')
             .then(response => response.json())
             .then(data => {

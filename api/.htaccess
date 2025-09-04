@@ -61,7 +61,7 @@ Header unset X-Powered-By
 </FilesMatch>
 
 # Allow API endpoints
-<FilesMatch "^(index|courses|auth|user|newsletter)\.php$">
+<FilesMatch "^(index|courses|auth|user|newsletter|login-status|weather)\.php$">
     Order allow,deny
     Allow from all
 </FilesMatch>
