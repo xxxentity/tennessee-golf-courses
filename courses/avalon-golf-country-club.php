@@ -105,6 +105,77 @@ try {
     </script>
     
     <style>
+        /* Enhanced Star Rating Styles */
+        .star-rating {
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .star-rating label {
+            padding: 5px;
+            -webkit-text-stroke: 1px #ccc;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .star-rating label:hover {
+            filter: brightness(1.2);
+        }
+        
+        /* Mobile-friendly tap targets */
+        @media (max-width: 768px) {
+            .star-rating label {
+                font-size: 2.5rem !important;
+                padding: 8px;
+            }
+            
+            .star-rating {
+                gap: 12px !important;
+            }
+            
+            .rating-text {
+                display: block;
+                margin-top: 10px !important;
+                margin-left: 0 !important;
+            }
+        }
+        
+        /* Reply system styles */
+        .reply-button {
+            background: transparent;
+            color: #4a7c59;
+            border: 1px solid #4a7c59;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .reply-button:hover {
+            background: #4a7c59;
+            color: white;
+        }
+        
+        .reply-form {
+            margin-top: 1rem;
+            padding-left: 2rem;
+            border-left: 3px solid #e2e8f0;
+        }
+        
+        .replies-container {
+            margin-top: 1rem;
+            padding-left: 2rem;
+            border-left: 3px solid #f3f4f6;
+        }
+        
+        .reply-item {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+        
         .photo-gallery {
             margin: 4rem 0;
         }
@@ -505,17 +576,24 @@ try {
                         <?php echo CSRFProtection::getTokenField(); ?>
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 5px;">
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                            <div class="star-rating" style="display: flex; gap: 8px; align-items: center; padding: 10px 0;">
+                                <!-- Left to right stars with half-star support -->
                                 <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star1" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="1 star">★</label>
+                                
+                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
+                                <label for="star2" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="2 stars">★</label>
+                                
+                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
+                                <label for="star3" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="3 stars">★</label>
+                                
+                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
+                                <label for="star4" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="4 stars">★</label>
+                                
+                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
+                                <label for="star5" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="5 stars">★</label>
+                                
+                                <span class="rating-text" style="margin-left: 10px; color: #666; font-size: 1rem;">Click to rate</span>
                             </div>
                         </div>
                         <div style="margin-bottom: 1.5rem;">
@@ -573,19 +651,63 @@ try {
     <?php include '../includes/footer.php'; ?>
     
     <script>
-        // Star rating functionality
+        // Enhanced star rating functionality (left-to-right)
+        const starRating = document.querySelector('.star-rating');
+        const ratingText = document.querySelector('.rating-text');
+        const ratingLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+        
+        // Handle star click
         document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
             radio.addEventListener('change', function() {
-                const stars = document.querySelectorAll('.star-rating label');
-                stars.forEach((star, starIndex) => {
-                    if (starIndex >= (5 - this.value)) {
-                        star.style.color = '#ffd700';
-                    } else {
-                        star.style.color = '#ddd';
-                    }
-                });
+                const rating = parseInt(this.value);
+                updateStarDisplay(rating);
+                
+                // Update rating text
+                if (ratingText) {
+                    ratingText.textContent = `${rating} star${rating > 1 ? 's' : ''} - ${ratingLabels[rating - 1]}`;
+                    ratingText.style.color = '#2c5234';
+                    ratingText.style.fontWeight = '600';
+                }
             });
         });
+        
+        // Handle star hover for better UX
+        document.querySelectorAll('.star-rating label').forEach((label, index) => {
+            label.addEventListener('mouseenter', function() {
+                const hoverRating = index + 1;
+                updateStarDisplay(hoverRating, true);
+                if (ratingText && !document.querySelector('.star-rating input:checked')) {
+                    ratingText.textContent = `${hoverRating} star${hoverRating > 1 ? 's' : ''} - ${ratingLabels[hoverRating - 1]}`;
+                }
+            });
+        });
+        
+        // Reset on mouse leave
+        starRating.addEventListener('mouseleave', function() {
+            const checkedInput = document.querySelector('.star-rating input:checked');
+            if (checkedInput) {
+                updateStarDisplay(parseInt(checkedInput.value));
+            } else {
+                updateStarDisplay(0);
+                if (ratingText) {
+                    ratingText.textContent = 'Click to rate';
+                    ratingText.style.color = '#666';
+                }
+            }
+        });
+        
+        function updateStarDisplay(rating, isHover = false) {
+            const stars = document.querySelectorAll('.star-rating label');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.style.color = '#ffd700';
+                    star.style.transform = isHover ? 'scale(1.1)' : 'scale(1)';
+                } else {
+                    star.style.color = '#ddd';
+                    star.style.transform = 'scale(1)';
+                }
+            });
+        }
         
         // Gallery Modal Functions
         function openGallery() {
