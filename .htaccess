@@ -359,11 +359,27 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
         Header always set Expires "0"
     </LocationMatch>
     
-    # No cache for pages with user-specific content (main pages that show login status)
-    <LocationMatch "^/(index\.php|courses\.php|news\.php|reviews\.php|about\.php|contact\.php|community\.php)?$">
+    # No cache for pages with user-specific content (any page that shows login status)
+    <LocationMatch "^/$|^/(index\.php)?$|^/courses/?$|^/news/?$|^/reviews/?$|^/about/?$|^/contact/?$|^/community/?$|^/events/?$|^/handicap/?$|^/maps/?$|^/media/?$|^/contests/?$">
         Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
         Header always set Pragma "no-cache"
         Header always set Expires "0"
+        Header always set CF-Cache-Status "BYPASS"
+    </LocationMatch>
+    
+    # No cache for individual course pages (they show login status too)
+    <LocationMatch "^/courses/[^/]+/?$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache" 
+        Header always set Expires "0"
+        Header always set CF-Cache-Status "BYPASS"
+    </LocationMatch>
+    
+    # No cache for news and review articles (they show login status)
+    <LocationMatch "^/(news|reviews)/[^/]+/?$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0" 
         Header always set CF-Cache-Status "BYPASS"
     </LocationMatch>
 </IfModule>
