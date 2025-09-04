@@ -32,32 +32,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         error_log("Review counts - All: $total_all, NULL: $total_null, Zero: $total_zero, Main: $total_main");
         
-        // Try the same query as main page but with fallback
-        try {
-            $stmt = $pdo->prepare("
-                SELECT cc.*, u.username 
-                FROM course_comments cc 
-                JOIN users u ON cc.user_id = u.id 
-                WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
-                ORDER BY cc.created_at DESC
-                LIMIT 5 OFFSET ?
-            ");
-            $stmt->execute([$course_slug, $offset]);
-            $comments = $stmt->fetchAll();
-        } catch (PDOException $e) {
-            // Fallback: parent_comment_id column might not exist or have issues
-            error_log("Main query failed, trying fallback: " . $e->getMessage());
-            $stmt = $pdo->prepare("
-                SELECT cc.*, u.username 
-                FROM course_comments cc 
-                JOIN users u ON cc.user_id = u.id 
-                WHERE cc.course_slug = ?
-                ORDER BY cc.created_at DESC
-                LIMIT 5 OFFSET ?
-            ");
-            $stmt->execute([$course_slug, $offset]);
-            $comments = $stmt->fetchAll();
+        // Get ALL main reviews first, then slice in PHP for more reliable pagination
+        $stmt = $pdo->prepare("
+            SELECT cc.*, u.username 
+            FROM course_comments cc 
+            JOIN users u ON cc.user_id = u.id 
+            WHERE cc.course_slug = ?
+            ORDER BY cc.created_at DESC
+        ");
+        $stmt->execute([$course_slug]);
+        $all_comments = $stmt->fetchAll();
+        
+        // Filter to get only main reviews (not replies)
+        $main_reviews = [];
+        foreach ($all_comments as $comment) {
+            if (empty($comment['parent_comment_id']) || $comment['parent_comment_id'] == 0) {
+                $main_reviews[] = $comment;
+            }
         }
+        
+        error_log("Total main reviews found: " . count($main_reviews) . ", requesting offset: $offset");
+        
+        // Now slice to get the requested page
+        $comments = array_slice($main_reviews, $offset, 5);
         
         error_log("Found " . count($comments) . " reviews for offset $offset");
         
