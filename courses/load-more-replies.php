@@ -1,6 +1,11 @@
 <?php
 require_once '../config/database.php';
 
+// Prevent any caching of this AJAX endpoint
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment_id = (int)($_POST['comment_id'] ?? 0);
     

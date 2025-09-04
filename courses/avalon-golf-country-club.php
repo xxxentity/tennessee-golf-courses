@@ -994,10 +994,11 @@ try {
             
             console.log('Loading more reviews with offset:', window.currentReviewOffset);
             
-            fetch('load-more-reviews.php', {
+            fetch('load-more-reviews.php?t=' + Date.now(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
+                    'Cache-Control': 'no-cache'
                 },
                 body: `course_slug=avalon-golf-country-club&offset=${window.currentReviewOffset}`
             })
@@ -1037,10 +1038,11 @@ try {
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
             
-            fetch('load-more-replies.php', {
+            fetch('load-more-replies.php?t=' + Date.now(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
+                    'Cache-Control': 'no-cache'
                 },
                 body: `comment_id=${commentId}`
             })
