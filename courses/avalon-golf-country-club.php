@@ -757,11 +757,6 @@ try {
                         <i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>
                         Load More Reviews
                     </button>
-                    <!-- Debug: Reset offset if needed -->
-                    <button onclick="window.currentReviewOffset = 5; console.log('Reset offset to 5'); alert('Offset reset to 5');" 
-                            style="margin-left: 1rem; background: #666; color: white; padding: 0.5rem 1rem; border: none; border-radius: 15px; font-size: 0.8rem; cursor: pointer;">
-                        Reset Offset (Debug)
-                    </button>
                 </div>
             <?php else: ?>
                 <div style="text-align: center; padding: 3rem; color: #666;">
@@ -1000,13 +995,13 @@ try {
             
             console.log('Loading more reviews with offset:', window.currentReviewOffset);
             
-            fetch('load-more-reviews.php?t=' + Date.now(), {
+            fetch('/courses/load-more-reviews?t=' + Date.now(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Cache-Control': 'no-cache'
                 },
-                body: `course_slug=avalon-golf-country-club&offset=${window.currentReviewOffset}`
+                body: 'course_slug=avalon-golf-country-club&offset=' + window.currentReviewOffset
             })
             .then(response => response.text())
             .then(html => {
@@ -1044,13 +1039,13 @@ try {
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
             
-            fetch('load-more-replies.php?t=' + Date.now(), {
+            fetch('/courses/load-more-replies?t=' + Date.now(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Cache-Control': 'no-cache'
                 },
-                body: `comment_id=${commentId}`
+                body: 'comment_id=' + commentId
             })
             .then(response => response.text())
             .then(html => {
