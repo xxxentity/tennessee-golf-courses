@@ -13,23 +13,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Debug: Log what we're looking for
         error_log("Load more reviews - Course: $course_slug, Offset: $offset");
         
-        // First check total count
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0)");
+        // First check total count with different approaches
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total_all FROM course_comments WHERE course_slug = ?");
         $stmt->execute([$course_slug]);
-        $total = $stmt->fetch()['total'];
-        error_log("Total reviews available: $total");
+        $total_all = $stmt->fetch()['total_all'];
         
-        // Get next 5 reviews
-        $stmt = $pdo->prepare("
-            SELECT cc.*, u.username 
-            FROM course_comments cc 
-            JOIN users u ON cc.user_id = u.id 
-            WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
-            ORDER BY cc.created_at DESC
-            LIMIT 5 OFFSET ?
-        ");
-        $stmt->execute([$course_slug, $offset]);
-        $comments = $stmt->fetchAll();
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total_null FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
+        $stmt->execute([$course_slug]);
+        $total_null = $stmt->fetch()['total_null'];
+        
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total_zero FROM course_comments WHERE course_slug = ? AND parent_comment_id = 0");
+        $stmt->execute([$course_slug]);
+        $total_zero = $stmt->fetch()['total_zero'];
+        
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total_main FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0)");
+        $stmt->execute([$course_slug]);
+        $total_main = $stmt->fetch()['total_main'];
+        
+        error_log("Review counts - All: $total_all, NULL: $total_null, Zero: $total_zero, Main: $total_main");
+        
+        // Try the same query as main page but with fallback
+        try {
+            $stmt = $pdo->prepare("
+                SELECT cc.*, u.username 
+                FROM course_comments cc 
+                JOIN users u ON cc.user_id = u.id 
+                WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
+                ORDER BY cc.created_at DESC
+                LIMIT 5 OFFSET ?
+            ");
+            $stmt->execute([$course_slug, $offset]);
+            $comments = $stmt->fetchAll();
+        } catch (PDOException $e) {
+            // Fallback: parent_comment_id column might not exist or have issues
+            error_log("Main query failed, trying fallback: " . $e->getMessage());
+            $stmt = $pdo->prepare("
+                SELECT cc.*, u.username 
+                FROM course_comments cc 
+                JOIN users u ON cc.user_id = u.id 
+                WHERE cc.course_slug = ?
+                ORDER BY cc.created_at DESC
+                LIMIT 5 OFFSET ?
+            ");
+            $stmt->execute([$course_slug, $offset]);
+            $comments = $stmt->fetchAll();
+        }
         
         error_log("Found " . count($comments) . " reviews for offset $offset");
         
