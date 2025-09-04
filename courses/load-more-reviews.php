@@ -19,29 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     try {
-        // Debug: Log what we're looking for
-        error_log("Load more reviews - Course: $course_slug, Offset: $offset");
-        
-        // First check total count with different approaches
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total_all FROM course_comments WHERE course_slug = ?");
-        $stmt->execute([$course_slug]);
-        $total_all = $stmt->fetch()['total_all'];
-        
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total_null FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
-        $stmt->execute([$course_slug]);
-        $total_null = $stmt->fetch()['total_null'];
-        
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total_zero FROM course_comments WHERE course_slug = ? AND parent_comment_id = 0");
-        $stmt->execute([$course_slug]);
-        $total_zero = $stmt->fetch()['total_zero'];
-        
-        $stmt = $pdo->prepare("SELECT COUNT(*) as total_main FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0)");
-        $stmt->execute([$course_slug]);
-        $total_main = $stmt->fetch()['total_main'];
-        
-        error_log("Review counts - All: $total_all, NULL: $total_null, Zero: $total_zero, Main: $total_main");
-        
-        // Get ALL comments first to debug
+        // Get ALL comments without debug logging
         $stmt = $pdo->prepare("
             SELECT cc.*, u.username 
             FROM course_comments cc 
@@ -52,56 +30,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$course_slug]);
         $all_comments = $stmt->fetchAll();
         
-        error_log("Total comments fetched from DB: " . count($all_comments));
-        
-        // Debug each comment
-        foreach ($all_comments as $idx => $comment) {
-            error_log("Comment $idx: ID={$comment['id']}, parent_id=" . 
-                     (isset($comment['parent_comment_id']) ? $comment['parent_comment_id'] : 'NOT SET') . 
-                     ", user={$comment['username']}");
-        }
-        
-        // Filter to get only main reviews (not replies)
+        // Simple filtering without excessive logging
         $main_reviews = [];
         foreach ($all_comments as $comment) {
             $parent_id = isset($comment['parent_comment_id']) ? $comment['parent_comment_id'] : null;
-            error_log("Checking comment ID {$comment['id']}: parent_comment_id = " . var_export($parent_id, true));
-            
             if ($parent_id === null || $parent_id == 0 || $parent_id == '0' || empty($parent_id)) {
                 $main_reviews[] = $comment;
-                error_log("  -> Added as main review");
-            } else {
-                error_log("  -> Skipped as reply (parent_id: $parent_id)");
             }
         }
-        
-        error_log("Total main reviews after filtering: " . count($main_reviews));
-        error_log("Requesting offset: $offset, limit: 5");
         
         // Now slice to get the requested page
         $comments = array_slice($main_reviews, $offset, 5);
         
-        error_log("After slice - returning " . count($comments) . " reviews");
-        
-        error_log("Found " . count($comments) . " reviews for offset $offset");
-        
         if (empty($comments)) {
-            error_log("No more comments found - checking if this is really true");
-            
-            // Emergency failsafe - just try to get ANY comments as a test
-            $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM course_comments WHERE course_slug = ?");
-            $stmt->execute([$course_slug]);
-            $emergency_count = $stmt->fetch()['total'];
-            error_log("EMERGENCY CHECK: Total comments in DB for this course: $emergency_count");
-            
-            // If we have comments but can't load them, there's a serious issue
-            if ($emergency_count > 5) {
-                error_log("ERROR: We have $emergency_count comments but can't load them at offset $offset!");
-                // Return debug message instead of empty
-                echo "<!-- Debug: Found $emergency_count total comments but pagination failed at offset $offset -->";
-            }
-            
-            exit(''); // No more comments
+            // No more reviews to load
+            exit('');
         }
         
         // Fetch latest reply and reply count for each comment
@@ -211,9 +154,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     } catch (PDOException $e) {
         error_log("Error loading more reviews: " . $e->getMessage());
-        exit('');
+        echo "<!-- Database error: " . htmlspecialchars($e->getMessage()) . " -->";
+        exit();
     }
 } else {
-    exit('');
+    echo "<!-- Not a POST request -->";
+    exit();
 }
+
+// Make sure nothing after this point executes
+exit();
 ?>
