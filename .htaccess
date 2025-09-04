@@ -77,6 +77,9 @@ RewriteRule ^courses/process-reply/?$ courses/process-reply.php [L]
 RewriteRule ^courses/load-more-reviews/?$ courses/load-more-reviews.php [L]
 RewriteRule ^courses/load-more-replies/?$ courses/load-more-replies.php [L]
 
+# Allow access to test-pagination for debugging
+RewriteRule ^courses/test-pagination/?$ courses/test-pagination.php [L]
+
 
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]
