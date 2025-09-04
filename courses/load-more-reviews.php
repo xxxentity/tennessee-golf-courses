@@ -10,6 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     try {
+        // Debug: Log what we're looking for
+        error_log("Load more reviews - Course: $course_slug, Offset: $offset");
+        
+        // First check total count
+        $stmt = $pdo->prepare("SELECT COUNT(*) as total FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0)");
+        $stmt->execute([$course_slug]);
+        $total = $stmt->fetch()['total'];
+        error_log("Total reviews available: $total");
+        
         // Get next 5 reviews
         $stmt = $pdo->prepare("
             SELECT cc.*, u.username 
@@ -22,7 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$course_slug, $offset]);
         $comments = $stmt->fetchAll();
         
+        error_log("Found " . count($comments) . " reviews for offset $offset");
+        
         if (empty($comments)) {
+            error_log("No more comments found - returning empty");
             exit(''); // No more comments
         }
         

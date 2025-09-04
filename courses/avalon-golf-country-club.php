@@ -991,6 +991,8 @@ try {
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
             
+            console.log('Loading more reviews with offset:', currentReviewOffset);
+            
             fetch('load-more-reviews.php', {
                 method: 'POST',
                 headers: {
@@ -1000,16 +1002,22 @@ try {
             })
             .then(response => response.text())
             .then(html => {
+                console.log('Response HTML length:', html.length);
+                console.log('Response content:', html.substring(0, 200) + '...');
+                
                 if (html.trim()) {
                     // Insert new reviews before the Load More button
                     const loadMoreDiv = button.parentElement;
                     loadMoreDiv.insertAdjacentHTML('beforebegin', html);
                     currentReviewOffset += 5;
                     
+                    console.log('Updated offset to:', currentReviewOffset);
+                    
                     button.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>Load More Reviews';
                     button.disabled = false;
                 } else {
                     // No more reviews
+                    console.log('No more reviews found');
                     button.innerHTML = 'No more reviews';
                     button.disabled = true;
                     button.style.opacity = '0.5';
