@@ -133,24 +133,11 @@ $is_main_page = (
             <?php endif; ?>
         </ul>
         
-        <div class="nav-auth">
-            <?php if ($is_logged_in): ?>
-                <!-- Logged in navigation -->
-                <div class="user-welcome-stacked">
-                    <span class="welcome-line">Welcome,</span>
-                    <span class="username-line"><?php echo htmlspecialchars($username); ?></span>
-                </div>
-                <div class="auth-buttons-stacked">
-                    <a href="/profile" class="nav-link profile-btn">My Profile</a>
-                    <a href="/logout" class="nav-link logout-btn">Logout</a>
-                </div>
-            <?php else: ?>
-                <!-- Logged out navigation -->
-                <div class="auth-buttons-stacked">
-                    <a href="/login" class="nav-link login-btn">Login</a>
-                    <a href="/register" class="nav-link register-btn">Register</a>
-                </div>
-            <?php endif; ?>
+        <div class="nav-auth" id="nav-auth">
+            <!-- Login status will be loaded by JavaScript -->
+            <div class="auth-buttons-stacked" id="auth-loading" style="opacity: 0.5;">
+                <span style="font-size: 14px;">Loading...</span>
+            </div>
         </div>
         
         <div class="nav-toggle" id="nav-toggle">
@@ -511,4 +498,48 @@ body {
 <script src="/weather.js"></script>
 <?php endif; ?>
 <script src="/script.js?v=<?php echo time(); ?>"></script>
+
+<script>
+// Load login status dynamically to work with caching
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/api/login-status')
+        .then(response => response.json())
+        .then(data => {
+            const navAuth = document.getElementById('nav-auth');
+            
+            if (data.logged_in) {
+                // Show logged in UI
+                navAuth.innerHTML = `
+                    <div class="user-welcome-stacked">
+                        <span class="welcome-line">Welcome,</span>
+                        <span class="username-line">${data.username}</span>
+                    </div>
+                    <div class="auth-buttons-stacked">
+                        <a href="/profile" class="nav-link profile-btn">My Profile</a>
+                        <a href="/logout" class="nav-link logout-btn">Logout</a>
+                    </div>
+                `;
+            } else {
+                // Show logged out UI
+                navAuth.innerHTML = `
+                    <div class="auth-buttons-stacked">
+                        <a href="/login" class="nav-link login-btn">Login</a>
+                        <a href="/register" class="nav-link register-btn">Register</a>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Login status check failed:', error);
+            // Default to logged out state
+            const navAuth = document.getElementById('nav-auth');
+            navAuth.innerHTML = `
+                <div class="auth-buttons-stacked">
+                    <a href="/login" class="nav-link login-btn">Login</a>
+                    <a href="/register" class="nav-link register-btn">Register</a>
+                </div>
+            `;
+        });
+});
+</script>
 <?php endif; ?>
