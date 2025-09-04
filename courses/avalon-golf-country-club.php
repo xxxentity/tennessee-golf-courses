@@ -379,7 +379,7 @@ try {
                     <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
                         <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
@@ -628,23 +628,23 @@ try {
                             <div class="star-rating-container" style="padding: 10px 0;">
                                 <div class="star-display" style="display: flex; gap: 3px; align-items: center; position: relative;">
                                     <!-- Visual star display with half-star support -->
-                                    <span class="star" data-value="1" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                    <span class="star" data-value="1" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
                                         <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
                                         <span>★</span>
                                     </span>
-                                    <span class="star" data-value="2" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                    <span class="star" data-value="2" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
                                         <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
                                         <span>★</span>
                                     </span>
-                                    <span class="star" data-value="3" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                    <span class="star" data-value="3" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
                                         <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
                                         <span>★</span>
                                     </span>
-                                    <span class="star" data-value="4" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                    <span class="star" data-value="4" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
                                         <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
                                         <span>★</span>
                                     </span>
-                                    <span class="star" data-value="5" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                    <span class="star" data-value="5" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
                                         <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
                                         <span>★</span>
                                     </span>
@@ -689,7 +689,7 @@ try {
                                 } elseif ($i == $full_stars + 1 && $half_star) {
                                     echo '<i class="fas fa-star-half-alt" style="color: #ffd700;"></i>';
                                 } else {
-                                    echo '<i class="far fa-star" style="color: #ddd;"></i>';
+                                    echo '<i class="far fa-star" style="color: #999;"></i>';
                                 }
                             }
                             ?>

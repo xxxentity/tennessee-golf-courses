@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         } elseif ($i == $full_stars + 1 && $half_star) {
                             echo '<i class="fas fa-star-half-alt" style="color: #ffd700;"></i>';
                         } else {
-                            echo '<i class="far fa-star" style="color: #ddd;"></i>';
+                            echo '<i class="far fa-star" style="color: #999;"></i>';
                         }
                     }
                     ?>

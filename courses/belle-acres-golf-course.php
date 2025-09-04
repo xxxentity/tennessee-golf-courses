@@ -261,7 +261,7 @@ try {
                     <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
                         <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
@@ -509,15 +509,15 @@ try {
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
                             <div class="star-rating" style="display: flex; gap: 5px;">
                                 <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         <div style="margin-bottom: 1.5rem;">

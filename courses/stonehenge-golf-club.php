@@ -472,7 +472,7 @@ try {
         }
         
         .star-rating label {
-            color: #ddd;
+            color: #999;
             font-size: 1.5rem;
             cursor: pointer;
             transition: color 0.3s ease;

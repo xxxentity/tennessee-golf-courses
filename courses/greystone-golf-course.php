@@ -255,7 +255,7 @@ try {
                     <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
                         <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
@@ -508,15 +508,15 @@ try {
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
                             <div class="star-rating" style="display: flex; gap: 5px;">
                                 <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         
@@ -543,7 +543,7 @@ try {
             <div class="reviews-list">
                 <?php if (empty($comments)): ?>
                     <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <i class="fas fa-star" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+                        <i class="fas fa-star" style="font-size: 3rem; color: #999; margin-bottom: 1rem;"></i>
                         <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
                         <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
                     </div>
@@ -555,7 +555,7 @@ try {
                                 <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
                                 <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #ddd;'; ?>"></i>
+                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #999;'; ?>"></i>
                                     <?php endfor; ?>
                                 </div>
                             </div>

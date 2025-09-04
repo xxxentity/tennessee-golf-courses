@@ -597,15 +597,15 @@ try {
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating (Historical):</label>
                             <div class="star-rating" style="display: flex; gap: 5px;">
                                 <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                                 <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #ddd; font-size: 1.5rem; cursor: pointer;">★</label>
+                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
                             </div>
                         </div>
                         <div style="margin-bottom: 1.5rem;">

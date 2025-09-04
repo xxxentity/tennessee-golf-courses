@@ -396,7 +396,7 @@ try {
         }
         
         .star-rating label {
-            color: #ddd;
+            color: #999;
             font-size: 1.5rem;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -469,7 +469,7 @@ try {
         .no-comments i {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #ddd;
+            color: #999;
         }
         
         .alert {

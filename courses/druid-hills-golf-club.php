@@ -365,7 +365,7 @@ try {
         
         .star-rating i {
             font-size: 1.5rem;
-            color: #ddd;
+            color: #999;
             cursor: pointer;
             transition: color 0.2s ease;
         }
@@ -521,7 +521,7 @@ try {
                     </div>
                 <?php else: ?>
                     <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #ddd; margin-right: 8px;"></i>
+                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
                         <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>

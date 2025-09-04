@@ -439,7 +439,7 @@ try {
         .star-rating label {
             cursor: pointer;
             font-size: 1.5rem;
-            color: #ddd;
+            color: #999;
             transition: color 0.3s ease;
         }
         
