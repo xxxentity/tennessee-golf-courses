@@ -757,6 +757,11 @@ try {
                         <i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>
                         Load More Reviews
                     </button>
+                    <!-- Debug: Reset offset if needed -->
+                    <button onclick="window.currentReviewOffset = 5; console.log('Reset offset to 5'); alert('Offset reset to 5');" 
+                            style="margin-left: 1rem; background: #666; color: white; padding: 0.5rem 1rem; border: none; border-radius: 15px; font-size: 0.8rem; cursor: pointer;">
+                        Reset Offset (Debug)
+                    </button>
                 </div>
             <?php else: ?>
                 <div style="text-align: center; padding: 3rem; color: #666;">
@@ -984,6 +989,7 @@ try {
         });
         
         // Load More Reviews functionality - define globally for Cloudflare compatibility
+        // Reset on page load to ensure correct starting point
         window.currentReviewOffset = 5; // We start by showing 5 reviews
         
         // Bypass rocket-loader by defining immediately
@@ -1007,7 +1013,7 @@ try {
                 console.log('Response HTML length:', html.length);
                 console.log('Response content:', html.substring(0, 200) + '...');
                 
-                if (html.trim()) {
+                if (html.trim() && html.trim() !== '<!-- Not a POST request -->') {
                     // Insert new reviews before the Load More button
                     const loadMoreDiv = button.parentElement;
                     loadMoreDiv.insertAdjacentHTML('beforebegin', html);
