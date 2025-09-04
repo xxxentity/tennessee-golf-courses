@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once '../config/database.php';
 
 // Prevent any caching of this AJAX endpoint
@@ -121,6 +125,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $comment['replies'] = $latest_reply ? [$latest_reply] : [];
         }
         
+        // Start session once before outputting HTML
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $is_logged_in = isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+        
         // Output HTML for the new reviews
         foreach ($comments as $comment): ?>
             <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
@@ -148,10 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p style="margin-bottom: 1.5rem; line-height: 1.6;"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
                 
                 <!-- Reply Button (only for logged in users) -->
-                <?php
-                session_start();
-                $is_logged_in = isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
-                if ($is_logged_in): ?>
+                <?php if ($is_logged_in): ?>
                     <button onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" 
                             style="background: #f8f9fa; color: #4a7c59; border: 2px solid #e2e8f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; margin-bottom: 1rem; font-weight: 500;">
                         <i class="fas fa-reply" style="margin-right: 0.5rem;"></i>
