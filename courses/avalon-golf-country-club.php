@@ -983,8 +983,8 @@ try {
             }
         });
         
-        // Load More Reviews functionality
-        let currentReviewOffset = 5; // We start by showing 5 reviews
+        // Load More Reviews functionality - define globally for Cloudflare compatibility
+        window.currentReviewOffset = 5; // We start by showing 5 reviews
         
         // Bypass rocket-loader by defining immediately
         window.loadMoreReviews = function() {
@@ -992,14 +992,14 @@ try {
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
             
-            console.log('Loading more reviews with offset:', currentReviewOffset);
+            console.log('Loading more reviews with offset:', window.currentReviewOffset);
             
             fetch('load-more-reviews.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: `course_slug=avalon-golf-country-club&offset=${currentReviewOffset}`
+                body: `course_slug=avalon-golf-country-club&offset=${window.currentReviewOffset}`
             })
             .then(response => response.text())
             .then(html => {
@@ -1010,9 +1010,9 @@ try {
                     // Insert new reviews before the Load More button
                     const loadMoreDiv = button.parentElement;
                     loadMoreDiv.insertAdjacentHTML('beforebegin', html);
-                    currentReviewOffset += 5;
+                    window.currentReviewOffset += 5;
                     
-                    console.log('Updated offset to:', currentReviewOffset);
+                    console.log('Updated offset to:', window.currentReviewOffset);
                     
                     button.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>Load More Reviews';
                     button.disabled = false;
