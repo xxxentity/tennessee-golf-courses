@@ -26,6 +26,7 @@ try {
     // Session expired or invalid - user not logged in
 }
 
+
 $course_slug = 'bear-trace-at-tims-ford';
 $course_name = 'Bear Trace at Tims Ford';
 
@@ -47,7 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         try {
             $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
+            // Redirect to prevent duplicate submissions on refresh
+            header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+            exit;
         } catch (PDOException $e) {
             $error_message = "Error posting review. Please try again.";
         }
@@ -55,6 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             $error_message = "Please provide a valid rating and comment.";
         }
     }
+}
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
 }
 
 // Get existing comments
@@ -81,6 +89,7 @@ try {
     $avg_rating = null;
     $total_reviews = 0;
 }
+
 ?>
 
 <!DOCTYPE html>
