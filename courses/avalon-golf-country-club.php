@@ -689,14 +689,18 @@ try {
                             
                             <!-- Reply form (hidden by default) -->
                             <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
-                                <form method="POST" action="process-reply.php" style="margin-top: 1rem;">
+                                <form method="POST" action="test-reply" style="margin-top: 1rem;">
                                     <?php echo CSRFProtection::getTokenField(); ?>
                                     <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
                                     <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
+                                    <input type="hidden" name="debug_test" value="1">
                                     <textarea name="reply_text" placeholder="Write your reply..." required style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;"></textarea>
                                     <div style="display: flex; gap: 10px; margin-top: 0.5rem;">
                                         <button type="submit" style="background: #4a7c59; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Post Reply</button>
                                         <button type="button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" style="background: #e5e7eb; color: #666; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
+                                    </div>
+                                    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #666;">
+                                        Debug: Parent ID = <?php echo $comment['id']; ?>, Course = <?php echo $course_slug; ?>
                                     </div>
                                 </form>
                             </div>
