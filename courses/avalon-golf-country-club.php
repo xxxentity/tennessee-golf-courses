@@ -77,11 +77,14 @@ try {
                 SELECT cc.*, u.username 
                 FROM course_comments cc 
                 JOIN users u ON cc.user_id = u.id 
-                WHERE cc.parent_comment_id = ? AND cc.parent_comment_id IS NOT NULL
+                WHERE cc.parent_comment_id = ?
                 ORDER BY cc.created_at ASC
             ");
             $stmt->execute([$comment['id']]);
             $comment['replies'] = $stmt->fetchAll();
+            
+            // Debug: Log reply count for this comment
+            error_log("Comment ID {$comment['id']} has " . count($comment['replies']) . " replies");
         }
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet, get all comments
@@ -689,11 +692,10 @@ try {
                             
                             <!-- Reply form (hidden by default) -->
                             <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
-                                <form method="POST" action="test-reply" style="margin-top: 1rem;">
+                                <form method="POST" action="process-reply" style="margin-top: 1rem;">
                                     <?php echo CSRFProtection::getTokenField(); ?>
                                     <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
                                     <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
-                                    <input type="hidden" name="debug_test" value="1">
                                     <textarea name="reply_text" placeholder="Write your reply..." required style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;"></textarea>
                                     <div style="display: flex; gap: 10px; margin-top: 0.5rem;">
                                         <button type="submit" style="background: #4a7c59; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Post Reply</button>
@@ -715,7 +717,7 @@ try {
                                             <span style="font-weight: 600; color: #2c5234; font-size: 0.9rem;"><?php echo htmlspecialchars($reply['username']); ?></span>
                                             <span style="color: #888; font-size: 0.8rem;"><?php echo date('M j, Y', strtotime($reply['created_at'])); ?></span>
                                         </div>
-                                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;"><?php echo nl2br(htmlspecialchars($reply['reply_text'])); ?></p>
+                                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;"><?php echo nl2br(htmlspecialchars($reply['comment_text'])); ?></p>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
