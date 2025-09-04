@@ -4,6 +4,46 @@ require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
 
+// Start secure session first
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
+
+$course_slug = 'bear-trace-at-tims-ford';
+$course_name = 'Bear Trace at Tims Ford';
+
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
+
+// Handle comment submission FIRST before any output
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
+        $rating = (int)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+    
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                // Redirect to prevent duplicate submissions on refresh
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
+    }
+}
+
 // Course data for SEO
 $course_data = [
     'name' => 'Bear Trace at Tims Ford',
@@ -18,47 +58,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-
-$course_slug = 'bear-trace-at-tims-ford';
-$course_name = 'Bear Trace at Tims Ford';
-
-// Check if user is logged in using secure session
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = (int)$_POST['rating'];
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            // Redirect to prevent duplicate submissions on refresh
-            header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
-            exit;
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
 
 // Check for success message from redirect
 if (isset($_GET['success']) && $_GET['success'] == '1') {
