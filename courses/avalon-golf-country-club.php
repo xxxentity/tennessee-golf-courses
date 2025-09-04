@@ -986,7 +986,8 @@ try {
         // Load More Reviews functionality
         let currentReviewOffset = 5; // We start by showing 5 reviews
         
-        function loadMoreReviews() {
+        // Bypass rocket-loader by defining immediately
+        window.loadMoreReviews = function() {
             const button = document.getElementById('load-more-reviews');
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
@@ -1028,10 +1029,10 @@ try {
                 button.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>Load More Reviews';
                 button.disabled = false;
             });
-        }
+        };
         
-        // Load More Replies functionality
-        function loadMoreReplies(commentId) {
+        // Load More Replies functionality  
+        window.loadMoreReplies = function(commentId) {
             const button = document.getElementById('load-more-replies-' + commentId);
             button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
             button.disabled = true;
@@ -1059,7 +1060,15 @@ try {
                 button.innerHTML = '<i class="fas fa-comments" style="margin-right: 0.5rem;"></i>Try Again';
                 button.disabled = false;
             });
-        }
+        };
+        
+        // Also define toggleReplyForm globally for Cloudflare compatibility
+        window.toggleReplyForm = function(commentId) {
+            const replyForm = document.getElementById('reply-form-' + commentId);
+            if (replyForm) {
+                replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none';
+            }
+        };
     </script>
 </body>
 </html>
