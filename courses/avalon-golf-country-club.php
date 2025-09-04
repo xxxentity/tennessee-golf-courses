@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
-        $rating = (int)$_POST['rating'];
+        $rating = floatval($_POST['rating']);
         $comment_text = trim($_POST['comment_text']);
         $user_id = $_SESSION['user_id'];
         
@@ -57,20 +57,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     }
 }
 
-// Get existing comments
+// Get existing comments with replies
 try {
     $stmt = $pdo->prepare("
         SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL
         ORDER BY cc.created_at DESC
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    // Fetch replies for each comment
+    foreach ($comments as &$comment) {
+        $stmt = $pdo->prepare("
+            SELECT cc.*, u.username 
+            FROM course_comments cc 
+            JOIN users u ON cc.user_id = u.id 
+            WHERE cc.parent_comment_id = ?
+            ORDER BY cc.created_at ASC
+        ");
+        $stmt->execute([$comment['id']]);
+        $comment['replies'] = $stmt->fetchAll();
+    }
+    
+    // Calculate average rating (only from parent comments, not replies)
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -576,24 +589,33 @@ try {
                         <?php echo CSRFProtection::getTokenField(); ?>
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 8px; align-items: center; padding: 10px 0;">
-                                <!-- Left to right stars with half-star support -->
-                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="1 star">★</label>
-                                
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="2 stars">★</label>
-                                
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="3 stars">★</label>
-                                
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="4 stars">★</label>
-                                
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #ddd; font-size: 2rem; cursor: pointer; transition: all 0.2s;" title="5 stars">★</label>
-                                
-                                <span class="rating-text" style="margin-left: 10px; color: #666; font-size: 1rem;">Click to rate</span>
+                            <div class="star-rating-container" style="padding: 10px 0;">
+                                <div class="star-display" style="display: flex; gap: 3px; align-items: center; position: relative;">
+                                    <!-- Visual star display with half-star support -->
+                                    <span class="star" data-value="1" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
+                                        <span>★</span>
+                                    </span>
+                                    <span class="star" data-value="2" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
+                                        <span>★</span>
+                                    </span>
+                                    <span class="star" data-value="3" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
+                                        <span>★</span>
+                                    </span>
+                                    <span class="star" data-value="4" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
+                                        <span>★</span>
+                                    </span>
+                                    <span class="star" data-value="5" style="color: #ddd; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
+                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
+                                        <span>★</span>
+                                    </span>
+                                    <span class="rating-text" style="margin-left: 10px; color: #666; font-size: 1rem;">Click to rate</span>
+                                </div>
+                                <!-- Hidden input for the actual rating value -->
+                                <input type="hidden" name="rating" id="rating-input" value="" required>
                             </div>
                         </div>
                         <div style="margin-bottom: 1.5rem;">
@@ -617,11 +639,58 @@ try {
                             <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
                         </div>
                         <div style="color: #ffd700; margin-bottom: 1rem;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
-                            <?php endfor; ?>
+                            <?php 
+                            $full_stars = floor($comment['rating']);
+                            $half_star = ($comment['rating'] - $full_stars) >= 0.5;
+                            
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $full_stars) {
+                                    echo '<i class="fas fa-star" style="color: #ffd700;"></i>';
+                                } elseif ($i == $full_stars + 1 && $half_star) {
+                                    echo '<i class="fas fa-star-half-alt" style="color: #ffd700;"></i>';
+                                } else {
+                                    echo '<i class="far fa-star" style="color: #ddd;"></i>';
+                                }
+                            }
+                            ?>
+                            <span style="margin-left: 8px; color: #666; font-size: 0.9rem;">(<?php echo number_format($comment['rating'], 1); ?>)</span>
                         </div>
-                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                        <p style="line-height: 1.6; color: #333;"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
+                        
+                        <?php if ($is_logged_in): ?>
+                            <button class="reply-button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)">
+                                <i class="fas fa-reply"></i> Reply
+                            </button>
+                            
+                            <!-- Reply form (hidden by default) -->
+                            <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
+                                <form method="POST" action="process-reply.php" style="margin-top: 1rem;">
+                                    <?php echo CSRFProtection::getTokenField(); ?>
+                                    <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
+                                    <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
+                                    <textarea name="reply_text" placeholder="Write your reply..." required style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;"></textarea>
+                                    <div style="display: flex; gap: 10px; margin-top: 0.5rem;">
+                                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Post Reply</button>
+                                        <button type="button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" style="background: #e5e7eb; color: #666; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <!-- Display replies if any -->
+                        <?php if (!empty($comment['replies'])): ?>
+                            <div class="replies-container">
+                                <?php foreach ($comment['replies'] as $reply): ?>
+                                    <div class="reply-item">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                            <span style="font-weight: 600; color: #2c5234; font-size: 0.9rem;"><?php echo htmlspecialchars($reply['username']); ?></span>
+                                            <span style="color: #888; font-size: 0.8rem;"><?php echo date('M j, Y', strtotime($reply['created_at'])); ?></span>
+                                        </div>
+                                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;"><?php echo nl2br(htmlspecialchars($reply['reply_text'])); ?></p>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
@@ -651,62 +720,104 @@ try {
     <?php include '../includes/footer.php'; ?>
     
     <script>
-        // Enhanced star rating functionality (left-to-right)
-        const starRating = document.querySelector('.star-rating');
+        // Enhanced star rating with half-star support
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating-input');
         const ratingText = document.querySelector('.rating-text');
-        const ratingLabels = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+        let currentRating = 0;
         
-        // Handle star click
-        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
-            radio.addEventListener('change', function() {
-                const rating = parseInt(this.value);
-                updateStarDisplay(rating);
-                
-                // Update rating text
-                if (ratingText) {
-                    ratingText.textContent = `${rating} star${rating > 1 ? 's' : ''} - ${ratingLabels[rating - 1]}`;
-                    ratingText.style.color = '#2c5234';
-                    ratingText.style.fontWeight = '600';
-                }
-            });
-        });
+        // Rating labels for different values
+        const getRatingLabel = (rating) => {
+            if (rating <= 1) return 'Poor';
+            if (rating <= 2) return 'Fair';
+            if (rating <= 3) return 'Good';
+            if (rating <= 4) return 'Very Good';
+            return 'Excellent';
+        };
         
-        // Handle star hover for better UX
-        document.querySelectorAll('.star-rating label').forEach((label, index) => {
-            label.addEventListener('mouseenter', function() {
-                const hoverRating = index + 1;
-                updateStarDisplay(hoverRating, true);
-                if (ratingText && !document.querySelector('.star-rating input:checked')) {
-                    ratingText.textContent = `${hoverRating} star${hoverRating > 1 ? 's' : ''} - ${ratingLabels[hoverRating - 1]}`;
-                }
-            });
-        });
-        
-        // Reset on mouse leave
-        starRating.addEventListener('mouseleave', function() {
-            const checkedInput = document.querySelector('.star-rating input:checked');
-            if (checkedInput) {
-                updateStarDisplay(parseInt(checkedInput.value));
-            } else {
-                updateStarDisplay(0);
-                if (ratingText) {
-                    ratingText.textContent = 'Click to rate';
-                    ratingText.style.color = '#666';
-                }
-            }
-        });
-        
-        function updateStarDisplay(rating, isHover = false) {
-            const stars = document.querySelectorAll('.star-rating label');
+        // Update star display with half-star support
+        function updateStarDisplay(rating) {
             stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.color = '#ffd700';
-                    star.style.transform = isHover ? 'scale(1.1)' : 'scale(1)';
+                const starValue = index + 1;
+                const starFull = star.querySelector('.star-full');
+                
+                if (rating >= starValue) {
+                    // Full star
+                    starFull.style.width = '100%';
+                } else if (rating >= starValue - 0.5) {
+                    // Half star
+                    starFull.style.width = '50%';
                 } else {
-                    star.style.color = '#ddd';
-                    star.style.transform = 'scale(1)';
+                    // Empty star
+                    starFull.style.width = '0%';
                 }
             });
+            
+            // Update rating text
+            if (ratingText && rating > 0) {
+                const displayRating = rating % 1 === 0 ? rating : rating.toFixed(1);
+                ratingText.textContent = `${displayRating} star${rating > 1 ? 's' : ''} - ${getRatingLabel(rating)}`;
+                ratingText.style.color = '#2c5234';
+                ratingText.style.fontWeight = '600';
+            } else if (ratingText) {
+                ratingText.textContent = 'Click to rate';
+                ratingText.style.color = '#666';
+                ratingText.style.fontWeight = 'normal';
+            }
+        }
+        
+        // Handle star clicks with half-star detection
+        stars.forEach((star) => {
+            star.addEventListener('click', function(e) {
+                const rect = star.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const width = rect.width;
+                const starValue = parseFloat(star.dataset.value);
+                
+                // Determine if it's a half or full star click
+                if (x < width / 2) {
+                    // Click on left half - half star
+                    currentRating = starValue - 0.5;
+                } else {
+                    // Click on right half - full star
+                    currentRating = starValue;
+                }
+                
+                ratingInput.value = currentRating;
+                updateStarDisplay(currentRating);
+            });
+            
+            // Handle hover with half-star preview
+            star.addEventListener('mousemove', function(e) {
+                if (currentRating > 0) return; // Don't show hover if already rated
+                
+                const rect = star.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const width = rect.width;
+                const starValue = parseFloat(star.dataset.value);
+                
+                let hoverRating;
+                if (x < width / 2) {
+                    hoverRating = starValue - 0.5;
+                } else {
+                    hoverRating = starValue;
+                }
+                
+                updateStarDisplay(hoverRating);
+            });
+        });
+        
+        // Reset display on mouse leave
+        document.querySelector('.star-display').addEventListener('mouseleave', function() {
+            updateStarDisplay(currentRating);
+        });
+        
+        // Reply form toggle
+        function toggleReplyForm(commentId) {
+            const replyForm = document.getElementById('reply-form-' + commentId);
+            if (replyForm) {
+                replyForm.style.display = replyForm.style.display === 'none' ? 'block' : 'none';
+            }
         }
         
         // Gallery Modal Functions
