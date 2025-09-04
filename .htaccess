@@ -73,6 +73,10 @@ RewriteRule ^submit-course\.php$ submit-course.php [L]
 # Allow access to process-reply for course review replies
 RewriteRule ^courses/process-reply/?$ courses/process-reply.php [L]
 
+# Allow access to load-more endpoints for pagination
+RewriteRule ^courses/load-more-reviews/?$ courses/load-more-reviews.php [L]
+RewriteRule ^courses/load-more-replies/?$ courses/load-more-replies.php [L]
+
 
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]

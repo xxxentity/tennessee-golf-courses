@@ -67,22 +67,30 @@ try {
             JOIN users u ON cc.user_id = u.id 
             WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
             ORDER BY cc.created_at DESC
-            LIMIT 20
+            LIMIT 5
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
         
-        // Fetch replies for each comment
+        // Fetch latest reply and reply count for each comment
         foreach ($comments as &$comment) {
+            // Get total reply count
+            $stmt = $pdo->prepare("SELECT COUNT(*) as reply_count FROM course_comments WHERE parent_comment_id = ?");
+            $stmt->execute([$comment['id']]);
+            $comment['reply_count'] = $stmt->fetch()['reply_count'];
+            
+            // Get latest reply only
             $stmt = $pdo->prepare("
                 SELECT cc.*, u.username 
                 FROM course_comments cc 
                 JOIN users u ON cc.user_id = u.id 
                 WHERE cc.parent_comment_id = ?
-                ORDER BY cc.created_at ASC
+                ORDER BY cc.created_at DESC
+                LIMIT 1
             ");
             $stmt->execute([$comment['id']]);
-            $comment['replies'] = $stmt->fetchAll();
+            $latest_reply = $stmt->fetch();
+            $comment['replies'] = $latest_reply ? [$latest_reply] : [];
         }
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet, get all comments
@@ -92,7 +100,7 @@ try {
             JOIN users u ON cc.user_id = u.id 
             WHERE cc.course_slug = ?
             ORDER BY cc.created_at DESC
-            LIMIT 20
+            LIMIT 5
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
@@ -100,6 +108,7 @@ try {
         // No replies yet since column doesn't exist
         foreach ($comments as &$comment) {
             $comment['replies'] = [];
+            $comment['reply_count'] = 0;
         }
     }
     
@@ -661,7 +670,7 @@ try {
             <?php if (count($comments) > 0): ?>
                 <div style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 0.9rem;">
                     <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
-                    Showing the most recent 20 reviews
+                    Showing 5 most recent reviews (latest reply shown for each)
                 </div>
                 <?php foreach ($comments as $comment): ?>
                     <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
@@ -723,10 +732,32 @@ try {
                                         <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;"><?php echo nl2br(htmlspecialchars($reply['comment_text'])); ?></p>
                                     </div>
                                 <?php endforeach; ?>
+                                
+                                <!-- Show more replies button if there are more than 1 reply -->
+                                <?php if ($comment['reply_count'] > 1): ?>
+                                    <div style="text-align: center; margin-top: 1rem;">
+                                        <button onclick="loadMoreReplies(<?php echo $comment['id']; ?>)" 
+                                                id="load-more-replies-<?php echo $comment['id']; ?>"
+                                                style="background: #f8f9fa; color: #4a7c59; border: 2px solid #e2e8f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-weight: 500;">
+                                            <i class="fas fa-comments" style="margin-right: 0.5rem;"></i>
+                                            Show <?php echo ($comment['reply_count'] - 1); ?> more repl<?php echo ($comment['reply_count'] - 1) > 1 ? 'ies' : 'y'; ?>
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
+                
+                <!-- Load More Reviews Button -->
+                <div style="text-align: center; margin: 3rem 0;">
+                    <button onclick="loadMoreReviews()" 
+                            id="load-more-reviews"
+                            style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 25px; font-size: 1rem; cursor: pointer; font-weight: 600; box-shadow: 0 3px 10px rgba(44,82,52,0.3);">
+                        <i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>
+                        Load More Reviews
+                    </button>
+                </div>
             <?php else: ?>
                 <div style="text-align: center; padding: 3rem; color: #666;">
                     <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
@@ -951,6 +982,76 @@ try {
                 closeGallery();
             }
         });
+        
+        // Load More Reviews functionality
+        let currentReviewOffset = 5; // We start by showing 5 reviews
+        
+        function loadMoreReviews() {
+            const button = document.getElementById('load-more-reviews');
+            button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
+            button.disabled = true;
+            
+            fetch('load-more-reviews.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `course_slug=avalon-golf-country-club&offset=${currentReviewOffset}`
+            })
+            .then(response => response.text())
+            .then(html => {
+                if (html.trim()) {
+                    // Insert new reviews before the Load More button
+                    const loadMoreDiv = button.parentElement;
+                    loadMoreDiv.insertAdjacentHTML('beforebegin', html);
+                    currentReviewOffset += 5;
+                    
+                    button.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>Load More Reviews';
+                    button.disabled = false;
+                } else {
+                    // No more reviews
+                    button.innerHTML = 'No more reviews';
+                    button.disabled = true;
+                    button.style.opacity = '0.5';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading reviews:', error);
+                button.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>Load More Reviews';
+                button.disabled = false;
+            });
+        }
+        
+        // Load More Replies functionality
+        function loadMoreReplies(commentId) {
+            const button = document.getElementById('load-more-replies-' + commentId);
+            button.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Loading...';
+            button.disabled = true;
+            
+            fetch('load-more-replies.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `comment_id=${commentId}`
+            })
+            .then(response => response.text())
+            .then(html => {
+                if (html.trim()) {
+                    // Insert new replies before the Load More button
+                    button.parentElement.insertAdjacentHTML('beforebegin', html);
+                    button.remove(); // Remove the button since we loaded all replies
+                } else {
+                    button.innerHTML = 'No more replies';
+                    button.disabled = true;
+                }
+            })
+            .catch(error => {
+                console.error('Error loading replies:', error);
+                button.innerHTML = '<i class="fas fa-comments" style="margin-right: 0.5rem;"></i>Try Again';
+                button.disabled = false;
+            });
+        }
     </script>
 </body>
 </html>
