@@ -57,34 +57,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     }
 }
 
-// Get existing comments with replies
+// Get existing comments with replies (graceful handling if parent_comment_id column doesn't exist)
 try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Fetch replies for each comment
-    foreach ($comments as &$comment) {
+    // First try with parent_comment_id filter
+    try {
         $stmt = $pdo->prepare("
             SELECT cc.*, u.username 
             FROM course_comments cc 
             JOIN users u ON cc.user_id = u.id 
-            WHERE cc.parent_comment_id = ?
-            ORDER BY cc.created_at ASC
+            WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
+            ORDER BY cc.created_at DESC
         ");
-        $stmt->execute([$comment['id']]);
-        $comment['replies'] = $stmt->fetchAll();
+        $stmt->execute([$course_slug]);
+        $comments = $stmt->fetchAll();
+        
+        // Fetch replies for each comment
+        foreach ($comments as &$comment) {
+            $stmt = $pdo->prepare("
+                SELECT cc.*, u.username 
+                FROM course_comments cc 
+                JOIN users u ON cc.user_id = u.id 
+                WHERE cc.parent_comment_id = ?
+                ORDER BY cc.created_at ASC
+            ");
+            $stmt->execute([$comment['id']]);
+            $comment['replies'] = $stmt->fetchAll();
+        }
+    } catch (PDOException $e) {
+        // Fallback: parent_comment_id column doesn't exist yet, get all comments
+        $stmt = $pdo->prepare("
+            SELECT cc.*, u.username 
+            FROM course_comments cc 
+            JOIN users u ON cc.user_id = u.id 
+            WHERE cc.course_slug = ?
+            ORDER BY cc.created_at DESC
+        ");
+        $stmt->execute([$course_slug]);
+        $comments = $stmt->fetchAll();
+        
+        // No replies yet since column doesn't exist
+        foreach ($comments as &$comment) {
+            $comment['replies'] = [];
+        }
     }
     
-    // Calculate average rating (only from parent comments, not replies)
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
+    // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
+    try {
+        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
+        $stmt->execute([$course_slug]);
+    } catch (PDOException $e) {
+        // Fallback: parent_comment_id column doesn't exist yet
+        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
+        $stmt->execute([$course_slug]);
+    }
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
