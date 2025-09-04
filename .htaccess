@@ -246,6 +246,7 @@ RewriteRule ^reset-password/?$ auth/reset-password.php [L]
 RewriteRule ^reset-password-process/?$ auth/reset-password-process.php [L]
 RewriteRule ^verify-email/?$ auth/verify-email.php [L]
 RewriteRule ^resend-verification/?$ auth/resend-verification.php [L]
+RewriteRule ^debug-session/?$ debug-session.php [L]
 
 # Handle user pages (clean URLs without /user/ prefix)
 RewriteRule ^profile/?$ user/profile.php [L]
@@ -356,6 +357,14 @@ RewriteRule ^([^/]+)/?$ $1.php [L]
         Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
         Header always set Pragma "no-cache"
         Header always set Expires "0"
+    </LocationMatch>
+    
+    # No cache for pages with user-specific content (main pages that show login status)
+    <LocationMatch "^/(index\.php|courses\.php|news\.php|reviews\.php|about\.php|contact\.php|community\.php)?$">
+        Header always set Cache-Control "no-cache, no-store, must-revalidate, private"
+        Header always set Pragma "no-cache"
+        Header always set Expires "0"
+        Header always set CF-Cache-Status "BYPASS"
     </LocationMatch>
 </IfModule>
 
