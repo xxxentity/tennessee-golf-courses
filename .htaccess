@@ -70,6 +70,12 @@ RewriteRule ^search-courses.php$ search-courses.php [L]
 # Allow direct access to submit-course.php for AJAX calls
 RewriteRule ^submit-course\.php$ submit-course.php [L]
 
+# Allow access to process-reply for course review replies
+RewriteRule ^courses/process-reply/?$ courses/process-reply.php [L]
+
+# Allow access to database migration script
+RewriteRule ^database/migrate-reply-system/?$ database/migrate-reply-system.php [L]
+
 RewriteRule ^community/?$ community.php [L]
 RewriteRule ^handicap/?$ handicap.php [L]
 RewriteRule ^contests/?$ contests.php [L]
