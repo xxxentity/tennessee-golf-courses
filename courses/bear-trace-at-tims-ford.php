@@ -15,6 +15,11 @@ $course_slug = 'bear-trace-at-tims-ford';
 $course_name = 'Bear Trace at Tims Ford';
 
 // Check if user is logged in using secure session
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
+}
 $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission FIRST before any output
@@ -61,7 +66,9 @@ SEO::setupCoursePage($course_data);
 
 // Check for success message from redirect
 if (isset($_GET['success']) && $_GET['success'] == '1') {
-    $success_message = "Your review has been posted successfully!";
+    // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
 }
 
 // Get existing comments

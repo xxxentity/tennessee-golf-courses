@@ -30,6 +30,11 @@ $course_slug = 'bear-trace-harrison-bay';
 $course_name = 'Bear Trace at Harrison Bay';
 
 // Check if user is logged in using secure session
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
+}
 $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
@@ -47,7 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         try {
             $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
+            // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
         } catch (PDOException $e) {
             $error_message = "Error posting review. Please try again.";
         }
