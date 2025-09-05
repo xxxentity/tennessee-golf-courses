@@ -1606,7 +1606,8 @@ $courses = Cache::remember('courses_with_ratings', function() use ($courses_stat
     $courses = [];
     foreach ($courses_static as $course) {
         try {
-            $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+            // Only count reviews (parent comments with ratings), not replies
+            $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
             $stmt->execute([$course['slug']]);
             $rating_data = $stmt->fetch();
             
@@ -1614,8 +1615,18 @@ $courses = Cache::remember('courses_with_ratings', function() use ($courses_stat
             $course['review_count'] = $rating_data['total_reviews'] ?: 0;
             
         } catch (PDOException $e) {
-            $course['avg_rating'] = null;
-            $course['review_count'] = 0;
+            // Fallback if parent_comment_id column doesn't exist yet
+            try {
+                $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
+                $stmt->execute([$course['slug']]);
+                $rating_data = $stmt->fetch();
+                
+                $course['avg_rating'] = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+                $course['review_count'] = $rating_data['total_reviews'] ?: 0;
+            } catch (PDOException $e) {
+                $course['avg_rating'] = null;
+                $course['review_count'] = 0;
+            }
         }
         
         $courses[] = $course;
