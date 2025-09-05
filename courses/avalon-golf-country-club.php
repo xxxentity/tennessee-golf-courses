@@ -120,17 +120,23 @@ try {
     }
     
     // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
+    $column_exists = false;
     try {
         $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
         $stmt->execute([$course_slug]);
+        $rating_data = $stmt->fetch();
+        $column_exists = true;
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet
         $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
         $stmt->execute([$course_slug]);
+        $rating_data = $stmt->fetch();
     }
-    $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
+    
+    // Debug: Add HTML comment to see which query was used
+    $debug_info = "<!-- Debug: parent_comment_id column " . ($column_exists ? "EXISTS" : "DOES NOT EXIST") . ", review count: $total_reviews -->";
     
 } catch (PDOException $e) {
     $comments = [];
@@ -145,6 +151,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php echo SEO::generateMetaTags(); ?>
+    <?php echo $debug_info; ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
