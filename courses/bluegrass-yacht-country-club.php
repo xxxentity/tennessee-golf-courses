@@ -486,20 +486,6 @@ try {
     <?php include '../includes/footer.php'; ?>
     
     <script>
-        // Star rating functionality
-        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
-            radio.addEventListener('change', function() {
-                const stars = document.querySelectorAll('.star-rating label');
-                stars.forEach((star, starIndex) => {
-                    if (starIndex >= (5 - this.value)) {
-                        star.style.color = '#ffd700';
-                    } else {
-                        star.style.color = '#ddd';
-                    }
-                });
-            });
-        });
-        
         // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
