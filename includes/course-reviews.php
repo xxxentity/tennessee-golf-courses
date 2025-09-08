@@ -19,39 +19,58 @@ if (!class_exists('CSRFProtection')) {
     require_once __DIR__ . '/csrf.php';
 }
 
-// Start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+// Get secure session class if not already included
+if (!class_exists('SecureSession')) {
+    require_once __DIR__ . '/session-security.php';
 }
 
-$is_logged_in = isset($_SESSION['user_id']) && !empty($_SESSION['user_id']);
+// Start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    try {
+        SecureSession::start();
+    } catch (Exception $e) {
+        // Session expired or invalid - user not logged in
+    }
+}
+
+$is_logged_in = SecureSession::isLoggedIn();
 $success_message = null;
 $error_message = null;
 
 // Handle review submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rating']) && isset($_POST['comment_text']) && $is_logged_in) {
     try {
-        CSRFProtection::validateToken($_POST);
-        
-        $rating = (float)$_POST['rating'];
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = $_SESSION['user_id'];
-        
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (course_slug, user_id, rating, comment_text, created_at) VALUES (?, ?, ?, ?, NOW())");
-            if ($stmt->execute([$course_slug, $user_id, $rating, $comment_text])) {
-                $success_message = "Your review has been posted successfully!";
-                $_POST = array(); // Clear form data
-            } else {
-                $error_message = "Error posting review. Please try again.";
-            }
+        // Validate CSRF token
+        $csrf_token = $_POST['csrf_token'] ?? '';
+        if (!CSRFProtection::validateToken($csrf_token)) {
+            $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
         } else {
-            $error_message = "Please provide a valid rating and comment.";
+            $rating = (float)$_POST['rating'];
+            $comment_text = trim($_POST['comment_text']);
+            $user_id = SecureSession::get('user_id');
+            
+            if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                if ($stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text])) {
+                    // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                    header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                    exit;
+                } else {
+                    $error_message = "Error posting review. Please try again.";
+                }
+            } else {
+                $error_message = "Please provide a valid rating and comment.";
+            }
         }
     } catch (Exception $e) {
         error_log("Review submission error: " . $e->getMessage());
         $error_message = "Error posting review. Please try again.";
     }
+}
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
 }
 
 // Fetch average rating and total reviews
@@ -246,7 +265,7 @@ try {
                         
                         <!-- Reply form (hidden by default) -->
                         <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
-                            <form method="POST" action="process-reply" style="margin-top: 1rem;">
+                            <form method="POST" action="/courses/process-reply" style="margin-top: 1rem;">
                                 <?php echo CSRFProtection::getTokenField(); ?>
                                 <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
                                 <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
