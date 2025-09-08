@@ -553,9 +553,17 @@ try {
                 <?php if ($avg_rating && $total_reviews > 0): ?>
                     <div class="rating-stars">
                         <?php
-                        $stars = round($avg_rating);
-                        for ($i = 1; $i <= 3; $i++) {
-                            echo $i <= $stars ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
                         }
                         ?>
                     </div>
