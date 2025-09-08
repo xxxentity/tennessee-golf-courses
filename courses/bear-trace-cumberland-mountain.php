@@ -29,6 +29,18 @@ try {
 $course_slug = 'bear-trace-cumberland-mountain';
 $course_name = 'Bear Trace at Cumberland Mountain';
 
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
 // Check if user is logged in using secure session
 
 // Check for success message from redirect
@@ -981,168 +993,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <?php echo CSRFProtection::getTokenField(); ?>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating-container" style="padding: 10px 0;">
-                                <div class="star-display" style="display: flex; gap: 3px; align-items: center; position: relative;">
-                                    <!-- Visual star display with half-star support -->
-                                    <span class="star" data-value="1" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
-                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
-                                        <span>★</span>
-                                    </span>
-                                    <span class="star" data-value="2" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
-                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
-                                        <span>★</span>
-                                    </span>
-                                    <span class="star" data-value="3" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
-                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
-                                        <span>★</span>
-                                    </span>
-                                    <span class="star" data-value="4" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
-                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
-                                        <span>★</span>
-                                    </span>
-                                    <span class="star" data-value="5" style="color: #999; font-size: 2rem; cursor: pointer; position: relative; transition: all 0.2s;">
-                                        <span class="star-full" style="position: absolute; overflow: hidden; width: 0%; color: #ffd700;">★</span>
-                                        <span>★</span>
-                                    </span>
-                                    <span class="rating-text" style="margin-left: 10px; color: #666; font-size: 1rem;">Click to rate</span>
-                                </div>
-                                <!-- Hidden input for the actual rating value -->
-                                <input type="hidden" name="rating" id="rating-input" value="" required>
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                            <textarea name="comment_text" placeholder="Share your thoughts about Bear Trace at Cumberland Mountain..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
-                        </div>
-                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
-                    <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Bear Trace at Cumberland Mountain</p>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (count($comments) > 0): ?>
-                <div style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 0.9rem;">
-                    <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
-                    Showing 5 most recent reviews (latest reply shown for each)
-                </div>
-                <?php foreach ($comments as $comment): ?>
-                    <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
-                            <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                        </div>
-                        <div style="color: #ffd700; margin-bottom: 1rem;">
-                            <?php 
-                            $full_stars = floor($comment['rating']);
-                            $half_star = ($comment['rating'] - $full_stars) >= 0.5;
-                            
-                            for ($i = 1; $i <= 5; $i++) {
-                                if ($i <= $full_stars) {
-                                    echo '<i class="fas fa-star" style="color: #ffd700;"></i>';
-                                } elseif ($i == $full_stars + 1 && $half_star) {
-                                    echo '<i class="fas fa-star-half-alt" style="color: #ffd700;"></i>';
-                                } else {
-                                    echo '<i class="far fa-star" style="color: #999;"></i>';
-                                }
-                            }
-                            ?>
-                            <span style="margin-left: 8px; color: #666; font-size: 0.9rem;">(<?php echo number_format($comment['rating'], 1); ?>)</span>
-                        </div>
-                        <p style="line-height: 1.6; color: #333;"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                        
-                        <?php if ($is_logged_in): ?>
-                            <button class="reply-button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)">
-                                <i class="fas fa-reply"></i> Reply
-                            </button>
-                            
-                            <!-- Reply form (hidden by default) -->
-                            <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
-                                <form method="POST" action="process-reply" style="margin-top: 1rem;">
-                                    <?php echo CSRFProtection::getTokenField(); ?>
-                                    <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
-                                    <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
-                                    <textarea name="reply_text" placeholder="Write your reply..." required style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;"></textarea>
-                                    <div style="display: flex; gap: 10px; margin-top: 0.5rem;">
-                                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Post Reply</button>
-                                        <button type="button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" style="background: #e5e7eb; color: #666; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
-                                    </div>
-                                    <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #666;">
-                                        Debug: Parent ID = <?php echo $comment['id']; ?>, Course = <?php echo $course_slug; ?>
-                                    </div>
-                                </form>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <!-- Display replies if any -->
-                        <?php if (!empty($comment['replies'])): ?>
-                            <div class="replies-container">
-                                <?php foreach ($comment['replies'] as $reply): ?>
-                                    <div class="reply-item">
-                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                            <span style="font-weight: 600; color: #2c5234; font-size: 0.9rem;"><?php echo htmlspecialchars($reply['username']); ?></span>
-                                            <span style="color: #888; font-size: 0.8rem;"><?php echo date('M j, Y', strtotime($reply['created_at'])); ?></span>
-                                        </div>
-                                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;"><?php echo nl2br(htmlspecialchars($reply['comment_text'])); ?></p>
-                                    </div>
-                                <?php endforeach; ?>
-                                
-                                <!-- Show more replies button if there are more than 1 reply -->
-                                <?php if ($comment['reply_count'] > 1): ?>
-                                    <div style="text-align: center; margin-top: 1rem;">
-                                        <button onclick="loadMoreReplies(<?php echo $comment['id']; ?>)" 
-                                                id="load-more-replies-<?php echo $comment['id']; ?>"
-                                                style="background: #f8f9fa; color: #4a7c59; border: 2px solid #e2e8f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-weight: 500;">
-                                            <i class="fas fa-comments" style="margin-right: 0.5rem;"></i>
-                                            Show <?php echo ($comment['reply_count'] - 1); ?> more repl<?php echo ($comment['reply_count'] - 1) > 1 ? 'ies' : 'y'; ?>
-                                        </button>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-                
-                <!-- Load More Reviews Button -->
-                <div style="text-align: center; margin: 3rem 0;">
-                    <button onclick="loadMoreReviews()" 
-                            id="load-more-reviews"
-                            style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 25px; font-size: 1rem; cursor: pointer; font-weight: 600; box-shadow: 0 3px 10px rgba(44,82,52,0.3);">
-                        <i class="fas fa-plus-circle" style="margin-right: 0.5rem;"></i>
-                        Load More Reviews
-                    </button>
-                </div>
-            <?php else: ?>
-                <div style="text-align: center; padding: 3rem; color: #666;">
-                    <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
-                    <h3>No reviews yet</h3>
-                    <p>Be the first to share your experience at Bear Trace at Cumberland Mountain!</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <!-- Booking Section -->
     <section class="booking-section">
