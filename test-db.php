@@ -12,8 +12,15 @@ try {
     $result = $stmt->fetch();
     echo "<p>Total comments for '$course_slug': " . $result['count'] . "</p>";
     
-    // Show actual comments
-    $stmt = $pdo->prepare("SELECT cc.id, cc.rating, cc.comment_text, cc.created_at, u.username FROM course_comments cc JOIN users u ON cc.user_id = u.id WHERE cc.course_slug = ? ORDER BY cc.created_at DESC LIMIT 5");
+    // Show actual comments with EXACT same query as include file
+    $stmt = $pdo->prepare("
+        SELECT cc.*, u.username 
+        FROM course_comments cc 
+        JOIN users u ON cc.user_id = u.id 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL
+        ORDER BY cc.created_at DESC
+        LIMIT 5
+    ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
