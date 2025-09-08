@@ -30,6 +30,9 @@ try {
 $course_slug = 'bear-trace-harrison-bay';
 $course_name = 'Bear Trace at Harrison Bay';
 
+// DEBUG: Track course_slug value
+echo "<!-- DEBUG: course_slug set to '$course_slug' on line 30 -->";
+
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 
@@ -716,6 +719,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     <?php 
     // Variables needed for the centralized review system
     // $course_slug and $course_name are already set at the top of this file
+    echo "<!-- DEBUG: Before include - course_slug='$course_slug' -->";
     include '../includes/course-reviews-fixed.php'; 
     ?>
 

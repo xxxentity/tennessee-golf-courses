@@ -9,6 +9,8 @@ if (!isset($course_slug) || !isset($course_name)) {
     return;
 }
 
+echo "<!-- DEBUG: Include received course_slug='$course_slug', course_name='$course_name' -->";
+
 // Use existing session and user status (don't reinitialize)
 $is_logged_in = isset($is_logged_in) ? $is_logged_in : false;
 
