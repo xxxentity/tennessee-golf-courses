@@ -22,6 +22,9 @@ if (isset($_GET['success']) && $_GET['success'] == '1') {
 
 // Fetch existing comments with replies (graceful handling if parent_comment_id column doesn't exist)
 try {
+    // Debug: Log what we're looking for
+    error_log("course-reviews-fixed.php: Looking for reviews with course_slug = '$course_slug'");
+    
     // First try with parent_comment_id filter
     try {
         $stmt = $pdo->prepare("
@@ -34,6 +37,7 @@ try {
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
+        error_log("course-reviews-fixed.php: Found " . count($comments) . " reviews with parent_comment_id filter");
         
         // Fetch latest reply and reply count for each comment
         foreach ($comments as &$comment) {
@@ -57,6 +61,7 @@ try {
         }
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet, get all comments
+        error_log("course-reviews-fixed.php: parent_comment_id column doesn't exist, using fallback query");
         $stmt = $pdo->prepare("
             SELECT cc.*, u.username 
             FROM course_comments cc 
@@ -67,6 +72,7 @@ try {
         ");
         $stmt->execute([$course_slug]);
         $comments = $stmt->fetchAll();
+        error_log("course-reviews-fixed.php: Found " . count($comments) . " reviews with fallback query");
         
         // No replies yet since column doesn't exist
         foreach ($comments as &$comment) {
@@ -89,10 +95,26 @@ try {
     $total_reviews = $rating_data['total_reviews'] ?: 0;
     
 } catch (PDOException $e) {
-    error_log("Error in course-reviews.php: " . $e->getMessage());
+    error_log("Error in course-reviews-fixed.php: " . $e->getMessage());
     $comments = [];
     $avg_rating = null;
     $total_reviews = 0;
+}
+
+// Final debug output
+error_log("course-reviews-fixed.php: Final result - " . count($comments) . " comments to display");
+
+// Additional debug: Check what's actually in the database for this course
+try {
+    $stmt = $pdo->prepare("SELECT id, username, course_slug, rating, comment_text, created_at FROM course_comments cc JOIN users u ON cc.user_id = u.id WHERE cc.course_slug = ? ORDER BY cc.created_at DESC LIMIT 3");
+    $stmt->execute([$course_slug]);
+    $all_comments = $stmt->fetchAll();
+    error_log("course-reviews-fixed.php: Raw database check found " . count($all_comments) . " total comments");
+    foreach ($all_comments as $comment) {
+        error_log("course-reviews-fixed.php: Comment - ID: {$comment['id']}, User: {$comment['username']}, Course: {$comment['course_slug']}, Rating: {$comment['rating']}");
+    }
+} catch (PDOException $e) {
+    error_log("course-reviews-fixed.php: Error checking database: " . $e->getMessage());
 }
 ?>
 
