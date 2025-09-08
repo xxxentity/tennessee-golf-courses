@@ -49,12 +49,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     
         if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
             try {
+                // Debug: Log what we're about to insert
+                error_log("DEBUG: Inserting review - user_id: $user_id, course_slug: '$course_slug', course_name: '$course_name', rating: $rating, comment: '$comment_text'");
+                
                 $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                $result = $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                
+                // Debug: Log the result
+                error_log("DEBUG: Insert result: " . ($result ? 'SUCCESS' : 'FAILED') . ", affected rows: " . $stmt->rowCount());
+                
                 // Redirect to prevent duplicate submission on refresh (PRG pattern)
                 header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
                 exit;
             } catch (PDOException $e) {
+                error_log("DEBUG: Insert error: " . $e->getMessage());
                 $error_message = "Error posting review. Please try again.";
             }
         } else {
