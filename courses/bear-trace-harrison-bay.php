@@ -688,7 +688,7 @@ $course_name = 'Bear Trace at Harrison Bay';
     <?php 
     // Variables needed for the centralized review system
     // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews.php'; 
+    include '../includes/course-reviews-simple.php'; 
     ?>
 
     <!-- Booking Section -->

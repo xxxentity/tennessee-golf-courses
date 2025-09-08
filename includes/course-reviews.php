@@ -3,8 +3,12 @@
 // This centralized file handles all review functionality for course pages
 // Usage: Set $course_slug and $course_name before including this file
 
+// Debug: Log that we're entering the include
+error_log("course-reviews.php: Starting include for course: " . ($course_slug ?? 'NOT_SET'));
+
 // Ensure required variables are set
 if (!isset($course_slug) || !isset($course_name)) {
+    error_log("course-reviews.php: ERROR - course_slug or course_name not set");
     echo '<!-- Error: course_slug and course_name must be set before including course-reviews.php -->';
     return;
 }
