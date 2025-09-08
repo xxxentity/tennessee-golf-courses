@@ -6,6 +6,45 @@ header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
 
+// Add inline CSS for reply system styles
+echo '<style>
+.reply-button {
+    background: transparent;
+    color: #4a7c59;
+    border: 1px solid #4a7c59;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.reply-button:hover {
+    background: #4a7c59;
+    color: white;
+}
+
+.reply-form {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    border-left: 3px solid #e2e8f0;
+}
+
+.replies-container {
+    margin-top: 1rem;
+    padding-left: 2rem;
+    border-left: 3px solid #f3f4f6;
+}
+
+.reply-item {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+</style>';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $course_slug = $_POST['course_slug'] ?? '';
     $offset = (int)($_POST['offset'] ?? 0);
@@ -92,16 +131,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
                     ?>
-                    <span style="margin-left: 0.5rem; color: #666; font-size: 0.9rem;"><?php echo $comment['rating']; ?>/5</span>
+                    <span style="margin-left: 8px; color: #666; font-size: 0.9rem;">(<?php echo number_format($comment['rating'], 1); ?>)</span>
                 </div>
                 <p style="margin-bottom: 1.5rem; line-height: 1.6;"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
                 
-                <!-- Reply Button (only for logged in users) -->
                 <?php if ($is_logged_in): ?>
-                    <button onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" 
-                            style="background: #f8f9fa; color: #4a7c59; border: 2px solid #e2e8f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; margin-bottom: 1rem; font-weight: 500;">
-                        <i class="fas fa-reply" style="margin-right: 0.5rem;"></i>
-                        Reply
+                    <button class="reply-button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)">
+                        <i class="fas fa-reply"></i> Reply
                     </button>
                     
                     <!-- Reply form (hidden by default) -->
@@ -114,6 +150,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div style="display: flex; gap: 10px; margin-top: 0.5rem;">
                                 <button type="submit" style="background: #4a7c59; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Post Reply</button>
                                 <button type="button" onclick="toggleReplyForm(<?php echo $comment['id']; ?>)" style="background: #e5e7eb; color: #666; padding: 0.5rem 1.5rem; border: none; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #666;">
+                                Debug: Parent ID = <?php echo $comment['id']; ?>, Course = <?php echo $course_slug; ?>
                             </div>
                         </form>
                     </div>

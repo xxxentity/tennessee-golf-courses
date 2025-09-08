@@ -31,7 +31,6 @@ $course_slug = 'bear-trace-harrison-bay';
 $course_name = 'Bear Trace at Harrison Bay';
 
 // The review system is now handled by the centralized include file at the bottom of the page
-
 ?>
 
 <!DOCTYPE html>

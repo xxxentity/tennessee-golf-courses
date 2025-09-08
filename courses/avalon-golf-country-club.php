@@ -32,6 +32,11 @@ $course_name = 'Avalon Golf & Country Club';
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
+}
+
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     // Validate CSRF token
@@ -47,7 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             try {
                 $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
                 $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                $success_message = "Your review has been posted successfully!";
+                // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
             } catch (PDOException $e) {
                 $error_message = "Error posting review. Please try again.";
             }
@@ -113,17 +120,23 @@ try {
     }
     
     // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
+    $column_exists = false;
     try {
         $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
         $stmt->execute([$course_slug]);
+        $rating_data = $stmt->fetch();
+        $column_exists = true;
     } catch (PDOException $e) {
         // Fallback: parent_comment_id column doesn't exist yet
         $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
         $stmt->execute([$course_slug]);
+        $rating_data = $stmt->fetch();
     }
-    $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
+    
+    // Debug: Add HTML comment to see which query was used
+    $debug_info = "<!-- Debug: parent_comment_id column " . ($column_exists ? "EXISTS" : "DOES NOT EXIST") . ", review count: $total_reviews -->";
     
 } catch (PDOException $e) {
     $comments = [];
@@ -138,6 +151,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php echo SEO::generateMetaTags(); ?>
+    <?php echo $debug_info; ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
