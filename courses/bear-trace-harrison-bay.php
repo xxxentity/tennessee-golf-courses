@@ -718,9 +718,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     <!-- Reviews Section -->
     <?php 
     // Variables needed for the centralized review system
-    // Navigation overwrites $course_slug, so we need to reset it
-    $course_slug = 'bear-trace-harrison-bay';
-    $course_name = 'Bear Trace at Harrison Bay';
+    // $course_slug and $course_name are already set at the top of this file
     echo "<!-- DEBUG: Before include - course_slug='$course_slug' -->";
     include '../includes/course-reviews-fixed.php'; 
     ?>

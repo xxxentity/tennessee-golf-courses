@@ -23,8 +23,13 @@ $is_individual_course = (strpos($current_page, '/courses/') === 0 && $current_pa
 $course_slug = null;
 if ($is_individual_course) {
     $course_slug = substr($current_page, 9); // Remove '/courses/'
+    // Remove any query parameters (e.g. ?success=1)
+    if (strpos($course_slug, '?') !== false) {
+        $course_slug = substr($course_slug, 0, strpos($course_slug, '?'));
+    }
+    // Remove any trailing path
     if (strpos($course_slug, '/') !== false) {
-        $course_slug = substr($course_slug, 0, strpos($course_slug, '/')); // Remove any trailing path
+        $course_slug = substr($course_slug, 0, strpos($course_slug, '/'));
     }
 }
 
