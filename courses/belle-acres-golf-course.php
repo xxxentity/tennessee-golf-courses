@@ -29,6 +29,18 @@ try {
 $course_slug = 'belle-acres-golf-course';
 $course_name = 'Belle Acres Golf Course';
 
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
 // Check if user is logged in using secure session
 
 // Check for success message from redirect
@@ -494,89 +506,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <?php echo CSRFProtection::getTokenField(); ?>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 5px;">
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                            <textarea name="comment_text" placeholder="Share your thoughts about Belle Acres Golf Course..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
-                        </div>
-                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
-                    <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Belle Acres Golf Course</p>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (count($comments) > 0): ?>
-                <?php foreach ($comments as $comment): ?>
-                    <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
-                            <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                        </div>
-                        <div style="color: #ffd700; margin-bottom: 1rem;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div style="text-align: center; padding: 3rem; color: #666;">
-                    <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
-                    <h3>No reviews yet</h3>
-                    <p>Be the first to share your experience at Belle Acres Golf Course!</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <!-- Full Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Belle Acres Golf Course - Complete Photo Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
-        </div>
-    </div>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
