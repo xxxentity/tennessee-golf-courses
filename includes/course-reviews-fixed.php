@@ -134,7 +134,7 @@ try {
                 <?php endif; ?>
                 
                 <form method="POST" class="comment-form">
-                    <?php if (class_exists('CSRFProtection')) echo CSRFProtection::getTokenField(); ?>
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
                         <div class="star-rating-container" style="padding: 10px 0;">
@@ -217,7 +217,7 @@ try {
                         <!-- Reply form (hidden by default) -->
                         <div id="reply-form-<?php echo $comment['id']; ?>" class="reply-form" style="display: none;">
                             <form method="POST" action="/courses/process-reply" style="margin-top: 1rem;">
-                                <?php if (class_exists('CSRFProtection')) echo CSRFProtection::getTokenField(); ?>
+                                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
                                 <input type="hidden" name="parent_comment_id" value="<?php echo $comment['id']; ?>">
                                 <input type="hidden" name="course_slug" value="<?php echo $course_slug; ?>">
                                 <textarea name="reply_text" placeholder="Write your reply..." required style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 80px;"></textarea>
