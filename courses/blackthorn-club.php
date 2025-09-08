@@ -29,6 +29,18 @@ try {
 $course_slug = 'blackthorn-club';
 $course_name = 'Blackthorn Club';
 
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
 // Check if user is logged in using secure session
 
 // Check for success message from redirect
@@ -774,71 +786,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Reviews & Ratings</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="review-form-card">
-                    <h3>Write a Review</h3>
-                    <?php if (isset($success_message)): ?>
-                        <div style="color: green; margin-bottom: 1rem;"><?= $success_message ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div style="color: red; margin-bottom: 1rem;"><?= $error_message ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" action="">
-                        <div class="form-group">
-                            <label>Your Rating</label>
-                            <div class="star-rating" id="starRating">
-                                <i class="far fa-star" data-rating="1"></i>
-                                <i class="far fa-star" data-rating="2"></i>
-                                <i class="far fa-star" data-rating="3"></i>
-                                <i class="far fa-star" data-rating="4"></i>
-                                <i class="far fa-star" data-rating="5"></i>
-                            </div>
-                            <input type="hidden" name="rating" id="ratingInput" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Blackthorn Club..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="review-form-card">
-                    <h3>Want to Write a Review?</h3>
-                    <p>Please <a href="/login" style="color: #4a7c59;">login</a> or <a href="/register" style="color: #4a7c59;">register</a> to share your experience at Blackthorn Club.</p>
-                </div>
-            <?php endif; ?>
-            
-            <div class="comments-section">
-                <h3>Reviews (<?= $total_reviews ?>)</h3>
-                <?php if (!empty($comments)): ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment-item">
-                            <div class="comment-header">
-                                <span class="comment-author"><?= htmlspecialchars($comment['username']) ?></span>
-                                <span class="comment-date"><?= date('M j, Y', strtotime($comment['created_at'])) ?></span>
-                            </div>
-                            <div class="comment-rating">
-                                <?php for ($i = 1; $i <= 3; $i++): ?>
-                                    <i class="<?= $i <= $comment['rating'] ? 'fas' : 'far' ?> fa-star"></i>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="comment-text"><?= nl2br(htmlspecialchars($comment['comment_text'])) ?></div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p style="text-align: center; color: #666; font-style: italic;">No reviews yet. Be the first to share your experience!</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <?php include '../includes/footer.php'; ?>
 
