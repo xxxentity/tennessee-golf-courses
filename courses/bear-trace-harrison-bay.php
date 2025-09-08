@@ -30,8 +30,6 @@ try {
 $course_slug = 'bear-trace-harrison-bay';
 $course_name = 'Bear Trace at Harrison Bay';
 
-// DEBUG: Track course_slug value
-echo "<!-- DEBUG: course_slug set to '$course_slug' on line 30 -->";
 
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
@@ -49,20 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     
         if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
             try {
-                // Debug: Log what we're about to insert
-                error_log("DEBUG: Inserting review - user_id: $user_id, course_slug: '$course_slug', course_name: '$course_name', rating: $rating, comment: '$comment_text'");
-                
                 $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $result = $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                
-                // Debug: Log the result
-                error_log("DEBUG: Insert result: " . ($result ? 'SUCCESS' : 'FAILED') . ", affected rows: " . $stmt->rowCount());
-                
-                // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
                 header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
                 exit;
             } catch (PDOException $e) {
-                error_log("DEBUG: Insert error: " . $e->getMessage());
                 $error_message = "Error posting review. Please try again.";
             }
         } else {
@@ -727,7 +716,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     <?php 
     // Variables needed for the centralized review system
     // $course_slug and $course_name are already set at the top of this file
-    echo "<!-- DEBUG: Before include - course_slug='$course_slug' -->";
     include '../includes/course-reviews-fixed.php'; 
     ?>
 

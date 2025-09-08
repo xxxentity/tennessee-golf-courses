@@ -9,7 +9,6 @@ if (!isset($course_slug) || !isset($course_name)) {
     return;
 }
 
-echo "<!-- DEBUG: Include received course_slug='$course_slug', course_name='$course_name' -->";
 
 // Use existing session and user status (don't reinitialize)
 $is_logged_in = isset($is_logged_in) ? $is_logged_in : false;
@@ -24,18 +23,6 @@ if (isset($_GET['success']) && $_GET['success'] == '1') {
 
 // Fetch existing comments (simplified - no try/catch complexity)
 try {
-    // Debug: First check if any comments exist at all for this course
-    $debug_stmt = $pdo->prepare("SELECT COUNT(*) as total FROM course_comments WHERE course_slug = ?");
-    $debug_stmt->execute([$course_slug]);
-    $debug_total = $debug_stmt->fetch()['total'];
-    
-    // Debug: Check how many have NULL parent_comment_id
-    $debug_null_stmt = $pdo->prepare("SELECT COUNT(*) as null_parent FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
-    $debug_null_stmt->execute([$course_slug]);
-    $debug_null = $debug_null_stmt->fetch()['null_parent'];
-    
-    echo "<!-- DEBUG: Course slug='$course_slug', Total comments: $debug_total, NULL parent: $debug_null -->";
-    
     // Get main reviews (where parent_comment_id IS NULL)
     $stmt = $pdo->prepare("
         SELECT cc.*, u.username 
@@ -47,8 +34,6 @@ try {
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
-    
-    echo "<!-- DEBUG: Query returned " . count($comments) . " comments -->";
     
     // For each comment, get reply info
     foreach ($comments as &$comment) {
