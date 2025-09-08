@@ -20,28 +20,24 @@ if (isset($_GET['success']) && $_GET['success'] == '1') {
     $success_message = "Your review has been posted successfully!";
 }
 
-// Fetch existing comments with replies (graceful handling if parent_comment_id column doesn't exist)
+// Fetch existing comments (simplified - no try/catch complexity)
 try {
-    // Debug: Log what we're looking for
-    error_log("course-reviews-fixed.php: Looking for reviews with course_slug = '$course_slug'");
+    // Get main reviews (where parent_comment_id IS NULL)
+    $stmt = $pdo->prepare("
+        SELECT cc.*, u.username 
+        FROM course_comments cc 
+        JOIN users u ON cc.user_id = u.id 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL
+        ORDER BY cc.created_at DESC
+        LIMIT 5
+    ");
+    $stmt->execute([$course_slug]);
+    $comments = $stmt->fetchAll();
     
-    // First try with parent_comment_id filter
-    try {
-        $stmt = $pdo->prepare("
-            SELECT cc.*, u.username 
-            FROM course_comments cc 
-            JOIN users u ON cc.user_id = u.id 
-            WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
-            ORDER BY cc.created_at DESC
-            LIMIT 5
-        ");
-        $stmt->execute([$course_slug]);
-        $comments = $stmt->fetchAll();
-        error_log("course-reviews-fixed.php: Found " . count($comments) . " reviews with parent_comment_id filter");
-        
-        // Fetch latest reply and reply count for each comment
-        foreach ($comments as &$comment) {
-            // Get total reply count
+    // For each comment, get reply info
+    foreach ($comments as &$comment) {
+        // Get total reply count
+        try {
             $stmt = $pdo->prepare("SELECT COUNT(*) as reply_count FROM course_comments WHERE parent_comment_id = ?");
             $stmt->execute([$comment['id']]);
             $comment['reply_count'] = $stmt->fetch()['reply_count'];
@@ -58,38 +54,16 @@ try {
             $stmt->execute([$comment['id']]);
             $latest_reply = $stmt->fetch();
             $comment['replies'] = $latest_reply ? [$latest_reply] : [];
-        }
-    } catch (PDOException $e) {
-        // Fallback: parent_comment_id column doesn't exist yet, get all comments
-        error_log("course-reviews-fixed.php: parent_comment_id column doesn't exist, using fallback query");
-        $stmt = $pdo->prepare("
-            SELECT cc.*, u.username 
-            FROM course_comments cc 
-            JOIN users u ON cc.user_id = u.id 
-            WHERE cc.course_slug = ?
-            ORDER BY cc.created_at DESC
-            LIMIT 5
-        ");
-        $stmt->execute([$course_slug]);
-        $comments = $stmt->fetchAll();
-        error_log("course-reviews-fixed.php: Found " . count($comments) . " reviews with fallback query");
-        
-        // No replies yet since column doesn't exist
-        foreach ($comments as &$comment) {
+        } catch (PDOException $e) {
+            // If reply system doesn't exist yet, just set empty
             $comment['replies'] = [];
             $comment['reply_count'] = 0;
         }
     }
     
-    // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
-    try {
-        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
-        $stmt->execute([$course_slug]);
-    } catch (PDOException $e) {
-        // Fallback: parent_comment_id column doesn't exist yet
-        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
-        $stmt->execute([$course_slug]);
-    }
+    // Calculate average rating (only main reviews, not replies)
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
@@ -99,22 +73,6 @@ try {
     $comments = [];
     $avg_rating = null;
     $total_reviews = 0;
-}
-
-// Final debug output
-error_log("course-reviews-fixed.php: Final result - " . count($comments) . " comments to display");
-
-// Additional debug: Check what's actually in the database for this course
-try {
-    $stmt = $pdo->prepare("SELECT id, username, course_slug, rating, comment_text, created_at FROM course_comments cc JOIN users u ON cc.user_id = u.id WHERE cc.course_slug = ? ORDER BY cc.created_at DESC LIMIT 3");
-    $stmt->execute([$course_slug]);
-    $all_comments = $stmt->fetchAll();
-    error_log("course-reviews-fixed.php: Raw database check found " . count($all_comments) . " total comments");
-    foreach ($all_comments as $comment) {
-        error_log("course-reviews-fixed.php: Comment - ID: {$comment['id']}, User: {$comment['username']}, Course: {$comment['course_slug']}, Rating: {$comment['rating']}");
-    }
-} catch (PDOException $e) {
-    error_log("course-reviews-fixed.php: Error checking database: " . $e->getMessage());
 }
 ?>
 
