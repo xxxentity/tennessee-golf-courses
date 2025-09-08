@@ -1607,7 +1607,7 @@ $courses = Cache::remember('courses_with_ratings', function() use ($courses_stat
     foreach ($courses_static as $course) {
         try {
             // Only count reviews (parent comments with ratings), not replies
-            $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
+            $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
             $stmt->execute([$course['slug']]);
             $rating_data = $stmt->fetch();
             
@@ -2777,7 +2777,7 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                                                 <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
                                             <?php else: ?>
                                                 <i class="fas fa-star" style="color: #ddd;"></i>
-                                                <span style="color: #666; font-size: 0.8rem;">No ratings</span>
+                                                <span style="color: #666; font-size: 0.8rem;">No ratings yet</span>
                                             <?php endif; ?>
                                         </div>
                                     </a>
