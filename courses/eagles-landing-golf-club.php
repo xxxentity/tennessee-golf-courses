@@ -35,7 +35,7 @@ $is_logged_in = SecureSession::isLoggedIn();
 // Handle review submission via centralized system
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
     if (CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
-        $rating = (int)$_POST['rating'];
+        $rating = floatval($_POST['rating']);
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
         
