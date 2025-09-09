@@ -29,42 +29,50 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'forrest-crossing-golf-course';
 $course_name = 'Forrest Crossing Golf Course';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
+// Handle review submission via centralized system
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
+    if (CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
+        $rating = floatval($_POST['rating']);
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+        
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                // PRG pattern - redirect to prevent duplicate submissions
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
         }
     } else {
-        $error_message = "Please provide a valid rating and comment.";
+        $error_message = "Invalid form submission. Please try again.";
     }
 }
 
-// Get existing comments
+// Check for success message from redirect
+if (isset($_GET['success'])) {
+    $success_message = "Your review has been posted successfully!";
+}
+
+// Get existing comments with proper filtering
 try {
     $stmt = $pdo->prepare("
         SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL 
         ORDER BY cc.created_at DESC
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    // Calculate average rating with proper filtering
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -885,85 +893,8 @@ try {
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="reviews-header">
-                <h2>Player Reviews</h2>
-                <p>Share your experience at Forrest Crossing Golf Course</p>
-            </div>
-
-            <?php if ($is_logged_in): ?>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST">
-                        <div class="form-group">
-                            <label>Rating</label>
-                            <div class="rating-input" id="rating-stars">
-                                <input type="radio" name="rating" value="1" id="star1">
-                                <label for="star1" data-rating="1">★</label>
-                                <input type="radio" name="rating" value="2" id="star2">
-                                <label for="star2" data-rating="2">★</label>
-                                <input type="radio" name="rating" value="3" id="star3">
-                                <label for="star3" data-rating="3">★</label>
-                                <input type="radio" name="rating" value="4" id="star4">
-                                <label for="star4" data-rating="4">★</label>
-                                <input type="radio" name="rating" value="5" id="star5">
-                                <label for="star5" data-rating="5">★</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Forrest Crossing Golf Course..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="/login">Login</a> or <a href="/register">Register</a> to write a review</p>
-                </div>
-            <?php endif; ?>
-
-            <div class="comments-list">
-                <?php if (empty($comments)): ?>
-                    <div class="comment-card">
-                        <p style="text-align: center; color: #666;">No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment-card">
-                            <div class="comment-header">
-                                <div class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="comment-rating">
-                                    <?php for ($i = 1; $i <= 3; $i++): ?>
-                                        <?php if ($i <= $comment['rating']): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php else: ?>
-                                            <i class="far fa-star"></i>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
-                            </div>
-                            <div class="comment-date"><?php echo date('F j, Y', strtotime($comment['created_at'])); ?></div>
-                            <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <!-- Reviews Section - Centralized System -->
+    <?php include '../includes/course-reviews-fixed.php'; ?>
 
     <!-- Footer -->
     <footer class="footer">
