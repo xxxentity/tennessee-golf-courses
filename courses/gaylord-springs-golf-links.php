@@ -71,8 +71,8 @@ try {
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND cc.parent_comment_id IS NULL");
+    // Calculate average rating with proper filtering
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
