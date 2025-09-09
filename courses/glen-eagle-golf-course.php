@@ -29,26 +29,36 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'glen-eagle-golf-course';
 $course_name = 'Glen Eagle Golf Course';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
+// Handle comment submission with CSRF protection
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
+    // CSRF Protection
+    if (!CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
+        $error_message = "Security validation failed. Please try again.";
     } else {
-        $error_message = "Please provide a valid rating and comment.";
+        $rating = floatval($_POST['rating']);
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+        
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                
+                // PRG Pattern - Redirect after successful post
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
     }
+}
+
+// Check for success message
+if (isset($_GET['success'])) {
+    $success_message = "Your review has been posted successfully!";
 }
 
 // Get existing comments
@@ -57,14 +67,14 @@ try {
         SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
+        WHERE cc.course_slug = ? AND parent_comment_id IS NULL
         ORDER BY cc.created_at DESC
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
     // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -327,35 +337,6 @@ try {
             transform: scale(1.05);
         }
         
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .reviewer-name {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
         
         .booking-section {
             background: linear-gradient(135deg, #2c5234, #4a7c59);
@@ -412,138 +393,6 @@ try {
             color: #2c5234;
         }
         
-        /* Comment System Styles */
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #999;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #1e3f26;
-            transform: translateY(-1px);
-        }
-        
-        .login-prompt {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #999;
-        }
-        
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
         
         /* Responsive Design for Course Info Grid */
         @media (max-width: 1024px) {
@@ -817,89 +666,8 @@ try {
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Glen Eagle Golf Course</p>
-            </div>
-            
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="glen-eagle-rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience playing this course..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Display Comments -->
-            <div class="comments-container">
-                <?php if (empty($comments)): ?>
-                    <div class="no-comments">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                            </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <!-- Reviews Section - Centralized System -->
+    <?php include '../includes/course-reviews-fixed.php'; ?>
 
     <!-- Booking Section -->
     <section class="booking-section">
@@ -1061,65 +829,6 @@ try {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Glen Eagle Golf Course
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('glen-eagle-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
             }
         });
     </script>
