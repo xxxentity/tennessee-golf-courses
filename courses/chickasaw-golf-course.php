@@ -29,7 +29,24 @@ try {
 $course_slug = 'chickasaw-golf-course';
 $course_name = 'Chickasaw Golf Course';
 
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
 // Check if user is logged in using secure session
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
+}
 $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
@@ -39,47 +56,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
-        $rating = (int)$_POST['rating'];
+        $rating = floatval($_POST['rating']);
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
+        
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
         } else {
             $error_message = "Please provide a valid rating and comment.";
         }
     }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
 }
 ?>
 
@@ -799,79 +793,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Chickasaw Golf Course</p>
-            </div>
-
-            <?php if ($is_logged_in): ?>
-                <div class="review-form">
-                    <h3>Leave a Review</h3>
-                    <?php if (isset($success_message)): ?>
-                        <div class="success-message"><?php echo htmlspecialchars($success_message); ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" action="">
-                        <?php echo CSRFProtection::getTokenField(); ?>
-                        <div class="form-group">
-                            <label>Your Rating:</label>
-                            <div class="rating-input" id="ratingInput">
-                                <span class="star" data-rating="1"><i class="far fa-star"></i></span>
-                                <span class="star" data-rating="2"><i class="far fa-star"></i></span>
-                                <span class="star" data-rating="3"><i class="far fa-star"></i></span>
-                                <span class="star" data-rating="4"><i class="far fa-star"></i></span>
-                                <span class="star" data-rating="5"><i class="far fa-star"></i></span>
-                            </div>
-                            <input type="hidden" name="rating" id="rating" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Chickasaw Golf Course..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p>Please log in to leave a review of Chickasaw Golf Course.</p>
-                    <a href="/login" class="login-btn">Log In to Review</a>
-                </div>
-            <?php endif; ?>
-
-            <!-- Comments Display -->
-            <div class="comments-list">
-                <?php if (empty($comments)): ?>
-                    <p style="text-align: center; color: #666; padding: 2rem;">No reviews yet. Be the first to share your experience!</p>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment">
-                            <div class="comment-header">
-                                <div>
-                                    <span class="comment-author"><?php echo htmlspecialchars($comment['username']); ?></span>
-                                    <div class="comment-rating">
-                                        <?php
-                                        for ($i = 1; $i <= 5; $i++) {
-                                            echo $i <= $comment['rating'] ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
-                                <span class="comment-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></span>
-                            </div>
-                            <p class="comment-text"><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <!-- Footer -->
     <footer class="footer">
