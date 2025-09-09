@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
-        $rating = (int)$_POST['rating'];
+        $rating = floatval($_POST['rating']);
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
         
