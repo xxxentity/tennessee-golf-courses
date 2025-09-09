@@ -29,42 +29,50 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'druid-hills-golf-club';
 $course_name = 'Druid Hills Golf Club';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
+// Handle review submission via centralized system
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
+    if (CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
+        $rating = (int)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+        
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                // PRG pattern - redirect to prevent duplicate submissions
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
         }
     } else {
-        $error_message = "Please provide a valid rating and comment.";
+        $error_message = "Invalid form submission. Please try again.";
     }
 }
 
-// Get existing comments
+// Check for success message from redirect
+if (isset($_GET['success'])) {
+    $success_message = "Your review has been posted successfully!";
+}
+
+// Get existing comments with proper filtering
 try {
     $stmt = $pdo->prepare("
         SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL 
         ORDER BY cc.created_at DESC
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    // Calculate average rating with proper filtering
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -506,23 +514,28 @@ try {
         <div class="course-hero-content">
             <h1>Druid Hills Golf Club</h1>
             <p>Fairfield Glade Resort • Mountain Vistas</p>
-            <div class="course-rating">
-                <?php if ($avg_rating && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php
-                        $stars = round($avg_rating);
-                        for ($i = 1; $i <= 3; $i++) {
-                            echo $i <= $stars ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
+                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
+                        <?php 
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+                        
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt"></i>';
+                            } else {
+                                echo '<i class="far fa-star"></i>';
+                            }
                         }
                         ?>
                     </div>
-                    <div class="rating-text">
-                        <?= $avg_rating ?> out of 5 stars (<?= $total_reviews ?> review<?= $total_reviews > 1 ? 's' : '' ?>)
-                    </div>
+                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                        <span class="rating-text">No ratings yet - Be the first to review!</span>
                     </div>
                 <?php endif; ?>
             </div>
@@ -812,121 +825,12 @@ try {
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Reviews & Ratings</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="review-form-card">
-                    <h3>Write a Review</h3>
-                    <?php if (isset($success_message)): ?>
-                        <div style="color: green; margin-bottom: 1rem;"><?= $success_message ?></div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div style="color: red; margin-bottom: 1rem;"><?= $error_message ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" action="">
-                        <div class="form-group">
-                            <label>Your Rating</label>
-                            <div class="star-rating" id="starRating">
-                                <i class="far fa-star" data-rating="1"></i>
-                                <i class="far fa-star" data-rating="2"></i>
-                                <i class="far fa-star" data-rating="3"></i>
-                                <i class="far fa-star" data-rating="4"></i>
-                                <i class="far fa-star" data-rating="5"></i>
-                            </div>
-                            <input type="hidden" name="rating" id="ratingInput" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="comment_text">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" placeholder="Share your experience at Druid Hills Golf Club..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="review-form-card">
-                    <h3>Want to Write a Review?</h3>
-                    <p>Please <a href="/login" style="color: #4a7c59;">login</a> or <a href="/register" style="color: #4a7c59;">register</a> to share your experience at Druid Hills Golf Club.</p>
-                </div>
-            <?php endif; ?>
-            
-            <div class="comments-section">
-                <h3>Reviews (<?= $total_reviews ?>)</h3>
-                <?php if (!empty($comments)): ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="comment-item">
-                            <div class="comment-header">
-                                <span class="comment-author"><?= htmlspecialchars($comment['username']) ?></span>
-                                <span class="comment-date"><?= date('M j, Y', strtotime($comment['created_at'])) ?></span>
-                            </div>
-                            <div class="comment-rating">
-                                <?php for ($i = 1; $i <= 3; $i++): ?>
-                                    <i class="<?= $i <= $comment['rating'] ? 'fas' : 'far' ?> fa-star"></i>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="comment-text"><?= nl2br(htmlspecialchars($comment['comment_text'])) ?></div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p style="text-align: center; color: #666; font-style: italic;">No reviews yet. Be the first to share your experience!</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <!-- Reviews Section - Centralized System -->
+    <?php include '../includes/course-reviews-fixed.php'; ?>
 
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        // Star rating functionality
-        const stars = document.querySelectorAll('#starRating i');
-        const ratingInput = document.getElementById('ratingInput');
-        
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.getAttribute('data-rating');
-                ratingInput.value = rating;
-                
-                stars.forEach((s, index) => {
-                    if (index < rating) {
-                        s.classList.remove('far');
-                        s.classList.add('fas');
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('fas');
-                        s.classList.add('far');
-                        s.classList.remove('active');
-                    }
-                });
-            });
-            
-            star.addEventListener('mouseenter', function() {
-                const rating = this.getAttribute('data-rating');
-                stars.forEach((s, index) => {
-                    if (index < rating) {
-                        s.style.color = '#ffd700';
-                    } else {
-                        s.style.color = '#ddd';
-                    }
-                });
-            });
-        });
-        
-        document.getElementById('starRating').addEventListener('mouseleave', function() {
-            const currentRating = ratingInput.value;
-            stars.forEach((s, index) => {
-                if (index < currentRating) {
-                    s.style.color = '#ffd700';
-                } else {
-                    s.style.color = '#ddd';
-                }
-            });
-        });
-        
         // Gallery functionality
         // Gallery Modal Functions
         function openGallery() {

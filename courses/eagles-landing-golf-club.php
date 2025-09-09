@@ -32,13 +32,9 @@ $course_name = 'Eagle\'s Landing Golf Club';
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
+// Handle review submission via centralized system
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
+    if (CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
         $rating = (int)$_POST['rating'];
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
@@ -47,30 +43,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             try {
                 $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
                 $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                $success_message = "Your review has been posted successfully!";
+                // PRG pattern - redirect to prevent duplicate submissions
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
             } catch (PDOException $e) {
                 $error_message = "Error posting review. Please try again.";
             }
         } else {
             $error_message = "Please provide a valid rating and comment.";
         }
+    } else {
+        $error_message = "Invalid form submission. Please try again.";
     }
 }
 
-// Get existing comments
+// Check for success message from redirect
+if (isset($_GET['success'])) {
+    $success_message = "Your review has been posted successfully!";
+}
+
+// Get existing comments with proper filtering
 try {
     $stmt = $pdo->prepare("
         SELECT cc.*, u.username 
         FROM course_comments cc 
         JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
+        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL 
         ORDER BY cc.created_at DESC
     ");
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    // Calculate average rating with proper filtering
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -930,6 +935,11 @@ try {
             </div>
         </div>
     </section>
+
+    <!-- Reviews Section - Centralized System -->
+    <?php include '../includes/course-reviews-fixed.php'; ?>
+    
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
     <script>
