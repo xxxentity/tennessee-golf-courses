@@ -8,10 +8,10 @@ require_once '../includes/seo.php';
 $course_data = [
     'name' => 'Cherokee Country Club',
     'location' => 'Knoxville, TN',
-    'description' => 'Historic 1907 private club featuring Donald Ross design in Knoxville, TN. Promoting and elevating the game of golf since 1907.',
+    'description' => 'Donald Ross designed private country club in Knoxville, TN. Classic 6,418-yard championship golf course established in 1907.',
     'image' => '/images/courses/cherokee-country-club/1.jpeg',
     'holes' => 18,
-    'par' => 72,
+    'par' => 71,
     'designer' => 'Donald Ross',
     'year_built' => 1907,
     'course_type' => 'Private'
@@ -29,7 +29,24 @@ try {
 $course_slug = 'cherokee-country-club';
 $course_name = 'Cherokee Country Club';
 
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
 // Check if user is logged in using secure session
+
+// Check for success message from redirect
+if (isset($_GET['success']) && $_GET['success'] == '1') {
+    $success_message = "Your review has been posted successfully!";
+}
 $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
@@ -39,47 +56,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
-        $rating = (int)$_POST['rating'];
+        $rating = floatval($_POST['rating']);
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
+        
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                // Redirect to prevent duplicate submission on refresh (PRG pattern)
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
         } else {
             $error_message = "Please provide a valid rating and comment.";
         }
     }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
 }
 ?>
 
@@ -98,149 +92,150 @@ try {
     <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSFPY01T7C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-7VPNPCDTBP');
+      gtag('config', 'G-BSFPY01T7C');
     </script>
     
     <style>
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
+        .course-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cherokee-country-club/1.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            text-align: center;
         }
         
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
         }
         
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            max-width: 1400px;
+            width: 95%;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s;
         }
         
         .modal-header {
+            background: #2c5234;
+            color: white;
+            padding: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         
         .modal-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
             margin: 0;
         }
         
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
+            color: white;
+            transition: transform 0.3s;
         }
         
         .close:hover {
-            color: #ccc;
+            transform: scale(1.2);
         }
         
         .full-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
         }
         
         .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+        
+        .full-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .full-gallery-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+            }
+            
+            .full-gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
-
+    
     <!-- Course Hero Section -->
-    <section class="course-hero" style="
-        height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/cherokee-country-club/1.jpeg'); 
-        background-size: cover; 
-        background-position: center; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        text-align: center; 
-        color: white;
-        margin-top: 20px;
-    ">
-        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+    <section class="course-hero">
+        <div class="course-hero-content">
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Cherokee Country Club</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Donald Ross Design • Knoxville, Tennessee</p>
-            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
                 <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
                         <?php 
@@ -268,185 +263,101 @@ try {
             </div>
         </div>
     </section>
-
+    
     <!-- Course Details -->
-    <section class="course-details" style="padding: 4rem 0;">
+    <section class="course-details" style="padding: 4rem 0; background: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">70</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,370</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Donald Ross</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1907</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
-                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
-                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Club</h4>
-                        <p style="margin: 0; opacity: 0.9;">Members and invited guests only</p>
-                    </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Cherokee Country Club operates as an exclusive private club. 
-                        Contact the club directly for membership information and guest policies.
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 2rem;">About Cherokee Country Club</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Cherokee Country Club stands as one of Tennessee's most prestigious private golf clubs, featuring a masterful Donald Ross design from 1907. This historic championship course has hosted numerous Tennessee State Golf Association events and continues to challenge golfers with its classic layout and strategic design.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        The 6,418-yard par 71 layout showcases Ross's signature design elements including crowned greens, strategic bunkering, and thoughtful routing through rolling terrain. The course demands precision and strategy, rewarding well-placed shots while punishing errant ones. Cherokee's pristine conditions and timeless design make it a true gem of Tennessee golf.
                     </p>
                 </div>
-
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">5138 Lyons View Pike</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Knoxville, TN 37919</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(865) 584-4637</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.cherokeecountryclub.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
-                    </div>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=5138+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Cherokee Country Club Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=5138+Lyons+View+Pike,+Knoxville,+TN+37919" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
-                        </div>
-                    </div>
+                <div class="course-info-card" style="background: #f8f9fa; padding: 2rem; border-radius: 15px;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Course Information</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Designer:</strong> Donald Ross</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Year Built:</strong> 1907</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Par:</strong> 71</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Yardage:</strong> 6,418 yards</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Course Rating:</strong> 71.5</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Slope Rating:</strong> 133</li>
+                        <li style="padding: 0.75rem 0;"><strong>Type:</strong> Private</li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Course Description -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Cherokee Country Club</h3>
-                <p>Established in 1907, Cherokee Country Club stands as one of Tennessee's most prestigious and historic private clubs. Located on a picturesque bend of the Tennessee River with sweeping views of the Great Smoky Mountains, Cherokee has been promoting and elevating the game of golf for over a century.</p>
-                
-                <br>
-                
-                <p>The club's golf course showcases the timeless design principles of Donald Ross, who was commissioned in 1919 to enhance the layout. After various modifications over the decades, renowned restoration architect Ron Prichard was brought in during 2000 to restore the course to its original Ross glory, utilizing historical aerial photographs and design principles. The restoration was completed and reopened for play in 2008.</p>
-                
-                <br>
-                
-                <p>This challenging par-70 layout stretches 6,370 yards and features the unique characteristic of six par-3 holes, including back-to-back par-5s at holes 4 and 5. The hilly terrain and strategic bunkering create a demanding yet fair test of golf that rewards thoughtful course management and precise shot-making.</p>
-                
-                <br>
-                
-                <p>Beyond golf, Cherokee Country Club offers a complete country club experience with world-class dining, tennis facilities, fitness amenities, and aquatic programs. The club serves as a cornerstone of the Knoxville community, hosting numerous charitable events and maintaining its reputation as one of East Tennessee's premier private clubs.</p>
-            </div>
-
-            <!-- Amenities -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Championship Golf</span>
+            
+            <!-- Amenities Section -->
+            <div class="amenities-section" style="margin-bottom: 4rem;">
+                <h2 style="color: #2c5234; margin-bottom: 2rem;">Club Amenities</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                        <span>Championship Golf Course</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-home" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                        <span>Elegant Clubhouse</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.5rem;"></i>
                         <span>Fine Dining</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Tennis Courts</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Fitness Center</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-swimming-pool" style="color: #4a7c59; font-size: 1.5rem;"></i>
                         <span>Swimming Pool</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Event Hosting</span>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                        <span>Tennis Courts</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Valet Parking</span>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                        <span>Golf Academy</span>
                     </div>
                 </div>
-            </div>
-
-            
-    </section>
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Cherokee Country Club</p>
-            </div>
-            <div class="gallery-grid">
-                <img src="../images/courses/cherokee-country-club/1.jpeg" alt="Cherokee Country Club - Private Golf Course" class="gallery-item">
-                <img src="../images/courses/cherokee-country-club/2.jpeg" alt="Cherokee Country Club Knoxville, TN - Pristine putting green with strategic bunkers and mature landscaping, Private 18-hole Tennessee golf course" class="gallery-item">
-                <img src="../images/courses/cherokee-country-club/3.jpeg" alt="Cherokee Country Club Knoxville, TN - Scenic golf course view featuring Donald Ross architectural design, premium Tennessee private golf course" class="gallery-item">
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
-
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
+    
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery" style="padding: 4rem 0; background: #f8f9fa;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/cherokee-country-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Gallery</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/cherokee-country-club/1.jpeg" alt="Cherokee Country Club - Hole 1" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/cherokee-country-club/2.jpeg" alt="Cherokee Country Club - Clubhouse" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/cherokee-country-club/3.jpeg" alt="Cherokee Country Club - Green Complex" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> View Full Gallery (25 Photos)
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Share Section -->
+    <section class="share-section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share This Course</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/courses/cherokee-country-club" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
                         <i class="fab fa-facebook-f"></i> Share on Facebook
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Cherokee Country Club'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/cherokee-country-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Cherokee%20Country%20Club&url=https://tennesseegolfcourses.com/courses/cherokee-country-club" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1da1f2; color: white;">
+                        <i class="fab fa-twitter"></i> Share on Twitter
                     </a>
                     <a href="mailto:?subject=<?php echo urlencode('Check out Cherokee Country Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/cherokee-country-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
                         <i class="far fa-envelope"></i> Share via Email
@@ -457,76 +368,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <?php echo CSRFProtection::getTokenField(); ?>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 5px;">
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                            <textarea name="comment_text" placeholder="Share your thoughts about Cherokee Country Club..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
-                        </div>
-                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
-                    <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Cherokee Country Club</p>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (count($comments) > 0): ?>
-                <?php foreach ($comments as $comment): ?>
-                    <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
-                            <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                        </div>
-                        <div style="color: #ffd700; margin-bottom: 1rem;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div style="text-align: center; padding: 3rem; color: #666;">
-                    <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
-                    <h3>No reviews yet</h3>
-                    <p>Be the first to share your experience at Cherokee Country Club!</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
@@ -568,87 +414,36 @@ try {
             galleryGrid.innerHTML = '';
             
             // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Cherokee Country Club';
-                const location = 'Knoxville, TN';
-                const locationShort = 'Knoxville TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/cherokee-country-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/cherokee-country-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                
+                const img = document.createElement('img');
+                img.src = `../images/courses/cherokee-country-club/${i}.jpeg`;
+                img.alt = `Cherokee Country Club - Photo ${i}`;
+                img.loading = 'lazy';
+                
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         function closeGallery() {
             const modal = document.getElementById('galleryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
         
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
                 closeGallery();
             }
-        });
+        }
         
         // Close modal with Escape key
         document.addEventListener('keydown', function(event) {
