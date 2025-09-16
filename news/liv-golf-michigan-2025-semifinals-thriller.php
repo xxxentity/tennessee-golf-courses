@@ -327,49 +327,167 @@ $article_title = 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, C
             }
         }
     </style>
+
+    <style>
+        .article-page {
+            padding-top: 0px;
+            min-height: 100vh;
+            background: var(--bg-light);
+        }
+
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .article-header {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            color: var(--text-black);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-light);
+        }
+
+        .article-content {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 2rem;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+            font-weight: 600;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--text-black);
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+
+        .scoreboard {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .match-result {
+            margin-bottom: 1.5rem;
+        }
+
+        .match-result:last-child {
+            margin-bottom: 0;
+        }
+
+        .match-result h4 {
+            color: #2e7d32;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .results-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .results-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        .results-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #2e7d32;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <?php include '../includes/navigation.php'; ?>
 
-    <main class="news-article">
-        <div class="container">
-            <!-- Back to News -->
-            <div class="back-to-news">
-                <a href="/news" class="back-link">
-                    <i class="fas fa-arrow-left"></i>
-                    Back to News
-                </a>
-            </div>
-
-            <!-- Article Header -->
-            <header class="article-header">
-                <div class="category-badge tournament-news">Tournament News</div>
-                <h1 class="article-title"><?php echo $article_data['title']; ?></h1>
-                
-                <div class="article-meta">
-                    <div class="meta-left">
-                        <span class="author"><?php echo $article_data['author']; ?></span>
-                        <span class="separator">•</span>
-                        <time datetime="<?php echo $article_data['date']; ?>">
-                            <?php echo date('F j, Y', strtotime($article_data['date'])); ?>
-                        </time>
+    <div class="article-page">
+        <div class="article-container">
+            <article>
+                <header class="article-header">
+                    <div class="article-category">Tournament News</div>
+                    <h1 class="article-title"><?php echo $article_data['title']; ?></h1>
+                    <div class="article-meta">
+                        <span><i class="far fa-calendar"></i> <?php echo date('F j, Y', strtotime($article_data['date'])); ?></span>
+                        <span><i class="far fa-clock"></i> 7:00 PM</span>
+                        <span><i class="far fa-user"></i> <?php echo $article_data['author']; ?></span>
                     </div>
-                    <div class="meta-right">
-                        <span class="read-time">5 min read</span>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <!-- Featured Image -->
-            <div class="featured-image">
-                <img src="<?php echo $article_data['image']; ?>" alt="LIV Golf Michigan Team Championship semifinals action" loading="lazy">
-            </div>
+                <img src="<?php echo $article_data['image']; ?>" alt="LIV Golf Michigan Team Championship semifinals action" class="article-image">
 
-            <!-- Article Content -->
-            <article class="article-content">
-                <p class="lead">
-                    PLYMOUTH, Mich. — In a day of dramatic match-play action at The Cardinal at Saint John's, three teams emerged victorious from the semifinals of the LIV Golf Michigan Team Championship, setting up Sunday's stroke-play finale for the $14 million prize.
-                </p>
+                <div class="article-content">
+                <p><strong>PLYMOUTH, Mich.</strong> — In a day of dramatic match-play action at The Cardinal at Saint John's, three teams emerged victorious from the semifinals of the LIV Golf Michigan Team Championship, setting up Sunday's stroke-play finale for the $14 million prize.</p>
 
                 <p>
                     Legion XIII, Crushers GC, and Stinger GC each secured 2-1 victories in Saturday's semifinals, with all but one of the nine Championship bracket matches reaching at least the 17th hole in what proved to be one of the most competitive days in LIV Golf's team championship format.
@@ -457,30 +575,13 @@ $article_title = 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, C
                     The stroke-play finale promises to deliver a thrilling conclusion to the 2025 LIV Golf season, with $14 million in prize money on the line at The Cardinal at Saint John's in Plymouth, Michigan.
                 </p>
 
-                <div class="article-footer">
-                    <p class="disclaimer">
-                        <em>Results compiled from official LIV Golf sources, Fox Sports, Golf News Net, and tournament coverage from The Cardinal at Saint John's in Plymouth, Michigan.</em>
-                    </p>
+                <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; font-size: 0.875rem; color: #666; font-style: italic;">
+                    Results compiled from official LIV Golf sources, Fox Sports, Golf News Net, and tournament coverage from The Cardinal at Saint John's in Plymouth, Michigan.
+                </p>
                 </div>
             </article>
-
-            <!-- Share Buttons -->
-            <div class="share-buttons">
-                <h3>Share this article</h3>
-                <div class="social-share">
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_data['title']); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-twitter">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-facebook">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-linkedin">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
         </div>
-    </main>
+    </div>
 
     
     
