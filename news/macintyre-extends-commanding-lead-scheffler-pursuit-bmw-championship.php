@@ -681,5 +681,7 @@ try {
     </div>
     
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

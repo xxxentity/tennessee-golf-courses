@@ -590,5 +590,7 @@ $article_title = 'Scheffler Seizes Control with Career-Best 64 at Royal Portrush
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

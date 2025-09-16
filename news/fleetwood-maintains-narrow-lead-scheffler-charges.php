@@ -610,5 +610,7 @@ $article_title = 'Fleetwood Maintains Narrow Lead as Scheffler Charges into Cont
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -586,5 +586,7 @@ $article_title = '2025 Tour Championship Atlanta Preview: Scottie Scheffler Favo
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

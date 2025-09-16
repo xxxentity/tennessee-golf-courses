@@ -719,5 +719,7 @@ $article_title = 'FedEx St. Jude Championship 2025: Complete Tournament Recap an
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

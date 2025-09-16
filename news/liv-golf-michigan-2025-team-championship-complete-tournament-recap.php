@@ -742,5 +742,7 @@ $article_title = 'LIV Golf Michigan 2025: Team Championship Complete Tournament 
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

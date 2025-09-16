@@ -638,5 +638,7 @@ $article_title = 'Scheffler Captures First Claret Jug with Dominant Victory at R
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

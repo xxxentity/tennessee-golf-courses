@@ -397,5 +397,7 @@ $article_title = 'Scheffler Extends Lead to Four Shots with Bogey-Free 67 at Roy
 
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

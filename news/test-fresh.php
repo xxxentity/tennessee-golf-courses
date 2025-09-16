@@ -33,5 +33,7 @@ $article_title = 'Test Article';
     <p>Navigation included successfully!</p>
     
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

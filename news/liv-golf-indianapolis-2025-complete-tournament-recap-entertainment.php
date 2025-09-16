@@ -728,5 +728,7 @@ $article_title = 'LIV Golf Indianapolis 2025: Complete Tournament Recap and Ente
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

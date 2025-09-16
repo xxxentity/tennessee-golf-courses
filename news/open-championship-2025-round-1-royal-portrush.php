@@ -545,5 +545,7 @@ $article_title = 'Five Players Share Lead as Royal Portrush Shows Its Teeth in O
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

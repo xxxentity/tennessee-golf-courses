@@ -696,5 +696,7 @@ $article_title = 'Tennessee\'s Herrington Makes Historic Run to U.S. Amateur Fin
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

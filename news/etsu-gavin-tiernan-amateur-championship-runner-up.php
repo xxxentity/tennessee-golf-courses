@@ -544,5 +544,7 @@ $article_title = 'ETSU Golfer Gavin Tiernan Finishes Runner-Up at Prestigious Am
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

@@ -913,5 +913,7 @@ $article_title = 'Ryder Cup 2025: Complete Preview, Team Announcements, and Beth
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

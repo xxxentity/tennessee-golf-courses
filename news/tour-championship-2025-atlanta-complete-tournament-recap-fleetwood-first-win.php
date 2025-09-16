@@ -178,5 +178,7 @@ $article_title = 'Tour Championship 2025: Complete Atlanta Tournament Recap and 
     </div>
 
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

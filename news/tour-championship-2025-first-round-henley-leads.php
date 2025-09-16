@@ -592,5 +592,7 @@ $article_title = 'Russell Henley Fires Spectacular 61 to Lead Tour Championship 
     
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>

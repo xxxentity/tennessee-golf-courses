@@ -388,5 +388,7 @@ $article_title = 'Cantlay Charges to Share Lead with Fleetwood After Tour Champi
 
     <?php include '../includes/threaded-comments.php'; ?>
     <?php include '../includes/footer.php'; ?>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
 </body>
 </html>
