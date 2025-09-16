@@ -29,13 +29,30 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'island-pointe-golf-club';
 $course_name = 'Island Pointe Golf Club';
 
-// Check if user is logged in
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
+// Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 
-// Handle comment submission with CSRF protection
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
-    if (isset($_POST['csrf_token']) && CSRFToken::validateToken($_POST['csrf_token'])) {
-        $rating = (int)$_POST['rating'];
+// Handle comment submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+
+    if (!CSRFToken::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
+        $rating = (float)$_POST['rating'];
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
 
@@ -43,9 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
             try {
                 $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
                 $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-
-                // PRG Pattern - Redirect after successful post
-                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
                 exit;
             } catch (PDOException $e) {
                 $error_message = "Error posting review. Please try again.";
@@ -53,34 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
         } else {
             $error_message = "Please provide a valid rating and comment.";
         }
-    } else {
-        $error_message = "Invalid security token. Please try again.";
     }
-}
-
-// Get existing comments for header stats
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username
-        FROM course_comments cc
-        JOIN users u ON cc.user_id = u.id
-        WHERE cc.course_slug = ? AND parent_comment_id IS NULL
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
 }
 ?>
 
