@@ -249,7 +249,7 @@ $articles_raw = [
         'time' => '9:45 PM',
         'category' => 'Tournament News',
         'excerpt' => 'Justin Rose defeats Tommy Fleetwood in dramatic playoff to win FedEx St. Jude Championship and secure Tour Championship spot.',
-        'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.webp',
+        'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.png',
         'featured' => true
     ],
     [
