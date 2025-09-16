@@ -7,10 +7,10 @@ require_once '../includes/seo.php';
 $article_data = [
     'title' => 'Rose Captures Thrilling Playoff Victory as Fleetwood Suffers More Heartbreak',
     'description' => 'Justin Rose defeats J.J. Spaun in dramatic three-hole playoff to win FedEx St. Jude Championship as Tommy Fleetwood\'s quest continues.',
-    'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.png?v=' . time(),
+    'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.webp',
     'type' => 'article',
     'author' => 'Cole Harrington',
-    'date' => '2025-08-18',
+    'date' => '2025-08-10',
     'category' => 'Tournament News'
 ];
 

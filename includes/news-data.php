@@ -245,11 +245,11 @@ $articles_raw = [
     [
         'title' => 'Rose Captures Thrilling Playoff Victory Over Fleetwood at FedEx St. Jude Championship',
         'slug' => 'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak',
-        'date' => '2025-08-11',
+        'date' => '2025-08-10',
         'time' => '9:45 PM',
         'category' => 'Tournament News',
         'excerpt' => 'Justin Rose defeats Tommy Fleetwood in dramatic playoff to win FedEx St. Jude Championship and secure Tour Championship spot.',
-        'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.png?v=2',
+        'image' => '/images/news/rose-captures-thrilling-playoff-victory-fleetwood-heartbreak/main.webp',
         'featured' => true
     ],
     [
