@@ -47,7 +47,7 @@ $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
+    $rating = (float)$_POST['rating'];
     $comment_text = trim($_POST['comment_text']);
     $user_id = $_SESSION['user_id'];
     

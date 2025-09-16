@@ -35,7 +35,7 @@ $is_logged_in = SecureSession::isLoggedIn();
 // Handle comment submission with CSRF protection
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
     if (isset($_POST['csrf_token']) && CSRFProtection::validateToken($_POST['csrf_token'])) {
-        $rating = (int)$_POST['rating'];
+        $rating = (float)$_POST['rating'];
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
 
@@ -349,7 +349,6 @@ try {
                     </div>
                 <?php endif; ?>
             </div>
-            <a href="#reviews" class="btn-primary" style="background: #4a7c59; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Write a Review</a>
         </div>
     </section>
 
