@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     // Validate CSRF token
     $csrf_token = $_POST['csrf_token'] ?? '';
 
-    if (!CSRFToken::validateToken($csrf_token)) {
+    if (!CSRFProtection::validateToken($csrf_token)) {
         $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
         $rating = (float)$_POST['rating'];

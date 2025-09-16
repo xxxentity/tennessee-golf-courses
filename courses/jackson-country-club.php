@@ -34,7 +34,7 @@ $is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission with CSRF protection
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
-    if (isset($_POST['csrf_token']) && CSRFToken::validateToken($_POST['csrf_token'])) {
+    if (isset($_POST['csrf_token']) && CSRFProtection::validateToken($_POST['csrf_token'])) {
         $rating = (int)$_POST['rating'];
         $comment_text = trim($_POST['comment_text']);
         $user_id = SecureSession::get('user_id');
