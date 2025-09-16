@@ -70,8 +70,8 @@ try {
     $stmt->execute([$course_slug]);
     $comments = $stmt->fetchAll();
     
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    // Calculate average rating - excluding replies
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
@@ -105,8 +105,10 @@ try {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
-    
-        // Gallery Modal Functions
+    </script>
+
+    <script>
+        // Gallery Modal Functions (removed duplicate below)
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
@@ -339,13 +341,24 @@ try {
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Jackson Country Club</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">The Hub of Hub City • Jackson, Tennessee</p>
             <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating): ?>
+                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
                     <div class="rating-stars">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= round($avg_rating) ? '#ffc107' : '#e0e0e0'; ?>; font-size: 1.5rem;"></i>
-                        <?php endfor; ?>
+                        <?php
+                        $full_stars = floor($avg_rating);
+                        $half_star = ($avg_rating - $full_stars) >= 0.5;
+
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $full_stars) {
+                                echo '<i class="fas fa-star" style="color: #ffc107; font-size: 1.5rem;"></i>';
+                            } elseif ($i == $full_stars + 1 && $half_star) {
+                                echo '<i class="fas fa-star-half-alt" style="color: #ffc107; font-size: 1.5rem;"></i>';
+                            } else {
+                                echo '<i class="far fa-star" style="color: #e0e0e0; font-size: 1.5rem;"></i>';
+                            }
+                        }
+                        ?>
                     </div>
-                    <span style="font-size: 1.2rem;"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
+                    <span style="font-size: 1.2rem;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
                 <?php else: ?>
                     <span style="font-size: 1.1rem; opacity: 0.8;">No reviews yet</span>
                 <?php endif; ?>
@@ -596,89 +609,89 @@ try {
             highlightStars(rating);
         }
 
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Jackson Country Club';
-                const location = 'Jackson, TN';
-                const locationShort = 'Jackson TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/jackson-country-club/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/jackson-country-club/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
+        // Gallery Modal Functions - removed duplicate (defined above)
+// Duplicate removed -         /*function openGallery() {
+// Duplicate removed -             const modal = document.getElementById('galleryModal');
+// Duplicate removed -             const galleryGrid = document.getElementById('fullGalleryGrid');
+// Duplicate removed -             
+// Duplicate removed -             // Clear existing content
+// Duplicate removed -             galleryGrid.innerHTML = '';
+// Duplicate removed -             
+// Duplicate removed -             // Generate all 25 images
+// Duplicate removed -             
+// Duplicate removed -             // Alt text patterns for different image types
+// Duplicate removed -             function getAltText(imageIndex) {
+// Duplicate removed -                 const courseName = 'Jackson Country Club';
+// Duplicate removed -                 const location = 'Jackson, TN';
+// Duplicate removed -                 const locationShort = 'Jackson TN';
+// Duplicate removed -                 
+// Duplicate removed -                 if (imageIndex <= 5) {
+// Duplicate removed -                     // Course overview shots
+// Duplicate removed -                     const overviewTexts = [
+// Duplicate removed -                         `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
+// Duplicate removed -                         `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
+// Duplicate removed -                         `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
+// Duplicate removed -                         `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
+// Duplicate removed -                         `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
+// Duplicate removed -                     ];
+// Duplicate removed -                     return overviewTexts[imageIndex - 1];
+// Duplicate removed -                 } else if (imageIndex <= 10) {
+// Duplicate removed -                     // Signature holes
+// Duplicate removed -                     const holes = [6, 8, 12, 15, 18];
+// Duplicate removed -                     const holeIndex = imageIndex - 6;
+// Duplicate removed -                     const holeNum = holes[holeIndex];
+// Duplicate removed -                     const signatures = [
+// Duplicate removed -                         `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
+// Duplicate removed -                         `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
+// Duplicate removed -                         `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
+// Duplicate removed -                         `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
+// Duplicate removed -                         `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
+// Duplicate removed -                     ];
+// Duplicate removed -                     return signatures[holeIndex];
+// Duplicate removed -                 } else if (imageIndex <= 15) {
+// Duplicate removed -                     // Greens and approaches
+// Duplicate removed -                     return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
+// Duplicate removed -                 } else if (imageIndex <= 20) {
+// Duplicate removed -                     // Course features
+// Duplicate removed -                     const features = [
+// Duplicate removed -                         'Practice facility driving range and putting green area',
+// Duplicate removed -                         'Golf cart fleet and maintenance facilities',
+// Duplicate removed -                         'Professional golf instruction area and practice tees',
+// Duplicate removed -                         'Course landscaping with native Tennessee flora and water features',
+// Duplicate removed -                         'Golf course pro shop and equipment rental facilities'
+// Duplicate removed -                     ];
+// Duplicate removed -                     return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
+// Duplicate removed -                 } else {
+// Duplicate removed -                     // Clubhouse and amenities
+// Duplicate removed -                     const amenities = [
+// Duplicate removed -                         'Golf course clubhouse pro shop and restaurant facilities',
+// Duplicate removed -                         'Clubhouse dining room with scenic Tennessee views',
+// Duplicate removed -                         'Golf course event space and meeting facilities',
+// Duplicate removed -                         'Professional locker room and amenities',
+// Duplicate removed -                         'Golf course entrance and parking facilities'
+// Duplicate removed -                     ];
+// Duplicate removed -                     return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
+// Duplicate removed -                 }
+// Duplicate removed -             }
+// Duplicate removed -             
+// Duplicate removed -             // Generate all 25 images
+// Duplicate removed -             for (let i = 1; i <= 25; i++) {
+// Duplicate removed -                 const galleryItem = document.createElement('div');
+// Duplicate removed -                 galleryItem.className = 'full-gallery-item';
+// Duplicate removed -                 galleryItem.innerHTML = `<img src="../images/courses/jackson-country-club/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+// Duplicate removed -                 galleryItem.onclick = () => window.open(`../images/courses/jackson-country-club/${i}.webp`, '_blank');
+// Duplicate removed -                 galleryGrid.appendChild(galleryItem);
+// Duplicate removed -             }
+// Duplicate removed -             
+// Duplicate removed -             modal.style.display = 'block';
+// Duplicate removed -             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+// Duplicate removed -         }
+// Duplicate removed -         
+// Duplicate removed -         function closeGallery() {
+// Duplicate removed -             const modal = document.getElementById('galleryModal');
+// Duplicate removed -             modal.style.display = 'none';
+// Duplicate removed -             document.body.style.overflow = 'auto'; // Restore scrolling
+// Duplicate removed -         }
         
         // Close modal when clicking outside of it
         document.getElementById('galleryModal').addEventListener('click', function(event) {
