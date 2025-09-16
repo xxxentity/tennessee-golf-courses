@@ -576,62 +576,6 @@ try {
     // $course_slug and $course_name are already set at the top of this file
     include '../includes/course-reviews-fixed.php';
     ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 5px;">
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                            </div>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                            <textarea name="comment_text" placeholder="Share your thoughts about Lake Tansi Golf Course..." required style="width: 100%; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical; min-height: 100px;"></textarea>
-                        </div>
-                        <button type="submit" style="background: #2c5234; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem;">
-                    <p><a href="../login.php" style="color: #2c5234; font-weight: 600; text-decoration: none;">Log in</a> to share your review of Lake Tansi Golf Course</p>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (count($comments) > 0): ?>
-                <?php foreach ($comments as $comment): ?>
-                    <div style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <div style="font-weight: 600; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></div>
-                            <div style="color: #666; font-size: 0.9rem;"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                        </div>
-                        <div style="color: #ffd700; margin-bottom: 1rem;">
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <p><?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div style="text-align: center; padding: 3rem; color: #666;">
-                    <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
-                    <h3>No reviews yet</h3>
-                    <p>Be the first to share your experience at Lake Tansi Golf Course!</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
