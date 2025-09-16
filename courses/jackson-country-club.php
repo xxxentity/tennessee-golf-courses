@@ -543,91 +543,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" id="reviews" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <?php echo $success_message; ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <?php echo $error_message; ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" action="">
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Rating</label>
-                            <div class="rating-select" style="display: flex; gap: 0.5rem;">
-                                <?php for ($i = 5; $i >= 1; $i--): ?>
-                                    <label style="cursor: pointer;">
-                                        <input type="radio" name="rating" value="<?php echo $i; ?>" required style="display: none;">
-                                        <i class="fas fa-star" style="font-size: 1.5rem; color: #e0e0e0; transition: color 0.2s;" 
-                                           onmouseover="highlightStars(<?php echo $i; ?>)" 
-                                           onmouseout="resetStars()" 
-                                           onclick="setRating(<?php echo $i; ?>)"></i>
-                                    </label>
-                                <?php endfor; ?>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Review</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" required 
-                                      style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; resize: vertical;"
-                                      placeholder="Share your experience playing at Jackson Country Club..."></textarea>
-                        </div>
-                        
-                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-                            Post Review
-                        </button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div style="background: #fff3cd; color: #856404; padding: 1.5rem; border-radius: 8px; margin-bottom: 3rem; text-align: center;">
-                    <p style="margin: 0;">Please <a href="/auth/login.php" style="color: #856404; font-weight: 600;">log in</a> to leave a review.</p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Display existing reviews -->
-            <div class="reviews-container">
-                <?php if (empty($comments)): ?>
-                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px;">
-                        <p style="color: #666;">No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="review-card" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                                <div>
-                                    <h4 style="margin: 0; color: #2c5234;"><?php echo htmlspecialchars($comment['username']); ?></h4>
-                                    <div class="rating-stars" style="margin: 0.5rem 0;">
-                                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffc107' : '#e0e0e0'; ?>;"></i>
-                                        <?php endfor; ?>
-                                    </div>
-                                </div>
-                                <span style="color: #666; font-size: 0.9rem;">
-                                    <?php echo date('F j, Y', strtotime($comment['created_at'])); ?>
-                                </span>
-                            </div>
-                            <p style="margin: 0; line-height: 1.6; color: #333;">
-                                <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
-                            </p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <?php
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php';
+    ?>
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
