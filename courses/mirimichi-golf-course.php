@@ -829,93 +829,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2 style="color: #2c5234; text-align: center; margin-bottom: 3rem;">Player Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <?php if (isset($success_message)): ?>
-                        <div class="alert alert-success">
-                            <i class="fas fa-check-circle"></i>
-                            <?php echo $success_message; ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-error">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <?php echo $error_message; ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating">
-                                <?php for ($i = 5; $i >= 1; $i--): ?>
-                                    <input type="radio" id="star<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>" required>
-                                    <label for="star<?php echo $i; ?>" class="star">★</label>
-                                <?php endfor; ?>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" required placeholder="Share your experience playing at Mirimichi Golf Course..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p>Please <a href="../login">log in</a> to leave a review.</p>
-                </div>
-            <?php endif; ?>
-
-            <?php if (!empty($comments)): ?>
-                <div class="reviews-list">
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                            </div>
-                            <div style="margin-bottom: 1rem;">
-                                <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= $comment['rating'] ? '#ffd700' : '#ddd'; ?>; margin-right: 2px;"></i>
-                                <?php endfor; ?>
-                            </div>
-                            <div class="review-content">
-                                <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php else: ?>
-                <div class="no-comments">
-                    <i class="fas fa-comments"></i>
-                    <h3>No reviews yet</h3>
-                    <p>Be the first to share your experience at Mirimichi Golf Course!</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <!-- Photo Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Mirimichi Golf Course Gallery</h2>
-                <button class="close" onclick="closeGallery()">&times;</button>
-            </div>
-            <div class="full-gallery-grid">
-                <?php for ($i = 1; $i <= 25; $i++): ?>
-                    <div class="full-gallery-item" style="background-image: url('../images/courses/mirimichi-golf-course/<?php echo $i; ?>.jpeg');"></div>
-                <?php endfor; ?>
-            </div>
-        </div>
-    </div>
-
+    <?php
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php';
+    ?>
     <?php include '../includes/footer.php'; ?>
 
     <script src="../script.js"></script>
