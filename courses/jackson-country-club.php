@@ -341,26 +341,12 @@ try {
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Jackson Country Club</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">The Hub of Hub City • Jackson, Tennessee</p>
             <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star" style="color: #ffc107; font-size: 1.5rem;"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt" style="color: #ffc107; font-size: 1.5rem;"></i>';
-                            } else {
-                                echo '<i class="far fa-star" style="color: #e0e0e0; font-size: 1.5rem;"></i>';
-                            }
-                        }
-                        ?>
+                <?php if ($avg_rating): ?>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
+                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
+                        <span>(<?php echo $total_reviews; ?> reviews)</span>
                     </div>
-                    <span style="font-size: 1.2rem;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <span style="font-size: 1.1rem; opacity: 0.8;">No reviews yet</span>
                 <?php endif; ?>
             </div>
             <a href="#reviews" class="btn-primary" style="background: #4a7c59; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Write a Review</a>

@@ -526,22 +526,11 @@ try {
             <h1>Laurel Valley Country Club</h1>
             <p>Wild Laurel Golf Course • Smoky Mountain Views</p>
             <div class="course-rating">
-                <?php if ($avg_rating && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php
-                        $stars = round($avg_rating);
-                        for ($i = 1; $i <= 3; $i++) {
-                            echo $i <= $stars ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
-                        }
-                        ?>
-                    </div>
-                    <div class="rating-text">
-                        <?= $avg_rating ?> out of 5 stars (<?= $total_reviews ?> review<?= $total_reviews > 1 ? 's' : '' ?>)
-                    </div>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                <?php if ($avg_rating): ?>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
+                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
+                        <span>(<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
             </div>

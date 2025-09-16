@@ -255,28 +255,11 @@ try {
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Lake Tansi Golf Course</h1>
             <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Robert Renaud Design • Crossville, Tennessee</p>
             <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
+                <?php if ($avg_rating): ?>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
+                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
+                        <span>(<?php echo $total_reviews; ?> reviews)</span>
                     </div>
                 <?php endif; ?>
             </div>
