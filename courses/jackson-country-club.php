@@ -30,24 +30,31 @@ $course_slug = 'jackson-country-club';
 $course_name = 'Jackson Country Club';
 
 // Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+$is_logged_in = SecureSession::isLoggedIn();
 
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
+// Handle comment submission with CSRF protection
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
+    if (isset($_POST['csrf_token']) && CSRFToken::validateToken($_POST['csrf_token'])) {
+        $rating = (int)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+
+                // PRG Pattern - Redirect after successful post
+                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
         }
     } else {
-        $error_message = "Please provide a valid rating and comment.";
+        $error_message = "Invalid security token. Please try again.";
     }
 }
 
