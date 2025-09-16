@@ -29,25 +29,45 @@ SEO::setupCoursePage($course_data);
 $course_slug = 'laurel-valley-country-club';
 $course_name = 'Laurel Valley Country Club';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+// Calculate rating data for header display
+try {
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
+    $stmt->execute([$course_slug]);
+    $rating_data = $stmt->fetch();
+    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
+    $total_reviews = $rating_data['total_reviews'] ?: 0;
+} catch (PDOException $e) {
+    $avg_rating = null;
+    $total_reviews = 0;
+}
+
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
 
 // Handle comment submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+
+    if (!CSRFToken::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
     } else {
-        $error_message = "Please provide a valid rating and comment.";
+        $rating = (float)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
     }
 }
 
@@ -817,13 +837,13 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2>Reviews & Ratings</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="review-form-card">
-                    <h3>Write a Review</h3>
+    <?php
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php';
+    ?>
+
+    <?php include '../includes/footer.php'; ?>
                     <?php if (isset($success_message)): ?>
                         <div style="color: green; margin-bottom: 1rem;"><?= $success_message ?></div>
                     <?php endif; ?>
