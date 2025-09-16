@@ -18,19 +18,6 @@ SEO::setupArticlePage($article_data);
 
 $article_slug = 'liv-golf-michigan-2025-semifinals-thriller';
 $article_title = 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama';
-
-$article = [
-    'title' => 'LIV Golf Michigan Team Championship Semifinals: Legion XIII, Crushers, Stinger Advance in Playoff Drama',
-    'slug' => 'liv-golf-michigan-2025-semifinals-thriller',
-    'date' => '2025-08-23',
-    'time' => '7:00 PM',
-    'category' => 'Tournament News',
-    'excerpt' => 'Three teams survived intense semifinals action at The Cardinal at Saint John\'s in Plymouth, Michigan, setting up Sunday\'s stroke-play finale for the $14 million prize.',
-    'image' => '/images/news/liv-golf-michigan-2025-semifinals-thriller/main.webp',
-    'featured' => true,
-    'author' => 'Cole Harrington',
-    'read_time' => '5 min read'
-];
 ?>
 
 <!DOCTYPE html>
@@ -39,32 +26,13 @@ $article = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php echo SEO::generateMetaTags(); ?>
-    <meta name="description" content="<?php echo $article['excerpt']; ?>">
-    <meta name="keywords" content="LIV Golf, Michigan Team Championship, Legion XIII, Jon Rahm, Bryson DeChambeau, golf tournaments, Plymouth Michigan">
-    <meta name="author" content="<?php echo $article['author']; ?>">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="<?php echo $article['title']; ?>">
-    <meta property="og:description" content="<?php echo $article['excerpt']; ?>">
-    <meta property="og:image" content="https://tennesseegolfcourses.com<?php echo $article['image']; ?>">
-    <meta property="og:url" content="https://tennesseegolfcourses.com/news/<?php echo $article['slug']; ?>">
-    <meta property="og:type" content="article">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?php echo $article['title']; ?>">
-    <meta name="twitter:description" content="<?php echo $article['excerpt']; ?>">
-    <meta name="twitter:image" content="https://tennesseegolfcourses.com<?php echo $article['image']; ?>">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
+    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
@@ -376,25 +344,25 @@ $article = [
             <!-- Article Header -->
             <header class="article-header">
                 <div class="category-badge tournament-news">Tournament News</div>
-                <h1 class="article-title"><?php echo $article['title']; ?></h1>
+                <h1 class="article-title"><?php echo $article_data['title']; ?></h1>
                 
                 <div class="article-meta">
                     <div class="meta-left">
-                        <span class="author"><?php echo $article['author']; ?></span>
+                        <span class="author"><?php echo $article_data['author']; ?></span>
                         <span class="separator">•</span>
-                        <time datetime="<?php echo $article['date']; ?>T<?php echo date('H:i', strtotime($article['time'])); ?>">
-                            <?php echo date('F j, Y', strtotime($article['date'])); ?> at <?php echo $article['time']; ?>
+                        <time datetime="<?php echo $article_data['date']; ?>">
+                            <?php echo date('F j, Y', strtotime($article_data['date'])); ?>
                         </time>
                     </div>
                     <div class="meta-right">
-                        <span class="read-time"><?php echo $article['read_time']; ?></span>
+                        <span class="read-time">5 min read</span>
                     </div>
                 </div>
             </header>
 
             <!-- Featured Image -->
             <div class="featured-image">
-                <img src="<?php echo $article['image']; ?>" alt="LIV Golf Michigan Team Championship semifinals action" loading="lazy">
+                <img src="<?php echo $article_data['image']; ?>" alt="LIV Golf Michigan Team Championship semifinals action" loading="lazy">
             </div>
 
             <!-- Article Content -->
@@ -500,13 +468,13 @@ $article = [
             <div class="share-buttons">
                 <h3>Share this article</h3>
                 <div class="social-share">
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article['title']); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-twitter">
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode($article_data['title']); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-twitter">
                         <i class="fab fa-twitter"></i> Twitter
                     </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-facebook">
                         <i class="fab fa-facebook-f"></i> Facebook
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article['slug']); ?>" target="_blank" class="share-linkedin">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode('https://tennesseegolfcourses.com/news/' . $article_slug); ?>" target="_blank" class="share-linkedin">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
                     </a>
                 </div>
