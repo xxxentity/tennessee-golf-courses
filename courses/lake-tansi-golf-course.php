@@ -576,14 +576,6 @@ try {
     // $course_slug and $course_name are already set at the top of this file
     include '../includes/course-reviews-fixed.php';
     ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
                         <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
                     <?php endif; ?>
                     
