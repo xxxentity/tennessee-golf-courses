@@ -1,12 +1,14 @@
 <?php
 // Automatic favicon management with cache busting
-// Use PNG for better browser compatibility
+// Check PNG, JPEG, and WebP formats
 $favicon_png = '/images/logos/tab-logo.png';
 $favicon_jpeg = '/images/logos/tab-logo.jpeg';
+$favicon_webp = '/images/logos/tab-logo.webp';
 
 // Check which files exist
 $favicon_png_path = $_SERVER['DOCUMENT_ROOT'] . $favicon_png;
 $favicon_jpeg_path = $_SERVER['DOCUMENT_ROOT'] . $favicon_jpeg;
+$favicon_webp_path = $_SERVER['DOCUMENT_ROOT'] . $favicon_webp;
 
 if (file_exists($favicon_png_path)) {
     $favicon_file = $favicon_png;
@@ -14,6 +16,9 @@ if (file_exists($favicon_png_path)) {
 } elseif (file_exists($favicon_jpeg_path)) {
     $favicon_file = $favicon_jpeg;
     $favicon_full_path = $favicon_jpeg_path;
+} elseif (file_exists($favicon_webp_path)) {
+    $favicon_file = $favicon_webp;
+    $favicon_full_path = $favicon_webp_path;
 } else {
     $favicon_file = $favicon_png; // fallback
     $favicon_full_path = $favicon_png_path;
