@@ -832,4 +832,184 @@ try {
     include '../includes/course-reviews-fixed.php';
     ?>
 
+    <!-- Full Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Laurel Valley Country Club - Complete Photo Gallery</h2>
+                <button class="close" onclick="closeGallery()">&times;</button>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
     <?php include '../includes/footer.php'; ?>
+
+    <script>
+        // Gallery Modal Functions
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('fullGalleryGrid');
+
+            // Clear existing content
+            galleryGrid.innerHTML = '';
+
+            // Alt text patterns for different image types
+            function getAltText(imageIndex) {
+                const courseName = 'Laurel Valley Country Club';
+                const location = 'Townsend, TN';
+                const locationShort = 'Townsend TN';
+
+                if (imageIndex <= 5) {
+                    // Course overview shots
+                    const overviewTexts = [
+                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
+                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
+                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
+                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
+                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
+                    ];
+                    return overviewTexts[imageIndex - 1];
+                } else if (imageIndex <= 10) {
+                    // Signature holes
+                    const holes = [6, 8, 12, 15, 18];
+                    const holeIndex = imageIndex - 6;
+                    const holeNum = holes[holeIndex];
+                    const signatures = [
+                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
+                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
+                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
+                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
+                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
+                    ];
+                    return signatures[holeIndex];
+                } else if (imageIndex <= 15) {
+                    // Greens and approaches
+                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
+                } else if (imageIndex <= 20) {
+                    // Course features
+                    const features = [
+                        'Practice facility driving range and putting green area',
+                        'Golf cart fleet and maintenance facilities',
+                        'Professional golf instruction area and practice tees',
+                        'Course landscaping with native Tennessee flora and water features',
+                        'Golf course pro shop and equipment rental facilities'
+                    ];
+                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
+                } else {
+                    // Clubhouse and amenities
+                    const amenities = [
+                        'Golf course clubhouse pro shop and restaurant facilities',
+                        'Clubhouse dining room with scenic Tennessee views',
+                        'Golf course event space and meeting facilities',
+                        'Professional locker room and amenities',
+                        'Golf course entrance and parking facilities'
+                    ];
+                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
+                }
+            }
+
+            // Generate all 25 images
+            for (let i = 1; i <= 25; i++) {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'full-gallery-item';
+                galleryItem.innerHTML = `<img src="../images/courses/laurel-valley-country-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
+                galleryItem.onclick = () => window.open(`../images/courses/laurel-valley-country-club/${i}.jpeg`, '_blank');
+                galleryGrid.appendChild(galleryItem);
+            }
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside of it
+        document.getElementById('galleryModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+    </script>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .close {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .close:hover {
+            color: #ccc;
+        }
+
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .full-gallery-item {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .full-gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
