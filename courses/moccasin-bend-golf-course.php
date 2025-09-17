@@ -44,50 +44,6 @@ try {
 
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (float)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-    } else {
-        $error_message = "Please provide a valid rating and comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -852,12 +808,6 @@ try {
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <?php
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php';
-    ?>
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
@@ -1040,3 +990,42 @@ try {
             transform: scale(1.05);
         }
     </style>
+    
+    <!-- Reviews Section - Centralized System -->
+    <?php include '../includes/course-reviews-fixed.php'; ?>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tennessee Golf Courses</h3>
+                    <p>Your comprehensive guide to golf courses across Tennessee.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../courses.php">All Courses</a></li>
+                        <li><a href="../maps.php">Course Map</a></li>
+                        <li><a href="../search-courses.php">Search</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
