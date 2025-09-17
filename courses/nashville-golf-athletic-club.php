@@ -4,13 +4,6 @@ require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
 // Course data for SEO
 $course_data = [
     'name' => 'Nashville Golf & Athletic Club',
@@ -26,55 +19,31 @@ $course_data = [
 
 SEO::setupCoursePage($course_data);
 
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
+
 $course_slug = 'nashville-golf-athletic-club';
 $course_name = 'Nashville Golf & Athletic Club';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-    } else {
-        $error_message = "Please provide a valid rating and comment.";
-    }
-}
-
-// Get existing comments
+// Calculate rating data for header display
 try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
 } catch (PDOException $e) {
-    $comments = [];
     $avg_rating = null;
     $total_reviews = 0;
 }
+
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
+
 ?>
 
 <!DOCTYPE html>
@@ -870,88 +839,11 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Golfers Are Saying</h2>
-                <p>Read reviews from golfers who have experienced Nashville Golf & Athletic Club</p>
-            </div>
-            
-            <?php if (isset($success_message)): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($success_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (isset($error_message)): ?>
-                <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error_message); ?>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Comment Form (Only for logged in users) -->
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container">
-                    <h3>Share Your Experience</h3>
-                    <form method="POST" class="comment-form">
-                        <div class="form-group">
-                            <label for="rating">Rating:</label>
-                            <div class="star-rating" id="ngac-rating-stars">
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 star" data-rating="1"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stars" data-rating="2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stars" data-rating="3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stars" data-rating="4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stars" data-rating="5"><i class="fas fa-star"></i></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment_text">Your Review:</label>
-                            <textarea id="comment_text" name="comment_text" rows="4" placeholder="Share your experience at Nashville Golf & Athletic Club..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Post Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt">
-                    <p><a href="../login.php">Login</a> or <a href="../register.php">Register</a> to share your review</p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Display Comments -->
-            <div class="comments-container">
-                <?php if (empty($comments)): ?>
-                    <div class="no-comments">
-                        <i class="fas fa-comments"></i>
-                        <p>No reviews yet. Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-name"><?php echo htmlspecialchars($comment['username']); ?></div>
-                                <div class="review-date"><?php echo date('M j, Y', strtotime($comment['created_at'])); ?></div>
-                            </div>
-                            <div class="rating-stars">
-                                <?php for ($i = 1; $i <= 3; $i++): ?>
-                                    <?php if ($i <= $comment['rating']): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php else: ?>
-                                        <i class="far fa-star"></i>
-                                    <?php endif; ?>
-                                <?php endfor; ?>
-                            </div>
-                            <p><?php echo htmlspecialchars($comment['comment_text']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <?php 
+    // Variables needed for the centralized review system
+    // $course_slug and $course_name are already set at the top of this file
+    include '../includes/course-reviews-fixed.php'; 
+    ?>
 
     <!-- Private Club Notice Section -->
     <section class="booking-section">
@@ -1067,65 +959,6 @@ try {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Nashville Golf & Athletic Club
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('ngac-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
             }
         });
     </script>
