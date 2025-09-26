@@ -44,6 +44,32 @@ try {
 // Check if user is logged in using secure session
 $is_logged_in = SecureSession::isLoggedIn();
 
+// Handle comment submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
+        $rating = (float)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+    
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>

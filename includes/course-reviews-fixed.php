@@ -135,7 +135,7 @@ try {
                 <?php endif; ?>
                 
                 <form method="POST" class="comment-form">
-                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+                    <input type="hidden" name="csrf_token" value="<?php echo CSRFProtection::getToken(); ?>">
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
                         <div class="star-rating-container" style="padding: 10px 0;">
