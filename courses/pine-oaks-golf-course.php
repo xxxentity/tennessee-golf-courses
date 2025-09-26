@@ -859,50 +859,6 @@ try {
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        // Star rating functionality
-        const stars = document.querySelectorAll('#starRating i');
-        const ratingInput = document.getElementById('ratingInput');
-        
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const rating = this.getAttribute('data-rating');
-                ratingInput.value = rating;
-                
-                stars.forEach((s, index) => {
-                    if (index < rating) {
-                        s.classList.remove('far');
-                        s.classList.add('fas');
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('fas');
-                        s.classList.add('far');
-                        s.classList.remove('active');
-                    }
-                });
-            });
-            
-            star.addEventListener('mouseenter', function() {
-                const rating = this.getAttribute('data-rating');
-                stars.forEach((s, index) => {
-                    if (index < rating) {
-                        s.style.color = '#ffd700';
-                    } else {
-                        s.style.color = '#ddd';
-                    }
-                });
-            });
-        });
-        
-        document.getElementById('starRating').addEventListener('mouseleave', function() {
-            const currentRating = ratingInput.value;
-            stars.forEach((s, index) => {
-                if (index < currentRating) {
-                    s.style.color = '#ffd700';
-                } else {
-                    s.style.color = '#ddd';
-                }
-            });
-        });
         
         // Gallery functionality
         // Gallery Modal Functions
