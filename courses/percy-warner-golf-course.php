@@ -4,13 +4,6 @@ require_once '../config/database.php';
 require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
 // Course data for SEO
 $course_data = [
     'name' => 'Percy Warner Golf Course',
@@ -26,54 +19,56 @@ $course_data = [
 
 SEO::setupCoursePage($course_data);
 
+// Start secure session
+try {
+    SecureSession::start();
+} catch (Exception $e) {
+    // Session expired or invalid - user not logged in
+}
+
+
 $course_slug = 'percy-warner-golf-course';
 $course_name = 'Percy Warner Golf Course';
 
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-    } else {
-        $error_message = "Please provide a valid rating and comment.";
-    }
-}
-
-// Get existing comments
+// Calculate rating data for header display
 try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
+    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
     $stmt->execute([$course_slug]);
     $rating_data = $stmt->fetch();
     $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
     $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
 } catch (PDOException $e) {
-    $comments = [];
     $avg_rating = null;
     $total_reviews = 0;
+}
+
+// Check if user is logged in using secure session
+$is_logged_in = SecureSession::isLoggedIn();
+
+// Handle comment submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
+    // Validate CSRF token
+    $csrf_token = $_POST['csrf_token'] ?? '';
+    if (!CSRFProtection::validateToken($csrf_token)) {
+        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
+    } else {
+        $rating = (float)$_POST['rating'];
+        $comment_text = trim($_POST['comment_text']);
+        $user_id = SecureSession::get('user_id');
+    
+        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
+                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
+                exit;
+            } catch (PDOException $e) {
+                $error_message = "Error posting review. Please try again.";
+            }
+        } else {
+            $error_message = "Please provide a valid rating and comment.";
+        }
+    }
 }
 ?>
 
@@ -487,91 +482,7 @@ try {
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section" style="background: #f8f9fa; padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Reviews</h2>
-            
-            <?php if ($is_logged_in): ?>
-                <div class="comment-form-container" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share Your Experience</h3>
-                    
-                    <?php if (isset($success_message)): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #c3e6cb;"><?php echo $success_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($error_message)): ?>
-                        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #f5c6cb;"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    
-                    <form method="POST" class="comment-form">
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Rating:</label>
-                            <div class="star-rating" style="display: flex; gap: 5px;">
-                                <input type="radio" name="rating" value="5" id="star5" style="display: none;">
-                                <label for="star5" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="4" id="star4" style="display: none;">
-                                <label for="star4" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="3" id="star3" style="display: none;">
-                                <label for="star3" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="2" id="star2" style="display: none;">
-                                <label for="star2" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                                <input type="radio" name="rating" value="1" id="star1" style="display: none;">
-                                <label for="star1" style="color: #999; font-size: 1.5rem; cursor: pointer;">★</label>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <label for="comment_text" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c5234;">Your Review:</label>
-                            <textarea name="comment_text" id="comment_text" rows="4" style="width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; resize: vertical;" placeholder="Share your experience at Percy Warner Golf Course..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" style="background: #4a7c59; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Submit Review</button>
-                    </form>
-                </div>
-            <?php else: ?>
-                <div class="login-prompt" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 3rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p style="margin: 0; font-size: 1.1rem; color: #666;">
-                        <a href="../login" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Login</a> 
-                        or 
-                        <a href="../register" style="color: #4a7c59; text-decoration: none; font-weight: 600;">Register</a> 
-                        to leave a review
-                    </p>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Reviews List -->
-            <div class="reviews-list">
-                <?php if (empty($comments)): ?>
-                    <div style="text-align: center; padding: 3rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <i class="fas fa-star" style="font-size: 3rem; color: #999; margin-bottom: 1rem;"></i>
-                        <h3 style="color: #666; margin-bottom: 0.5rem;">No reviews yet</h3>
-                        <p style="color: #888; margin: 0;">Be the first to share your experience!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($comments as $comment): ?>
-                    <div class="review-item" style="background: white; padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <div class="review-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <div>
-                                <h4 style="margin: 0; color: #2c5234; font-weight: 600;"><?php echo htmlspecialchars($comment['username']); ?></h4>
-                                <div class="review-rating" style="color: #ffd700; font-size: 1.2rem; margin-top: 0.25rem;">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star<?php echo $i <= $comment['rating'] ? '' : ' fa-star-o'; ?>" style="<?php echo $i <= $comment['rating'] ? 'color: #ffd700;' : 'color: #999;'; ?>"></i>
-                                    <?php endfor; ?>
-                                </div>
-                            </div>
-                            <span style="color: #888; font-size: 0.9rem;">
-                                <?php echo date('M j, Y', strtotime($comment['created_at'])); ?>
-                            </span>
-                        </div>
-                        <div class="review-text" style="color: #555; line-height: 1.6;">
-                            <?php echo nl2br(htmlspecialchars($comment['comment_text'])); ?>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
+    <?php include '../includes/course-reviews-fixed.php'; ?>
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
@@ -590,38 +501,6 @@ try {
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        // Star rating functionality
-        const starLabels = document.querySelectorAll('.star-rating label');
-        const starInputs = document.querySelectorAll('.star-rating input');
-        
-        starLabels.forEach((label, index) => {
-            label.addEventListener('mouseenter', () => {
-                updateStars(starLabels.length - index);
-            });
-            
-            label.addEventListener('click', () => {
-                starInputs[starLabels.length - 1 - index].checked = true;
-            });
-        });
-        
-        document.querySelector('.star-rating').addEventListener('mouseleave', () => {
-            const checkedInput = document.querySelector('.star-rating input:checked');
-            if (checkedInput) {
-                updateStars(6 - parseInt(checkedInput.value));
-            } else {
-                updateStars(0);
-            }
-        });
-        
-        function updateStars(count) {
-            starLabels.forEach((label, index) => {
-                if (index < count) {
-                    label.style.color = '#ffd700';
-                } else {
-                    label.style.color = '#ddd';
-                }
-            });
-        }
 
         // Gallery Modal Functions
         function openGallery() {
