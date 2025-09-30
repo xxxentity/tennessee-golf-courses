@@ -517,6 +517,41 @@
   
   <!-- News Articles -->
   <url>
+    <loc>https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tennesseegolfcourses.com/news/ryder-cup-2025-europe-survives-american-comeback-15-13</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tennesseegolfcourses.com/news/ryder-cup-2025-day-2-europe-historic-sweep-bethpage</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tennesseegolfcourses.com/news/ryder-cup-2025-day-1-europe-dominates-bethpage-black</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tennesseegolfcourses.com/news/ryder-cup-2025-final-preview-bethpage-black-showdown</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://tennesseegolfcourses.com/news/fedex-st-jude-championship-2025-complete-recap-community-impact</loc>
     <lastmod>2025-08-13</lastmod>
     <changefreq>yearly</changefreq>
@@ -580,6 +615,20 @@
   </url>
   
   <!-- Review Articles -->
+  <url>
+    <loc>https://tennesseegolfcourses.com/reviews/top-5-best-golf-courses-near-chattanooga-tn</loc>
+    <lastmod>2025-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://tennesseegolfcourses.com/reviews/top-5-best-golf-courses-near-nashville-tn</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://tennesseegolfcourses.com/reviews/top-5-golf-drivers-2025</loc>
     <lastmod>2025-08-21</lastmod>
