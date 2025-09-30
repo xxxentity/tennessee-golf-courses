@@ -3,6 +3,17 @@
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Top 5 Best Golf Courses Near Nashville, Tennessee 2025',
+        'slug' => 'top-5-best-golf-courses-near-nashville-tn',
+        'date' => '2025-09-05',
+        'time' => '3:45 PM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf courses near Nashville, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
+        'image' => '/images/reviews/top-5-best-golf-courses-near-nashville-tn/0.webp',
+        'featured' => true,
+        'author' => 'Michael Travers'
+    ],
+    [
         'title' => 'Ultimate Guide to Fairfield Glade Golf Courses: Tennessee\'s Championship Mountain Golf Paradise',
         'slug' => 'ultimate-guide-fairfield-glade-golf-crossville-tennessee',
         'date' => '2025-08-29',

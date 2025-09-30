@@ -232,6 +232,7 @@ RewriteRule ^news/scheffler-wins-2025-british-open-final-round/?$ news/scheffler
 RewriteRule ^news/ryder-cup-2025-complete-tournament-recap-bethpage-black/?$ news/ryder-cup-2025-complete-tournament-recap-bethpage-black.php [L]
 
 # Handle review article pages (in subdirectory)
+RewriteRule ^reviews/top-5-best-golf-courses-near-nashville-tn/?$ reviews/top-5-best-golf-courses-near-nashville-tn.php [L]
 RewriteRule ^reviews/ultimate-guide-fairfield-glade-golf-crossville-tennessee/?$ reviews/ultimate-guide-fairfield-glade-golf-crossville-tennessee.php [L]
 RewriteRule ^reviews/2025-best-nashville-golf-courses-under-50/?$ reviews/2025-best-nashville-golf-courses-under-50.php [L]
 RewriteRule ^reviews/complete-guide-tennessee-golf-2025/?$ reviews/complete-guide-tennessee-golf-2025.php [L]

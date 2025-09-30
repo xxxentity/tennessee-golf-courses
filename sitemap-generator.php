@@ -136,8 +136,9 @@ $newsArticles = [
     'scheffler-wins-2025-british-open-final-round' => '2024-07-21'
 ];
 
-// Review articles  
+// Review articles
 $reviewArticles = [
+    'top-5-best-golf-courses-near-nashville-tn' => '2025-09-05',
     'top-5-golf-drivers-2025' => '2025-08-21',
     'top-5-golf-balls-2025' => '2025-08-11',
     'top-10-putters-2025-amazon-guide' => '2025-08-06'
