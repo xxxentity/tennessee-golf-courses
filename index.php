@@ -13,28 +13,28 @@ $latest_articles = array_slice($articles, 0, 3);
 // Get latest 3 featured courses
 $featured_courses = [
     [
-        'name' => 'Belle Meade Country Club',
-        'location' => 'Nashville, TN',
-        'description' => 'Historic Donald Ross design since 1921 in exclusive Belle Meade neighborhood',
-        'image' => '/images/courses/belle-meade-country-club/1.jpeg',
-        'features' => ['18 Holes', 'Par 72', 'Donald Ross'],
-        'slug' => 'belle-meade-country-club'
+        'name' => 'Fall Creek Falls State Park Golf Course',
+        'location' => 'Spencer, TN',
+        'description' => 'Joe Lee designed championship golf course in scenic Cumberland Plateau setting',
+        'image' => '/images/courses/fall-creek-falls-state-park-golf-course/1.webp',
+        'features' => ['18 Holes', 'Par 72', 'Joe Lee'],
+        'slug' => 'fall-creek-falls-state-park-golf-course'
     ],
     [
-        'name' => 'The Grove',
-        'location' => 'College Grove, TN',
-        'description' => 'Award-winning Fred Couples design with stunning natural beauty',
-        'image' => '/images/courses/the-grove/1.jpeg',
-        'features' => ['18 Holes', 'Par 72', 'Fred Couples'],
-        'slug' => 'the-grove'
+        'name' => 'The Links at Galloway',
+        'location' => 'Memphis, TN',
+        'description' => 'Historic municipal course featuring challenging greens and classic design',
+        'image' => '/images/courses/the-links-at-galloway/1.jpeg',
+        'features' => ['18 Holes', 'Par 70', 'Kevin Tucker'],
+        'slug' => 'the-links-at-galloway'
     ],
     [
-        'name' => 'Vanderbilt Legends Club',
-        'location' => 'Franklin, TN',
-        'description' => 'Championship course designed by Fuzzy Zoeller and Clyde Johnston',
-        'image' => '/images/courses/vanderbilt-legends-club/1.jpeg',
-        'features' => ['18 Holes', 'Par 72', 'Championship'],
-        'slug' => 'vanderbilt-legends-club'
+        'name' => 'Sweetens Cove Golf Club',
+        'location' => 'South Pittsburg, TN',
+        'description' => 'Audacious and unique 9-hole course gaining national recognition',
+        'image' => '/images/courses/sweetens-cove-golf-club/1.jpeg',
+        'features' => ['9 Holes', 'Par 36', 'King Collins'],
+        'slug' => 'sweetens-cove-golf-club'
     ]
 ];
 
