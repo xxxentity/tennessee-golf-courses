@@ -138,6 +138,7 @@ $newsArticles = [
 
 // Review articles
 $reviewArticles = [
+    'top-5-best-golf-courses-near-chattanooga-tn' => '2025-09-10',
     'top-5-best-golf-courses-near-nashville-tn' => '2025-09-05',
     'top-5-golf-drivers-2025' => '2025-08-21',
     'top-5-golf-balls-2025' => '2025-08-11',

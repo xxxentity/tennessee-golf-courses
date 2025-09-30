@@ -3,6 +3,17 @@
 // Get all review articles (in order of newest first)
 $reviews = [
     [
+        'title' => 'Top 5 Best Golf Courses Near Chattanooga, Tennessee 2025',
+        'slug' => 'top-5-best-golf-courses-near-chattanooga-tn',
+        'date' => '2025-09-10',
+        'time' => '3:45 PM',
+        'category' => 'Course Reviews',
+        'excerpt' => 'Discover the top 5 highest-rated golf courses near Chattanooga, Tennessee. Based on expert rankings, player reviews, and championship pedigree from leading golf publications.',
+        'image' => '/images/reviews/top-5-best-golf-courses-near-chattanooga-tn/0.webp',
+        'featured' => true,
+        'author' => 'Michael Travers'
+    ],
+    [
         'title' => 'Top 5 Best Golf Courses Near Nashville, Tennessee 2025',
         'slug' => 'top-5-best-golf-courses-near-nashville-tn',
         'date' => '2025-09-05',
