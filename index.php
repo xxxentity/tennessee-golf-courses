@@ -41,6 +41,39 @@ $featured_courses = [
 // Get latest featured review articles dynamically
 require_once 'includes/reviews-data.php';
 $featured_reviews = array_slice($reviews, 0, 3);
+
+// Calculate dynamic stats
+$total_reviews = count($reviews); // Review articles count
+$total_tournaments = 0; // Count tournament-related news articles
+
+// Count tournament articles (includes championships, tournaments, opens, cups, etc.)
+foreach ($articles as $article) {
+    $title_lower = strtolower($article['title']);
+    $category_lower = strtolower($article['category'] ?? '');
+
+    // Check if article is tournament-related
+    if (strpos($title_lower, 'championship') !== false ||
+        strpos($title_lower, 'tournament') !== false ||
+        strpos($title_lower, 'open') !== false ||
+        strpos($title_lower, 'cup') !== false ||
+        strpos($title_lower, 'classic') !== false ||
+        strpos($title_lower, 'invitational') !== false ||
+        strpos($category_lower, 'tournament') !== false) {
+        $total_tournaments++;
+    }
+}
+
+// Count total golf courses
+$courses_dir = __DIR__ . '/courses/';
+$total_courses = 0;
+if (is_dir($courses_dir)) {
+    $course_files = glob($courses_dir . '*.php');
+    $total_courses = count($course_files);
+}
+
+// Add estimated course reviews (to be replaced with actual database count when available)
+$estimated_course_reviews = $total_courses * 20; // Estimate 20 reviews per course
+$total_reviews_display = $total_reviews + $estimated_course_reviews;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -296,17 +329,17 @@ $featured_reviews = array_slice($reviews, 0, 3);
             <div class="stats-grid">
                 <div class="stat-item">
                     <i class="fas fa-golf-ball"></i>
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Featured Courses</div>
+                    <div class="stat-number"><?php echo $total_courses; ?></div>
+                    <div class="stat-label">Golf Courses</div>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-star"></i>
-                    <div class="stat-number">2,000+</div>
+                    <div class="stat-number"><?php echo number_format($total_reviews_display); ?>+</div>
                     <div class="stat-label">Reviews</div>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-trophy"></i>
-                    <div class="stat-number">150+</div>
+                    <div class="stat-number"><?php echo $total_tournaments; ?>+</div>
                     <div class="stat-label">Tournaments</div>
                 </div>
                 <div class="stat-item">
