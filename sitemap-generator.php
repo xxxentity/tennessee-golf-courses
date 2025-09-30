@@ -119,6 +119,12 @@ $golfCourses = [
 
 // News articles
 $newsArticles = [
+    'ryder-cup-2025-complete-tournament-recap-bethpage-black' => '2025-09-29',
+    'ryder-cup-2025-europe-survives-american-comeback-15-13' => '2025-09-28',
+    'ryder-cup-2025-day-2-europe-historic-sweep-bethpage' => '2025-09-27',
+    'ryder-cup-2025-day-1-europe-dominates-bethpage-black' => '2025-09-26',
+    'ryder-cup-2025-final-preview-bethpage-black-showdown' => '2025-09-25',
+    'ryder-cup-2025-complete-preview-team-announcements-bethpage-black' => '2025-08-28',
     'fedex-st-jude-championship-2025-complete-recap-community-impact' => '2025-01-15',
     'rose-captures-thrilling-playoff-victory-fleetwood-heartbreak' => '2024-08-18',
     'fleetwood-maintains-narrow-lead-scheffler-charges' => '2024-08-17',
