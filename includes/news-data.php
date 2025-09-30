@@ -3,6 +3,56 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Ryder Cup 2025: Complete Tournament Recap - Europe Defeats USA 15-13 at Bethpage Black',
+        'slug' => 'ryder-cup-2025-complete-tournament-recap-bethpage-black',
+        'date' => '2025-09-29',
+        'time' => '10:10 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete recap of the 2025 Ryder Cup at Bethpage Black, where Europe defeated the United States 15-13 in a thrilling comeback victory. Comprehensive coverage of all three days of competition.',
+        'image' => '/images/news/ryder-cup-2025-complete-tournament-recap-bethpage-black/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'Ryder Cup 2025 Day 3: Europe Survives American Comeback, Wins 15-13 at Bethpage Black',
+        'slug' => 'ryder-cup-2025-europe-survives-american-comeback-15-13',
+        'date' => '2025-09-28',
+        'time' => '8:30 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Europe withstands the greatest comeback in Ryder Cup history as USA wins 8.5 of 12 singles matches, falling just short of completing the miraculous turnaround at Bethpage Black.',
+        'image' => '/images/news/ryder-cup-2025-europe-survives-american-comeback-15-13/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'Ryder Cup 2025 Day 2: Europe Makes History with Perfect Saturday Sweep at Bethpage',
+        'slug' => 'ryder-cup-2025-day-2-europe-historic-sweep-bethpage',
+        'date' => '2025-09-27',
+        'time' => '9:15 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Team Europe achieves unprecedented perfection with 8-0 Saturday sweep, building largest lead in Ryder Cup history at 11.5-4.5 heading into Sunday singles at Bethpage Black.',
+        'image' => '/images/news/ryder-cup-2025-day-2-europe-historic-sweep-bethpage/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'Ryder Cup 2025 Day 1: Europe Dominates Opening at Bethpage Black, Takes 5.5-2.5 Lead',
+        'slug' => 'ryder-cup-2025-day-1-europe-dominates-bethpage-black',
+        'date' => '2025-09-26',
+        'time' => '8:45 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Team Europe seizes commanding early advantage with stellar performances from Tommy Fleetwood and Jon Rahm, while Scottie Scheffler struggles in home debut at Bethpage Black.',
+        'image' => '/images/news/ryder-cup-2025-day-1-europe-dominates-bethpage-black/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'Ryder Cup 2025: Final Preview and Bethpage Black Showdown Between USA and Europe',
+        'slug' => 'ryder-cup-2025-final-preview-bethpage-black-showdown',
+        'date' => '2025-09-25',
+        'time' => '7:30 PM',
+        'category' => 'Tournament News',
+        'excerpt' => 'Complete preview of the 2025 Ryder Cup at Bethpage Black featuring team analysis, course conditions, weather forecast, and predictions for the epic showdown between USA and Europe.',
+        'image' => '/images/news/ryder-cup-2025-final-preview-bethpage-black-showdown/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Ryder Cup 2025: Complete Preview, Team Announcements, and Bethpage Black Preparations',
         'slug' => 'ryder-cup-2025-complete-preview-team-announcements-bethpage-black',
         'date' => '2025-08-28',
