@@ -24,7 +24,7 @@ $featured_courses = [
         'name' => 'The Links at Galloway',
         'location' => 'Memphis, TN',
         'description' => 'Historic municipal course featuring challenging greens and classic design',
-        'image' => '/images/courses/the-links-at-galloway/1.jpeg',
+        'image' => '/images/courses/the-links-at-galloway/1.webp',
         'features' => ['18 Holes', 'Par 70', 'Kevin Tucker'],
         'slug' => 'the-links-at-galloway'
     ],
