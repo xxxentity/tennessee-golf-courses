@@ -4,6 +4,45 @@ require_once 'includes/seo.php';
 
 // Set up SEO for about page
 SEO::setupAboutPage();
+
+// Dynamic stats - same calculation as homepage
+// Count total golf courses
+$courses_dir = __DIR__ . '/courses/';
+$total_courses = 0;
+if (is_dir($courses_dir)) {
+    $course_files = glob($courses_dir . '*.php');
+    $total_courses = count($course_files);
+}
+
+// Count actual comments/reviews from database
+$total_comments = 0;
+try {
+    // Get database connection
+    require_once 'includes/db-connection.php';
+
+    // Count course comments (reviews)
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM course_comments WHERE is_approved = TRUE");
+    $stmt->execute();
+    $course_comments = $stmt->fetch()['count'] ?? 0;
+
+    // Count news/review article comments
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM news_comments WHERE is_approved = TRUE");
+    $stmt->execute();
+    $news_comments = $stmt->fetch()['count'] ?? 0;
+
+    $total_comments = $course_comments + $news_comments;
+} catch (PDOException $e) {
+    // Fallback to estimated count if database is unavailable
+    $total_comments = $total_courses * 15; // Estimate 15 comments per course
+    error_log("Database error counting comments: " . $e->getMessage());
+}
+
+// Calculate estimated golfers served (rough estimate: reviews * 3 + courses * 10)
+// This represents golfers who've left reviews plus estimated unique visitors per course
+$estimated_golfers = ($total_comments * 3) + ($total_courses * 10);
+
+// Tennessee has exactly 95 counties (verified)
+$tennessee_counties = 95;
 ?>
 
 <!DOCTYPE html>
@@ -422,19 +461,19 @@ SEO::setupAboutPage();
                 <div class="about-visual">
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <div class="stat-number">150+</div>
+                            <div class="stat-number"><?php echo $total_courses; ?>+</div>
                             <div class="stat-label">Golf Courses</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">500+</div>
+                            <div class="stat-number"><?php echo number_format($total_comments); ?>+</div>
                             <div class="stat-label">Reviews</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">1000+</div>
+                            <div class="stat-number"><?php echo number_format($estimated_golfers); ?>+</div>
                             <div class="stat-label">Golfers</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">95</div>
+                            <div class="stat-number"><?php echo $tennessee_counties; ?></div>
                             <div class="stat-label">Counties</div>
                         </div>
                     </div>
