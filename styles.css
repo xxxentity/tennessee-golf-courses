@@ -413,7 +413,7 @@ a[href^="www."]:not(.social-links a)::after {
     height: 60vh;
     min-height: 400px;
     margin-top: 0px;
-    background: linear-gradient(135deg, rgba(6, 78, 59, 0.8) 0%, rgba(16, 185, 129, 0.6) 50%, rgba(234, 88, 12, 0.3) 100%), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.8) 0%, rgba(16, 185, 129, 0.6) 50%, rgba(234, 88, 12, 0.3) 100%), url('/images/logos/header1.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
