@@ -2352,7 +2352,46 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             color: var(--text-gray);
             font-size: 0.9rem;
         }
-        
+
+        .page-jump-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .page-jump-input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .page-jump-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .page-jump-btn {
+            padding: 0.5rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-jump-btn:hover {
+            background: var(--primary-dark);
+        }
+
         .results-summary {
             background: var(--bg-light);
             padding: 1rem 2rem;
@@ -2450,6 +2489,20 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
             
             .pagination-info {
                 font-size: 0.8rem;
+            }
+
+            .page-jump-container {
+                margin-left: 0.5rem;
+            }
+
+            .page-jump-input {
+                width: 70px;
+                padding: 0.4rem;
+                font-size: 0.8rem;
+            }
+
+            .page-jump-btn {
+                padding: 0.4rem 0.6rem;
             }
         }
         
@@ -2866,6 +2919,20 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                             <span class="pagination-info">
                                 Page <?php echo $page; ?> of <?php echo $total_pages; ?>
                             </span>
+
+                            <!-- Jump to Page Input -->
+                            <div class="page-jump-container">
+                                <input type="number"
+                                       id="pageJumpInput"
+                                       min="1"
+                                       max="<?php echo $total_pages; ?>"
+                                       placeholder="Go to..."
+                                       class="page-jump-input"
+                                       title="Enter page number (1-<?php echo $total_pages; ?>)">
+                                <button onclick="jumpToPage()" class="page-jump-btn" title="Jump to page">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </section>
@@ -3015,7 +3082,39 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                     document.getElementById('filters-form').submit();
                 }
             });
+
+            // Page jump functionality
+            const pageJumpInput = document.getElementById('pageJumpInput');
+            if (pageJumpInput) {
+                // Handle Enter key in page jump input
+                pageJumpInput.addEventListener('keypress', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        jumpToPage();
+                    }
+                });
+            }
         });
+
+        // Jump to page function (needs to be global to be called by onclick)
+        function jumpToPage() {
+            const pageInput = document.getElementById('pageJumpInput');
+            const pageNumber = parseInt(pageInput.value);
+            const maxPages = parseInt(pageInput.getAttribute('max'));
+
+            if (isNaN(pageNumber) || pageNumber < 1 || pageNumber > maxPages) {
+                alert(`Please enter a valid page number between 1 and ${maxPages}.`);
+                pageInput.focus();
+                return;
+            }
+
+            // Get current URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('page', pageNumber);
+
+            // Navigate to the new page
+            window.location.href = '?' + urlParams.toString();
+        }
     </script>
     
     <!-- Performance monitoring (development mode) -->
