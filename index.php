@@ -71,9 +71,28 @@ if (is_dir($courses_dir)) {
     $total_courses = count($course_files);
 }
 
-// Add estimated course reviews (to be replaced with actual database count when available)
-$estimated_course_reviews = $total_courses * 20; // Estimate 20 reviews per course
-$total_reviews_display = $total_reviews + $estimated_course_reviews;
+// Count actual comments/reviews from database
+$total_comments = 0;
+try {
+    // Get database connection
+    require_once 'config/database.php';
+
+    // Count course comments (reviews)
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM course_comments WHERE is_approved = TRUE");
+    $stmt->execute();
+    $course_comments = $stmt->fetch()['count'] ?? 0;
+
+    // Count news/review article comments
+    $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM news_comments WHERE is_approved = TRUE");
+    $stmt->execute();
+    $news_comments = $stmt->fetch()['count'] ?? 0;
+
+    $total_comments = $course_comments + $news_comments;
+} catch (PDOException $e) {
+    // Fallback to estimated count if database is unavailable
+    $total_comments = $total_courses * 15; // Estimate 15 comments per course
+    error_log("Database error counting comments: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -334,7 +353,7 @@ $total_reviews_display = $total_reviews + $estimated_course_reviews;
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-star"></i>
-                    <div class="stat-number"><?php echo number_format($total_reviews_display); ?>+</div>
+                    <div class="stat-number"><?php echo number_format($total_comments); ?>+</div>
                     <div class="stat-label">Reviews</div>
                 </div>
                 <div class="stat-item">
