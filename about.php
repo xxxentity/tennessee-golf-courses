@@ -18,7 +18,7 @@ if (is_dir($courses_dir)) {
 $total_comments = 0;
 try {
     // Get database connection
-    require_once 'includes/db-connection.php';
+    require_once 'config/database.php';
 
     // Count course comments (reviews)
     $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM course_comments WHERE is_approved = TRUE");
