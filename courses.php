@@ -2765,16 +2765,13 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                             <div class="course-card">
                                 <a href="/courses/<?php echo htmlspecialchars($course['slug']); ?>" class="course-image clickable-image" style="text-decoration: none;">
                                     <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                    <?php if ($course['avg_rating'] !== null): ?>
                                     <div class="course-rating">
-                                        <?php if ($course['avg_rating'] !== null): ?>
-                                            <i class="fas fa-star"></i>
-                                            <?php echo number_format($course['avg_rating'], 1); ?>
-                                            <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
-                                        <?php else: ?>
-                                            <i class="fas fa-star" style="color: #ddd;"></i>
-                                            <span style="color: #666;">No ratings yet</span>
-                                        <?php endif; ?>
+                                        <i class="fas fa-star"></i>
+                                        <?php echo number_format($course['avg_rating'], 1); ?>
+                                        <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
                                     </div>
+                                    <?php endif; ?>
                                 </a>
                                 <div class="course-content">
                                     <a href="/courses/<?php echo htmlspecialchars($course['slug']); ?>" style="text-decoration: none;">
@@ -2823,16 +2820,13 @@ $featured_courses = array_slice(array_filter($courses, function($course) {
                                 <div class="course-card">
                                     <a href="/courses/<?php echo htmlspecialchars($course['slug']); ?>" class="course-image clickable-image" style="text-decoration: none;">
                                         <img src="<?php echo htmlspecialchars($course['image']); ?>" alt="<?php echo htmlspecialchars($course['name']); ?>">
+                                        <?php if ($course['avg_rating'] !== null): ?>
                                         <div class="course-rating">
-                                            <?php if ($course['avg_rating'] !== null): ?>
-                                                <i class="fas fa-star"></i>
-                                                <?php echo number_format($course['avg_rating'], 1); ?>
-                                                <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
-                                            <?php else: ?>
-                                                <i class="fas fa-star" style="color: #ddd;"></i>
-                                                <span style="color: #666; font-size: 0.8rem;">No ratings yet</span>
-                                            <?php endif; ?>
+                                            <i class="fas fa-star"></i>
+                                            <?php echo number_format($course['avg_rating'], 1); ?>
+                                            <span style="color: var(--text-gray); font-size: 0.9rem;">(<?php echo $course['review_count']; ?>)</span>
                                         </div>
+                                        <?php endif; ?>
                                     </a>
                                     <div class="course-content">
                                         <a href="/courses/<?php echo htmlspecialchars($course['slug']); ?>" style="text-decoration: none;">
