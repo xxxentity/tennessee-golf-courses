@@ -556,7 +556,7 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Reviews Section -->
-    <?php include '../includes/course-reviews-fixed.php'; ?>
+    
 
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>

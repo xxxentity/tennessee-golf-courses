@@ -829,7 +829,7 @@ SEO::setupCoursePage($course_data);
     </style>
     
     <!-- Reviews Section - Centralized System -->
-    <?php include '../includes/course-reviews-fixed.php'; ?>
+    
 
     <!-- Footer -->
     <footer class="footer">

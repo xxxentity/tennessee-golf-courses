@@ -433,7 +433,7 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Reviews Section -->
-    <?php include '../includes/course-reviews-fixed.php'; ?>
+    
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">

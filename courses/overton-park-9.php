@@ -636,7 +636,7 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Reviews Section -->
-    <?php include '../includes/course-reviews-fixed.php'; ?>
+    
 
     <!-- Booking Section -->
     <section class="booking-section">
