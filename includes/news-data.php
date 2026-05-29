@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Elvis Smylie Wins LIV Golf Riyadh 2026 in Stunning Debut, Holds Off Jon Rahm',
+        'slug' => 'liv-golf-riyadh-2026-recap',
+        'date' => '2026-02-07',
+        'time' => '8:44 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Elvis Smylie wins the 2026 LIV Golf Riyadh in his first-ever LIV event, closing with a 64 to edge Jon Rahm by one shot at the league\'s first-ever 72-hole tournament at Riyadh Golf Club.',
+        'image' => '/images/news/liv-golf-riyadh-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Justin Rose Sets Torrey Pines Record to Win 2026 Farmers Insurance Open at Age 45',
         'slug' => 'farmers-insurance-open-2026-recap',
         'date' => '2026-02-01',
