@@ -47,6 +47,12 @@ Disallow: /*?page=*
 
 # Disallow utility files
 # Disallow: *.php$ - REMOVED: This was blocking all PHP files from indexing
+Disallow: /verify-email
+Disallow: /verify-email.php
+Disallow: /forgot-password
+Disallow: /forgot-password.php
+Disallow: /reset-password
+Disallow: /reset-password.php
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
