@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Tennessee Men\'s Golf Returns to NCAA Championships for Third Consecutive Year',
+        'slug' => 'ut-vols-ncaa-championships-2026',
+        'date' => '2026-05-29',
+        'time' => '8:00 AM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'The No. 18 Vols open stroke play Friday at Omni La Costa in Carlsbad for their third straight NCAA Championship appearance, led by Masters low amateur Jackson Herrington after a dramatic Bryan Regional comeback.',
+        'image' => '/images/news/ut-vols-ncaa-championships-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Nashville\'s Blades Brown Earns PGA Tour Membership at 19 After Historic Run of Results',
         'slug' => 'blades-brown-pga-tour-2026',
         'date' => '2026-05-25',
