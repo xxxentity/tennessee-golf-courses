@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Scottie Scheffler Wins 2026 American Express for Historic 20th PGA Tour Title',
+        'slug' => 'american-express-2026-recap',
+        'date' => '2026-01-25',
+        'time' => '9:11 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Scottie Scheffler dominates the 2026 American Express at PGA West, closing with a 66 to win by four shots and claim his 20th career PGA Tour victory, earning a lifetime Tour exemption.',
+        'image' => '/images/news/american-express-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Chris Gotterup Wins 2026 Sony Open, Claims Third Straight Year With a PGA Tour Title',
         'slug' => 'sony-open-2026-recap',
         'date' => '2026-01-18',
