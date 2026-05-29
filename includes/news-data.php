@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Adam Schenk Wins 2025 Butterfield Bermuda Championship in His 243rd Start',
+        'slug' => 'bermuda-championship-2025-recap',
+        'date' => '2025-11-16',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Adam Schenk claims his first PGA Tour victory at the 2025 Butterfield Bermuda Championship at Port Royal Golf Course, surviving 30 mph winds and a one-shot final round to hold off Chandler Phillips at 12-under par.',
+        'image' => '/images/news/bermuda-championship-2025/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Ben Griffin Sets Scoring Record at 2025 World Wide Technology Championship',
         'slug' => 'world-wide-technology-championship-2025-recap',
         'date' => '2025-11-09',
