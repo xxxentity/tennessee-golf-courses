@@ -94,49 +94,64 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             margin-bottom: 3rem;
             overflow: hidden;
         }
-        
+
         .carousel-header {
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
             border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
+
         .carousel-title {
             font-size: 1.3rem;
             color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
-        
+
         .carousel-container {
             position: relative;
-            height: 300px;
+            height: 340px;
             overflow: hidden;
         }
-        
+
         .carousel-slide {
             position: absolute;
             width: 100%;
             height: 100%;
             opacity: 0;
             transition: opacity 0.5s ease;
-            background-size: cover;
-            background-position: center;
             display: flex;
-            align-items: end;
+            flex-direction: row;
         }
-        
+
         .carousel-slide.active {
             opacity: 1;
         }
-        
-        .slide-content {
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            width: 100%;
-            padding: 2rem 5rem;
-            color: white;
+
+        .slide-image {
+            width: 55%;
+            flex-shrink: 0;
+            overflow: hidden;
         }
-        
+
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .slide-content {
+            flex: 1;
+            padding: 2rem 2.5rem;
+            background: var(--bg-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
         .slide-category {
             background: var(--secondary-color);
             color: white;
@@ -144,33 +159,59 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             border-radius: 15px;
             font-size: 0.8rem;
             display: inline-block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            align-self: flex-start;
         }
-        
+
         .slide-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: var(--primary-color);
         }
-        
+
         .slide-excerpt {
-            opacity: 0.9;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .slide-meta {
+            font-size: 0.85rem;
+            color: var(--text-gray);
             margin-bottom: 1rem;
         }
-        
-        .slide-meta {
+
+        .slide-read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
             font-size: 0.9rem;
-            opacity: 0.8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: gap 0.2s ease;
+            align-self: flex-start;
         }
-        
+
+        .slide-read-more:hover {
+            gap: 0.65rem;
+            color: var(--primary-color);
+        }
+
         .carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            width: 40px;
-            height: 40px;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid var(--border-color);
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -178,41 +219,41 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             justify-content: center;
             color: var(--primary-color);
             transition: all 0.3s ease;
+            z-index: 10;
         }
-        
+
         .carousel-nav:hover {
             background: white;
             box-shadow: var(--shadow-medium);
         }
-        
+
         .carousel-prev {
-            left: 1rem;
+            left: 0.75rem;
         }
-        
+
         .carousel-next {
-            right: 1rem;
+            right: 0.75rem;
         }
-        
+
         .carousel-dots {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
             gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            justify-content: center;
         }
-        
+
         .carousel-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.5);
+            background: var(--border-color);
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .carousel-dot.active {
-            background: white;
+            background: var(--primary-color);
         }
         
         /* Search and Filter Bar */
@@ -419,21 +460,40 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .search-container {
                 min-width: auto;
             }
-            
+
             .news-grid {
                 grid-template-columns: 1fr;
             }
-            
+
+            .carousel-container {
+                height: auto;
+            }
+
+            .carousel-slide {
+                flex-direction: column;
+                position: absolute;
+                width: 100%;
+            }
+
+            .slide-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .slide-content {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .slide-title {
+                font-size: 1.1rem;
+            }
+
             .carousel-nav {
                 display: none;
-            }
-            
-            .slide-content {
-                padding: 2rem;
             }
         }
     </style>
@@ -458,39 +518,40 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
             <?php if (!empty($featured_articles)): ?>
             <section class="featured-carousel">
                 <div class="carousel-header">
-                    <h2 class="carousel-title">
-                        <i class="fas fa-fire"></i>
-                        Featured Stories
-                    </h2>
+                    <h2 class="carousel-title">Featured Stories</h2>
                 </div>
                 <div class="carousel-container">
                     <?php foreach ($featured_articles as $index => $article): ?>
-                    <div class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>" 
-                         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('<?php echo htmlspecialchars($article['image']); ?>');">
+                    <div class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <div class="slide-image">
+                            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
+                        </div>
                         <div class="slide-content">
                             <span class="slide-category"><?php echo htmlspecialchars($article['category']); ?></span>
                             <h3 class="slide-title"><?php echo htmlspecialchars($article['title']); ?></h3>
                             <p class="slide-excerpt"><?php echo htmlspecialchars($article['excerpt']); ?></p>
                             <div class="slide-meta">
                                 <i class="fas fa-calendar-alt"></i>
-                                <?php echo date('M j, Y', strtotime($article['date'])); ?> • <?php echo $article['time']; ?>
+                                <?php echo date('M j, Y', strtotime($article['date'])); ?> &bull; <?php echo $article['time']; ?>
                             </div>
+                            <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="slide-read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                     <?php endforeach; ?>
-                    
+
                     <button class="carousel-nav carousel-prev" onclick="changeSlide(-1)">
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <button class="carousel-nav carousel-next" onclick="changeSlide(1)">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    
-                    <div class="carousel-dots">
-                        <?php foreach ($featured_articles as $index => $article): ?>
-                        <span class="carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>" onclick="goToSlide(<?php echo $index; ?>)"></span>
-                        <?php endforeach; ?>
-                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <?php foreach ($featured_articles as $index => $article): ?>
+                    <span class="carousel-dot <?php echo $index === 0 ? 'active' : ''; ?>" onclick="goToSlide(<?php echo $index; ?>)"></span>
+                    <?php endforeach; ?>
                 </div>
             </section>
             <?php endif; ?>
