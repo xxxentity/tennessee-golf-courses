@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Mike Eller and Bob Wolcott Named 2026 Tennessee Golf Hall of Fame Inductees',
+        'slug' => 'tennessee-golf-hall-of-fame-2026',
+        'date' => '2025-10-17',
+        'time' => '2:30 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'The Tennessee Golf Foundation announces Mike Eller, PGA and Bob Wolcott, PGA as the 2026 inductees into the Tennessee Golf Hall of Fame, becoming the 59th and 60th members enshrined in the Hall\'s history.',
+        'image' => '/images/news/tennessee-golf-hall-of-fame-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Wyndham Clark Shoots 60 to Win 2026 CJ Cup Byron Nelson in Historic Fashion',
         'slug' => 'cj-cup-byron-nelson-2026-recap',
         'date' => '2026-05-24',
