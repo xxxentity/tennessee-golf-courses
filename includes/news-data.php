@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Rory McIlroy Wins Back-to-Back Masters, Joins Nicklaus, Faldo and Woods in History',
+        'slug' => 'masters-2026-recap',
+        'date' => '2026-04-12',
+        'time' => '8:47 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Rory McIlroy survives a Saturday collapse and Sunday lead changes to win the 2026 Masters at Augusta National by one shot over Scottie Scheffler, becoming just the fourth player in history to win consecutive green jackets.',
+        'image' => '/images/news/masters-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Jon Rahm Ends 539-Day Drought With Dominant Win at 2026 LIV Golf Hong Kong',
         'slug' => 'liv-golf-hong-kong-2026-recap',
         'date' => '2026-03-08',
