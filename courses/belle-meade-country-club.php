@@ -28,6 +28,11 @@ SEO::setupCoursePage($course_data);
 <head>
     <meta charset="UTF-8">
     <?php echo SEO::generateMetaTags(); ?>
+    <?php
+    $_canonical = 'https://tennesseegolfcourses.com' . strtok($_SERVER['REQUEST_URI'], '?');
+    $_canonical = rtrim($_canonical, '/');
+    ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($_canonical); ?>">
     <?php echo SEO::generateNewsKeywords(['Belle Meade Country Club', 'Nashville golf', 'Donald Ross', 'private club', 'Tennessee golf', 'historic golf']); ?>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
