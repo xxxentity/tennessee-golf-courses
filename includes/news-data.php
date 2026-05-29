@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Sami Valimaki Wins 2025 RSM Classic, Becomes First Finn to Win on PGA Tour',
+        'slug' => 'rsm-classic-2025-recap',
+        'date' => '2025-11-23',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Sami Valimaki closes with a 4-under 66 to win the 2025 RSM Classic at Sea Island by one shot, becoming the first player from Finland to win on the PGA Tour in the final event of the FedExCup Fall.',
+        'image' => '/images/news/rsm-classic-2025/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Adam Schenk Wins 2025 Butterfield Bermuda Championship in His 243rd Start',
         'slug' => 'bermuda-championship-2025-recap',
         'date' => '2025-11-16',
