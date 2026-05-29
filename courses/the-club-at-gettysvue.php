@@ -1,17 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
+$course_slug = 'the-club-at-gettysvue';
+$course_name = 'The Club at Gettysvue';
 
-// Course data for SEO
 $course_data = [
     'name' => 'The Club at Gettysvue',
     'location' => 'Knoxville, TN',
@@ -25,56 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-$course_slug = 'the-club-at-gettysvue';
-$course_name = 'The Club at Gettysvue';
-
-// Check if user is logged in
-$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    $rating = (int)$_POST['rating'];
-    $comment_text = trim($_POST['comment_text']);
-    $user_id = $_SESSION['user_id'];
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            $success_message = "Your review has been posted successfully!";
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-    } else {
-        $error_message = "Please provide a valid rating and comment.";
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -406,13 +352,7 @@ try {
             padding: 4rem 0;
         }
         
-        .comment-form-container {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
+        
         
         .comment-form-container h3 {
             color: #2c5234;
@@ -477,20 +417,9 @@ try {
             background: #2c5234;
         }
         
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
         
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        
+        
         
         .comment-card {
             background: #f8f9fa;
@@ -526,23 +455,11 @@ try {
             line-height: 1.6;
         }
         
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
         
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
         
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
+        
+        
+        
         
         /* Modal Styles */
         .modal {

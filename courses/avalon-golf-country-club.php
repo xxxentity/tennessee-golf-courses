@@ -1,17 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
+$course_slug = 'avalon-golf-country-club';
+$course_name = 'Avalon Golf & Country Club';
 
-// Course data for SEO
 $course_data = [
     'name' => 'Avalon Golf & Country Club',
     'location' => 'Lenoir City, TN',
@@ -25,136 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-$course_slug = 'avalon-golf-country-club';
-$course_name = 'Avalon Golf & Country Club';
-
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Check for success message from redirect
-if (isset($_GET['success']) && $_GET['success'] == '1') {
-    $success_message = "Your review has been posted successfully!";
-}
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = floatval($_POST['rating']);
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = $_SESSION['user_id'];
-        
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                // Redirect to prevent duplicate submission on refresh (PRG pattern)
-                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
-                exit;
-            } catch (PDOException $e) {
-                $error_message = "Error posting review. Please try again.";
-            }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
-
-// Get existing comments with replies (graceful handling if parent_comment_id column doesn't exist)
-try {
-    // First try with parent_comment_id filter
-    try {
-        $stmt = $pdo->prepare("
-            SELECT cc.*, u.username 
-            FROM course_comments cc 
-            JOIN users u ON cc.user_id = u.id 
-            WHERE cc.course_slug = ? AND (cc.parent_comment_id IS NULL OR cc.parent_comment_id = 0)
-            ORDER BY cc.created_at DESC
-            LIMIT 5
-        ");
-        $stmt->execute([$course_slug]);
-        $comments = $stmt->fetchAll();
-        
-        // Fetch latest reply and reply count for each comment
-        foreach ($comments as &$comment) {
-            // Get total reply count
-            $stmt = $pdo->prepare("SELECT COUNT(*) as reply_count FROM course_comments WHERE parent_comment_id = ?");
-            $stmt->execute([$comment['id']]);
-            $comment['reply_count'] = $stmt->fetch()['reply_count'];
-            
-            // Get latest reply only
-            $stmt = $pdo->prepare("
-                SELECT cc.*, u.username 
-                FROM course_comments cc 
-                JOIN users u ON cc.user_id = u.id 
-                WHERE cc.parent_comment_id = ?
-                ORDER BY cc.created_at DESC
-                LIMIT 1
-            ");
-            $stmt->execute([$comment['id']]);
-            $latest_reply = $stmt->fetch();
-            $comment['replies'] = $latest_reply ? [$latest_reply] : [];
-        }
-    } catch (PDOException $e) {
-        // Fallback: parent_comment_id column doesn't exist yet, get all comments
-        $stmt = $pdo->prepare("
-            SELECT cc.*, u.username 
-            FROM course_comments cc 
-            JOIN users u ON cc.user_id = u.id 
-            WHERE cc.course_slug = ?
-            ORDER BY cc.created_at DESC
-            LIMIT 5
-        ");
-        $stmt->execute([$course_slug]);
-        $comments = $stmt->fetchAll();
-        
-        // No replies yet since column doesn't exist
-        foreach ($comments as &$comment) {
-            $comment['replies'] = [];
-            $comment['reply_count'] = 0;
-        }
-    }
-    
-    // Calculate average rating (graceful handling if parent_comment_id column doesn't exist)
-    $column_exists = false;
-    try {
-        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND (parent_comment_id IS NULL OR parent_comment_id = 0) AND rating IS NOT NULL");
-        $stmt->execute([$course_slug]);
-        $rating_data = $stmt->fetch();
-        $column_exists = true;
-    } catch (PDOException $e) {
-        // Fallback: parent_comment_id column doesn't exist yet
-        $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND rating IS NOT NULL");
-        $stmt->execute([$course_slug]);
-        $rating_data = $stmt->fetch();
-    }
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-    // Debug: Add HTML comment to see which query was used
-    $debug_info = "<!-- Debug: parent_comment_id column " . ($column_exists ? "EXISTS" : "DOES NOT EXIST") . ", review count: $total_reviews -->";
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -629,14 +495,6 @@ try {
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section -->
-    <?php 
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php'; 
-    ?>
-
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
         <div class="modal-content">

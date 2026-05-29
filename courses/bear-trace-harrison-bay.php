@@ -1,10 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Course data for SEO
+$course_slug = 'bear-trace-harrison-bay';
+$course_name = 'Bear Trace at Harrison Bay';
+
 $course_data = [
     'name' => 'Bear Trace at Harrison Bay',
     'location' => 'Harrison, TN',
@@ -18,58 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-
-$course_slug = 'bear-trace-harrison-bay';
-$course_name = 'Bear Trace at Harrison Bay';
-
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = (float)$_POST['rating'];
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-    
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
-                exit;
-            } catch (PDOException $e) {
-                $error_message = "Error posting review. Please try again.";
-            }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -399,38 +350,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         
         /* Review system styles are now in the centralized include file */
         
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
         
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #999;
-        }
         
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
         
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
         
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
+        
+        
+        
+        
+        
         
         /* Responsive Design for Course Info Grid */
         @media (max-width: 1024px) {
@@ -465,33 +393,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         <div class="course-hero-content">
             <h1>Bear Trace at Harrison Bay</h1>
             <p>Jack Nicklaus Signature Design • Harrison, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
             </div>
-        </div>
     </section>
 
     <!-- Course Details -->
@@ -722,14 +624,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section -->
-    <?php 
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php'; 
-    ?>
-
     <!-- Booking Section -->
     <section class="booking-section">
         <div class="container">
@@ -832,65 +726,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Bear Trace
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('bear-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
             }
         });
     </script>

@@ -1,22 +1,12 @@
 <?php
 // Include session security and database
-require_once 'includes/session-security.php';
 require_once 'includes/seo.php';
 require_once 'config/database.php';
 
 // Set up SEO for events page
 SEO::setupEventsPage();
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - continue as guest
-}
-
 // Check if user is logged in
-$is_logged_in = SecureSession::isLoggedIn();
-
 // Professional tournaments (Major tournaments)
 $professional_tournaments = [
     // LIV Golf 2025 Season

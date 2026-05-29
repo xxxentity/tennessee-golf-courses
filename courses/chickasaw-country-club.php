@@ -1,10 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Course data for SEO
+$course_slug = 'chickasaw-country-club';
+$course_name = 'Chickasaw Country Club';
+
 $course_data = [
     'name' => 'Chickasaw Country Club',
     'location' => 'Memphis, TN',
@@ -18,63 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-$course_slug = 'chickasaw-country-club';
-$course_name = 'Chickasaw Country Club';
-
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-
-// Check for success message from redirect
-if (isset($_GET['success']) && $_GET['success'] == '1') {
-    $success_message = "Your review has been posted successfully!";
-}
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = floatval($_POST['rating']);
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-        
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                // Redirect to prevent duplicate submission on refresh (PRG pattern)
-                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
-                exit;
-            } catch (PDOException $e) {
-                $error_message = "Error posting review. Please try again.";
-            }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -444,15 +390,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             margin-bottom: 1rem;
         }
         
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            margin: 0 auto;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        
         
         .login-btn {
             display: inline-block;
@@ -534,33 +472,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         <div class="course-hero-content">
             <h1>Chickasaw Country Club</h1>
             <p>William Langford Design • Memphis, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
             </div>
-        </div>
     </section>
 
     <!-- Course Details -->
@@ -765,14 +677,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section -->
-    <?php 
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php'; 
-    ?>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

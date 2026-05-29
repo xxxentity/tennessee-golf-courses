@@ -1,10 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Course data for SEO
+$course_slug = 'eagles-landing-golf-club';
+$course_name = 'Eagle\'s Landing Golf Club';
+
 $course_data = [
     'name' => 'Eagle\'s Landing Golf Club',
     'location' => 'Sevierville, TN',
@@ -18,74 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-$course_slug = 'eagles-landing-golf-club';
-$course_name = 'Eagle\'s Landing Golf Club';
-
-// Check if user is logged in using secure session
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle review submission via centralized system
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && SecureSession::isLoggedIn()) {
-    if (CSRFProtection::validateToken($_POST['csrf_token'] ?? '')) {
-        $rating = floatval($_POST['rating']);
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-        
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                // PRG pattern - redirect to prevent duplicate submissions
-                header('Location: ' . $_SERVER['REQUEST_URI'] . '?success=1');
-                exit;
-            } catch (PDOException $e) {
-                $error_message = "Error posting review. Please try again.";
-            }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    } else {
-        $error_message = "Invalid form submission. Please try again.";
-    }
-}
-
-// Check for success message from redirect
-if (isset($_GET['success'])) {
-    $success_message = "Your review has been posted successfully!";
-}
-
-// Get existing comments with proper filtering
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? AND cc.parent_comment_id IS NULL 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating with proper filtering
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -937,8 +872,6 @@ try {
     </section>
 
     <!-- Reviews Section - Centralized System -->
-    <?php include '../includes/course-reviews-fixed.php'; ?>
-    
     <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
@@ -1049,83 +982,6 @@ try {
             if (event.key === 'Escape') {
                 closeGallery();
             }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Eagle's Landing
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('eagles-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
-        
-        // Course Closure Modal functionality
-        function closeModal() {
-            document.getElementById('closureModal').style.display = 'none';
-        }
-        
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('closureModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-        
-        // Show modal on page load
-        window.addEventListener('load', function() {
-            document.getElementById('closureModal').style.display = 'flex';
         });
     </script>
 </body>

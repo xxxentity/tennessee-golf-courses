@@ -1,10 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Course data for SEO
+$course_slug = 'cedar-crest-golf-club';
+$course_name = 'Cedar Crest Golf Club';
+
 $course_data = [
     'name' => 'Cedar Crest Golf Club',
     'location' => 'Murfreesboro, TN',
@@ -18,63 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-$course_slug = 'cedar-crest-golf-club';
-$course_name = 'Cedar Crest Golf Club';
-
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-
-// Check for success message from redirect
-if (isset($_GET['success']) && $_GET['success'] == '1') {
-    $success_message = "Your review has been posted successfully!";
-}
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = floatval($_POST['rating']);
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-        
-        if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-                $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-                // Redirect to prevent duplicate submission on refresh (PRG pattern)
-                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
-                exit;
-            } catch (PDOException $e) {
-                $error_message = "Error posting review. Please try again.";
-            }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -418,19 +364,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             background: #1a3020;
         }
         
-        .login-prompt {
-            text-align: center;
-            padding: 2rem;
-            background: #e3f2fd;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-        }
         
-        .login-prompt a {
-            color: #2c5234;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        
+        
         
         .comments-list {
             space-y: 2rem;
@@ -470,23 +406,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             line-height: 1.6;
         }
         
-        .alert {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
         
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
         
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
+        
+        
+        
         
         .photo-gallery {
             margin: 4rem 0;
@@ -633,33 +557,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
         <div class="course-hero-content">
             <h1>Cedar Crest Golf Club</h1>
             <p>John Floyd Design • Murfreesboro, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
             </div>
-        </div>
     </section>
 
     <!-- Course Details -->
@@ -878,14 +776,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section -->
-    <?php 
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php'; 
-    ?>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -935,162 +825,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
     </footer>
 
     <script src="/script.js?v=5"></script>
-    <script>
-        // Interactive star rating functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
-            }
-        });
-
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Cedar Crest Golf Club';
-                const location = 'Murfreesboro, TN';
-                const locationShort = 'Murfreesboro TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/cedar-crest-golf-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/cedar-crest-golf-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });
-    </script>
 </body>
 </html>

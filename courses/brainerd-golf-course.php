@@ -1,10 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Course data for SEO
+$course_slug = 'brainerd-golf-course';
+$course_name = 'Brainerd Golf Course';
+
 $course_data = [
     'name' => 'Brainerd Golf Course',
     'location' => 'Chattanooga, TN',
@@ -18,88 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
-
-$course_slug = 'brainerd-golf-course';
-$course_name = 'Brainerd Golf Course';
-
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-
-// Check for success message from redirect
-if (isset($_GET['success']) && $_GET['success'] == '1') {
-    $success_message = "Your review has been posted successfully!";
-}
-$is_logged_in = SecureSession::isLoggedIn();
-
-// Handle comment submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $is_logged_in) {
-    // Validate CSRF token
-    $csrf_token = $_POST['csrf_token'] ?? '';
-    if (!CSRFProtection::validateToken($csrf_token)) {
-        $error_message = 'Security token expired or invalid. Please refresh the page and try again.';
-    } else {
-        $rating = floatval($_POST['rating']);
-        $comment_text = trim($_POST['comment_text']);
-        $user_id = SecureSession::get('user_id');
-    
-    if ($rating >= 1 && $rating <= 5 && !empty($comment_text)) {
-        try {
-            $stmt = $pdo->prepare("INSERT INTO course_comments (user_id, course_slug, course_name, rating, comment_text) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$user_id, $course_slug, $course_name, $rating, $comment_text]);
-            // Redirect to prevent duplicate submission on refresh (PRG pattern)
-                header("Location: " . $_SERVER['REQUEST_URI'] . "?success=1");
-                exit;
-        } catch (PDOException $e) {
-            $error_message = "Error posting review. Please try again.";
-        }
-        } else {
-            $error_message = "Please provide a valid rating and comment.";
-        }
-    }
-}
-
-// Get existing comments
-try {
-    $stmt = $pdo->prepare("
-        SELECT cc.*, u.username 
-        FROM course_comments cc 
-        JOIN users u ON cc.user_id = u.id 
-        WHERE cc.course_slug = ? 
-        ORDER BY cc.created_at DESC
-    ");
-    $stmt->execute([$course_slug]);
-    $comments = $stmt->fetchAll();
-    
-    // Calculate average rating
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ?");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-    
-} catch (PDOException $e) {
-    $comments = [];
-    $avg_rating = null;
-    $total_reviews = 0;
-}
 ?>
 
 <!DOCTYPE html>
@@ -439,138 +360,7 @@ try {
             color: #2c5234;
         }
         
-        /* Comment System Styles */
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
         
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #999;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #1e3f26;
-            transform: translateY(-1px);
-        }
-        
-        .login-prompt {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #999;
-        }
-        
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
         
         /* Responsive Design for Course Info Grid */
         @media (max-width: 1024px) {
@@ -605,33 +395,7 @@ try {
         <div class="course-hero-content">
             <h1>Brainerd Golf Course</h1>
             <p>Donald Ross Design • Chattanooga, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
             </div>
-        </div>
     </section>
 
     <!-- Course Details -->
@@ -878,14 +642,6 @@ try {
             </div>
         </div>
     </section>
-
-    <!-- Reviews Section -->
-    <?php 
-    // Variables needed for the centralized review system
-    // $course_slug and $course_name are already set at the top of this file
-    include '../includes/course-reviews-fixed.php'; 
-    ?>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1031,65 +787,6 @@ try {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeGallery();
-            }
-        });
-    </script>
-    <script>
-        // Interactive star rating functionality for Brainerd Golf Course
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingContainer = document.getElementById('brainerd-rating-stars');
-            if (ratingContainer) {
-                const stars = ratingContainer.querySelectorAll('label');
-                const radioInputs = ratingContainer.querySelectorAll('input[type="radio"]');
-                
-                // Handle star hover
-                stars.forEach((star, index) => {
-                    star.addEventListener('mouseenter', function() {
-                        highlightStars(index + 1);
-                    });
-                    
-                    star.addEventListener('click', function() {
-                        const rating = parseInt(star.getAttribute('data-rating'));
-                        radioInputs[rating - 1].checked = true;
-                        setActiveStars(rating);
-                    });
-                });
-                
-                // Handle container mouse leave
-                ratingContainer.addEventListener('mouseleave', function() {
-                    const checkedInput = ratingContainer.querySelector('input[type="radio"]:checked');
-                    if (checkedInput) {
-                        setActiveStars(parseInt(checkedInput.value));
-                    } else {
-                        clearStars();
-                    }
-                });
-                
-                function highlightStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function setActiveStars(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
-                }
-                
-                function clearStars() {
-                    stars.forEach(star => {
-                        star.classList.remove('active');
-                    });
-                }
             }
         });
     </script>

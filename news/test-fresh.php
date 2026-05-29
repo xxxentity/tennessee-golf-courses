@@ -1,6 +1,5 @@
 <?php
 require_once '../includes/init.php';
-require_once '../includes/profile-helpers.php';
 require_once '../includes/seo.php';
 
 $article_data = [

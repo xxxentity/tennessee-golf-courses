@@ -1,17 +1,13 @@
 <?php
-require_once '../includes/session-security.php';
+require_once '../includes/performance.php';
 require_once '../config/database.php';
-require_once '../includes/csrf.php';
 require_once '../includes/seo.php';
+Performance::start();
+Performance::enableCompression();
 
-// Start secure session
-try {
-    SecureSession::start();
-} catch (Exception $e) {
-    // Session expired or invalid - user not logged in
-}
+$course_slug = 'moccasin-bend-golf-course';
+$course_name = 'Moccasin Bend Golf Course';
 
-// Course data for SEO
 $course_data = [
     'name' => 'Moccasin Bend Golf Course',
     'location' => 'Chattanooga, TN',
@@ -25,25 +21,6 @@ $course_data = [
 ];
 
 SEO::setupCoursePage($course_data);
-
-$course_slug = 'moccasin-bend-golf-course';
-$course_name = 'Moccasin Bend Golf Course';
-
-// Check if user is logged in
-// Calculate rating data for header display
-try {
-    $stmt = $pdo->prepare("SELECT AVG(rating) as avg_rating, COUNT(*) as total_reviews FROM course_comments WHERE course_slug = ? AND parent_comment_id IS NULL AND rating IS NOT NULL");
-    $stmt->execute([$course_slug]);
-    $rating_data = $stmt->fetch();
-    $avg_rating = $rating_data['avg_rating'] ? round($rating_data['avg_rating'], 1) : null;
-    $total_reviews = $rating_data['total_reviews'] ?: 0;
-} catch (PDOException $e) {
-    $avg_rating = null;
-    $total_reviews = 0;
-}
-
-// Check if user is logged in using secure session
-$is_logged_in = SecureSession::isLoggedIn();
 ?>
 
 <!DOCTYPE html>
@@ -383,138 +360,7 @@ $is_logged_in = SecureSession::isLoggedIn();
             color: #2c5234;
         }
         
-        /* Comment System Styles */
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
         
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #999;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #1e3f26;
-            transform: translateY(-1px);
-        }
-        
-        .login-prompt {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #999;
-        }
-        
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
         
         /* Responsive Design for Course Info Grid */
         @media (max-width: 1024px) {
@@ -549,16 +395,7 @@ $is_logged_in = SecureSession::isLoggedIn();
         <div class="course-hero-content">
             <h1>Moccasin Bend Golf Course</h1>
             <p>John LaFoy Design • Chattanooga, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating): ?>
-                    <div style="display: flex; align-items: center; gap: 5px;">
-                        <span style="color: #ffd700; font-size: 1.2rem;">★</span>
-                        <span style="font-weight: 600;"><?php echo $avg_rating; ?></span>
-                        <span>(<?php echo $total_reviews; ?> reviews)</span>
-                    </div>
-                <?php endif; ?>
             </div>
-        </div>
     </section>
 
     <!-- Course Details -->
