@@ -312,6 +312,24 @@ RewriteRule ^api/v1/user/?$ api/v1/user.php [L]
 RewriteRule ^api/v1/newsletter/?$ api/v1/newsletter.php [L]
 RewriteRule ^api/login-status/?$ api/login-status.php [L]
 
+# General catch-all for news articles (handles any /news/slug URL automatically)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/news/%1.php -f
+RewriteRule ^news/([^/]+)/?$ news/$1.php [L]
+
+# General catch-all for review articles
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/reviews/%1.php -f
+RewriteRule ^reviews/([^/]+)/?$ reviews/$1.php [L]
+
+# General catch-all for course pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/courses/%1.php -f
+RewriteRule ^courses/([^/]+)/?$ courses/$1.php [L]
+
 # General clean URL rewriting (internal) - exclude submit-course.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
