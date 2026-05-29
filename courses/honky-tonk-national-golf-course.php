@@ -261,6 +261,23 @@ SEO::setupCoursePage($course_data);
             transform: scale(1.05);
         }
     </style>
+    <script type="application/ld+json">
+    <?php echo json_encode(array_filter([
+        '@context' => 'https://schema.org',
+        '@type' => 'GolfCourse',
+        'name' => $course_data['name'] ?? '',
+        'url' => 'https://tennesseegolfcourses.com/courses/' . ($course_slug ?? ''),
+        'description' => $course_data['description'] ?? '',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'addressRegion' => 'TN',
+            'addressCountry' => 'US'
+        ],
+        'sport' => 'Golf',
+        'numberOfHoles' => $course_data['holes'] ?? null,
+    ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
+    </script>
 </head>
 <body>
     <!-- Dynamic Navigation -->
