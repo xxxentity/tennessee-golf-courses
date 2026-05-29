@@ -3,10 +3,20 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Chris Gotterup Wins 2026 Sony Open, Claims Third Straight Year With a PGA Tour Title',
+        'slug' => 'sony-open-2026-recap',
+        'date' => '2026-01-18',
+        'time' => '8:23 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Chris Gotterup closes with a 6-under 64 to win the 2026 Sony Open at Waialae Country Club, capitalizing on a Davis Riley collapse to claim his third PGA Tour victory and open the 2026 season in style.',
+        'image' => '/images/news/sony-open-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Hideki Matsuyama Wins 2025 Hero World Challenge in Playoff Thriller Over Alex Noren',
         'slug' => 'hero-world-challenge-2025-recap',
         'date' => '2025-12-07',
-        'time' => '8:00 PM',
+        'time' => '7:42 PM',
         'category' => 'Tournament Recap',
         'excerpt' => 'Hideki Matsuyama closes with a bogey-free 64 and beats Alex Noren in a playoff at the 2025 Hero World Challenge at Albany Golf Club in the Bahamas, bookending his year with two victories.',
         'image' => '/images/news/hero-world-challenge-2025/main.webp',
@@ -16,7 +26,7 @@ $articles_raw = [
         'title' => 'Sami Valimaki Wins 2025 RSM Classic, Becomes First Finn to Win on PGA Tour',
         'slug' => 'rsm-classic-2025-recap',
         'date' => '2025-11-23',
-        'time' => '8:00 PM',
+        'time' => '8:17 PM',
         'category' => 'Tournament Recap',
         'excerpt' => 'Sami Valimaki closes with a 4-under 66 to win the 2025 RSM Classic at Sea Island by one shot, becoming the first player from Finland to win on the PGA Tour in the final event of the FedExCup Fall.',
         'image' => '/images/news/rsm-classic-2025/main.webp',
@@ -26,7 +36,7 @@ $articles_raw = [
         'title' => 'Adam Schenk Wins 2025 Butterfield Bermuda Championship in His 243rd Start',
         'slug' => 'bermuda-championship-2025-recap',
         'date' => '2025-11-16',
-        'time' => '8:00 PM',
+        'time' => '9:04 PM',
         'category' => 'Tournament Recap',
         'excerpt' => 'Adam Schenk claims his first PGA Tour victory at the 2025 Butterfield Bermuda Championship at Port Royal Golf Course, surviving 30 mph winds and a one-shot final round to hold off Chandler Phillips at 12-under par.',
         'image' => '/images/news/bermuda-championship-2025/main.webp',
@@ -36,7 +46,7 @@ $articles_raw = [
         'title' => 'Ben Griffin Sets Scoring Record at 2025 World Wide Technology Championship',
         'slug' => 'world-wide-technology-championship-2025-recap',
         'date' => '2025-11-09',
-        'time' => '8:00 PM',
+        'time' => '7:55 PM',
         'category' => 'Tournament Recap',
         'excerpt' => 'Ben Griffin fires a final-round 63 to win the 2025 World Wide Technology Championship at El Cardonal at Diamante, setting a tournament scoring record at 29-under par for his third PGA Tour victory of the season.',
         'image' => '/images/news/world-wide-technology-championship-2025/main.webp',
