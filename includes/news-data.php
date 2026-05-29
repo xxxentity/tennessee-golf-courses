@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Tennessee Vols Golf Signs No. 1-Ranked Junior in the World, Lands Third-Best Recruiting Class',
+        'slug' => 'ut-vols-golf-2026-recruiting',
+        'date' => '2025-11-12',
+        'time' => '3:45 PM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Tennessee men\'s golf coach Brennan Webb announces the signings of Tyler Watts and Pennson Badgett, giving the Vols the third-ranked recruiting class in the country with the top-ranked junior golfer in the world.',
+        'image' => '/images/news/ut-vols-golf-2026-recruiting/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Mike Eller and Bob Wolcott Named 2026 Tennessee Golf Hall of Fame Inductees',
         'slug' => 'tennessee-golf-hall-of-fame-2026',
         'date' => '2025-10-17',
