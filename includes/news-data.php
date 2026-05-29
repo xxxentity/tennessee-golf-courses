@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Collin Morikawa Birdies 72nd Hole to Win 2026 AT&T Pebble Beach Pro-Am',
+        'slug' => 'att-pebble-beach-2026-recap',
+        'date' => '2026-02-15',
+        'time' => '7:29 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Collin Morikawa hits a stunning 4-iron from 235 yards to set up a winning birdie on the 72nd hole, edging Sepp Straka and Min Woo Lee by one shot at the 2026 AT&T Pebble Beach Pro-Am for his seventh career title.',
+        'image' => '/images/news/att-pebble-beach-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Chris Gotterup Wins 2026 WM Phoenix Open in Wild Playoff Over Hideki Matsuyama',
         'slug' => 'wm-phoenix-open-2026-recap',
         'date' => '2026-02-08',
