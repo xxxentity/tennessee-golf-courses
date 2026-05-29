@@ -352,11 +352,6 @@ try {
                     <div class="stat-label">Golf Courses</div>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-star"></i>
-                    <div class="stat-number"><?php echo number_format($total_comments); ?>+</div>
-                    <div class="stat-label">Reviews</div>
-                </div>
-                <div class="stat-item">
                     <i class="fas fa-trophy"></i>
                     <div class="stat-number"><?php echo $total_tournaments; ?>+</div>
                     <div class="stat-label">Tournaments</div>
