@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Nashville\'s Blades Brown Earns PGA Tour Membership at 19 After Historic Run of Results',
+        'slug' => 'blades-brown-pga-tour-2026',
+        'date' => '2026-05-25',
+        'time' => '10:14 AM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Blades Brown, the 19-year-old Nashville native who broke Bobby Jones\' U.S. Amateur record at 16, earns PGA Tour Special Temporary Membership at the CJ Cup Byron Nelson after a course-record 60 at the American Express and a near-win at the Puerto Rico Open.',
+        'image' => '/images/news/blades-brown-pga-tour-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Tennessee Vols Golf Signs No. 1-Ranked Junior in the World, Lands Third-Best Recruiting Class',
         'slug' => 'ut-vols-golf-2026-recruiting',
         'date' => '2025-11-12',
