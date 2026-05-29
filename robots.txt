@@ -44,8 +44,10 @@ Disallow: /auth/refresh-csrf-token.php
 Disallow: /*?search=*
 Disallow: /*?debug=*
 Disallow: /*?page=*
+Disallow: /*/?page=*
 Disallow: /*?error=*
 Disallow: /*?t=*
+Disallow: /*?region=*
 Disallow: /courses/load-more-reviews
 
 # Disallow utility files
