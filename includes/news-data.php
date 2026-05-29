@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Anthony Kim Wins LIV Golf Adelaide 2026 in One of Golf\'s Greatest Comebacks',
+        'slug' => 'liv-golf-adelaide-2026-recap',
+        'date' => '2026-02-15',
+        'time' => '9:22 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Anthony Kim shoots a final-round 63 to overcome a five-shot deficit and win LIV Golf Adelaide 2026 — his first victory in nearly 16 years — in one of the most emotional wins professional golf has ever seen.',
+        'image' => '/images/news/liv-golf-adelaide-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Elvis Smylie Wins LIV Golf Riyadh 2026 in Stunning Debut, Holds Off Jon Rahm',
         'slug' => 'liv-golf-riyadh-2026-recap',
         'date' => '2026-02-07',
