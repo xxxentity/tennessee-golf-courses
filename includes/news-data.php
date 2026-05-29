@@ -13,6 +13,16 @@ $articles_raw = [
         'featured' => true
     ],
     [
+        'title' => 'The Honors Course to Host 2026 U.S. Women\'s Amateur This August',
+        'slug' => 'honors-course-us-womens-amateur-2026',
+        'date' => '2026-01-04',
+        'time' => '11:00 AM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'The Honors Course in Ooltewah, Tennessee will host the 126th U.S. Women\'s Amateur Championship from August 4-9, 2026 — the seventh USGA championship at Pete Dye\'s private masterpiece near Chattanooga, and the first U.S. Women\'s Amateur ever held in Tennessee.',
+        'image' => '/images/news/honors-course-us-womens-amateur-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Tennessee Vols Golf Signs No. 1-Ranked Junior in the World, Lands Third-Best Recruiting Class',
         'slug' => 'ut-vols-golf-2026-recruiting',
         'date' => '2025-11-12',
