@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Matt Fitzpatrick Beats Scheffler in Playoff to Win 2026 RBC Heritage for Second Time',
+        'slug' => 'rbc-heritage-2026-recap',
+        'date' => '2026-04-19',
+        'time' => '7:54 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Matt Fitzpatrick hits a stunning 4-iron to 13 feet and makes birdie to beat Scottie Scheffler in a playoff at the 2026 RBC Heritage at Harbour Town Golf Links, claiming his second title at Hilton Head and second win of the season.',
+        'image' => '/images/news/rbc-heritage-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Rory McIlroy Wins Back-to-Back Masters, Joins Nicklaus, Faldo and Woods in History',
         'slug' => 'masters-2026-recap',
         'date' => '2026-04-12',
