@@ -44,6 +44,9 @@ Disallow: /auth/refresh-csrf-token.php
 Disallow: /*?search=*
 Disallow: /*?debug=*
 Disallow: /*?page=*
+Disallow: /*?error=*
+Disallow: /*?t=*
+Disallow: /courses/load-more-reviews
 
 # Disallow utility files
 # Disallow: *.php$ - REMOVED: This was blocking all PHP files from indexing
@@ -53,6 +56,8 @@ Disallow: /forgot-password
 Disallow: /forgot-password.php
 Disallow: /reset-password
 Disallow: /reset-password.php
+Disallow: /password-reset
+Disallow: /password-reset.php
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
