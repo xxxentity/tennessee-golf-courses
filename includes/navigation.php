@@ -61,6 +61,7 @@ $is_main_page = (
         <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/courses" class="nav-link">Courses</a></li>
+            <li><a href="/maps" class="nav-link">Maps</a></li>
             <li class="nav-dropdown">
                 <a href="/reviews" class="nav-link dropdown-toggle">
                     Media <i class="fas fa-chevron-down"></i>
