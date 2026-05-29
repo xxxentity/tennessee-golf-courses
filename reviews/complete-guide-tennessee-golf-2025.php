@@ -442,7 +442,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                         <p><strong>Featured Courses:</strong></p>
                         <ul>
                             <li><a href="/courses/island-pointe-golf-club">Island Pointe Golf Club</a> - Arthur Hills' links-style design challenges golfers with a 146 slope rating</li>
-                            <li><a href="/courses/wild-laurel">Wild Laurel Golf Course</a> - Nestled in a Smoky Mountain valley, this Audubon-certified layout offers pristine conditions</li>
+                            <li>Wild Laurel Golf Course - Nestled in a Smoky Mountain valley, this Audubon-certified layout offers pristine conditions</li>
                             <li><a href="/courses/windriver-golf-club">The Golf Club at WindRiver</a> - Bob Cupp's design overlooks Tellico Lake with mountain backdrops</li>
                             <li><a href="/courses/three-ridges-golf-course">Three Ridges Golf Course</a> - Knox County's premier public facility set against the Smokies</li>
                         </ul>
@@ -506,7 +506,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <div class="region-highlight">
                         <h3><i class="fas fa-mountain-sun"></i> Fairfield Glade - Golf Capital of Tennessee</h3>
-                        <p><a href="/courses/fairfield-glade">Fairfield Glade</a> on the Cumberland Plateau encompasses 12,700 acres and five championship golf courses, earning its designation as "The Golf Capital of Tennessee." The community features designs by renowned architects including Jack Nicklaus, Joe Lee, and Gary Roger Baird.</p>
+                        <p>Fairfield Glade on the Cumberland Plateau encompasses 12,700 acres and five championship golf courses, earning its designation as "The Golf Capital of Tennessee." The community features designs by renowned architects including Jack Nicklaus, Joe Lee, and Gary Roger Baird.</p>
                         
                         <p>The crown jewel, <a href="/courses/stonehenge-golf-club">Stonehenge Golf Club</a>, consistently ranks among Tennessee's top public courses. The resort offers complete golf packages, luxury accommodations, and year-round activities beyond golf.</p>
                     </div>
@@ -612,7 +612,7 @@ $article_title = 'The Complete Guide to Tennessee Golf 2025: Best Courses, Hidde
                     
                     <div class="course-grid">
                         <div class="course-card">
-                            <h4><a href="/courses/course-sewanee">The Course at Sewanee</a></h4>
+                            <h4>The Course at Sewanee</h4>
                             <div class="location">Sewanee, TN</div>
                             <p>Gil Hanse's renovation of this University of the South nine-hole layout created one of golf's most talked-about short courses, featuring strategic options and mountain views.</p>
                         </div>
