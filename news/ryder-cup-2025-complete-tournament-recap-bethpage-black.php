@@ -16,7 +16,7 @@ include '../includes/header.php';
 
         <div class="article-meta">
             <div class="author-info">
-                <img src="/images/authors/cole-harrington.jpg" alt="Cole Harrington" class="author-avatar">
+                <img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" class="author-avatar">
                 <div class="author-details">
                     <span class="author-name"><a href="/authors/cole-harrington" class="author-link">Cole Harrington</a></span>
                     <span class="publish-date">September 29, 2025 • 10:10 PM</span>
@@ -174,10 +174,13 @@ include '../includes/header.php';
             <a href="/tag/professional-golf" class="tag-link">Professional Golf</a>
         </div>
 
-        <div class="share-buttons">
-            <strong>Share:</strong>
-            <a href="https://twitter.com/intent/tweet?text=Ryder Cup 2025: Complete Tournament Recap - Europe Defeats USA 15-13 at Bethpage Black&url=https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black" target="_blank" class="share-twitter">Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black" target="_blank" class="share-facebook">Facebook</a>
+        <div class="share-section">
+            <p class="share-title">Share This Article</p>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black" target="_blank" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet?text=Ryder Cup 2025: Complete Tournament Recap&url=https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black" target="_blank" class="share-btn twitter"><strong>𝕏</strong> Share on X</a>
+                <a href="mailto:?subject=Ryder Cup 2025 Complete Recap&body=https://tennesseegolfcourses.com/news/ryder-cup-2025-complete-tournament-recap-bethpage-black" class="share-btn email"><i class="far fa-envelope"></i> Share via Email</a>
+            </div>
         </div>
     </div>
 </main>
