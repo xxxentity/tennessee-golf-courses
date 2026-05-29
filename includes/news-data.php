@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Hideki Matsuyama Wins 2025 Hero World Challenge in Playoff Thriller Over Alex Noren',
+        'slug' => 'hero-world-challenge-2025-recap',
+        'date' => '2025-12-07',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Hideki Matsuyama closes with a bogey-free 64 and beats Alex Noren in a playoff at the 2025 Hero World Challenge at Albany Golf Club in the Bahamas, bookending his year with two victories.',
+        'image' => '/images/news/hero-world-challenge-2025/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Sami Valimaki Wins 2025 RSM Classic, Becomes First Finn to Win on PGA Tour',
         'slug' => 'rsm-classic-2025-recap',
         'date' => '2025-11-23',
