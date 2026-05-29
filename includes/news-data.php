@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Jon Rahm Ends 539-Day Drought With Dominant Win at 2026 LIV Golf Hong Kong',
+        'slug' => 'liv-golf-hong-kong-2026-recap',
+        'date' => '2026-03-08',
+        'time' => '8:06 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Jon Rahm closes with an 8-birdie 64 to win HSBC LIV Golf Hong Kong by three shots over Thomas Detry, snapping a 539-day individual win drought after back-to-back runner-up finishes to open the 2026 LIV season.',
+        'image' => '/images/news/liv-golf-hong-kong-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Jacob Bridgeman Holds on at Riviera to Win 2026 Genesis Invitational for First PGA Tour Title',
         'slug' => 'genesis-invitational-2026-recap',
         'date' => '2026-02-22',
