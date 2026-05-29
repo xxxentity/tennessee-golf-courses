@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Jacob Bridgeman Holds on at Riviera to Win 2026 Genesis Invitational for First PGA Tour Title',
+        'slug' => 'genesis-invitational-2026-recap',
+        'date' => '2026-02-22',
+        'time' => '9:33 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Jacob Bridgeman survives a harrowing final round at Riviera Country Club, making a nervy 3-footer on 18 to hold off Rory McIlroy and Kurt Kitayama by one shot and claim his first PGA Tour victory at the 2026 Genesis Invitational.',
+        'image' => '/images/news/genesis-invitational-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Collin Morikawa Birdies 72nd Hole to Win 2026 AT&T Pebble Beach Pro-Am',
         'slug' => 'att-pebble-beach-2026-recap',
         'date' => '2026-02-15',
