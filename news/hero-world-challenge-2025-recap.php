@@ -72,7 +72,7 @@ include '../includes/header.php';
                     <tr>
                         <td class="pos">3</td>
                         <td>Sepp Straka</td>
-                        <td>&mdash;</td>
+                        <td>68 (-4)</td>
                         <td>-21 (267)</td>
                     </tr>
                     <tr>
