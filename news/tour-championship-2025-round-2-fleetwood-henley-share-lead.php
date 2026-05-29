@@ -1,561 +1,40 @@
 <?php
-require_once '../includes/init.php';
-require_once '../includes/seo.php';
-
-// Article data for SEO
-$article_data = [
-    'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
-    'description' => 'Tommy Fleetwood fires 63 while Russell Henley posts 66 to tie for the lead at 13-under at East Lake Golf Club. Cameron Young shoots low round of 62 to move into third place.',
-    'image' => '/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp',
-    'type' => 'article',
-    'author' => 'Cole Harrington',
-    'date' => '2025-08-22',
-    'category' => 'Tournament News'
-];
-
-SEO::setupArticlePage($article_data);
-
-$article_slug = 'tour-championship-2025-round-2-fleetwood-henley-share-lead';
-$article_title = 'Fleetwood and Henley Share Tour Championship Lead After Second Round';
-
-$article = [
-    'title' => 'Fleetwood and Henley Share Tour Championship Lead After Second Round',
-    'slug' => 'tour-championship-2025-round-2-fleetwood-henley-share-lead',
-    'date' => '2025-08-22',
-    'time' => '7:30 PM',
-    'category' => 'Tournament News',
-    'excerpt' => 'Tommy Fleetwood fires 63 while Russell Henley posts 66 to tie for the lead at 13-under at East Lake Golf Club. Cameron Young shoots low round of 62 to move into third place.',
-    'image' => '/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp',
-    'featured' => true,
-    'author' => 'Cole Harrington',
-    'read_time' => '4 min read'
-];
+$pageTitle = "Fleetwood and Henley Share Tour Championship Lead After Second Round";
+$pageDescription = "Tommy Fleetwood fires 63 while Russell Henley posts 66 to tie for the lead at 13-under at East Lake Golf Club. Cameron Young shoots low round of 62 to move into third place.";
+$pageKeywords = "Fleetwood and Henley Share Tour Championship Lead After Second Round, golf, Tennessee golf, PGA Tour, golf news";
+$ogImage = "https://tennesseegolfcourses.com/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp";
+include '../includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php echo SEO::generateMetaTags(); ?>
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <?php include '../includes/favicon.php'; ?>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VPNPCDTBP');
-    </script>
-    <style>
-        /* News Article Styles */
-        .news-article {
-            padding-top: 100px;
-            min-height: 100vh;
-            background: #f5f5f5;
-        }
+<main class="news-article">
+    <div class="article-header">
+        <div class="breadcrumb">
+            <a href="/">Home</a> &rsaquo; <a href="/news">Golf News</a> &rsaquo; Fleetwood and Henley Share Tour Championship Lead After Seco...
+        </div>
 
-        .news-article .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        <h1>Fleetwood and Henley Share Tour Championship Lead After Second Round</h1>
 
-        .back-to-news {
-            margin-bottom: 2rem;
-        }
-
-        .back-link {
-            color: #2e7d32;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #1b5e20;
-        }
-
-        .article-header {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .category-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .category-badge.tournament-news {
-            background-color: #2e7d32;
-            color: white;
-        }
-
-        .category-badge.tennessee-news {
-            background-color: #1565c0;
-            color: white;
-        }
-
-        .category-badge.equipment-news {
-            background-color: #f57c00;
-            color: white;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .meta-left {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .author {
-            font-weight: 500;
-            color: #333;
-        }
-
-        .separator {
-            color: #999;
-        }
-
-        .read-time {
-            color: #666;
-        }
-
-        .featured-image {
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .article-content {
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        .article-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-content .lead {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 2rem;
-        }
-
-        .article-content h2 {
-            font-size: 1.875rem;
-            color: #1a1a1a;
-            margin-top: 2.5rem;
-            margin-bottom: 1.25rem;
-            font-weight: 600;
-        }
-
-        .article-content h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .article-content blockquote {
-            border-left: 4px solid #2e7d32;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: #555;
-        }
-
-        .scoreboard {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .match-result {
-            margin-bottom: 1.5rem;
-        }
-
-        .match-result:last-child {
-            margin-bottom: 0;
-        }
-
-        .match-result h4 {
-            color: #2e7d32;
-            font-size: 1.125rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .results-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .results-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e0e0e0;
-            color: #555;
-        }
-
-        .results-list li:last-child {
-            border-bottom: none;
-        }
-
-        .article-footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .disclaimer {
-            font-size: 0.875rem;
-            color: #666;
-            font-style: italic;
-        }
-
-        .share-buttons {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: #f9f9f9;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .share-buttons h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .social-share {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-share a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .share-twitter {
-            background: #1DA1F2;
-            color: white;
-        }
-
-        .share-twitter:hover {
-            background: #0d8bd9;
-            transform: translateY(-2px);
-        }
-
-        .share-facebook {
-            background: #1877F2;
-            color: white;
-        }
-
-        .share-facebook:hover {
-            background: #0e63d9;
-            transform: translateY(-2px);
-        }
-
-        .share-linkedin {
-            background: #0077B5;
-            color: white;
-        }
-
-        .share-linkedin:hover {
-            background: #005885;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .news-article .container {
-                padding: 1rem;
-            }
-
-            .article-title {
-                font-size: 1.875rem;
-            }
-
-            .article-content {
-                font-size: 1rem;
-            }
-
-            .article-content .lead {
-                font-size: 1.125rem;
-            }
-
-            .social-share {
-                flex-direction: column;
-            }
-
-            .social-share a {
-                width: 100%;
-            }
-        }
-    </style>
-
-    
-    <style>
-        .article-page {
-            padding-top: 0px;
-            min-height: 100vh;
-            background: var(--bg-light);
-        }
-        
-        .article-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .article-header {
-            background: var(--bg-white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-medium);
-            margin-bottom: 2rem;
-        }
-        
-        .article-category {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
-        .article-title {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .article-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .article-featured-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            object-position: top;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-        }
-        
-        .article-content {
-            background: var(--bg-white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-light);
-            line-height: 1.8;
-        }
-        
-        .article-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-        
-        .article-content h2 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .article-content h3 {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin: 1.5rem 0 1rem 0;
-        }
-        
-        .article-content p {
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-        
-        .leaderboard-box {
-            background: var(--bg-light);
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-        }
-        
-        .leaderboard-box h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .scoreboard {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-        }
-        
-        .scoreboard h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .scoreboard-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .scoreboard-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background: white;
-            margin-bottom: 0.5rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .scoreboard-item:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .player-rank {
-            font-weight: 600;
-            color: var(--text-gray);
-            margin-right: 1rem;
-            min-width: 30px;
-        }
-        
-        .player-name {
-            flex: 1;
-            font-weight: 500;
-            color: var(--text-black);
-        }
-        
-        .player-score {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-left: 1rem;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Dynamic Navigation -->
-    <?php include '../includes/navigation.php'; ?>
-
-    <div class="article-page">
-        <div class="article-container">
-            <!-- Article Header -->
-            <div class="article-header">
-                <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
-                <h1 class="article-title"><?php echo htmlspecialchars($article['title']); ?></h1>
-                <div class="article-meta">
-                    <div class="article-meta-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span><?php echo date('F j, Y', strtotime($article['date'])); ?> • <?php echo $article['time']; ?></span>
-                    </div>
-                    <div class="article-meta-item">
-                        <a href="/profile/ColeH" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center;"><img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" style="width: 32px; height: 32px; border-radius: 50%; margin-right: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><span style="text-decoration: underline;">Cole Harrington</span></a>
-                    </div>
-                    <div class="article-meta-item">
-                        <i class="fas fa-clock"></i>
-                        <span><?php echo $article['read_time']; ?></span>
-                    </div>
+        <div class="article-meta">
+            <div class="author-info">
+                <img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" class="author-avatar">
+                <div class="author-details">
+                    <span class="author-name">Cole Harrington</span>
+                    <span class="publish-date">August 22, 2025</span>
                 </div>
-                <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" class="article-featured-image">
             </div>
+            <div class="article-tags">
+                <span class="tag">Tournament News</span>
+            </div>
+        </div>
+    </div>
 
-            <!-- Article Content -->
-            <div class="article-content">
-            <p><strong>ATLANTA, GA</strong> – Tommy Fleetwood and Russell Henley shared the lead at 13-under par after the second round of the 2025 Tour Championship at East Lake Golf Club on Thursday, setting up an exciting weekend battle for both the tournament title and the $25 million FedExCup prize.</p>
+    <div class="article-image">
+        <img src="/images/news/tour-championship-2025-round-2-fleetwood-henley-share-lead/main.webp" alt="Fleetwood and Henley Share Tour Championship Lead After Second Round" class="featured-image">
+        <p class="image-caption">Fleetwood and Henley Share Tour Championship Lead After Second Round</p>
+    </div>
+
+    <div class="article-content">
+        <p><strong>ATLANTA, GA</strong> – Tommy Fleetwood and Russell Henley shared the lead at 13-under par after the second round of the 2025 Tour Championship at East Lake Golf Club on Thursday, setting up an exciting weekend battle for both the tournament title and the $25 million FedExCup prize.</p>
 
             <p>Fleetwood, still seeking his maiden PGA Tour victory, fired a bogey-free 7-under 63 in the second round, featuring eight birdies including back-to-back scores on the 17th and 18th holes. The Englishman has endured recent heartbreak, losing a one-shot lead at the Travelers Championship and being two ahead with three holes to play in Memphis before missing a playoff by one shot.</p>
 
@@ -625,13 +104,24 @@ $article = [
             <p>With soft conditions expected to continue through the weekend, low scoring should persist at East Lake. Both Fleetwood and Henley are seeking their first PGA Tour victories, while Young continues to build his case for a U.S. Ryder Cup team selection with another strong performance.</p>
 
             <p>The winner of the Tour Championship will earn $4 million from the tournament purse, while the FedExCup champion receives an additional $25 million bonus, making this one of the richest prizes in professional golf.</p>
+    </div>
+
+    <div class="article-footer">
+        <div class="tags">
+            <strong>Tags:</strong>
+            <a href="/news" class="tag-link">Tournament News</a>
+            <a href="/news" class="tag-link">PGA Tour</a>
+        </div>
+
+        <div class="share-section">
+            <p class="share-title">Share This Article</p>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/news/tour-championship-2025-round-2-fleetwood-henley-share-lead" target="_blank" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet?text=Fleetwood+and+Henley+Share+Tour+Championship+Lead+After+Second+Round&url=https://tennesseegolfcourses.com/news/tour-championship-2025-round-2-fleetwood-henley-share-lead" target="_blank" class="share-btn twitter"><strong>𝕏</strong> Share on X</a>
+                <a href="mailto:?subject=Fleetwood+and+Henley+Share+Tour+Championship+Lead+After+Second+Round&body=https://tennesseegolfcourses.com/news/tour-championship-2025-round-2-fleetwood-henley-share-lead" class="share-btn email"><i class="far fa-envelope"></i> Share via Email</a>
             </div>
         </div>
     </div>
+</main>
 
-    <?php include '../includes/threaded-comments.php'; ?>
-    <?php include '../includes/footer.php'; ?>
-    <!-- Scripts -->
-    <script src="/script.js"></script>
-</body>
-</html>
+<?php include '../includes/footer.php'; ?>
