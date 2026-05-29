@@ -58,6 +58,11 @@ Disallow: /contact.php
 Disallow: /events.php
 Disallow: /courses.php
 Disallow: /news.php
+Disallow: /maps.php
+Disallow: /index.php
+Disallow: /courses/*.php
+Disallow: /news/*.php
+Disallow: /reviews/*.php
 
 # Disallow utility files
 # Disallow: *.php$ - REMOVED: This was blocking all PHP files from indexing
@@ -71,6 +76,11 @@ Disallow: /password-reset
 Disallow: /password-reset.php
 Disallow: /profile
 Disallow: /profile.php
+Disallow: /profile/
+Disallow: /register
+Disallow: /register.php
+Disallow: /login
+Disallow: /login.php
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
