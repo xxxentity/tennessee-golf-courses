@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Fitzpatrick Brothers Win 2026 Zurich Classic in Historic Fashion, Earning Alex His PGA Tour Card',
+        'slug' => 'zurich-classic-2026-recap',
+        'date' => '2026-04-26',
+        'time' => '9:17 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Matt and Alex Fitzpatrick become the first brothers to win on the PGA Tour, combining for a tournament-record 31-under 257 at TPC Louisiana, with Matt\'s clutch bunker shot to a foot on 18 and Alex\'s winning putt sealing a one-shot victory.',
+        'image' => '/images/news/zurich-classic-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Matt Fitzpatrick Beats Scheffler in Playoff to Win 2026 RBC Heritage for Second Time',
         'slug' => 'rbc-heritage-2026-recap',
         'date' => '2026-04-19',
