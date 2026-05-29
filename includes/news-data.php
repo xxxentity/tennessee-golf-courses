@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Ben Griffin Sets Scoring Record at 2025 World Wide Technology Championship',
+        'slug' => 'world-wide-technology-championship-2025-recap',
+        'date' => '2025-11-09',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Ben Griffin fires a final-round 63 to win the 2025 World Wide Technology Championship at El Cardonal at Diamante, setting a tournament scoring record at 29-under par for his third PGA Tour victory of the season.',
+        'image' => '/images/news/world-wide-technology-championship-2025/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Ryder Cup 2025: Complete Tournament Recap - Europe Defeats USA 15-13 at Bethpage Black',
         'slug' => 'ryder-cup-2025-complete-tournament-recap-bethpage-black',
         'date' => '2025-09-29',
