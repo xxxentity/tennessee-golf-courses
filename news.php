@@ -509,7 +509,9 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                     <select name="category" class="category-filter" onchange="this.form.submit()">
                         <option value="">All Categories</option>
                         <option value="Tennessee News" <?php echo $category_filter === 'Tennessee News' ? 'selected' : ''; ?>>Tennessee News</option>
+                        <option value="Tournament Recap" <?php echo $category_filter === 'Tournament Recap' ? 'selected' : ''; ?>>Tournament Recap</option>
                         <option value="Tournament News" <?php echo $category_filter === 'Tournament News' ? 'selected' : ''; ?>>Tournament News</option>
+                        <option value="Major Championship" <?php echo $category_filter === 'Major Championship' ? 'selected' : ''; ?>>Major Championship</option>
                         <option value="Equipment News" <?php echo $category_filter === 'Equipment News' ? 'selected' : ''; ?>>Equipment News</option>
                     </select>
                     <input type="hidden" name="search" value="<?php echo htmlspecialchars($search_query); ?>">
