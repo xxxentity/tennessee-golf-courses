@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Justin Rose Sets Torrey Pines Record to Win 2026 Farmers Insurance Open at Age 45',
+        'slug' => 'farmers-insurance-open-2026-recap',
+        'date' => '2026-02-01',
+        'time' => '7:38 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Justin Rose posts a tournament-record 23-under 265 for a wire-to-wire, seven-shot victory at the 2026 Farmers Insurance Open at Torrey Pines, becoming the oldest wire-to-wire winner on the PGA Tour since 2010.',
+        'image' => '/images/news/farmers-insurance-open-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Scottie Scheffler Wins 2026 American Express for Historic 20th PGA Tour Title',
         'slug' => 'american-express-2026-recap',
         'date' => '2026-01-25',
