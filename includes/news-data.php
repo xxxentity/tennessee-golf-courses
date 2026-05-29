@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Aaron Rai Wins 2026 PGA Championship at Aronimink, First English Winner Since 1919',
+        'slug' => 'pga-championship-2026-recap',
+        'date' => '2026-05-17',
+        'time' => '9:08 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Aaron Rai fires a closing 65 at Aronimink Golf Club — including a 69-foot birdie putt on 17 — to win the 2026 PGA Championship by three shots, becoming the first Englishman to claim the Wanamaker Trophy since 1919 and the first player of Indian descent to win a men\'s major.',
+        'image' => '/images/news/pga-championship-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Lucas Herbert Goes Wire-to-Wire to Win 2026 LIV Golf Virginia While Battling the Flu',
         'slug' => 'liv-golf-virginia-2026-recap',
         'date' => '2026-05-10',
