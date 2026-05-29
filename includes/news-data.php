@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Chris Gotterup Wins 2026 WM Phoenix Open in Wild Playoff Over Hideki Matsuyama',
+        'slug' => 'wm-phoenix-open-2026-recap',
+        'date' => '2026-02-08',
+        'time' => '8:51 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Chris Gotterup claims his second win of 2026 at the WM Phoenix Open, beating Hideki Matsuyama in a dramatic playoff at TPC Scottsdale after Matsuyama\'s drive struck a steel pole and found water on the playoff hole.',
+        'image' => '/images/news/wm-phoenix-open-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Anthony Kim Wins LIV Golf Adelaide 2026 in One of Golf\'s Greatest Comebacks',
         'slug' => 'liv-golf-adelaide-2026-recap',
         'date' => '2026-02-15',
