@@ -48,7 +48,16 @@ Disallow: /*/?page=*
 Disallow: /*?error=*
 Disallow: /*?t=*
 Disallow: /*?region=*
+Disallow: /*?username=*
 Disallow: /courses/load-more-reviews
+Disallow: /privacy-policy.php
+Disallow: /terms-of-service.php
+Disallow: /reviews.php
+Disallow: /about.php
+Disallow: /contact.php
+Disallow: /events.php
+Disallow: /courses.php
+Disallow: /news.php
 
 # Disallow utility files
 # Disallow: *.php$ - REMOVED: This was blocking all PHP files from indexing
@@ -60,6 +69,8 @@ Disallow: /reset-password
 Disallow: /reset-password.php
 Disallow: /password-reset
 Disallow: /password-reset.php
+Disallow: /profile
+Disallow: /profile.php
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
