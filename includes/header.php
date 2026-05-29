@@ -13,6 +13,14 @@
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription ?? 'Your premier destination for discovering the best golf courses across Tennessee.'); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords ?? 'Tennessee golf courses, golf news, golf reviews'); ?>">
 
+    <!-- Canonical URL -->
+    <?php
+    $protocol = 'https';
+    $canonical = $protocol . '://tennesseegolfcourses.com' . strtok($_SERVER['REQUEST_URI'], '?');
+    $canonical = rtrim($canonical, '/');
+    ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical); ?>">
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle ?? 'Tennessee Golf Courses'); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription ?? 'Your premier destination for discovering the best golf courses across Tennessee.'); ?>">
