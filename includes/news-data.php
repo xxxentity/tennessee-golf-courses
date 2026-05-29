@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Lucas Herbert Goes Wire-to-Wire to Win 2026 LIV Golf Virginia While Battling the Flu',
+        'slug' => 'liv-golf-virginia-2026-recap',
+        'date' => '2026-05-10',
+        'time' => '8:33 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Lucas Herbert fires rounds of 64-63 to build an eight-shot lead, then holds off Sergio Garcia\'s back-nine Sunday charge to win MAADEN LIV Golf Virginia by four shots at Trump National Golf Club, earning his first LIV Golf title and a U.S. Open berth.',
+        'image' => '/images/news/liv-golf-virginia-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Fitzpatrick Brothers Win 2026 Zurich Classic in Historic Fashion, Earning Alex His PGA Tour Card',
         'slug' => 'zurich-classic-2026-recap',
         'date' => '2026-04-26',
