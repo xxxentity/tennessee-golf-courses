@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Wyndham Clark Shoots 60 to Win 2026 CJ Cup Byron Nelson in Historic Fashion',
+        'slug' => 'cj-cup-byron-nelson-2026-recap',
+        'date' => '2026-05-24',
+        'time' => '8:19 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Wyndham Clark fires a closing 11-under 60 at TPC Craig Ranch — including an eagle on 12 and a 45-foot birdie on 15 — to overtake Si Woo Kim by three shots and win the 2026 CJ Cup Byron Nelson, his first full-event PGA Tour win since the 2023 U.S. Open.',
+        'image' => '/images/news/cj-cup-byron-nelson-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Aaron Rai Wins 2026 PGA Championship at Aronimink, First English Winner Since 1919',
         'slug' => 'pga-championship-2026-recap',
         'date' => '2026-05-17',
