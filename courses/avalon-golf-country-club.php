@@ -425,21 +425,21 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Avalon Golf & Country Club</h3>
-                <p>Nestled in the scenic hills of Lenoir City, Tennessee, Avalon Golf & Country Club offers an exceptional semi-private golf experience designed by renowned architect Joseph L. Lee. Since opening in 1997, this championship 18-hole course has established itself as one of East Tennessee's premier golf destinations, combining challenging play with breathtaking natural beauty.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Avalon Golf &amp; Country Club</h3>
+                <p>Avalon Golf &amp; Country Club opened in 1997 on 166 acres of some of the most breathtaking countryside in East Tennessee, situated at the foot of the Smoky Mountains in Lenoir City. The location is hard to beat for convenience — seconds from I-40, just 20 minutes from downtown Knoxville, 7 minutes from Turkey Creek, and 20 minutes from McGhee Tyson Airport — making it one of the most accessible upscale golf experiences in the region.</p>
+
                 <br>
-                
-                <p>Stretching across 6,764 yards from the championship tees with a par of 72, Avalon presents a perfect balance of risk and reward for golfers of all skill levels. The course features meticulously maintained Primo Zoysia greens that provide consistent putting surfaces year-round, while the Bermuda grass fairways offer excellent playing conditions throughout the season.</p>
-                
+
+                <p>The 18-hole, par-72 layout was designed by Joseph L. Lee and plays to 6,764 yards from the championship tees with a course rating of 72.0 and slope of 128. Lee's design takes full advantage of the property's natural terrain, routing holes across various elevations and slopes so that virtually every hole presents a different look and a different challenge. The result is a course that rewards thoughtful course management as much as raw distance.</p>
+
                 <br>
-                
-                <p>The layout takes full advantage of the rolling terrain and mature trees, creating a series of memorable holes that demand both strategic thinking and precise shot-making. With a course rating of 72.0 and slope rating of 128 from the championship tees, Avalon provides a fair but challenging test that rewards good golf while remaining enjoyable for recreational players.</p>
-                
+
+                <p>Avalon holds the distinction of being the only golf course in Tennessee with Primo Zoysia grass greens — a premium surface that delivers exceptional consistency and smoothness year-round. That commitment to playing conditions earned Avalon a 4-Star rating from Golf Digest and recognition as one of Golf Digest's Top 25 Most Improved Golf Courses in 2015.</p>
+
                 <br>
-                
-                <p>As a semi-private facility, Avalon Golf & Country Club welcomes both members and daily fee players, offering competitive rates and excellent playing conditions. The club features comprehensive amenities and serves as a complete golf destination for tournaments, outings, and casual rounds alike in the beautiful Tennessee countryside.</p>
+
+                <p>As a semi-private club, Avalon welcomes both members and daily-fee players. Golf and social memberships are available for those looking to take full advantage of everything the club has to offer, including two on-site restaurants, a pool, live music events, and a full calendar of tournaments and private events.</p>
             </div>
 
             <!-- Amenities -->
@@ -447,36 +447,44 @@ SEO::setupCoursePage($course_data);
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
                 <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
                     <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Championship Golf</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Restaurant</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <i class="fas fa-bullseye" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Driving Range</span>
                     </div>
                     <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Golf Lessons</span>
+                        <i class="fas fa-circle" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Putting Green</span>
                     </div>
                     <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-leaf" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Primo Zoysia Greens</span>
+                        <i class="fas fa-shopping-bag" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Instruction</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Avalon Grille</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>T-Prime Steak &amp; Seafood</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-swimming-pool" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pool</span>
+                    </div>
+                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                        <i class="fas fa-music" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Live Music Events</span>
                     </div>
                     <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
                         <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Tournament Hosting</span>
+                        <span>Event &amp; Wedding Venue</span>
                     </div>
                     <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Golf Cart Rental</span>
+                        <i class="fas fa-id-card" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf &amp; Social Memberships</span>
                     </div>
                 </div>
             </div>
