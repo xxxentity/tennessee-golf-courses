@@ -320,7 +320,7 @@ $courses_static = [
     ],
     [
         'id' => 5,
-        'name' => 'Forrest Crossing Golf Course',
+        'name' => 'Franklin Bridge Golf Club',
         'location' => 'Franklin, TN',
         'region' => 'Nashville Area',
         'description' => 'Gary Roger Baird championship design featuring Harpeth River and island green',

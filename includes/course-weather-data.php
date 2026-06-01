@@ -169,7 +169,7 @@ $courseWeatherData = [
         'coordinates' => [-85.355354, 35.646341]
     ],
     'forrest-crossing-golf-course' => [
-        'name' => 'Forrest Crossing Golf Course',
+        'name' => 'Franklin Bridge Golf Club',
         'city' => 'Franklin',
         'state' => 'TN',
         'coordinates' => [-86.84227, 35.89344]

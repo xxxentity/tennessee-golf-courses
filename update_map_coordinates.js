@@ -192,7 +192,7 @@ const golfCoursesUpdated = [
     coordinates: [-85.467222, 35.746111]
   },
   {
-    name: "Forrest Crossing Golf Course",
+    name: "Franklin Bridge Golf Club",
     address: "750 Riverview Dr, Franklin, TN 37064",
     phone: "",
     type: "Semi-Private",

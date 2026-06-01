@@ -6,10 +6,10 @@ Performance::start();
 Performance::enableCompression();
 
 $course_slug = 'forrest-crossing-golf-course';
-$course_name = 'Forrest Crossing Golf Course';
+$course_name = 'Franklin Bridge Golf Club';
 
 $course_data = [
-    'name' => 'Forrest Crossing Golf Course',
+    'name' => 'Franklin Bridge Golf Club',
     'location' => 'Franklin, TN',
     'description' => 'Gary Roger Baird championship design in Franklin, TN. 6,968-yard course featuring Harpeth River views and island green signature hole.',
     'image' => '/images/courses/forrest-crossing-golf-course/1.jpeg',
@@ -577,7 +577,7 @@ SEO::setupCoursePage($course_data);
     <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
-            <h1>Forrest Crossing Golf Course</h1>
+            <h1>Franklin Bridge Golf Club</h1>
             <p>Gary Roger Baird Design • Franklin, Tennessee</p>
             </div>
     </section>
@@ -673,11 +673,11 @@ SEO::setupCoursePage($course_data);
         <div class="container">
             <div class="description-content">
                 <h2>Championship Golf Along the Harpeth River</h2>
-                <p>Forrest Crossing Golf Course stands as one of Nashville's premier golf destinations, masterfully designed by Gary Roger Baird and carved from historic farmland in Franklin, Tennessee. This championship 6,968-yard, par 72 layout showcases the natural beauty of Williamson County while providing golfers with a challenging yet fair test of skill.</p>
+                <p>Franklin Bridge Golf Club stands as one of Nashville's premier golf destinations, masterfully designed by Gary Roger Baird and carved from historic farmland in Franklin, Tennessee. This championship 6,968-yard, par 72 layout showcases the natural beauty of Williamson County while providing golfers with a challenging yet fair test of skill.</p>
                 
                 <p>The course's crown jewel is the spectacular par-4 ninth hole, featuring an island green that has become the signature challenge of the layout. This unique hole, along with the acclaimed 16th and 18th holes, has earned recognition from local media as featuring some of the best and most challenging holes in Tennessee.</p>
                 
-                <p>What truly sets Forrest Crossing apart is its intimate relationship with the Harpeth River, which winds alongside 15 of the course's 18 holes. This links-style design provides a tranquil respite from the bustling growth of Williamson County, offering golfers stunning water views and strategic challenges throughout their round.</p>
+                <p>What truly sets Franklin Bridge apart is its intimate relationship with the Harpeth River, which winds alongside 15 of the course's 18 holes. This links-style design provides a tranquil respite from the bustling growth of Williamson County, offering golfers stunning water views and strategic challenges throughout their round.</p>
             </div>
         </div>
     </section>
@@ -687,7 +687,7 @@ SEO::setupCoursePage($course_data);
         <div class="container">
             <div class="section-header">
                 <h2>Signature Holes</h2>
-                <p>Discover the holes that define Forrest Crossing's championship character</p>
+                <p>Discover the holes that define Franklin Bridge's championship character</p>
             </div>
             
             <div class="holes-grid">
@@ -705,7 +705,7 @@ SEO::setupCoursePage($course_data);
                                 <div class="hole-stat-value">420</div>
                             </div>
                         </div>
-                        <p>The course's most famous hole features a dramatic island green that demands precision and nerve. This signature hole has become synonymous with Forrest Crossing and provides both beauty and challenge in equal measure.</p>
+                        <p>The course's most famous hole features a dramatic island green that demands precision and nerve. This signature hole has become synonymous with Franklin Bridge and provides both beauty and challenge in equal measure.</p>
                     </div>
                 </div>
                 
@@ -741,7 +741,7 @@ SEO::setupCoursePage($course_data);
                                 <div class="hole-stat-value">545</div>
                             </div>
                         </div>
-                        <p>A fitting climax to your round, this hole combines strategic elements with scenic beauty to create a memorable conclusion to your Forrest Crossing experience.</p>
+                        <p>A fitting climax to your round, this hole combines strategic elements with scenic beauty to create a memorable conclusion to your Franklin Bridge experience.</p>
                     </div>
                 </div>
             </div>
@@ -753,17 +753,17 @@ SEO::setupCoursePage($course_data);
         <div class="container">
             <div class="section-header">
                 <h2>Course Gallery</h2>
-                <p>Experience the beauty of Forrest Crossing Golf Course</p>
+                <p>Experience the beauty of Franklin Bridge Golf Club</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/2.jpeg" alt="Forrest Crossing Golf Course Franklin TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/forrest-crossing-golf-course/2.jpeg" alt="Franklin Bridge Golf Club Franklin TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/3.jpeg" alt="Forrest Crossing Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/forrest-crossing-golf-course/3.jpeg" alt="Franklin Bridge Golf Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/4.jpeg" alt="Forrest Crossing Golf Course Franklin TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/forrest-crossing-golf-course/4.jpeg" alt="Franklin Bridge Golf Club Franklin TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
             </div>
             <div class="gallery-button">
@@ -776,7 +776,7 @@ SEO::setupCoursePage($course_data);
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Forrest Crossing Golf Course - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Franklin Bridge Golf Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
             <div class="full-gallery-grid" id="fullGalleryGrid">
@@ -794,10 +794,10 @@ SEO::setupCoursePage($course_data);
                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
                         <i class="fab fa-facebook-f"></i> Share on Facebook
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Forrest Crossing Golf Course in Franklin, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Franklin Bridge Golf Club in Franklin, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
                         <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
                     </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Forrest Crossing Golf Course'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Franklin Bridge Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
                         <i class="far fa-envelope"></i> Share via Email
                     </a>
                 </div>
