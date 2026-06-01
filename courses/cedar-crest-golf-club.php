@@ -11,11 +11,11 @@ $course_name = 'Cedar Crest Golf Club';
 $course_data = [
     'name' => 'Cedar Crest Golf Club',
     'location' => 'Murfreesboro, TN',
-    'description' => 'Quality public golf course in Murfreesboro, TN. 6,828 yards of challenging golf on rolling farmland with bentgrass greens since 1999.',
+    'description' => 'John Floyd designed public golf course in Murfreesboro, TN. 6,828 yards on rolling farmland with bentgrass greens since 1999.',
     'image' => '/images/courses/cedar-crest-golf-club/1.jpeg',
     'holes' => 18,
     'par' => 72,
-    'designer' => 'N/A',
+    'designer' => 'John Floyd',
     'year_built' => 1999,
     'course_type' => 'Public'
 ];
@@ -583,168 +583,147 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,828 yards</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,828</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">71.6</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">John Floyd</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">124</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1999</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">John Floyd</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Public</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1999</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">71.6</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Public</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Public Golf Course</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weekday Rate:</span>
-                            <span class="spec-value">Call for pricing</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Weekend Rate:</span>
-                            <span class="spec-value">Call for pricing</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Cart Rental:</span>
-                            <span class="spec-value">Included in fees</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Tee Times:</span>
-                            <span class="spec-value">Online booking available</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">124</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 7972 Mona Rd, Murfreesboro, TN 37129</p>
-                            <p><i class="fas fa-phone"></i> (615) 849-7837</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://www.cedarcrestgolfclub.com" target="_blank">cedarcrestgolfclub.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=7972+Mona+Rd,+Murfreesboro,+TN+37129&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0f4f0;">
+                                <th style="padding: 0.5rem; text-align: left; color: #2c5234;">Rate</th>
+                                <th style="padding: 0.5rem; text-align: center; color: #2c5234;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Weekday (18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">~$32</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0; background: #f8f9fa;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Weekend (18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">~$38</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">Rates may vary by season. Cart included in green fee. Call for current pricing and tee time availability.</p>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    7972 Mona Road<br>
+                    Murfreesboro, TN 37129</p>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:6158497837" style="color: #4a7c59;">(615) 849-7837</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.cedarcrestgolfclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">cedarcrestgolfclub.com</a></p>
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=7972+Mona+Road,+Murfreesboro,+TN+37129&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Cedar Crest Golf Club Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=7972+Mona+Road,+Murfreesboro,+TN+37129"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Quality Public Golf Since 1999</h2>
-                <p>Cedar Crest Golf Club represents the finest in public golf accessibility and quality, serving the Murfreesboro community since 1999. Designed by John Floyd and built on 175 acres of rolling former farmland, this championship course offers golfers an exceptional experience that combines challenging play with stunning natural beauty.</p>
-                
-                <p>The course gained national recognition in 2016 when Golf Advisor named Cedar Crest #18 on their Top 25 Most Improved U.S. Golf Courses, acknowledging the continuous improvements and commitment to excellence that define this facility. The 6,828-yard layout features pristine bentgrass greens and tree-lined fairways that showcase the natural Tennessee countryside.</p>
-                
-                <p>What sets Cedar Crest apart is its player-friendly design philosophy combined with strategic challenges. The front nine offers generous fairways with wide landing areas, while the back nine narrows down with tree-lined corridors that demand more precision. This thoughtful progression makes the course enjoyable for beginners while providing ample challenge for experienced golfers.</p>
-            </div>
-        </div>
-    </section>
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Cedar Crest Golf Club</h3>
+                <p>Cedar Crest Golf Club is a public golf course in Murfreesboro, Tennessee, designed by John Floyd and opened in 1999. The 18-hole, par-72 layout measures 6,828 yards from the championship tees, with a course rating of 71.6 and slope of 124. The course was built on 175 acres of rolling former farmland.</p>
 
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the holes that define Cedar Crest's championship character</p>
+                <br>
+
+                <p>The layout features bentgrass greens and Bermuda fairways, with four sets of tee boxes to accommodate a range of playing abilities. The back nine plays through tree-lined corridors that demand more precision than the more open front side. A log cabin clubhouse with a covered dining patio serves as the facility's hub.</p>
+
+                <br>
+
+                <p>Cedar Crest is open daily and offers cart-included green fees in the $32–$38 range depending on day and season. Online tee time booking is available through the club's website.</p>
             </div>
-            
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">9</div>
-                    <div class="hole-details">
-                        <h4>The Test</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">445</div>
-                            </div>
-                        </div>
-                        <p>The course's most challenging hole (#1 handicap) demands both distance and accuracy. Strategic bunkering and tree placement make this a true test of championship golf.</p>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Driving Range</span>
                     </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">18</div>
-                    <div class="hole-details">
-                        <h4>Championship Finish</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">5</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">580</div>
-                            </div>
-                        </div>
-                        <p>The course's longest and most demanding hole provides a dramatic finish. This challenging par-5 requires strategic positioning and precise execution to navigate successfully.</p>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Green</span>
                     </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">3</div>
-                    <div class="hole-details">
-                        <h4>Short Game Precision</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">3</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">150</div>
-                            </div>
-                        </div>
-                        <p>The shortest hole on the course emphasizes accuracy and green-reading skills, featuring one of the course's most challenging putting surfaces.</p>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Pro Shop</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Covered Dining Patio</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Cart Included</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Event Space</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -798,53 +777,8 @@ SEO::setupCoursePage($course_data);
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/courses">Golf Courses</a></li>
-                        <li><a href="/reviews">Reviews</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Dynamic Footer -->
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
 </body>
