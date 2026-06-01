@@ -137,7 +137,7 @@ const golfCoursesUpdated = [
   },
   {
     name: "Council Fire Golf Club",
-    address: "1400 Council Fire Drive, Chattanooga, TN 37421",
+    address: "100 Council Fire Dr, Chattanooga, TN 37421",
     phone: "",
     type: "Private",
     slug: "council-fire-golf-club",

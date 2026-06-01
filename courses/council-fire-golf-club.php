@@ -378,7 +378,7 @@ SEO::setupCoursePage($course_data);
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
-                    1400 Council Fire Drive<br>
+                    100 Council Fire Dr<br>
                     Chattanooga, TN 37421</p>
                     
                     <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
@@ -389,7 +389,7 @@ SEO::setupCoursePage($course_data);
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=1400+Council+Fire+Drive,+Chattanooga,+TN+37421&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=100+Council+Fire+Dr,+Chattanooga,+TN+37421&t=&z=15&ie=UTF8&iwloc=&output=embed"
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
@@ -399,7 +399,7 @@ SEO::setupCoursePage($course_data);
                             title="Council Fire Golf Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1400+Council+Fire+Drive,+Chattanooga,+TN+37421" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=100+Council+Fire+Dr,+Chattanooga,+TN+37421"
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">

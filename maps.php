@@ -248,7 +248,7 @@ SEO::setupMapsPage();
             { name: "Chickasaw Golf Course", address: "9555 State Route 100 W, Henderson, TN 38340", phone: "(731) 989-3111", type: "Public", slug: "chickasaw-golf-course", coordinates: [-88.790093, 35.388363] },
             { name: "Clarksville Country Club", address: "334 Fairway Dr, Clarksville, TN 37043", phone: "", type: "Private", slug: "clarksville-country-club", coordinates: [-87.29048, 36.527804] },
             { name: "Colonial Country Club", address: "2736 Countrywood Parkway, Cordova, TN 38016", phone: "", type: "Private", slug: "colonial-country-club", coordinates: [-89.778774, 35.196538] },
-            { name: "Council Fire Golf Club", address: "1400 Council Fire Drive, Chattanooga, TN 37421", phone: "", type: "Private", slug: "council-fire-golf-club", coordinates: [-85.164497, 34.98708] },
+            { name: "Council Fire Golf Club", address: "100 Council Fire Dr, Chattanooga, TN 37421", phone: "", type: "Private", slug: "council-fire-golf-club", coordinates: [-85.173458, 34.986263] },
             { name: "Cumberland Cove Golf Course", address: "16941 Highway 70 N, Monterey, TN 38574", phone: "(931) 839-3313", type: "Public", slug: "cumberland-cove-golf-course", coordinates: [-85.227605, 36.083534] },
             { name: "Dead Horse Lake Golf Course", address: "3016 Gravelly Hills Road, Louisville, TN 37777", phone: "(865) 693-5270", type: "Public", slug: "dead-horse-lake-golf-course", coordinates: [-84.124378, 35.804098] },
             { name: "Dorchester Golf Club", address: "576 Westchester Dr, Fairfield Glade, TN 38558", phone: "(931) 456-2864", type: "Semi-Private", slug: "dorchester-golf-club", coordinates: [-84.866624, 35.970002] },
