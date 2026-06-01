@@ -21,12 +21,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ brainerd-golf-course.php — corrected rating/slope, fixed fees, inline styles
 - ✅ brown-acres-golf-course.php — corrected rating/year, fixed fees, inline styles
 - ✅ cedar-crest-golf-club.php — fixed designer, removed fabricated signature holes, inline styles
+- ✅ chattanooga-golf-country-club.php — corrected rating/slope, fixed par, standardized
 
 ---
 
-## Remaining (92 / 104)
+## Remaining (91 / 104)
 
-- ⬜ chattanooga-golf-country-club.php
+- ⬜ cheekwood-golf-club.php
 - ⬜ brown-acres-golf-course.php
 - ⬜ cedar-crest-golf-club.php
 - ⬜ chattanooga-golf-country-club.php
