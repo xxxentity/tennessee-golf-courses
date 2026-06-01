@@ -237,36 +237,36 @@ SEO::setupCoursePage($course_data);
             <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,724</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,724</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Robert Bruce Harris</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Robert Bruce Harris</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1951</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1951</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
                         <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
                         <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
@@ -278,40 +278,28 @@ SEO::setupCoursePage($course_data);
                 </div>
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">550 Johnny Cash Parkway</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Hendersonville, TN 37075</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 824-6566</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.invitedclubs.com/clubs/bluegrass-yacht-country-club" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
-                    </div>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=550+Johnny+Cash+Parkway,+Hendersonville,+TN+37075&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    550 Johnny Cash Blvd<br>
+                    Hendersonville, TN 37075</p>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:6158246528" style="color: #4a7c59;">(615) 824-6528</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.invitedclubs.com/clubs/bluegrass-yacht-country-club" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">invitedclubs.com</a></p>
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=550+Johnny+Cash+Blvd,+Hendersonville,+TN+37075&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Bluegrass Yacht & Country Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=550+Johnny+Cash+Parkway,+Hendersonville,+TN+37075" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=550+Johnny+Cash+Blvd,+Hendersonville,+TN+37075"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -324,56 +312,40 @@ SEO::setupCoursePage($course_data);
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Bluegrass Yacht & Country Club</h3>
-                <p>Established in 1951, Bluegrass Yacht & Country Club stands as one of Middle Tennessee's premier private clubs, uniquely combining championship golf with yacht marina facilities. Located on 550 Johnny Cash Parkway in Hendersonville, this exclusive club has been serving Nashville area families for over seven decades with its distinctive blend of golf, boating, and comprehensive recreational amenities.</p>
-                
+                <p>Established in 1951, Bluegrass Yacht &amp; Country Club stands as one of Middle Tennessee's premier private clubs, uniquely combining championship golf with yacht marina facilities on Old Hickory Lake in Hendersonville. The club has been serving Nashville area families for over seven decades with its distinctive blend of golf, boating, and recreational amenities.</p>
+
                 <br>
-                
-                <p>The championship golf course was originally designed by Robert Bruce Harris and features an 18-hole, par-72 layout stretching 6,724 yards from the championship tees. The course offers eight different tee options accommodating golfers of all skill levels, from the challenging Black tees (6,724 yards, 72.4/131 rating/slope) down to the Family tees (3,205 yards). This thoughtful design ensures an enjoyable experience for players ranging from beginners to scratch golfers.</p>
-                
+
+                <p>The championship golf course was designed by Robert Bruce Harris and features an 18-hole, par-72 layout stretching 6,724 yards. The course plays alongside the lake setting that defines the property, with multiple tee options available to accommodate members of all skill levels.</p>
+
                 <br>
-                
-                <p>What sets Bluegrass Yacht & Country Club apart is its unique yacht marina facility, making it one of the few golf and yacht clubs in Tennessee. Members enjoy access to full boating amenities alongside their golf privileges, creating a distinctive country club experience that combines land and water recreation in one exclusive setting.</p>
-                
-                <br>
-                
-                <p>The club's comprehensive facilities extend far beyond golf and boating, featuring tennis courts, swimming pools, spa services, fine dining options, and extensive youth programs. As a ClubCorp property, Bluegrass maintains the highest standards of service and amenities, offering members an elegant and well-appointed environment for both recreation and social gatherings throughout Middle Tennessee.</p>
+
+                <p>What sets Bluegrass Yacht &amp; Country Club apart is its yacht marina, making it one of the few combined golf and yacht clubs in Tennessee. Beyond golf and boating, members enjoy tennis courts, swimming pools, and fine dining as part of the Invited club network.</p>
             </div>
 
             <!-- Amenities -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Championship Golf</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-anchor" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Yacht Marina</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-table-tennis-paddle-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Tennis Courts</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Fine Dining</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Swimming Pools</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-spa" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Spa Services</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-child" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Youth Programs</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Event Hosting</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-swimming" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Swimming Pool</span>
                     </div>
                 </div>
             </div>

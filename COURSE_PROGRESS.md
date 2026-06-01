@@ -16,13 +16,14 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ belle-acres-golf-course.php
 - ✅ belle-meade-country-club.php
 - ✅ big-creek-golf-club.php — permanently closed, historical page only
-- ✅ blackthorn-club.php — private, stats need scorecard verification
+- ✅ blackthorn-club.php
+- ✅ bluegrass-yacht-country-club.php — private, rating/slope unverified
 
 ---
 
-## Remaining (96 / 104)
+## Remaining (95 / 104)
 
-- ⬜ bluegrass-yacht-country-club.php
+- ⬜ brainerd-golf-course.php
 - ⬜ big-creek-golf-club.php
 - ⬜ blackthorn-club.php
 - ⬜ bluegrass-yacht-country-club.php
