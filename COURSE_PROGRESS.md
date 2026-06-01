@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (9 / 104)
+## Completed (10 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -18,12 +18,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ big-creek-golf-club.php — permanently closed, historical page only
 - ✅ blackthorn-club.php
 - ✅ bluegrass-yacht-country-club.php — private, tee box table added, rating/slope verified
+- ✅ brainerd-golf-course.php — corrected rating/slope, fixed fees, inline styles
 
 ---
 
-## Remaining (95 / 104)
+## Remaining (94 / 104)
 
-- ⬜ brainerd-golf-course.php
+- ⬜ brown-acres-golf-course.php
 - ⬜ brown-acres-golf-course.php
 - ⬜ cedar-crest-golf-club.php
 - ⬜ chattanooga-golf-country-club.php

@@ -16,7 +16,7 @@ $course_data = [
     'holes' => 18,
     'par' => 72,
     'designer' => 'Gary Weller',
-    'year_built' => 1977,
+    'year_built' => 1971,
     'course_type' => 'Public'
 ];
 
@@ -421,123 +421,105 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,742 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,742</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">72.0</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Gary Weller</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">127</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1971</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Gary Weller</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Municipal</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1971</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72.5</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Municipal</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">127</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Regular Players</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$25</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Seniors (60+)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$18</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Juniors (Under 18)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$5</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;"><strong>Cart Rental: $15</strong><br>
-                        Tee times available up to 5 days in advance</p>
-                    </div>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0f4f0;">
+                                <th style="padding: 0.5rem; text-align: left; color: #2c5234;">Category</th>
+                                <th style="padding: 0.5rem; text-align: center; color: #2c5234;">Weekday</th>
+                                <th style="padding: 0.5rem; text-align: center; color: #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Regular (18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$25</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0; background: #f8f9fa;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Senior (60+)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$19</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Junior (U18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$5</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Cart Rental</td>
+                                <td colspan="2" style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$15 per player</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">City of Chattanooga residents receive a $2 discount on 18-hole green fees. Tee times available up to 5 days in advance.</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
                     406 Brown Road<br>
                     Chattanooga, TN 37421</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (423) 855-2680</p>
-                    
-                    <p><strong>Manager:</strong><br>
-                    Wayne Orr</p>
-                    
-                    <p><strong>Website:</strong><br>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:4238552680" style="color: #4a7c59;">(423) 855-2680</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
                     <a href="https://chattanooga.gov/things-to-do/golf-courses/brown-acres" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">chattanooga.gov</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=406+Brown+Road,+Chattanooga,+TN+37421&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=406+Brown+Road,+Chattanooga,+TN+37421&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Brown Acres Golf Course Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=406+Brown+Road,+Chattanooga,+TN+37421" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=406+Brown+Road,+Chattanooga,+TN+37421"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -548,69 +530,50 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Brown Acres Golf Course</h3>
-                <p>Brown Acres Golf Course is a distinguished municipal 18-hole championship layout designed by Gary Weller that opened in 1971 in Chattanooga, Tennessee. Conveniently located near Hamilton Place Mall just off I-75, this accessible course has become a favorite destination for both local golfers and tourists visiting the scenic Tennessee Valley region.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Brown Acres Golf Course</h3>
+                <p>Brown Acres Golf Course is one of two municipal golf courses operated by the City of Chattanooga, designed by Gary Weller and opened in 1971. The 18-hole, par-72 layout stretches 6,742 yards from the blue tees, with a course rating of 72.5 and slope of 127. The forward tees play 4,934 yards, making the course accessible to a wide range of golfers.</p>
+
                 <br>
-                
-                <p>The 6,742-yard, par-72 course from the blue tees offers a challenging yet fair test of golf with wide open fairways that provide enough variety of terrain to challenge golfers of all skill levels. The layout features strategic water hazards on several key holes, including the opening hole, the challenging 15th, and the dramatic finishing 18th hole, creating memorable moments throughout the round.</p>
-                
+
+                <p>Located off I-75 near East Brainerd Road West, Brown Acres is one of the more accessible public courses in the Chattanooga area. The course plays over Bermuda grass fairways and greens and is open daily from 7:30 a.m. to sunset with tee times available up to five days in advance.</p>
+
                 <br>
-                
-                <p>Brown Acres' signature hole is the demanding 13th, a 449-yard par-4 that requires an uphill tee shot to a narrow fairway, testing both accuracy and course management skills. The course also features excellent variety in hole lengths, from the shortest hole at #14—a precise 115-yard par-3—to the longest at #5, a strategic 519-yard par-5 that rewards both power and precision.</p>
-                
-                <br>
-                
-                <p>As one of two public golf courses maintained by the City of Chattanooga, Brown Acres Golf Course prides itself on offering affordable, quality golf with excellent conditions. The course operates from 7:30 a.m. to sunset daily and provides exceptional value with special discounted rates for youth, teens, and seniors during weekdays, making golf accessible to the entire community.</p>
-                
-                <br>
-                
-                <p>The facility's commitment to golfer development extends beyond daily play with ladies' days, youth programs, and special group activities that enhance the overall golf experience. Course conditions are consistently maintained at a high standard, with reviews noting fair playing conditions year-round that complement the strategic design elements throughout the layout.</p>
-                
-                <br>
-                
-                <p>Located in Hamilton County with easy access from East Brainerd Road West off I-75, Brown Acres Golf Course serves as an ideal destination for both local rounds and golf tourism. The course's combination of Gary Weller's thoughtful design, municipal accessibility, and comprehensive amenities makes it a cornerstone of Chattanooga's public golf offerings and a must-play destination for golfers exploring Tennessee's diverse golf landscape.</p>
+
+                <p>Municipal pricing makes Brown Acres one of the most affordable rounds in the region. Juniors play weekdays for $5, seniors receive a discounted weekday rate, and all City of Chattanooga residents get a $2 discount on 18-hole green fees. Cart rental is $15 per player.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Driving Range</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Putting Green</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Pro Shop</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Snack Bar</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-home"></i>
-                        <span>Full Service Clubhouse</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Cart Rentals</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Tee Time Reservations</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-users"></i>
-                        <span>Group Activities</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-graduate"></i>
-                        <span>Youth Programs</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Online Tee Times</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -670,67 +633,8 @@ SEO::setupCoursePage($course_data);
             </div>
         </div>
     </section>
-    <!-- Booking Section -->
-    <section class="booking-section">
-        <div class="container">
-            <div class="booking-content">
-                <h2>Ready to Play Brown Acres Golf Course?</h2>
-                <p>Book your tee time today and experience this challenging Gary Weller design in Chattanooga</p>
-                <div class="booking-buttons">
-                    <a href="tel:+14238552680" class="btn-book">Book Tee Time</a>
-                    <a href="tel:+14238552680" class="btn-contact">Contact Pro Shop</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.php#courses">Golf Courses</a></li>
-                        <li><a href="../index.php#reviews">Reviews</a></li>
-                        <li><a href="../index.php#news">News</a></li>
-                        <li><a href="../index.php#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Dynamic Footer -->
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
     <script>
