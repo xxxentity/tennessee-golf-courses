@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (15 / 104)
+## Completed (16 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -24,12 +24,12 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ chattanooga-golf-country-club.php — corrected rating/slope, fixed par, standardized
 - ✅ cheekwood-golf-club.php — fixed designer/year/rating, standardized
 - ✅ cherokee-country-club.php — fixed par/yardage/rating/slope, added address/phone, replaced non-standard layout
+- ✅ chickasaw-country-club.php — fixed rating/slope, renamed Membership→Green Fees, fixed location text, amenity widths
 
 ---
 
-## Remaining (89 / 104)
+## Remaining (88 / 104)
 
-- ⬜ chickasaw-country-club.php
 - ⬜ chickasaw-golf-course.php
 - ⬜ clarksville-country-club.php
 - ⬜ colonial-country-club.php
