@@ -2,10 +2,18 @@
 session_start();
 require_once 'config/database.php';
 
+// Redirect direct browser visits to the courses page
+$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+if (!$isAjax && !isset($_GET['q'])) {
+    header('Location: /courses', true, 301);
+    exit;
+}
+
 // Get search query
 $query = isset($_GET['q']) ? trim($_GET['q']) : '';
 
 if (strlen($query) < 2) {
+    header('Content-Type: application/json');
     echo json_encode([]);
     exit;
 }

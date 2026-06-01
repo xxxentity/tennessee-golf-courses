@@ -83,6 +83,7 @@ Disallow: /login
 Disallow: /login.php
 Disallow: /logout
 Disallow: /logout.php
+Disallow: /search-courses
 Disallow: /search-courses.php
 Disallow: /weather-api.php
 Disallow: /newsletter-subscribe.php
