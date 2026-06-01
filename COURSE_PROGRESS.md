@@ -7,19 +7,20 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (5 / 104)
+## Completed (6 / 104)
 
-- ✅ avalon-golf-country-club.php — boxes done, about/amenities needs rewrite
-- ✅ bear-trace-at-tims-ford.php — boxes + tee table done
-- ✅ bear-trace-cumberland-mountain.php — boxes + tee table done
-- ✅ bear-trace-harrison-bay.php — boxes + tee table done
-- ✅ belle-acres-golf-course.php — boxes done, about rewritten
+- ✅ avalon-golf-country-club.php
+- ✅ bear-trace-at-tims-ford.php
+- ✅ bear-trace-cumberland-mountain.php
+- ✅ bear-trace-harrison-bay.php
+- ✅ belle-acres-golf-course.php
+- ✅ belle-meade-country-club.php
 
 ---
 
-## Remaining (99 / 104)
+## Remaining (98 / 104)
 
-- ⬜ belle-meade-country-club.php
+- ⬜ big-creek-golf-club.php
 - ⬜ big-creek-golf-club.php
 - ⬜ blackthorn-club.php
 - ⬜ bluegrass-yacht-country-club.php
