@@ -258,9 +258,17 @@ SEO::setupCoursePage($course_data);
                             <span style="font-weight: 600; color: #666;">Opened:</span>
                             <span style="font-weight: 700; color: #2c5234;">1951</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span style="font-weight: 600; color: #666;">Type:</span>
                             <span style="font-weight: 700; color: #2c5234;">Private</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72.4</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">134</span>
                         </div>
                     </div>
                 </div>
@@ -306,6 +314,68 @@ SEO::setupCoursePage($course_data);
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Tee Box Details -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.5rem;"><i class="fas fa-flag"></i> Tee Box Details</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #2c5234; color: white;">
+                                <th style="padding: 0.75rem 1rem; text-align: left; border-radius: 8px 0 0 0;">Tee</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center;">Yardage</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center;">Rating</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center;">Slope</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center; border-radius: 0 8px 0 0;">Par</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #1a1a1a; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>Black</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">6,724</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72.4</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">134</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #ffffff; border: 2px solid #ccc; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>White</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">—</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">71.1</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">131</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>Gold (Men)</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">—</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">68.5</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">127</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>Gold (Women)</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">—</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">74.5</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">131</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #228B22; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>Green (Men)</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">—</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">65.3</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">110</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem 1rem; font-weight: 700;"><span style="display: inline-block; width: 12px; height: 12px; background: #228B22; border-radius: 50%; margin-right: 8px; vertical-align: middle;"></span>Green (Women)</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">—</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">69.8</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">119</td>
+                                <td style="padding: 0.75rem 1rem; text-align: center;">72</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
