@@ -493,155 +493,146 @@ SEO::setupCoursePage($course_data);
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem;">
+
+                <!-- Box 1: Course Information -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,928</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,928 (Nicklaus)</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Jack Nicklaus</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Jack Nicklaus</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1999</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1999</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">State Park</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">74.0</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">141</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    
-                    <!-- Off-Season Rates -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Off-Season Rates</h4>
-                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
-                                <div><strong>Standard (with cart):</strong></div>
-                                <div>18 holes: $39 • 9 holes: $20</div>
-                                <div><strong>Walking:</strong></div>
-                                <div>18 holes: $21 • 9 holes: $11</div>
-                                <div><strong>Senior (62+) with cart:</strong></div>
-                                <div>18 holes: $39 • 9 holes: $20</div>
-                                <div><strong>Senior walking:</strong></div>
-                                <div>18 holes: $21 • 9 holes: $11</div>
-                                <div><strong>Junior/Student with cart:</strong></div>
-                                <div>18 holes: $39 • 9 holes: $20</div>
-                                <div><strong>Junior/Student walking:</strong></div>
-                                <div>18 holes: $21 • 9 holes: $11</div>
-                                <div><strong>Replay with cart:</strong></div>
-                                <div>18 holes: $20 • 9 holes: $15</div>
-                                <div><strong>Replay walking:</strong></div>
-                                <div>18 holes: $12 • 9 holes: $9</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- In-Season Rates -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">In-Season Rates</h4>
-                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
-                                <div><strong>Standard with cart:</strong></div>
-                                <div>18 holes: $75 • 9 holes: $38</div>
-                                <div><strong>Standard walking:</strong></div>
-                                <div>18 holes: $55 • 9 holes: $28</div>
-                                <div><strong>Senior (62+) with cart:</strong></div>
-                                <div>18 holes: $60 • 9 holes: $30</div>
-                                <div><strong>Senior walking:</strong></div>
-                                <div>18 holes: $40 • 9 holes: $20</div>
-                                <div><strong>Twilight (after 3 PM) with cart:</strong></div>
-                                <div>Unlimited: $30</div>
-                                <div><strong>Twilight walking:</strong></div>
-                                <div>Unlimited: $20</div>
-                                <div><strong>Junior/Student with cart:</strong></div>
-                                <div>18 holes: $41 • 9 holes: $22</div>
-                                <div><strong>Junior/Student walking:</strong></div>
-                                <div>18 holes: $21 • 9 holes: $12</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plateau Players Card -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Plateau Players Card Rates</h4>
-                        <div style="background: #e8f4ea; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; font-style: italic;">Must purchase $29 Plateau Player's Card. Cumberland County or bordering county residents only.</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
-                                <div><strong>Standard with cart:</strong></div>
-                                <div>18 holes: $48 • 9 holes: $24</div>
-                                <div><strong>Standard walking:</strong></div>
-                                <div>18 holes: $28 • 9 holes: $14</div>
-                                <div><strong>Senior with cart:</strong></div>
-                                <div>18 holes: $41 • 9 holes: $22</div>
-                                <div><strong>Senior walking:</strong></div>
-                                <div>18 holes: $21 • 9 holes: $12</div>
-                            </div>
-                        </div>
-                    </div>
-                        
-                    <!-- Annual Pass -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Tennessee Golf Trail Annual Pass</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Regular Members:</span>
-                                <span class="spec-value">$2,800</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Senior Members:</span>
-                                <span class="spec-value">$2,600</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="font-size: 0.85rem; color: #666; font-style: italic; text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                        <p><strong>Contact for Reservations:</strong> <a href="tel:931-707-1640" style="color: #4a7c59; font-weight: 600;">(931) 707-1640</a></p>
-                        <p style="margin: 0.5rem 0;">All rates plus tax • Rates subject to change • Junior/Student: 18 & under or valid college ID</p>
-                    </div>
+                <!-- Box 2: Green Fees -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">In Season (Apr 1–Nov 16)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 1.25rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">w/ Cart</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Walking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$80</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$60</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$40</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18 (62+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$65</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$45</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$44</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$24</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Twilight (after 3pm)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$33</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Off Season (Nov 17–Mar 31)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">w/ Cart</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Walking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$49</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$29</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$25</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$15</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18 (62+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$49</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$29</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$44</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$24</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">All rates + tax &bull; Junior: 18 &amp; under or valid college ID &bull; Rates subject to change</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
+                <!-- Box 3: Location & Contact -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
                     407 Wild Plum Lane<br>
                     Crossville, TN 38572</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (931) 707-1640</p>
-                    
-                    <p><strong>Website:</strong><br>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:9317071640" style="color: #4a7c59;">(931) 707-1640</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
                     <a href="https://tnstateparks.com/golf/course/bear-trace-at-cumberland-mountain" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=407+Wild+Plum+Lane,+Crossville,+TN+38572&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <div class="course-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=407+Wild+Plum+Lane,+Crossville,+TN+38572&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Bear Trace at Cumberland Mountain Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=407+Wild+Plum+Lane,+Crossville,+TN+38572" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=407+Wild+Plum+Lane,+Crossville,+TN+38572"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -649,6 +640,59 @@ SEO::setupCoursePage($course_data);
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Tee Box Details -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-flag"></i> Tee Box Details</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #2c5234;">
+                            <th style="text-align: left; padding: 0.6rem 0.5rem; color: #2c5234;">Tee</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Yardage</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Rating</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Slope</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Par</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">Nicklaus</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,928</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">74.0</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">141</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #1a56db;">Blue</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,430</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71.6</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">139</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">White</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,916</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">69.0</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">133</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #b8860b;">Gold</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,250</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">66.1</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">117</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #c0392b;">Red</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,073</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">69.6</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">128</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Course Description -->

@@ -554,6 +554,59 @@ SEO::setupCoursePage($course_data);
                 </div>
             </div>
 
+            <!-- Tee Box Details -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-flag"></i> Tee Box Details</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #2c5234;">
+                            <th style="text-align: left; padding: 0.6rem 0.5rem; color: #2c5234;">Tee</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Yardage</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Rating</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Slope</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Par</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #b8860b;">Gold</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,764</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72.5</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">130</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #1a56db;">Blue</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,469</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71.3</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">125</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">White</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,109</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">69.6</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">120</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">Red</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,517</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">66.8</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">115</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #c0392b;">Red (Ladies)</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">4,848</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">67.6</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">115</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- Course Description -->
             <div class="course-info-card">
                 <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Tims Ford</h3>
