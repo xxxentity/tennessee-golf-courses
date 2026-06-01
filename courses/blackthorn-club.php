@@ -516,6 +516,10 @@ SEO::setupCoursePage($course_data);
                             <span style="font-weight: 700; color: #2c5234;">7,147 (Black Tees)</span>
                         </div>
                         <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Arthur Hills</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span style="font-weight: 600; color: #666;">Opened:</span>
                             <span style="font-weight: 700; color: #2c5234;">1995</span>
                         </div>
@@ -583,15 +587,15 @@ SEO::setupCoursePage($course_data);
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Blackthorn Club</h3>
-                <p>Blackthorn Club is an exclusive private championship golf course located in Jonesborough, Tennessee, serving the greater Tri-Cities area since 1995. This 18-hole, par 72 layout stretches 7,147 yards from the Black tees and carries a course rating of 74.5 with a slope of 144 — making it one of the most demanding tests of golf in East Tennessee.</p>
+                <p>Blackthorn Club is an exclusive private championship golf course located in Jonesborough, Tennessee, serving the greater Tri-Cities area. Designed by Arthur Hills and opened in 1995, the 18-hole, par 72 layout winds through the quiet neighborhood of The Ridges and offers breathtaking views of northeast Tennessee's rolling landscape and magnificent vistas.</p>
 
                 <br>
 
-                <p>The course plays through the ridge country of Washington County, with the elevation changes and natural terrain of northeast Tennessee shaping the layout. Multiple tee options at 6,732 and 6,546 yards allow members to adjust the challenge while still experiencing the course's championship character.</p>
+                <p>The course presents a traditional country club layout featuring winding canals, water challenges, and strategic bunker placement. Crenshaw Bentgrass greens are known for their quick speed and smooth roll. From the championship tees the course stretches 7,147 yards with a course rating of 74.5 and slope of 144, while the forward tees offer a more approachable 4,846-yard layout — giving members a wide range of options on every round.</p>
 
                 <br>
 
-                <p>As a private club, Blackthorn operates as an intimate, member-focused facility. Contact the club at <a href="tel:4239133164" style="color: #4a7c59;">(423) 913-3164</a> for membership information.</p>
+                <p>In addition to the championship course, Blackthorn offers a practice range, short game practice area, and putting green. The Golf Shop provides full professional services including PGA instruction, junior programs, tournament events for men, ladies, couples, and juniors, merchandise, club storage, and handicap service.</p>
             </div>
 
             <!-- Amenities -->
@@ -600,27 +604,35 @@ SEO::setupCoursePage($course_data);
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Championship Golf</span>
+                        <span>Practice Range</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Practice Facilities</span>
+                        <span>Short Game &amp; Putting Area</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-store" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Dining</span>
+                        <span>Golf Shop</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-person-chalkboard" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Golf Instruction</span>
+                        <span>PGA Professional Instruction</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
-                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Member Events</span>
+                        <i class="fas fa-child" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Junior Instruction</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-trophy" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Tournament Events</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-booth" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Men's &amp; Women's Locker Rooms</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-bag-shopping" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Club Storage</span>
                     </div>
                 </div>
             </div>
