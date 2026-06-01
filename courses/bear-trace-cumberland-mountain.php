@@ -696,78 +696,54 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Cumberland Mountain</h3>
-                <p>Bear Trace at Cumberland Mountain is one of the most acclaimed golf courses in Tennessee, featuring a masterful Jack Nicklaus design that opened in 1999. Located within Cumberland Mountain State Park in Crossville, TN, this championship course has earned recognition as one of the premier golf destinations in the southeastern United States.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Bear Trace at Cumberland Mountain</h3>
+                <p>Bear Trace at Cumberland Mountain is one of the most acclaimed golf courses in Tennessee, featuring a masterful Jack Nicklaus design that opened in 1999. Located within Cumberland Mountain State Park in Crossville, TN, this public championship course has earned recognition as one of the premier golf destinations in the southeastern United States.</p>
+
                 <br>
-                
-                <p>The 6,928-yard, par-72 layout capitalizes on dramatic elevation changes and natural features including flowing brooks and clusters of mature pines. The signature 7th hole, a 393-yard par 4, incorporates the region's natural layered flagstone along the front of the green, creating both beauty and strategic challenge.</p>
-                
+
+                <p>The 6,928-yard, par-72 layout from the Nicklaus tees carries a course rating of 74.0 and slope of 141—making it the most demanding of the three Bear Trace courses on the Tennessee Golf Trail. The design capitalizes on dramatic elevation changes and natural features including flowing brooks and clusters of mature pines. The signature 7th hole, a 393-yard par 4, incorporates the region's natural layered flagstone along the front of the green, creating both beauty and strategic challenge.</p>
+
                 <br>
-                
-                <p>This Bear Trace course has earned numerous prestigious accolades: named "One of the Top Ten You Can Play in North America" by Golf Magazine in 1999, "One of the Top Ten Courses in Tennessee" by Golf Digest in 2001, and was recognized by GOLFWEEK as the #1 Public Course in Tennessee for both 2012 and 2013.</p>
-                
+
+                <p>This Bear Trace course has earned numerous prestigious accolades: named "One of the Top Ten You Can Play in North America" by Golf Magazine in 1999, "One of the Top Ten Courses in Tennessee" by Golf Digest in 2001, and recognized by GOLFWEEK as the #1 Public Course in Tennessee for both 2012 and 2013.</p>
+
                 <br>
-                
-                <p>The course features five sets of tees ranging from 5,071 to 6,928 yards, Tahoma 31 Bermuda fairways, and pristine bent grass greens. Several holes require forced carries over creeks and barrancas to undulating greens, many of which are cleverly set into hillsides.<br><br></p>
-                
-                <p>What sets Bear Trace at Cumberland Mountain apart is its seamless integration with the natural Cumberland Plateau landscape. The Golden Bear's design philosophy shines through in every hole, creating strategic options for players while rewarding precision and course management.<br><br></p>
-                
-                <p>As part of <a href="https://tnstateparks.com/parks/cumberland-mountain" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Cumberland Mountain State Park</a>, the course offers additional recreational opportunities including cabins, camping, hiking trails, and dining at the Restaurant at Cumberland Mountain State Park, making it an ideal destination for extended golf vacations.</p>
+
+                <p>The course features five sets of tees ranging from 5,073 to 6,928 yards, Tahoma 31 Bermuda fairways, and pristine bent grass greens. Several holes require forced carries over creeks and barrancas to undulating greens, many of which are cleverly set into hillsides. This variety ensures the layout is equally rewarding for first-time visitors and seasoned players managing the course strategically.</p>
+
+                <br>
+
+                <p>As part of <a href="https://tnstateparks.com/parks/cumberland-mountain" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Cumberland Mountain State Park</a>, the course offers additional recreational opportunities including on-site cabins, camping, and hiking trails, making it an ideal destination for extended golf vacations with family.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Driving Range</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-bullseye"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Practice Green</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Snack Bar</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-chalkboard" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Lessons</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Rentals</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-campground" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>On-Site Cabins &amp; Campsites</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-home"></i>
-                        <span>On-Site Cabins</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-campground"></i>
-                        <span>Camping Available</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-bag-shopping" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Club Rental</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Banquet Hall</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-walking"></i>
-                        <span>Walking Allowed</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-satellite-dish"></i>
-                        <span>GPS Carts</span>
                     </div>
                 </div>
             </div>

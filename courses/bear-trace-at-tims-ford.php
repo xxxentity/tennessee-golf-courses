@@ -627,7 +627,7 @@ SEO::setupCoursePage($course_data);
                 
                 <br>
                 
-                <p>What sets Bear Trace at Tims Ford apart is its unique links-style character, resembling traditional British Isles courses rarely found in Tennessee. The 6,763-yard, par-71 layout offers a distinctive golfing experience where the Tims Ford reservoir is visible from every hole, with water coming into play on eight holes strategically positioned throughout the course.</p>
+                <p>What sets Bear Trace at Tims Ford apart is its unique links-style character, resembling traditional British Isles courses rarely found in Tennessee. The 6,764-yard, par-71 layout carries a course rating of 72.5 and slope of 130 from the Gold tees, offering a distinctive golfing experience where the Tims Ford reservoir is visible from every hole, with water coming into play on eight holes strategically positioned throughout the course.</p>
                 
                 <br>
                 
@@ -647,40 +647,32 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Driving Range</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Restaurant</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Green</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Snack Bar</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-chalkboard" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Lessons</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Event Hosting</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-campground" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>On-Site Cabins &amp; Campsites</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-home"></i>
-                        <span>On-Site Lodge</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-water"></i>
-                        <span>Lake Views</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-bag-shopping" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Club Rental</span>
                     </div>
                 </div>
             </div>

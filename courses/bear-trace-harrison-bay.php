@@ -622,62 +622,46 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Bear Trace at Harrison Bay</h3>
-                <p>Bear Trace at Harrison Bay is a stunning Jack Nicklaus-designed golf course situated on a peninsula along Chickamauga Lake in Harrison, Tennessee. Located just 18 miles from Chattanooga, this championship 18-hole course offers golfers an unforgettable experience with water touching 12 fairways and breathtaking lake views on three sides.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Bear Trace at Harrison Bay</h3>
+                <p>Bear Trace at Harrison Bay is a stunning Jack Nicklaus-designed golf course situated on a peninsula along Chickamauga Lake in Harrison, Tennessee. Located just 18 miles from Chattanooga, this public 18-hole championship course opened in 1999 as part of the Tennessee Golf Trail—the Golden Bear's commitment to bringing quality public golf to the state.</p>
+
                 <br>
-                
-                <p>Opened in 1999, Bear Trace represents the Golden Bear's commitment to creating challenging yet fair golf courses that work in harmony with the natural landscape.</p>
-                
+
+                <p>Playing to 7,111 yards from the Gold tees with a course rating of 74.9 and slope of 136, Harrison Bay is both the longest and highest-rated of the three Bear Trace courses. The layout features Champion Bermuda greens and 419 Bermuda fairways lined with soaring pine and hardwood trees. With the Chickamauga Lake surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.</p>
+
                 <br>
-                
-                <p>The course features Champion Bermuda greens, 419 Bermuda fairways lined with soaring pine and hardwood trees, and plays to 7,111 yards from the Gold tees.</p>
-                
+
+                <p>Most greens are open in front, making the course accessible for higher-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers. The design rewards precise tee shots and thoughtful course management, particularly on the holes where lake carries demand commitment.</p>
+
                 <br>
-                
-                <p>What sets Bear Trace apart is its spectacular peninsula setting on Chickamauga Lake. With water surrounding the property on three sides, 12 holes touch water while still providing ample room for safe play.<br><br></p>
-                
-                <p>Most greens are open in front, making the course user-friendly for high-handicap players while maintaining the traditional Nicklaus character through strategic fairway and greenside bunkers.<br><br></p>
-                
-                <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities while golfers play this world-class course.</p>
+
+                <p>As part of <a href="https://tnstateparks.com/parks/harrison-bay" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Harrison Bay State Park</a>, the course offers families additional recreational opportunities beyond golf. The state park features camping, hiking trails, swimming areas, boat launches, and picnic facilities, making it an ideal destination for golf trips where the whole family can enjoy outdoor activities on Chickamauga Lake.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Driving Range</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Full Restaurant</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Practice Green</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Snack Bar</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-chalkboard" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Lessons</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Event Hosting</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-wifi"></i>
-                        <span>Free WiFi</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Online Booking</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-bag-shopping" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Club Rental</span>
                     </div>
                 </div>
             </div>
