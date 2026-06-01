@@ -464,8 +464,8 @@ SEO::setupCoursePage($course_data);
                 <!-- Box 2: Green Fees -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">In Season (Mar–Nov)</p>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 1.25rem;">
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">In Season (Mar 26–Nov 16)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1.25rem;">
                         <thead>
                             <tr style="border-bottom: 2px solid #2c5234;">
                                 <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
@@ -476,23 +476,38 @@ SEO::setupCoursePage($course_data);
                         <tbody>
                             <tr style="border-bottom: 1px solid #f0f0f0;">
                                 <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$52</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$57</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$69</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$79</td>
                             </tr>
                             <tr style="border-bottom: 1px solid #f0f0f0;">
-                                <td style="padding: 0.5rem 0; color: #666;">Senior 18</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$47</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$39</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$45</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes Walking</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$49</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$59</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18 w/ Cart (62+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$55</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">N/A</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Junior 18 (18 &amp; under)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$25</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$25</td>
                             </tr>
                             <tr>
-                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$32</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                                <td style="padding: 0.5rem 0; color: #666;">Twilight 18 (after 3pm)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$45</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$45</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Off Season (Dec–Feb)</p>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Off Season (Nov 17–Mar 25)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
                         <thead>
                             <tr style="border-bottom: 2px solid #2c5234;">
                                 <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
@@ -503,22 +518,27 @@ SEO::setupCoursePage($course_data);
                         <tbody>
                             <tr style="border-bottom: 1px solid #f0f0f0;">
                                 <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$47</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$52</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$51</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$60</td>
                             </tr>
                             <tr style="border-bottom: 1px solid #f0f0f0;">
-                                <td style="padding: 0.5rem 0; color: #666;">Senior 18</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$42</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes w/ Cart</td>
                                 <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$27</td>
-                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$32</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes Walking</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$31</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18 w/ Cart (62+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$41</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">N/A</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">All rates include cart &bull; + tax &bull; Rates subject to change</p>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">All rates + tax &bull; Senior weekday only &bull; Rates subject to change</p>
                 </div>
 
                 <!-- Box 3: Location & Contact -->
@@ -589,17 +609,10 @@ SEO::setupCoursePage($course_data);
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">120</td>
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
                         </tr>
-                        <tr style="border-bottom: 1px solid #f0f0f0;">
-                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">Red</td>
+                        <tr>
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #c0392b;">Red</td>
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,517</td>
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">66.8</td>
-                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">115</td>
-                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #c0392b;">Red (Ladies)</td>
-                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">4,848</td>
-                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">67.6</td>
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">115</td>
                             <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71</td>
                         </tr>
