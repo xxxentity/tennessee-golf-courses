@@ -395,7 +395,7 @@ SEO::setupCoursePage($course_data);
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
                     <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
-                    1299 Oak Chase Blvd<br>
+                    700 Turnberry Cir<br>
                     Lenoir City, TN 37772</p>
                     <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
                     <a href="tel:8659864653" style="color: #4a7c59;">(865) 986-4653</a></p>
@@ -403,7 +403,7 @@ SEO::setupCoursePage($course_data);
                     <a href="https://www.avalongolf.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">avalongolf.com</a></p>
                     <div class="course-map">
                         <iframe
-                            src="https://maps.google.com/maps?q=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=700+Turnberry+Cir,+Lenoir+City,+TN+37772&t=&z=15&ie=UTF8&iwloc=&output=embed"
                             width="100%"
                             height="200"
                             style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
@@ -413,7 +413,7 @@ SEO::setupCoursePage($course_data);
                             title="Avalon Golf &amp; Country Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772"
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=700+Turnberry+Cir,+Lenoir+City,+TN+37772"
                                target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
