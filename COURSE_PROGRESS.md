@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (6 / 104)
+## Completed (7 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -15,12 +15,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ bear-trace-harrison-bay.php
 - ✅ belle-acres-golf-course.php
 - ✅ belle-meade-country-club.php
+- ✅ big-creek-golf-club.php — permanently closed, historical page only
 
 ---
 
-## Remaining (98 / 104)
+## Remaining (97 / 104)
 
-- ⬜ big-creek-golf-club.php
+- ⬜ blackthorn-club.php
 - ⬜ big-creek-golf-club.php
 - ⬜ blackthorn-club.php
 - ⬜ bluegrass-yacht-country-club.php

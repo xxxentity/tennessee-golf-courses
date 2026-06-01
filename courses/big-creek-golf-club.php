@@ -700,100 +700,90 @@ SEO::setupCoursePage($course_data);
                 <p>The course operated from 1976 until closure. The information below reflects the course during its operational years.</p>
             </div>
             
-            <div class="course-info-cards">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Architect:</span>
-                            <span class="spec-value">B.G. Mitchell</span>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 2rem;">
+                <!-- Box 1: Course Information -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Year Opened:</span>
-                            <span class="spec-value">1976</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">B.G. Mitchell</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1976</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Semi-Private</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Semi-Private</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Greens:</span>
-                            <span class="spec-value">Bermuda Grass</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Fairways:</span>
-                            <span class="spec-value">Bermuda Grass</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Sand Bunkers:</span>
-                            <span class="spec-value">31-40</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Status:</span>
+                            <span style="font-weight: 700; color: #dc3545;">Permanently Closed</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-user-tie"></i> Staff & Operations</h3>
-                    <div class="course-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Head Pro:</span>
-                            <span class="spec-value">Mark Floyd</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Status:</span>
-                            <span class="spec-value" style="color: #dc3545; font-weight: bold;">CLOSED</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Walking:</span>
-                            <span class="spec-value">Was Allowed</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Pro On Site:</span>
-                            <span class="spec-value">Yes</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Rental Clubs:</span>
-                            <span class="spec-value">Available</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Last Phone:</span>
-                            <span class="spec-value">(901) 353-1654</span>
-                        </div>
+                <!-- Box 2: Green Fees -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div style="background: linear-gradient(135deg, #6c757d, #495057); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Course Permanently Closed</h4>
+                        <p style="margin: 0; opacity: 0.9;">No longer accepting tee times</p>
                     </div>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Big Creek Golf Club is permanently closed. The property now operates as
+                        <a href="/courses/mirimichi-golf-course" style="color: #4a7c59; font-weight: 600;">Mirimichi Golf Course</a>.
+                    </p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Former Location</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 6195 Woodstock Cuba Rd, Millington, TN 38053</p>
-                            <p><i class="fas fa-phone-slash" style="color: #dc3545;"></i> (901) 353-1654 (Disconnected)</p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=6195+Woodstock+Cuba+Rd+Millington+TN+38053" target="_blank">View Former Location</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=6195+Woodstock+Cuba+Rd+Millington+TN+38053&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
+                <!-- Box 3: Location & Contact -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Former Location</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    6195 Woodstock Cuba Rd<br>
+                    Millington, TN 38053</p>
+                    <p style="margin-bottom: 1.5rem; color: #999;"><strong>Phone:</strong><br>
+                    (901) 353-1654 <em>(disconnected)</em></p>
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=6195+Woodstock+Cuba+Rd,+Millington,+TN+38053&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Big Creek Golf Club Former Location">
                         </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=6195+Woodstock+Cuba+Rd,+Millington,+TN+38053"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> View Former Location
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
-        <div class="container">
-            <div class="description-content">
-                <h2>Historical Information</h2>
-                <p>Big Creek Golf Club served the Millington, Tennessee area from 1976 until its permanent closure. Designed by B.G. Mitchell, this semi-private course featured 18 holes of challenging golf on Bermuda grass greens and fairways.</p>
-                
-                <p>The course was known for its strategic design that would "challenge even the best of golfers" from the back tees. With 31-40 sand bunkers and water hazards throughout the layout, Big Creek provided a demanding test of golf for players of all skill levels.</p>
-                
-                <p>Located at 6195 Woodstock Cuba Rd in Millington, the course featured amenities including a putting green, pro shop with Mark Floyd as the head professional, bar facilities, and rental club availability. The course welcomed both members and daily fee players as a semi-private facility.</p>
-                
-                <p><strong>This page serves as a historical record for those who played Big Creek Golf Club or are researching Tennessee golf course history.</strong></p>
+            <!-- About -->
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Big Creek Golf Club</h3>
+                <p>Big Creek Golf Club was an 18-hole semi-private golf course designed by B.G. Mitchell that opened in 1976 in Millington, Tennessee. The course served the greater Memphis area for several decades before permanently closing.</p>
+
+                <br>
+
+                <p>The course featured Bermuda grass greens and fairways and operated as a semi-private facility welcoming both members and daily fee players. It was located at 6195 Woodstock Cuba Rd in Millington, just north of Memphis.</p>
+
+                <br>
+
+                <p>The property was later redeveloped and now operates as <a href="/courses/mirimichi-golf-course" style="color: #4a7c59; font-weight: 600;">Mirimichi Golf Course</a>, a completely redesigned public course. This page is preserved as a historical record for those who played Big Creek or are researching Tennessee golf course history.</p>
             </div>
         </div>
     </section>
