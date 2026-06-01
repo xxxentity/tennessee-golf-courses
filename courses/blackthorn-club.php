@@ -498,81 +498,79 @@ SEO::setupCoursePage($course_data);
     <!-- Course Details -->
     <section class="course-details">
         <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <!-- Box 1: Course Information -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,147 (Black Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">7,147 (Black Tees)</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">74.5 / 144 Slope</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1995</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Other Tees:</span>
-                            <span class="spec-value">6,732 • 6,546 yards</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Private</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">74.5</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">144</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    
-                    <div style="text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
-                        <h4 style="color: #2c5234; margin-bottom: 1rem;">Call for Rates</h4>
-                        <p style="margin-bottom: 1rem; color: #666;">Private club membership required. Please contact the club for membership information and guest policies.</p>
-                        <div style="background: #4a7c59; color: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                            <p style="margin: 0; font-weight: 600;">
-                                <i class="fas fa-phone"></i> Contact Club
-                            </p>
-                        </div>
-                        <p style="font-size: 0.85rem; color: #666; font-style: italic;">
-                            Exclusive private club • Membership inquiries welcome<br>
-                            Championship course for serious golfers
-                        </p>
+                <!-- Box 2: Green Fees -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
+                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
                     </div>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Blackthorn Club is a private club serving the Tri-Cities area.
+                        Contact the club directly for membership information and guest policies.
+                    </p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
+                <!-- Box 3: Location & Contact -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
                     1501 Ridges Club Drive<br>
                     Jonesborough, TN 37659</p>
-                    
-                    <p><strong>Area:</strong><br>
-                    Tri-Cities (Johnson City Area)</p>
-                    
-                    <p><strong>Club Type:</strong><br>
-                    Private Championship Club</p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=1501+Ridges+Club+Drive,+Jonesborough,+TN+37659&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:4239133164" style="color: #4a7c59;">(423) 913-3164</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.blackthornclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">blackthornclub.com</a></p>
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=1501+Ridges+Club+Drive,+Jonesborough,+TN+37659&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Blackthorn Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1501+Ridges+Club+Drive,+Jonesborough,+TN+37659" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1501+Ridges+Club+Drive,+Jonesborough,+TN+37659"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -583,74 +581,46 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Blackthorn Club</h3>
-                <p>Blackthorn Club is an exclusive private championship golf course located in Jonesborough, Tennessee, serving the greater Tri-Cities area. This challenging 18-hole, par 72 layout stretches over 7,100 yards from the championship tees, presenting one of the most demanding tests of golf in East Tennessee.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Blackthorn Club</h3>
+                <p>Blackthorn Club is an exclusive private championship golf course located in Jonesborough, Tennessee, serving the greater Tri-Cities area since 1995. This 18-hole, par 72 layout stretches 7,147 yards from the Black tees and carries a course rating of 74.5 with a slope of 144 — making it one of the most demanding tests of golf in East Tennessee.</p>
+
                 <br>
-                
-                <p>The course features multiple tee options to accommodate players of varying skill levels, with the Black Tees measuring 7,147 yards and carrying a formidable 74.5 course rating with a 144 slope rating. Additional tees at 6,732 and 6,546 yards provide options for members seeking a more manageable challenge while maintaining the course's championship character.</p>
-                
+
+                <p>The course plays through the ridge country of Washington County, with the elevation changes and natural terrain of northeast Tennessee shaping the layout. Multiple tee options at 6,732 and 6,546 yards allow members to adjust the challenge while still experiencing the course's championship character.</p>
+
                 <br>
-                
-                <p>Located at 1501 Ridges Club Drive in Jonesborough, Blackthorn Club offers its members an exclusive golf experience in a pristine private setting. The club's commitment to excellence extends beyond the golf course, providing a full range of amenities and services befitting a premier private club.</p>
-                
-                <br>
-                
-                <p>As a private club, Blackthorn Club maintains the highest standards of course conditioning and member service, creating an environment where serious golfers can enjoy championship-level golf in an intimate, exclusive setting. The club welcomes membership inquiries from qualified individuals seeking access to one of Tennessee's most challenging private courses.</p>
+
+                <p>As a private club, Blackthorn operates as an intimate, member-focused facility. Contact the club at <a href="tel:4239133164" style="color: #4a7c59;">(423) 913-3164</a> for membership information.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Championship Golf</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-circle-dot" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Practice Facilities</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-store"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-store" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Pro Shop</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Fine Dining</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Dining</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Club Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-chalkboard" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Golf Instruction</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Member Events</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-users"></i>
-                        <span>Private Club</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>Tournament Host</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Multiple Tees</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-mountain"></i>
-                        <span>Mountain Setting</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-star"></i>
-                        <span>Exclusive Access</span>
                     </div>
                 </div>
             </div>
