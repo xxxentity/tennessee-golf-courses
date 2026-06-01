@@ -421,123 +421,105 @@ SEO::setupCoursePage($course_data);
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,470 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,468</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">71.5</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Donald Ross</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">122</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1926</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Donald Ross</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Municipal</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1926</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">69.8</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Municipal</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">119</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Regular Players</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$25</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Seniors (60+)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$18</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Juniors (Under 18)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$5</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$30</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;"><strong>Cart Rental: $15</strong><br>
-                        Tee times available up to 5 days in advance</p>
-                    </div>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0f4f0;">
+                                <th style="padding: 0.5rem; text-align: left; color: #2c5234;">Category</th>
+                                <th style="padding: 0.5rem; text-align: center; color: #2c5234;">Weekday</th>
+                                <th style="padding: 0.5rem; text-align: center; color: #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Regular (18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$25</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0; background: #f8f9fa;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Senior (60+)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$19</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Junior (U18)</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$5</td>
+                                <td style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$30</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 0.5rem; font-weight: 600;">Cart Rental</td>
+                                <td colspan="2" style="padding: 0.5rem; text-align: center; font-weight: 700; color: #2c5234;">$15 per player</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">City of Chattanooga residents receive a $2 discount on 18-hole green fees. Tee times available up to 5 days in advance.</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
                     5203 Old Mission Road<br>
                     Chattanooga, TN 37411</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (423) 855-2692</p>
-                    
-                    <p><strong>Manager:</strong><br>
-                    Edwin Prichard</p>
-                    
-                    <p><strong>Website:</strong><br>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:4238552692" style="color: #4a7c59;">(423) 855-2692</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
                     <a href="https://chattanooga.gov/things-to-do/golf-courses/brainerd" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">chattanooga.gov</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=5203+Old+Mission+Road,+Chattanooga,+TN+37411&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=5203+Old+Mission+Road,+Chattanooga,+TN+37411&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Brainerd Golf Course Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=5203+Old+Mission+Road,+Chattanooga,+TN+37411" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=5203+Old+Mission+Road,+Chattanooga,+TN+37411"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -548,69 +530,46 @@ SEO::setupCoursePage($course_data);
             </div>
 
             <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Brainerd Golf Course</h3>
-                <p>Brainerd Golf Course is a distinguished Donald Ross designed masterpiece that opened in 1926, representing one of Chattanooga's oldest and most historic golf destinations. This legendary course showcases the timeless design principles of Scotland's most famous golf architect, with Ross's characteristic green complexes and strategic bunkering still evident even after renovations in 1953 and 1983.</p>
-                
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Brainerd Golf Course</h3>
+                <p>Brainerd Golf Course is one of Chattanooga's oldest public golf courses, opening in 1926 on a Donald Ross design. The 18-hole, par-72 layout stretches 6,468 yards from the blue tees, with a course rating of 69.8 and slope of 119. The course is operated by the City of Chattanooga as part of its public parks and recreation system.</p>
+
                 <br>
-                
-                <p>The 6,470-yard, par-72 championship layout from the blue tees features rolling acreage and mature trees that create a parkland setting unique among Chattanooga's public golf offerings. The course's terrain naturally incorporates elevation changes and strategic challenges that reward both course management and shot-making skills, embodying Ross's philosophy of creating "natural" golf that tests every aspect of a player's game.</p>
-                
+
+                <p>The layout plays across rolling terrain with mature trees that give it a classic parkland character. The front nine measures 3,323 yards and the back nine 3,147 yards, with the longest hole reaching 505 yards and the shortest at 165 yards. Blue, White, Gold, and Red tees allow golfers of all skill levels to enjoy the course.</p>
+
                 <br>
-                
-                <p>What makes Brainerd Golf Course historically significant is its preservation of Donald Ross's original design DNA, particularly in the green complexes where his architectural genius remains most visible. The course underwent a unique routing change in the early 1990s when the nines were flipped (holes 1-9 became 10-18), though golf purists suggest the original routing better preserved the Ross era design heritage and strategic flow.</p>
-                
-                <br>
-                
-                <p>As one of the City of Chattanooga's two public golf courses, Brainerd Golf Course provides exceptional value with its affordable municipal pricing structure while maintaining the quality and character of a classic Donald Ross design. The course operates daily from 7:30 a.m. to sunset, offering tee times up to five days in advance through an online reservation system that makes this historic layout accessible to all golfers.</p>
-                
-                <br>
-                
-                <p>The facility enhances the traditional golf experience with comprehensive amenities including a full-service clubhouse, pro shop, and snack bar, along with special programming that includes ladies' days, youth programs, and group activities. These offerings reflect the course's commitment to serving the entire Chattanooga golf community while preserving the timeless character of this Donald Ross gem.</p>
-                
-                <br>
-                
-                <p>Located conveniently off I-24 at the Moore Road exit, Brainerd Golf Course offers both residents and visitors the rare opportunity to experience authentic Donald Ross architecture at municipal pricing. The course's combination of historic significance, challenging yet fair design, and exceptional value makes it a cornerstone of Tennessee's public golf legacy and a must-play destination for golfers seeking to experience the artistry of one of golf's greatest architects.</p>
+
+                <p>As a City of Chattanooga municipal course, Brainerd offers some of the most affordable public golf in the region. Juniors play weekdays for $5, seniors receive a discounted rate, and city residents get an additional $2 off 18-hole green fees. The course is open daily from 7:30 a.m. to sunset with tee times bookable up to five days in advance.</p>
             </div>
 
             <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Course Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Pro Shop</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Snack Bar</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-home"></i>
-                        <span>Full Service Clubhouse</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-car" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Cart Rentals</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Advance Tee Times</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Driving Range</span>
                     </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-laptop"></i>
-                        <span>Online Booking</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-users"></i>
-                        <span>Group Activities</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-graduate"></i>
-                        <span>Youth Programs</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Online Tee Times</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -664,53 +623,8 @@ SEO::setupCoursePage($course_data);
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.php#courses">Golf Courses</a></li>
-                        <li><a href="../index.php#reviews">Reviews</a></li>
-                        <li><a href="../index.php#news">News</a></li>
-                        <li><a href="../index.php#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Dynamic Footer -->
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
     <script>
