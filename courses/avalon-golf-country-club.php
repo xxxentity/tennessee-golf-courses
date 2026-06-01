@@ -304,114 +304,117 @@ SEO::setupCoursePage($course_data);
     <!-- Course Details -->
     <section class="course-details" style="padding: 4rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem;">
+
+                <!-- Box 1: Course Information -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,764</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">Joseph L. Lee</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">1997</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">Semi-Private</span>
                         </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72.0</span>
+                        </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">128</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Box 2: Green Fees -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="pricing-section">
-                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
-                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
-                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Monday/Tuesday Rates</h4>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>18 Hole Green Fee</span>
-                                    <span>$50</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>9 Hole Green Fee</span>
-                                    <span>$40</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
-                                    <span>Member Guest 18</span>
-                                    <span>$40</span>
-                                </div>
-                            </div>
-                            
-                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
-                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekend/Holiday Rates</h4>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>18 Hole Green Fee</span>
-                                    <span>$85</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>Twilight (After 4PM)</span>
-                                    <span>$60</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
-                                    <span>Military/First Responders</span>
-                                    <span>$50</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem;">
-                            Golf carts required until Twilight • Soft spikes only
-                        </div>
-                    </div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Mon/Tue</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Wed/Thu</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Fri–Sun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$55</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$68</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$85</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$35</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$40</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$45</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior / Junior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$50</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$50</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Twilight (after 4pm)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$50</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$60</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Military / First Resp.</td>
+                                <td colspan="3" style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$50 all days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">Cart required except twilight &bull; Soft spikes only &bull; Rates subject to change</p>
                 </div>
 
+                <!-- Box 3: Location & Contact -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1299 Oak Chase Blvd</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Lenoir City, TN 37772</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(865) 986-4653</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.avalongolf.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
-                    </div>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    1299 Oak Chase Blvd<br>
+                    Lenoir City, TN 37772</p>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:8659864653" style="color: #4a7c59;">(865) 986-4653</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.avalongolf.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">avalongolf.com</a></p>
+                    <div class="course-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Avalon Golf & Country Club Location">
+                            title="Avalon Golf &amp; Country Club Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=1299+Oak+Chase+Blvd,+Lenoir+City,+TN+37772"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions

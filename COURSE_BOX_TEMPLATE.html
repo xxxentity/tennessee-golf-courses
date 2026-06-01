@@ -1,0 +1,189 @@
+<!--
+    STANDARD THREE-BOX TEMPLATE
+    Tennessee Golf Courses — Course Page Standard
+    ============================================================
+    Use this as the reference when standardizing each course page.
+    Replace ALL_CAPS placeholders with course-specific data.
+    Omit Rating/Slope rows if data is unavailable.
+    ============================================================
+-->
+
+<!-- Course Details Section — paste at the top of <section class="course-details"> -->
+<section class="course-details" style="padding: 4rem 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem;">
+
+            <!-- ==================== BOX 1: COURSE INFORMATION ==================== -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">PAR</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">X,XXX (Championship)</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">DESIGNER NAME</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">YEAR</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public / Semi-Private / Private</span>
+                    </div>
+                    <!-- OMIT Rating & Slope rows if unknown -->
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">XX.X</span>
+                    </div>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                        <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
+                        <span class="spec-value" style="font-weight: 700; color: #2c5234;">XXX</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== BOX 2: GREEN FEES ==================== -->
+            <!--
+                OPTION A — Public course with day-of-week pricing (most common):
+            -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #2c5234;">
+                            <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                            <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Mon/Tue</th>
+                            <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Wed/Thu</th>
+                            <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Fri–Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                        </tr>
+                        <!-- Add/remove rows as needed: -->
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.5rem 0; color: #666;">9 Holes w/ Cart</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.5rem 0; color: #666;">Senior / Junior 18</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.5rem 0; color: #666;">Twilight (after Xpm)</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                            <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$XX</td>
+                        </tr>
+                        <!-- Optional: Military / walking / annual pass rows -->
+                    </tbody>
+                </table>
+                <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">Rates subject to change &bull; Call or visit website to confirm</p>
+            </div>
+
+            <!--
+                OPTION B — Private club:
+                Replace the entire <div class="course-info-card"> Green Fees block with:
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">COURSE NAME is a private club. Green fees are available to members and their guests only.</p>
+                    <p style="color: #666;">For membership information, contact the club directly.</p>
+                </div>
+
+                OPTION C — Dynamic / resort pricing:
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Rates at COURSE NAME vary by season, time of day, and availability.</p>
+                    <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <span style="font-weight: 600; color: #666;">Range:</span>
+                        <span style="font-weight: 700; color: #2c5234;">$XX–$XX w/ Cart</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">Book online for current pricing</p>
+                </div>
+            -->
+
+            <!-- ==================== BOX 3: LOCATION & CONTACT ==================== -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                STREET ADDRESS<br>
+                CITY, TN ZIPCODE</p>
+                <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                <a href="tel:XXXXXXXXXX" style="color: #4a7c59;">(XXX) XXX-XXXX</a></p>
+                <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                <a href="https://WEBSITE_URL" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">DISPLAY_URL</a></p>
+                <div class="course-map">
+                    <iframe
+                        src="https://maps.google.com/maps?q=STREET+ADDRESS,+CITY,+TN+ZIPCODE&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="200"
+                        style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="COURSE NAME Location">
+                    </iframe>
+                    <div style="margin-top: 0.5rem; text-align: center;">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=STREET+ADDRESS,+CITY,+TN+ZIPCODE"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end course-info-grid -->
+    </div><!-- end container -->
+</section>
+
+<!--
+    ============================================================
+    QUICK REFERENCE NOTES
+    ============================================================
+    Course Information rows (in order):
+      Holes | Par | Yardage | Designer | Opened | Type | Rating | Slope
+      - Omit Rating and Slope if not found anywhere
+      - Last row has NO border-bottom (remove the border-bottom style)
+
+    Green Fees columns:
+      - 3-column day split (Mon/Tue | Wed/Thu | Fri–Sun) is the default
+      - 2-column (Weekday | Weekend) if the course only distinguishes those two
+      - Seasonal (In Season / Off Season sections) if course uses that structure
+      - Use — (em dash) for cells where a rate doesn't apply
+      - Private: use Option B text block
+      - Dynamic/Resort: use Option C range block
+
+    Location & Contact:
+      - Phone href: tel: followed by 10 digits, no dashes (e.g. tel:8659864653)
+      - Maps iframe q= param: URL-encode spaces as + signs
+      - Maps dir destination= param: same URL encoding
+      - title attribute on iframe: "COURSE NAME Location"
+
+    File naming conventions:
+      - Course slug = URL slug (never rename files, preserves Google indexing)
+      - Images: ../images/courses/SLUG/1.webp through N.webp
+    ============================================================
+-->

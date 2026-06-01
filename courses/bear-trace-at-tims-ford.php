@@ -422,108 +422,129 @@ SEO::setupCoursePage($course_data);
     <section class="course-details">
         <div class="container">
             <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+                <!-- Box 1: Course Information -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">71</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">71</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,763 (Gold Tees)</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,764 (Gold Tees)</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Jack Nicklaus</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Jack Nicklaus</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1999</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1999</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Public</span>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Mar - Nov)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$52 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$57 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Senior (18):</span>
-                                <span class="spec-value">$47 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Junior (18):</span>
-                                <span class="spec-value">$32 + tax</span>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72.5</span>
                         </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Out of Season (Dec - Feb)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$47 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$52 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Senior (18):</span>
-                                <span class="spec-value">$42 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Junior (18):</span>
-                                <span class="spec-value">$27 + tax</span>
-                            </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">130</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
+                <!-- Box 2: Green Fees -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">In Season (Mar–Nov)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 1.25rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekday</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$52</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$57</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$47</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$32</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Off Season (Dec–Feb)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekday</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$47</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$52</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$42</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Junior 18</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$27</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; color: #999;">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">All rates include cart &bull; + tax &bull; Rates subject to change</p>
+                </div>
+
+                <!-- Box 3: Location & Contact -->
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
                     570 Bear Trace Drive<br>
                     Winchester, TN 37398</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (931) 962-4653</p>
-                    
-                    <p><strong>Website:</strong><br>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:9319624653" style="color: #4a7c59;">(931) 962-4653</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
                     <a href="https://tnstateparks.com/golf/course/bear-trace-at-tims-ford/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=570+Bear+Trace+Drive,+Winchester,+TN+37398&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <div class="course-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=570+Bear+Trace+Drive,+Winchester,+TN+37398&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="Bear Trace at Tims Ford Golf Course Location">
+                            title="Bear Trace at Tims Ford Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=570+Bear+Trace+Drive,+Winchester,+TN+37398" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=570+Bear+Trace+Drive,+Winchester,+TN+37398"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
