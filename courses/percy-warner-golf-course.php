@@ -419,10 +419,10 @@ SEO::setupCoursePage($course_data);
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/courses/percy-warner-golf-course/1.jpeg" alt="Percy Warner Golf Course Nashville, TN - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/percy-warner-golf-course/1.jpeg" alt="Percy Warner Golf Course Nashville, TN - Aerial view of historic 9-hole parkland golf course within Percy Warner Park, restored 2024" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
-                    <img src="../images/courses/percy-warner-golf-course/2.jpeg" alt="Percy Warner Golf Course Nashville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/percy-warner-golf-course/2.jpeg" alt="Percy Warner Golf Course Nashville TN - Tree-lined fairway view with rolling hills and mature hardwoods, par 34 walking course" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
                     <img src="../images/courses/percy-warner-golf-course/3.jpeg" alt="Percy Warner Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
@@ -494,7 +494,7 @@ SEO::setupCoursePage($course_data);
                 if (imageIndex <= 5) {
                     // Course overview shots
                     const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
+                        `${courseName} ${location} - Aerial view of 9-hole parkland golf course within Percy Warner Park, restored 2024`,
                         `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
                         `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
                         `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
@@ -503,7 +503,7 @@ SEO::setupCoursePage($course_data);
                     return overviewTexts[imageIndex - 1];
                 } else if (imageIndex <= 10) {
                     // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
+                    const holes = [3, 5, 7, 8, 9];
                     const holeIndex = imageIndex - 6;
                     const holeNum = holes[holeIndex];
                     const signatures = [

@@ -609,7 +609,7 @@ SEO::setupCoursePage($course_data);
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/courses/overton-park-9/2.webp" alt="Overton Park 9 Memphis TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/overton-park-9/2.webp" alt="Overton Park 9 Memphis TN - Panoramic fairway view hole 7 with mature tree-lined fairways" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
                     <img src="../images/courses/overton-park-9/3.webp" alt="Overton Park 9 Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
@@ -743,7 +743,7 @@ SEO::setupCoursePage($course_data);
                 if (imageIndex <= 5) {
                     // Course overview shots
                     const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
+                        `${courseName} ${location} - Aerial view of 9-hole golf course showing signature holes and clubhouse facilities`,
                         `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
                         `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
                         `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
@@ -752,7 +752,7 @@ SEO::setupCoursePage($course_data);
                     return overviewTexts[imageIndex - 1];
                 } else if (imageIndex <= 10) {
                     // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
+                    const holes = [3, 5, 7, 8, 9];
                     const holeIndex = imageIndex - 6;
                     const holeNum = holes[holeIndex];
                     const signatures = [

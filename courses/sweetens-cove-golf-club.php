@@ -619,7 +619,7 @@ SEO::setupCoursePage($course_data);
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/courses/sweetens-cove-golf-club/2.jpeg" alt="Sweetens Cove Golf Club South Pittsburg TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/sweetens-cove-golf-club/2.jpeg" alt="Sweetens Cove Golf Club South Pittsburg TN - Signature par 3 hole 4 with bunker-surrounded green and countryside views" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
                     <img src="../images/courses/sweetens-cove-golf-club/3.jpeg" alt="Sweetens Cove Golf Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">

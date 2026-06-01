@@ -610,7 +610,7 @@ SEO::setupCoursePage($course_data);
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../images/courses/the-links-at-whitehaven/2.webp" alt="The Links at Whitehaven Memphis TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                    <img src="../images/courses/the-links-at-whitehaven/2.webp" alt="The Links at Whitehaven Memphis TN - Panoramic fairway view hole 6 with strategic bunkering" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
                 </div>
                 <div class="gallery-item">
                     <img src="../images/courses/the-links-at-whitehaven/3.webp" alt="The Links at Whitehaven Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
