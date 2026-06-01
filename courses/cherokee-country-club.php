@@ -11,10 +11,10 @@ $course_name = 'Cherokee Country Club';
 $course_data = [
     'name' => 'Cherokee Country Club',
     'location' => 'Knoxville, TN',
-    'description' => 'Donald Ross designed private country club in Knoxville, TN. Classic 6,418-yard championship golf course established in 1907.',
+    'description' => 'Donald Ross designed private country club in Knoxville, TN. 6,370-yard championship golf course on the Tennessee River, established in 1907.',
     'image' => '/images/courses/cherokee-country-club/1.jpeg',
     'holes' => 18,
-    'par' => 71,
+    'par' => 70,
     'designer' => 'Donald Ross',
     'year_built' => 1907,
     'course_type' => 'Private'
@@ -233,62 +233,135 @@ SEO::setupCoursePage($course_data);
     </section>
     
     <!-- Course Details -->
-    <section class="course-details" style="padding: 4rem 0; background: white;">
+    <section class="course-details" style="padding: 4rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-bottom: 4rem;">
-                <div>
-                    <h2 style="color: #2c5234; margin-bottom: 2rem;">About Cherokee Country Club</h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
-                        Cherokee Country Club stands as one of Tennessee's most prestigious private golf clubs, featuring a masterful Donald Ross design from 1907. This historic championship course has hosted numerous Tennessee State Golf Association events and continues to challenge golfers with its classic layout and strategic design.
-                    </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
-                        The 6,418-yard par 71 layout showcases Ross's signature design elements including crowned greens, strategic bunkering, and thoughtful routing through rolling terrain. The course demands precision and strategy, rewarding well-placed shots while punishing errant ones. Cherokee's pristine conditions and timeless design make it a true gem of Tennessee golf.
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">70</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,370</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Donald Ross</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1907</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">71.3</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">128</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
+                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
+                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
+                    </div>
+                    <p style="text-align: center; color: #666; margin-top: 1rem;">
+                        Cherokee Country Club operates as an invitation-only private club. Membership must be sponsored by existing resident members. Contact the club directly for membership information.
                     </p>
                 </div>
-                <div class="course-info-card" style="background: #f8f9fa; padding: 2rem; border-radius: 15px;">
-                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Course Information</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Designer:</strong> Donald Ross</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Year Built:</strong> 1907</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Par:</strong> 71</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Yardage:</strong> 6,418 yards</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Course Rating:</strong> 71.5</li>
-                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0;"><strong>Slope Rating:</strong> 133</li>
-                        <li style="padding: 0.75rem 0;"><strong>Type:</strong> Private</li>
-                    </ul>
+
+                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    5138 Lyons View Pike<br>
+                    Knoxville, TN 37919</p>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:8655844637" style="color: #4a7c59;">(865) 584-4637</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://www.cherokeecountryclub.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">cherokeecountryclub.com</a></p>
+                    <div>
+                        <iframe
+                            src="https://maps.google.com/maps?q=5138+Lyons+View+Pike,+Knoxville,+TN+37919&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Cherokee Country Club Location">
+                        </iframe>
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=5138+Lyons+View+Pike,+Knoxville,+TN+37919"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Amenities Section -->
-            <div class="amenities-section" style="margin-bottom: 4rem;">
-                <h2 style="color: #2c5234; margin-bottom: 2rem;">Club Amenities</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.5rem;"></i>
-                        <span>Championship Golf Course</span>
+
+            <!-- Course Description -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Cherokee Country Club</h3>
+                <p>Cherokee Country Club was founded in 1907 in Knoxville, Tennessee and features a Donald Ross-designed golf course. The 18-hole, par-70 layout stretches 6,370 yards with a course rating of 71.3 and slope of 128. The course was restored in 2008 by architect Ron Prichard. The club operates on an invitation-only private membership basis.</p>
+
+                <br>
+
+                <p>The course is situated on a bend in the Tennessee River with views of the Great Smoky Mountains. The club has hosted numerous Tennessee Golf Association events throughout its history.</p>
+
+                <br>
+
+                <p>In addition to golf, Cherokee Country Club offers tennis courts, a swimming pool, a fitness center, and dining facilities for its members.</p>
+            </div>
+
+            <!-- Amenities -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Championship Golf</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-home" style="color: #4a7c59; font-size: 1.5rem;"></i>
-                        <span>Elegant Clubhouse</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-store" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Golf Shop</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.5rem;"></i>
-                        <span>Fine Dining</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Dining</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-swimming-pool" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-person-swimming" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Swimming Pool</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.5rem;"></i>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-table-tennis-paddle-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Tennis Courts</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.5rem;"></i>
-                        <span>Golf Academy</span>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
+                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.2rem;"></i>
+                        <span>Fitness Center</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     

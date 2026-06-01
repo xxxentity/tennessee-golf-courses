@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (10 / 104)
+## Completed (15 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -22,17 +22,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ brown-acres-golf-course.php — corrected rating/year, fixed fees, inline styles
 - ✅ cedar-crest-golf-club.php — fixed designer, removed fabricated signature holes, inline styles
 - ✅ chattanooga-golf-country-club.php — corrected rating/slope, fixed par, standardized
+- ✅ cheekwood-golf-club.php — fixed designer/year/rating, standardized
+- ✅ cherokee-country-club.php — fixed par/yardage/rating/slope, added address/phone, replaced non-standard layout
 
 ---
 
-## Remaining (91 / 104)
+## Remaining (89 / 104)
 
-- ⬜ cheekwood-golf-club.php
-- ⬜ brown-acres-golf-course.php
-- ⬜ cedar-crest-golf-club.php
-- ⬜ chattanooga-golf-country-club.php
-- ⬜ cheekwood-golf-club.php
-- ⬜ cherokee-country-club.php
 - ⬜ chickasaw-country-club.php
 - ⬜ chickasaw-golf-course.php
 - ⬜ clarksville-country-club.php
@@ -61,7 +57,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ⬜ island-pointe-golf-club.php
 - ⬜ jackson-country-club.php
 - ⬜ lake-tansi-golf-course.php
-- ⬜ lambert-acres-golf-club.php
+- ⬜ lambert-acres-golf-lab.php
 - ⬜ laurel-valley-country-club.php
 - ⬜ lookout-mountain-club.php
 - ⬜ mccabe-golf-course.php
