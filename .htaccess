@@ -52,6 +52,9 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteCond %{REQUEST_URI} !^/submit-course\.php$ [NC]
 RewriteRule ^ /%1 [NC,L,R=301]
 
+# Redirect /index to canonical homepage
+RewriteRule ^index/?$ / [R=301,L]
+
 # Handle homepage (root URL)
 RewriteRule ^/?$ index.php [L]
 
