@@ -5,8 +5,8 @@ $articles_raw = [
     [
         'title' => 'Niemann Makes LIV Golf History With Playoff Win at 2026 LIV Golf Korea',
         'slug' => 'liv-golf-korea-2026-recap',
-        'date' => '2026-05-31',
-        'time' => '8:00 PM',
+        'date' => '2026-06-01',
+        'time' => '9:00 AM',
         'category' => 'Tournament Recap',
         'excerpt' => 'Joaquin Niemann defeats Talor Gooch in a playoff at Asiad Country Club in Busan to claim his record eighth LIV Golf individual title — the most in league history — while Crushers GC defends their Korea team crown.',
         'image' => '/images/news/liv-golf-korea-2026/main.webp',

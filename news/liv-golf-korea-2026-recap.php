@@ -19,7 +19,7 @@ include '../includes/header.php';
                 <img src="/uploads/profile_pictures/cole-harrington.webp" alt="Cole Harrington" class="author-avatar">
                 <div class="author-details">
                     <span class="author-name">Cole Harrington</span>
-                    <span class="publish-date">May 31, 2026</span>
+                    <span class="publish-date">June 1, 2026</span>
                 </div>
             </div>
             <div class="article-tags">
