@@ -16,7 +16,7 @@ $course_data = [
     'holes' => 18,
     'par' => 72,
     'designer' => 'William Langford',
-    'year_built' => 1922,
+    'year_built' => 1924,
     'course_type' => 'Private'
 ];
 
@@ -132,8 +132,12 @@ SEO::setupCoursePage($course_data);
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid #f0f0f0;
+        }
+        .course-specs.single-column .spec-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
         
         .spec-label {
@@ -518,11 +522,11 @@ SEO::setupCoursePage($course_data);
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">72.8</span>
+                            <span class="spec-value">72.3</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">132</span>
+                            <span class="spec-value">128</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Designer:</span>
@@ -540,7 +544,7 @@ SEO::setupCoursePage($course_data);
                 </div>
 
                 <div class="course-info-card">
-                    <h3><i class="fas fa-users"></i> Membership</h3>
+                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
                         <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
                         <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
@@ -594,7 +598,7 @@ SEO::setupCoursePage($course_data);
                 
                 <br>
                 
-                <p>The course underwent a complete renovation in 2018 by acclaimed architect Bill Bergin, who modernized the layout while preserving Langford's classic design principles. The renovation included converting the greens from bentgrass to TifEagle Bermuda grass, creating superior playing conditions suited to the Memphis climate. The championship layout stretches 6,720 yards from the Chickasaw tees with a demanding course rating of 72.8 and slope rating of 132.</p>
+                <p>The course underwent a complete renovation in 2018 by acclaimed architect Bill Bergin, who modernized the layout while preserving Langford's classic design principles. The renovation included converting the greens from bentgrass to TifEagle Bermuda grass, creating superior playing conditions suited to the Memphis climate. The championship layout stretches 6,720 yards from the Chickasaw tees with a demanding course rating of 72.3 and slope rating of 128.</p>
                 
                 <br>
                 
@@ -604,40 +608,40 @@ SEO::setupCoursePage($course_data);
                 
                 <p>The club offers multiple tee options to accommodate all skill levels, from the championship Chickasaw tees to the Creek tees, with course ratings ranging from 67.5 to 73.2. The meticulously maintained Bermuda grass fairways weave through mature trees and strategic water features, creating a challenging yet fair test of golf.<br><br></p>
                 
-                <p>Located in the heart of Memphis at the intersection of Sam Cooper Boulevard and Highland Street, Chickasaw Country Club provides members with world-class amenities including championship golf, tennis courts, an Olympic-size swimming pool, fine dining facilities, and a state-of-the-art fitness center. The club's rich history spanning over 100 years, combined with its modern renovations and classic southern hospitality, continues to attract Memphis's most discerning golf families.<br><br></p>
+                <p>Located in the heart of Memphis on Galloway Avenue, Chickasaw Country Club provides members with world-class amenities including championship golf, tennis courts, an Olympic-size swimming pool, fine dining facilities, and a state-of-the-art fitness center. The club's rich history spanning over 100 years, combined with its modern renovations and classic southern hospitality, continues to attract Memphis's most discerning golf families.<br><br></p>
                 
                 <p>As a testament to its enduring quality and prestige, Chickasaw Country Club remains one of Tennessee's premier private golf destinations, offering an unparalleled combination of historic significance, championship golf, and comprehensive country club amenities in an exclusive social environment.</p>
 
                 <div class="amenities-grid">
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-golf-ball"></i>
                         <span>Championship Golf</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-trophy"></i>
                         <span>Byron Nelson History</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-tennis-ball"></i>
                         <span>Tennis Courts</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-swimmer"></i>
                         <span>Olympic Pool</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-utensils"></i>
                         <span>Fine Dining</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-dumbbell"></i>
                         <span>Fitness Center</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-spa"></i>
                         <span>Massage Services</span>
                     </div>
-                    <div class="amenity-item">
+                    <div class="amenity-item" style="width: 100%;">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Pro Shop</span>
                     </div>
@@ -699,54 +703,7 @@ SEO::setupCoursePage($course_data);
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/courses">Courses</a></li>
-                        <li><a href="/reviews">Reviews</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/events">Events</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script src="../weather.js?v=4"></script>
     <script src="../script.js?v=4"></script>
