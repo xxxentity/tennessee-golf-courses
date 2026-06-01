@@ -250,7 +250,7 @@ SEO::setupCoursePage($course_data);
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,885</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,964 (Black Tees)</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
@@ -266,11 +266,11 @@ SEO::setupCoursePage($course_data);
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Rating:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">73.7</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">74.5</span>
                         </div>
                         <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">133</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">140</span>
                         </div>
                     </div>
                 </div>
@@ -319,14 +319,67 @@ SEO::setupCoursePage($course_data);
                 </div>
             </div>
 
+            <!-- Tee Box Details -->
+            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-flag"></i> Tee Box Details</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #2c5234;">
+                            <th style="text-align: left; padding: 0.6rem 0.5rem; color: #2c5234;">Tee</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Yardage</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Rating</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Slope</th>
+                            <th style="text-align: right; padding: 0.6rem 0.5rem; color: #2c5234;">Par</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #222;">Black</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,964</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">74.5</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">140</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #1a56db;">Blue</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,574</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72.7</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">133</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #555;">White</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">6,229</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">71.1</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">131</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #7B3F00;">Brown</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,775</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">68.8 / 74.9&thinsp;W</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">127 / 138&thinsp;W</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.6rem 0.5rem; font-weight: 600; color: #2e7d32;">Green</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">5,091</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">65.4 / 70.5&thinsp;W</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">121 / 127&thinsp;W</td>
+                            <td style="text-align: right; padding: 0.6rem 0.5rem; color: #333;">72</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Belle Meade Country Club</h3>
                 <p>Belle Meade Country Club stands as Nashville's most historic and prestigious golf destination, representing over 120 years of tradition and excellence. Founded in 1901 as Nashville Golf and Country Club, the club relocated to its current Belle Meade location in 1916 and was renamed in 1921, establishing itself in one of America's most affluent neighborhoods.</p>
-                
+
                 <br>
-                
-                <p>The course showcases the timeless genius of Donald Ross, who completed Herbert H. Barker's original design between 1917-1921. Ross's naturalistic approach created a challenging yet fair layout that stretches 6,885 yards with a par of 72. The course features a demanding 73.7 course rating and 133 slope rating, reflecting its championship pedigree and strategic design elements.</p>
+
+                <p>The course showcases the timeless genius of Donald Ross, who completed Herbert H. Barker's original design between 1917-1921. Ross's naturalistic approach created a challenging yet fair layout that stretches 6,964 yards from the Black tees with a par of 72. The championship tees carry a course rating of 74.5 and slope of 140—among the most demanding layouts in Tennessee. Five sets of tees ranging from 5,091 to 6,964 yards accommodate players at every level.</p>
                 
                 <br>
                 
