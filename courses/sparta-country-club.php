@@ -629,7 +629,7 @@ SEO::setupCoursePage($course_data);
                 <div class="course-info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
                     <p><strong>Address:</strong><br>
-                    129 Lester Flat Rd<br>
+                    129 Lester Flatt Rd<br>
                     Sparta, TN 38583</p>
                     
                     <p><strong>Phone:</strong><br>
@@ -640,7 +640,7 @@ SEO::setupCoursePage($course_data);
                     
                     <div class="course-map" style="margin-top: 1.5rem;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=129+Lester+Flat+Rd,+Sparta,+TN+38583&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://maps.google.com/maps?q=129+Lester+Flatt+Rd,+Sparta,+TN+38583&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="200" 
                             style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
@@ -650,7 +650,7 @@ SEO::setupCoursePage($course_data);
                             title="Sparta Country Club Golf Course Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=129+Lester+Flat+Rd,+Sparta,+TN+38583" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=129+Lester+Flatt+Rd,+Sparta,+TN+38583" 
                                target="_blank" 
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
@@ -668,7 +668,7 @@ SEO::setupCoursePage($course_data);
         <div class="container">
             <div class="description-content">
                 <h2>About Sparta Country Club</h2>
-                <p>Sparta Country Club is a historic 9-hole golf course established in 1960, offering a classic small-town golf experience in the heart of White County, Tennessee. Located on Lester Flat Road, this charming course provides an intimate and friendly atmosphere for golfers of all skill levels.</p>
+                <p>Sparta Country Club is a historic 9-hole golf course established in 1960, offering a classic small-town golf experience in the heart of White County, Tennessee. Located on Lester Flatt Road, this charming course provides an intimate and friendly atmosphere for golfers of all skill levels.</p>
                 
                 <p>The course features 2,759 yards of golf from the middle tees with a par of 35, providing a perfect balance of challenge and enjoyment. With a course rating of 33.3 and slope rating of 117, Sparta Country Club offers fair but engaging play that tests your short game and course management skills.</p>
                 
