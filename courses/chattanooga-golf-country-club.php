@@ -11,10 +11,10 @@ $course_name = 'Chattanooga Golf & Country Club';
 $course_data = [
     'name' => 'Chattanooga Golf & Country Club',
     'location' => 'Chattanooga, TN',
-    'description' => 'Historic Donald Ross designed golf course in Chattanooga, TN. The oldest golf course in the South, established in 1896.',
+    'description' => 'Historic Donald Ross designed private golf course in Chattanooga, TN. Established in 1896, renovated by Bill Bergin in 2005.',
     'image' => '/images/courses/chattanooga-golf-country-club/1.jpeg',
     'holes' => 18,
-    'par' => 72,
+    'par' => 71,
     'designer' => 'Donald Ross',
     'year_built' => 1896,
     'course_type' => 'Private'
@@ -233,40 +233,48 @@ SEO::setupCoursePage($course_data);
     <!-- Course Information Section -->
     <section class="course-details" style="padding: 4rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="course-info-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
-                
+            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Holes:</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">71</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Par:</span>
+                            <span style="font-weight: 700; color: #2c5234;">71</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,702</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Yardage:</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,702</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Donald Ross</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Designer:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Donald Ross</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1896</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Opened:</span>
+                            <span style="font-weight: 700; color: #2c5234;">1896</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Type:</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
+                            <span style="font-weight: 600; color: #666;">Rating:</span>
+                            <span style="font-weight: 700; color: #2c5234;">75.4</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="font-weight: 600; color: #666;">Slope:</span>
+                            <span style="font-weight: 700; color: #2c5234;">132</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
                     <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
                         <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
                         <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
@@ -284,7 +292,7 @@ SEO::setupCoursePage($course_data);
                     Chattanooga, TN 37405</p>
                     
                     <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
-                    (423) 266-6178</p>
+                    <a href="tel:4232666178" style="color: #4a7c59;">(423) 266-6178</a></p>
                     
                     <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
                     <a href="https://www.chattanoogagcc.org" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">chattanoogagcc.org</a></p>
@@ -315,54 +323,50 @@ SEO::setupCoursePage($course_data);
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Chattanooga Golf & Country Club</h3>
-                <p>Chattanooga Golf & Country Club stands as the oldest golf club in the South, establishing a legacy of excellence since 1896. Located in the prestigious Riverview neighborhood just minutes from downtown Chattanooga, this historic club has served as a cornerstone of the community for over 125 years, offering an unparalleled golf experience amidst the natural beauty of the Tennessee Valley.</p>
-                
+                <p>Chattanooga Golf &amp; Country Club was established in 1896 and is one of the oldest golf clubs in Tennessee. Located in the Riverview neighborhood five minutes from downtown Chattanooga on the Tennessee River, the club has operated as a private facility throughout its history.</p>
+
                 <br>
-                
-                <p>The course features the timeless design work of Donald Ross, who crafted the layout in the 1920s to take full advantage of the dramatic riverside setting. In 2005, acclaimed architect Bill Bergin enhanced Ross's original vision, carefully preserving the classic design elements while modernizing the course to meet contemporary standards. The championship layout stretches to 6,702 yards from the championship tees, with a par of 71 that challenges golfers of all skill levels.</p>
-                
+
+                <p>The Donald Ross-designed course was renovated in 2005 by architect Bill Bergin. The 18-hole, par-71 layout stretches 6,702 yards from the championship tees, with a course rating of 75.4 and slope of 132. The course plays with ultra-dwarf Bermuda greens and features three par-fives (holes 4, 7, and 16), with riverside holes from 7 through 9 and a par-three 18th adjacent to the clubhouse.</p>
+
                 <br>
-                
-                <p>The club's commitment to excellence is evident in its meticulously maintained Ultra-dwarf Bermuda greens, which replaced the original bent grass surfaces to provide superior playing conditions year-round. With a course rating of 73.4 and a slope of 139 from the back tees, the course offers a stern test while remaining enjoyable for members of varying abilities through five sets of tees.</p>
-                
-                <br>
-                
-                <p>Consistently ranked among the top 5 courses in Tennessee by Golf Digest, Chattanooga Golf & Country Club has hosted numerous prestigious local, state, and national tournaments throughout its storied history. The club maintains its position as a family-focused modern private club while honoring its rich traditions, providing members with a sanctuary that combines championship golf, exceptional amenities, and the warm hospitality that defines Southern golf culture.</p>
+
+                <p>Chattanooga Golf &amp; Country Club has been ranked among the top 5 courses in Tennessee by Golf Digest and has hosted numerous local, state, and national tournaments. The club offers professional instruction, a junior golf program, and year-round tournament events for members.</p>
             </div>
 
             <!-- Amenities -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; justify-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Championship Golf</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-store" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Pro Shop</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-graduation-cap" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Private Lessons</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-tools" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Club Fitting</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-child" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Junior Golf Program</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Fine Dining</span>
+                        <span>Dining</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Event Hosting</span>
+                        <span>Tournament Events</span>
                     </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; width: 100%;">
                         <i class="fas fa-building" style="color: #4a7c59; font-size: 1.2rem;"></i>
                         <span>Historic Clubhouse</span>
                     </div>

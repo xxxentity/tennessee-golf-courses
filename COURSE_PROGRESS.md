@@ -20,12 +20,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ bluegrass-yacht-country-club.php — private, tee box table added, rating/slope verified
 - ✅ brainerd-golf-course.php — corrected rating/slope, fixed fees, inline styles
 - ✅ brown-acres-golf-course.php — corrected rating/year, fixed fees, inline styles
+- ✅ cedar-crest-golf-club.php — fixed designer, removed fabricated signature holes, inline styles
 
 ---
 
-## Remaining (93 / 104)
+## Remaining (92 / 104)
 
-- ⬜ cedar-crest-golf-club.php
+- ⬜ chattanooga-golf-country-club.php
 - ⬜ brown-acres-golf-course.php
 - ⬜ cedar-crest-golf-club.php
 - ⬜ chattanooga-golf-country-club.php
