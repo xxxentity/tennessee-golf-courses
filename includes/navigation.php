@@ -71,7 +71,7 @@ $is_main_page = (
                     <li><a href="/reviews" class="dropdown-link">Reviews</a></li>
                 </ul>
             </li>
-            <li><a href="/events" class="nav-link">Tournaments</a></li>
+            <li><a href="/tournaments" class="nav-link">Tournaments</a></li>
             <li class="nav-dropdown">
                 <a href="/about" class="nav-link dropdown-toggle">
                     About <i class="fas fa-chevron-down"></i>
