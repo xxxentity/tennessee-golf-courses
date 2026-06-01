@@ -235,121 +235,107 @@ SEO::setupCoursePage($course_data);
     <section class="course-details" style="padding: 4rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
+                <!-- Box 1: Course Information -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">9</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">35</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,934</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2,923</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">Dr. J.P. Terry</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">1930</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;">
                             <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
                             <span class="spec-value" style="font-weight: 700; color: #2c5234;">Public</span>
                         </div>
+                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span class="spec-label" style="font-weight: 600; color: #666;">Slope:</span>
+                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">111</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Box 2: Green Fees -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="pricing-section">
-                        <div class="pricing-grid" style="display: grid; gap: 1.5rem;">
-                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
-                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekdays (Mon-Fri)</h4>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>9 Holes w/ Cart</span>
-                                    <span>$21.00</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>9 Holes Walking</span>
-                                    <span>$10.50</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>18 Holes w/ Cart</span>
-                                    <span>$29.40</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
-                                    <span>18 Holes Walking</span>
-                                    <span>$16.80</span>
-                                </div>
-                            </div>
-                            
-                            <div class="pricing-category" style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; border-left: 4px solid #2c5234;">
-                                <h4 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.1rem; font-weight: 600;">Weekends & Holidays</h4>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>9 Holes w/ Cart</span>
-                                    <span>$23.10</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>9 Holes Walking</span>
-                                    <span>$12.60</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb;">
-                                    <span>18 Holes w/ Cart</span>
-                                    <span>$32.55</span>
-                                </div>
-                                <div class="pricing-item" style="display: flex; justify-content: space-between; padding: 0.3rem 0;">
-                                    <span>18 Holes Walking</span>
-                                    <span>$19.95</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pricing-note" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 1rem; text-align: center;">
-                            Senior (55+), Military & Tech discounts available • Call (931) 310-0645
-                        </div>
-                    </div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #2c5234;">
+                                <th style="text-align: left; padding: 0.5rem 0; color: #2c5234;"></th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekday</th>
+                                <th style="text-align: right; padding: 0.5rem 0.25rem; color: #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">9 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$21</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$23.10</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes w/ Cart</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$29.40</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$32.55</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">18 Holes Walking</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$21</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$24.15</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #f0f0f0;">
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 9 w/ Cart (55+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$15.75</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$17.85</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0; color: #666;">Senior 18 w/ Cart (55+)</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$24.15</td>
+                                <td style="text-align: right; padding: 0.5rem 0.25rem; font-weight: 700; color: #2c5234;">$27.30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 1rem; font-style: italic;">Military &amp; Tech discounts also available &bull; Rates effective Mar 1, 2025 &bull; Subject to change</p>
                 </div>
 
+                <!-- Box 3: Location & Contact -->
                 <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">901 E Broad St</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Cookeville, TN</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(931) 310-0645</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://belleacresgolf.com" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
-                    </div>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=901+E+Broad+St,+Cookeville,+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
+                    901 E Broad St<br>
+                    Cookeville, TN 38501</p>
+                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
+                    <a href="tel:9313100645" style="color: #4a7c59;">(931) 310-0645</a></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
+                    <a href="https://belleacresgolf.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">belleacresgolf.com</a></p>
+                    <div class="course-map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=901+E+Broad+St,+Cookeville,+TN+38501&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Belle Acres Golf Course Location">
                         </iframe>
                         <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=901+E+Broad+St,+Cookeville,+TN" 
-                               target="_blank" 
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=901+E+Broad+St,+Cookeville,+TN+38501"
+                               target="_blank"
                                rel="noopener noreferrer"
                                style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
                                 <i class="fas fa-directions"></i> Get Directions
@@ -362,19 +348,19 @@ SEO::setupCoursePage($course_data);
             <!-- Course Description -->
             <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
                 <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Belle Acres Golf Course</h3>
-                <p>Belle Acres Golf Course holds the distinction of being Cookeville's oldest golf course, having served the community since May 1, 1930. Built by Dr. J.P. Terry with assistance from Arnold Mears, a professional from Richland Golf Course in Nashville, this historic 9-hole course has evolved significantly from its humble beginnings with sand greens to become a modern golfing facility with bent grass greens.</p>
-                
+                <p>Belle Acres Golf Course is the oldest active course between Nashville and Knoxville, having served the Cookeville community since May 1, 1930. Built by Dr. J.P. Terry with the help of Arnold Mears, a professional from Richland Golf Course in Nashville, Belle Acres has evolved from its humble beginnings into a beloved local fixture with a rich history and modern playing conditions.</p>
+
                 <br>
-                
-                <p>The course originally opened with just 7 holes featuring sand greens, but within a year was expanded to 9 holes. Over the decades, the playing surfaces have undergone several transformations - from sand greens to cotton-seed hulls, then to Bermuda grass (which presented crabgrass challenges), and finally to the current bent grass greens that provide excellent playing conditions year-round.</p>
-                
+
+                <p>The course originally opened with just 7 holes and sand greens. Two more holes were added about a year later, and the greens were eventually converted to cotton-seed hulls. A later conversion to Bermuda grass was troubled by crabgrass, prompting a final change to today's bent grass greens that provide consistent playing conditions year-round.</p>
+
                 <br>
-                
-                <p>Today's Belle Acres offers golfers a challenging yet accessible 9-hole, par-35 experience stretching 2,934 yards from the championship tees. The course features three different tee options to accommodate players of all skill levels, with slope ratings ranging from 109 to 111. What truly sets Belle Acres apart is its practice facilities - boasting the largest practice facility in the Cookeville area, making it an ideal destination for both casual rounds and serious practice sessions.</p>
-                
+
+                <p>Following a recent redesign, Belle Acres offers golfers a varying terrain 2,923-yard, par-35, 9-hole track that's convenient to just about anywhere in the Cookeville area. Three tee options with slope ratings ranging from 109 to 111 make the course accessible to players of all skill levels, and affordable pricing keeps it one of the best values in Middle Tennessee.</p>
+
                 <br>
-                
-                <p>The course maintains a strong community focus with its popular weekly A-B-C-D Scramble every Tuesday at 5:00 PM, where golfers can sign up in person by 4:30 PM and compete for prizes. This tradition exemplifies Belle Acres' commitment to fostering local golf culture while providing an affordable, quality golf experience in the heart of Tennessee.</p>
+
+                <p>What truly sets Belle Acres apart is its practice facility — the most popular in the area. The wide-arc hitting area allows ample room for everyone, and range fees are more than reasonable. Two practice greens round out the offering: one dedicated primarily to pitching and chipping, the other a dedicated putting green. The course also hosts a popular weekly A-B-C-D Scramble every Tuesday at 5:00 PM — sign up in person by 4:30 PM to compete for prizes.</p>
             </div>
 
             <!-- Amenities -->
