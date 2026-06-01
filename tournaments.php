@@ -5,11 +5,29 @@ SEO::setupEventsPage();
 
 // Professional tournaments
 $professional_tournaments = [
-    // 2026 Season
-    ['title' => 'Masters Tournament', 'league' => 'PGA', 'date_start' => '2026-04-09', 'date_end' => '2026-04-12', 'venue' => 'Augusta National Golf Club', 'location' => 'Augusta, GA'],
-    ['title' => 'PGA Championship', 'league' => 'PGA', 'date_start' => '2026-05-21', 'date_end' => '2026-05-24', 'venue' => 'Aronimink Golf Club', 'location' => 'Newton Square, PA'],
-    ['title' => 'U.S. Open', 'league' => 'PGA', 'date_start' => '2026-06-18', 'date_end' => '2026-06-21', 'venue' => 'Shinnecock Hills Golf Club', 'location' => 'Southampton, NY'],
-    ['title' => 'The Open Championship', 'league' => 'PGA', 'date_start' => '2026-07-16', 'date_end' => '2026-07-19', 'venue' => 'Royal Birkdale', 'location' => 'Southport, England'],
+    // 2026 Season — LIV Golf
+    ['title' => 'LIV Golf Riyadh',           'league' => 'LIV', 'date_start' => '2026-02-04', 'date_end' => '2026-02-07', 'venue' => 'Riyadh Golf Club',                        'location' => 'Riyadh, Saudi Arabia'],
+    ['title' => 'LIV Golf Adelaide',          'league' => 'LIV', 'date_start' => '2026-02-12', 'date_end' => '2026-02-15', 'venue' => 'The Grange Golf Club',                    'location' => 'Adelaide, Australia'],
+    ['title' => 'LIV Golf Hong Kong',         'league' => 'LIV', 'date_start' => '2026-03-05', 'date_end' => '2026-03-08', 'venue' => 'Hong Kong Golf Club at Fanling',          'location' => 'Hong Kong'],
+    ['title' => 'LIV Golf Singapore',         'league' => 'LIV', 'date_start' => '2026-03-12', 'date_end' => '2026-03-15', 'venue' => 'Sentosa Golf Club',                       'location' => 'Singapore'],
+    ['title' => 'LIV Golf South Africa',      'league' => 'LIV', 'date_start' => '2026-03-19', 'date_end' => '2026-03-22', 'venue' => 'Blair Atholl Golf & Equestrian Estate',   'location' => 'Johannesburg, South Africa'],
+    ['title' => 'LIV Golf Mexico City',       'league' => 'LIV', 'date_start' => '2026-04-16', 'date_end' => '2026-04-19', 'venue' => 'Club de Golf Chapultepec',                'location' => 'Mexico City, Mexico'],
+    ['title' => 'LIV Golf Virginia',          'league' => 'LIV', 'date_start' => '2026-05-07', 'date_end' => '2026-05-10', 'venue' => 'Robert Trent Jones Golf Club',            'location' => 'Virginia, USA'],
+    ['title' => 'LIV Golf Korea',             'league' => 'LIV', 'date_start' => '2026-05-28', 'date_end' => '2026-05-31', 'venue' => 'Jack Nicklaus Golf Club Korea',           'location' => 'Incheon, South Korea'],
+    ['title' => 'LIV Golf Andalucia',         'league' => 'LIV', 'date_start' => '2026-06-04', 'date_end' => '2026-06-07', 'venue' => 'Real Club Valderrama',                   'location' => 'Andalucia, Spain'],
+    ['title' => 'LIV Golf UK',                'league' => 'LIV', 'date_start' => '2026-07-23', 'date_end' => '2026-07-26', 'venue' => 'JCB Golf & Country Club',                'location' => 'England, UK'],
+    ['title' => 'LIV Golf New York',          'league' => 'LIV', 'date_start' => '2026-08-06', 'date_end' => '2026-08-09', 'venue' => 'Liberty National Golf Club',             'location' => 'Jersey City, NJ'],
+    ['title' => 'LIV Golf Indianapolis',      'league' => 'LIV', 'date_start' => '2026-08-20', 'date_end' => '2026-08-23', 'venue' => 'The Club at Chatham Hills',              'location' => 'Indianapolis, IN'],
+    ['title' => 'LIV Golf Team Championship', 'league' => 'LIV', 'date_start' => '2026-08-27', 'date_end' => '2026-08-30', 'venue' => "The Cardinal at Saint John's",           'location' => 'Michigan, USA'],
+    // 2026 Season — Majors
+    ['title' => 'Masters Tournament',         'league' => 'PGA', 'date_start' => '2026-04-09', 'date_end' => '2026-04-12', 'venue' => 'Augusta National Golf Club',             'location' => 'Augusta, GA'],
+    ['title' => 'PGA Championship',           'league' => 'PGA', 'date_start' => '2026-05-21', 'date_end' => '2026-05-24', 'venue' => 'Aronimink Golf Club',                    'location' => 'Newton Square, PA'],
+    ['title' => 'U.S. Open',                  'league' => 'PGA', 'date_start' => '2026-06-18', 'date_end' => '2026-06-21', 'venue' => 'Shinnecock Hills Golf Club',             'location' => 'Southampton, NY'],
+    ['title' => 'The Open Championship',      'league' => 'PGA', 'date_start' => '2026-07-16', 'date_end' => '2026-07-19', 'venue' => 'Royal Birkdale',                         'location' => 'Southport, England'],
+    // 2026 Season — FedEx Cup Playoffs
+    ['title' => 'FedEx St. Jude Championship','league' => 'PGA', 'date_start' => '2026-08-13', 'date_end' => '2026-08-16', 'venue' => 'TPC Southwind',                          'location' => 'Memphis, TN'],
+    ['title' => 'BMW Championship',           'league' => 'PGA', 'date_start' => '2026-08-20', 'date_end' => '2026-08-23', 'venue' => 'Bellerive Country Club',                 'location' => 'St. Louis, MO'],
+    ['title' => 'Tour Championship',          'league' => 'PGA', 'date_start' => '2026-08-27', 'date_end' => '2026-08-30', 'venue' => 'East Lake Golf Club',                    'location' => 'Atlanta, GA'],
     // 2025 Season
     ['title' => 'LIV Golf Riyadh', 'league' => 'LIV', 'date_start' => '2025-02-06', 'date_end' => '2025-02-08', 'venue' => 'Riyadh Golf Club', 'location' => 'Riyadh, Saudi Arabia'],
     ['title' => 'LIV Golf Adelaide', 'league' => 'LIV', 'date_start' => '2025-02-14', 'date_end' => '2025-02-16', 'venue' => 'The Grange Golf Club', 'location' => 'Adelaide, Australia'],
@@ -35,7 +53,29 @@ $professional_tournaments = [
     ['title' => 'Ryder Cup', 'league' => 'PGA', 'date_start' => '2025-09-26', 'date_end' => '2025-09-28', 'venue' => 'Bethpage Black', 'location' => 'Bethpage, NY'],
 ];
 
-// Tennessee local events (all 2025)
+// Tennessee local events — 2026
+$tennessee_events_2026 = [
+    ['title' => 'Mid-Amateur Four-Ball Championship',        'date_start' => '2026-06-06', 'date_end' => '2026-06-07', 'venue' => 'Sevierville Golf Club - River Course',        'location' => 'Sevierville, TN',     'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Parent-Child Championship',                 'date_start' => '2026-06-13', 'date_end' => '2026-06-14', 'venue' => 'Stonehenge Golf Club',                        'location' => 'Fairfield Glade, TN', 'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Tennessee Junior Amateur Championship',     'date_start' => '2026-06-15', 'date_end' => '2026-06-17', 'venue' => 'GreyStone Golf Club',                         'location' => 'Dickson, TN',         'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Tennessee Girls Junior Championship',       'date_start' => '2026-06-15', 'date_end' => '2026-06-17', 'venue' => 'GreyStone Golf Club',                         'location' => 'Dickson, TN',         'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Tennessee State Amateur Championship',      'date_start' => '2026-06-23', 'date_end' => '2026-06-26', 'venue' => 'Holston Hills Country Club',                  'location' => 'Knoxville, TN',       'organizer' => 'Tennessee Golf Association'],
+    ['title' => "Tennessee Women's Amateur Championship",    'date_start' => '2026-07-07', 'date_end' => '2026-07-09', 'venue' => 'Chattanooga Golf & Country Club',             'location' => 'Chattanooga, TN',     'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Tennessee State Open Championship',         'date_start' => '2026-07-08', 'date_end' => '2026-07-10', 'venue' => 'Grasslands Club - Foxland Course',           'location' => 'Gallatin, TN',        'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Senior & Super Senior Match Play',          'date_start' => '2026-07-14', 'date_end' => '2026-07-17', 'venue' => 'Oak Ridge Country Club',                     'location' => 'Oak Ridge, TN',       'organizer' => 'Tennessee Golf Association'],
+    ['title' => "Tennessee Women's Open Championship",       'date_start' => '2026-07-22', 'date_end' => '2026-07-24', 'venue' => 'Stonehenge Golf Club',                       'location' => 'Fairfield Glade, TN', 'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Senior & Super Senior Amateur Championship','date_start' => '2026-08-04', 'date_end' => '2026-08-06', 'venue' => 'Belle Meade Country Club',                   'location' => 'Nashville, TN',       'organizer' => 'Tennessee Golf Association'],
+    ['title' => "Women's Senior & Mid-Amateur Championship", 'date_start' => '2026-08-11', 'date_end' => '2026-08-12', 'venue' => 'Johnson City Country Club',                  'location' => 'Johnson City, TN',    'organizer' => 'Tennessee Golf Association'],
+    ['title' => "Men's Match Play Championship",             'date_start' => '2026-08-11', 'date_end' => '2026-08-14', 'venue' => 'Vanderbilt Legends Club - South Course',     'location' => 'Franklin, TN',        'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Tennessee Mid-Amateur Championship',        'date_start' => '2026-08-24', 'date_end' => '2026-08-26', 'venue' => 'Tennessee National Golf Club',               'location' => 'Loudon, TN',          'organizer' => 'Tennessee Golf Association'],
+    ['title' => '58th TN PGA Professional Championship',    'date_start' => '2026-08-24', 'date_end' => '2026-08-26', 'venue' => 'Links at Kahite',                            'location' => 'Vonore, TN',          'organizer' => 'Tennessee PGA'],
+    ['title' => "Women's Four-Ball Championship",            'date_start' => '2026-08-26', 'date_end' => '2026-08-27', 'venue' => "Hermitage Golf Course - General's Retreat",  'location' => 'Old Hickory, TN',     'organizer' => 'Tennessee Golf Association'],
+    ['title' => 'Elite @ Old Fort Junior Tournament',        'date_start' => '2026-09-05', 'date_end' => '2026-09-06', 'venue' => 'Old Fort Golf Course',                       'location' => 'Murfreesboro, TN',    'organizer' => 'Sneds Tour / Tennessee Golf Foundation'],
+    ['title' => 'Tennessee Junior Cup',                      'date_start' => '2026-09-26', 'date_end' => '2026-09-27', 'venue' => 'The Grove',                                  'location' => 'College Grove, TN',   'organizer' => 'Sneds Tour / Tennessee Golf Foundation'],
+    ['title' => 'Open @ Montgomery Bell Junior Tournament',  'date_start' => '2026-10-03', 'date_end' => '2026-10-04', 'venue' => 'Montgomery Bell State Park Golf Course',     'location' => 'Burns, TN',           'organizer' => 'Sneds Tour / Tennessee Golf Foundation'],
+];
+
+// Tennessee local events — 2025
 $tennessee_events = [
     ['title' => 'Mid-Amateur Four-Ball Championship', 'date_start' => '2025-06-07', 'date_end' => '2025-06-08', 'venue' => 'Sevierville Golf Club - River Course', 'location' => 'Sevierville, TN', 'organizer' => 'Tennessee Golf Association'],
     ['title' => 'Parent-Child Championship', 'date_start' => '2025-06-14', 'date_end' => '2025-06-15', 'venue' => 'Stonehenge Golf Club', 'location' => 'Fairfield Glade, TN', 'organizer' => 'Tennessee Golf Association'],
@@ -73,7 +113,7 @@ function build_year_data(array $pro, array $local, string $year): array {
     return $by_month;
 }
 
-$events_2026 = build_year_data($professional_tournaments, [], '2026');
+$events_2026 = build_year_data($professional_tournaments, $tennessee_events_2026, '2026');
 $events_2025 = build_year_data($professional_tournaments, $tennessee_events, '2025');
 ?>
 
@@ -202,7 +242,7 @@ $events_2025 = build_year_data($professional_tournaments, $tennessee_events, '20
                     </div>
                     <?php if (!empty($events['professional'])): ?>
                     <div class="tournament-section major-tournaments">
-                        <h4 class="section-title"><i class="fas fa-trophy"></i> Major Tournaments</h4>
+                        <h4 class="section-title"><i class="fas fa-trophy"></i> Major &amp; Pro Tournaments</h4>
                         <ul class="tournament-list">
                             <?php foreach ($events['professional'] as $t): ?>
                             <li class="tournament-item">
@@ -217,6 +257,28 @@ $events_2025 = build_year_data($professional_tournaments, $tennessee_events, '20
                                     <div class="tournament-location"><?php echo htmlspecialchars($t['location']); ?></div>
                                 </div>
                                 <span class="league-badge <?php echo strtolower($t['league']); ?>"><?php echo $t['league']; ?></span>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+                    <?php if (!empty($events['local'])): ?>
+                    <div class="tournament-section local-tournaments">
+                        <h4 class="section-title"><i class="fas fa-golf-ball"></i> Tennessee Events</h4>
+                        <ul class="tournament-list">
+                            <?php foreach ($events['local'] as $t): ?>
+                            <li class="tournament-item">
+                                <div class="tournament-date"><?php
+                                    $s = date('M j', strtotime($t['date_start']));
+                                    $e = date('j',   strtotime($t['date_end']));
+                                    echo $t['date_start'] === $t['date_end'] ? $s : "$s–$e";
+                                ?></div>
+                                <div class="tournament-info">
+                                    <div class="tournament-name"><?php echo htmlspecialchars($t['title']); ?></div>
+                                    <div class="tournament-venue"><?php echo htmlspecialchars($t['venue']); ?></div>
+                                    <div class="tournament-location"><?php echo htmlspecialchars($t['location']); ?></div>
+                                </div>
+                                <span class="league-badge tn">TN</span>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -238,7 +300,7 @@ $events_2025 = build_year_data($professional_tournaments, $tennessee_events, '20
                         </div>
                         <?php if (!empty($events['professional'])): ?>
                         <div class="tournament-section major-tournaments">
-                            <h4 class="section-title"><i class="fas fa-trophy"></i> Major Tournaments</h4>
+                            <h4 class="section-title"><i class="fas fa-trophy"></i> Major &amp; Pro Tournaments</h4>
                             <ul class="tournament-list">
                                 <?php foreach ($events['professional'] as $t): ?>
                                 <li class="tournament-item">
