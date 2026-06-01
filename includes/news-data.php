@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Niemann Makes LIV Golf History With Playoff Win at 2026 LIV Golf Korea',
+        'slug' => 'liv-golf-korea-2026-recap',
+        'date' => '2026-05-31',
+        'time' => '8:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Joaquin Niemann defeats Talor Gooch in a playoff at Asiad Country Club in Busan to claim his record eighth LIV Golf individual title — the most in league history — while Crushers GC defends their Korea team crown.',
+        'image' => '/images/news/liv-golf-korea-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Tennessee Men\'s Golf Returns to NCAA Championships for Third Consecutive Year',
         'slug' => 'ut-vols-ncaa-championships-2026',
         'date' => '2026-05-29',
