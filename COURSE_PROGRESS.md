@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (20 / 104)
+## Completed (21 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -29,12 +29,13 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ chickasaw-golf-course.php — year_built 1995→2000, green fees table, removed dead review/star CSS and JS, footer include
 - ✅ clarksville-country-club.php — designer N/A→George Cobb, added rating 73.4/slope 128, merged amenities into About, removed dead star-rating block and JS
 - ✅ colonial-country-club.php — designer N/A→Joe Finger, added rating 75.3/slope 138, fixed gallery JS in head (was breaking on load), merged amenities, favicon include
+- ✅ council-fire-golf-club.php — year_built 1990→1992, added rating 74.7/slope 142, fixed gallery JS in head, merged amenities, favicon include
 
 ---
 
-## Remaining (84 / 104)
+## Remaining (83 / 104)
 
-- ⬜ council-fire-golf-club.php
+- ⬜ cumberland-cove-golf-course.php
 - ⬜ clarksville-country-club.php
 - ⬜ colonial-country-club.php
 - ⬜ council-fire-golf-club.php
