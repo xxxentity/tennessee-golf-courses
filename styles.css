@@ -1899,13 +1899,26 @@ html {
 
 .article-image {
     margin-bottom: 2rem;
+    background: white;
+    border: 2px solid #2c5234;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    padding: 2.5rem;
 }
 
 .article-image .featured-image {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    max-height: 480px;
+    content: url('/images/logos/logo.webp');
+    width: auto;
+    max-width: 280px;
+    height: auto;
+    max-height: 120px;
+    border-radius: 0;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
 }
 
 .image-caption {

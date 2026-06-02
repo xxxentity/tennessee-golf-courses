@@ -523,8 +523,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                 <div class="carousel-container">
                     <?php foreach ($featured_articles as $index => $article): ?>
                     <div class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <div class="slide-image" style="background: linear-gradient(135deg, #2c5234, #4a7c59); display: flex; align-items: center; justify-content: center;">
-                            <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" style="width: 55%; max-width: 220px; object-fit: contain; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));">
+                        <div class="slide-image" style="background: white; border-right: 2px solid #2c5234; display: flex; align-items: center; justify-content: center;">
+                            <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" style="width: 55%; max-width: 220px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));">
                         </div>
                         <div class="slide-content">
                             <span class="slide-category"><?php echo htmlspecialchars($article['category']); ?></span>
@@ -594,8 +594,8 @@ $featured_articles = array_slice(array_filter($articles, function($article) {
                         ?>
                         <?php foreach ($filtered_articles as $index => $article): ?>
                             <article class="news-card" data-article-index="<?php echo $index; ?>" style="<?php echo $index >= $articles_per_page ? 'display: none;' : ''; ?>">
-                                <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="news-image clickable-image" style="text-decoration: none; background: linear-gradient(135deg, #2c5234, #4a7c59); display: flex; align-items: center; justify-content: center;">
-                                    <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" style="width: 50%; max-width: 160px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));">
+                                <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" class="news-image clickable-image" style="text-decoration: none; background: white; border: 2px solid #2c5234; display: flex; align-items: center; justify-content: center;">
+                                    <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" style="width: 50%; max-width: 160px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));">
                                 </a>
                                 <div class="news-content">
                                     <div class="news-meta">
