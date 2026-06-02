@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (33 / 104)
+## Completed (39 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -42,16 +42,19 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ gaylord-springs-golf-links.php — corrected yardage (7069→6981), added rating 73.1/slope 133, fixed green fees ($85-145 range→~$179 dynamic w/ cart), springhouse history, favicon include, 2fr/1fr about grid
 - ✅ glen-eagle-golf-course.php — inline CSS three-box, replaced hard-coded footer with include, removed booking section and weather JS, 2fr/1fr about grid, preserved real fees ($29/$45) and tee data
 - ✅ greystone-golf-course.php — fixed year (1992→1998), phone (441-8888→446-0044), yardage (7046→6858), added rating 73.1/slope 132, corrected green fees (~$40-75), favicon include, dead star block removed, 2fr/1fr about grid
+- ✅ harpeth-hills-golf-course.php — designer N/A→Allen Brown & Herschel Eaton, removed dead star block and broken star JS, inline hero, favicon include, 2fr/1fr about grid, standard three-box layout
+- ✅ heatherhurst-brae-golf-course.php — inline hero, standard three-box, green fees table (Fairfield Glade resort rates), footer include, booking section removed, weather JS removed, 2fr/1fr about grid
+- ✅ heatherhurst-crag-golf-course.php — inline hero, standard three-box, green fees table (Fairfield Glade resort rates), footer include, booking section removed, weather JS removed, 2fr/1fr about grid
+- ✅ henry-horton-state-park-golf-course.php — favicon include, inline hero, standard three-box, green fees table (in/off season), booking section removed, 2fr/1fr about grid
+- ✅ hermitage-golf-course.php — favicon include, removed dead star block and broken star JS, standard three-box, green fees table (dual-course format), 2fr/1fr about grid
+- ✅ hillwood-country-club.php — favicon include, removed dead star block and broken star JS, standard three-box, private membership box (green gradient), location to <p> format, 2fr/1fr about grid
+- ✅ holston-hills-country-club.php — favicon include, CSS-class hero→inline, class-based layout→inline, hard-coded footer→include, removed broken star JS, private membership box, 2fr/1fr about grid
 
 ---
 
-## Remaining (76 / 104)
+## Remaining (67 / 104)
 
 
-- ⬜ harpeth-hills-golf-course.php
-- ⬜ heatherhurst-brae-golf-course.php
-- ⬜ heatherhurst-crag-golf-course.php
-- ⬜ henry-horton-state-park-golf-course.php
 - ⬜ hermitage-golf-course.php
 - ⬜ hillwood-country-club.php
 - ⬜ holston-hills-country-club.php

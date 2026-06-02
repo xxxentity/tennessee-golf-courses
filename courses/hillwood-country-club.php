@@ -11,7 +11,7 @@ $course_name = 'Hillwood Country Club';
 $course_data = [
     'name' => 'Hillwood Country Club',
     'location' => 'Nashville, TN',
-    'description' => 'Dick Wilson designed championship golf course in Nashville, TN. Private club featuring 7,059 yards of challenging golf since 1957.',
+    'description' => 'Dick Wilson–designed private championship golf course in Nashville, Tennessee. Established in 1957, Hillwood plays 7,059 yards from the championship tees with a course rating of 74.2 and slope of 140.',
     'image' => '/images/courses/hillwood-country-club/1.jpeg',
     'holes' => 18,
     'par' => 72,
@@ -37,11 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -50,54 +48,8 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -108,7 +60,6 @@ SEO::setupCoursePage($course_data);
             height: 100%;
             background-color: rgba(0,0,0,0.9);
         }
-        
         .modal-content {
             margin: 2% auto;
             padding: 20px;
@@ -116,7 +67,6 @@ SEO::setupCoursePage($course_data);
             max-width: 1200px;
             position: relative;
         }
-        
         .modal-header {
             display: flex;
             justify-content: space-between;
@@ -124,12 +74,7 @@ SEO::setupCoursePage($course_data);
             margin-bottom: 2rem;
             color: white;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 2rem; margin: 0; }
         .close {
             color: white;
             font-size: 3rem;
@@ -138,11 +83,7 @@ SEO::setupCoursePage($course_data);
             background: none;
             border: none;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { color: #ccc; }
         .full-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -150,19 +91,19 @@ SEO::setupCoursePage($course_data);
             max-height: 70vh;
             overflow-y: auto;
         }
-        
         .full-gallery-item {
-            height: 200px;
+            aspect-ratio: 4/3;
             background-size: cover;
             background-position: center;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
+        .full-gallery-item:hover { transform: scale(1.05); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
     <script type="application/ld+json">
     <?php echo json_encode(array_filter([
@@ -173,387 +114,259 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '6201 Hickory Valley Road',
+            'addressLocality' => 'Nashville',
             'addressRegion' => 'TN',
+            'postalCode' => '37205',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+16153526591',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Hero Section -->
-    <section class="course-hero" style="
-        height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/hillwood-country-club/1.jpeg'); 
-        background-size: cover; 
-        background-position: center; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        text-align: center; 
-        color: white;
-        margin-top: 20px;
-    ">
-        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+    <!-- Hero -->
+    <section style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/hillwood-country-club/1.jpeg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 20px;">
+        <div>
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Hillwood Country Club</h1>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Dick Wilson Design • Nashville, Tennessee</p>
-            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text" style="font-size: 1.2rem; font-weight: 600;"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
-            </div>
+            <p style="font-size: 1.3rem; opacity: 0.9;">Private Club &bull; Nashville, Tennessee</p>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details" style="padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="course-info-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 4rem;">
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <section style="padding: 4rem 0;">
+        <div class="container">
+
+            <!-- Three Boxes -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Holes</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Par</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">7,059</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Yardage</span>
+                            <span style="font-weight: 700; color: #2c5234;">7,059</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Dick Wilson</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Course Rating</span>
+                            <span style="font-weight: 700; color: #2c5234;">74.2</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">1957</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Slope Rating</span>
+                            <span style="font-weight: 700; color: #2c5234;">140</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Designer</span>
+                            <span style="font-weight: 700; color: #2c5234;">Dick Wilson</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Established</span>
+                            <span style="font-weight: 700; color: #2c5234;">1957</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Type</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <!-- Membership -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
-                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                    <div style="background: linear-gradient(135deg, #2c5234, #4a7c59); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
                         <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
-                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
+                        <p style="margin: 0; opacity: 0.9;">Membership required for play</p>
                     </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Hillwood Country Club operates as an exclusive private club serving Nashville families since 1957. 
-                        Contact the club directly for membership information and guest policies.
+                    <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.95rem;">
+                        Hillwood Country Club is an exclusive private club serving Nashville families since 1957. Contact the club directly for membership information and guest policies.
+                    </p>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        <a href="tel:+16153526591" style="color: #4a7c59; font-weight: 600;">(615) 352-6591</a>
                     </p>
                 </div>
 
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Address:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6201 Hickory Valley Road</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">City:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Nashville, TN 37205</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Phone:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">(615) 352-6591</span>
-                        </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Website:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;"><a href="https://www.hillwoodcc.org" target="_blank" style="color: #2c5234;">Visit Site</a></span>
-                        </div>
+                <!-- Location & Contact -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p><strong>Address:</strong><br>6201 Hickory Valley Road<br>Nashville, TN 37205</p>
+                    <p><strong>Phone:</strong><br><a href="tel:+16153526591" style="color: #4a7c59;">(615) 352-6591</a></p>
+                    <p><strong>Website:</strong><br><a href="https://www.hillwoodcc.org" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">hillwoodcc.org</a></p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=6201+Hickory+Valley+Road+Nashville+TN+37205&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="180"
+                        style="border:0; border-radius: 8px; margin-top: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Hillwood Country Club Location">
+                    </iframe>
+                    <div style="margin-top: 0.5rem; text-align: center;">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=6201+Hickory+Valley+Road+Nashville+TN+37205"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
                     </div>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=6201+Hickory+Valley+Road,+Nashville,+TN+37205&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Hillwood Country Club Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=6201+Hickory+Valley+Road,+Nashville,+TN+37205" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                </div>
+            </div>
+
+            <!-- About + Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+
+                <!-- About -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Hillwood Country Club</h3>
+                    <p>Established in 1957, Hillwood Country Club is one of Nashville's most prestigious private clubs, anchored by a championship golf course designed by renowned architect Dick Wilson. Located on Hickory Valley Road in west Nashville, the club has served as a cornerstone of Nashville society and competitive golf for nearly seven decades.</p>
+
+                    <br>
+
+                    <p>Wilson's layout stretches 7,059 yards from the championship tees with a course rating of 74.2 and a slope of 140 — among the more demanding ratings in Middle Tennessee. Mach 1 Ultradwarf Bermuda greens provide fast, consistent surfaces year-round. The course underwent significant renovations in 2003 and again in 2011, both carried out by Bruce Hepner of Renaissance Golf Design, who modernized the bunkering and green complexes while preserving Wilson's core design intent.</p>
+
+                    <br>
+
+                    <p>Dick Wilson is widely regarded as one of the most talented course architects of the mid-20th century, responsible for iconic designs including Doral's Blue Monster, Bay Hill, and Cog Hill's Dubsdread. His Tennessee portfolio is small, making Hillwood a particularly notable example of his work in the region. Wilson's trademark characteristics — strategic bunkering, rolling fairways, and firm, true greens — are evident throughout the layout.</p>
+
+                    <br>
+
+                    <p>Beyond golf, Hillwood is a full-amenity country club with a 22,000-square-foot fitness center, competition swimming pools, multiple tennis courts, four dining venues, and spa services. The club hosts junior golf programs, men's and women's golf associations, and a full calendar of member events throughout the year. As a private facility, play is restricted to members and their guests.</p>
+                </div>
+
+                <!-- Amenities -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Championship Golf</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Tennis Complex</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Four Dining Venues</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>22,000 sq ft Fitness</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Competition Pools</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-spa" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Spa Services</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Event Hosting</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Hillwood Country Club</h3>
-                <p>Established in 1957, Hillwood Country Club stands as one of Nashville's premier private clubs, featuring a championship 18-hole golf course originally designed by renowned architect Dick Wilson. Located on 6201 Hickory Valley Road, this exclusive club has been serving Nashville families for over six decades with world-class golf and comprehensive recreational facilities.</p>
-                
-                <br>
-                
-                <p>The championship golf course stretches 7,059 yards from the black tees with a par of 72, offering a challenging yet fair test for golfers of all skill levels. The course features pristine Mach 1 Ultradwarf Bermuda greens that provide exceptional putting surfaces year-round. With a slope rating of 140 and course rating of 74.2 from the championship tees, Hillwood's Dick Wilson design demands strategic thinking and precise shot execution.</p>
-                
-                <br>
-                
-                <p>The course underwent significant renovations in 2003 and 2011 under the direction of Bruce Hepner of Renaissance Golf, modernizing the layout while preserving Wilson's original design principles. These improvements enhanced drainage, updated bunkers, and refined green complexes, ensuring the course remains a premier golfing destination in Middle Tennessee.</p>
-                
-                <br>
-                
-                <p>Beyond its championship golf course, Hillwood Country Club offers an unparalleled family-friendly environment with extensive practice facilities, professional instruction programs, and a fully-stocked pro shop. The club's commitment to excellence extends throughout its operations, from the meticulously maintained grounds to the comprehensive golf programs serving men, women, and junior players.</p>
-            </div>
-
-            <!-- Amenities -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Championship Golf</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-tennis-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Tennis Complex</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Four Restaurants</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-dumbbell" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>22,000 sq ft Fitness</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-swimmer" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Competition Pools</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-spa" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Spa Services</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Event Hosting</span>
-                    </div>
+            <!-- Photo Gallery -->
+            <div style="margin-bottom: 3rem;">
+                <div class="section-header">
+                    <h2>Course Gallery</h2>
+                    <p>Experience the beauty of Hillwood Country Club</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <img src="../images/courses/hillwood-country-club/1.jpeg" alt="Hillwood Country Club Nashville TN - Dick Wilson championship fairway design from 1957" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="../images/courses/hillwood-country-club/2.jpeg" alt="Hillwood Country Club Nashville TN - Mach 1 Ultradwarf Bermuda putting green with slope rating 140" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="../images/courses/hillwood-country-club/3.jpeg" alt="Hillwood Country Club Nashville TN - Bruce Hepner renovation bunkering on Dick Wilson layout" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#2c5234'" onmouseout="this.style.background='#4a7c59'">View Full Gallery (25 Photos)</button>
                 </div>
             </div>
 
-            
-    </section>
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Hillwood Country Club</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/hillwood-country-club/1.jpeg" alt="Hillwood Country Club Nashville, TN - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/hillwood-country-club/2.jpeg" alt="Hillwood Country Club Nashville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/hillwood-country-club/3.jpeg" alt="Hillwood Country Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+            <!-- Share This Course -->
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; margin-bottom: 3rem;">
+                <h3 style="font-size: 1.3rem; color: #2c5234; margin-bottom: 1rem;">Share This Course</h3>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
                         <i class="fab fa-facebook-f"></i> Share on Facebook
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Hillwood Country Club in Nashville, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Hillwood Country Club in Nashville, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">&#x1D54F;</strong> Share on X
                     </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Hillwood Country Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Hillwood Country Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/hillwood-country-club'); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
                         <i class="far fa-envelope"></i> Share via Email
                     </a>
                 </div>
             </div>
+
         </div>
     </section>
-
-    <!-- Reviews Section - Centralized System -->
-    
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Hillwood Country Club - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Hillwood Country Club &mdash; Full Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
-    <!-- Dynamic Footer -->
     <?php include '../includes/footer.php'; ?>
-    
+
+    <script src="/script.js?v=5"></script>
     <script>
-        // Star rating functionality
-        document.querySelectorAll('.star-rating input[type="radio"]').forEach((radio) => {
-            radio.addEventListener('change', function() {
-                const stars = document.querySelectorAll('.star-rating label');
-                stars.forEach((star, starIndex) => {
-                    if (starIndex >= (5 - this.value)) {
-                        star.style.color = '#ffd700';
-                    } else {
-                        star.style.color = '#ddd';
-                    }
-                });
-            });
-        });
-        
-        // Gallery Modal Functions
+        const galleryImages = Array.from({length: 25}, (_, i) => ({
+            src: `../images/courses/hillwood-country-club/${i + 1}.jpeg`,
+            alt: `Hillwood Country Club Nashville TN - photo ${i + 1}`
+        }));
+
         function openGallery() {
             const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Hillwood Country Club';
-                const location = 'Nashville, TN';
-                const locationShort = 'Nashville TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/hillwood-country-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/hillwood-country-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
+            const grid = document.getElementById('fullGalleryGrid');
+            grid.innerHTML = '';
+            galleryImages.forEach(img => {
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                item.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
+                item.onclick = () => window.open(img.src, '_blank');
+                grid.appendChild(item);
+            });
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
+
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGallery();
         });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeGallery();
         });
     </script>
 </body>
