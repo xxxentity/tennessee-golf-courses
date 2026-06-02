@@ -11,12 +11,12 @@ $course_name = 'Druid Hills Golf Club';
 $course_data = [
     'name' => 'Druid Hills Golf Club',
     'location' => 'Fairfield Glade, TN',
-    'description' => 'Championship 18-hole course on the highest point in Fairfield Glade with rolling fairways, bent grass greens, and spectacular mountain vistas.',
+    'description' => 'Championship 18-hole resort course designed by Leon Howard in 1970. Sits on the highest point in Fairfield Glade with rolling bentgrass fairways and spectacular Cumberland Mountain vistas.',
     'image' => '/images/courses/druid-hills-golf-club/1.jpeg',
     'holes' => 18,
     'par' => 72,
-    'designer' => 'N/A',
-    'year_built' => 1975,
+    'designer' => 'Leon Howard',
+    'year_built' => 1970,
     'course_type' => 'Resort'
 ];
 
@@ -37,11 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -50,402 +48,76 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/druid-hills-golf-club/1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-label {
-            font-weight: 500;
-            color: #666;
-        }
-        
-        .spec-value {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            width: 20px;
-        }
-        
-        .gallery-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
         }
-        
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            max-width: 1400px;
+            width: 95%;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s;
         }
-        
         .modal-header {
+            background: #2c5234;
+            color: white;
+            padding: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 1.8rem; font-weight: 700; margin: 0; }
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
+            color: white;
+            transition: transform 0.3s;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { transform: scale(1.2); }
         .full-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .view-all-btn {
-            background: #4a7c59;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: background 0.3s ease;
-        }
-        
-        .view-all-btn:hover {
-            background: #3d6249;
-        }
-        
-        .reviews-section {
-            padding: 4rem 0;
-        }
-        
-        .review-form-card, .comments-section {
-            background: white;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
         }
-        
-        .star-rating {
-            display: flex;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        
-        .star-rating i {
-            font-size: 1.5rem;
-            color: #999;
+        .full-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            transition: color 0.2s ease;
+            aspect-ratio: 4/3;
         }
-        
-        .star-rating i.active,
-        .star-rating i:hover {
-            color: #ffd700;
+        .full-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .full-gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .form-group textarea:focus {
-            border-color: #4a7c59;
-            outline: none;
-        }
-        
-        .submit-btn {
-            background: #4a7c59;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            background: #3d6249;
-        }
-        
-        .comment-item {
-            border-bottom: 1px solid #eee;
-            padding: 1.5rem 0;
-        }
-        
-        .comment-item:last-child {
-            border-bottom: none;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .comment-text {
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .no-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-style: italic;
-        }
-        
-        @media (max-width: 1024px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .course-specs {
-                grid-template-columns: 1fr;
-            }
-            
-            .amenities-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .course-hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .course-hero-content p {
-                font-size: 1.1rem;
-            }
+            .modal-content { width: 100%; margin: 0; border-radius: 0; max-height: 100vh; }
+            .full-gallery-grid { grid-template-columns: 1fr; padding: 1rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -457,10 +129,13 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '433 Lakeview Drive',
+            'addressLocality' => 'Fairfield Glade',
             'addressRegion' => 'TN',
+            'postalCode' => '38558',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+19314562864',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
@@ -470,287 +145,266 @@ SEO::setupCoursePage($course_data);
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Druid Hills Golf Club</h1>
-            <p>Fairfield Glade Resort • Mountain Vistas</p>
-            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars" style="color: #ffd700; font-size: 1.5rem;">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <span class="rating-text">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
-            </div>
+    <section class="course-hero" style="
+        height: 60vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/druid-hills-golf-club/1.jpeg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Druid Hills Golf Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Fairfield Glade Resort • Mountain Vistas • Fairfield Glade, Tennessee</p>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+
+            <!-- Three-box row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Course Information</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Holes</span>
+                            <span style="font-weight: 600; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Par</span>
+                            <span style="font-weight: 600; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,270 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Yardage</span>
+                            <span style="font-weight: 600; color: #2c5234;">6,270</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Leon Howard</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Course Rating</span>
+                            <span style="font-weight: 600; color: #2c5234;">71.1</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">71.1 / 128 Slope</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Slope</span>
+                            <span style="font-weight: 600; color: #2c5234;">128</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1970</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Type</span>
+                            <span style="font-weight: 600; color: #2c5234;">Resort</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Resort</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Designer</span>
+                            <span style="font-weight: 600; color: #2c5234;">Leon Howard</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="color: #666; font-weight: 500;">Opened</span>
+                            <span style="font-weight: 600; color: #2c5234;">1970</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    
-                    <!-- Member Rates -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Member Rates</h4>
-                        <div style="background: #f0f8f2; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; text-align: left;">Rate Type</div>
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
-                                
-                                <div style="text-align: left;"><strong>Preferred Member:</strong></div>
-                                <div>$23</div>
-                                <div>$45</div>
-                                
-                                <div style="text-align: left;"><strong>Regular Member:</strong></div>
-                                <div>$32</div>
-                                <div>$61</div>
-                                
-                                <div style="text-align: left;"><strong>Preferred After 2pm/4pm:</strong></div>
-                                <div>$17</div>
-                                <div>$33</div>
-                                
-                                <div style="text-align: left;"><strong>Member After 2pm/4pm:</strong></div>
-                                <div>$28</div>
-                                <div>$51</div>
-                                
-                                <div style="text-align: left;"><strong>Junior/Super Senior (85+):</strong></div>
-                                <div>$20</div>
-                                <div>$39</div>
-                                
-                                <div style="text-align: left;"><strong>Member Walking:</strong></div>
-                                <div>$15</div>
-                                <div>$28</div>
-                                
-                                <div style="text-align: left;"><strong>PGA/LPGA:</strong></div>
-                                <div>-</div>
-                                <div>$39</div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Green Fees -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.2rem; font-size: 1.3rem;">Green Fees</h3>
 
-                    <!-- Guest Rates -->
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem; font-size: 1.1rem;">Guest Rates</h4>
-                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; text-align: center;">
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; text-align: left;">Guest Type</div>
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">9 Holes</div>
-                                <div style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem;">18 Holes</div>
-                                
-                                <div style="text-align: left;"><strong>Guest w/ Member:</strong></div>
-                                <div>$42</div>
-                                <div>$80</div>
-                                
-                                <div style="text-align: left;"><strong>Guest After 2pm/4pm:</strong></div>
-                                <div>$28</div>
-                                <div>$51</div>
-                                
-                                <div style="text-align: left;"><strong>Unaccompanied Guest:</strong></div>
-                                <div>$47</div>
-                                <div>$90</div>
-                                
-                                <div style="text-align: left;"><strong>Unaccompanied After 2pm:</strong></div>
-                                <div>-</div>
-                                <div>$51</div>
-                            </div>
-                        </div>
-                    </div>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">Member Rates</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="background: #2c5234; color: white;">
+                                <th style="padding: 0.45rem 0.6rem; text-align: left;">Rate</th>
+                                <th style="padding: 0.45rem 0.6rem; text-align: center;">9</th>
+                                <th style="padding: 0.45rem 0.6rem; text-align: center;">18</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Preferred Member</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$23</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$45</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Regular Member</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$32</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$61</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Member Walking</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$15</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$28</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <div style="font-size: 0.85rem; color: #666; font-style: italic; text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-                        <p><strong>For Reservations:</strong> <a href="tel:931-456-2864" style="color: #4a7c59; font-weight: 600;">(931) 456-2864</a></p>
-                        <p style="margin: 0.5rem 0;">Resort packages available • Annual memberships offered</p>
-                        <p style="margin: 0;">**Twilight rates apply after specified times</p>
-                    </div>
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">Guest Rates</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1rem;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Guest w/ Member</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$42</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$80</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Unaccompanied</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$47</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$90</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">After 2 pm</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$28</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$51</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size: 0.82rem; color: #888;">Cart included in all rates. Resort packages and annual memberships available.</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    433 Lakeview Drive<br>
-                    Fairfield Glade, TN 38558</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (931) 456-2864</p>
-                    
-                    <p><strong>Resort:</strong><br>
-                    Fairfield Glade Resort</p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=433+Lakeview+Drive,+Fairfield+Glade,+TN+38558&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Druid Hills Golf Club Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=433+Lakeview+Drive,+Fairfield+Glade,+TN+38558" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                <!-- Location & Contact -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Location & Contact</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 1rem;">
+                        <strong>Address:</strong><br>
+                        433 Lakeview Drive<br>
+                        Fairfield Glade, TN 38558
+                    </p>
+                    <p style="color: #555; margin-bottom: 0.6rem;">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:9314562864" style="color: #2c5234; font-weight: 600; text-decoration: none;">(931) 456-2864</a>
+                    </p>
+                    <p style="color: #555; margin-bottom: 1.2rem;">
+                        <strong>Resort:</strong> Fairfield Glade Resort
+                    </p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=433+Lakeview+Drive,+Fairfield+Glade,+TN+38558&output=embed"
+                        width="100%"
+                        height="150"
+                        style="border: 0; border-radius: 8px; margin-bottom: 1rem;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                    <a href="https://maps.google.com/maps?q=433+Lakeview+Drive,+Fairfield+Glade,+TN+38558"
+                       target="_blank"
+                       style="display: inline-block; background: #2c5234; color: white; padding: 0.6rem 1.2rem; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+                        <i class="fas fa-directions" style="margin-right: 0.4rem;"></i> Get Directions
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- About & Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 1.5rem;">About Druid Hills Golf Club</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Druid Hills Golf Club claims one of the most commanding positions of any course on the Cumberland Plateau, sitting at the highest elevation within the Fairfield Glade resort community. Designed by Leon Howard and opened in 1970, the 18-hole layout was built to take full advantage of its hilltop setting — panoramic views of the surrounding Cumberland Mountains are visible from multiple points across the course, and the elevation provides a cooler, more temperate playing environment than the valleys below.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        The course plays to a par of 72 from 6,270 yards off the blue tees, with a rating of 71.1 and a slope of 128. Multiple tee options ranging from 5,005 to 6,270 yards make it accessible to a wide spectrum of players while still presenting a genuine test from the back. Bentgrass covers both the fairways and greens, giving the course a lush look and consistent playing surface throughout the season. Howard's routing uses the natural slope of the hilltop to create elevation change on nearly every hole — uphill approaches, downhill drives, and sidehill lies keep golfers engaged from the first tee to the eighteenth green.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        As part of the broader Fairfield Glade resort complex, Druid Hills is complemented by The Legends Restaurant, a full practice facility, and professional instruction. The resort community setting means the course regularly hosts events, leagues, and groups, yet maintains the standards of a well-kept private course. For visitors staying in the Cumberland Mountain area, Druid Hills offers an experience that's genuinely different from the valley courses — quieter, more scenic, and with a course design that rewards players who think their way around rather than overpower it.
+                    </p>
+                </div>
+
+                <!-- Amenities -->
+                <div>
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-golf-ball" style="color: #2c5234; width: 20px;"></i>
+                            <span>Driving Range</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-flag" style="color: #2c5234; width: 20px;"></i>
+                            <span>Practice Putting Green</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-store" style="color: #2c5234; width: 20px;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-utensils" style="color: #2c5234; width: 20px;"></i>
+                            <span>The Legends Restaurant</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-shopping-cart" style="color: #2c5234; width: 20px;"></i>
+                            <span>Club Rentals</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-chalkboard-teacher" style="color: #2c5234; width: 20px;"></i>
+                            <span>Golf Lessons</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-calendar-alt" style="color: #2c5234; width: 20px;"></i>
+                            <span>Event Hosting</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-mountain" style="color: #2c5234; width: 20px;"></i>
+                            <span>Mountain Views</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-home" style="color: #2c5234; width: 20px;"></i>
+                            <span>Resort Community</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-calendar" style="color: #2c5234; width: 20px;"></i>
+                            <span>Year-Round Play</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Druid Hills Golf Club</h3>
-                <p>Druid Hills Golf Club sits majestically on the highest point in Fairfield Glade, offering spectacular vistas of the surrounding Cumberland Mountains. This championship 18-hole, par 72 course was designed by Leon Howard in 1970 and features rolling, tree-lined fairways that wind through the natural beauty of the Cumberland Plateau, creating a true test of golf for players of all skill levels.</p>
-                
-                <br>
-                
-                <p>The course design takes full advantage of the elevated terrain, with undulating bent grass greens that challenge even experienced golfers. Strategic water hazards and well-placed doglegs require thoughtful course management, while the pristine conditioning and natural setting provide an unforgettable golfing experience year-round.</p>
-                
-                <br>
-                
-                <p>Located at 433 Lakeview Drive in Fairfield Glade, Tennessee, the course offers multiple tee options ranging from 5,005 yards to 6,270 yards, ensuring an appropriate challenge for golfers of every ability. The Blue Tees present the ultimate test with a 71.1 course rating and 128 slope rating, while shorter tees accommodate beginners and seniors.</p>
-                
-                <br>
-                
-                <p>As part of the renowned Fairfield Glade Resort community, Druid Hills Golf Club combines championship golf with resort amenities including The Legends Restaurant, professional instruction, and comprehensive practice facilities, making it a premier golf destination in the Cumberland Mountains.</p>
-            </div>
+        </div>
+    </section>
 
-            <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Putting Green</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-store"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>The Legends Restaurant</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Snack Bar</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Club Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <span>Golf Lessons</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-users"></i>
-                        <span>Group Clinics</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Event Hosting</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-home"></i>
-                        <span>Resort Community</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-mountain"></i>
-                        <span>Mountain Views</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar"></i>
-                        <span>Year-Round Play</span>
-                    </div>
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Gallery</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/druid-hills-golf-club/2.jpeg" alt="Druid Hills Golf Club - Fairway" style="width: 100%; height: 250px; object-fit: cover;">
                 </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/druid-hills-golf-club/3.jpeg" alt="Druid Hills Golf Club - Mountain View" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/druid-hills-golf-club/4.jpeg" alt="Druid Hills Golf Club - Course Landscape" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> View Full Gallery (25 Photos)
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="gallery-section">
-        <div class="container">            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Druid Hills Golf Club</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/druid-hills-golf-club/2.jpeg" alt="Druid Hills Golf Club Fairfield Glade TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    <!-- Share Section -->
+    <section class="share-section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share This Course</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/courses/druid-hills-golf-club" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Druid%20Hills%20Golf%20Club&url=https://tennesseegolfcourses.com/courses/druid-hills-golf-club" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Druid Hills Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/druid-hills-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/druid-hills-golf-club/3.jpeg" alt="Druid Hills Golf Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/druid-hills-golf-club/4.jpeg" alt="Druid Hills Golf Club Fairfield Glade TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
-
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
@@ -759,138 +413,47 @@ SEO::setupCoursePage($course_data);
                 <h2 class="modal-title">Druid Hills Golf Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/druid-hills-golf-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
-                        <i class="fab fa-facebook-f"></i> Share on Facebook
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Druid Hills Golf Club'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/druid-hills-golf-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
-                    </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Druid Hills Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/druid-hills-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
-                        <i class="far fa-envelope"></i> Share via Email
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section - Centralized System -->
-    
-
+    <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
     <script>
-        // Gallery functionality
-        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
             galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Druid Hills Golf Club';
-                const location = 'Fairfield Glade, TN';
-                const locationShort = 'Fairfield Glade TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/druid-hills-golf-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/druid-hills-golf-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                const img = document.createElement('img');
+                img.src = `../images/courses/druid-hills-golf-club/${i}.jpeg`;
+                img.alt = `Druid Hills Golf Club - Photo ${i}`;
+                img.loading = 'lazy';
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
             }
-            
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) closeGallery();
+        }
+
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+            if (event.key === 'Escape') closeGallery();
         });
     </script>
-    
+
     <script src="/weather.js?v=4"></script>
     <script src="/script.js?v=4"></script>
 </body>

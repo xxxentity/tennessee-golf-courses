@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (21 / 104)
+## Completed (33 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -30,27 +30,24 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ clarksville-country-club.php — designer N/A→George Cobb, added rating 73.4/slope 128, merged amenities into About, removed dead star-rating block and JS
 - ✅ colonial-country-club.php — designer N/A→Joe Finger, added rating 75.3/slope 138, fixed gallery JS in head (was breaking on load), merged amenities, favicon include
 - ✅ council-fire-golf-club.php — year_built 1990→1992, added rating 74.7/slope 142, fixed gallery JS in head, merged amenities, favicon include
+- ✅ cumberland-cove-golf-course.php — location Crossville→Monterey, year_built 1985→1967 (formerly Mountain Ridge GC), added rating 71.7/slope 126, three-box standard, removed dead star block
+- ✅ dead-horse-lake-golf-course.php — year_built 1992→1972, preserved real green fees (season/off-season/junior), removed dead star block, standardized three-box inline layout, favicon include
+- ✅ dorchester-golf-club.php — replaced hard-coded inline footer with footer include, removed booking section, standardized three-box inline layout, amenity width:100%, improved about text
+- ✅ druid-hills-golf-club.php — designer N/A→Leon Howard, year_built 1975→1970, removed dead star block, inline hero, favicon include, amenity width:100%, standard 2fr/1fr about grid
+- ✅ eagles-landing-golf-club.php — rebranded course (→Sevierville Golf Club); designer N/A→D.J. DeVictor, year 1992→1994, replaced broken closure modal with inline notice banner, removed dead star block, standardized layout
+- ✅ egwani-farms-golf-course.php — removed dead star block, inline hero, favicon include, amenity width:100%, 2fr/1fr about grid, expanded about paragraphs with farm history and 2016 renovation details
+- ✅ fall-creek-falls-state-park-golf-course.php — Joe Lee 1972 design, 3x Golf Digest Top 100, real green fees (in/off season), removed booking section, favicon include, amenity width:100%, 2fr/1fr about grid
+- ✅ forrest-crossing-golf-course.php — rebranded Franklin Bridge Golf Club; opened 1970 as Forrest Crossing, renamed The Crossing 2022 then Franklin Bridge; Gary Roger Baird design; Harpeth River on 9 holes; island green #9; standard layout, footer include, favicon include
+- ✅ fox-den-country-club.php — fixed address (6000→12284 N Fox Den Dr), phone (wrong→965-9771), year (1987→1969), designer (N/A→Willard Byrd); 2004 Bergin redesign noted; hosted Nike Tour 1990–1999; private membership box, favicon include
+- ✅ gaylord-springs-golf-links.php — corrected yardage (7069→6981), added rating 73.1/slope 133, fixed green fees ($85-145 range→~$179 dynamic w/ cart), springhouse history, favicon include, 2fr/1fr about grid
+- ✅ glen-eagle-golf-course.php — inline CSS three-box, replaced hard-coded footer with include, removed booking section and weather JS, 2fr/1fr about grid, preserved real fees ($29/$45) and tee data
+- ✅ greystone-golf-course.php — fixed year (1992→1998), phone (441-8888→446-0044), yardage (7046→6858), added rating 73.1/slope 132, corrected green fees (~$40-75), favicon include, dead star block removed, 2fr/1fr about grid
 
 ---
 
-## Remaining (83 / 104)
+## Remaining (76 / 104)
 
-- ⬜ cumberland-cove-golf-course.php
-- ⬜ clarksville-country-club.php
-- ⬜ colonial-country-club.php
-- ⬜ council-fire-golf-club.php
-- ⬜ cumberland-cove-golf-course.php
-- ⬜ dead-horse-lake-golf-course.php
-- ⬜ dorchester-golf-club.php
-- ⬜ druid-hills-golf-club.php
-- ⬜ eagles-landing-golf-club.php
-- ⬜ egwani-farms-golf-course.php
-- ⬜ fall-creek-falls-state-park-golf-course.php
-- ⬜ forrest-crossing-golf-course.php (Franklin Bridge Golf Club)
-- ⬜ fox-den-country-club.php
-- ⬜ gaylord-springs-golf-links.php
-- ⬜ glen-eagle-golf-course.php
-- ⬜ greystone-golf-course.php
+
 - ⬜ harpeth-hills-golf-course.php
 - ⬜ heatherhurst-brae-golf-course.php
 - ⬜ heatherhurst-crag-golf-course.php

@@ -37,11 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -50,344 +48,76 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/fall-creek-falls-state-park-golf-course/1.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #666;
-        }
-        
-        .spec-value {
-            font-weight: 700;
-            color: #2c5234;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-            justify-items: center;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.2rem;
-        }
-        
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
         }
-        
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            max-width: 1400px;
+            width: 95%;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s;
         }
-        
         .modal-header {
+            background: #2c5234;
+            color: white;
+            padding: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 1.8rem; font-weight: 700; margin: 0; }
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
+            color: white;
+            transition: transform 0.3s;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { transform: scale(1.2); }
         .full-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .review-card {
-            background: white;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
             padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
+        .full-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            aspect-ratio: 4/3;
         }
-        
-        .reviewer-name {
-            font-weight: 600;
-            color: #2c5234;
+        .full-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .full-gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .booking-section {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .booking-content h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .booking-content p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .booking-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-book {
-            background: #ffd700;
-            color: #2c5234;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-book:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-        }
-        
-        .btn-contact {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-contact:hover {
-            background: white;
-            color: #2c5234;
-        }
-        
-        
-        
-        /* Responsive Design for Course Info Grid */
-        @media (max-width: 1024px) {
-            .course-info-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .course-details {
-                padding: 2rem 0;
-            }
-            
-            .course-info-card {
-                padding: 1.5rem;
-            }
+            .modal-content { width: 100%; margin: 0; border-radius: 0; max-height: 100vh; }
+            .full-gallery-grid { grid-template-columns: 1fr; padding: 1rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -399,248 +129,266 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '626 Golf Course Road',
+            'addressLocality' => 'Spencer',
             'addressRegion' => 'TN',
+            'postalCode' => '38585',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+14238815706',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Fall Creek Falls State Park Golf Course</h1>
-            <p>Joe Lee Design • Spencer, Tennessee</p>
-            </div>
+    <section class="course-hero" style="
+        height: 60vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/fall-creek-falls-state-park-golf-course/1.webp');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Fall Creek Falls State Park Golf Course</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Joe Lee Design • Spencer, Tennessee</p>
+        </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+
+            <!-- Three-box row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Course Information</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Holes</span>
+                            <span style="font-weight: 600; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Par</span>
+                            <span style="font-weight: 600; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,655 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Yardage</span>
+                            <span style="font-weight: 600; color: #2c5234;">6,655</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">71.4 / 128 Slope</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Course Rating</span>
+                            <span style="font-weight: 600; color: #2c5234;">71.4</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Joe Lee</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Slope</span>
+                            <span style="font-weight: 600; color: #2c5234;">128</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1972</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Type</span>
+                            <span style="font-weight: 600; color: #2c5234;">State Park</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">State Park</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Designer</span>
+                            <span style="font-weight: 600; color: #2c5234;">Joe Lee</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="color: #666; font-weight: 500;">Opened</span>
+                            <span style="font-weight: 600; color: #2c5234;">1972</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">In Season (Mar - Nov)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$47 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$52 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (9):</span>
-                                <span class="spec-value">$27 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (9):</span>
-                                <span class="spec-value">$30 + tax</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Out of Season (Nov - Mar)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">Weekday (18):</span>
-                                <span class="spec-value">$43 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Weekend (18):</span>
-                                <span class="spec-value">$46 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">9 Holes:</span>
-                                <span class="spec-value">$27 + tax</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Cart Fee:</span>
-                                <span class="spec-value">Included</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; text-align: center; font-style: italic;">
-                        <p>Rates subject to change. Senior and twilight discounts available.<br>Call (423) 881-5706 for current pricing and tee times.</p>
-                    </div>
+                <!-- Green Fees -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.2rem; font-size: 1.3rem;">Green Fees</h3>
+
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">In Season (Mar – Nov)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+                        <thead>
+                            <tr style="background: #2c5234; color: white;">
+                                <th style="padding: 0.45rem 0.6rem; text-align: left;">Rate</th>
+                                <th style="padding: 0.45rem 0.6rem; text-align: center;">9 Holes</th>
+                                <th style="padding: 0.45rem 0.6rem; text-align: center;">18 Holes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Weekday</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$27</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$47</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Weekend</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$30</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$52</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #2c5234; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">Off Season (Nov – Mar)</p>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Weekday 18</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;"></td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$43</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.4rem 0.6rem; font-weight: 500;">Weekend 18</td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;"></td>
+                                <td style="padding: 0.4rem 0.6rem; text-align: center; color: #2c5234; font-weight: 600;">$46</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size: 0.82rem; color: #888;">Cart included. All rates + tax. Senior/twilight discounts available. Call (423) 881-5706 for current rates.</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    626 Golf Course Road<br>
-                    Spencer, TN 38585</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (423) 881-5706</p>
-                    
-                    <p><strong>Website:</strong><br>
-                    <a href="https://tnstateparks.com/golf/course/fall-creek-falls/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">tnstateparks.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=626+Golf+Course+Road,+Spencer,+TN+38585&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Fall Creek Falls State Park Golf Course Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=626+Golf+Course+Road,+Spencer,+TN+38585" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                <!-- Location & Contact -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Location & Contact</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 1rem;">
+                        <strong>Address:</strong><br>
+                        626 Golf Course Road<br>
+                        Spencer, TN 38585
+                    </p>
+                    <p style="color: #555; margin-bottom: 0.6rem;">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:4238815706" style="color: #2c5234; font-weight: 600; text-decoration: none;">(423) 881-5706</a>
+                    </p>
+                    <p style="color: #555; margin-bottom: 1.2rem;">
+                        <strong>Website:</strong><br>
+                        <a href="https://tnstateparks.com/golf/course/fall-creek-falls/" target="_blank" rel="noopener noreferrer" style="color: #2c5234; font-weight: 600;">tnstateparks.com</a>
+                    </p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=626+Golf+Course+Road,+Spencer,+TN+38585&output=embed"
+                        width="100%"
+                        height="150"
+                        style="border: 0; border-radius: 8px; margin-bottom: 1rem;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                    <a href="https://maps.google.com/maps?q=626+Golf+Course+Road,+Spencer,+TN+38585"
+                       target="_blank"
+                       style="display: inline-block; background: #2c5234; color: white; padding: 0.6rem 1.2rem; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+                        <i class="fas fa-directions" style="margin-right: 0.4rem;"></i> Get Directions
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- About & Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 1.5rem;">About Fall Creek Falls State Park Golf Course</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Fall Creek Falls State Park Golf Course is one of the most celebrated public golf destinations in the American South — a Joe Lee design that opened in 1972 within the boundaries of Tennessee's largest state park and has earned three separate selections on Golf Digest's list of Top 100 Public Places to Play. That kind of sustained recognition across multiple decades speaks to a course that holds up over time, and it's one that any serious Tennessee golfer eventually makes the trip to play.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        The layout occupies the top of the Cumberland Plateau near Spencer in Van Buren County, where the elevation and the surrounding 20,000-plus acres of protected park land give it a sense of scale and solitude that's difficult to find anywhere else in the region. The course plays to 6,655 yards from the championship Blue Tees with a rating of 71.4 and a slope of 128, offering multiple tee options that bring the layout down to 3,573 yards for families and beginners. Greens were fully rebuilt in 1998 to Joe Lee's original specifications, restoring the design intent and championship conditioning that the course has maintained since.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        The course has been designated a Certified Audubon Cooperative Sanctuary by Audubon International, recognizing its commitment to environmental stewardship and wildlife management within the park setting. For golfers combining a trip to Fall Creek Falls with hiking, kayaking, or simply taking in the waterfall views that make the park famous, the golf course sits at the center of a legitimate outdoor destination rather than just a standalone stop. The combination of prestige, scenery, and state park pricing makes Fall Creek Falls one of the true values in Tennessee golf.
+                    </p>
+                </div>
+
+                <!-- Amenities -->
+                <div>
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-golf-ball" style="color: #2c5234; width: 20px;"></i>
+                            <span>Driving Range</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-store" style="color: #2c5234; width: 20px;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-utensils" style="color: #2c5234; width: 20px;"></i>
+                            <span>Restaurant & Grill</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-user-tie" style="color: #2c5234; width: 20px;"></i>
+                            <span>PGA Instruction</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-car" style="color: #2c5234; width: 20px;"></i>
+                            <span>Cart Rentals</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-calendar-alt" style="color: #2c5234; width: 20px;"></i>
+                            <span>Tournament Hosting</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-leaf" style="color: #2c5234; width: 20px;"></i>
+                            <span>Audubon Sanctuary</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-mountain" style="color: #2c5234; width: 20px;"></i>
+                            <span>State Park Setting</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-award" style="color: #2c5234; width: 20px;"></i>
+                            <span>Golf Digest Top 100</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Fall Creek Falls State Park Golf Course</h3>
-                <p>Fall Creek Falls State Park Golf Course is a stunning 18-hole championship course designed by renowned golf course architect Joe Lee and opened in 1972. Located in Spencer, Tennessee, this beautiful course sits atop the Cumberland Plateau within the boundaries of Tennessee's largest state park, offering golfers breathtaking natural scenery and challenging play.</p>
-                
-                <br>
-                
-                <p>This championship layout has earned prestigious recognition as a three-time selection by Golf Digest as one of the Top 100 Public Places to Play, testament to its exceptional design, conditioning, and overall golf experience. The course stretches 6,655 yards from the championship Blue Tees with a 71.4 course rating and 128 slope rating, providing a challenging test for golfers of all skill levels.</p>
-                
-                <br>
-                
-                <p>The course has been designated as a Certified Audubon Cooperative Sanctuary by Audubon International, highlighting the commitment to environmental stewardship and wildlife conservation. In 1998, the greens were completely rebuilt and restored to Joe Lee's original design specifications, ensuring optimal playing conditions and maintaining the course's championship character.</p>
-                
-                <br>
-                
-                <p>Fall Creek Falls offers multiple tee options to accommodate players of varying abilities, from the championship Blue Tees at 6,655 yards down to the family-friendly Orange Tees at 3,573 yards. The course features well-maintained fairways, strategic bunkering, and greens that challenge even accomplished golfers while remaining fair for recreational players.</p>
-                
-                <br>
-                
-                <p>Located within <a href="https://tnstateparks.com/parks/fall-creek-falls" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Fall Creek Falls State Park</a>, the golf course is surrounded by more than 20,000 acres of natural beauty including waterfalls, hiking trails, and scenic overlooks. This makes it an ideal destination for golf trips where families can enjoy additional outdoor activities while golfers experience one of Tennessee's premier public courses.</p>
-            </div>
+        </div>
+    </section>
 
-            <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Restaurant & Grill</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Tournament Hosting</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-leaf"></i>
-                        <span>Audubon Sanctuary</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-mountain"></i>
-                        <span>State Park Setting</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-hiking"></i>
-                        <span>Hiking Trails Nearby</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-tint"></i>
-                        <span>Waterfalls Views</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-camera"></i>
-                        <span>Scenic Photography</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-award"></i>
-                        <span>Top 100 Public Course</span>
-                    </div>
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Gallery</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/2.webp" alt="Fall Creek Falls Golf Course - Fairway" style="width: 100%; height: 250px; object-fit: cover;">
                 </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/3.webp" alt="Fall Creek Falls Golf Course - Plateau Views" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/4.webp" alt="Fall Creek Falls Golf Course - Scenic Layout" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> View Full Gallery (25 Photos)
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Fall Creek Falls State Park Golf Course</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/2.webp" alt="Fall Creek Falls State Park Golf Course Spencer TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    <!-- Share Section -->
+    <section class="share-section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share This Course</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Fall%20Creek%20Falls%20State%20Park%20Golf%20Course&url=https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Fall Creek Falls State Park Golf Course'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/3.webp" alt="Fall Creek Falls State Park Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/fall-creek-falls-state-park-golf-course/4.webp" alt="Fall Creek Falls State Park Golf Course Spencer TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
             </div>
         </div>
     </section>
@@ -652,151 +400,47 @@ SEO::setupCoursePage($course_data);
                 <h2 class="modal-title">Fall Creek Falls State Park Golf Course - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
-
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
-                        <i class="fab fa-facebook-f"></i> Share on Facebook
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Fall Creek Falls State Park Golf Course in Spencer, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
-                    </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Fall Creek Falls State Park Golf Course'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/fall-creek-falls-state-park-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
-                        <i class="far fa-envelope"></i> Share via Email
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section - Centralized System -->
-    
-
-    <!-- Booking Section -->
-    <section class="booking-section">
-        <div class="container">
-            <div class="booking-content">
-                <h2>Ready to Play Fall Creek Falls?</h2>
-                <p>Book your tee time today and experience one of Tennessee's premier state park golf destinations</p>
-                <div class="booking-buttons">
-                    <a href="tel:423-881-5706" class="btn-book">Call for Tee Times</a>
-                    <a href="https://tnstateparks.com/golf/course/fall-creek-falls/" target="_blank" rel="noopener noreferrer" class="btn-contact">Visit Official Site</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
-    <script src="/script.js?v=5"></script>
     <script>
-        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
             galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Fall Creek Falls State Park Golf Course';
-                const location = 'Spencer, TN';
-                const locationShort = 'Spencer TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/fall-creek-falls-state-park-golf-course/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/fall-creek-falls-state-park-golf-course/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                const img = document.createElement('img');
+                img.src = `../images/courses/fall-creek-falls-state-park-golf-course/${i}.webp`;
+                img.alt = `Fall Creek Falls State Park Golf Course - Photo ${i}`;
+                img.loading = 'lazy';
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
             }
-            
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) closeGallery();
+        }
+
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+            if (event.key === 'Escape') closeGallery();
         });
     </script>
+
+    <script src="/script.js?v=5"></script>
 </body>
 </html>

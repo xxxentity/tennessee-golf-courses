@@ -11,12 +11,12 @@ $course_name = 'Franklin Bridge Golf Club';
 $course_data = [
     'name' => 'Franklin Bridge Golf Club',
     'location' => 'Franklin, TN',
-    'description' => 'Gary Roger Baird championship design in Franklin, TN. 6,968-yard course featuring Harpeth River views and island green signature hole.',
+    'description' => 'Gary Roger Baird championship design in Franklin, TN. 18-hole public course with Harpeth River views and a signature island green on hole 9.',
     'image' => '/images/courses/forrest-crossing-golf-course/1.jpeg',
     'holes' => 18,
     'par' => 72,
     'designer' => 'Gary Roger Baird',
-    'year_built' => 1989,
+    'year_built' => 1970,
     'course_type' => 'Public'
 ];
 
@@ -37,11 +37,8 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -50,13 +47,11 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
         .course-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/forrest-crossing-golf-course/1.jpeg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/forrest-crossing-golf-course/1.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -64,492 +59,66 @@ SEO::setupCoursePage($course_data);
             color: white;
             margin-top: 20px;
         }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .spec-value {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .amenities-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .amenities-list li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .amenities-list i {
-            color: #2c5234;
-            width: 20px;
-        }
-        
-        .location-info {
-            margin-bottom: 2rem;
-        }
-        
-        .location-info iframe {
-            width: 100%;
-            height: 200px;
-            border: 0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .location-details p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .location-details i {
-            color: #2c5234;
-            width: 20px;
-        }
-        
-        .course-description {
-            background: #f8f9fa;
-            padding: 3rem 0;
-        }
-        
-        .description-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .description-content h2 {
-            color: #2c5234;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-        
-        .description-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-        
-        .signature-holes {
-            padding: 4rem 0;
-        }
-        
-        .holes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .hole-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .hole-number {
-            background: #2c5234;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-        
-        .hole-details h4 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .hole-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hole-stat {
-            text-align: center;
-        }
-        
-        .hole-stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-        
-        .hole-stat-value {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c5234;
-        }
-        
-        .reviews-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-        
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .reviews-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .review-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        .review-form h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .rating-input {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .rating-input input[type="radio"] {
-            display: none;
-        }
-        
-        .rating-input label {
-            font-size: 1.5rem;
-            color: #999;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        
-        .rating-input label:hover {
-            color: #ffd700;
-        }
-        
-        .rating-input label.active {
-            color: #ffd700;
-        }
-        
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            resize: vertical;
-            min-height: 120px;
-            font-family: inherit;
-        }
-        
-        .form-group textarea:focus {
-            border-color: #2c5234;
-            outline: none;
-        }
-        
-        .submit-btn {
-            background: #2c5234;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #1a3020;
-        }
-        
-        
-        
-        
-        
-        .comments-list {
-            space-y: 2rem;
-        }
-        
-        .comment-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .comment-rating {
-            color: #ffd700;
-        }
-        
-        .comment-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        
-        
-        
-        
-        
-        
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
+        .course-hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .course-hero-content p { font-size: 1.3rem; opacity: 0.9; }
+        .photo-gallery { margin: 4rem 0; }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1rem;
         }
-        
         .gallery-item {
             height: 250px;
-            background-size: cover;
-            background-position: center;
             border-radius: 15px;
+            overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
+        .gallery-item:hover { transform: scale(1.05); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-button { text-align: center; margin-top: 2rem; }
         .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            background: #4a7c59; color: white; padding: 1rem 2rem;
+            border: none; border-radius: 50px; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease;
         }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
+        .btn-gallery:hover { background: #2c5234; transform: translateY(-2px); }
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            display: none; position: fixed; z-index: 9999;
+            left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.9);
         }
-        
+        .modal.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            margin: 2% auto; padding: 20px;
+            width: 90%; max-width: 1200px; position: relative;
+            animation: slideUp 0.3s ease;
         }
-        
         .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 2rem; color: white;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 2rem; margin: 0; }
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
+            color: white; font-size: 3rem; font-weight: bold;
+            cursor: pointer; background: none; border: none;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { color: #ccc; }
         .full-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
+            gap: 1rem; max-height: 70vh; overflow-y: auto;
         }
-        
         .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
+            background-size: cover; background-position: center;
+            border-radius: 10px; cursor: pointer; transition: transform 0.3s ease;
         }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
+        .full-gallery-item:hover { transform: scale(1.05); }
         @media (max-width: 768px) {
-            .course-hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .course-specs {
-                grid-template-columns: 1fr;
-            }
-            
-            .holes-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hole-stats {
-                gap: 1rem;
-            }
+            .course-hero-content h1 { font-size: 2.5rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -561,190 +130,166 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '750 Riverview Drive',
+            'addressLocality' => 'Franklin',
             'addressRegion' => 'TN',
+            'postalCode' => '37064',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+16157949400',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Hero Section -->
     <section class="course-hero">
         <div class="course-hero-content">
             <h1>Franklin Bridge Golf Club</h1>
-            <p>Gary Roger Baird Design • Franklin, Tennessee</p>
-            </div>
-    </section>
-
-    <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,968 yards</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">77.8</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">135</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">Gary Roger Baird</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1987</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Semi-Private</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Course Type:</span>
-                            <span class="spec-value">Semi-Private Club</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Public Play:</span>
-                            <span class="spec-value">Available with restrictions</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Tee Times:</span>
-                            <span class="spec-value">Call for availability</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Reservations:</span>
-                            <span class="spec-value">Advance booking recommended</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Contact:</span>
-                            <span class="spec-value">(615) 794-9400</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <div class="location-info">
-                        <div class="location-details">
-                            <p><i class="fas fa-map-marker-alt"></i> 750 Riverview Dr, Franklin, TN 37064</p>
-                            <p><i class="fas fa-phone"></i> (615) 794-9400</p>
-                            <p><i class="fas fa-globe"></i> <a href="https://franklinbridgegolf.com" target="_blank">franklinbridgegolf.com</a></p>
-                            <p><i class="fas fa-directions"></i> <a href="https://maps.google.com/maps?q=750+Riverview+Dr,+Franklin,+TN+37064" target="_blank">Get Directions</a></p>
-                        </div>
-                        <iframe src="https://maps.google.com/maps?q=750+Riverview+Dr,+Franklin,+TN+37064&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" height="200" style="border:0; border-radius: 8px; margin-top: 1rem;">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
+            <p>Gary Roger Baird Design &bull; Franklin, Tennessee</p>
         </div>
     </section>
 
-    <!-- Course Description -->
-    <section class="course-description">
+    <section style="padding: 4rem 0;">
         <div class="container">
-            <div class="description-content">
-                <h2>Championship Golf Along the Harpeth River</h2>
-                <p>Franklin Bridge Golf Club stands as one of Nashville's premier golf destinations, masterfully designed by Gary Roger Baird and carved from historic farmland in Franklin, Tennessee. This championship 6,968-yard, par 72 layout showcases the natural beauty of Williamson County while providing golfers with a challenging yet fair test of skill.</p>
-                
-                <p>The course's crown jewel is the spectacular par-4 ninth hole, featuring an island green that has become the signature challenge of the layout. This unique hole, along with the acclaimed 16th and 18th holes, has earned recognition from local media as featuring some of the best and most challenging holes in Tennessee.</p>
-                
-                <p>What truly sets Franklin Bridge apart is its intimate relationship with the Harpeth River, which winds alongside 15 of the course's 18 holes. This links-style design provides a tranquil respite from the bustling growth of Williamson County, offering golfers stunning water views and strategic challenges throughout their round.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Signature Holes -->
-    <section class="signature-holes">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Holes</h2>
-                <p>Discover the holes that define Franklin Bridge's championship character</p>
+            <!-- Three-box row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;">
+                        <i class="fas fa-info-circle"></i> Course Information
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Holes:</span>
+                            <span style="color: #666;">18</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Par:</span>
+                            <span style="color: #666;">72</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Yardage:</span>
+                            <span style="color: #666;">6,968 yards</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Course Rating:</span>
+                            <span style="color: #666;">74.8</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Slope Rating:</span>
+                            <span style="color: #666;">135</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Designer:</span>
+                            <span style="color: #666;">Gary Roger Baird</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Opened:</span>
+                            <span style="color: #666;">1970</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #333;">Type:</span>
+                            <span style="color: #666;">Public</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Fees -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;">
+                        <i class="fas fa-dollar-sign"></i> Green Fees
+                    </h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #f0f4f0;">
+                                <th style="padding: 0.5rem; text-align: left; border-bottom: 2px solid #2c5234;"></th>
+                                <th style="padding: 0.5rem; text-align: center; border-bottom: 2px solid #2c5234;">Weekday</th>
+                                <th style="padding: 0.5rem; text-align: center; border-bottom: 2px solid #2c5234;">Weekend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.5rem; border-bottom: 1px solid #e0e0e0; font-weight: 600;">18 Holes</td>
+                                <td style="padding: 0.5rem; text-align: center; border-bottom: 1px solid #e0e0e0;">~$65</td>
+                                <td style="padding: 0.5rem; text-align: center; border-bottom: 1px solid #e0e0e0;">~$75</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem; font-weight: 600;">Twilight</td>
+                                <td style="padding: 0.5rem; text-align: center;" colspan="2">Call for availability</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 0.75rem;">Cart included. Rates approximate — call or visit website for current pricing.</p>
+                </div>
+
+                <!-- Location & Contact -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;">
+                        <i class="fas fa-map-marker-alt"></i> Location &amp; Contact
+                    </h3>
+                    <p><strong>Address:</strong><br>750 Riverview Drive<br>Franklin, TN 37064</p>
+                    <p><strong>Phone:</strong><br><a href="tel:+16157949400" style="color: #2c5234;">(615) 794-9400</a></p>
+                    <p><strong>Website:</strong><br><a href="https://franklinbridgegolf.com" target="_blank" rel="noopener" style="color: #2c5234;">franklinbridgegolf.com</a></p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=750+Riverview+Drive,+Franklin,+TN+37064&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="180" style="border:0; border-radius: 8px; margin-top: 0.75rem;" loading="lazy">
+                    </iframe>
+                    <p style="margin-top: 0.5rem;">
+                        <a href="https://maps.google.com/maps?q=750+Riverview+Drive,+Franklin,+TN+37064" target="_blank" rel="noopener" style="color: #2c5234;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </p>
+                </div>
             </div>
-            
-            <div class="holes-grid">
-                <div class="hole-card">
-                    <div class="hole-number">9</div>
-                    <div class="hole-details">
-                        <h4>Island Challenge</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">420</div>
-                            </div>
-                        </div>
-                        <p>The course's most famous hole features a dramatic island green that demands precision and nerve. This signature hole has become synonymous with Franklin Bridge and provides both beauty and challenge in equal measure.</p>
-                    </div>
+
+            <!-- About + Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 1.5rem;">About Franklin Bridge Golf Club</h2>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 1.2rem;">
+                        Franklin Bridge Golf Club is a public 18-hole championship course set along the banks of the Harpeth River in Franklin, Tennessee. Originally opened in 1970 as Forrest Crossing Golf Course, the layout was designed by Gary Roger Baird, ASGCA, and stretches to 6,968 yards from the tips with a slope rating of 135. The course underwent a name change to The Crossing in September 2022 before being rebranded as Franklin Bridge Golf Club under new ownership — though the layout and challenge remain as formidable as ever.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 1.2rem;">
+                        The Harpeth River is the defining feature of the course, weaving alongside nine of the eighteen holes and creating constant strategic demands from tee to green. Water comes into play throughout the round, rewarding precise ball-striking and punishing errant approaches. The signature moment arrives at the par-4 ninth hole, where an island green demands a bold, accurate approach shot — one of the most talked-about holes in Middle Tennessee golf.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+                        Located just minutes from downtown Franklin in one of Tennessee's fastest-growing counties, Franklin Bridge Golf Club offers a rare blend of challenging championship golf and natural scenery within easy reach of the Nashville metro. Holes 16 and 18 have earned particular recognition for their difficulty and finishing drama, making Franklin Bridge a course that demands respect from the first tee to the final putt.
+                    </p>
                 </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">16</div>
-                    <div class="hole-details">
-                        <h4>River's Edge</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">4</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">425</div>
-                            </div>
+
+                <div>
+                    <h3 style="color: #2c5234; margin-bottom: 1rem;">Amenities</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-store" style="color: #2c5234; width: 20px;"></i> Pro Shop
                         </div>
-                        <p>Recognized as one of Tennessee's most challenging holes, this layout demands strategic thinking and precise execution with the Harpeth River in play throughout.</p>
-                    </div>
-                </div>
-                
-                <div class="hole-card">
-                    <div class="hole-number">18</div>
-                    <div class="hole-details">
-                        <h4>Grand Finale</h4>
-                        <div class="hole-stats">
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Par</div>
-                                <div class="hole-stat-value">5</div>
-                            </div>
-                            <div class="hole-stat">
-                                <div class="hole-stat-label">Yards</div>
-                                <div class="hole-stat-value">545</div>
-                            </div>
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-golf-ball" style="color: #2c5234; width: 20px;"></i> Driving Range
                         </div>
-                        <p>A fitting climax to your round, this hole combines strategic elements with scenic beauty to create a memorable conclusion to your Franklin Bridge experience.</p>
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-circle" style="color: #2c5234; width: 20px;"></i> Practice Putting Green
+                        </div>
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-car" style="color: #2c5234; width: 20px;"></i> Golf Carts
+                        </div>
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-calendar-check" style="color: #2c5234; width: 20px;"></i> Online Tee Times
+                        </div>
+                        <div style="width: 100%; padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-users" style="color: #2c5234; width: 20px;"></i> Tournament Hosting
+                        </div>
+                        <div style="width: 100%; padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-water" style="color: #2c5234; width: 20px;"></i> Harpeth River Views
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -756,18 +301,18 @@ SEO::setupCoursePage($course_data);
                 <p>Experience the beauty of Franklin Bridge Golf Club</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/2.jpeg" alt="Franklin Bridge Golf Club Franklin TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                <div class="gallery-item" onclick="openGallery()">
+                    <img src="../images/courses/forrest-crossing-golf-course/2.jpeg" alt="Franklin Bridge Golf Club fairway view" loading="lazy">
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/3.jpeg" alt="Franklin Bridge Golf Club Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                <div class="gallery-item" onclick="openGallery()">
+                    <img src="../images/courses/forrest-crossing-golf-course/3.jpeg" alt="Franklin Bridge Golf Club Harpeth River hole" loading="lazy">
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/forrest-crossing-golf-course/4.jpeg" alt="Franklin Bridge Golf Club Franklin TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+                <div class="gallery-item" onclick="openGallery()">
+                    <img src="../images/courses/forrest-crossing-golf-course/4.jpeg" alt="Franklin Bridge Golf Club course view" loading="lazy">
                 </div>
             </div>
             <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+                <button class="btn-gallery" onclick="openGallery()">View Full Gallery</button>
             </div>
         </div>
     </section>
@@ -776,28 +321,26 @@ SEO::setupCoursePage($course_data);
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Franklin Bridge Golf Club - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Franklin Bridge Golf Club — Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
+    <!-- Share This Course -->
+    <section style="padding: 3rem 0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 1rem;">Share This Course</h3>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
                         <i class="fab fa-facebook-f"></i> Share on Facebook
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Franklin Bridge Golf Club in Franklin, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Franklin Bridge Golf Club in Franklin, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000; color: white;">
                         <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
                     </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Franklin Bridge Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Franklin Bridge Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/forrest-crossing-golf-course'); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
                         <i class="far fa-envelope"></i> Share via Email
                     </a>
                 </div>
@@ -805,57 +348,39 @@ SEO::setupCoursePage($course_data);
         </div>
     </section>
 
-    <!-- Reviews Section - Centralized System -->
-    
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="/images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="/courses">Golf Courses</a></li>
-                        <li><a href="/reviews">Reviews</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script src="/script.js?v=5"></script>
+    <script>
+        const galleryImages = [
+            '../images/courses/forrest-crossing-golf-course/1.jpeg',
+            '../images/courses/forrest-crossing-golf-course/2.jpeg',
+            '../images/courses/forrest-crossing-golf-course/3.jpeg',
+            '../images/courses/forrest-crossing-golf-course/4.jpeg',
+        ];
+
+        function openGallery() {
+            const modal = document.getElementById('galleryModal');
+            const grid = document.getElementById('fullGalleryGrid');
+            grid.innerHTML = galleryImages.map(src =>
+                `<div class="full-gallery-item" style="background-image: url('${src}');" onclick="window.open('${src}', '_blank')"></div>`
+            ).join('');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGallery();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeGallery();
+        });
+    </script>
 </body>
 </html>

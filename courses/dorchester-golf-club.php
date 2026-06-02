@@ -11,7 +11,7 @@ $course_name = 'Dorchester Golf Club';
 $course_data = [
     'name' => 'Dorchester Golf Club',
     'location' => 'Fairfield Glade, TN',
-    'description' => '18-hole championship golf course in Fairfield Glade, TN. Features bentgrass greens, narrow tree-lined fairways, water hazards on 8 holes. Co-hosted Tennessee State Open.',
+    'description' => '18-hole semi-private championship course in Fairfield Glade, TN. Bentgrass greens, tree-lined fairways, water on 8 holes, and a history as co-host of the Tennessee State Open.',
     'image' => '/images/courses/dorchester-golf-club/1.webp',
     'holes' => 18,
     'par' => 72,
@@ -37,9 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
+
     <?php include '../includes/favicon.php'; ?>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -48,344 +48,76 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/dorchester-golf-club/1.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #666;
-        }
-        
-        .spec-value {
-            font-weight: 700;
-            color: #2c5234;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-            justify-items: center;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.2rem;
-        }
-        
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
         }
-        
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            max-width: 1400px;
+            width: 95%;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s;
         }
-        
         .modal-header {
+            background: #2c5234;
+            color: white;
+            padding: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 1.8rem; font-weight: 700; margin: 0; }
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
+            color: white;
+            transition: transform 0.3s;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { transform: scale(1.2); }
         .full-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .review-card {
-            background: white;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
             padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
+        .full-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            aspect-ratio: 4/3;
         }
-        
-        .reviewer-name {
-            font-weight: 600;
-            color: #2c5234;
+        .full-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .full-gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .booking-section {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .booking-content h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .booking-content p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .booking-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-book {
-            background: #ffd700;
-            color: #2c5234;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-book:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-        }
-        
-        .btn-contact {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-contact:hover {
-            background: white;
-            color: #2c5234;
-        }
-        
-        
-        
-        /* Responsive Design for Course Info Grid */
-        @media (max-width: 1024px) {
-            .course-info-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .course-details {
-                padding: 2rem 0;
-            }
-            
-            .course-info-card {
-                padding: 1.5rem;
-            }
+            .modal-content { width: 100%; margin: 0; border-radius: 0; max-height: 100vh; }
+            .full-gallery-grid { grid-template-columns: 1fr; padding: 1rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -397,220 +129,250 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '576 Westchester Dr',
+            'addressLocality' => 'Fairfield Glade',
             'addressRegion' => 'TN',
+            'postalCode' => '38558',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+19314562864',
+        'email' => 'info@fairfieldglade.cc',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Dorchester Golf Club</h1>
-            <p>Championship Course • Fairfield Glade, Tennessee</p>
-            </div>
+    <section class="course-hero" style="
+        height: 60vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/dorchester-golf-club/1.webp');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Dorchester Golf Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Semi-Private Championship Course • Fairfield Glade, Tennessee</p>
+        </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+
+            <!-- Three-box row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Course Information</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Holes</span>
+                            <span style="font-weight: 600; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Par</span>
+                            <span style="font-weight: 600; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">6,400 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Yardage</span>
+                            <span style="font-weight: 600; color: #2c5234;">6,400</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Course Rating:</span>
-                            <span class="spec-value">70.7 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Course Rating</span>
+                            <span style="font-weight: 600; color: #2c5234;">70.7</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Slope Rating:</span>
-                            <span class="spec-value">134 (Blue Tees)</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Slope</span>
+                            <span style="font-weight: 600; color: #2c5234;">134</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Semi-Private</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Type</span>
+                            <span style="font-weight: 600; color: #2c5234;">Semi-Private</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Greens:</span>
-                            <span class="spec-value">Bentgrass</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="color: #666; font-weight: 500;">Greens</span>
+                            <span style="font-weight: 600; color: #2c5234;">Bentgrass</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div class="course-specs single-column">
-                            <div class="spec-item">
-                                <span class="spec-label">18 Hole Guest w/ Member:</span>
-                                <span class="spec-value">$80</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">9 Hole Guest w/ Member:</span>
-                                <span class="spec-value">$42</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">18 Hole Guest After 2:00pm:</span>
-                                <span class="spec-value">$51</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">9 Hole Guest After 4:00pm:</span>
-                                <span class="spec-value">$28</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">18 Hole Unaccompanied:</span>
-                                <span class="spec-value">$90</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">9 Hole Unaccompanied:</span>
-                                <span class="spec-value">$47</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">18 Hole Unaccompanied After 2:00pm:</span>
-                                <span class="spec-value">$51</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
-                        <strong>Note:</strong> Rates subject to change. Contact pro shop for current pricing.
+                <!-- Green Fees -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.2rem; font-size: 1.3rem;">Green Fees</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #2c5234; color: white;">
+                                <th style="padding: 0.5rem 0.7rem; text-align: left;">Rate</th>
+                                <th style="padding: 0.5rem 0.7rem; text-align: center;">9 Holes</th>
+                                <th style="padding: 0.5rem 0.7rem; text-align: center;">18 Holes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.5rem 0.7rem; font-weight: 500;">Guest w/ Member</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$42</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$80</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.5rem 0.7rem; font-weight: 500;">Unaccompanied</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$47</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$90</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.5rem 0.7rem; font-weight: 500;">After 2:00 pm (18)</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #666;">—</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$51</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 0.7rem; font-weight: 500;">After 4:00 pm (9)</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #2c5234; font-weight: 600;">$28</td>
+                                <td style="padding: 0.5rem 0.7rem; text-align: center; color: #666;">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.82rem; color: #888; margin-top: 1rem;">Cart included. Rates subject to change — contact pro shop for current pricing.</p>
+                </div>
+
+                <!-- Location & Contact -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Location & Contact</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 1rem;">
+                        <strong>Address:</strong><br>
+                        576 Westchester Dr<br>
+                        Fairfield Glade, TN 38558
+                    </p>
+                    <p style="color: #555; margin-bottom: 0.6rem;">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:9314562864" style="color: #2c5234; font-weight: 600; text-decoration: none;">(931) 456-2864</a>
+                    </p>
+                    <p style="color: #555; margin-bottom: 1.2rem;">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@fairfieldglade.cc" style="color: #2c5234; font-weight: 600;">info@fairfieldglade.cc</a>
+                    </p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=576+Westchester+Dr,+Fairfield+Glade,+TN+38558&output=embed"
+                        width="100%"
+                        height="150"
+                        style="border: 0; border-radius: 8px; margin-bottom: 1rem;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                    <a href="https://maps.google.com/maps?q=576+Westchester+Dr,+Fairfield+Glade,+TN+38558"
+                       target="_blank"
+                       style="display: inline-block; background: #2c5234; color: white; padding: 0.6rem 1.2rem; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+                        <i class="fas fa-directions" style="margin-right: 0.4rem;"></i> Get Directions
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- About & Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 1.5rem;">About Dorchester Golf Club</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Dorchester Golf Club occupies a well-earned place in Tennessee golf history. Situated within the Fairfield Glade resort community in the Cumberland Mountains, this 18-hole semi-private layout played host to the Tennessee State Open during the 1980s and 1990s — sharing those duties with nearby Stonehenge Golf Club — a distinction that speaks to the caliber of the course and the conditioning standards it has maintained over the decades. The tournament pedigree gives Dorchester a quiet prestige that you feel as soon as the round begins.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Playing to a par of 72 from 6,400 yards off the blue tees, the course carries a rating of 70.7 and a slope of 134 — numbers that accurately convey a fair but demanding test. The fairways are narrow and framed by mature Tennessee hardwoods, which means accuracy off the tee matters more than length. Water comes into play on eight of the eighteen holes, most notably on the back nine where a creek threads through three consecutive holes and demands clean, controlled golf. The bentgrass greens are the course's signature feature, providing smooth, consistent putting surfaces that reward players who hit them in the right portion.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        The opening hole sets the tone immediately — water flanking both the tee box and the green makes it clear that power is secondary to precision at Dorchester. Golfers who manage the course thoughtfully, respect the water, and work the ball through the treelined corridors are rewarded with a round that feels both accomplished and scenic. Set against the backdrop of the Cumberland Plateau, Dorchester delivers the kind of golf experience that keeps players from the region coming back season after season.
                     </p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    576 Westchester Dr<br>
-                    Fairfield Glade, TN 38558</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (931) 456-2864</p>
-                    
-                    <p><strong>Email:</strong><br>
-                    <a href="mailto:info@fairfieldglade.cc" style="color: #4a7c59;">info@fairfieldglade.cc</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Dorchester+Golf+Club+Fairfield+Glade+TN&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Dorchester Golf Club Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=Dorchester+Golf+Club+Fairfield+Glade+TN" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                <!-- Amenities -->
+                <div>
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-golf-ball" style="color: #2c5234; width: 20px;"></i>
+                            <span>Driving Range</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-flag" style="color: #2c5234; width: 20px;"></i>
+                            <span>Practice Putting Green</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-store" style="color: #2c5234; width: 20px;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-user-tie" style="color: #2c5234; width: 20px;"></i>
+                            <span>Golf Lessons</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-shopping-cart" style="color: #2c5234; width: 20px;"></i>
+                            <span>Club Rentals</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-utensils" style="color: #2c5234; width: 20px;"></i>
+                            <span>Snack Bar</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-leaf" style="color: #2c5234; width: 20px;"></i>
+                            <span>Bentgrass Greens</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-trophy" style="color: #2c5234; width: 20px;"></i>
+                            <span>Tournament History</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Dorchester Golf Club</h3>
-                <p>Dorchester Golf Club is a distinguished 18-hole championship course located in the scenic mountain community of Fairfield Glade, Tennessee. Known for its challenging yet fair design, this semi-private facility offers golfers an exceptional experience with meticulously maintained bentgrass greens and tree-lined fairways that demand precision and strategic play.</p>
-                
-                <br>
-                
-                <p>The course features narrow, tree-lined fairways that challenge golfers of all skill levels while providing a picturesque setting in the Cumberland Mountains. With water hazards strategically placed on eight of the eighteen holes, including a creek that runs through the back nine and affects three holes, Dorchester requires thoughtful course management and precise shot-making.</p>
-                
-                <br>
-                
-                <p>One of the course's most notable characteristics is its bentgrass playing surfaces, which provide consistent putting conditions and excellent playability throughout the season. The course measures 6,400 yards from the blue tees with a par of 72, featuring a course rating of 70.7 and slope rating of 134, indicating a challenging test for golfers while remaining fair and enjoyable.</p>
-                
-                <br>
-                
-                <p>Dorchester Golf Club holds a distinguished place in Tennessee golf history, having co-hosted the Tennessee State Open during the 1980s and 1990s alongside Stonehenge Golf Club. This prestigious tournament history speaks to the quality of the course design and conditioning that has been maintained over the decades.</p>
-                
-                <br>
-                
-                <p>The course opens with a challenging first hole that immediately introduces players to Dorchester's character, with water near both the tee box and green. This sets the tone for a round that rewards accuracy and course management over pure distance, making it a favorite among skilled golfers who appreciate technical, strategic play.</p>
-                
-                <br>
-                
-                <p>Located within the Fairfield Glade resort community, Dorchester Golf Club offers not just exceptional golf but also stunning mountain views and a peaceful, secluded atmosphere. The course operates year-round, allowing golfers to experience the beauty of the Tennessee mountains across all seasons while enjoying consistently excellent course conditions.</p>
-            </div>
+        </div>
+    </section>
 
-            <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-bullseye"></i>
-                        <span>Putting Green</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>Golf Lessons</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-tools"></i>
-                        <span>Club Rentals</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Snack Bar</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-leaf"></i>
-                        <span>Bentgrass Greens</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>Tournament Host</span>
-                    </div>
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Gallery</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/dorchester-golf-club/2.webp" alt="Dorchester Golf Club - Fairway" style="width: 100%; height: 250px; object-fit: cover;">
                 </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/dorchester-golf-club/3.webp" alt="Dorchester Golf Club - Bentgrass Green" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/dorchester-golf-club/4.webp" alt="Dorchester Golf Club - Course View" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> View Full Gallery (25 Photos)
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Dorchester Golf Club</p>
-            </div>
-            <div class="gallery-grid">
-                <img src="../images/courses/dorchester-golf-club/2.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Championship 18-hole golf course fairway with manicured Bermuda grass, Tennessee semi-private golf course" class="gallery-item">
-                <img src="../images/courses/dorchester-golf-club/3.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Pristine putting green with strategic bunkers and mature landscaping, Semi-Private 18-hole Tennessee golf course" class="gallery-item">
-                <img src="../images/courses/dorchester-golf-club/4.webp" alt="Dorchester Golf Club Fairfield Glade, TN - Scenic golf course landscape with rolling hills and tree-lined fairways, Tennessee semi-private golf course" class="gallery-item">
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
+    <!-- Share Section -->
+    <section class="share-section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share This Course</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/courses/dorchester-golf-club" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Dorchester%20Golf%20Club&url=https://tennesseegolfcourses.com/courses/dorchester-golf-club" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Dorchester Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/dorchester-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -622,197 +384,47 @@ SEO::setupCoursePage($course_data);
                 <h2 class="modal-title">Dorchester Golf Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/dorchester-golf-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
-                        <i class="fab fa-facebook-f"></i> Share on Facebook
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Dorchester Golf Club'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/dorchester-golf-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
-                    </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Dorchester Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/dorchester-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
-                        <i class="far fa-envelope"></i> Share via Email
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section - Centralized System -->
-    
-
-    <!-- Booking Section -->
-    <section class="booking-section">
-        <div class="container">
-            <div class="booking-content">
-                <h2>Ready to Play Dorchester Golf Club?</h2>
-                <p>Book your tee time today at this championship course in Fairfield Glade, Tennessee</p>
-                <div class="booking-buttons">
-                    <a href="https://www.fairfieldglade.com/dorchester" target="_blank" rel="noopener noreferrer" class="btn-book">Visit Course Website</a>
-                    <a href="tel:(931) 456-2864" class="btn-contact">Call Pro Shop</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="../images/logos/logo.webp" alt="Tennessee Golf Courses" class="footer-logo-image">
-                    </div>
-                    <p>Your premier destination for discovering the best golf courses across Tennessee.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579553544749" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://x.com/TNGolfCourses" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/tennesseegolfcourses/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@TennesseeGolf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.php#courses">Golf Courses</a></li>
-                        <li><a href="../index.php#reviews">Reviews</a></li>
-                        <li><a href="../index.php#news">News</a></li>
-                        <li><a href="../index.php#about">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Regions</h4>
-                    <ul>
-                        <li><a href="/courses?region=Nashville Area">Nashville Area</a></li>
-                        <li><a href="/courses?region=Chattanooga Area">Chattanooga Area</a></li>
-                        <li><a href="/courses?region=Knoxville Area">Knoxville Area</a></li>
-                        <li><a href="/courses?region=Memphis Area">Memphis Area</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
-                </div>            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
-    <script src="/course-weather.js?v=1"></script>
-    <script src="/script.js?v=5"></script>
     <script>
-        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
             galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Dorchester Golf Club';
-                const location = 'Fairfield Glade, TN';
-                const locationShort = 'Fairfield Glade TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/dorchester-golf-club/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/dorchester-golf-club/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                const img = document.createElement('img');
+                img.src = `../images/courses/dorchester-golf-club/${i}.webp`;
+                img.alt = `Dorchester Golf Club - Photo ${i}`;
+                img.loading = 'lazy';
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
             }
-            
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) closeGallery();
+        }
+
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+            if (event.key === 'Escape') closeGallery();
         });
     </script>
+
+    <script src="/script.js?v=5"></script>
 </body>
 </html>

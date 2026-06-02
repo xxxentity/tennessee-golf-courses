@@ -11,12 +11,12 @@ $course_name = 'Eagle\'s Landing Golf Club';
 $course_data = [
     'name' => 'Eagle\'s Landing Golf Club',
     'location' => 'Sevierville, TN',
-    'description' => 'Premier municipal golf course in Sevierville, TN. Experience championship golf in the heart of the Great Smoky Mountains with scenic mountain views.',
+    'description' => 'Historic municipal golf course in Sevierville, TN. Designed by D.J. DeVictor and opened in 1994. Now operating as Sevierville Golf Club.',
     'image' => '/images/courses/eagles-landing-golf-club/1.jpeg',
     'holes' => 18,
     'par' => 72,
-    'designer' => 'N/A',
-    'year_built' => 1992,
+    'designer' => 'D.J. DeVictor',
+    'year_built' => 1994,
     'course_type' => 'Public'
 ];
 
@@ -37,11 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -50,548 +48,91 @@ SEO::setupCoursePage($course_data);
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
     </script>
-    
+
     <style>
-        /* Course Closure Modal Styles */
-        .course-modal {
-            display: flex;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-        }
-        
-        .modal-header h2 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .modal-body p {
-            color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-        
-        .modal-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        
-        .modal-btn {
-            padding: 0.75rem 1.5rem;
+        .course-notice {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-left: 5px solid #ffc107;
+            padding: 1rem 1.5rem;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-stay {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .btn-stay:hover {
-            background: #5a6268;
-        }
-        
-        .btn-new-course {
-            background: #4a7c59;
-            color: white;
-        }
-        
-        .btn-new-course:hover {
-            background: #2c5234;
-        }
-        .course-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/eagles-landing-golf-club/1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 20px;
-        }
-        
-        .course-hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .course-hero-content p {
-            font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .course-rating {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-stars {
-            color: #ffd700;
-            font-size: 1.5rem;
-        }
-        
-        .rating-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .course-details {
-            padding: 4rem 0;
-        }
-        
-        .course-info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .course-info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .course-info-card h3 {
-            color: #2c5234;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .course-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            align-items: flex-start;
             gap: 1rem;
         }
-        
-        .course-specs.single-column {
-            grid-template-columns: 1fr;
-        }
-        
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .spec-label {
-            font-weight: 600;
-            color: #666;
-        }
-        
-        .spec-value {
-            font-weight: 700;
-            color: #2c5234;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-            justify-items: center;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .amenity-item i {
-            color: #4a7c59;
-            font-size: 1.2rem;
-        }
-        
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
+        .course-notice i { color: #856404; font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+        .course-notice p { color: #664d03; margin: 0; line-height: 1.6; }
+        .course-notice a { color: #2c5234; font-weight: 600; }
+
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
+            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
         }
-        
         .modal-content {
-            margin: 2% auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            position: relative;
+            max-width: 1400px;
+            width: 95%;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s;
         }
-        
         .modal-header {
+            background: #2c5234;
+            color: white;
+            padding: 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 1.8rem; font-weight: 700; margin: 0; }
         .close {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
+            color: white;
+            transition: transform 0.3s;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { transform: scale(1.2); }
         .full-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-height: 70vh;
-            overflow-y: auto;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
         }
-        
         .full-gallery-item {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
         }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
+        .full-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .full-gallery-item:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
-        
-        .reviews-section {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-        
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .reviewer-name {
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .review-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .booking-section {
-            background: linear-gradient(135deg, #2c5234, #4a7c59);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-        
-        .booking-content h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .booking-content p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .booking-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-book {
-            background: #ffd700;
-            color: #2c5234;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-book:hover {
-            background: #ffed4e;
-            transform: translateY(-2px);
-        }
-        
-        .btn-contact {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border: 2px solid white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-contact:hover {
-            background: white;
-            color: #2c5234;
-        }
-        
-        /* Comment System Styles */
-        .comment-form-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .comment-form-container h3 {
-            color: #2c5234;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .comment-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c5234;
-        }
-        
-        .star-rating {
-            display: flex;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-        
-        .star-rating input[type="radio"] {
-            display: none;
-        }
-        
-        .star-rating label {
-            color: #999;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .star-rating label:hover {
-            color: #ffd700;
-        }
-        
-        .star-rating label.active {
-            color: #ffd700;
-        }
-        
-        .comment-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .comment-form textarea:focus {
-            outline: none;
-            border-color: #2c5234;
-        }
-        
-        .btn-submit {
-            background: #2c5234;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            background: #1e3f26;
-            transform: translateY(-1px);
-        }
-        
-        .login-prompt {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .login-prompt a {
-            color: #2c5234;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .login-prompt a:hover {
-            text-decoration: underline;
-        }
-        
-        .no-comments {
-            text-align: center;
-            padding: 3rem;
-            color: #666;
-        }
-        
-        .no-comments i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #999;
-        }
-        
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .alert-success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-        
-        .alert-error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #dc2626;
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
-        
-        /* Responsive Design for Course Info Grid */
-        @media (max-width: 1024px) {
-            .course-info-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .course-info-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .course-details {
-                padding: 2rem 0;
-            }
-            
-            .course-info-card {
-                padding: 1.5rem;
-            }
+            .modal-content { width: 100%; margin: 0; border-radius: 0; max-height: 100vh; }
+            .full-gallery-grid { grid-template-columns: 1fr; padding: 1rem; }
         }
     </style>
     <script type="application/ld+json">
@@ -603,259 +144,246 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '1556 Old Knoxville Highway',
+            'addressLocality' => 'Sevierville',
             'addressRegion' => 'TN',
+            'postalCode' => '37876',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+18654294223',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Course Closure Modal -->
-    <div id="closureModal" class="course-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2><i class="fas fa-info-circle"></i> Course Update</h2>
-            </div>
-            <div class="modal-body">
-                <p><strong>Eagle's Landing Golf Club</strong> has permanently closed, but it has reopened under a new name and management.</p>
-                <p>The course is now operating as <strong>Sevierville Golf Club</strong> with updated facilities and amenities.</p>
-            </div>
-            <div class="modal-buttons">
-                <button class="modal-btn btn-stay" onclick="closeModal()">
-                    <i class="fas fa-eye"></i> View Historical Info
-                </button>
-                <a href="/courses/sevierville-golf-club" class="modal-btn btn-new-course">
-                    <i class="fas fa-golf-ball"></i> Visit New Course Page
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
     <!-- Course Hero Section -->
-    <section class="course-hero">
-        <div class="course-hero-content">
-            <h1>Eagle's Landing Golf Club</h1>
-            <p>Championship Municipal Golf • Sevierville, Tennessee</p>
-            <div class="course-rating">
-                <?php if ($avg_rating !== null && $total_reviews > 0): ?>
-                    <div class="rating-stars">
-                        <?php 
-                        $full_stars = floor($avg_rating);
-                        $half_star = ($avg_rating - $full_stars) >= 0.5;
-                        
-                        for ($i = 1; $i <= 5; $i++) {
-                            if ($i <= $full_stars) {
-                                echo '<i class="fas fa-star"></i>';
-                            } elseif ($i == $full_stars + 1 && $half_star) {
-                                echo '<i class="fas fa-star-half-alt"></i>';
-                            } else {
-                                echo '<i class="far fa-star"></i>';
-                            }
-                        }
-                        ?>
-                    </div>
-                    <span class="rating-text"><?php echo $avg_rating; ?> / 5.0 (<?php echo $total_reviews; ?> review<?php echo $total_reviews !== 1 ? 's' : ''; ?>)</span>
-                <?php else: ?>
-                    <div class="no-rating">
-                        <i class="fas fa-star-o" style="color: #999; margin-right: 8px;"></i>
-                        <span class="rating-text" style="color: #666;">No ratings yet - Be the first to review!</span>
-                    </div>
-                <?php endif; ?>
-            </div>
+    <section class="course-hero" style="
+        height: 60vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/eagles-landing-golf-club/1.jpeg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+    ">
+        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Eagle's Landing Golf Club</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Now: Sevierville Golf Club • Sevierville, Tennessee</p>
         </div>
     </section>
 
     <!-- Course Details -->
-    <section class="course-details">
-        <div class="container">
-            <div class="course-info-grid">
-                <div class="course-info-card">
-                    <h3><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column">
-                        <div class="spec-item">
-                            <span class="spec-label">Holes:</span>
-                            <span class="spec-value">18</span>
+    <section class="course-details" style="padding: 4rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+
+            <!-- Rebranding notice -->
+            <div class="course-notice">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>Course Update:</strong> Eagle's Landing Golf Club has been rebranded and now operates as <a href="/courses/sevierville-golf-club">Sevierville Golf Club</a>. This page preserves historical information about the course under its original name. Visit the <a href="/courses/sevierville-golf-club">Sevierville Golf Club page</a> for current rates, tee times, and details.</p>
+            </div>
+
+            <!-- Three-box row -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Course Information</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Holes</span>
+                            <span style="font-weight: 600; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Par:</span>
-                            <span class="spec-value">72</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Par</span>
+                            <span style="font-weight: 600; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Yardage:</span>
-                            <span class="spec-value">7,027</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Yardage</span>
+                            <span style="font-weight: 600; color: #2c5234;">7,027</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Designer:</span>
-                            <span class="spec-value">D.J. DeVictor</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Type</span>
+                            <span style="font-weight: 600; color: #2c5234;">Public / Municipal</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Opened:</span>
-                            <span class="spec-value">1994</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0;">
+                            <span style="color: #666; font-weight: 500;">Designer</span>
+                            <span style="font-weight: 600; color: #2c5234;">D.J. DeVictor</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Type:</span>
-                            <span class="spec-value">Public/Municipal</span>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="color: #666; font-weight: 500;">Opened</span>
+                            <span style="font-weight: 600; color: #2c5234;">1994</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-dollar-sign"></i> Green Fees</h3>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: #2c5234; margin-bottom: 0.5rem;">Standard Rates (Cart Included)</h4>
-                        <div class="course-specs">
-                            <div class="spec-item">
-                                <span class="spec-label">18-Hole:</span>
-                                <span class="spec-value">$79</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Twilight (After 4pm):</span>
-                                <span class="spec-value">$38</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Senior Rate:</span>
-                                <span class="spec-value">$49</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">9-Hole Option:</span>
-                                <span class="spec-value">$29</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; font-style: italic;">
-                        <p>* Prices subject to change seasonally</p>
-                        <p>* Cart rental included in all rates</p>
-                        <p>* Call for current pricing and specials</p>
-                    </div>
+                <!-- Green Fees -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.2rem; font-size: 1.3rem;">Green Fees</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #2c5234; color: white;">
+                                <th style="padding: 0.6rem 0.8rem; text-align: left;">Rate</th>
+                                <th style="padding: 0.6rem 0.8rem; text-align: center;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.6rem 0.8rem; font-weight: 500;">18 Holes (Cart Incl.)</td>
+                                <td style="padding: 0.6rem 0.8rem; text-align: center; color: #2c5234; font-weight: 600;">$79</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.6rem 0.8rem; font-weight: 500;">Senior Rate</td>
+                                <td style="padding: 0.6rem 0.8rem; text-align: center; color: #2c5234; font-weight: 600;">$49</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 0.6rem 0.8rem; font-weight: 500;">9 Holes</td>
+                                <td style="padding: 0.6rem 0.8rem; text-align: center; color: #2c5234; font-weight: 600;">$29</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.6rem 0.8rem; font-weight: 500;">Twilight (After 4 pm)</td>
+                                <td style="padding: 0.6rem 0.8rem; text-align: center; color: #2c5234; font-weight: 600;">$38</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.82rem; color: #888; margin-top: 1rem;">Historical rates — visit <a href="/courses/sevierville-golf-club" style="color: #2c5234;">Sevierville Golf Club</a> for current pricing.</p>
                 </div>
 
-                <div class="course-info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p><strong>Address:</strong><br>
-                    1556 Old Knoxville Highway<br>
-                    Sevierville, TN 37876</p>
-                    
-                    <p><strong>Phone:</strong><br>
-                    (865) 429-4223</p>
-                    
-                    <p><strong>Pro Shop:</strong><br>
-                    (865) 429-2915</p>
-                    
-                    <p><strong>Website:</strong><br>
-                    <a href="https://www.seviervillegolfclub.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">seviervillegolfclub.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Eagle's Landing Golf Club Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                <!-- Location & Contact -->
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 2rem; border-left: 4px solid #2c5234;">
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem; font-size: 1.3rem;">Location & Contact</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 1rem;">
+                        <strong>Address:</strong><br>
+                        1556 Old Knoxville Highway<br>
+                        Sevierville, TN 37876
+                    </p>
+                    <p style="color: #555; margin-bottom: 0.6rem;">
+                        <strong>Phone:</strong><br>
+                        <a href="tel:8654294223" style="color: #2c5234; font-weight: 600; text-decoration: none;">(865) 429-4223</a>
+                    </p>
+                    <p style="color: #555; margin-bottom: 1.2rem;">
+                        <strong>Website:</strong><br>
+                        <a href="https://www.seviervillegolfclub.com/" target="_blank" rel="noopener noreferrer" style="color: #2c5234; font-weight: 600;">seviervillegolfclub.com</a>
+                    </p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876&output=embed"
+                        width="100%"
+                        height="150"
+                        style="border: 0; border-radius: 8px; margin-bottom: 1rem;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                    <a href="https://maps.google.com/maps?q=1556+Old+Knoxville+Highway,+Sevierville,+TN+37876"
+                       target="_blank"
+                       style="display: inline-block; background: #2c5234; color: white; padding: 0.6rem 1.2rem; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+                        <i class="fas fa-directions" style="margin-right: 0.4rem;"></i> Get Directions
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- About & Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="color: #2c5234; margin-bottom: 1.5rem;">About Eagle's Landing Golf Club</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        Eagle's Landing Golf Club opened in 1994 as Sevierville's premier municipal golf course, designed by D.J. DeVictor along the banks of the Little Pigeon River in the shadow of the Great Smoky Mountains. The 18-hole layout stretched 7,027 yards from the gold tees and was immediately recognized for its championship conditioning and its accessible public pricing — a combination that made it one of the most-played courses in East Tennessee during its years under that name.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1.5rem;">
+                        The course featured Bermuda grass fairways with bentgrass greens, five different tee options from 4,986 to 7,027 yards, and strategic water hazards drawn from the river corridor running through the property. During its time as Eagle's Landing, the course earned recognition from both the Tennessee Turfgrass Association (Best Public Golf Course) and Golf Advisor (Top 50 US Courses), cementing its reputation beyond the regional market.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                        The course has since been rebranded as Sevierville Golf Club and continues to operate at the same location with updated facilities. Its position near Dollywood and the Great Smoky Mountains National Park keeps it on the radar of visiting golfers who mix a round of golf into trips centered around the broader Smoky Mountain region. The Eagle's Landing name remains part of the course's history and legacy in the Sevier County golf market.
+                    </p>
+                </div>
+
+                <!-- Amenities -->
+                <div>
+                    <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-golf-ball" style="color: #2c5234; width: 20px;"></i>
+                            <span>Driving Range</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-flag" style="color: #2c5234; width: 20px;"></i>
+                            <span>Practice Putting Green</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-bullseye" style="color: #2c5234; width: 20px;"></i>
+                            <span>Practice Bunkers</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-store" style="color: #2c5234; width: 20px;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-utensils" style="color: #2c5234; width: 20px;"></i>
+                            <span>Mulligan's Restaurant</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-user-tie" style="color: #2c5234; width: 20px;"></i>
+                            <span>PGA Instruction</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-car" style="color: #2c5234; width: 20px;"></i>
+                            <span>Cart Included</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 1rem; background: #f8f9fa; border-radius: 8px; width: 100%;">
+                            <i class="fas fa-calendar-alt" style="color: #2c5234; width: 20px;"></i>
+                            <span>Banquet Facility</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-golf-ball"></i> About Eagle's Landing Golf Club</h3>
-                <p>Eagle's Landing Golf Club, now known as the Sevierville Golf Club, is a premier 18-hole championship municipal golf course that opened in 1994 in the heart of the Great Smoky Mountains. Designed by D.J. DeVictor, this par-72 course stretches 7,027 yards from the gold tees and offers golfers a challenging yet rewarding experience with stunning mountain scenery.</p>
-                
-                <br>
-                
-                <p>Recently named Best Public Golf Course the last two years by the Tennessee Turfgrass Association and recognized by Golf Advisor as one of the top 50 US Courses, Eagle's Landing has established itself as one of Tennessee's premier golf destinations.</p>
-                
-                <br>
-                
-                <p>The course features Bermuda grass fairways and bent grass greens, providing excellent playing conditions year-round. With five different tee options ranging from 4,986 to 7,027 yards, the course accommodates golfers of all skill levels while maintaining its championship character.</p>
-                
-                <br>
-                
-                <p>Located along the Little Pigeon River, the course benefits from its proximity to the Great Smoky Mountains, offering majestic scenery and fresh mountain air. The layout features strategic water hazards and well-placed bunkers that reward precision and course management.<br><br></p>
-                
-                <p>What sets Eagle's Landing apart is its municipal ownership, ensuring affordable green fees while maintaining championship-quality conditions. The course is cart-only, ensuring pace of play and course protection.<br><br></p>
-                
-                <p>The facility is conveniently located near major tourist attractions including <a href="https://www.dollywood.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Dollywood</a>, <a href="https://www.gatlinburg.com/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Gatlinburg</a>, and the <a href="https://www.nps.gov/grsm/" target="_blank" rel="noopener noreferrer" style="color: #4a7c59; font-weight: 600;">Great Smoky Mountains National Park</a>, making it an ideal stop for golf vacations and family trips to the area.</p>
-            </div>
+        </div>
+    </section>
 
-            <!-- Amenities -->
-            <div class="course-info-card">
-                <h3><i class="fas fa-star"></i> Course Amenities</h3>
-                <div class="amenities-grid">
-                    <div class="amenity-item">
-                        <i class="fas fa-golf-ball"></i>
-                        <span>Driving Range</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-bullseye"></i>
-                        <span>Putting Green</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-utensils"></i>
-                        <span>Mulligan's Restaurant</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-user-tie"></i>
-                        <span>PGA Instruction</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-car"></i>
-                        <span>Cart Included</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>Practice Bunkers</span>
-                    </div>
-                    <div class="amenity-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Banquet Facility</span>
-                    </div>
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c5234;">Course Gallery</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/eagles-landing-golf-club/2.jpeg" alt="Eagle's Landing Golf Club - Fairway" style="width: 100%; height: 250px; object-fit: cover;">
                 </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/eagles-landing-golf-club/3.jpeg" alt="Eagle's Landing Golf Club - Mountain View" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;">
+                    <img src="../images/courses/eagles-landing-golf-club/4.jpeg" alt="Eagle's Landing Golf Club - Course View" style="width: 100%; height: 250px; object-fit: cover;">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> View Full Gallery (25 Photos)
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Eagle's Landing Golf Club</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/eagles-landing-golf-club/2.jpeg" alt="Eagle\ Sevierville TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
+    <!-- Share Section -->
+    <section class="share-section" style="padding: 3rem 0; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="text-align: center;">
+                <h3 style="color: #2c5234; margin-bottom: 1.5rem;">Share This Course</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://tennesseegolfcourses.com/courses/eagles-landing-golf-club" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
+                        <i class="fab fa-facebook-f"></i> Share on Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Eagle%27s%20Landing%20Golf%20Club&url=https://tennesseegolfcourses.com/courses/eagles-landing-golf-club" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    </a>
+                    <a href="mailto:?subject=<?php echo urlencode("Check out Eagle's Landing Golf Club"); ?>&body=<?php echo urlencode("I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/eagles-landing-golf-club"); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
+                        <i class="far fa-envelope"></i> Share via Email
+                    </a>
                 </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/eagles-landing-golf-club/3.jpeg" alt="Eagle\ Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/eagles-landing-golf-club/4.jpeg" alt="Eagle\ Sevierville TN - Championship golf course entrance with professional landscaping and signage" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View All Photos (25+)</button>
             </div>
         </div>
     </section>
@@ -867,144 +395,47 @@ SEO::setupCoursePage($course_data);
                 <h2 class="modal-title">Eagle's Landing Golf Club - Complete Photo Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/eagles-landing-golf-club'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
-                        <i class="fab fa-facebook-f"></i> Share on Facebook
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Eagle\'s Landing Golf Club'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/eagles-landing-golf-club'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
-                    </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Eagle\'s Landing Golf Club'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/eagles-landing-golf-club'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
-                        <i class="far fa-envelope"></i> Share via Email
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section - Centralized System -->
+    <!-- Footer -->
     <?php include '../includes/footer.php'; ?>
 
-    <script src="/script.js?v=5"></script>
     <script>
-        // Name Change Modal Functions
-        function stayOnCurrentPage() {
-            document.getElementById('nameChangeModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function goToNewPage() {
-            window.location.href = '/courses/sevierville-golf-club';
-        }
-        
-        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
             const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
             galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Eagle\';
-                const location = 'Sevierville, TN';
-                const locationShort = 'Sevierville TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
             for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/eagles-landing-golf-club/${i}.jpeg" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/eagles-landing-golf-club/${i}.jpeg`, '_blank');
-                galleryGrid.appendChild(galleryItem);
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                const img = document.createElement('img');
+                img.src = `../images/courses/eagles-landing-golf-club/${i}.jpeg`;
+                img.alt = `Eagle's Landing Golf Club - Photo ${i}`;
+                img.loading = 'lazy';
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
             }
-            
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) closeGallery();
+        }
+
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+            if (event.key === 'Escape') closeGallery();
         });
     </script>
+
+    <script src="/script.js?v=5"></script>
 </body>
 </html>
