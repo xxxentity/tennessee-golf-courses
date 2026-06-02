@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (39 / 104)
+## Completed (40 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -49,16 +49,12 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ hermitage-golf-course.php — favicon include, removed dead star block and broken star JS, standard three-box, green fees table (dual-course format), 2fr/1fr about grid
 - ✅ hillwood-country-club.php — favicon include, removed dead star block and broken star JS, standard three-box, private membership box (green gradient), location to <p> format, 2fr/1fr about grid
 - ✅ holston-hills-country-club.php — favicon include, CSS-class hero→inline, class-based layout→inline, hard-coded footer→include, removed broken star JS, private membership box, 2fr/1fr about grid
+- ✅ honky-tonk-national-golf-course.php — year_built 2001→2023, course_type Public→Private, fixed gallery JS from head into body, removed dead star/review block, brown gradient→green gradient membership box, Peter Jacobsen & Jim Hardy design
 
 ---
 
-## Remaining (67 / 104)
+## Remaining (64 / 104)
 
-
-- ⬜ hermitage-golf-course.php
-- ⬜ hillwood-country-club.php
-- ⬜ holston-hills-country-club.php
-- ⬜ honky-tonk-national-golf-course.php
 - ⬜ island-pointe-golf-club.php
 - ⬜ jackson-country-club.php
 - ⬜ lake-tansi-golf-course.php

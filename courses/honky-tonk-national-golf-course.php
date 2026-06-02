@@ -11,13 +11,13 @@ $course_name = 'Honky Tonk National Golf Course';
 $course_data = [
     'name' => 'Honky Tonk National Golf Course',
     'location' => 'Sparta, TN',
-    'description' => 'Peter Jacobsen & Jim Hardy championship design in Sparta, TN. 6,900 yards overlooking Center Hill Lake.',
-    'image' => '/images/courses/honky-tonk-national-golf-course/1.jpeg',
+    'description' => 'Peter Jacobsen & Jim Hardy championship design in Sparta, Tennessee. 18 holes playing 6,900 yards with seven tee options overlooking Center Hill Lake.',
+    'image' => '/images/courses/honky-tonk-national-golf-course/1.webp',
     'holes' => 18,
     'par' => 72,
     'designer' => 'Peter Jacobsen & Jim Hardy',
-    'year_built' => 2001,
-    'course_type' => 'Public'
+    'year_built' => 2023,
+    'course_type' => 'Private'
 ];
 
 SEO::setupCoursePage($course_data);
@@ -37,11 +37,9 @@ SEO::setupCoursePage($course_data);
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="/images/logos/tab-logo.webp?v=5">
-    <link rel="shortcut icon" href="/images/logos/tab-logo.webp?v=5">
-    
+
+    <?php include '../includes/favicon.php'; ?>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VPNPCDTBP"></script>
     <script>
@@ -49,152 +47,9 @@ SEO::setupCoursePage($course_data);
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-7VPNPCDTBP');
-    
-        // Gallery Modal Functions
-        function openGallery() {
-            const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Honky Tonk National Golf Course';
-                const location = 'Sparta, TN';
-                const locationShort = 'Sparta TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/honky-tonk-national-golf-course/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/honky-tonk-national-golf-course/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-        
-        function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
-        });\n    </script>
-    
+    </script>
+
     <style>
-        .photo-gallery {
-            margin: 4rem 0;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-button {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .btn-gallery {
-            background: #4a7c59;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-gallery:hover {
-            background: #2c5234;
-            transform: translateY(-2px);
-        }
-        
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -205,7 +60,6 @@ SEO::setupCoursePage($course_data);
             height: 100%;
             background-color: rgba(0,0,0,0.9);
         }
-        
         .modal-content {
             margin: 2% auto;
             padding: 20px;
@@ -213,7 +67,6 @@ SEO::setupCoursePage($course_data);
             max-width: 1200px;
             position: relative;
         }
-        
         .modal-header {
             display: flex;
             justify-content: space-between;
@@ -221,12 +74,7 @@ SEO::setupCoursePage($course_data);
             margin-bottom: 2rem;
             color: white;
         }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
+        .modal-title { font-size: 2rem; margin: 0; }
         .close {
             color: white;
             font-size: 3rem;
@@ -235,11 +83,7 @@ SEO::setupCoursePage($course_data);
             background: none;
             border: none;
         }
-        
-        .close:hover {
-            color: #ccc;
-        }
-        
+        .close:hover { color: #ccc; }
         .full-gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -247,19 +91,19 @@ SEO::setupCoursePage($course_data);
             max-height: 70vh;
             overflow-y: auto;
         }
-        
         .full-gallery-item {
-            height: 200px;
+            aspect-ratio: 4/3;
             background-size: cover;
             background-position: center;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
-        
-        .full-gallery-item:hover {
-            transform: scale(1.05);
-        }
+        .full-gallery-item:hover { transform: scale(1.05); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
     <script type="application/ld+json">
     <?php echo json_encode(array_filter([
@@ -270,382 +114,255 @@ SEO::setupCoursePage($course_data);
         'description' => $course_data['description'] ?? '',
         'address' => [
             '@type' => 'PostalAddress',
-            'addressLocality' => explode(',', $course_data['location'] ?? 'Tennessee')[0],
+            'streetAddress' => '235 Harbour Greens Place',
+            'addressLocality' => 'Sparta',
             'addressRegion' => 'TN',
+            'postalCode' => '38583',
             'addressCountry' => 'US'
         ],
+        'telephone' => '+19317618124',
         'sport' => 'Golf',
         'numberOfHoles' => $course_data['holes'] ?? null,
     ]), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES); ?>
     </script>
 </head>
 <body>
-    <!-- Dynamic Navigation -->
     <?php include '../includes/navigation.php'; ?>
 
-    <!-- Course Hero Section -->
-    <section class="course-hero" style="
-        height: 60vh; 
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/courses/honky-tonk-national-golf-course/1.webp'); 
-        background-size: cover; 
-        background-position: center; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        text-align: center; 
-        color: white;
-        margin-top: 20px;
-    ">
-        <div class="course-hero-content" style="max-width: 800px; padding: 2rem;">
+    <!-- Hero -->
+    <section style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/courses/honky-tonk-national-golf-course/1.webp') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 20px;">
+        <div>
             <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;">Honky Tonk National Golf Course</h1>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Jacobsen & Hardy Design • Sparta, Tennessee</p>
-            <div class="course-rating" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <?php if ($avg_rating): ?>
-                    <div class="rating-stars">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <i class="fas fa-star" style="color: <?php echo $i <= round($avg_rating) ? '#ffc107' : '#e0e0e0'; ?>; font-size: 1.5rem;"></i>
-                        <?php endfor; ?>
-                    </div>
-                    <span style="font-size: 1.2rem;"><?php echo $avg_rating; ?> (<?php echo $total_reviews; ?> reviews)</span>
-                <?php else: ?>
-                    <span style="font-size: 1.1rem; opacity: 0.8;">No reviews yet</span>
-                <?php endif; ?>
-            </div>
-            <a href="#reviews" class="btn-primary" style="background: #4a7c59; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Write a Review</a>
+            <p style="font-size: 1.3rem; opacity: 0.9;">Private Club &bull; Sparta, Tennessee</p>
         </div>
     </section>
 
-    <!-- Course Information Section -->
-    <section class="course-details" style="padding: 4rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="course-info-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
-                
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <!-- Course Details -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+
+            <!-- Three Boxes -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+
+                <!-- Course Information -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-info-circle"></i> Course Information</h3>
-                    <div class="course-specs single-column" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Holes:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">18</span>
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Holes</span>
+                            <span style="font-weight: 700; color: #2c5234;">18</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Par:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">72</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Par</span>
+                            <span style="font-weight: 700; color: #2c5234;">72</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Yardage:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">6,900</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Yardage</span>
+                            <span style="font-weight: 700; color: #2c5234;">6,900</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Designer:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Jacobsen & Hardy</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Designer</span>
+                            <span style="font-weight: 700; color: #2c5234;">Jacobsen &amp; Hardy</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Opened:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">2023</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Opened</span>
+                            <span style="font-weight: 700; color: #2c5234;">2023</span>
                         </div>
-                        <div class="spec-item" style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
-                            <span class="spec-label" style="font-weight: 600; color: #666;">Type:</span>
-                            <span class="spec-value" style="font-weight: 700; color: #2c5234;">Private</span>
+                        <div style="padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Tee Options</span>
+                            <span style="font-weight: 700; color: #2c5234;">Seven</span>
+                        </div>
+                        <div style="padding: 0.6rem 0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 600; color: #666;">Type</span>
+                            <span style="font-weight: 700; color: #2c5234;">Private</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <!-- Membership -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                     <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-users"></i> Membership</h3>
-                    <div style="background: linear-gradient(135deg, #8B4513, #A0522D); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
+                    <div style="background: linear-gradient(135deg, #2c5234, #4a7c59); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; margin: 1rem 0;">
                         <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Private Members Only</h4>
-                        <p style="margin: 0; opacity: 0.9;">Exclusive club membership required</p>
+                        <p style="margin: 0; opacity: 0.9;">Membership required for play</p>
                     </div>
-                    <p style="text-align: center; color: #666; margin-top: 1rem;">
-                        Honky Tonk National Golf Course operates as a private club overlooking Center Hill Lake. 
-                        Contact the club directly for membership information and guest policies.
+                    <p style="text-align: center; color: #666; margin-top: 1rem; font-size: 0.95rem;">
+                        Honky Tonk National operates as a private club overlooking Center Hill Lake. Contact the club directly for membership information and guest policies.
+                    </p>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        <a href="tel:+19317618124" style="color: #4a7c59; font-weight: 600;">(931) 761-8124</a>
                     </p>
                 </div>
 
-                <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location & Contact</h3>
-                    <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>
-                    235 Harbour Greens Place<br>
-                    Sparta, TN 38583</p>
-                    
-                    <p style="margin-bottom: 1rem;"><strong>Phone:</strong><br>
-                    (931) 761-8124</p>
-                    
-                    <p style="margin-bottom: 1.5rem;"><strong>Website:</strong><br>
-                    <a href="https://www.honkytonknationalgolf.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">honkytonknationalgolf.com</a></p>
-                    
-                    <div class="course-map" style="margin-top: 1.5rem;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=235+Harbour+Greens+Place,+Sparta,+TN+38583&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="200" 
-                            style="border:0; border-radius: 8px; margin-top: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Honky Tonk National Golf Course Location">
-                        </iframe>
-                        <div style="margin-top: 0.5rem; text-align: center;">
-                            <a href="https://www.google.com/maps/dir/?api=1&destination=235+Harbour+Greens+Place,+Sparta,+TN+38583" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
-                                <i class="fas fa-directions"></i> Get Directions
-                            </a>
+                <!-- Location & Contact -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location &amp; Contact</h3>
+                    <p><strong>Address:</strong><br>235 Harbour Greens Place<br>Sparta, TN 38583</p>
+                    <p><strong>Phone:</strong><br><a href="tel:+19317618124" style="color: #4a7c59;">(931) 761-8124</a></p>
+                    <p><strong>Website:</strong><br><a href="https://www.honkytonknationalgolf.com" target="_blank" rel="noopener noreferrer" style="color: #4a7c59;">honkytonknationalgolf.com</a></p>
+                    <iframe
+                        src="https://maps.google.com/maps?q=235+Harbour+Greens+Place+Sparta+TN+38583&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="180"
+                        style="border:0; border-radius: 8px; margin-top: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Honky Tonk National Golf Course Location">
+                    </iframe>
+                    <div style="margin-top: 0.5rem; text-align: center;">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=235+Harbour+Greens+Place+Sparta+TN+38583"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="font-size: 0.85rem; color: #4a7c59; text-decoration: none; font-weight: 500;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About + Amenities -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+
+                <!-- About -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Honky Tonk National Golf Course</h3>
+                    <p>Honky Tonk National Golf Course is a championship private club perched above the waters of Center Hill Lake in Sparta, Tennessee. Designed by the team of PGA professional Peter Jacobsen and golf instructor Jim Hardy, the course opened in 2023 and plays 6,900 yards with a par of 72. Seven tee options — with slope ratings ranging from 109 to 130 and course ratings from 62.9 to 73.1 — make the course accessible to players of all skill levels while preserving genuine championship challenge from the back.</p>
+
+                    <br>
+
+                    <p>Jacobsen and Hardy's design philosophy emphasizes natural terrain over manufactured difficulty. The routing flows through rolling Middle Tennessee hillsides with dramatic elevation changes and panoramic vistas of Center Hill Lake visible from multiple holes. The variety of terrain ensures that no two holes feel alike, with the lake views adding a distinctive visual dimension to the round that's unusual for an inland Tennessee course.</p>
+
+                    <br>
+
+                    <p>The course follows USGA rules with thoughtful local modifications and includes a full practice facility, pro shop, bar and restaurant, and on-site lodging for extended stays. The lodging component makes Honky Tonk National a natural destination for golf trips and group outings, combining the privacy of a member club with the infrastructure for overnight guests.</p>
+
+                    <br>
+
+                    <p>As a relatively new course opened in 2023, Honky Tonk National represents a significant investment in the Sparta area's golf scene, drawing players from across Middle Tennessee and beyond. The Jacobsen-Hardy design pedigree and the dramatic lake setting give it a profile well beyond a typical rural Tennessee course. Contact the club directly for current membership opportunities and guest access information.</p>
+                </div>
+
+                <!-- Amenities -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Amenities</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Championship Golf</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-layer-group" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Seven Tee Options</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-shopping-cart" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Pro Shop</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Bar &amp; Restaurant</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-bed" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>On-Site Lodging</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-water" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Center Hill Lake Views</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-mountain" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Elevation Changes</span>
+                        </div>
+                        <div style="width: 100%; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 10px;">
+                            <i class="fas fa-calendar-alt" style="color: #4a7c59; font-size: 1.1rem;"></i>
+                            <span>Group Events</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Course Description -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-golf-ball"></i> About Honky Tonk National Golf Course</h3>
-                <p>Honky Tonk National Golf Course stands as Tennessee's first 18-hole championship golf course designed by the acclaimed team of PGA professional Peter Jacobsen and renowned architect Jim Hardy. Perched high above the pristine waters of Center Hill Lake in middle Tennessee, this exceptional layout transforms the natural landscape into challenging, though encouraging, tests of ability that reward golfers of all skill levels with an unforgettable playing experience.</p>
-                
-                <br>
-                
-                <p>The championship course stretches 6,900 yards with a challenging par 72 design that masterfully integrates rolling hillsides and picturesque plateaus into a cohesive golfing masterpiece. Featuring seven distinct tee options with slope ratings ranging from 109 to 130 and course ratings from 62.9 to 73.1, Honky Tonk National provides appropriate challenges for every level of golfer while maintaining the strategic depth and shot-making demands that define championship-caliber golf.</p>
-                
-                <br>
-                
-                <p>Jacobsen and Hardy's thoughtful design philosophy emphasizes the natural beauty of the Tennessee landscape, creating a course that flows seamlessly through rolling terrain while offering dramatic elevation changes and scenic vistas of Center Hill Lake. Each hole presents unique strategic challenges that encourage creative shot-making and reward precise execution, while the varied topography ensures that no two holes feel alike, maintaining interest and excitement throughout the entire round.</p>
-                
-                <br>
-                
-                <p>Beyond its championship golf offering, Honky Tonk National provides a comprehensive golf experience with complete amenities including a well-appointed pro shop, bar restaurant, and lodging options for extended stays. The course operates under USGA rules with thoughtful local modifications, ensuring both competitive integrity and playability. This commitment to excellence in both course conditioning and hospitality has established Honky Tonk National as a premier golf destination where the spirit of Tennessee hospitality meets world-class championship golf in one of the state's most beautiful natural settings.</p>
-            </div>
-
-            <!-- Amenities -->
-            <div class="course-info-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 4rem;">
-                <h3 style="color: #2c5234; margin-bottom: 1rem; font-size: 1.5rem;"><i class="fas fa-star"></i> Club Amenities</h3>
-                <div class="amenities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; justify-items: center;">
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-golf-ball" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Championship Golf</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-store" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Pro Shop</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-utensils" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Bar Restaurant</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-cocktail" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Dinner Bar</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-bed" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Lodging Available</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-water" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Center Hill Lake</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-chart-line" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Seven Tee Options</span>
-                    </div>
-                    <div class="amenity-item" style="display: flex; align-items: center; gap: 0.75rem; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
-                        <i class="fas fa-crown" style="color: #4a7c59; font-size: 1.2rem;"></i>
-                        <span>Lakeside Experience</span>
-                    </div>
+            <!-- Photo Gallery -->
+            <div style="margin-bottom: 3rem;">
+                <div class="section-header">
+                    <h2>Course Gallery</h2>
+                    <p>Experience the beauty of Honky Tonk National Golf Course</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <img src="../images/courses/honky-tonk-national-golf-course/1.webp" alt="Honky Tonk National Golf Course Sparta TN - panoramic view overlooking Center Hill Lake" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="../images/courses/honky-tonk-national-golf-course/2.webp" alt="Honky Tonk National Golf Course Sparta TN - rolling fairway on Jacobsen & Hardy 2023 design" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="../images/courses/honky-tonk-national-golf-course/3.webp" alt="Honky Tonk National Golf Course Sparta TN - elevated tee box with lake view on 6,900-yard private course" style="height: 250px; width: 100%; object-fit: cover; border-radius: 15px; cursor: pointer; transition: transform 0.3s ease;" onclick="openGallery()" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="openGallery()" style="background: #4a7c59; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#2c5234'" onmouseout="this.style.background='#4a7c59'">View Full Gallery (25 Photos)</button>
                 </div>
             </div>
 
-            
-    </section>
-    <!-- Photo Gallery -->
-    <section class="photo-gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2>Course Gallery</h2>
-                <p>Experience the beauty of Honky Tonk National Golf Course</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/courses/honky-tonk-national-golf-course/1.webp" alt="Honky Tonk National Golf Course Sparta, TN - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/honky-tonk-national-golf-course/2.webp" alt="Honky Tonk National Golf Course Sparta TN - Panoramic fairway view hole 12 with strategic bunkers and mature trees" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/courses/honky-tonk-national-golf-course/3.webp" alt="Honky Tonk National Golf Course Tennessee - Championship golf course layout showing championship layout and natural terrain" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-                </div>
-            </div>
-            <div class="gallery-button">
-                <button class="btn-gallery" onclick="openGallery()">View Full Gallery (25 Photos)</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Share This Course Section -->
-    <section class="share-course-section" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <div class="share-section" style="background: var(--bg-white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-medium); text-align: center;">
-                <h3 class="share-title" style="font-size: 1.3rem; color: var(--text-black); margin-bottom: 1rem;">Share This Course</h3>
-                <div class="share-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" target="_blank" class="share-button facebook" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #1877f2; color: white;">
+            <!-- Share This Course -->
+            <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; margin-bottom: 3rem;">
+                <h3 style="font-size: 1.3rem; color: #2c5234; margin-bottom: 1rem;">Share This Course</h3>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #1877f2; color: white;">
                         <i class="fab fa-facebook-f"></i> Share on Facebook
                     </a>
-                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Honky Tonk National Golf Course in Sparta, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" target="_blank" class="share-button twitter" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #000000; color: white;">
-                        <strong style="font-size: 1.1rem;">𝕏</strong> Share on X
+                    <a href="https://twitter.com/intent/tweet?text=<?php echo urlencode('Check out Honky Tonk National Golf Course in Sparta, Tennessee'); ?>&url=<?php echo urlencode('https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #000000; color: white;">
+                        <strong style="font-size: 1.1rem;">&#x1D54F;</strong> Share on X
                     </a>
-                    <a href="mailto:?subject=<?php echo urlencode('Check out Honky Tonk National Golf Course'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" class="share-button email" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-weight: 500; background: #6c757d; color: white;">
+                    <a href="mailto:?subject=<?php echo urlencode('Check out Honky Tonk National Golf Course'); ?>&body=<?php echo urlencode('I thought you might be interested in this golf course: https://tennesseegolfcourses.com/courses/honky-tonk-national-golf-course'); ?>" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; background: #6c757d; color: white;">
                         <i class="far fa-envelope"></i> Share via Email
                     </a>
                 </div>
             </div>
+
         </div>
     </section>
-
-    <!-- Reviews Section - Centralized System -->
-    
 
     <!-- Full Gallery Modal -->
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Honky Tonk National Golf Course - Complete Photo Gallery</h2>
+                <h2 class="modal-title">Honky Tonk National Golf Course &mdash; Full Gallery</h2>
                 <button class="close" onclick="closeGallery()">&times;</button>
             </div>
-            <div class="full-gallery-grid" id="fullGalleryGrid">
-                <!-- Photos will be loaded dynamically -->
-            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 
     <?php include '../includes/footer.php'; ?>
 
+    <script src="/script.js?v=5"></script>
     <script>
-        let currentRating = 0;
+        const galleryImages = Array.from({length: 25}, (_, i) => ({
+            src: `../images/courses/honky-tonk-national-golf-course/${i + 1}.webp`,
+            alt: `Honky Tonk National Golf Course Sparta TN - photo ${i + 1}`
+        }));
 
-        function highlightStars(rating) {
-            const stars = document.querySelectorAll('.rating-select i');
-            stars.forEach((star, index) => {
-                if (index < rating) {
-                    star.style.color = '#ffc107';
-                } else {
-                    star.style.color = '#e0e0e0';
-                }
-            });
-        }
-
-        function resetStars() {
-            if (currentRating === 0) {
-                const stars = document.querySelectorAll('.rating-select i');
-                stars.forEach(star => {
-                    star.style.color = '#e0e0e0';
-                });
-            } else {
-                highlightStars(currentRating);
-            }
-        }
-
-        function setRating(rating) {
-            currentRating = rating;
-            const inputs = document.querySelectorAll('input[name="rating"]');
-            inputs[5 - rating].checked = true;
-            highlightStars(rating);
-        }
-
-        // Gallery Modal Functions
         function openGallery() {
             const modal = document.getElementById('galleryModal');
-            const galleryGrid = document.getElementById('fullGalleryGrid');
-            
-            // Clear existing content
-            galleryGrid.innerHTML = '';
-            
-            // Generate all 25 images
-            
-            // Alt text patterns for different image types
-            function getAltText(imageIndex) {
-                const courseName = 'Honky Tonk National Golf Course';
-                const location = 'Sparta, TN';
-                const locationShort = 'Sparta TN';
-                
-                if (imageIndex <= 5) {
-                    // Course overview shots
-                    const overviewTexts = [
-                        `${courseName} ${location} - Aerial view of championship 18-hole golf course showing signature holes and clubhouse facilities`,
-                        `${courseName} ${locationShort} - Panoramic fairway view hole 7 with strategic bunkers and mature trees`,
-                        `${courseName} Tennessee - Championship golf course layout showing undulating fairways and natural terrain`,
-                        `${courseName} ${locationShort} - Championship golf course entrance with professional landscaping and signage`,
-                        `${courseName} ${location} - Golf course overview showing scenic terrain and championship facilities`
-                    ];
-                    return overviewTexts[imageIndex - 1];
-                } else if (imageIndex <= 10) {
-                    // Signature holes
-                    const holes = [6, 8, 12, 15, 18];
-                    const holeIndex = imageIndex - 6;
-                    const holeNum = holes[holeIndex];
-                    const signatures = [
-                        `${courseName} Tennessee golf course - Signature par 3 hole ${holeNum} with water hazard and bentgrass green`,
-                        `${courseName} ${locationShort} - Challenging par 4 hole ${holeNum} with scenic views and strategic bunkering`,
-                        `${courseName} Tennessee - Par 5 hole ${holeNum} with risk-reward layout and elevated green complex`,
-                        `${courseName} ${location} - Signature hole ${holeNum} featuring championship design and natural beauty`,
-                        `${courseName} Tennessee - Finishing hole ${holeNum} with dramatic approach shot and clubhouse backdrop`
-                    ];
-                    return signatures[holeIndex];
-                } else if (imageIndex <= 15) {
-                    // Greens and approaches
-                    return `${courseName} ${locationShort} - Undulating putting green with championship pin positions and bentgrass surface - Image ${imageIndex}`;
-                } else if (imageIndex <= 20) {
-                    // Course features
-                    const features = [
-                        'Practice facility driving range and putting green area',
-                        'Golf cart fleet and maintenance facilities',
-                        'Professional golf instruction area and practice tees',
-                        'Course landscaping with native Tennessee flora and water features',
-                        'Golf course pro shop and equipment rental facilities'
-                    ];
-                    return `${courseName} Tennessee - ${features[(imageIndex - 16) % features.length]}`;
-                } else {
-                    // Clubhouse and amenities
-                    const amenities = [
-                        'Golf course clubhouse pro shop and restaurant facilities',
-                        'Clubhouse dining room with scenic Tennessee views',
-                        'Golf course event space and meeting facilities',
-                        'Professional locker room and amenities',
-                        'Golf course entrance and parking facilities'
-                    ];
-                    return `${courseName} ${location} - ${amenities[(imageIndex - 21) % amenities.length]}`;
-                }
-            }
-            
-            // Generate all 25 images
-            for (let i = 1; i <= 25; i++) {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'full-gallery-item';
-                galleryItem.innerHTML = `<img src="../images/courses/honky-tonk-national-golf-course/${i}.webp" alt="${getAltText(i)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">`;
-                galleryItem.onclick = () => window.open(`../images/courses/honky-tonk-national-golf-course/${i}.webp`, '_blank');
-                galleryGrid.appendChild(galleryItem);
-            }
-            
+            const grid = document.getElementById('fullGalleryGrid');
+            grid.innerHTML = '';
+            galleryImages.forEach(img => {
+                const item = document.createElement('div');
+                item.className = 'full-gallery-item';
+                item.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
+                item.onclick = () => window.open(img.src, '_blank');
+                grid.appendChild(item);
+            });
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
         }
-        
+
         function closeGallery() {
-            const modal = document.getElementById('galleryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.getElementById('galleryModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside of it
-        document.getElementById('galleryModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeGallery();
-            }
+
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGallery();
         });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeGallery();
-            }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeGallery();
         });
     </script>
 </body>
