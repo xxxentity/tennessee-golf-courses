@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (40 / 104)
+## Completed (43 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -50,12 +50,14 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ hillwood-country-club.php — favicon include, removed dead star block and broken star JS, standard three-box, private membership box (green gradient), location to <p> format, 2fr/1fr about grid
 - ✅ holston-hills-country-club.php — favicon include, CSS-class hero→inline, class-based layout→inline, hard-coded footer→include, removed broken star JS, private membership box, 2fr/1fr about grid
 - ✅ honky-tonk-national-golf-course.php — year_built 2001→2023, course_type Public→Private, fixed gallery JS from head into body, removed dead star/review block, brown gradient→green gradient membership box, Peter Jacobsen & Jim Hardy design
+- ✅ island-pointe-golf-club.php — year_built 2000→1991, removed dead star block, CSS classes→inline, hard-coded footer→include, favicon include, standard three-box, 2fr/1fr about grid; Arthur Hills 1991 design, 7,001 yds, slope 146, 3 French Broad River island holes
+- ✅ jackson-country-club.php — removed gallery JS from head (DOM error), removed dead star block and dead rating JS, brown gradient→green gradient membership box, removed huge commented-out duplicate, removed Google Fonts; designer N/A→Hugh H. Miller, rating 73.4/slope 134, favicon include, 2fr/1fr about grid
 
 ---
 
-## Remaining (64 / 104)
+## Remaining (62 / 104)
 
-- ⬜ island-pointe-golf-club.php
+- ⬜ lake-tansi-golf-course.php
 - ⬜ jackson-country-club.php
 - ⬜ lake-tansi-golf-course.php
 - ⬜ lambert-acres-golf-lab.php
