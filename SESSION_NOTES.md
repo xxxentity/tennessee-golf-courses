@@ -135,14 +135,13 @@ Last item has no `border-bottom`.
 
 ---
 
-## Progress: 43 / 104 Completed
+## Progress: 44 / 104 Completed
 
 See COURSE_PROGRESS.md for full list. Next course to work on:
 
-### → lake-tansi-golf-course.php
+### → lambert-acres-golf-lab.php
 
 After that (in order):
-- lambert-acres-golf-lab.php
 - laurel-valley-country-club.php
 - lookout-mountain-club.php
 - mccabe-golf-course.php
@@ -243,6 +242,6 @@ After that (in order):
 ## Git Status
 
 - Branch: main
-- Last commit: 6ec3e7e — island-pointe + jackson-country-club
-- Remote: ahead by 2 commits (push periodically with `git push`)
+- Last commit: lake-tansi-golf-course standardized
+- Remote: push after each course (push periodically with `git push`)
 - Working directory: /mnt/c/users/ddhoward/TGC LLC/tennessee-golf-courses

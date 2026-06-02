@@ -7,7 +7,7 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 
 ---
 
-## Completed (43 / 104)
+## Completed (44 / 104)
 
 - ✅ avalon-golf-country-club.php
 - ✅ bear-trace-at-tims-ford.php
@@ -52,14 +52,11 @@ Legend: ✅ Done | 🔄 In Progress | ⬜ Not Started
 - ✅ honky-tonk-national-golf-course.php — year_built 2001→2023, course_type Public→Private, fixed gallery JS from head into body, removed dead star/review block, brown gradient→green gradient membership box, Peter Jacobsen & Jim Hardy design
 - ✅ island-pointe-golf-club.php — year_built 2000→1991, removed dead star block, CSS classes→inline, hard-coded footer→include, favicon include, standard three-box, 2fr/1fr about grid; Arthur Hills 1991 design, 7,001 yds, slope 146, 3 French Broad River island holes
 - ✅ jackson-country-club.php — removed gallery JS from head (DOM error), removed dead star block and dead rating JS, brown gradient→green gradient membership box, removed huge commented-out duplicate, removed Google Fonts; designer N/A→Hugh H. Miller, rating 73.4/slope 134, favicon include, 2fr/1fr about grid
+- ✅ lake-tansi-golf-course.php — removed dead star block, Google Fonts, CSS style block, dead star JS; CSS classes→inline; favicon include; 2fr/1fr about grid; kept 6-tee data in about text; green fees table with seasonal rates; year_built corrected to 1961
 
 ---
 
-## Remaining (62 / 104)
-
-- ⬜ lake-tansi-golf-course.php
-- ⬜ jackson-country-club.php
-- ⬜ lake-tansi-golf-course.php
+## Remaining (61 / 104)
 - ⬜ lambert-acres-golf-lab.php
 - ⬜ laurel-valley-country-club.php
 - ⬜ lookout-mountain-club.php
