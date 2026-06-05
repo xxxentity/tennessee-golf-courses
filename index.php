@@ -214,23 +214,6 @@ try {
             box-shadow: var(--shadow-medium);
         }
         
-        .review-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .review-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .review-card:hover .review-image img {
-            transform: scale(1.05);
-        }
-        
         .review-content {
             padding: 1.5rem;
         }
@@ -412,11 +395,6 @@ try {
             <div class="news-grid">
                 <?php foreach ($latest_articles as $article): ?>
                 <article class="news-card">
-                    <div class="news-image">
-                        <a href="news/<?php echo htmlspecialchars($article['slug']); ?>" style="text-decoration: none;">
-                            <img src="<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
-                        </a>
-                    </div>
                     <div class="news-content">
                         <div class="news-meta">
                             <span class="news-date"><?php echo date('M j, Y', strtotime($article['date'])); ?></span>
@@ -449,11 +427,6 @@ try {
             <div class="reviews-grid">
                 <?php foreach ($featured_reviews as $review): ?>
                 <article class="review-card">
-                    <div class="review-image">
-                        <a href="/reviews/<?php echo htmlspecialchars($review['slug']); ?>" style="text-decoration: none;">
-                            <img src="<?php echo htmlspecialchars($review['image']); ?>" alt="<?php echo htmlspecialchars($review['title']); ?>">
-                        </a>
-                    </div>
                     <div class="review-content">
                         <div class="review-meta">
                             <span class="review-date"><?php echo date('M j, Y', strtotime($review['date'])); ?></span>
