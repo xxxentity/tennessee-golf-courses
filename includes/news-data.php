@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Vol Golf Caps Historic 2026 Season: Men Match Program Best at NCAAs, Lady Vols Win First-Ever SEC Title',
+        'slug' => 'tennessee-vols-golf-2026-ncaa-recap',
+        'date' => '2026-06-09',
+        'time' => '10:00 AM',
+        'category' => 'Tennessee News',
+        'excerpt' => 'Tennessee men\'s golf matches its second-best NCAA Championship finish in program history before falling in a four-team playoff for the final match play spots, while the Lady Vols close a historic 2026 season that included the program\'s first-ever SEC Championship.',
+        'image' => '/images/news/tennessee-vols-golf-2026-ncaa-recap/main.jpg',
+        'featured' => true
+    ],
+    [
         'title' => 'Tyrrell Hatton Wins LIV Golf Andalucia 2026 at Valderrama, First Title Since Becoming a Father',
         'slug' => 'liv-golf-andalucia-2026-recap',
         'date' => '2026-06-07',
