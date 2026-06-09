@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Tyrrell Hatton Wins LIV Golf Andalucia 2026 at Valderrama, First Title Since Becoming a Father',
+        'slug' => 'liv-golf-andalucia-2026-recap',
+        'date' => '2026-06-07',
+        'time' => '11:00 PM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Tyrrell Hatton leads wire-to-wire at Real Club Valderrama to claim LIV Golf Andalucia 2026 by two shots over teammate Jon Rahm — his first win in 18 months and his first as a new father — while Legion XIII rallies from eight shots back to sweep both individual and team titles.',
+        'image' => '/images/news/liv-golf-andalucia-2026/main.jpg',
+        'featured' => true
+    ],
+    [
         'title' => 'J.T. Poston Grinds Through Marathon Sunday to Win 2026 Memorial Tournament in Playoff',
         'slug' => 'memorial-tournament-2026-recap',
         'date' => '2026-06-08',
