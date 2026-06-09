@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'J.T. Poston Grinds Through Marathon Sunday to Win 2026 Memorial Tournament in Playoff',
+        'slug' => 'memorial-tournament-2026-recap',
+        'date' => '2026-06-08',
+        'time' => '10:00 AM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'J.T. Poston blows a four-shot lead, makes a clutch 7-foot birdie on 18 to force a playoff, then outlasts Ryan Gerard on the second extra hole to win the 2026 Memorial Tournament at Muirfield Village — earning the biggest victory of his career after entering the week without a top-20 finish all season.',
+        'image' => '/images/news/memorial-tournament-2026/main.jpg',
+        'featured' => true
+    ],
+    [
         'title' => 'Niemann Makes LIV Golf History With Playoff Win at 2026 LIV Golf Korea',
         'slug' => 'liv-golf-korea-2026-recap',
         'date' => '2026-06-01',
