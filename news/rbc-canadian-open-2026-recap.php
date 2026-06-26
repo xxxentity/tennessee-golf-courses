@@ -84,19 +84,19 @@ include '../includes/header.php';
                     <tr>
                         <td class="pos">T4</td>
                         <td>Jimmy Stanger</td>
-                        <td>&mdash;</td>
+                        <td>67 (-3)</td>
                         <td>-13 (267)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Brice Garnett</td>
-                        <td>&mdash;</td>
+                        <td>68 (-2)</td>
                         <td>-13 (267)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Jesper Svensson</td>
-                        <td>&mdash;</td>
+                        <td>68 (-2)</td>
                         <td>-13 (267)</td>
                     </tr>
                 </tbody>
