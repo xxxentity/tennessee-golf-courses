@@ -3,6 +3,26 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Wyndham Clark Wins Second U.S. Open at Shinnecock Hills, Goes Wire-to-Wire Through a Hostile Crowd',
+        'slug' => 'us-open-2026-recap',
+        'date' => '2026-06-22',
+        'time' => '10:00 AM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Wyndham Clark leads from the first round to the last at the 2026 U.S. Open at Shinnecock Hills, surviving a six-shot final-round collapse and a hostile Long Island crowd to win by one over Sam Burns — claiming his second national title and becoming just the ninth player to go wire-to-wire in U.S. Open history.',
+        'image' => '/images/news/us-open-2026/main.webp',
+        'featured' => true
+    ],
+    [
+        'title' => 'Bud Cauley Wins RBC Canadian Open in His 239th Start, Completes Comeback From Career-Threatening Crash',
+        'slug' => 'rbc-canadian-open-2026-recap',
+        'date' => '2026-06-16',
+        'time' => '10:00 AM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Bud Cauley shoots a final-round 65 to win the 2026 RBC Canadian Open at TPC Toronto at Osprey Valley by two shots over Matt Fitzpatrick, claiming his first PGA Tour title in his 239th start and capping a years-long comeback from a 2018 car accident that nearly ended his career.',
+        'image' => '/images/news/rbc-canadian-open-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Vol Golf Caps Historic 2026 Season: Men Match Program Best at NCAAs, Lady Vols Win First-Ever SEC Title',
         'slug' => 'tennessee-vols-golf-2026-ncaa-recap',
         'date' => '2026-06-09',
