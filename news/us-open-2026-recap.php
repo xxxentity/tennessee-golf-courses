@@ -78,7 +78,7 @@ include '../includes/header.php';
                     <tr>
                         <td class="pos">T4</td>
                         <td>Scottie Scheffler</td>
-                        <td>&mdash;</td>
+                        <td>71 (+1)</td>
                         <td>E (280)</td>
                     </tr>
                 </tbody>

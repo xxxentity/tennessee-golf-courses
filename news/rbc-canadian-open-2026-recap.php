@@ -72,32 +72,32 @@ include '../includes/header.php';
                     <tr>
                         <td class="pos">3</td>
                         <td>Viktor Hovland</td>
-                        <td>&mdash;</td>
+                        <td>65 (-5)</td>
                         <td>-14 (266)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Jackson Suber</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
+                        <td>70 (E)</td>
+                        <td>-13 (267)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Jimmy Stanger</td>
                         <td>&mdash;</td>
-                        <td>&mdash;</td>
+                        <td>-13 (267)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Brice Garnett</td>
                         <td>&mdash;</td>
-                        <td>&mdash;</td>
+                        <td>-13 (267)</td>
                     </tr>
                     <tr>
                         <td class="pos">T4</td>
                         <td>Jesper Svensson</td>
                         <td>&mdash;</td>
-                        <td>&mdash;</td>
+                        <td>-13 (267)</td>
                     </tr>
                 </tbody>
             </table>
