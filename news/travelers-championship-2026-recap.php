@@ -76,9 +76,27 @@ include '../includes/header.php';
                         <td>-20 (260)</td>
                     </tr>
                     <tr>
-                        <td class="pos">T4</td>
+                        <td class="pos">4</td>
+                        <td>Matt Fitzpatrick</td>
+                        <td>64 (-6)</td>
+                        <td>-19 (261)</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">T5</td>
+                        <td>Wyndham Clark</td>
+                        <td>65 (-5)</td>
+                        <td>-18 (262)</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">T5</td>
+                        <td>Akshay Bhatia</td>
+                        <td>67 (-3)</td>
+                        <td>-18 (262)</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">T7</td>
                         <td>J.J. Spaun</td>
-                        <td>&mdash;</td>
+                        <td>64 (-6)</td>
                         <td>-17 (263)</td>
                     </tr>
                 </tbody>
