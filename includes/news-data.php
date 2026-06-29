@@ -3,6 +3,16 @@
 // Get all news articles (automatically sorted by date and time, newest first)
 $articles_raw = [
     [
+        'title' => 'Viktor Hovland Edges Scottie Scheffler in Monday Playoff to Win 2026 Travelers Championship',
+        'slug' => 'travelers-championship-2026-recap',
+        'date' => '2026-06-29',
+        'time' => '10:00 AM',
+        'category' => 'Tournament Recap',
+        'excerpt' => 'Viktor Hovland birdies the 18th hole on Monday morning to defeat Scottie Scheffler in a sudden-death playoff and win the 2026 Travelers Championship — his first PGA Tour victory in 15 months, after a weather delay pushed the finish to a second day and Collin Morikawa stormed to a 61 in the final round.',
+        'image' => '/images/news/travelers-championship-2026/main.webp',
+        'featured' => true
+    ],
+    [
         'title' => 'Wyndham Clark Wins Second U.S. Open at Shinnecock Hills, Goes Wire-to-Wire Through a Hostile Crowd',
         'slug' => 'us-open-2026-recap',
         'date' => '2026-06-22',
