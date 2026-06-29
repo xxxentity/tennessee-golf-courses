@@ -422,8 +422,6 @@ try {
                 <h2>Featured Reviews</h2>
                 <p>In-depth reviews and buying guides for golf equipment and accessories</p>
             </div>
-            <!-- Debug info -->
-            
             <div class="reviews-grid">
                 <?php foreach ($featured_reviews as $review): ?>
                 <article class="review-card">
@@ -545,7 +543,7 @@ try {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+                <p>&copy; 2026 Tennessee Golf Courses. All rights reserved.</p>
             </div>
         </div>
     </footer>

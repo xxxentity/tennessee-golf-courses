@@ -280,7 +280,7 @@ session_start();
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Tennessee Golf Courses. All rights reserved.</p>
+                <p>&copy; 2026 Tennessee Golf Courses. All rights reserved.</p>
             </div>
         </div>
     </footer>
